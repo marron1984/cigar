@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>葉巻大辞典 — Cigar Encyclopedia & Note</title>
+  <meta name="description" content="葉巻（シガー）の基礎知識・国別・太さ別・価格別・喫煙具の総合事典と、あなただけの喫煙記録ノート。">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚬</text></svg>">
+</head>
+<body>
+
+  <!-- ===== Header / Nav ===== -->
+  <header class="site-header">
+    <div class="nav-inner">
+      <div class="brand" data-view="home">
+        <span class="mark">🍂</span>
+        <div>
+          <div class="title">葉巻大辞典</div>
+          <div class="sub">Cigar Encyclopedia</div>
+        </div>
+      </div>
+      <nav class="nav-tabs" id="navTabs">
+        <button data-view="home">ホーム</button>
+        <button data-view="basics">基礎知識</button>
+        <button data-view="countries">国・産地別</button>
+        <button data-view="sizes">太さ別</button>
+        <button data-view="prices">価格別</button>
+        <button data-view="tools">喫煙具</button>
+        <button data-view="note">記録ノート</button>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ===== HOME ===== -->
+    <section class="view" id="view-home">
+      <div class="hero">
+        <div class="kicker">Since the Maya · Aged for the connoisseur</div>
+        <h1>葉巻大辞典</h1>
+        <div class="en">The Cigar Encyclopedia &amp; Smoking Note</div>
+        <p class="desc">葉巻（シガー）の世界を、<b>基礎知識・国別・太さ別・価格別・喫煙具</b>の5つの切り口で体系化した総合事典。<br>さらに、あなたが吸った一本一本を書き留める<b>記録ノート</b>付き。<span class="ember"></span></p>
+      </div>
+
+      <div class="home-grid" id="homeGrid"></div>
+
+      <div class="callout" style="margin-top:34px">
+        本サイトは葉巻文化・製品知識を紹介する情報・記録用の事典です。喫煙は20歳以上（成人）のみ。健康への影響に十分ご留意ください。
+      </div>
+    </section>
+
+    <!-- ===== BASICS ===== -->
+    <section class="view" id="view-basics">
+      <div class="section-head">
+        <div class="eyebrow">Fundamentals</div>
+        <h2>基礎知識</h2>
+        <p>葉巻とは何か、構造、吸い方、味わいの表現、ラッパーの色、歴史とマナー。初めての一本の前に読んでおきたい基本を網羅。</p>
+      </div>
+      <div id="basicsContent"></div>
+    </section>
+
+    <!-- ===== COUNTRIES ===== -->
+    <section class="view" id="view-countries">
+      <div class="section-head">
+        <div class="eyebrow">By Origin</div>
+        <h2>国・産地別</h2>
+        <p>葉巻の個性は生まれた土地の気候と土壌が決める。9つの主要生産国それぞれの風味・栽培地域・代表銘柄をひも解く。</p>
+      </div>
+      <div class="grid grid-2" id="countriesGrid"></div>
+    </section>
+
+    <!-- ===== SIZES ===== -->
+    <section class="view" id="view-sizes">
+      <div class="section-head">
+        <div class="eyebrow">By Size &amp; Ring Gauge</div>
+        <h2>太さ・サイズ別</h2>
+        <p>リングゲージ（太さ）とビトラ（規格）で、味わいも喫煙時間も大きく変わる。定番サイズを一覧で比較。</p>
+      </div>
+      <div id="sizesContent"></div>
+    </section>
+
+    <!-- ===== PRICES ===== -->
+    <section class="view" id="view-prices">
+      <div class="section-head">
+        <div class="eyebrow">By Price</div>
+        <h2>価格帯別</h2>
+        <p>コンビニのドライシガーから数万円のハイエンドまで。価格帯ごとの特徴・代表銘柄・選び方のアドバイス。</p>
+      </div>
+      <div id="pricesContent"></div>
+    </section>
+
+    <!-- ===== TOOLS ===== -->
+    <section class="view" id="view-tools">
+      <div class="section-head">
+        <div class="eyebrow">Accessories</div>
+        <h2>喫煙具・保管</h2>
+        <p>カッター、ライター、ヒュミドール、灰皿……葉巻を美味しく味わい、良い状態で保つための道具の選び方と使い方。</p>
+      </div>
+      <div id="toolsContent"></div>
+    </section>
+
+    <!-- ===== NOTE ===== -->
+    <section class="view" id="view-note">
+      <div class="section-head">
+        <div class="eyebrow">My Cigar Journal</div>
+        <h2>記録ノート</h2>
+        <p>吸った葉巻を記録して、自分だけの一冊に。銘柄・産地・サイズ・価格・評価・感想を残せます。データはこのブラウザに保存されます。</p>
+      </div>
+
+      <div class="note-toolbar">
+        <button class="btn btn-primary" id="btnNewEntry">＋ 新しく記録する</button>
+        <button class="btn btn-ghost btn-sm" id="btnExport">エクスポート</button>
+        <button class="btn btn-ghost btn-sm" id="btnImport">インポート</button>
+        <input type="file" id="importFile" accept="application/json" hidden>
+        <span class="count-pill" id="entryCount">0 本</span>
+      </div>
+
+      <div class="note-stats" id="noteStats"></div>
+
+      <input type="text" class="note-search" id="noteSearch" placeholder="🔍 銘柄・産地・感想で検索…">
+
+      <div id="entriesArea"></div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div>🍂 葉巻大辞典 — Cigar Encyclopedia &amp; Note</div>
+    <div class="disc">掲載の価格・仕様は目安です。銘柄や販売店により異なります。喫煙は成人（20歳以上）のみ。喫煙は健康を害するおそれがあります。記録データはお使いのブラウザ内（localStorage）にのみ保存され、外部には送信されません。</div>
+  </footer>
+
+  <!-- ===== Modal for note entry ===== -->
+  <div class="modal-overlay" id="entryModal">
+    <div class="modal">
+      <h3 id="modalTitle">葉巻を記録する</h3>
+      <form id="entryForm">
+        <input type="hidden" id="entryId">
+        <div class="form-row">
+          <label for="fName">銘柄名 <span style="color:var(--ember)">*</span></label>
+          <input type="text" id="fName" required placeholder="例：モンテクリスト No.4">
+        </div>
+        <div class="form-two">
+          <div class="form-row">
+            <label for="fBrand">ブランド</label>
+            <input type="text" id="fBrand" placeholder="例：Montecristo">
+          </div>
+          <div class="form-row">
+            <label for="fCountry">産地</label>
+            <select id="fCountry"></select>
+          </div>
+        </div>
+        <div class="form-two">
+          <div class="form-row">
+            <label for="fVitola">サイズ（ビトラ）</label>
+            <select id="fVitola"></select>
+          </div>
+          <div class="form-row">
+            <label for="fStrength">強さ</label>
+            <select id="fStrength">
+              <option value="">—</option>
+              <option>マイルド</option>
+              <option>ミディアム</option>
+              <option>フル</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-two">
+          <div class="form-row">
+            <label for="fDate">喫煙日</label>
+            <input type="date" id="fDate">
+          </div>
+          <div class="form-row">
+            <label for="fPrice">価格（円）</label>
+            <input type="number" id="fPrice" min="0" placeholder="例：2500">
+          </div>
+        </div>
+        <div class="form-row">
+          <label>評価</label>
+          <div class="rating-input" id="ratingInput">
+            <span class="star" data-v="1">★</span>
+            <span class="star" data-v="2">★</span>
+            <span class="star" data-v="3">★</span>
+            <span class="star" data-v="4">★</span>
+            <span class="star" data-v="5">★</span>
+          </div>
+          <input type="hidden" id="fRating" value="0">
+        </div>
+        <div class="form-row">
+          <label for="fNote">感想・テイスティングメモ</label>
+          <textarea id="fNote" placeholder="香り、味わい、ペアリング、その日の気分など自由に…"></textarea>
+        </div>
+        <div class="modal-actions">
+          <button type="button" class="btn btn-ghost" id="btnCancel">キャンセル</button>
+          <button type="submit" class="btn btn-primary">保存する</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="data/data.js"></script>
+  <script src="js/note.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
