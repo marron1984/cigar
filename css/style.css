@@ -426,6 +426,75 @@ td .ve { font-size: .74rem; color: var(--muted); letter-spacing: .08em; }
 }
 .callout.warn { border-color: var(--ember); background: rgba(209,102,47,.08); }
 
+/* ============================================================
+   上級編（マニア）コンポーネント
+   ============================================================ */
+/* sub-nav within advanced view */
+.subnav {
+  display: flex; gap: 6px; flex-wrap: wrap; margin: 6px 0 8px;
+  position: sticky; top: 60px; z-index: 20;
+  background: rgba(20,15,10,.9); backdrop-filter: blur(8px);
+  padding: 10px 0; border-bottom: 1px solid var(--line-soft);
+}
+.subnav button {
+  font-family: var(--sans); font-size: .84rem; color: var(--text-soft);
+  background: var(--panel); border: 1px solid var(--line-soft);
+  padding: 7px 13px; border-radius: 999px; cursor: pointer; transition: all .16s;
+}
+.subnav button:hover { border-color: var(--gold); color: var(--cream); }
+.subnav button.active { background: var(--gold); color: #1a130d; border-color: var(--gold); font-weight: 700; }
+
+.sub-view { display: none; }
+.sub-view.active { display: block; animation: fade .35s ease; }
+
+/* accordion */
+.acc { border: 1px solid var(--line-soft); border-radius: var(--radius-sm); overflow: hidden; margin-bottom: 10px; background: var(--panel); }
+.acc summary {
+  cursor: pointer; padding: 15px 18px; font-family: var(--serif); font-size: 1.12rem;
+  color: var(--cream); list-style: none; display: flex; align-items: center; justify-content: space-between; gap: 10px;
+}
+.acc summary::-webkit-details-marker { display: none; }
+.acc summary::after { content: "＋"; color: var(--gold); font-size: 1.2rem; transition: transform .2s; }
+.acc[open] summary::after { content: "－"; }
+.acc summary:hover { background: var(--panel-2); }
+.acc .acc-body { padding: 2px 18px 18px; color: var(--text-soft); font-size: .93rem; }
+.acc .acc-body p { margin-bottom: 10px; }
+.acc .tag { font-size:.7rem; padding:2px 9px; border-radius:999px; background:var(--panel-2); border:1px solid var(--line); color:var(--gold-bright); margin-left:8px; font-family:var(--sans); }
+
+/* process timeline */
+.timeline { position: relative; margin: 10px 0 0 8px; padding-left: 26px; }
+.timeline::before { content:""; position:absolute; left:6px; top:6px; bottom:6px; width:2px; background:linear-gradient(var(--gold),var(--ember)); }
+.tl-item { position: relative; margin-bottom: 18px; }
+.tl-item::before {
+  content:""; position:absolute; left:-26px; top:4px; width:14px; height:14px; border-radius:50%;
+  background: var(--bg); border:2px solid var(--gold); box-shadow:0 0 0 3px var(--bg);
+}
+.tl-item .tl-h { font-family: var(--serif); color: var(--cream); font-size:1.1rem; }
+.tl-item .tl-en { font-size:.72rem; color: var(--gold); letter-spacing:.1em; }
+.tl-item .tl-d { font-size:.92rem; color: var(--text-soft); margin-top:3px; }
+.tl-item .tl-chem { font-size:.85rem; color: var(--leaf); margin-top:5px; padding-left:10px; border-left:2px solid var(--leaf); }
+
+/* def list / spec rows */
+.spec-row { display:grid; grid-template-columns: 200px 1fr; gap:12px; padding:11px 0; border-bottom:1px solid var(--line-soft); }
+.spec-row:last-child { border-bottom:none; }
+.spec-row .k { color: var(--gold-bright); font-size:.9rem; }
+.spec-row .k .en { display:block; color: var(--muted); font-size:.7rem; letter-spacing:.08em; }
+.spec-row .v { color: var(--text-soft); font-size:.92rem; }
+
+/* pairing cards */
+.pair-card { border:1px solid var(--line-soft); border-radius:var(--radius-sm); padding:16px; background:var(--panel); }
+.pair-card h4 { font-family:var(--serif); font-size:1.2rem; color:var(--cream); display:flex; align-items:baseline; gap:8px; }
+.pair-card h4 .en { font-size:.72rem; color:var(--gold); letter-spacing:.15em; }
+.pair-card .pw { font-size:.78rem; color:var(--gold-bright); margin:6px 0; }
+
+/* quick-match table highlight */
+.match-row .cig { font-family:var(--serif); color:var(--cream); }
+
+@media (max-width: 640px) {
+  .subnav { top: 108px; }
+  .spec-row { grid-template-columns: 1fr; gap: 2px; }
+}
+
 /* scrollbar */
 ::-webkit-scrollbar { height: 10px; width: 10px; }
 ::-webkit-scrollbar-track { background: var(--bg-2); }
