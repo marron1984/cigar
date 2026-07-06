@@ -490,6 +490,28 @@ td .ve { font-size: .74rem; color: var(--muted); letter-spacing: .08em; }
 /* quick-match table highlight */
 .match-row .cig { font-family:var(--serif); color:var(--cream); }
 
+/* 博士編：research note / compound / data density */
+.research-note {
+  border-left: 3px solid var(--leaf); background: rgba(124,138,78,.08);
+  padding: 12px 16px; border-radius: 0 var(--radius-sm) var(--radius-sm) 0; margin: 12px 0;
+  font-size: .86rem; color: var(--text-soft);
+}
+.research-note .rn-h { color: var(--leaf); font-size: .74rem; letter-spacing: .12em; text-transform: uppercase; display:block; margin-bottom: 4px; }
+.health-box {
+  border: 1px solid var(--ember); background: rgba(209,102,47,.07);
+  border-radius: var(--radius-sm); padding: 14px 18px; margin: 12px 0;
+}
+.health-box .hb-h { color: var(--ember-glow); font-family: var(--serif); font-size: 1.05rem; margin-bottom: 6px; }
+.compound-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px,1fr)); gap: 12px; }
+.compound { background: var(--panel); border: 1px solid var(--line-soft); border-radius: var(--radius-sm); padding: 13px 15px; }
+.compound .cn { font-family: var(--serif); color: var(--cream); font-size: 1.05rem; }
+.compound .cc { font-size: .78rem; color: var(--gold-bright); margin: 3px 0 5px; font-style: italic; }
+.compound .cd { font-size: .85rem; color: var(--text-soft); }
+.data-count { font-size: .74rem; color: var(--muted); letter-spacing:.05em; margin-left:8px; }
+/* compact reference table */
+table.ref td, table.ref th { padding: 9px 12px; font-size: .86rem; }
+table.ref { min-width: 480px; }
+
 @media (max-width: 640px) {
   .subnav { top: 108px; }
   .spec-row { grid-template-columns: 1fr; gap: 2px; }
