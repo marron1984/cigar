@@ -35,10 +35,39 @@ const NOTE = (() => {
     return `<span class="stars">${out}</span>`;
   }
 
+  /* ---------- ブランド一覧を各データから集約 ---------- */
+  function brandList() {
+    const seen = new Set();
+    const out = [];
+    const push = (n) => {
+      const name = (n || "").trim();
+      if (name && !seen.has(name)) { seen.add(name); out.push(name); }
+    };
+    // 博士編DBの全マルカ（キューバ＋ニューワールド）を優先
+    try {
+      (PHD_DATA.db.cubanMarcas || []).forEach(m => push(m.ja));
+      (PHD_DATA.db.newWorld || []).forEach(m => push(m.ja));
+    } catch (e) {}
+    // 上級編ブランドと産地別の代表銘柄でも補完
+    try { (ADVANCED_DATA.brands || []).forEach(b => push(b.ja)); } catch (e) {}
+    try {
+      (CIGAR_DATA.countries || []).forEach(c =>
+        (c.brands || []).forEach(b => { if (!/ラッパー|使用/.test(b.ja)) push(b.ja); }));
+    } catch (e) {}
+    return out;
+  }
+
   /* ---------- フォームのセレクト初期化 ---------- */
   function fillSelects() {
     const cSel = q("#fCountry");
     const vSel = q("#fVitola");
+    const bSel = q("#fBrand");
+    if (bSel && !bSel.dataset.filled) {
+      bSel.innerHTML = `<option value="">—</option>` +
+        brandList().map(n => `<option>${escN(n)}</option>`).join("") +
+        `<option value="__other">その他（自由入力）</option>`;
+      bSel.dataset.filled = "1";
+    }
     if (cSel && !cSel.dataset.filled) {
       cSel.innerHTML = `<option value="">—</option>` +
         CIGAR_DATA.countries.map(c => `<option>${escN(c.name_ja)}</option>`).join("") +
@@ -60,7 +89,7 @@ const NOTE = (() => {
     q("#modalTitle").textContent = isEdit ? "記録を編集する" : "葉巻を記録する";
     q("#entryId").value = isEdit ? entry.id : "";
     q("#fName").value = isEdit ? entry.name : "";
-    q("#fBrand").value = isEdit ? (entry.brand || "") : "";
+    setBrand(isEdit ? (entry.brand || "") : "");
     q("#fCountry").value = isEdit ? (entry.country || "") : "";
     q("#fVitola").value = isEdit ? (entry.vitola || "") : "";
     q("#fStrength").value = isEdit ? (entry.strength || "") : "";
@@ -73,6 +102,27 @@ const NOTE = (() => {
     setTimeout(() => q("#fName").focus(), 50);
   }
   function closeModal() { q("#entryModal").classList.remove("open"); }
+
+  /* ブランド値をセレクト/自由入力へ振り分け */
+  function setBrand(val) {
+    const sel = q("#fBrand");
+    const other = q("#fBrandOther");
+    const listed = [...sel.options].some(o => o.value === val && o.value !== "" && o.value !== "__other");
+    if (val && !listed) {
+      sel.value = "__other";
+      other.style.display = "";
+      other.value = val;
+    } else {
+      sel.value = val;
+      other.style.display = "none";
+      other.value = "";
+    }
+  }
+  /* 現在のブランド入力値を取得 */
+  function getBrand() {
+    const sel = q("#fBrand");
+    return sel.value === "__other" ? q("#fBrandOther").value.trim() : sel.value;
+  }
 
   function todayStr() {
     const d = new Date();
@@ -93,7 +143,7 @@ const NOTE = (() => {
     const id = q("#entryId").value;
     const data = {
       name: q("#fName").value.trim(),
-      brand: q("#fBrand").value.trim(),
+      brand: getBrand(),
       country: q("#fCountry").value,
       vitola: q("#fVitola").value,
       strength: q("#fStrength").value,
@@ -247,6 +297,18 @@ const NOTE = (() => {
     });
     document.addEventListener("keydown", (e) => {
       if (e.key === "Escape") closeModal();
+    });
+
+    // ブランド「その他」で自由入力欄を表示
+    q("#fBrand").addEventListener("change", (e) => {
+      const other = q("#fBrandOther");
+      if (e.target.value === "__other") {
+        other.style.display = "";
+        other.focus();
+      } else {
+        other.style.display = "none";
+        other.value = "";
+      }
     });
 
     // 星入力
