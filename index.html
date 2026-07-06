@@ -168,7 +168,7 @@
 
       <div class="note-stats" id="noteStats"></div>
 
-      <input type="text" class="note-search" id="noteSearch" placeholder="🔍 銘柄・産地・感想で検索…">
+      <input type="text" class="note-search" id="noteSearch" placeholder="🔍 銘柄・産地・喫煙場所・感想で検索…">
 
       <div id="entriesArea"></div>
     </section>
@@ -224,6 +224,28 @@
             <label for="fPrice">価格（円）</label>
             <input type="number" id="fPrice" min="0" placeholder="例：2500">
           </div>
+        </div>
+        <div class="form-row">
+          <label for="fLocation">喫煙場所</label>
+          <input type="text" id="fLocation" list="locationList" placeholder="例：自宅の書斎、〇〇シガーバー、ホテルのテラス…">
+          <datalist id="locationList">
+            <option>自宅</option>
+            <option>自宅（書斎）</option>
+            <option>自宅（ベランダ・庭）</option>
+            <option>シガーバー</option>
+            <option>シガーラウンジ</option>
+            <option>喫煙可能なバー・カフェ</option>
+            <option>ホテル・旅館</option>
+            <option>ホテルのテラス</option>
+            <option>ゴルフ場</option>
+            <option>屋外・公園</option>
+            <option>キャンプ・アウトドア</option>
+            <option>旅行先</option>
+            <option>友人宅</option>
+            <option>クラブ・会員制ラウンジ</option>
+            <option>喫煙所</option>
+            <option>車内</option>
+          </datalist>
         </div>
         <div class="form-row">
           <label>評価</label>

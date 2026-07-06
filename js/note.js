@@ -66,6 +66,7 @@ const NOTE = (() => {
     q("#fStrength").value = isEdit ? (entry.strength || "") : "";
     q("#fDate").value = isEdit ? (entry.date || "") : todayStr();
     q("#fPrice").value = isEdit ? (entry.price ?? "") : "";
+    q("#fLocation").value = isEdit ? (entry.location || "") : "";
     q("#fNote").value = isEdit ? (entry.note || "") : "";
     setRating(isEdit ? (entry.rating || 0) : 0);
     q("#entryModal").classList.add("open");
@@ -98,6 +99,7 @@ const NOTE = (() => {
       strength: q("#fStrength").value,
       date: q("#fDate").value,
       price: q("#fPrice").value ? Number(q("#fPrice").value) : null,
+      location: q("#fLocation").value.trim(),
       rating: Number(q("#fRating").value) || 0,
       note: q("#fNote").value.trim()
     };
@@ -132,10 +134,12 @@ const NOTE = (() => {
       ? (rated.reduce((s, e) => s + e.rating, 0) / rated.length).toFixed(1) : "—";
     const spent = entries.reduce((s, e) => s + (Number(e.price) || 0), 0);
     const countries = new Set(entries.map(e => e.country).filter(Boolean)).size;
+    const places = new Set(entries.map(e => e.location).filter(Boolean)).size;
     box.innerHTML = `
       <div class="stat-box"><div class="sv">${entries.length}</div><div class="sl">記録した本数</div></div>
       <div class="stat-box"><div class="sv">${avg}</div><div class="sl">平均評価（★）</div></div>
       <div class="stat-box"><div class="sv">${countries}</div><div class="sl">産地の数</div></div>
+      <div class="stat-box"><div class="sv">${places}</div><div class="sl">喫煙場所の数</div></div>
       <div class="stat-box"><div class="sv">¥${spent.toLocaleString()}</div><div class="sl">総額の記録</div></div>`;
   }
 
@@ -148,7 +152,7 @@ const NOTE = (() => {
     const term = searchTerm.trim().toLowerCase();
     const list = term
       ? entries.filter(e =>
-          [e.name, e.brand, e.country, e.vitola, e.note]
+          [e.name, e.brand, e.country, e.vitola, e.location, e.note]
             .some(v => (v || "").toLowerCase().includes(term)))
       : entries;
 
@@ -180,6 +184,7 @@ const NOTE = (() => {
           ${e.vitola ? `<span class="chip">${escN(e.vitola)}</span>` : ""}
           ${e.strength ? `<span class="chip">${escN(e.strength)}</span>` : ""}
           ${e.price ? `<span class="chip">¥${Number(e.price).toLocaleString()}</span>` : ""}
+          ${e.location ? `<span class="chip">📍 ${escN(e.location)}</span>` : ""}
         </div>
         ${e.rating ? stars(e.rating) : ""}
         ${e.note ? `<div class="e-note">${escN(e.note)}</div>` : ""}
@@ -213,6 +218,7 @@ const NOTE = (() => {
           name: d.name, brand: d.brand || "", country: d.country || "",
           vitola: d.vitola || "", strength: d.strength || "",
           date: d.date || "", price: d.price ?? null,
+          location: d.location || "",
           rating: Number(d.rating) || 0, note: d.note || ""
         }));
         entries = merge ? [...cleaned, ...entries] : cleaned;
