@@ -26,7 +26,7 @@ function brandChips(brands, extraClass = "brand") {
 const views = {
   home: "view-home", basics: "view-basics", countries: "view-countries",
   sizes: "view-sizes", prices: "view-prices", tools: "view-tools",
-  advanced: "view-advanced", phd: "view-phd", note: "view-note"
+  advanced: "view-advanced", phd: "view-phd", world: "view-world", note: "view-note"
 };
 function showView(name) {
   if (!views[name]) name = "home";
@@ -78,6 +78,7 @@ const HOME_CARDS = [
   { view: "tools", ic: "🧰", h: "喫煙具・保管", p: "カッター、ライター、ヒュミドールの選び方。" },
   { view: "advanced", ic: "🎓", h: "上級編（オタクの世界）", p: "品種・発酵・キューバ通・名門・喫煙術・ペアリング・熟成科学。" },
   { view: "phd", ic: "🔬", h: "博士編（学術）", p: "化学・植物学・官能評価・銘柄DB・産業経済・健康科学。" },
+  { view: "world", ic: "🌐", h: "世界編（総覧）", p: "年表・文化・愛好家・日本・実践レビュー・投資・用語大全・トラベル・FAQ。" },
   { view: "note", ic: "📝", h: "記録ノート", p: "吸った一本を記録して自分だけの一冊に。" }
 ];
 function renderHome() {
@@ -288,6 +289,7 @@ function init() {
   renderTools();
   ADV.init();
   PHD.init();
+  WORLD.init();
   NOTE.init();
   const start = (location.hash || "#home").slice(1);
   showView(start);
