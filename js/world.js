@@ -62,11 +62,29 @@ const WORLD = (() => {
   }
 
   /* ---------- 4. 日本ガイド ---------- */
+  function shopCard(s) {
+    return `<div class="shop-card">
+      <div class="sh-name">${e(s.name)}</div>
+      <div class="sh-meta"><span class="sh-type">${e(s.type)}</span><span class="sh-area">📍 ${e(s.area)}</span></div>
+      <div class="sh-desc">${e(s.desc)}</div>
+      ${s.note ? `<div class="sh-note">${e(s.note)}</div>` : ""}
+    </div>`;
+  }
   function japan() {
     const J = W.japan;
+    const buys = J.osakaShops.filter(s => /専門店|百貨店/.test(s.type));
+    const bars = J.osakaShops.filter(s => !/専門店|百貨店/.test(s.type));
+    const osaka = `
+      <div class="callout warn">掲載の店舗情報は公開情報をもとにした<b>目安</b>です。営業状況・品揃え・喫煙可否・持込ルールは変わりやすいため、来店前に各店の公式・電話でご確認ください（「※要確認」付きは特に）。</div>
+      <h4 style="font-family:var(--serif);color:var(--cream);font-size:1.15rem;margin:18px 0 10px">🛒 葉巻を買える専門店・売り場<span class="data-count">${buys.length}店</span></h4>
+      <div class="shop-grid">${buys.map(shopCard).join("")}</div>
+      <h4 style="font-family:var(--serif);color:var(--cream);font-size:1.15rem;margin:22px 0 10px">🥃 シガーバー・ラウンジ（店内で購入・喫煙）<span class="data-count">${bars.length}軒</span></h4>
+      <div class="shop-grid">${bars.map(shopCard).join("")}</div>
+      <div class="kb-block" style="margin-top:18px"><h3>大阪で葉巻を探すコツ</h3><div class="prose">${paras(J.osakaTips)}</div></div>`;
     return block("日本の葉巻の歴史", `<div class="prose">${paras(J.history)}</div>`)
       + block("輸入・流通・税制", `<div class="prose">${paras(J.tax)}</div>`)
       + block("日本で葉巻を買う", `<div class="prose">${paras(J.buy)}</div>`)
+      + block("【大阪】葉巻が買えるお店・シガーバー", osaka, `${J.osakaShops.length}店`)
       + block("日本の喫煙環境", `<div class="prose">${paras(J.environment)}</div>`)
       + block("日本の葉巻文化・和のマナー", `<div class="prose">${paras(J.culture)}</div>`)
       + block("初心者が日本で葉巻を始めるには", `<div class="callout">まずは信頼できるシガーバーで一本を、が最短ルートです。</div><div class="prose">${paras(J.beginner)}</div>`);
