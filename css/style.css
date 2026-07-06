@@ -682,6 +682,19 @@ table.ref { min-width: 480px; }
 .lex .lx-d { font-size:.85rem; color: var(--text-soft); }
 .lex-search { margin-bottom: 14px; }
 
+/* 店舗リスト（大阪など）カード */
+.shop-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px,1fr)); gap: 14px; }
+.shop-card {
+  background: linear-gradient(160deg, var(--panel), var(--bg-2));
+  border: 1px solid var(--line-soft); border-radius: var(--radius); padding: 16px 18px;
+}
+.shop-card .sh-name { font-family: var(--serif); color: var(--cream); font-size: 1.18rem; }
+.shop-card .sh-meta { display: flex; flex-wrap: wrap; gap: 6px; margin: 8px 0; }
+.shop-card .sh-type { font-size: .72rem; padding: 3px 10px; border-radius: 999px; background: rgba(201,162,75,.16); color: var(--gold-bright); border: 1px solid var(--gold); }
+.shop-card .sh-area { font-size: .72rem; padding: 3px 10px; border-radius: 999px; background: var(--panel-2); color: var(--text-soft); border: 1px solid var(--line); }
+.shop-card .sh-desc { font-size: .9rem; color: var(--text-soft); }
+.shop-card .sh-note { font-size: .78rem; color: var(--muted); margin-top: 8px; font-style: italic; }
+
 /* scrollbar */
 ::-webkit-scrollbar { height: 10px; width: 10px; }
 ::-webkit-scrollbar-track { background: var(--bg-2); }
