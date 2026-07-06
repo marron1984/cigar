@@ -25,7 +25,8 @@ function brandChips(brands, extraClass = "brand") {
    ============================================================ */
 const views = {
   home: "view-home", basics: "view-basics", countries: "view-countries",
-  sizes: "view-sizes", prices: "view-prices", tools: "view-tools", note: "view-note"
+  sizes: "view-sizes", prices: "view-prices", tools: "view-tools",
+  advanced: "view-advanced", note: "view-note"
 };
 function showView(name) {
   if (!views[name]) name = "home";
@@ -51,6 +52,7 @@ const HOME_CARDS = [
   { view: "sizes", ic: "📏", h: "太さ・サイズ別", p: "リングゲージとビトラ。定番サイズを一覧で。" },
   { view: "prices", ic: "💰", h: "価格帯別", p: "入門からハイエンドまで、価格別の選び方。" },
   { view: "tools", ic: "🧰", h: "喫煙具・保管", p: "カッター、ライター、ヒュミドールの選び方。" },
+  { view: "advanced", ic: "🎓", h: "上級編（オタクの世界）", p: "品種・発酵・キューバ通・名門・喫煙術・ペアリング・熟成科学。" },
   { view: "note", ic: "📝", h: "記録ノート", p: "吸った一本を記録して自分だけの一冊に。" }
 ];
 function renderHome() {
@@ -259,6 +261,7 @@ function init() {
   renderSizes();
   renderPrices();
   renderTools();
+  ADV.init();
   NOTE.init();
   const start = (location.hash || "#home").slice(1);
   showView(start);

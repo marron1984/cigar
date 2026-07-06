@@ -27,6 +27,7 @@
         <button data-view="sizes">太さ別</button>
         <button data-view="prices">価格別</button>
         <button data-view="tools">喫煙具</button>
+        <button data-view="advanced">上級編</button>
         <button data-view="note">記録ノート</button>
       </nav>
     </div>
@@ -98,6 +99,31 @@
         <p>カッター、ライター、ヒュミドール、灰皿……葉巻を美味しく味わい、良い状態で保つための道具の選び方と使い方。</p>
       </div>
       <div id="toolsContent"></div>
+    </section>
+
+    <!-- ===== ADVANCED (上級編) ===== -->
+    <section class="view" id="view-advanced">
+      <div class="section-head">
+        <div class="eyebrow">For the Connoisseur · 玄人の領域</div>
+        <h2>上級編 — 葉巻オタクの世界</h2>
+        <p>葉の品種と葉位、発酵と巻きの技、キューバ通の見分け方、名門ブランド、喫煙の極意、ペアリング学、そして保管・熟成の科学まで。ここから先は、一本を深く味わうための知識の沼です。</p>
+      </div>
+      <div class="subnav" id="advSubnav">
+        <button data-sub="leaf" class="active">🌱 葉と品種</button>
+        <button data-sub="craft">🏭 製造と技</button>
+        <button data-sub="cuba">🇨🇺 キューバ学</button>
+        <button data-sub="brands">👑 名門ブランド</button>
+        <button data-sub="technique">🎯 喫煙の極意</button>
+        <button data-sub="pairing">🥃 ペアリング学</button>
+        <button data-sub="storage">🔬 保管と熟成の科学</button>
+      </div>
+      <div class="sub-view active" id="sub-leaf"></div>
+      <div class="sub-view" id="sub-craft"></div>
+      <div class="sub-view" id="sub-cuba"></div>
+      <div class="sub-view" id="sub-brands"></div>
+      <div class="sub-view" id="sub-technique"></div>
+      <div class="sub-view" id="sub-pairing"></div>
+      <div class="sub-view" id="sub-storage"></div>
     </section>
 
     <!-- ===== NOTE ===== -->
@@ -199,7 +225,9 @@
   </div>
 
   <script src="data/data.js"></script>
+  <script src="data/advanced.js"></script>
   <script src="js/note.js"></script>
+  <script src="js/advanced.js"></script>
   <script src="js/app.js"></script>
 </body>
 </html>
