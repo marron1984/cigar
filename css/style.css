@@ -62,7 +62,7 @@ a:hover { text-decoration: underline; }
   display: flex;
   align-items: center;
   gap: 18px;
-  flex-wrap: wrap;
+  position: relative;
 }
 .brand {
   display: flex;
@@ -87,28 +87,89 @@ a:hover { text-decoration: underline; }
 }
 .nav-tabs {
   display: flex;
-  gap: 4px;
+  gap: 3px;
   margin-left: auto;
-  flex-wrap: wrap;
+  align-items: center;
 }
 .nav-tabs button {
   font-family: var(--sans);
-  font-size: .9rem;
+  font-size: .92rem;
   color: var(--text-soft);
   background: transparent;
   border: 1px solid transparent;
-  padding: 8px 14px;
+  padding: 8px 13px;
   border-radius: 999px;
   cursor: pointer;
   transition: all .18s ease;
   white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
 }
+.nav-tabs button .ic { display: none; font-size: 1.05rem; line-height: 1; }
 .nav-tabs button:hover { color: var(--cream); background: var(--panel); }
 .nav-tabs button.active {
   color: #1a130d;
   background: linear-gradient(180deg, var(--gold-bright), var(--gold));
   font-weight: 700;
   border-color: var(--gold);
+}
+/* 記録ノートは事典から区切って強調 */
+.nav-tabs .nav-journal {
+  margin-left: 8px;
+  border-color: var(--line);
+  color: var(--gold-bright);
+}
+.nav-tabs .nav-journal:not(.active) { background: var(--panel); }
+
+/* ハンバーガー（モバイル用・デフォルト非表示） */
+.nav-toggle {
+  display: none;
+  margin-left: auto;
+  width: 42px; height: 42px;
+  border: 1px solid var(--line);
+  background: var(--panel);
+  border-radius: 10px;
+  cursor: pointer;
+  position: relative;
+}
+.nav-toggle-bars, .nav-toggle-bars::before, .nav-toggle-bars::after {
+  content: ""; position: absolute; left: 50%; width: 20px; height: 2px;
+  background: var(--cream); border-radius: 2px; transform: translateX(-50%);
+  transition: transform .22s ease, opacity .18s ease;
+}
+.nav-toggle-bars { top: 50%; margin-top: -1px; }
+.nav-toggle-bars::before { top: -7px; }
+.nav-toggle-bars::after { top: 7px; }
+.nav-toggle.open .nav-toggle-bars { background: transparent; }
+.nav-toggle.open .nav-toggle-bars::before { transform: translateX(-50%) translateY(7px) rotate(45deg); }
+.nav-toggle.open .nav-toggle-bars::after { transform: translateX(-50%) translateY(-7px) rotate(-45deg); }
+
+@media (max-width: 860px) {
+  .nav-toggle { display: block; }
+  .nav-tabs {
+    display: none;
+    position: absolute;
+    top: calc(100% + 1px); left: 0; right: 0;
+    flex-direction: column;
+    gap: 2px;
+    margin: 0;
+    padding: 8px;
+    background: rgba(26,19,13,.98);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--line);
+    box-shadow: var(--shadow);
+  }
+  .nav-tabs.open { display: flex; animation: fade .2s ease; }
+  .nav-tabs button {
+    width: 100%;
+    justify-content: flex-start;
+    font-size: 1rem;
+    padding: 13px 16px;
+    border-radius: var(--radius-sm);
+  }
+  .nav-tabs button .ic { display: inline-flex; width: 22px; justify-content: center; }
+  .nav-tabs .nav-journal { margin-left: 0; margin-top: 4px; border-top: 1px solid var(--line-soft); border-radius: 0 0 var(--radius-sm) var(--radius-sm); }
 }
 
 /* ---------- Layout ---------- */
@@ -554,7 +615,6 @@ table.ref td, table.ref th { padding: 9px 12px; font-size: .86rem; }
 table.ref { min-width: 480px; }
 
 @media (max-width: 640px) {
-  .subnav { top: 108px; }
   .spec-row { grid-template-columns: 1fr; gap: 2px; }
 }
 
@@ -566,8 +626,6 @@ table.ref { min-width: 480px; }
 
 /* responsive */
 @media (max-width: 640px) {
-  .nav-tabs { width: 100%; margin-left: 0; justify-content: center; }
-  .brand { margin: 0 auto; }
   .anatomy-list .item { grid-template-columns: 1fr; gap: 4px; }
   .form-two { grid-template-columns: 1fr; }
   .section-head h2 { font-size: 1.6rem; }

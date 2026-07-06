@@ -20,16 +20,19 @@
           <div class="sub">Cigar Encyclopedia</div>
         </div>
       </div>
+      <button class="nav-toggle" id="navToggle" aria-label="メニューを開閉" aria-expanded="false" aria-controls="navTabs">
+        <span class="nav-toggle-bars"></span>
+      </button>
       <nav class="nav-tabs" id="navTabs">
-        <button data-view="home">ホーム</button>
-        <button data-view="basics">基礎知識</button>
-        <button data-view="countries">国・産地別</button>
-        <button data-view="sizes">太さ別</button>
-        <button data-view="prices">価格別</button>
-        <button data-view="tools">喫煙具</button>
-        <button data-view="advanced">上級編</button>
-        <button data-view="phd">博士編</button>
-        <button data-view="note">記録ノート</button>
+        <button data-view="home"><span class="ic">🏠</span><span class="lbl">ホーム</span></button>
+        <button data-view="basics"><span class="ic">📖</span><span class="lbl">基礎知識</span></button>
+        <button data-view="countries"><span class="ic">🌎</span><span class="lbl">国・産地別</span></button>
+        <button data-view="sizes"><span class="ic">📏</span><span class="lbl">太さ別</span></button>
+        <button data-view="prices"><span class="ic">💰</span><span class="lbl">価格別</span></button>
+        <button data-view="tools"><span class="ic">🧰</span><span class="lbl">喫煙具</span></button>
+        <button data-view="advanced"><span class="ic">🎓</span><span class="lbl">上級編</span></button>
+        <button data-view="phd"><span class="ic">🔬</span><span class="lbl">博士編</span></button>
+        <button class="nav-journal" data-view="note"><span class="ic">📝</span><span class="lbl">記録ノート</span></button>
       </nav>
     </div>
   </header>

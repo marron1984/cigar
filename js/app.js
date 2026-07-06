@@ -37,10 +37,34 @@ function showView(name) {
   window.scrollTo({ top: 0, behavior: "smooth" });
   if (location.hash !== "#" + name) history.replaceState(null, "", "#" + name);
   if (name === "note") NOTE.render();
+  closeNav();
 }
+
+/* ---------- モバイル・ハンバーガーメニュー ---------- */
+function setNav(open) {
+  const tabs = $("#navTabs");
+  const btn = $("#navToggle");
+  if (!tabs || !btn) return;
+  tabs.classList.toggle("open", open);
+  btn.classList.toggle("open", open);
+  btn.setAttribute("aria-expanded", open ? "true" : "false");
+}
+function closeNav() { setNav(false); }
+
 document.addEventListener("click", (e) => {
+  const toggle = e.target.closest("#navToggle");
+  if (toggle) {
+    e.preventDefault();
+    setNav(!$("#navTabs").classList.contains("open"));
+    return;
+  }
   const t = e.target.closest("[data-view]");
-  if (t) { e.preventDefault(); showView(t.dataset.view); }
+  if (t) { e.preventDefault(); showView(t.dataset.view); return; }
+  // メニュー外クリックで閉じる
+  if ($("#navTabs").classList.contains("open") && !e.target.closest(".site-header")) closeNav();
+});
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") closeNav();
 });
 
 /* ============================================================
