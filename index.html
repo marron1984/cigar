@@ -155,7 +155,7 @@
       <div class="section-head">
         <div class="eyebrow">My Cigar Journal</div>
         <h2>記録ノート</h2>
-        <p>吸った葉巻を記録して、自分だけの一冊に。銘柄・産地・サイズ・価格・評価・感想を残せます。データはこのブラウザに保存されます。</p>
+        <p>吸った葉巻を記録して、自分だけの一冊に。銘柄・産地・サイズ・価格・喫煙場所・評価・感想・写真を残せます。データはこのブラウザに保存されます。</p>
       </div>
 
       <div class="note-toolbar">
@@ -260,6 +260,17 @@
           <input type="hidden" id="fRating" value="0">
         </div>
         <div class="form-row">
+          <label>写真（バンド・本体など）</label>
+          <div class="photo-uploader">
+            <div class="photo-previews" id="photoPreviews"></div>
+            <label class="btn btn-ghost btn-sm photo-add-btn">
+              ＋ 写真を追加
+              <input type="file" id="fPhotoInput" accept="image/*" multiple hidden>
+            </label>
+          </div>
+          <div class="photo-hint">バンドや本体の写真を追加できます（最大6枚・端末内に保存され外部送信はされません）。</div>
+        </div>
+        <div class="form-row">
           <label for="fNote">感想・テイスティングメモ</label>
           <textarea id="fNote" placeholder="香り、味わい、ペアリング、その日の気分など自由に…"></textarea>
         </div>
@@ -269,6 +280,12 @@
         </div>
       </form>
     </div>
+  </div>
+
+  <!-- 写真拡大表示 -->
+  <div class="lightbox" id="lightbox">
+    <button class="lb-close" id="lbClose" aria-label="閉じる">×</button>
+    <img id="lightboxImg" src="" alt="記録写真">
   </div>
 
   <script src="data/data.js"></script>

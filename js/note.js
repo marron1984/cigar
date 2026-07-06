@@ -12,6 +12,33 @@ const NOTE = (() => {
 
   let entries = [];
   let searchTerm = "";
+  let currentPhotos = [];       // モーダル編集中の写真（dataURL配列）
+  const MAX_PHOTOS = 6;
+
+  /* ---------- 画像リサイズ（localStorage節約のため縮小・圧縮） ---------- */
+  function resizeImage(file, maxDim = 1000, quality = 0.72) {
+    return new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.onload = () => {
+        const img = new Image();
+        img.onload = () => {
+          let { width, height } = img;
+          if (width >= height && width > maxDim) { height = Math.round(height * maxDim / width); width = maxDim; }
+          else if (height > width && height > maxDim) { width = Math.round(width * maxDim / height); height = maxDim; }
+          else if (width > maxDim) { width = maxDim; height = maxDim; }
+          const canvas = document.createElement("canvas");
+          canvas.width = width; canvas.height = height;
+          canvas.getContext("2d").drawImage(img, 0, 0, width, height);
+          try { resolve(canvas.toDataURL("image/jpeg", quality)); }
+          catch (err) { reject(err); }
+        };
+        img.onerror = () => reject(new Error("画像を読み込めませんでした"));
+        img.src = reader.result;
+      };
+      reader.onerror = () => reject(new Error("ファイルを読み込めませんでした"));
+      reader.readAsDataURL(file);
+    });
+  }
 
   /* ---------- 永続化 ---------- */
   function load() {
@@ -19,8 +46,11 @@ const NOTE = (() => {
     catch (e) { entries = []; }
   }
   function save() {
-    try { localStorage.setItem(KEY, JSON.stringify(entries)); }
-    catch (e) { alert("保存に失敗しました。ブラウザのストレージ設定をご確認ください。"); }
+    try { localStorage.setItem(KEY, JSON.stringify(entries)); return true; }
+    catch (e) {
+      alert("保存できませんでした。写真の枚数が多いと端末の保存容量を超えることがあります。写真を減らすか、不要な記録を削除してからお試しください。");
+      return false;
+    }
   }
   function uid() {
     return "e" + Date.now().toString(36) + Math.floor(Math.random() * 1e6).toString(36);
@@ -97,11 +127,45 @@ const NOTE = (() => {
     q("#fPrice").value = isEdit ? (entry.price ?? "") : "";
     q("#fLocation").value = isEdit ? (entry.location || "") : "";
     q("#fNote").value = isEdit ? (entry.note || "") : "";
+    currentPhotos = isEdit && Array.isArray(entry.photos) ? entry.photos.slice() : [];
+    renderPhotoPreviews();
     setRating(isEdit ? (entry.rating || 0) : 0);
     q("#entryModal").classList.add("open");
     setTimeout(() => q("#fName").focus(), 50);
   }
   function closeModal() { q("#entryModal").classList.remove("open"); }
+
+  /* ライトボックス */
+  function openLightbox(src) {
+    q("#lightboxImg").src = src;
+    q("#lightbox").classList.add("open");
+  }
+  function closeLightbox() {
+    q("#lightbox").classList.remove("open");
+    q("#lightboxImg").src = "";
+  }
+
+  /* モーダル内の写真プレビューを描画 */
+  function renderPhotoPreviews() {
+    const box = q("#photoPreviews");
+    box.innerHTML = currentPhotos.map((src, i) =>
+      `<div class="photo-thumb"><img src="${src}" alt="写真${i + 1}"><button type="button" class="rm" data-rmphoto="${i}" title="削除">×</button></div>`
+    ).join("");
+  }
+
+  /* ファイル選択→リサイズ→プレビューへ追加 */
+  async function addPhotos(files) {
+    const remaining = MAX_PHOTOS - currentPhotos.length;
+    if (remaining <= 0) { alert(`写真は最大${MAX_PHOTOS}枚までです。`); return; }
+    const list = [...files].slice(0, remaining);
+    if (files.length > remaining) alert(`写真は最大${MAX_PHOTOS}枚まで。${remaining}枚のみ追加しました。`);
+    for (const f of list) {
+      if (!f.type.startsWith("image/")) continue;
+      try { currentPhotos.push(await resizeImage(f)); }
+      catch (err) { alert("画像の処理に失敗しました：" + err.message); }
+    }
+    renderPhotoPreviews();
+  }
 
   /* ブランド値をセレクト/自由入力へ振り分け */
   function setBrand(val) {
@@ -151,9 +215,11 @@ const NOTE = (() => {
       price: q("#fPrice").value ? Number(q("#fPrice").value) : null,
       location: q("#fLocation").value.trim(),
       rating: Number(q("#fRating").value) || 0,
-      note: q("#fNote").value.trim()
+      note: q("#fNote").value.trim(),
+      photos: currentPhotos.slice()
     };
     if (!data.name) return;
+    const backup = entries.slice();   // 保存失敗時のロールバック用
     if (id) {
       const i = entries.findIndex(x => x.id === id);
       if (i > -1) entries[i] = { ...entries[i], ...data };
@@ -162,7 +228,7 @@ const NOTE = (() => {
       data.created = Date.now();
       entries.unshift(data);
     }
-    save();
+    if (!save()) { entries = backup; return; }   // 失敗時は元に戻しモーダルを開いたまま
     closeModal();
     render();
   }
@@ -238,6 +304,10 @@ const NOTE = (() => {
         </div>
         ${e.rating ? stars(e.rating) : ""}
         ${e.note ? `<div class="e-note">${escN(e.note)}</div>` : ""}
+        ${Array.isArray(e.photos) && e.photos.length
+          ? `<div class="entry-photos">${e.photos.map((src, i) =>
+              `<img class="entry-photo" src="${src}" alt="${escN(e.name)}の写真${i + 1}">`).join("")}</div>`
+          : ""}
         <div class="e-actions">
           <button class="btn btn-sm btn-ghost" data-edit="${e.id}">編集</button>
           <button class="btn btn-sm btn-danger" data-del="${e.id}">削除</button>
@@ -269,7 +339,8 @@ const NOTE = (() => {
           vitola: d.vitola || "", strength: d.strength || "",
           date: d.date || "", price: d.price ?? null,
           location: d.location || "",
-          rating: Number(d.rating) || 0, note: d.note || ""
+          rating: Number(d.rating) || 0, note: d.note || "",
+          photos: Array.isArray(d.photos) ? d.photos.filter(p => typeof p === "string") : []
         }));
         entries = merge ? [...cleaned, ...entries] : cleaned;
         // 重複ID回避
@@ -296,8 +367,30 @@ const NOTE = (() => {
       if (e.target.id === "entryModal") closeModal();
     });
     document.addEventListener("keydown", (e) => {
-      if (e.key === "Escape") closeModal();
+      if (e.key === "Escape") {
+        if (q("#lightbox").classList.contains("open")) closeLightbox();
+        else closeModal();
+      }
     });
+
+    // 写真の追加
+    q("#fPhotoInput").addEventListener("change", (e) => {
+      if (e.target.files && e.target.files.length) addPhotos(e.target.files);
+      e.target.value = "";
+    });
+    // 写真プレビューの削除
+    q("#photoPreviews").addEventListener("click", (e) => {
+      const rm = e.target.closest("[data-rmphoto]");
+      if (rm) { currentPhotos.splice(Number(rm.dataset.rmphoto), 1); renderPhotoPreviews(); }
+    });
+    // ライトボックス（記録カードの写真を拡大）
+    q("#entriesArea").addEventListener("click", (e) => {
+      const img = e.target.closest(".entry-photo");
+      if (img) openLightbox(img.src);
+    });
+    const lb = q("#lightbox");
+    lb.addEventListener("click", closeLightbox);
+    q("#lbClose").addEventListener("click", closeLightbox);
 
     // ブランド「その他」で自由入力欄を表示
     q("#fBrand").addEventListener("change", (e) => {
