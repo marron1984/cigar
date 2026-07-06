@@ -618,6 +618,70 @@ table.ref { min-width: 480px; }
   .spec-row { grid-template-columns: 1fr; gap: 2px; }
 }
 
+/* ============================================================
+   世界編コンポーネント
+   ============================================================ */
+/* 縦型ヒストリー年表 */
+.htimeline { position: relative; margin-left: 6px; padding-left: 28px; }
+.htimeline::before { content:""; position:absolute; left:7px; top:4px; bottom:4px; width:2px; background:linear-gradient(var(--gold),var(--ember)); }
+.ht-item { position: relative; margin-bottom: 18px; }
+.ht-item::before {
+  content:""; position:absolute; left:-28px; top:5px; width:12px; height:12px; border-radius:50%;
+  background: var(--gold); box-shadow:0 0 0 3px var(--bg);
+}
+.ht-item .ht-y { font-family: var(--serif); color: var(--gold-bright); font-size: 1.15rem; font-weight:700; }
+.ht-item .ht-t { font-family: var(--serif); color: var(--cream); font-size: 1.05rem; margin: 2px 0 3px; }
+.ht-item .ht-d { font-size: .92rem; color: var(--text-soft); }
+
+/* 人物カード */
+.person-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px,1fr)); gap: 14px; }
+.person {
+  background: linear-gradient(160deg, var(--panel), var(--bg-2));
+  border: 1px solid var(--line-soft); border-radius: var(--radius); padding: 16px 18px;
+}
+.person .pn { font-family: var(--serif); color: var(--cream); font-size: 1.18rem; }
+.person .pf { font-size: .72rem; letter-spacing:.1em; color: var(--gold); text-transform: uppercase; margin: 2px 0 8px; }
+.person .ps { font-size: .9rem; color: var(--text-soft); }
+.person .pfav { font-size: .82rem; color: var(--gold-bright); margin-top: 8px; }
+
+/* レビューカード */
+.review-card {
+  background: linear-gradient(160deg, var(--panel), var(--bg-2));
+  border: 1px solid var(--line-soft); border-radius: var(--radius); padding: 18px 20px;
+}
+.review-card .rv-top { display:flex; justify-content:space-between; align-items:flex-start; gap:10px; flex-wrap:wrap; }
+.review-card h4 { font-family: var(--serif); color: var(--cream); font-size: 1.28rem; }
+.review-card .rv-sub { font-size:.78rem; color: var(--gold); letter-spacing:.06em; margin-top:2px; }
+.review-card .rv-chips { display:flex; flex-wrap:wrap; gap:6px; margin:10px 0; }
+.review-card .rv-thirds { display:grid; gap:8px; margin-top:10px; }
+.review-card .rv-third { display:grid; grid-template-columns: 76px 1fr; gap:10px; font-size:.9rem; }
+.review-card .rv-third .lb { color: var(--gold); font-size:.78rem; }
+.review-card .rv-third .tx { color: var(--text-soft); }
+.review-card .rv-foot { margin-top:12px; padding-top:10px; border-top:1px solid var(--line-soft); font-size:.9rem; color: var(--text-soft); }
+.review-card .rv-foot .k { color: var(--gold); font-size:.76rem; letter-spacing:.06em; }
+
+/* Q&A / 神話 */
+.qa-item, .myth-item { border:1px solid var(--line-soft); border-radius: var(--radius-sm); background: var(--panel); padding: 14px 16px; margin-bottom: 10px; }
+.qa-item .q { font-family: var(--serif); color: var(--cream); font-size: 1.05rem; }
+.qa-item .q::before { content:"Q. "; color: var(--gold); }
+.qa-item .a { font-size: .92rem; color: var(--text-soft); margin-top: 6px; }
+.qa-item .a::before { content:"A. "; color: var(--gold-bright); font-weight:700; }
+.myth-item .mc { font-family: var(--serif); color: var(--cream); font-size: 1.05rem; }
+.myth-verdict { display:inline-block; font-size:.72rem; font-weight:700; padding:2px 10px; border-radius:999px; margin:8px 0; }
+.mv-false { background: rgba(209,102,47,.18); color: var(--ember-glow); border:1px solid var(--ember); }
+.mv-true  { background: rgba(124,138,78,.2); color:#b5c47a; border:1px solid var(--leaf); }
+.mv-half  { background: rgba(201,162,75,.18); color: var(--gold-bright); border:1px solid var(--gold); }
+.myth-item .me { font-size:.92rem; color: var(--text-soft); }
+
+/* 用語辞典グリッド */
+.lex-grid { display:grid; grid-template-columns: repeat(auto-fill, minmax(260px,1fr)); gap:10px; }
+.lex { border:1px solid var(--line-soft); border-radius: var(--radius-sm); background: var(--panel); padding: 12px 14px; }
+.lex .lx-ja { font-family: var(--serif); color: var(--cream); font-size: 1.02rem; }
+.lex .lx-for { font-size:.74rem; color: var(--gold); margin: 2px 0 5px; }
+.lex .lx-for .es { color: var(--gold-bright); }
+.lex .lx-d { font-size:.85rem; color: var(--text-soft); }
+.lex-search { margin-bottom: 14px; }
+
 /* scrollbar */
 ::-webkit-scrollbar { height: 10px; width: 10px; }
 ::-webkit-scrollbar-track { background: var(--bg-2); }
