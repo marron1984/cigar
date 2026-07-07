@@ -216,6 +216,12 @@ function renderCountryDetail(idx) {
 }
 
 function renderCountries() {
+  // 国・産地別の概要ポスター（画像が無ければ自動で非表示）
+  $("#countryOverview").innerHTML = `
+    <a class="country-overview" href="assets/countries/_overview.png" target="_blank" rel="noopener">
+      <img src="assets/countries/_overview.png" alt="世界の主要葉巻生産国 一覧"
+           onerror="var o=document.getElementById('countryOverview');if(o)o.innerHTML='';">
+    </a>`;
   $("#countryNav").innerHTML = D.countries.map((c, i) =>
     `<button data-country="${i}"${i === 0 ? ' class="active"' : ''}>${c.flag} ${esc(c.name_ja)}</button>`).join("");
   $("#countryNav").addEventListener("click", (e) => {

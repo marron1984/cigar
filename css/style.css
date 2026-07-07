@@ -683,6 +683,11 @@ table.ref { min-width: 480px; }
 .lex-search { margin-bottom: 14px; }
 
 /* 国別・国セレクター＋詳細インフォグラフィック */
+.country-overview { display: block; line-height: 0; margin-bottom: 18px; }
+.country-overview img {
+  width: 100%; height: auto; border-radius: var(--radius);
+  border: 1px solid var(--line-soft); box-shadow: var(--shadow-sm); cursor: zoom-in;
+}
 #countryNav button { font-size: .92rem; }
 .country-detail { max-width: 720px; margin: 0 auto; animation: fade .3s ease; }
 .cd-head { display: flex; align-items: center; gap: 14px; margin-bottom: 18px; flex-wrap: wrap; }
