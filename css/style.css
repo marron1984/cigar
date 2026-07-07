@@ -54,10 +54,17 @@ body {
   line-height: 1.75;
   -webkit-font-smoothing: antialiased;
   min-height: 100vh;
+  /* 「太さ別」「記録ノート」のような複合語の途中で改行されないように。
+     ただし折り返し場所が全くない場合は overflow-wrap で強制的に折り返す（はみ出し防止） */
+  word-break: keep-all;
+  overflow-wrap: break-word;
 }
 
 a { color: var(--gold-bright); text-decoration: none; }
 a:hover { text-decoration: underline; }
+
+/* 途中で改行させたくない語句（カタカナ語など）に付与するユーティリティ */
+.nowrap { white-space: nowrap; }
 
 /* ---------- Header / Nav ---------- */
 .site-header {
