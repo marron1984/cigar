@@ -28,6 +28,18 @@
   --shadow-sm: 0 2px 8px rgba(76,28,42,.06);
   --serif: "Hiragino Mincho ProN", "Yu Mincho", "YuMincho", "Noto Serif JP", serif;
   --sans: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic", "Meiryo", "Noto Sans JP", system-ui, sans-serif;
+
+  /* モーション・トークン */
+  --ease: cubic-bezier(.16,1,.3,1);       /* expo-out：滑らかな減速 */
+  --ease-spring: cubic-bezier(.34,1.56,.64,1); /* わずかなオーバーシュート */
+  --dur-fast: .18s;
+  --dur: .38s;
+  --dur-slow: .6s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root { --dur-fast: .001s; --dur: .001s; --dur-slow: .001s; }
+  html { scroll-behavior: auto; }
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -103,7 +115,7 @@ a:hover { text-decoration: underline; }
   padding: 8px 12px;
   border-radius: 0;
   cursor: pointer;
-  transition: color .15s ease, box-shadow .15s ease;
+  transition: color var(--dur-fast) var(--ease), box-shadow var(--dur-fast) var(--ease);
   white-space: nowrap;
   display: inline-flex;
   align-items: center;
@@ -162,7 +174,7 @@ a:hover { text-decoration: underline; }
     border-bottom: 1px solid var(--line);
     box-shadow: var(--shadow);
   }
-  .nav-tabs.open { display: flex; animation: fade .2s ease; }
+  .nav-tabs.open { display: flex; animation: fade var(--dur) var(--ease); }
   .nav-tabs button {
     width: 100%;
     justify-content: flex-start;
@@ -178,9 +190,47 @@ a:hover { text-decoration: underline; }
 
 /* ---------- Layout ---------- */
 main { max-width: 1180px; margin: 0 auto; padding: 0 20px 80px; }
-.view { display: none; animation: fade .4s ease; }
+.view { display: none; animation: fade var(--dur-slow) var(--ease); }
 .view.active { display: block; }
-@keyframes fade { from { opacity: 0; transform: translateY(8px);} to {opacity:1; transform:none;} }
+@keyframes fade { from { opacity: 0; transform: translateY(14px);} to {opacity:1; transform:none;} }
+
+/* ---------- View Transitions API：ハッシュ切り替えを滑らかにクロスフェード ---------- */
+@keyframes vt-out { from { opacity: 1; } to { opacity: 0; } }
+@keyframes vt-in { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+::view-transition-old(root) { animation: var(--dur-fast) var(--ease) both vt-out; }
+::view-transition-new(root) { animation: var(--dur-slow) var(--ease) both vt-in; }
+
+/* ---------- スクロール・リビール（要素がビューポートに入ったらフェードアップ） ---------- */
+.home-card, .card, .country-card, .tool-card, .person, .review-card,
+.entry, .shop-card, .gloss-item, .compound, .pair-card, .qa-item,
+.myth-item, .lex, .gauge-figure, .stat-box, .tier-card, .shade {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity var(--dur-slow) var(--ease), transform var(--dur-slow) var(--ease);
+}
+.home-card.in-view, .card.in-view, .country-card.in-view, .tool-card.in-view,
+.person.in-view, .review-card.in-view, .entry.in-view, .shop-card.in-view,
+.gloss-item.in-view, .compound.in-view, .pair-card.in-view, .qa-item.in-view,
+.myth-item.in-view, .lex.in-view, .gauge-figure.in-view, .stat-box.in-view,
+.tier-card.in-view, .shade.in-view {
+  opacity: 1;
+  transform: none;
+}
+/* JS未対応・prefers-reduced-motion時は即座に表示 */
+.motion-off .home-card, .motion-off .card, .motion-off .country-card, .motion-off .tool-card,
+.motion-off .person, .motion-off .review-card, .motion-off .entry, .motion-off .shop-card,
+.motion-off .gloss-item, .motion-off .compound, .motion-off .pair-card, .motion-off .qa-item,
+.motion-off .myth-item, .motion-off .lex, .motion-off .gauge-figure, .motion-off .stat-box,
+.motion-off .tier-card, .motion-off .shade {
+  opacity: 1; transform: none;
+}
+/* グリッド内カードの段差アニメーション（最初の数枚だけ時差をつける） */
+.home-grid > :nth-child(1), .grid > :nth-child(1) { transition-delay: .02s; }
+.home-grid > :nth-child(2), .grid > :nth-child(2) { transition-delay: .07s; }
+.home-grid > :nth-child(3), .grid > :nth-child(3) { transition-delay: .12s; }
+.home-grid > :nth-child(4), .grid > :nth-child(4) { transition-delay: .17s; }
+.home-grid > :nth-child(5), .grid > :nth-child(5) { transition-delay: .22s; }
+.home-grid > :nth-child(6), .grid > :nth-child(6) { transition-delay: .27s; }
 
 .section-head {
   margin: 46px 0 22px;
@@ -276,7 +326,8 @@ main { max-width: 1180px; margin: 0 auto; padding: 0 20px 80px; }
   box-shadow: var(--shadow-sm);
   padding: 24px 24px 22px;
   cursor: pointer;
-  transition: transform .15s ease, box-shadow .15s ease, border-color .15s ease;
+  transition: transform var(--dur) var(--ease), box-shadow var(--dur-fast) var(--ease),
+    border-color var(--dur-fast) var(--ease), opacity var(--dur-slow) var(--ease);
   position: relative;
   overflow: hidden;
 }
@@ -284,7 +335,8 @@ main { max-width: 1180px; margin: 0 auto; padding: 0 20px 80px; }
   content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 4px;
   background: var(--gold-bright);
 }
-.home-card:hover { transform: translateY(-2px); box-shadow: var(--shadow); border-color: var(--gold); }
+.home-card:hover { transform: translateY(-3px); box-shadow: var(--shadow); border-color: var(--gold); }
+.home-card:active { transform: translateY(-1px) scale(.98); transition-duration: var(--dur-fast); }
 .home-card .ic { display: none; }
 .home-card h3 { font-family: var(--serif); font-size: 1.16rem; color: var(--cream); font-weight: 600; margin-bottom: 6px; }
 .home-card p { font-size: .87rem; color: var(--muted); }
@@ -302,9 +354,11 @@ main { max-width: 1180px; margin: 0 auto; padding: 0 20px 80px; }
   border: none;
   border-radius: var(--radius); cursor: pointer;
   box-shadow: var(--shadow-sm);
-  transition: transform .15s ease, box-shadow .15s ease;
+  transition: transform var(--dur) var(--ease), box-shadow var(--dur-fast) var(--ease),
+    opacity var(--dur-slow) var(--ease);
 }
-.note-cta:hover { transform: translateY(-2px); box-shadow: var(--shadow); }
+.note-cta:hover { transform: translateY(-3px); box-shadow: var(--shadow); }
+.note-cta:active { transform: translateY(-1px) scale(.98); transition-duration: var(--dur-fast); }
 .note-cta-ic { display: none; }
 .note-cta-text { flex: 1; min-width: 0; }
 .note-cta-text h3 { font-family: var(--serif); font-size: 1.14rem; font-weight: 600; color: #fdfcf9; margin-bottom: 4px; }
@@ -438,9 +492,12 @@ td .ve { font-size: .74rem; color: var(--muted); letter-spacing: .04em; }
 .btn {
   font-family: var(--sans); font-size: .9rem; cursor: pointer;
   padding: 10px 20px; border-radius: 999px; border: 1px solid var(--line);
-  background: var(--panel); color: var(--text); transition: all .15s ease;
+  background: var(--panel); color: var(--text);
+  transition: background-color var(--dur-fast) var(--ease), border-color var(--dur-fast) var(--ease),
+    color var(--dur-fast) var(--ease), transform var(--dur-fast) var(--ease-spring);
 }
 .btn:hover { border-color: var(--gold); background: var(--panel-2); }
+.btn:active { transform: scale(.95); }
 .btn-primary {
   background: var(--gold-bright);
   color: #fdfcf9; font-weight: 600; border-color: var(--gold-bright);
@@ -486,9 +543,10 @@ td .ve { font-size: .74rem; color: var(--muted); letter-spacing: .04em; }
   color: #fdfcf9; font-size: 1.7rem; font-weight: 400; cursor: pointer;
   box-shadow: var(--shadow); line-height: 1;
   display: grid; place-items: center; /* 親(#view-note)が非表示のときは一緒に隠れる */
-  transition: transform .15s ease, background-color .15s ease;
+  transition: transform var(--dur-fast) var(--ease-spring), background-color var(--dur-fast) var(--ease);
 }
-.note-fab:hover { background: var(--wine-dark); transform: scale(1.05); }
+.note-fab:hover { background: var(--wine-dark); transform: scale(1.08); }
+.note-fab:active { transform: scale(.92); }
 
 .e-author { font-size: .74rem; color: var(--muted); margin-top: 2px; }
 
@@ -574,9 +632,11 @@ td .ve { font-size: .74rem; color: var(--muted); letter-spacing: .04em; }
 .entry-photos { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 12px; }
 .entry-photo {
   width: 62px; height: 62px; object-fit: cover; border-radius: var(--radius-sm);
-  border: 1px solid var(--line-soft); cursor: pointer; transition: transform .15s, border-color .15s;
+  border: 1px solid var(--line-soft); cursor: pointer;
+  transition: transform var(--dur-fast) var(--ease-spring), border-color var(--dur-fast) var(--ease);
 }
-.entry-photo:hover { transform: scale(1.05); border-color: var(--gold); }
+.entry-photo:hover { transform: scale(1.08); border-color: var(--gold); }
+.entry-photo:active { transform: scale(.96); }
 
 /* ライトボックス */
 .lightbox {
@@ -637,14 +697,17 @@ td .ve { font-size: .74rem; color: var(--muted); letter-spacing: .04em; }
 .subnav button {
   font-family: var(--sans); font-size: .83rem; color: var(--text-soft);
   background: var(--panel); border: 1px solid var(--line);
-  padding: 8px 16px; border-radius: 999px; cursor: pointer; transition: all .15s;
+  padding: 8px 16px; border-radius: 999px; cursor: pointer;
+  transition: background-color var(--dur-fast) var(--ease), border-color var(--dur-fast) var(--ease),
+    color var(--dur-fast) var(--ease), transform var(--dur-fast) var(--ease-spring);
   white-space: nowrap; flex: 0 0 auto;
 }
 .subnav button:hover { border-color: var(--gold-bright); color: var(--cream); }
+.subnav button:active { transform: scale(.94); }
 .subnav button.active { background: var(--gold-bright); color: #fdfcf9; border-color: var(--gold-bright); font-weight: 600; }
 
 .sub-view { display: none; }
-.sub-view.active { display: block; animation: fade .35s ease; }
+.sub-view.active { display: block; animation: fade var(--dur-slow) var(--ease); }
 
 /* accordion */
 .acc { border: 1px solid var(--line-soft); border-radius: var(--radius-sm); overflow: hidden; margin-bottom: 10px; background: var(--panel); }
@@ -653,10 +716,17 @@ td .ve { font-size: .74rem; color: var(--muted); letter-spacing: .04em; }
   color: var(--cream); list-style: none; display: flex; align-items: center; justify-content: space-between; gap: 10px;
 }
 .acc summary::-webkit-details-marker { display: none; }
-.acc summary::after { content: "＋"; color: var(--gold); font-size: 1.2rem; transition: transform .2s; }
-.acc[open] summary::after { content: "－"; }
+.acc summary::after {
+  content: "＋"; color: var(--gold); font-size: 1.2rem; line-height: 1;
+  display: inline-block; transition: transform var(--dur) var(--ease-spring);
+}
+.acc[open] summary::after { transform: rotate(135deg); }
 .acc summary:hover { background: var(--panel-2); }
-.acc .acc-body { padding: 2px 18px 18px; color: var(--text-soft); font-size: .93rem; }
+.acc summary:active { transform: scale(.99); }
+.acc .acc-body {
+  padding: 2px 18px 18px; color: var(--text-soft); font-size: .93rem;
+  overflow: hidden; transition: height var(--dur) var(--ease), opacity var(--dur) var(--ease);
+}
 .acc .acc-body p { margin-bottom: 10px; }
 .acc .tag { font-size:.7rem; padding:2px 9px; border-radius:999px; background:var(--panel-2); border:1px solid var(--line); color:var(--gold-bright); margin-left:8px; font-family:var(--sans); }
 
@@ -788,7 +858,7 @@ table.ref { min-width: 480px; }
 /* 国セレクターは固定しない（画面を広く使えるように） */
 #countryNav { position: static; top: auto; background: transparent; backdrop-filter: none; border-bottom: none; padding: 6px 0 12px; }
 #countryNav button { font-size: .92rem; }
-.country-detail { max-width: 980px; margin: 0 auto; animation: fade .3s ease; }
+.country-detail { max-width: 980px; margin: 0 auto; animation: fade var(--dur-slow) var(--ease); }
 .cd-head { display: flex; align-items: center; gap: 14px; margin-bottom: 18px; flex-wrap: wrap; }
 .cd-flag { font-size: 2.6rem; line-height: 1; }
 .cd-title .cd-name { font-family: var(--serif); font-size: 1.7rem; color: var(--cream); font-weight: 700; }
