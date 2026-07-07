@@ -274,6 +274,26 @@ main { max-width: 1180px; margin: 0 auto; padding: 0 20px 80px; }
 .home-card p { font-size: .9rem; color: var(--muted); }
 .home-card .go { margin-top: 14px; font-size: .82rem; color: var(--gold); letter-spacing:.05em; }
 
+/* 記録ノートCTA：一覧カードとは分けて全幅で強調表示 */
+.note-cta {
+  display: flex; align-items: center; gap: 20px; width: 100%; text-align: left;
+  margin-top: 18px; padding: 26px 30px;
+  background: linear-gradient(120deg, var(--gold), var(--gold-bright));
+  border: none; border-radius: var(--radius); cursor: pointer;
+  box-shadow: var(--shadow-sm); transition: transform .2s ease, box-shadow .2s ease;
+}
+.note-cta:hover { transform: translateY(-3px); box-shadow: var(--shadow); }
+.note-cta-ic { font-size: 2.3rem; flex: 0 0 auto; }
+.note-cta-text { flex: 1; min-width: 0; }
+.note-cta-text h3 { font-family: var(--serif); font-size: 1.28rem; color: #241a0c; margin-bottom: 4px; }
+.note-cta-text p { font-size: .9rem; color: #4a3313; }
+.note-cta-go { font-size: .88rem; font-weight: 700; color: #241a0c; letter-spacing: .05em; flex: 0 0 auto; }
+@media (max-width: 640px) {
+  .note-cta { flex-wrap: wrap; padding: 20px; gap: 4px 14px; }
+  .note-cta-ic { font-size: 1.9rem; }
+  .note-cta-go { flex-basis: 100%; margin-top: 6px; }
+}
+
 /* ---------- Generic cards ---------- */
 .card {
   background: linear-gradient(160deg, var(--panel), var(--bg-2));
