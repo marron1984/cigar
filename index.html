@@ -375,8 +375,37 @@
   </main>
 
   <footer class="site-footer">
-    <img class="footer-logo" src="assets/logo.png" alt="葉巻大辞典">
-    <div>葉巻大辞典 — Cigar Encyclopedia &amp; Note</div>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img class="footer-logo" src="assets/logo.png" alt="葉巻大辞典">
+        <div class="footer-brand-name">葉巻大辞典</div>
+        <div class="footer-brand-en">Cigar Encyclopedia &amp; Note</div>
+      </div>
+
+      <nav class="footer-nav" aria-label="フッターメニュー">
+        <div class="footer-nav-col">
+          <div class="footer-nav-h">事典</div>
+          <button data-view="basics">基礎知識</button>
+          <button data-view="countries">国・産地別</button>
+          <button data-view="sizes">太さ別</button>
+          <button data-view="prices">価格別</button>
+          <button data-view="tools">喫煙具</button>
+        </div>
+        <div class="footer-nav-col">
+          <div class="footer-nav-h">専門編</div>
+          <button data-view="humidor">ヒュミドール</button>
+          <button data-view="advanced">上級編</button>
+          <button data-view="phd">博士編</button>
+          <button data-view="world">世界編</button>
+        </div>
+        <div class="footer-nav-col">
+          <div class="footer-nav-h">記録</div>
+          <button data-view="home">ホーム</button>
+          <button class="footer-nav-note" data-view="note">記録ノート</button>
+        </div>
+      </nav>
+    </div>
+
     <div class="disc">掲載の価格・仕様は目安です。銘柄や販売店により異なります。喫煙は成人（20歳以上）のみ。喫煙は健康を害するおそれがあります。記録データは通常はお使いのブラウザ内（localStorage）に保存されます。共有モード（クラウド設定）を有効にした場合のみ、設定した共有データベースに保存され複数人で閲覧できます。</div>
   </footer>
 
