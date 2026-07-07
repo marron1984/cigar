@@ -2,7 +2,8 @@
    葉巻大辞典 — クラウド同期（Supabase）
    記録ノートを複数人で共有するためのデータ層。
    CLOUD_CONFIG.enabled が false のときは何もしない（ローカル保存）。
-   テーブル構成: id text primary key, created int8, data jsonb
+   テーブル構成: id text primary key, created int8, owner text, data jsonb
+   owner（＝記録者名）ごとに絞り込み、各自は自分の記録だけを閲覧する。
    ============================================================ */
 
 const CLOUD = (() => {
@@ -30,12 +31,14 @@ const CLOUD = (() => {
     return client;
   }
 
-  const rowToEntry = (row) => Object.assign({}, row.data, { id: row.id, created: row.created });
-  const entryToRow = (e) => ({ id: e.id, created: e.created || Date.now(), data: e });
+  const rowToEntry = (row) => Object.assign({}, row.data, { id: row.id, created: row.created, owner: row.owner });
+  const entryToRow = (e) => ({ id: e.id, created: e.created || Date.now(), owner: e.owner || e.author || "", data: e });
 
-  async function list() {
+  // owner（記録者名）で絞り込み、その人の記録だけを取得
+  async function list(owner) {
     const c = await getClient();
-    const { data, error } = await c.from(TABLE).select("*").order("created", { ascending: false });
+    const { data, error } = await c.from(TABLE).select("*")
+      .eq("owner", owner || "").order("created", { ascending: false });
     if (error) throw error;
     return (data || []).map(rowToEntry);
   }

@@ -50,13 +50,14 @@ const NOTE = (() => {
     try { entries = JSON.parse(localStorage.getItem(KEY)) || []; }
     catch (e) { entries = []; }
   }
-  // クラウド有効時：共有DBから読み込み、成功したらローカルにもキャッシュ
+  // クラウド有効時：共有DBから「自分（記録者名）の記録だけ」を読み込む
   async function loadCloud() {
     if (!cloudOn) return false;
+    const owner = authorName();
+    if (!owner) { entries = []; return true; }   // 名前未入力なら空（下でヒント表示）
     try {
-      const remote = await CLOUD.list();
+      const remote = await CLOUD.list(owner);
       entries = remote;
-      try { localStorage.setItem(KEY, JSON.stringify(entries)); } catch (e) {}
       return true;
     } catch (err) {
       console.warn("クラウド読み込み失敗、ローカルを使用します:", err);
@@ -237,6 +238,11 @@ const NOTE = (() => {
       photos: currentPhotos.slice()
     };
     if (!data.name) return;
+    if (cloudOn && !authorName()) {
+      alert("共有モードでは、先に「記録者」にお名前を入力してください（その名前があなたの記録の目印になります）。");
+      closeModal(); const ai = q("#authorName"); if (ai) ai.focus();
+      return;
+    }
     const backup = entries.slice();   // 保存失敗時のロールバック用
     let saved;
     if (id) {
@@ -245,7 +251,8 @@ const NOTE = (() => {
     } else {
       data.id = uid();
       data.created = Date.now();
-      data.author = authorName();   // 記録者を記録
+      data.author = authorName();   // 記録者
+      data.owner = authorName();    // 共有DBでの所有者（この人だけが閲覧）
       entries.unshift(data);
       saved = data;
     }
@@ -301,6 +308,14 @@ const NOTE = (() => {
       : entries;
 
     const area = q("#entriesArea");
+    if (cloudOn && !authorName()) {
+      area.innerHTML = `
+        <div class="empty-state">
+          <div class="ic">🙋</div>
+          <p style="margin-top:10px">共有モードです。上の「記録者」にお名前を入力すると、<br><b>あなたの記録だけ</b>が表示されます。</p>
+        </div>`;
+      return;
+    }
     if (!entries.length) {
       area.innerHTML = `
         <div class="empty-state">
@@ -390,7 +405,7 @@ const NOTE = (() => {
   function renderMode() {
     const el = q("#noteMode");
     if (!el) return;
-    if (cloudOn) { el.textContent = "☁ 共有モード（みんなで記録）"; el.classList.add("cloud"); }
+    if (cloudOn) { el.textContent = "☁ 共有DB（自分の記録だけ表示）"; el.classList.add("cloud"); }
     else { el.textContent = "🔒 この端末に保存"; el.classList.remove("cloud"); }
   }
 
@@ -401,9 +416,18 @@ const NOTE = (() => {
 
     // 記録者名
     const authorInput = q("#authorName");
+    let authorTimer = null;
     if (authorInput) {
       authorInput.value = authorName();
-      authorInput.addEventListener("input", (e) => setAuthorName(e.target.value.trim()));
+      authorInput.addEventListener("input", (e) => {
+        setAuthorName(e.target.value.trim());
+        render();  // 即座にヒント/表示を更新
+        // 共有モードでは名前確定後に自分の記録を読み込み直す（入力途中の連打を抑制）
+        if (cloudOn) {
+          clearTimeout(authorTimer);
+          authorTimer = setTimeout(() => { loadCloud().then(() => render()); }, 600);
+        }
+      });
     }
     // クラウド有効時は共有DBから最新を取得して再描画
     if (cloudOn) loadCloud().then(ok => { if (ok) render(); });
