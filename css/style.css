@@ -682,18 +682,29 @@ table.ref { min-width: 480px; }
 .lex .lx-d { font-size:.85rem; color: var(--text-soft); }
 .lex-search { margin-bottom: 14px; }
 
-/* 国別・特集インフォグラフィック（キューバ等） */
-.country-feature { margin-bottom: 26px; text-align: center; }
-.country-feature .cf-cap {
-  font-family: var(--serif); color: var(--gold-bright); font-size: 1.05rem; margin-bottom: 10px;
-  display: flex; align-items: center; justify-content: center; gap: 8px;
-}
-.country-feature a { display: inline-block; max-width: 560px; width: 100%; line-height: 0; }
-.country-feature img {
+/* 国別・国セレクター＋詳細インフォグラフィック */
+#countryNav button { font-size: .92rem; }
+.country-detail { max-width: 720px; margin: 0 auto; animation: fade .3s ease; }
+.cd-head { display: flex; align-items: center; gap: 14px; margin-bottom: 18px; flex-wrap: wrap; }
+.cd-flag { font-size: 2.6rem; line-height: 1; }
+.cd-title .cd-name { font-family: var(--serif); font-size: 1.7rem; color: var(--cream); font-weight: 700; }
+.cd-title .cd-en { font-size: .74rem; letter-spacing: .2em; color: var(--gold); text-transform: uppercase; }
+.cd-head .strength-badge { margin-left: auto; }
+.cd-imglink { display: block; text-align: center; line-height: 0; }
+.cd-img {
   width: 100%; height: auto; border-radius: var(--radius);
   border: 1px solid var(--line); box-shadow: var(--shadow); cursor: zoom-in;
 }
-.country-feature .cf-hint { font-size: .76rem; color: var(--muted); margin-top: 8px; }
+.cd-imglink .cf-hint { display: block; font-size: .76rem; color: var(--muted); margin-top: 8px; line-height: 1.4; }
+.cd-placeholder {
+  text-align: center; padding: 34px 20px; border: 1px dashed var(--line);
+  border-radius: var(--radius); color: var(--text-soft); font-size: .95rem; background: var(--panel);
+}
+.cd-text { margin-top: 18px; }
+.cd-text.no-img { border: none; background: transparent; margin-top: 8px; }
+.cd-text.no-img > summary { display: none; }
+.cd-text.no-img .acc-body { padding: 0; }
+.cd-text .acc-body .field:first-child { margin-top: 4px; }
 
 /* 添付写真をそのまま表示（assets/gauge-size-chart.png があれば表示） */
 .gauge-photo { width: 100%; height: auto; display: block; border-radius: var(--radius); border: 1px solid var(--line-soft); box-shadow: var(--shadow-sm); }

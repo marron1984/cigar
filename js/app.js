@@ -167,36 +167,66 @@ function renderBasics() {
 /* ============================================================
    国・産地別
    ============================================================ */
-function renderCountries() {
-  const grid = $("#countriesGrid");
-  grid.innerHTML = D.countries.map(c => `
-    <div class="card country-card">
-      <div class="flag">${c.flag}</div>
-      <h3>${esc(c.name_ja)}</h3>
-      <div class="en-name">${esc(c.name_en)}</div>
-      <div style="margin-top:8px">${strengthBadge(c.strength)}</div>
+// 各国のインフォグラフィック画像のファイル名（assets/countries/<slug>.png）
+const COUNTRY_SLUG = {
+  "Cuba": "cuba",
+  "Dominican Republic": "dominican-republic",
+  "Nicaragua": "nicaragua",
+  "Honduras": "honduras",
+  "Mexico": "mexico",
+  "Ecuador": "ecuador",
+  "USA (Connecticut)": "usa-connecticut",
+  "Brazil": "brazil",
+  "Cameroon": "cameroon"
+};
 
-      <div class="field"><div class="lbl">風味の特徴</div><div class="val">${esc(c.flavor)}</div></div>
-      <div class="field"><div class="lbl">気候・土壌</div><div class="val">${esc(c.climate)}</div></div>
-      <div class="field"><div class="lbl">主な栽培地域</div>
-        <div class="chips">${c.regions.map(r => `<span class="chip">${esc(r)}</span>`).join("")}</div>
+function countryFields(c) {
+  return `
+    <div class="field"><div class="lbl">風味の特徴</div><div class="val">${esc(c.flavor)}</div></div>
+    <div class="field"><div class="lbl">気候・土壌</div><div class="val">${esc(c.climate)}</div></div>
+    <div class="field"><div class="lbl">主な栽培地域</div>
+      <div class="chips">${c.regions.map(r => `<span class="chip">${esc(r)}</span>`).join("")}</div></div>
+    <div class="field"><div class="lbl">代表的な銘柄</div>${brandChips(c.brands)}</div>
+    <div class="field"><div class="lbl">歴史</div><div class="val">${esc(c.history)}</div></div>
+    <div class="field"><div class="lbl">豆知識</div><div class="val">${esc(c.trivia)}</div></div>`;
+}
+
+function renderCountryDetail(idx) {
+  const c = D.countries[idx];
+  if (!c) return;
+  const slug = COUNTRY_SLUG[c.name_en];
+  const img = slug ? `assets/countries/${slug}.png` : "";
+  // 画像onerror: 画像リンクを消し、テキストを開いてプレースホルダーを表示
+  const onerr = "var d=this.closest('.country-detail');var lk=this.closest('.cd-imglink');if(lk)lk.remove();var t=d.querySelector('.cd-text');if(t){t.open=true;t.classList.add('no-img');}var ph=d.querySelector('.cd-placeholder');if(ph)ph.style.display='block';";
+  $("#countryDetail").innerHTML = `
+    <div class="country-detail">
+      <div class="cd-head">
+        <span class="cd-flag">${c.flag}</span>
+        <div class="cd-title"><div class="cd-name">${esc(c.name_ja)}</div><div class="cd-en">${esc(c.name_en)}</div></div>
+        ${strengthBadge(c.strength)}
       </div>
-      <div class="field"><div class="lbl">代表的な銘柄</div>${brandChips(c.brands)}</div>
-      <div class="field"><div class="lbl">歴史</div><div class="val">${esc(c.history)}</div></div>
-      <div class="field"><div class="lbl">豆知識</div><div class="val">${esc(c.trivia)}</div></div>
-    </div>`).join("");
-
-  // キューバの詳細インフォグラフィックを国別ページ先頭に掲載（画像が無ければ自動で非表示）
-  const cubaFeature = `
-    <div class="country-feature" id="cubaFeature">
-      <div class="cf-cap">🇨🇺 キューバ — 詳細インフォグラフィック</div>
-      <a href="assets/cuba.png" target="_blank" rel="noopener">
-        <img src="assets/cuba.png" alt="キューバ 葉巻ガイド インフォグラフィック"
-             onerror="var f=document.getElementById('cubaFeature');if(f)f.remove();">
-      </a>
-      <div class="cf-hint">画像をタップすると拡大表示できます</div>
+      ${img ? `<a class="cd-imglink" href="${img}" target="_blank" rel="noopener">
+        <img class="cd-img" src="${img}" alt="${esc(c.name_ja)} 葉巻インフォグラフィック" onerror="${onerr}">
+        <span class="cf-hint">画像をタップで拡大</span></a>` : ""}
+      <div class="cd-placeholder" style="display:none">🖼️ <b>${esc(c.name_ja)}</b> のインフォグラフィックは準備中です。下のテキスト情報をご覧ください。</div>
+      <details class="acc cd-text"><summary>📄 テキストで詳しく見る</summary>
+        <div class="acc-body">${countryFields(c)}</div>
+      </details>
     </div>`;
-  grid.insertAdjacentHTML("beforebegin", cubaFeature);
+}
+
+function renderCountries() {
+  $("#countryNav").innerHTML = D.countries.map((c, i) =>
+    `<button data-country="${i}"${i === 0 ? ' class="active"' : ''}>${c.flag} ${esc(c.name_ja)}</button>`).join("");
+  $("#countryNav").addEventListener("click", (e) => {
+    const b = e.target.closest("[data-country]");
+    if (!b) return;
+    $$("#countryNav button").forEach(x => x.classList.remove("active"));
+    b.classList.add("active");
+    renderCountryDetail(Number(b.dataset.country));
+    $("#countryDetail").scrollIntoView({ behavior: "smooth", block: "nearest" });
+  });
+  renderCountryDetail(0);
 }
 
 /* ============================================================
