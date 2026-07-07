@@ -785,6 +785,12 @@ table.ref { min-width: 480px; }
 /* 添付写真をそのまま表示（assets/gauge-size-chart.png があれば表示） */
 .gauge-photo { width: 100%; height: auto; display: block; border-radius: var(--radius); border: 1px solid var(--line-soft); box-shadow: var(--shadow-sm); }
 
+/* 基礎知識：構造・吸い方のビジュアルガイド（assets/anatomy-guide.png） */
+.guide-photo {
+  width: 100%; max-width: 640px; height: auto; display: block; margin: 0 auto;
+  border-radius: var(--radius); border: 1px solid var(--line); box-shadow: var(--shadow); cursor: zoom-in;
+}
+
 /* ゲージ（太さ）ビジュアル一覧 */
 .gauge-figure {
   background: linear-gradient(180deg, var(--panel), var(--bg-2));

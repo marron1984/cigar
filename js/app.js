@@ -69,7 +69,7 @@ document.addEventListener("keydown", (e) => {
 
 /* 国別など大きな画像は、画面内に収まるライトボックスで表示（新規タブを開かない） */
 document.addEventListener("click", (e) => {
-  const im = e.target.closest(".cd-img, .country-overview img, #countryOthers img, .gauge-photo");
+  const im = e.target.closest(".cd-img, .country-overview img, #countryOthers img, .gauge-photo, .guide-photo");
   if (im && im.src) {
     e.preventDefault();
     const lb = $("#lightbox"), lbi = $("#lightboxImg");
@@ -133,6 +133,12 @@ function renderBasics() {
     <div class="kb-block">
       <h3>葉巻とは</h3>
       <div class="prose"><p>${esc(D.whatIsCigar)}</p></div>
+    </div>
+
+    <div class="kb-block">
+      <img class="guide-photo" src="assets/anatomy-guide.png"
+           alt="葉巻の構造（アナトミー）と吸い方 ビジュアルガイド"
+           onerror="this.closest('.kb-block').remove()">
     </div>
 
     <div class="kb-block">
