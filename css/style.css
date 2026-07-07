@@ -73,6 +73,11 @@ a:hover { text-decoration: underline; }
   user-select: none;
 }
 .brand .mark { font-size: 1.5rem; }
+.brand-logo { width: 42px; height: 42px; border-radius: 9px; object-fit: cover; flex: 0 0 auto; box-shadow: 0 2px 8px rgba(0,0,0,.35); }
+.hero-logo {
+  width: min(180px, 46vw); height: auto; border-radius: 18px; margin: 0 auto 18px;
+  display: block; box-shadow: var(--shadow); border: 1px solid var(--line-soft);
+}
 .brand .title {
   font-size: 1.32rem;
   font-weight: 700;
@@ -406,6 +411,35 @@ td .ve { font-size: .74rem; color: var(--muted); letter-spacing: .08em; }
   background: var(--panel); border:1px solid var(--line-soft); padding: 6px 14px; border-radius: 999px;
 }
 
+/* 記録者・モード表示 */
+.note-topbar { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; margin: 6px 0 14px; }
+.note-author { display: flex; align-items: center; gap: 10px; }
+.note-author label { font-size: .82rem; color: var(--gold); letter-spacing: .06em; }
+.note-author input {
+  padding: 9px 14px; border-radius: 999px; border: 1px solid var(--line);
+  background: var(--panel); color: var(--text); font-family: var(--sans); font-size: .92rem; min-width: 180px;
+}
+.note-author input:focus { outline: none; border-color: var(--gold); }
+.note-mode { margin-left: auto; font-size: .76rem; padding: 5px 12px; border-radius: 999px; border: 1px solid var(--line-soft); color: var(--muted); }
+.note-mode.cloud { color: var(--leaf); border-color: var(--leaf); background: rgba(124,138,78,.12); }
+
+.btn-lg { padding: 13px 26px; font-size: 1rem; }
+
+/* フローティング記録ボタン */
+.note-fab {
+  position: fixed; right: 22px; bottom: 26px; z-index: 60;
+  width: 60px; height: 60px; border-radius: 50%; border: none;
+  background: linear-gradient(180deg, var(--gold-bright), var(--gold));
+  color: #1a130d; font-size: 2rem; font-weight: 700; cursor: pointer;
+  box-shadow: 0 6px 20px rgba(0,0,0,.45); line-height: 1;
+  display: grid; place-items: center; /* 親(#view-note)が非表示のときは一緒に隠れる */
+  transition: transform .15s ease, filter .15s ease;
+}
+.note-fab:hover { transform: scale(1.06); filter: brightness(1.05); }
+
+.e-author { font-size: .74rem; color: var(--gold); margin-top: 2px; }
+.e-author::before { content: "✍ "; opacity: .8; }
+
 .note-search {
   width: 100%; padding: 11px 16px; border-radius: 999px;
   background: var(--panel); border: 1px solid var(--line-soft); color: var(--text);
@@ -447,7 +481,15 @@ td .ve { font-size: .74rem; color: var(--muted); letter-spacing: .08em; }
   border: 1px solid var(--line); border-radius: var(--radius);
   width: 100%; max-width: 560px; padding: 28px; box-shadow: var(--shadow);
 }
-.modal h3 { font-family: var(--serif); font-size: 1.5rem; color: var(--cream); margin-bottom: 18px; }
+.modal { display: flex; flex-direction: column; max-height: calc(100vh - 80px); padding: 0; overflow: hidden; }
+.modal-head { display: flex; align-items: center; justify-content: space-between; padding: 20px 24px 12px; border-bottom: 1px solid var(--line-soft); }
+.modal-x { background: none; border: none; color: var(--muted); font-size: 1.8rem; line-height: 1; cursor: pointer; padding: 0 4px; }
+.modal-x:hover { color: var(--cream); }
+.modal-body { padding: 18px 24px 8px; overflow-y: auto; }
+.modal h3 { font-family: var(--serif); font-size: 1.4rem; color: var(--cream); }
+.modal-more { margin-top: 8px; }
+.modal-more > summary { font-size: .95rem; color: var(--gold-bright); }
+.modal-more .acc-body { padding: 6px 2px 2px; }
 .form-row { margin-bottom: 15px; }
 .form-row label { display: block; font-size: .8rem; letter-spacing: .08em; color: var(--gold); margin-bottom: 5px; text-transform: uppercase; }
 .form-row input, .form-row textarea, .form-row select {
@@ -461,7 +503,8 @@ td .ve { font-size: .74rem; color: var(--muted); letter-spacing: .08em; }
 .rating-input { display: flex; gap: 6px; font-size: 1.7rem; cursor: pointer; }
 .rating-input .star { color: var(--line); transition: color .12s; }
 .rating-input .star.on { color: var(--gold-bright); }
-.modal-actions { display: flex; gap: 10px; justify-content: flex-end; margin-top: 22px; }
+.modal-actions { display: flex; gap: 10px; justify-content: flex-end; padding: 14px 24px; border-top: 1px solid var(--line-soft); background: var(--panel-2); }
+.rating-input { font-size: 2rem; }
 
 /* 写真アップロード（モーダル内） */
 .photo-uploader { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }

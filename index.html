@@ -6,7 +6,8 @@
   <title>葉巻大辞典 — Cigar Encyclopedia & Note</title>
   <meta name="description" content="葉巻（シガー）の基礎知識・国別・太さ別・価格別・喫煙具の総合事典と、あなただけの喫煙記録ノート。">
   <link rel="stylesheet" href="css/style.css">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚬</text></svg>">
+  <link rel="icon" type="image/png" href="assets/logo.png">
+  <link rel="apple-touch-icon" href="assets/logo.png">
 </head>
 <body>
 
@@ -14,7 +15,7 @@
   <header class="site-header">
     <div class="nav-inner">
       <div class="brand" data-view="home">
-        <span class="mark">🍂</span>
+        <img class="brand-logo" src="assets/logo.png" alt="葉巻大辞典">
         <div>
           <div class="title">葉巻大辞典</div>
           <div class="sub">Cigar Encyclopedia</div>
@@ -43,6 +44,7 @@
     <!-- ===== HOME ===== -->
     <section class="view" id="view-home">
       <div class="hero">
+        <img class="hero-logo" src="assets/logo.png" alt="葉巻大辞典 ロゴ">
         <div class="kicker">Since the Maya · Aged for the connoisseur</div>
         <h1>葉巻大辞典</h1>
         <div class="en">The Cigar Encyclopedia &amp; Smoking Note</div>
@@ -193,11 +195,19 @@
       <div class="section-head">
         <div class="eyebrow">My Cigar Journal</div>
         <h2>記録ノート</h2>
-        <p>吸った葉巻を記録して、自分だけの一冊に。銘柄・産地・サイズ・価格・喫煙場所・評価・感想・写真を残せます。データはこのブラウザに保存されます。</p>
+        <p>吸った葉巻を記録して一冊に。銘柄・産地・サイズ・価格・喫煙場所・評価・感想・写真を残せます。</p>
+      </div>
+
+      <div class="note-topbar">
+        <div class="note-author">
+          <label for="authorName">記録者</label>
+          <input type="text" id="authorName" placeholder="お名前（例：山田）" maxlength="20" autocomplete="off">
+        </div>
+        <span class="note-mode" id="noteMode"></span>
       </div>
 
       <div class="note-toolbar">
-        <button class="btn btn-primary" id="btnNewEntry">＋ 新しく記録する</button>
+        <button class="btn btn-primary btn-lg" id="btnNewEntry">＋ 一本を記録する</button>
         <button class="btn btn-ghost btn-sm" id="btnExport">エクスポート</button>
         <button class="btn btn-ghost btn-sm" id="btnImport">インポート</button>
         <input type="file" id="importFile" accept="application/json" hidden>
@@ -206,115 +216,132 @@
 
       <div class="note-stats" id="noteStats"></div>
 
-      <input type="text" class="note-search" id="noteSearch" placeholder="🔍 銘柄・産地・喫煙場所・感想で検索…">
+      <input type="text" class="note-search" id="noteSearch" placeholder="🔍 銘柄・産地・喫煙場所・記録者・感想で検索…">
 
       <div id="entriesArea"></div>
+
+      <button class="note-fab" id="noteFab" aria-label="記録する" title="一本を記録する">＋</button>
     </section>
 
   </main>
 
   <footer class="site-footer">
     <div>🍂 葉巻大辞典 — Cigar Encyclopedia &amp; Note</div>
-    <div class="disc">掲載の価格・仕様は目安です。銘柄や販売店により異なります。喫煙は成人（20歳以上）のみ。喫煙は健康を害するおそれがあります。記録データはお使いのブラウザ内（localStorage）にのみ保存され、外部には送信されません。</div>
+    <div class="disc">掲載の価格・仕様は目安です。銘柄や販売店により異なります。喫煙は成人（20歳以上）のみ。喫煙は健康を害するおそれがあります。記録データは通常はお使いのブラウザ内（localStorage）に保存されます。共有モード（クラウド設定）を有効にした場合のみ、設定した共有データベースに保存され複数人で閲覧できます。</div>
   </footer>
 
   <!-- ===== Modal for note entry ===== -->
   <div class="modal-overlay" id="entryModal">
     <div class="modal">
-      <h3 id="modalTitle">葉巻を記録する</h3>
+      <div class="modal-head">
+        <h3 id="modalTitle">葉巻を記録する</h3>
+        <button type="button" class="modal-x" id="btnCancelX" aria-label="閉じる">×</button>
+      </div>
       <form id="entryForm">
         <input type="hidden" id="entryId">
-        <div class="form-row">
-          <label for="fName">銘柄名 <span style="color:var(--ember)">*</span></label>
-          <input type="text" id="fName" required placeholder="例：モンテクリスト No.4">
-        </div>
-        <div class="form-two">
+        <div class="modal-body">
+          <!-- 必須・かんたん入力 -->
           <div class="form-row">
-            <label for="fBrand">ブランド</label>
-            <select id="fBrand"></select>
-            <input type="text" id="fBrandOther" placeholder="ブランド名を入力…" style="display:none;margin-top:8px">
+            <label for="fName">銘柄名 <span style="color:var(--ember)">*</span></label>
+            <input type="text" id="fName" required placeholder="例：モンテクリスト No.4" autocomplete="off">
           </div>
-          <div class="form-row">
-            <label for="fCountry">産地</label>
-            <select id="fCountry"></select>
-          </div>
-        </div>
-        <div class="form-two">
-          <div class="form-row">
-            <label for="fVitola">サイズ（ビトラ）</label>
-            <select id="fVitola"></select>
-          </div>
-          <div class="form-row">
-            <label for="fStrength">強さ</label>
-            <select id="fStrength">
-              <option value="">—</option>
-              <option>マイルド</option>
-              <option>ミディアム</option>
-              <option>フル</option>
-            </select>
-          </div>
-        </div>
-        <div class="form-two">
-          <div class="form-row">
-            <label for="fDate">喫煙日</label>
-            <input type="date" id="fDate">
+          <div class="form-two">
+            <div class="form-row">
+              <label for="fBrand">ブランド</label>
+              <select id="fBrand"></select>
+              <input type="text" id="fBrandOther" placeholder="ブランド名を入力…" style="display:none;margin-top:8px">
+            </div>
+            <div class="form-row">
+              <label>評価</label>
+              <div class="rating-input" id="ratingInput">
+                <span class="star" data-v="1">★</span>
+                <span class="star" data-v="2">★</span>
+                <span class="star" data-v="3">★</span>
+                <span class="star" data-v="4">★</span>
+                <span class="star" data-v="5">★</span>
+              </div>
+              <input type="hidden" id="fRating" value="0">
+            </div>
           </div>
           <div class="form-row">
-            <label for="fPrice">価格（円）</label>
-            <input type="number" id="fPrice" min="0" placeholder="例：2500">
+            <label for="fNote">感想・テイスティングメモ</label>
+            <textarea id="fNote" placeholder="香り、味わい、ペアリング、その日の気分など自由に…"></textarea>
           </div>
-        </div>
-        <div class="form-row">
-          <label for="fLocation">喫煙場所</label>
-          <input type="text" id="fLocation" list="locationList" placeholder="例：自宅の書斎、〇〇シガーバー、ホテルのテラス…">
-          <datalist id="locationList">
-            <option>自宅</option>
-            <option>自宅（書斎）</option>
-            <option>自宅（ベランダ・庭）</option>
-            <option>シガーバー</option>
-            <option>シガーラウンジ</option>
-            <option>喫煙可能なバー・カフェ</option>
-            <option>ホテル・旅館</option>
-            <option>ホテルのテラス</option>
-            <option>ゴルフ場</option>
-            <option>屋外・公園</option>
-            <option>キャンプ・アウトドア</option>
-            <option>旅行先</option>
-            <option>友人宅</option>
-            <option>クラブ・会員制ラウンジ</option>
-            <option>喫煙所</option>
-            <option>車内</option>
-          </datalist>
-        </div>
-        <div class="form-row">
-          <label>評価</label>
-          <div class="rating-input" id="ratingInput">
-            <span class="star" data-v="1">★</span>
-            <span class="star" data-v="2">★</span>
-            <span class="star" data-v="3">★</span>
-            <span class="star" data-v="4">★</span>
-            <span class="star" data-v="5">★</span>
+          <div class="form-row">
+            <label>写真（バンド・本体など）</label>
+            <div class="photo-uploader">
+              <div class="photo-previews" id="photoPreviews"></div>
+              <label class="btn btn-ghost btn-sm photo-add-btn">
+                ＋ 写真を追加
+                <input type="file" id="fPhotoInput" accept="image/*" multiple hidden>
+              </label>
+            </div>
+            <div class="photo-hint">バンドや本体の写真（最大6枚）。</div>
           </div>
-          <input type="hidden" id="fRating" value="0">
-        </div>
-        <div class="form-row">
-          <label>写真（バンド・本体など）</label>
-          <div class="photo-uploader">
-            <div class="photo-previews" id="photoPreviews"></div>
-            <label class="btn btn-ghost btn-sm photo-add-btn">
-              ＋ 写真を追加
-              <input type="file" id="fPhotoInput" accept="image/*" multiple hidden>
-            </label>
-          </div>
-          <div class="photo-hint">バンドや本体の写真を追加できます（最大6枚・端末内に保存され外部送信はされません）。</div>
-        </div>
-        <div class="form-row">
-          <label for="fNote">感想・テイスティングメモ</label>
-          <textarea id="fNote" placeholder="香り、味わい、ペアリング、その日の気分など自由に…"></textarea>
+
+          <!-- 詳細（折りたたみ） -->
+          <details class="acc modal-more">
+            <summary>＋ 詳細を追加（産地・サイズ・価格・喫煙場所）</summary>
+            <div class="acc-body">
+              <div class="form-two">
+                <div class="form-row">
+                  <label for="fCountry">産地</label>
+                  <select id="fCountry"></select>
+                </div>
+                <div class="form-row">
+                  <label for="fVitola">サイズ（ビトラ）</label>
+                  <select id="fVitola"></select>
+                </div>
+              </div>
+              <div class="form-two">
+                <div class="form-row">
+                  <label for="fStrength">強さ</label>
+                  <select id="fStrength">
+                    <option value="">—</option>
+                    <option>マイルド</option>
+                    <option>ミディアム</option>
+                    <option>フル</option>
+                  </select>
+                </div>
+                <div class="form-row">
+                  <label for="fPrice">価格（円）</label>
+                  <input type="number" id="fPrice" min="0" placeholder="例：2500">
+                </div>
+              </div>
+              <div class="form-two">
+                <div class="form-row">
+                  <label for="fDate">喫煙日</label>
+                  <input type="date" id="fDate">
+                </div>
+                <div class="form-row">
+                  <label for="fLocation">喫煙場所</label>
+                  <input type="text" id="fLocation" list="locationList" placeholder="例：自宅、〇〇シガーバー…">
+                  <datalist id="locationList">
+                    <option>自宅</option>
+                    <option>自宅（書斎）</option>
+                    <option>自宅（ベランダ・庭）</option>
+                    <option>シガーバー</option>
+                    <option>シガーラウンジ</option>
+                    <option>喫煙可能なバー・カフェ</option>
+                    <option>ホテル・旅館</option>
+                    <option>ホテルのテラス</option>
+                    <option>ゴルフ場</option>
+                    <option>屋外・公園</option>
+                    <option>キャンプ・アウトドア</option>
+                    <option>旅行先</option>
+                    <option>友人宅</option>
+                    <option>クラブ・会員制ラウンジ</option>
+                    <option>喫煙所</option>
+                    <option>車内</option>
+                  </datalist>
+                </div>
+              </div>
+            </div>
+          </details>
         </div>
         <div class="modal-actions">
           <button type="button" class="btn btn-ghost" id="btnCancel">キャンセル</button>
-          <button type="submit" class="btn btn-primary">保存する</button>
+          <button type="submit" class="btn btn-primary btn-lg">保存する</button>
         </div>
       </form>
     </div>
@@ -330,6 +357,8 @@
   <script src="data/advanced.js"></script>
   <script src="data/phd.js"></script>
   <script src="data/world.js"></script>
+  <script src="js/config.js"></script>
+  <script src="js/cloud.js"></script>
   <script src="js/note.js"></script>
   <script src="js/advanced.js"></script>
   <script src="js/phd.js"></script>

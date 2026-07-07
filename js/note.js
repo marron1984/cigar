@@ -5,6 +5,7 @@
 
 const NOTE = (() => {
   const KEY = "cigar_journal_v1";
+  const AUTHOR_KEY = "cigar_author";
   const q = (s, el = document) => el.querySelector(s);
   const escN = (s) => String(s == null ? "" : s)
     .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")
@@ -14,6 +15,10 @@ const NOTE = (() => {
   let searchTerm = "";
   let currentPhotos = [];       // モーダル編集中の写真（dataURL配列）
   const MAX_PHOTOS = 6;
+  const cloudOn = typeof CLOUD !== "undefined" && CLOUD.enabled;
+
+  function authorName() { try { return localStorage.getItem(AUTHOR_KEY) || ""; } catch (e) { return ""; } }
+  function setAuthorName(v) { try { localStorage.setItem(AUTHOR_KEY, v); } catch (e) {} }
 
   /* ---------- 画像リサイズ（localStorage節約のため縮小・圧縮） ---------- */
   function resizeImage(file, maxDim = 1000, quality = 0.72) {
@@ -44,6 +49,19 @@ const NOTE = (() => {
   function load() {
     try { entries = JSON.parse(localStorage.getItem(KEY)) || []; }
     catch (e) { entries = []; }
+  }
+  // クラウド有効時：共有DBから読み込み、成功したらローカルにもキャッシュ
+  async function loadCloud() {
+    if (!cloudOn) return false;
+    try {
+      const remote = await CLOUD.list();
+      entries = remote;
+      try { localStorage.setItem(KEY, JSON.stringify(entries)); } catch (e) {}
+      return true;
+    } catch (err) {
+      console.warn("クラウド読み込み失敗、ローカルを使用します:", err);
+      return false;
+    }
   }
   function save() {
     try { localStorage.setItem(KEY, JSON.stringify(entries)); return true; }
@@ -220,17 +238,26 @@ const NOTE = (() => {
     };
     if (!data.name) return;
     const backup = entries.slice();   // 保存失敗時のロールバック用
+    let saved;
     if (id) {
       const i = entries.findIndex(x => x.id === id);
-      if (i > -1) entries[i] = { ...entries[i], ...data };
+      if (i > -1) { entries[i] = { ...entries[i], ...data }; saved = entries[i]; }
     } else {
       data.id = uid();
       data.created = Date.now();
+      data.author = authorName();   // 記録者を記録
       entries.unshift(data);
+      saved = data;
     }
     if (!save()) { entries = backup; return; }   // 失敗時は元に戻しモーダルを開いたまま
     closeModal();
     render();
+    // 共有DBへ書き込み（失敗しても手元の記録は残る）
+    if (cloudOn && saved) {
+      CLOUD.upsert(saved).catch(err => {
+        console.warn(err); alert("共有データベースへの保存に失敗しました。手元には保存されています。時間をおいて再度お試しください。");
+      });
+    }
   }
 
   function removeEntry(id) {
@@ -239,6 +266,7 @@ const NOTE = (() => {
     entries = entries.filter(x => x.id !== id);
     save();
     render();
+    if (cloudOn) CLOUD.remove(id).catch(err => { console.warn(err); alert("共有データベースからの削除に失敗しました。時間をおいて再度お試しください。"); });
   }
 
   /* ---------- 統計 ---------- */
@@ -268,7 +296,7 @@ const NOTE = (() => {
     const term = searchTerm.trim().toLowerCase();
     const list = term
       ? entries.filter(e =>
-          [e.name, e.brand, e.country, e.vitola, e.location, e.note]
+          [e.name, e.brand, e.country, e.vitola, e.location, e.author, e.note]
             .some(v => (v || "").toLowerCase().includes(term)))
       : entries;
 
@@ -277,7 +305,7 @@ const NOTE = (() => {
       area.innerHTML = `
         <div class="empty-state">
           <div class="ic">📝</div>
-          <p style="margin-top:10px">まだ記録がありません。<br>「＋ 新しく記録する」から、最初の一本を書き留めましょう。</p>
+          <p style="margin-top:10px">まだ記録がありません。<br>「＋ 一本を記録する」から、最初の一本を書き留めましょう。</p>
         </div>`;
       return;
     }
@@ -292,6 +320,7 @@ const NOTE = (() => {
           <div>
             <h4>${escN(e.name)}</h4>
             ${e.brand ? `<div class="e-brand">${escN(e.brand)}</div>` : ""}
+            ${e.author ? `<div class="e-author">${escN(e.author)}</div>` : ""}
           </div>
           <div class="e-date">${escN(e.date || "")}</div>
         </div>
@@ -348,6 +377,7 @@ const NOTE = (() => {
         entries = entries.filter(e => (seen.has(e.id) ? (e.id = uid(), true) : (seen.add(e.id), true)));
         save();
         render();
+        if (cloudOn) CLOUD.replaceAll(entries).catch(err => { console.warn(err); alert("共有DBへの反映に一部失敗しました。"); });
         alert(`${cleaned.length} 件の記録を読み込みました。`);
       } catch (err) {
         alert("読み込みに失敗しました：" + err.message);
@@ -356,13 +386,37 @@ const NOTE = (() => {
     reader.readAsText(file);
   }
 
+  /* ---------- モード表示・記録者 ---------- */
+  function renderMode() {
+    const el = q("#noteMode");
+    if (!el) return;
+    if (cloudOn) { el.textContent = "☁ 共有モード（みんなで記録）"; el.classList.add("cloud"); }
+    else { el.textContent = "🔒 この端末に保存"; el.classList.remove("cloud"); }
+  }
+
   /* ---------- 初期化 ---------- */
   function init() {
     load(); load.done = true;
+    renderMode();
+
+    // 記録者名
+    const authorInput = q("#authorName");
+    if (authorInput) {
+      authorInput.value = authorName();
+      authorInput.addEventListener("input", (e) => setAuthorName(e.target.value.trim()));
+    }
+    // クラウド有効時は共有DBから最新を取得して再描画
+    if (cloudOn) loadCloud().then(ok => { if (ok) render(); });
 
     q("#btnNewEntry").addEventListener("click", () => openModal(null));
+    q("#noteFab").addEventListener("click", () => openModal(null));
     q("#btnCancel").addEventListener("click", closeModal);
+    q("#btnCancelX").addEventListener("click", closeModal);
     q("#entryForm").addEventListener("submit", submit);
+    // Ctrl/⌘+Enter で保存
+    q("#entryForm").addEventListener("keydown", (e) => {
+      if ((e.ctrlKey || e.metaKey) && e.key === "Enter") { e.preventDefault(); submit(e); }
+    });
     q("#entryModal").addEventListener("click", (e) => {
       if (e.target.id === "entryModal") closeModal();
     });
