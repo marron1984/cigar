@@ -230,7 +230,12 @@ function renderSizes() {
   const gaugeFigure = `
     <div class="kb-block">
       <h3>葉巻の太さの種類（ゲージサイズ）一覧</h3>
-      <div class="gauge-figure">
+      <img class="gauge-photo" src="assets/gauge-size-chart.png"
+           alt="葉巻の太さの種類（ゲージサイズ）一覧"
+           style="display:none"
+           onload="this.style.display='block';var f=document.getElementById('gaugeFallback');if(f)f.style.display='none';"
+           onerror="this.remove()">
+      <div id="gaugeFallback" class="gauge-figure">
         <div class="gf-lead">葉巻の太さは「ゲージ（直径）」で表され、数値が大きいほど太くなります。</div>
         <div class="gauge-scroll"><div class="gauge-track">${cigs}</div></div>
         <div class="gauge-gradients">

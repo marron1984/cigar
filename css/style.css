@@ -682,6 +682,9 @@ table.ref { min-width: 480px; }
 .lex .lx-d { font-size:.85rem; color: var(--text-soft); }
 .lex-search { margin-bottom: 14px; }
 
+/* 添付写真をそのまま表示（assets/gauge-size-chart.png があれば表示） */
+.gauge-photo { width: 100%; height: auto; display: block; border-radius: var(--radius); border: 1px solid var(--line-soft); box-shadow: var(--shadow-sm); }
+
 /* ゲージ（太さ）ビジュアル一覧 */
 .gauge-figure {
   background: linear-gradient(180deg, #241a11, #1a130d);
