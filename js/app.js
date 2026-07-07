@@ -67,6 +67,16 @@ document.addEventListener("keydown", (e) => {
   if (e.key === "Escape") closeNav();
 });
 
+/* 国別など大きな画像は、画面内に収まるライトボックスで表示（新規タブを開かない） */
+document.addEventListener("click", (e) => {
+  const im = e.target.closest(".cd-img, .country-overview img, #countryOthers img, .gauge-photo");
+  if (im && im.src) {
+    e.preventDefault();
+    const lb = $("#lightbox"), lbi = $("#lightboxImg");
+    if (lb && lbi) { lbi.src = im.src; lb.classList.add("open"); }
+  }
+});
+
 /* ============================================================
    ホーム
    ============================================================ */

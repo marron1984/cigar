@@ -198,6 +198,11 @@
         <p>吸った葉巻を記録して一冊に。銘柄・産地・サイズ・価格・喫煙場所・評価・感想・写真を残せます。</p>
       </div>
 
+      <!-- 記入を最優先に：大きな記録ボタンを先頭に -->
+      <button class="btn btn-primary note-add-hero" id="btnNewEntry">
+        <span class="na-plus">＋</span><span class="na-txt">一本を記録する</span>
+      </button>
+
       <div class="note-topbar">
         <div class="note-author">
           <label for="authorName">記録者</label>
@@ -206,17 +211,15 @@
         <span class="note-mode" id="noteMode"></span>
       </div>
 
-      <div class="note-toolbar">
-        <button class="btn btn-primary btn-lg" id="btnNewEntry">＋ 一本を記録する</button>
+      <div class="note-stats" id="noteStats"></div>
+
+      <div class="note-utils">
+        <input type="text" class="note-search" id="noteSearch" placeholder="🔍 銘柄・産地・喫煙場所・記録者・感想で検索…">
+        <span class="count-pill" id="entryCount">0 本</span>
         <button class="btn btn-ghost btn-sm" id="btnExport">エクスポート</button>
         <button class="btn btn-ghost btn-sm" id="btnImport">インポート</button>
         <input type="file" id="importFile" accept="application/json" hidden>
-        <span class="count-pill" id="entryCount">0 本</span>
       </div>
-
-      <div class="note-stats" id="noteStats"></div>
-
-      <input type="text" class="note-search" id="noteSearch" placeholder="🔍 銘柄・産地・喫煙場所・記録者・感想で検索…">
 
       <div id="entriesArea"></div>
 
