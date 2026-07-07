@@ -67,12 +67,13 @@ a:hover { text-decoration: underline; }
 }
 .brand {
   display: flex;
-  align-items: baseline;
-  gap: 10px;
+  align-items: center;
+  gap: 11px;
   font-family: var(--serif);
   cursor: pointer;
   user-select: none;
 }
+.brand > div { line-height: 1.15; }
 .brand .mark { font-size: 1.5rem; }
 .brand-logo { width: 42px; height: 42px; border-radius: 9px; object-fit: cover; flex: 0 0 auto; box-shadow: 0 2px 8px rgba(0,0,0,.35); }
 .hero-logo {
