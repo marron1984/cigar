@@ -682,6 +682,63 @@ table.ref { min-width: 480px; }
 .lex .lx-d { font-size:.85rem; color: var(--text-soft); }
 .lex-search { margin-bottom: 14px; }
 
+/* ゲージ（太さ）ビジュアル一覧 */
+.gauge-figure {
+  background: linear-gradient(180deg, #241a11, #1a130d);
+  border: 1px solid var(--line-soft); border-radius: var(--radius);
+  padding: 22px 18px 18px; box-shadow: var(--shadow-sm);
+}
+.gauge-figure .gf-lead { text-align:center; color: var(--text-soft); font-size:.95rem; margin-bottom: 18px; }
+.gauge-scroll { overflow-x: auto; padding-bottom: 6px; }
+.gauge-track { display: flex; align-items: flex-end; justify-content: center; gap: 14px; min-width: 660px; }
+.gauge-col { display: flex; flex-direction: column; align-items: center; flex: 0 0 auto; }
+.cig {
+  position: relative; height: 190px;
+  background: linear-gradient(90deg, #4e2c14 0%, #8a5a30 24%, #b27a44 44%, #8a5330 68%, #40230f 100%);
+  border-radius: 46% 46% 10% 10% / 12% 12% 4% 4%;
+  box-shadow: inset 0 -8px 14px rgba(0,0,0,.4), 0 4px 10px rgba(0,0,0,.35);
+}
+.cig::after { /* フット（火付け側）の断面 */
+  content:""; position:absolute; left:8%; right:8%; bottom:0; height:8px;
+  background: repeating-linear-gradient(90deg,#c9a877 0 2px,#9a7748 2px 4px);
+  border-radius: 0 0 3px 3px; opacity:.75;
+}
+.cig .band {
+  position: absolute; left:-2px; right:-2px; top:52%; height: 22px;
+  background: linear-gradient(180deg, var(--gold-bright), var(--gold) 60%, #9a7a2e);
+  border-top: 1px solid #f2d98c; border-bottom: 1px solid #7c5f22;
+  display: grid; place-items: center;
+}
+.cig .band::before { content:""; width:8px; height:8px; border-radius:50%; background: radial-gradient(circle at 40% 35%, #5b3d12, #2c1e08); }
+.gauge-col .g-num { font-family: var(--serif); font-size: 1.5rem; font-weight:700; color: var(--gold-bright); margin-top: 12px; line-height:1; }
+.gauge-col .g-name { font-size:.82rem; color: var(--cream); margin-top: 5px; }
+.gauge-col .g-mm { font-size:.74rem; color: var(--muted); margin-top: 2px; }
+
+/* 味わい・喫煙時間グラデーション */
+.gauge-gradients { margin-top: 20px; display: grid; gap: 10px; }
+.gg-row { display: grid; grid-template-columns: 92px 1fr; align-items: center; gap: 12px; }
+.gg-row .gg-lbl { font-size:.78rem; color: var(--gold); text-align:right; }
+.gg-bar {
+  position: relative; height: 30px; border-radius: 999px;
+  background: linear-gradient(90deg, rgba(124,138,78,.35), rgba(201,162,75,.35) 50%, rgba(209,102,47,.5));
+  display: flex; align-items: center; justify-content: space-between; padding: 0 14px;
+  border: 1px solid var(--line);
+}
+.gg-bar .l, .gg-bar .r { font-size:.76rem; color: var(--cream); white-space:nowrap; }
+.gg-bar .arrow { position:absolute; left:50%; transform:translateX(-50%); color: var(--gold-bright); font-size:.9rem; }
+
+/* ゲージ早見表＋説明 */
+.gauge-explain { display:grid; grid-template-columns: 300px 1fr; gap:16px; margin-top:20px; }
+.gauge-def { background: var(--panel); border:1px solid var(--line-soft); border-radius: var(--radius-sm); padding:16px; }
+.gauge-def h4 { font-family:var(--serif); color:var(--cream); font-size:1.1rem; margin-bottom:8px; }
+.gauge-def p { font-size:.86rem; color: var(--text-soft); }
+.gauge-def .ring-vis { display:flex; align-items:center; gap:12px; margin-top:12px; }
+.gauge-def .ring-circle { width:56px; height:56px; border-radius:50%; flex:0 0 auto;
+  background: repeating-radial-gradient(circle at 50% 50%, #6b4a28 0 3px, #4e3418 3px 6px);
+  border:2px solid var(--gold); }
+.gauge-def .ring-cap { font-size:.72rem; color: var(--gold); }
+@media (max-width: 720px){ .gauge-explain { grid-template-columns: 1fr; } .gg-row{ grid-template-columns: 70px 1fr; } }
+
 /* 店舗リスト（大阪など）カード */
 .shop-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px,1fr)); gap: 14px; }
 .shop-card {

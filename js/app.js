@@ -199,7 +199,62 @@ function renderSizes() {
       <td>${esc(v.feat)}</td>
     </tr>`).join("");
 
-  $("#sizesContent").innerHTML = `
+  // ゲージ（太さ）ビジュアル一覧
+  const gauges = [
+    { g: 28, name: "パナテラ", mm: "約11mm" },
+    { g: 33, name: "コロナ", mm: "約13mm" },
+    { g: 42, name: "ペティコロナ", mm: "約17mm" },
+    { g: 46, name: "コロナゴルダ", mm: "約18mm" },
+    { g: 50, name: "ロブスト", mm: "約20mm" },
+    { g: 52, name: "トロ", mm: "約21mm" },
+    { g: 54, name: "トロゴルダ", mm: "約21.5mm" },
+    { g: 60, name: "グランロブスト", mm: "約24mm" },
+    { g: 64, name: "ダブルトロ", mm: "約25.4mm" }
+  ];
+  const cigs = gauges.map(x => {
+    const w = Math.round(20 + (x.g - 28) * 1.15); // ゲージに比例した幅(px)
+    return `<div class="gauge-col">
+      <div class="cig" style="width:${w}px"><div class="band"></div></div>
+      <div class="g-num">${x.g}</div>
+      <div class="g-name">${esc(x.name)}</div>
+      <div class="g-mm">${esc(x.mm)}</div>
+    </div>`;
+  }).join("");
+  const refRows = [
+    { g: "28〜33", mm: "約11〜13mm", img: "とても細い", feat: "軽やかで上品、短時間向き" },
+    { g: "40〜46", mm: "約16〜18mm", img: "細め〜中細", feat: "バランスが良く、スタンダード" },
+    { g: "50〜54", mm: "約20〜21.5mm", img: "中太", feat: "味わいと煙量のバランスが良い" },
+    { g: "60〜64", mm: "約24〜25.4mm", img: "太め〜極太", feat: "濃厚で煙量も多く、長時間向き" }
+  ].map(r => `<tr><td style="color:var(--gold-bright)">${r.g}</td><td>${r.mm}</td><td>${r.img}</td><td>${r.feat}</td></tr>`).join("");
+
+  const gaugeFigure = `
+    <div class="kb-block">
+      <h3>葉巻の太さの種類（ゲージサイズ）一覧</h3>
+      <div class="gauge-figure">
+        <div class="gf-lead">葉巻の太さは「ゲージ（直径）」で表され、数値が大きいほど太くなります。</div>
+        <div class="gauge-scroll"><div class="gauge-track">${cigs}</div></div>
+        <div class="gauge-gradients">
+          <div class="gg-row"><div class="gg-lbl">味わい<br>（目安）</div>
+            <div class="gg-bar"><span class="l">軽やか・ライト</span><span class="arrow">→</span><span class="r">濃厚・フルボディ</span></div></div>
+          <div class="gg-row"><div class="gg-lbl">喫煙時間<br>（目安）</div>
+            <div class="gg-bar"><span class="l">短い（20〜30分）</span><span class="arrow">→</span><span class="r">長い（60〜120分）</span></div></div>
+        </div>
+        <div class="gauge-explain">
+          <div class="gauge-def">
+            <h4>ゲージ（Ring Gauge）とは？</h4>
+            <p>葉巻の直径を1/64インチ単位で表したもの。ゲージが大きいほど太く、煙の量や味わいの濃さ、喫煙時間に影響します。</p>
+            <div class="ring-vis"><div class="ring-circle"></div><div class="ring-cap">直径（ゲージ）<br>＝1/64インチ単位</div></div>
+          </div>
+          <div class="table-wrap">
+            <table class="ref"><thead><tr><th>ゲージ</th><th>直径(mm)</th><th>太さのイメージ</th><th>特徴</th></tr></thead>
+            <tbody>${refRows}</tbody></table>
+          </div>
+        </div>
+        <div class="callout" style="margin-top:16px">※葉巻の長さ（リングゲージ以外）や形状（パレホ、トーピード、チャーチル等）によっても、喫煙体験は異なります。</div>
+      </div>
+    </div>`;
+
+  $("#sizesContent").innerHTML = gaugeFigure + `
     <div class="kb-block">
       <h3>リングゲージとは</h3>
       <div class="prose"><p>${esc(D.ringGaugeIntro)}</p></div>
