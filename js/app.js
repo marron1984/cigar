@@ -25,7 +25,7 @@ function brandChips(brands, extraClass = "brand") {
    ============================================================ */
 const views = {
   home: "view-home", basics: "view-basics", countries: "view-countries",
-  sizes: "view-sizes", prices: "view-prices", tools: "view-tools",
+  sizes: "view-sizes", prices: "view-prices", tools: "view-tools", humidor: "view-humidor",
   advanced: "view-advanced", phd: "view-phd", world: "view-world", note: "view-note"
 };
 function showView(name) {
@@ -86,6 +86,7 @@ const HOME_CARDS = [
   { view: "sizes", ic: "📏", h: "太さ・サイズ別", p: "リングゲージとビトラ。定番サイズを一覧で。" },
   { view: "prices", ic: "💰", h: "価格帯別", p: "入門からハイエンドまで、価格別の選び方。" },
   { view: "tools", ic: "🧰", h: "喫煙具・保管", p: "カッター、ライター、ヒュミドールの選び方。" },
+  { view: "humidor", ic: "📦", h: "ヒュミドール大全", p: "歴史・メーカー・使い方・種類・価格を5つの観点で徹底調査。" },
   { view: "advanced", ic: "🎓", h: "上級編（オタクの世界）", p: "品種・発酵・キューバ通・名門・喫煙術・ペアリング・熟成科学。" },
   { view: "phd", ic: "🔬", h: "博士編（学術）", p: "化学・植物学・官能評価・銘柄DB・産業経済・健康科学。" },
   { view: "world", ic: "🌐", h: "世界編（総覧）", p: "年表・文化・愛好家・日本・実践レビュー・投資・用語大全・トラベル・FAQ。" }
@@ -424,6 +425,7 @@ function init() {
   ADV.init();
   PHD.init();
   WORLD.init();
+  HUMIDOR.init();
   NOTE.init();
   const start = (location.hash || "#home").slice(1);
   showView(start);

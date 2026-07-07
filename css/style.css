@@ -250,7 +250,7 @@ main { max-width: 1180px; margin: 0 auto; padding: 0 20px 80px; }
 /* ---------- Home cards ---------- */
 .home-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
   gap: 18px;
   margin-top: 40px;
 }
