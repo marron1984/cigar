@@ -35,7 +35,7 @@ const WORLD = (() => {
   function culture() {
     const fes = `<div class="grid grid-2">${W.festivals.map(f => `
       <div class="card"><h4 style="font-family:var(--serif);color:var(--cream);font-size:1.15rem">${e(f.name)}</h4>
-        <div class="pw" style="font-size:.8rem;color:var(--gold-bright);margin:4px 0">📍 ${e(f.place)} ・ ${e(f.when)}</div>
+        <div class="pw" style="font-size:.8rem;color:var(--gold-bright);margin:4px 0">${e(f.place)} ・ ${e(f.when)}</div>
         <div class="val" style="font-size:.9rem;color:var(--text-soft)">${e(f.desc)}</div></div>`).join("")}</div>`;
     const ven = `<div class="grid grid-2">${W.venues.map(v => `
       <div class="card"><h4 style="font-family:var(--serif);color:var(--cream);font-size:1.12rem">${e(v.name)}</h4>
@@ -56,7 +56,7 @@ const WORLD = (() => {
         <div class="pn">${e(s.name)}</div>
         <div class="pf">${e(s.field)} ・ ${e(s.era)}</div>
         <div class="ps">${e(s.story)}</div>
-        ${s.favorite ? `<div class="pfav">🚬 好んだ銘柄：${e(s.favorite)}</div>` : ""}
+        ${s.favorite ? `<div class="pfav">好んだ銘柄：${e(s.favorite)}</div>` : ""}
       </div>`).join("")}</div>`;
     return block("歴史上・現代の著名な葉巻愛好家", cards, `${W.smokers.length}名`);
   }
@@ -65,7 +65,7 @@ const WORLD = (() => {
   function shopCard(s) {
     return `<div class="shop-card">
       <div class="sh-name">${e(s.name)}</div>
-      <div class="sh-meta"><span class="sh-type">${e(s.type)}</span><span class="sh-area">📍 ${e(s.area)}</span></div>
+      <div class="sh-meta"><span class="sh-type">${e(s.type)}</span><span class="sh-area">${e(s.area)}</span></div>
       <div class="sh-desc">${e(s.desc)}</div>
       ${s.note ? `<div class="sh-note">${e(s.note)}</div>` : ""}
     </div>`;
@@ -76,9 +76,9 @@ const WORLD = (() => {
     const bars = J.osakaShops.filter(s => !/専門店|百貨店/.test(s.type));
     const osaka = `
       <div class="callout warn">掲載の店舗情報は公開情報をもとにした<b>目安</b>です。営業状況・品揃え・喫煙可否・持込ルールは変わりやすいため、来店前に各店の公式・電話でご確認ください（「※要確認」付きは特に）。</div>
-      <h4 style="font-family:var(--serif);color:var(--cream);font-size:1.15rem;margin:18px 0 10px">🛒 葉巻を買える専門店・売り場<span class="data-count">${buys.length}店</span></h4>
+      <h4 style="font-family:var(--serif);color:var(--cream);font-size:1.15rem;margin:18px 0 10px">葉巻を買える専門店・売り場<span class="data-count">${buys.length}店</span></h4>
       <div class="shop-grid">${buys.map(shopCard).join("")}</div>
-      <h4 style="font-family:var(--serif);color:var(--cream);font-size:1.15rem;margin:22px 0 10px">🥃 シガーバー・ラウンジ（店内で購入・喫煙）<span class="data-count">${bars.length}軒</span></h4>
+      <h4 style="font-family:var(--serif);color:var(--cream);font-size:1.15rem;margin:22px 0 10px">シガーバー・ラウンジ（店内で購入・喫煙）<span class="data-count">${bars.length}軒</span></h4>
       <div class="shop-grid">${bars.map(shopCard).join("")}</div>
       <div class="kb-block" style="margin-top:18px"><h3>大阪で葉巻を探すコツ</h3><div class="prose">${paras(J.osakaTips)}</div></div>`;
     return block("日本の葉巻の歴史", `<div class="prose">${paras(J.history)}</div>`)
@@ -95,7 +95,7 @@ const WORLD = (() => {
     let searchWired = false;
     const cards = W.reviews.map(r => reviewCard(r)).join("");
     const html = block("実践テイスティングノート集",
-      `<input type="text" class="note-search lex-search" id="reviewSearch" placeholder="🔍 銘柄・産地・強さ・風味で検索…">
+      `<input type="text" class="note-search lex-search" id="reviewSearch" placeholder="銘柄・産地・強さ・風味で検索…">
        <div id="reviewList" class="grid grid-2">${cards}</div>`, `${W.reviews.length}本`);
     return html;
   }
@@ -109,7 +109,7 @@ const WORLD = (() => {
         <div><h4>${e(r.cigar)}</h4><div class="rv-sub">${e(r.origin)} ・ ${e(r.size)} ・ ${e(r.wrapper)}</div></div>
         ${strengthBadge(r.strength)}
       </div>
-      <div class="rv-chips"><span class="chip">💴 ${e(r.price)}</span></div>
+      <div class="rv-chips"><span class="chip">${e(r.price)}</span></div>
       <div class="rv-thirds">
         <div class="rv-third"><span class="lb">序盤</span><span class="tx">${e(r.first)}</span></div>
         <div class="rv-third"><span class="lb">中盤</span><span class="tx">${e(r.middle)}</span></div>
@@ -165,7 +165,7 @@ const WORLD = (() => {
         <div class="lx-d">${e(l.desc)}</div>
       </div>`).join("");
     return block("多言語・葉巻用語大全（西 / 英 / 日）",
-      `<input type="text" class="note-search lex-search" id="lexSearch" placeholder="🔍 用語を検索（日本語・スペイン語・英語）…">
+      `<input type="text" class="note-search lex-search" id="lexSearch" placeholder="用語を検索（日本語・スペイン語・英語）…">
        <div id="lexList" class="lex-grid">${items}</div>`, `${W.lexicon.length}語`);
   }
 

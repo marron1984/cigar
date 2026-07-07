@@ -322,7 +322,7 @@ const NOTE = (() => {
     if (cloudOn && !authorName()) {
       area.innerHTML = `
         <div class="empty-state">
-          <div class="ic">🙋</div>
+          
           <p style="margin-top:10px">共有モードです。上の「記録者」にお名前を入力すると、<br><b>あなたの記録だけ</b>が表示されます。</p>
         </div>`;
       return;
@@ -330,13 +330,13 @@ const NOTE = (() => {
     if (!entries.length) {
       area.innerHTML = `
         <div class="empty-state">
-          <div class="ic">📝</div>
+          
           <p style="margin-top:10px">まだ記録がありません。<br>「＋ 一本を記録する」から、最初の一本を書き留めましょう。</p>
         </div>`;
       return;
     }
     if (!list.length) {
-      area.innerHTML = `<div class="empty-state"><div class="ic">🔍</div><p style="margin-top:10px">「${escN(searchTerm)}」に一致する記録は見つかりませんでした。</p></div>`;
+      area.innerHTML = `<div class="empty-state"><p style="margin-top:10px">「${escN(searchTerm)}」に一致する記録は見つかりませんでした。</p></div>`;
       return;
     }
 
@@ -355,7 +355,7 @@ const NOTE = (() => {
           ${e.vitola ? `<span class="chip">${escN(e.vitola)}</span>` : ""}
           ${e.strength ? `<span class="chip">${escN(e.strength)}</span>` : ""}
           ${e.price ? `<span class="chip">¥${Number(e.price).toLocaleString()}</span>` : ""}
-          ${e.location ? `<span class="chip">📍 ${escN(e.location)}</span>` : ""}
+          ${e.location ? `<span class="chip">${escN(e.location)}</span>` : ""}
         </div>
         ${e.rating ? stars(e.rating) : ""}
         ${e.note ? `<div class="e-note">${escN(e.note)}</div>` : ""}
@@ -416,8 +416,8 @@ const NOTE = (() => {
   function renderMode() {
     const el = q("#noteMode");
     if (!el) return;
-    if (cloudOn) { el.textContent = "☁ 共有DB（自分の記録だけ表示）"; el.classList.add("cloud"); }
-    else { el.textContent = "🔒 この端末に保存"; el.classList.remove("cloud"); }
+    if (cloudOn) { el.textContent = "共有DB（自分の記録だけ表示）"; el.classList.add("cloud"); }
+    else { el.textContent = "この端末に保存"; el.classList.remove("cloud"); }
   }
 
   /* ---------- 初期化 ---------- */

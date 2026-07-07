@@ -51,7 +51,7 @@ const PHD = (() => {
       </div>`).join("")}</div>`;
 
     const diseases = B.diseases.map(d => `
-      <details class="acc"><summary>🦠 ${e(d.ja)} — ${e(d.en)}</summary>
+      <details class="acc"><summary>${e(d.ja)} — ${e(d.en)}</summary>
       <div class="acc-body">
         <div class="spec-row"><div class="k">病原<span class="en">Pathogen</span></div><div class="v">${e(d.pathogen)}</div></div>
         <div class="spec-row"><div class="k">被害<span class="en">Impact</span></div><div class="v">${e(d.impact)}</div></div>
@@ -121,7 +121,7 @@ const PHD = (() => {
       </tr>`).join("")}</tbody></table></div>`;
 
     const fac = DB.factories.map(f => `
-      <details class="acc"><summary>🏭 ${e(f.name)} <span class="tag">${e(f.en)}</span></summary>
+      <details class="acc"><summary>${e(f.name)} <span class="tag">${e(f.en)}</span></summary>
       <div class="acc-body"><p>${e(f.note)}</p></div></details>`).join("");
 
     return block("キューバ全マルカ（ブランド）一覧", marcas, `${DB.cubanMarcas.length}銘柄`)
@@ -151,7 +151,7 @@ const PHD = (() => {
   /* ---------- 6. 健康と法規制 ---------- */
   function health() {
     const H = P.health;
-    return `<div class="health-box"><div class="hb-h">⚕️ はじめに — 中立・誠実な健康情報</div>
+    return `<div class="health-box"><div class="hb-h">はじめに — 中立・誠実な健康情報</div>
         <div class="prose" style="font-size:.9rem">本項は葉巻文化の理解のため、公的機関（WHO・CDC・NCI・FDA等）の科学的コンセンサスに忠実に健康リスクをまとめたものです。喫煙を推奨するものではありません。喫煙は成人（20歳以上）のみ。</div></div>`
       + block("健康科学 — リスクの正確な理解", `<div class="prose">${paras(H.science)}</div>`)
       + block("ニコチンの薬理と『ニコチン酔い』", `<div class="prose">${paras(H.nicotine)}</div>`)

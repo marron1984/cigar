@@ -52,10 +52,10 @@ const ADV = (() => {
         <div class="tl-h">${e(s.step)}</div>
         <div class="tl-en">${e(s.en)}</div>
         <div class="tl-d">${e(s.what)}</div>
-        <div class="tl-chem">🧪 ${e(s.chem)}</div>
+        <div class="tl-chem">${e(s.chem)}</div>
       </div>`).join("")}</div>`;
 
-    return block("製造の全工程 — 葉から一本へ", `<p class="prose" style="margin-bottom:12px">収穫から出荷まで、各工程で“何が起き、化学的に何が変わるか”。🧪は化学変化。</p>${timeline}`)
+    return block("製造の全工程 — 葉から一本へ", `<p class="prose" style="margin-bottom:12px">収穫から出荷まで、各工程で“何が起き、化学的に何が変わるか”。</p>${timeline}`)
       + block("巻きの技法（バンチング＆キャップ）", `<div class="prose">${paras(A.rollingTechniques)}</div>`)
       + block("フィラー構造の格", `<div class="prose">${paras(A.fillerTypes)}</div>`)
       + block("ボックスプレス vs ラウンド", `<div class="prose">${paras(A.boxPress)}</div>`)
@@ -76,7 +76,7 @@ const ADV = (() => {
       <div class="card"><h4 style="font-family:var(--serif);color:var(--cream);font-size:1.15rem">${e(s.ja)} <span style="font-size:.7rem;color:var(--gold);letter-spacing:.1em;border:1px solid var(--line);padding:2px 8px;border-radius:999px;margin-left:4px">${e(s.abbr)}</span></h4>
       <div class="val" style="font-size:.9rem;color:var(--text-soft);margin-top:8px">${e(s.desc)}</div></div>`).join("")}</div>`;
 
-    const fakes = A.spottingFakes.map(f => acc(`🔍 ${f.p}`, `<p>${e(f.h)}</p>`)).join("");
+    const fakes = A.spottingFakes.map(f => acc(`${f.p}`, `<p>${e(f.h)}</p>`)).join("");
 
     const legend = `<div class="grid grid-2">${A.legendaryCuban.map(l => `
       <div class="card"><h4 style="font-family:var(--serif);color:var(--gold-bright);font-size:1.2rem">${e(l.name)}</h4>
@@ -119,7 +119,7 @@ const ADV = (() => {
   /* ---------- 5. 喫煙の極意 ---------- */
   function technique() {
     const trouble = A.troubleshooting.map(t => acc(
-      `⚠️ ${t.problem}`,
+      `${t.problem}`,
       `<div class="spec-row"><div class="k">原因<span class="en">Cause</span></div><div class="v">${e(t.cause)}</div></div>
        <div class="spec-row"><div class="k">対処<span class="en">Fix</span></div><div class="v">${e(t.fix)}</div></div>`
     )).join("");

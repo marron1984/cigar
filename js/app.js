@@ -81,20 +81,19 @@ document.addEventListener("click", (e) => {
    ホーム
    ============================================================ */
 const HOME_CARDS = [
-  { view: "basics", ic: "📖", h: "基礎知識", p: "葉巻とは？構造・吸い方・味わいの表現・歴史・マナーまで。" },
-  { view: "countries", ic: "🌎", h: "国・産地別", p: "キューバ、ドミニカ、ニカラグア…9か国の個性を比較。" },
-  { view: "sizes", ic: "📏", h: "太さ・サイズ別", p: "リングゲージとビトラ。定番サイズを一覧で。" },
-  { view: "prices", ic: "💰", h: "価格帯別", p: "入門からハイエンドまで、価格別の選び方。" },
-  { view: "tools", ic: "🧰", h: "喫煙具・保管", p: "カッター、ライター、ヒュミドールの選び方。" },
-  { view: "humidor", ic: "📦", h: "ヒュミドール大全", p: "歴史・メーカー・使い方・種類・価格を5つの観点で徹底調査。" },
-  { view: "advanced", ic: "🎓", h: "上級編（オタクの世界）", p: "品種・発酵・キューバ通・名門・喫煙術・ペアリング・熟成科学。" },
-  { view: "phd", ic: "🔬", h: "博士編（学術）", p: "化学・植物学・官能評価・銘柄DB・産業経済・健康科学。" },
-  { view: "world", ic: "🌐", h: "世界編（総覧）", p: "年表・文化・愛好家・日本・実践レビュー・投資・用語大全・トラベル・FAQ。" }
+  { view: "basics", h: "基礎知識", p: "葉巻とは？構造・吸い方・味わいの表現・歴史・マナーまで。" },
+  { view: "countries", h: "国・産地別", p: "キューバ、ドミニカ、ニカラグア…9か国の個性を比較。" },
+  { view: "sizes", h: "太さ・サイズ別", p: "リングゲージとビトラ。定番サイズを一覧で。" },
+  { view: "prices", h: "価格帯別", p: "入門からハイエンドまで、価格別の選び方。" },
+  { view: "tools", h: "喫煙具・保管", p: "カッター、ライター、ヒュミドールの選び方。" },
+  { view: "humidor", h: "ヒュミドール大全", p: "歴史・メーカー・使い方・種類・価格を5つの観点で徹底調査。" },
+  { view: "advanced", h: "上級編（オタクの世界）", p: "品種・発酵・キューバ通・名門・喫煙術・ペアリング・熟成科学。" },
+  { view: "phd", h: "博士編（学術）", p: "化学・植物学・官能評価・銘柄DB・産業経済・健康科学。" },
+  { view: "world", h: "世界編（総覧）", p: "年表・文化・愛好家・日本・実践レビュー・投資・用語大全・トラベル・FAQ。" }
 ];
 function renderHome() {
   $("#homeGrid").innerHTML = HOME_CARDS.map(c => `
     <div class="home-card" data-view="${c.view}">
-      <div class="ic">${c.ic}</div>
       <h3>${c.h}</h3>
       <p>${c.p}</p>
       <div class="go">開く →</div>
@@ -224,8 +223,8 @@ function renderCountryDetail(idx) {
       ${img ? `<a class="cd-imglink" href="${img}" target="_blank" rel="noopener">
         <img class="cd-img" src="${img}" alt="${esc(c.name_ja)} 葉巻インフォグラフィック" onerror="${onerr}">
         <span class="cf-hint">画像をタップで拡大</span></a>` : ""}
-      <div class="cd-placeholder" style="display:none">🖼️ <b>${esc(c.name_ja)}</b> のインフォグラフィックは準備中です。下のテキスト情報をご覧ください。</div>
-      <details class="acc cd-text"><summary>📄 テキストで詳しく見る</summary>
+      <div class="cd-placeholder" style="display:none"><b>${esc(c.name_ja)}</b> のインフォグラフィックは準備中です。下のテキスト情報をご覧ください。</div>
+      <details class="acc cd-text"><summary>テキストで詳しく見る</summary>
         <div class="acc-body">${countryFields(c)}</div>
       </details>
     </div>`;
@@ -353,7 +352,7 @@ function renderSizes() {
     <div class="kb-block">
       <h3>太さ別ガイド（細い vs 太い）</h3>
       <div class="prose"><p>${esc(D.thicknessGuide)}</p></div>
-      <div class="callout">🔰 初心者の最初の一本には <b>ロブスト（約5インチ × RG50）</b> がおすすめ。まろやかで扱いやすく、30〜45分で楽しめます。</div>
+      <div class="callout">初心者の最初の一本には <b>ロブスト（約5インチ × RG50）</b> がおすすめ。まろやかで扱いやすく、30〜45分で楽しめます。</div>
     </div>
 
     <div class="kb-block">

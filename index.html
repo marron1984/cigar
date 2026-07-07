@@ -25,17 +25,17 @@
         <span class="nav-toggle-bars"></span>
       </button>
       <nav class="nav-tabs" id="navTabs">
-        <button data-view="home"><span class="ic">🏠</span><span class="lbl">ホーム</span></button>
-        <button data-view="basics"><span class="ic">📖</span><span class="lbl">基礎知識</span></button>
-        <button data-view="countries"><span class="ic">🌎</span><span class="lbl">国・産地別</span></button>
-        <button data-view="sizes"><span class="ic">📏</span><span class="lbl">太さ別</span></button>
-        <button data-view="prices"><span class="ic">💰</span><span class="lbl">価格別</span></button>
-        <button data-view="tools"><span class="ic">🧰</span><span class="lbl">喫煙具</span></button>
-        <button data-view="humidor"><span class="ic">📦</span><span class="lbl">ヒュミドール</span></button>
-        <button data-view="advanced"><span class="ic">🎓</span><span class="lbl">上級編</span></button>
-        <button data-view="phd"><span class="ic">🔬</span><span class="lbl">博士編</span></button>
-        <button data-view="world"><span class="ic">🌐</span><span class="lbl">世界編</span></button>
-        <button class="nav-journal" data-view="note"><span class="ic">📝</span><span class="lbl">記録ノート</span></button>
+        <button data-view="home"><span class="ic"></span><span class="lbl">ホーム</span></button>
+        <button data-view="basics"><span class="ic"></span><span class="lbl">基礎知識</span></button>
+        <button data-view="countries"><span class="ic"></span><span class="lbl">国・産地別</span></button>
+        <button data-view="sizes"><span class="ic"></span><span class="lbl">太さ別</span></button>
+        <button data-view="prices"><span class="ic"></span><span class="lbl">価格別</span></button>
+        <button data-view="tools"><span class="ic"></span><span class="lbl">喫煙具</span></button>
+        <button data-view="humidor"><span class="ic"></span><span class="lbl">ヒュミドール</span></button>
+        <button data-view="advanced"><span class="ic"></span><span class="lbl">上級編</span></button>
+        <button data-view="phd"><span class="ic"></span><span class="lbl">博士編</span></button>
+        <button data-view="world"><span class="ic"></span><span class="lbl">世界編</span></button>
+        <button class="nav-journal" data-view="note"><span class="ic"></span><span class="lbl">記録ノート</span></button>
       </nav>
     </div>
   </header>
@@ -55,7 +55,6 @@
       <div class="home-grid" id="homeGrid"></div>
 
       <button class="note-cta" data-view="note">
-        <div class="note-cta-ic">📝</div>
         <div class="note-cta-text">
           <h3>記録ノートを書く</h3>
           <p>吸った一本一本を、銘柄・産地・評価・写真とともに自分だけの一冊に残す。</p>
@@ -129,11 +128,11 @@
         <p>葉巻を美味しく味わうための要、ヒュミドール（加湿保存庫）だけに焦点を当てた専門ページ。歴史、世界のメーカー・ブランド、使い方とメンテナンス、種類・分類、価格帯を、5つの観点から徹底調査してまとめました。</p>
       </div>
       <div class="subnav" id="humidorSubnav">
-        <button data-hsub="history" class="active">🕰️ 歴史</button>
-        <button data-hsub="brands">🏷️ メーカー</button>
-        <button data-hsub="usage">🛠️ 使い方</button>
-        <button data-hsub="types">📦 種類</button>
-        <button data-hsub="price">💰 価格</button>
+        <button data-hsub="history" class="active">歴史</button>
+        <button data-hsub="brands">メーカー</button>
+        <button data-hsub="usage">使い方</button>
+        <button data-hsub="types">種類</button>
+        <button data-hsub="price">価格</button>
       </div>
       <div class="sub-view active" id="hsub-history"></div>
       <div class="sub-view" id="hsub-brands"></div>
@@ -150,13 +149,13 @@
         <p>葉の品種と葉位、発酵と巻きの技、キューバ通の見分け方、名門ブランド、喫煙の極意、ペアリング学、そして保管・熟成の科学まで。ここから先は、一本を深く味わうための知識の沼です。</p>
       </div>
       <div class="subnav" id="advSubnav">
-        <button data-sub="leaf" class="active">🌱 葉と品種</button>
-        <button data-sub="craft">🏭 製造と技</button>
-        <button data-sub="cuba">🇨🇺 キューバ学</button>
-        <button data-sub="brands">👑 名門ブランド</button>
-        <button data-sub="technique">🎯 喫煙の極意</button>
-        <button data-sub="pairing">🥃 ペアリング学</button>
-        <button data-sub="storage">🔬 保管と熟成の科学</button>
+        <button data-sub="leaf" class="active">葉と品種</button>
+        <button data-sub="craft">製造と技</button>
+        <button data-sub="cuba">キューバ学</button>
+        <button data-sub="brands">名門ブランド</button>
+        <button data-sub="technique">喫煙の極意</button>
+        <button data-sub="pairing">ペアリング学</button>
+        <button data-sub="storage">保管と熟成の科学</button>
       </div>
       <div class="sub-view active" id="sub-leaf"></div>
       <div class="sub-view" id="sub-craft"></div>
@@ -175,12 +174,12 @@
         <p>化学・燃焼・植物学・農学・官能評価・産業経済・地政学・健康科学まで。英語圏を中心とした世界中の学術・専門資料を横断解析し、日本語に編纂した最上級リファレンス。ここは知識の最深部です。</p>
       </div>
       <div class="subnav" id="phdSubnav">
-        <button data-psub="chem" class="active">⚗️ 化学と燃焼</button>
-        <button data-psub="botany">🌿 植物学・農学</button>
-        <button data-psub="sensory">🧠 官能評価の科学</button>
-        <button data-psub="db">📚 銘柄・規格DB</button>
-        <button data-psub="industry">🌐 産業・経済・地政学</button>
-        <button data-psub="health">⚕️ 健康と法規制</button>
+        <button data-psub="chem" class="active">化学と燃焼</button>
+        <button data-psub="botany">植物学・農学</button>
+        <button data-psub="sensory">官能評価の科学</button>
+        <button data-psub="db">銘柄・規格DB</button>
+        <button data-psub="industry">産業・経済・地政学</button>
+        <button data-psub="health">健康と法規制</button>
       </div>
       <div class="sub-view active" id="psub-chem"></div>
       <div class="sub-view" id="psub-botany"></div>
@@ -198,16 +197,16 @@
         <p>世界中の資料を横断リサーチした10領域の総覧。通史年表、世界の文化と名店、著名愛好家、日本ガイド、実践テイスティング集、その他の葉巻、投資とコレクション、多言語用語大全、トラベル購入ガイド、神話とFAQ。ここに葉巻の世界のすべてが集約されています。</p>
       </div>
       <div class="subnav" id="worldSubnav">
-        <button data-wsub="history" class="active">📜 年表・通史</button>
-        <button data-wsub="culture">🌍 世界の文化・名店</button>
-        <button data-wsub="smokers">👤 著名愛好家</button>
+        <button data-wsub="history" class="active">年表・通史</button>
+        <button data-wsub="culture">世界の文化・名店</button>
+        <button data-wsub="smokers">著名愛好家</button>
         <button data-wsub="japan">🇯🇵 日本ガイド</button>
-        <button data-wsub="tasting">👅 テイスティング集</button>
-        <button data-wsub="other">🚬 その他の葉巻</button>
-        <button data-wsub="invest">💎 投資・コレクション</button>
-        <button data-wsub="lexicon">📖 用語大全</button>
-        <button data-wsub="travel">✈️ トラベル・購入</button>
-        <button data-wsub="myths">❓ 神話・FAQ</button>
+        <button data-wsub="tasting">テイスティング集</button>
+        <button data-wsub="other">その他の葉巻</button>
+        <button data-wsub="invest">投資・コレクション</button>
+        <button data-wsub="lexicon">用語大全</button>
+        <button data-wsub="travel">トラベル・購入</button>
+        <button data-wsub="myths">神話・FAQ</button>
       </div>
       <div class="sub-view active" id="wsub-history"></div>
       <div class="sub-view" id="wsub-culture"></div>
@@ -358,7 +357,7 @@
       <div class="note-stats" id="noteStats"></div>
 
       <div class="note-utils">
-        <input type="text" class="note-search" id="noteSearch" placeholder="🔍 銘柄・産地・喫煙場所・記録者・感想で検索…">
+        <input type="text" class="note-search" id="noteSearch" placeholder="銘柄・産地・喫煙場所・記録者・感想で検索…">
         <span class="count-pill" id="entryCount">0 本</span>
         <button class="btn btn-ghost btn-sm" id="btnExport">エクスポート</button>
         <button class="btn btn-ghost btn-sm" id="btnImport">インポート</button>
@@ -373,7 +372,7 @@
   </main>
 
   <footer class="site-footer">
-    <div>🍂 葉巻大辞典 — Cigar Encyclopedia &amp; Note</div>
+    <div>葉巻大辞典 — Cigar Encyclopedia &amp; Note</div>
     <div class="disc">掲載の価格・仕様は目安です。銘柄や販売店により異なります。喫煙は成人（20歳以上）のみ。喫煙は健康を害するおそれがあります。記録データは通常はお使いのブラウザ内（localStorage）に保存されます。共有モード（クラウド設定）を有効にした場合のみ、設定した共有データベースに保存され複数人で閲覧できます。</div>
   </footer>
 
