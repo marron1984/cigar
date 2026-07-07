@@ -203,89 +203,57 @@
         <span class="na-plus">＋</span><span class="na-txt">一本を記録する</span>
       </button>
 
-      <div class="note-topbar">
-        <div class="note-author">
-          <label for="authorName">記録者</label>
-          <input type="text" id="authorName" placeholder="お名前（例：山田）" maxlength="20" autocomplete="off">
+      <!-- 記録フォーム：ポップアップではなくページ内にそのまま展開（スクロールで全項目に届く） -->
+      <div class="entry-panel" id="entryPanel" hidden>
+        <div class="entry-panel-head">
+          <h3 id="modalTitle">葉巻を記録する</h3>
+          <button type="button" class="modal-x" id="btnCancelX" aria-label="閉じる">×</button>
         </div>
-        <span class="note-mode" id="noteMode"></span>
-      </div>
-
-      <div class="note-stats" id="noteStats"></div>
-
-      <div class="note-utils">
-        <input type="text" class="note-search" id="noteSearch" placeholder="🔍 銘柄・産地・喫煙場所・記録者・感想で検索…">
-        <span class="count-pill" id="entryCount">0 本</span>
-        <button class="btn btn-ghost btn-sm" id="btnExport">エクスポート</button>
-        <button class="btn btn-ghost btn-sm" id="btnImport">インポート</button>
-        <input type="file" id="importFile" accept="application/json" hidden>
-      </div>
-
-      <div id="entriesArea"></div>
-
-      <button class="note-fab" id="noteFab" aria-label="記録する" title="一本を記録する">＋</button>
-    </section>
-
-  </main>
-
-  <footer class="site-footer">
-    <div>🍂 葉巻大辞典 — Cigar Encyclopedia &amp; Note</div>
-    <div class="disc">掲載の価格・仕様は目安です。銘柄や販売店により異なります。喫煙は成人（20歳以上）のみ。喫煙は健康を害するおそれがあります。記録データは通常はお使いのブラウザ内（localStorage）に保存されます。共有モード（クラウド設定）を有効にした場合のみ、設定した共有データベースに保存され複数人で閲覧できます。</div>
-  </footer>
-
-  <!-- ===== Modal for note entry ===== -->
-  <div class="modal-overlay" id="entryModal">
-    <div class="modal">
-      <div class="modal-head">
-        <h3 id="modalTitle">葉巻を記録する</h3>
-        <button type="button" class="modal-x" id="btnCancelX" aria-label="閉じる">×</button>
-      </div>
-      <form id="entryForm">
-        <input type="hidden" id="entryId">
-        <div class="modal-body">
-          <!-- 必須・かんたん入力 -->
-          <div class="form-row">
-            <label for="fName">銘柄名 <span style="color:var(--ember)">*</span></label>
-            <input type="text" id="fName" required placeholder="例：モンテクリスト No.4" autocomplete="off">
-          </div>
-          <div class="form-two">
+        <form id="entryForm">
+          <input type="hidden" id="entryId">
+          <div class="entry-panel-body">
+            <!-- 必須・かんたん入力 -->
             <div class="form-row">
-              <label for="fBrand">ブランド</label>
-              <select id="fBrand"></select>
-              <input type="text" id="fBrandOther" placeholder="ブランド名を入力…" style="display:none;margin-top:8px">
+              <label for="fName">銘柄名 <span style="color:var(--ember)">*</span></label>
+              <input type="text" id="fName" required placeholder="例：モンテクリスト No.4" autocomplete="off">
             </div>
-            <div class="form-row">
-              <label>評価</label>
-              <div class="rating-input" id="ratingInput">
-                <span class="star" data-v="1">★</span>
-                <span class="star" data-v="2">★</span>
-                <span class="star" data-v="3">★</span>
-                <span class="star" data-v="4">★</span>
-                <span class="star" data-v="5">★</span>
+            <div class="form-two">
+              <div class="form-row">
+                <label for="fBrand">ブランド</label>
+                <select id="fBrand"></select>
+                <input type="text" id="fBrandOther" placeholder="ブランド名を入力…" style="display:none;margin-top:8px">
               </div>
-              <input type="hidden" id="fRating" value="0">
+              <div class="form-row">
+                <label>評価</label>
+                <div class="rating-input" id="ratingInput">
+                  <span class="star" data-v="1">★</span>
+                  <span class="star" data-v="2">★</span>
+                  <span class="star" data-v="3">★</span>
+                  <span class="star" data-v="4">★</span>
+                  <span class="star" data-v="5">★</span>
+                </div>
+                <input type="hidden" id="fRating" value="0">
+              </div>
             </div>
-          </div>
-          <div class="form-row">
-            <label for="fNote">感想・テイスティングメモ</label>
-            <textarea id="fNote" placeholder="香り、味わい、ペアリング、その日の気分など自由に…"></textarea>
-          </div>
-          <div class="form-row">
-            <label>写真（バンド・本体など）</label>
-            <div class="photo-uploader">
-              <div class="photo-previews" id="photoPreviews"></div>
-              <label class="btn btn-ghost btn-sm photo-add-btn">
-                ＋ 写真を追加
-                <input type="file" id="fPhotoInput" accept="image/*" multiple hidden>
-              </label>
+            <div class="form-row">
+              <label for="fNote">感想・テイスティングメモ</label>
+              <textarea id="fNote" placeholder="香り、味わい、ペアリング、その日の気分など自由に…"></textarea>
             </div>
-            <div class="photo-hint">バンドや本体の写真（最大6枚）。</div>
-          </div>
+            <div class="form-row">
+              <label>写真（バンド・本体など）</label>
+              <div class="photo-uploader">
+                <div class="photo-previews" id="photoPreviews"></div>
+                <label class="btn btn-ghost btn-sm photo-add-btn">
+                  ＋ 写真を追加
+                  <input type="file" id="fPhotoInput" accept="image/*" multiple hidden>
+                </label>
+              </div>
+              <div class="photo-hint">バンドや本体の写真（最大6枚）。</div>
+            </div>
 
-          <!-- 詳細（折りたたみ） -->
-          <details class="acc modal-more">
-            <summary>＋ 詳細を追加（産地・サイズ・価格・喫煙場所）</summary>
-            <div class="acc-body">
+            <!-- 詳細（そのまま表示：折りたたまず全項目を記入できる） -->
+            <div class="entry-more">
+              <div class="entry-more-title">詳細（任意）</div>
               <div class="form-two">
                 <div class="form-row">
                   <label for="fCountry">産地</label>
@@ -340,15 +308,43 @@
                 </div>
               </div>
             </div>
-          </details>
+          </div>
+          <div class="entry-panel-actions">
+            <button type="button" class="btn btn-ghost" id="btnCancel">キャンセル</button>
+            <button type="submit" class="btn btn-primary btn-lg">保存する</button>
+          </div>
+        </form>
+      </div>
+
+      <div class="note-topbar">
+        <div class="note-author">
+          <label for="authorName">記録者</label>
+          <input type="text" id="authorName" placeholder="お名前（例：山田）" maxlength="20" autocomplete="off">
         </div>
-        <div class="modal-actions">
-          <button type="button" class="btn btn-ghost" id="btnCancel">キャンセル</button>
-          <button type="submit" class="btn btn-primary btn-lg">保存する</button>
-        </div>
-      </form>
-    </div>
-  </div>
+        <span class="note-mode" id="noteMode"></span>
+      </div>
+
+      <div class="note-stats" id="noteStats"></div>
+
+      <div class="note-utils">
+        <input type="text" class="note-search" id="noteSearch" placeholder="🔍 銘柄・産地・喫煙場所・記録者・感想で検索…">
+        <span class="count-pill" id="entryCount">0 本</span>
+        <button class="btn btn-ghost btn-sm" id="btnExport">エクスポート</button>
+        <button class="btn btn-ghost btn-sm" id="btnImport">インポート</button>
+        <input type="file" id="importFile" accept="application/json" hidden>
+      </div>
+
+      <div id="entriesArea"></div>
+
+      <button class="note-fab" id="noteFab" aria-label="記録する" title="一本を記録する">＋</button>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div>🍂 葉巻大辞典 — Cigar Encyclopedia &amp; Note</div>
+    <div class="disc">掲載の価格・仕様は目安です。銘柄や販売店により異なります。喫煙は成人（20歳以上）のみ。喫煙は健康を害するおそれがあります。記録データは通常はお使いのブラウザ内（localStorage）に保存されます。共有モード（クラウド設定）を有効にした場合のみ、設定した共有データベースに保存され複数人で閲覧できます。</div>
+  </footer>
 
   <!-- 写真拡大表示 -->
   <div class="lightbox" id="lightbox">

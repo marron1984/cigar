@@ -480,26 +480,20 @@ td .ve { font-size: .74rem; color: var(--muted); letter-spacing: .08em; }
 .empty-state .ic { font-size: 2.6rem; opacity: .6; }
 
 /* Modal */
-.modal-overlay {
-  position: fixed; inset: 0; background: rgba(58,44,27,.45); backdrop-filter: blur(4px);
-  display: none; align-items: flex-start; justify-content: center; z-index: 100;
-  padding: 40px 16px; overflow-y: auto;
-}
-.modal-overlay.open { display: flex; }
-.modal {
-  background: linear-gradient(160deg, var(--panel-2), var(--bg-2));
+/* 記録フォーム：ページ内にそのまま展開（ポップアップにしない＝スクロールで全項目に届く） */
+.entry-panel {
+  background: linear-gradient(160deg, var(--panel), var(--bg-2));
   border: 1px solid var(--line); border-radius: var(--radius);
-  width: 100%; max-width: 560px; padding: 28px; box-shadow: var(--shadow);
+  box-shadow: var(--shadow); margin: 4px 0 18px; overflow: hidden;
 }
-.modal { display: flex; flex-direction: column; max-height: calc(100vh - 80px); padding: 0; overflow: hidden; }
-.modal-head { display: flex; align-items: center; justify-content: space-between; padding: 20px 24px 12px; border-bottom: 1px solid var(--line-soft); }
+.entry-panel[hidden] { display: none; }
+.entry-panel-head { display: flex; align-items: center; justify-content: space-between; padding: 18px 22px 12px; border-bottom: 1px solid var(--line-soft); }
+.entry-panel-head h3 { font-family: var(--serif); font-size: 1.35rem; color: var(--cream); }
 .modal-x { background: none; border: none; color: var(--muted); font-size: 1.8rem; line-height: 1; cursor: pointer; padding: 0 4px; }
 .modal-x:hover { color: var(--cream); }
-.modal-body { padding: 18px 24px 8px; overflow-y: auto; }
-.modal h3 { font-family: var(--serif); font-size: 1.4rem; color: var(--cream); }
-.modal-more { margin-top: 8px; }
-.modal-more > summary { font-size: .95rem; color: var(--gold-bright); }
-.modal-more .acc-body { padding: 6px 2px 2px; }
+.entry-panel-body { padding: 18px 22px 6px; }
+.entry-more { margin-top: 6px; padding-top: 14px; border-top: 1px dashed var(--line-soft); }
+.entry-more-title { font-size: .8rem; letter-spacing: .08em; text-transform: uppercase; color: var(--gold); margin-bottom: 12px; }
 .form-row { margin-bottom: 15px; }
 .form-row label { display: block; font-size: .8rem; letter-spacing: .08em; color: var(--gold); margin-bottom: 5px; text-transform: uppercase; }
 .form-row input, .form-row textarea, .form-row select {
@@ -513,7 +507,8 @@ td .ve { font-size: .74rem; color: var(--muted); letter-spacing: .08em; }
 .rating-input { display: flex; gap: 6px; font-size: 1.7rem; cursor: pointer; }
 .rating-input .star { color: var(--line); transition: color .12s; }
 .rating-input .star.on { color: var(--gold-bright); }
-.modal-actions { display: flex; gap: 10px; justify-content: flex-end; padding: 14px 24px; border-top: 1px solid var(--line-soft); background: var(--panel-2); }
+.entry-panel-actions { display: flex; gap: 10px; justify-content: flex-end; padding: 14px 22px; border-top: 1px solid var(--line-soft); background: var(--panel-2); }
+.entry-panel-actions .btn-lg { flex: 1; max-width: 260px; }
 .rating-input { font-size: 2rem; }
 
 /* 写真アップロード（モーダル内） */

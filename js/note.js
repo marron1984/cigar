@@ -131,7 +131,7 @@ const NOTE = (() => {
     }
   }
 
-  /* ---------- モーダル ---------- */
+  /* ---------- 記録フォーム（ページ内インライン） ---------- */
   function openModal(entry) {
     fillSelects();
     const isEdit = !!entry;
@@ -149,10 +149,21 @@ const NOTE = (() => {
     currentPhotos = isEdit && Array.isArray(entry.photos) ? entry.photos.slice() : [];
     renderPhotoPreviews();
     setRating(isEdit ? (entry.rating || 0) : 0);
-    q("#entryModal").classList.add("open");
-    setTimeout(() => q("#fName").focus(), 50);
+    const panel = q("#entryPanel");
+    panel.hidden = false;
+    // 記録ボタンは開いている間は隠して重複を防ぐ
+    const hero = q("#btnNewEntry"); if (hero) hero.style.display = "none";
+    // フォームの先頭が見えるようスクロール
+    setTimeout(() => {
+      panel.scrollIntoView({ behavior: "smooth", block: "start" });
+      q("#fName").focus({ preventScroll: true });
+    }, 30);
   }
-  function closeModal() { q("#entryModal").classList.remove("open"); }
+  function closeModal() {
+    const panel = q("#entryPanel");
+    if (panel) panel.hidden = true;
+    const hero = q("#btnNewEntry"); if (hero) hero.style.display = "";
+  }
 
   /* ライトボックス */
   function openLightbox(src) {
@@ -441,13 +452,10 @@ const NOTE = (() => {
     q("#entryForm").addEventListener("keydown", (e) => {
       if ((e.ctrlKey || e.metaKey) && e.key === "Enter") { e.preventDefault(); submit(e); }
     });
-    q("#entryModal").addEventListener("click", (e) => {
-      if (e.target.id === "entryModal") closeModal();
-    });
     document.addEventListener("keydown", (e) => {
       if (e.key === "Escape") {
         if (q("#lightbox").classList.contains("open")) closeLightbox();
-        else closeModal();
+        else if (!q("#entryPanel").hidden) closeModal();
       }
     });
 
