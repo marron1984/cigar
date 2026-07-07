@@ -222,6 +222,16 @@ function renderCountries() {
       <img src="assets/countries/_overview.png" alt="世界の主要葉巻生産国 一覧"
            onerror="var o=document.getElementById('countryOverview');if(o)o.innerHTML='';">
     </a>`;
+  // その他・新興の葉巻生産国 概要ポスター（画像が無ければ自動で非表示）
+  $("#countryOthers").innerHTML = `
+    <div class="kb-block">
+      <h3>その他・新興の葉巻生産国</h3>
+      <p class="prose" style="margin-bottom:12px">主要9か国のほかにも、高品質なラッパー葉や個性的な葉を支える産地があります（カメルーン、インドネシア／スマトラ、フィリピン、コスタリカ、パナマ、ペルー、コロンビア、エルサルバドル、パラグアイ 等）。</p>
+      <a class="country-overview" href="assets/countries/_others.png" target="_blank" rel="noopener">
+        <img src="assets/countries/_others.png" alt="第三国・ニューワールド・その他の葉巻生産国 一覧"
+             onerror="var o=this.closest('.kb-block');if(o)o.remove();">
+      </a>
+    </div>`;
   $("#countryNav").innerHTML = D.countries.map((c, i) =>
     `<button data-country="${i}"${i === 0 ? ' class="active"' : ''}>${c.flag} ${esc(c.name_ja)}</button>`).join("");
   $("#countryNav").addEventListener("click", (e) => {
