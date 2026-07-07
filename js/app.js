@@ -168,7 +168,8 @@ function renderBasics() {
    国・産地別
    ============================================================ */
 function renderCountries() {
-  $("#countriesGrid").innerHTML = D.countries.map(c => `
+  const grid = $("#countriesGrid");
+  grid.innerHTML = D.countries.map(c => `
     <div class="card country-card">
       <div class="flag">${c.flag}</div>
       <h3>${esc(c.name_ja)}</h3>
@@ -184,6 +185,18 @@ function renderCountries() {
       <div class="field"><div class="lbl">歴史</div><div class="val">${esc(c.history)}</div></div>
       <div class="field"><div class="lbl">豆知識</div><div class="val">${esc(c.trivia)}</div></div>
     </div>`).join("");
+
+  // キューバの詳細インフォグラフィックを国別ページ先頭に掲載（画像が無ければ自動で非表示）
+  const cubaFeature = `
+    <div class="country-feature" id="cubaFeature">
+      <div class="cf-cap">🇨🇺 キューバ — 詳細インフォグラフィック</div>
+      <a href="assets/cuba.png" target="_blank" rel="noopener">
+        <img src="assets/cuba.png" alt="キューバ 葉巻ガイド インフォグラフィック"
+             onerror="var f=document.getElementById('cubaFeature');if(f)f.remove();">
+      </a>
+      <div class="cf-hint">画像をタップすると拡大表示できます</div>
+    </div>`;
+  grid.insertAdjacentHTML("beforebegin", cubaFeature);
 }
 
 /* ============================================================

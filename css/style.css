@@ -682,6 +682,19 @@ table.ref { min-width: 480px; }
 .lex .lx-d { font-size:.85rem; color: var(--text-soft); }
 .lex-search { margin-bottom: 14px; }
 
+/* 国別・特集インフォグラフィック（キューバ等） */
+.country-feature { margin-bottom: 26px; text-align: center; }
+.country-feature .cf-cap {
+  font-family: var(--serif); color: var(--gold-bright); font-size: 1.05rem; margin-bottom: 10px;
+  display: flex; align-items: center; justify-content: center; gap: 8px;
+}
+.country-feature a { display: inline-block; max-width: 560px; width: 100%; line-height: 0; }
+.country-feature img {
+  width: 100%; height: auto; border-radius: var(--radius);
+  border: 1px solid var(--line); box-shadow: var(--shadow); cursor: zoom-in;
+}
+.country-feature .cf-hint { font-size: .76rem; color: var(--muted); margin-top: 8px; }
+
 /* 添付写真をそのまま表示（assets/gauge-size-chart.png があれば表示） */
 .gauge-photo { width: 100%; height: auto; display: block; border-radius: var(--radius); border: 1px solid var(--line-soft); box-shadow: var(--shadow-sm); }
 
