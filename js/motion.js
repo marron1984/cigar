@@ -45,6 +45,45 @@
     }).observe(document.body, { childList: true, subtree: true });
   }
 
+  /* ---------- 1.5. タップ（ポインター）押下フィードバック ----------
+     iOS Safari は :active が touchstart リスナーなしでは発火しないことがあるため、
+     Pointer Events で確実に .is-pressed を付け外しする。瞬間タップでも見えるよう
+     最低表示時間を確保する。 */
+  if (!reduceMotion) {
+    // :active を確実に有効化するおまじない（iOS Safari 対策）
+    document.addEventListener("touchstart", function () {}, { passive: true });
+
+    const PRESS_SELECTOR = [
+      ".home-card", ".btn", ".subnav button", ".nav-tabs button",
+      ".note-fab", ".note-cta", ".entry-photo", ".acc > summary",
+      ".country-overview img", ".cd-imglink"
+    ].join(",");
+    const MIN_PRESS_MS = 120;
+    const pressState = new WeakMap();
+
+    function pressStart(el) {
+      el.classList.add("is-pressed");
+      pressState.set(el, performance.now());
+    }
+    function pressEnd(el) {
+      const startedAt = pressState.get(el);
+      const elapsed = startedAt ? performance.now() - startedAt : MIN_PRESS_MS;
+      const wait = Math.max(0, MIN_PRESS_MS - elapsed);
+      setTimeout(() => el.classList.remove("is-pressed"), wait);
+    }
+
+    document.addEventListener("pointerdown", (e) => {
+      const el = e.target.closest(PRESS_SELECTOR);
+      if (el) pressStart(el);
+    }, { passive: true });
+    ["pointerup", "pointercancel", "pointerleave"].forEach((type) => {
+      document.addEventListener(type, (e) => {
+        const el = e.target.closest(PRESS_SELECTOR);
+        if (el) pressEnd(el);
+      }, { passive: true });
+    });
+  }
+
   /* ---------- 2. アコーディオン（<details class="acc">）の開閉を高さアニメーション ---------- */
   if (!reduceMotion) {
     document.addEventListener("click", (e) => {
