@@ -55,14 +55,22 @@ body {
   -webkit-font-smoothing: antialiased;
   min-height: 100vh;
   overflow-x: hidden; /* 100vw のフルブリード要素などによる横はみ出しの保険 */
-  /* 「太さ別」「記録ノート」のような複合語の途中で改行されないように。
-     ただし折り返し場所が全くない場合は overflow-wrap で強制的に折り返す（はみ出し防止） */
-  word-break: keep-all;
+  /* 長い本文段落は通常の折り返し（文字単位）のままにして行末の余白が
+     間延びしないようにする。単語途中の改行を避けたい見出し・短い語句には
+     下記で個別に word-break: keep-all を適用する。 */
   overflow-wrap: break-word;
 }
 
 a { color: var(--gold-bright); text-decoration: none; }
 a:hover { text-decoration: underline; }
+
+/* 見出しや短いラベルは複合語の途中で改行されないように。
+   段落本文（p）には適用しない — 長文だと行末の余白が大きくなり読みにくくなるため。 */
+h1, h2, h3, h4, h5, h6,
+button, .chip, .strength-badge, .go, .eyebrow, .kicker,
+.hero p.desc b, .hero p.desc strong {
+  word-break: keep-all;
+}
 
 /* 途中で改行させたくない語句（カタカナ語など）に付与するユーティリティ */
 .nowrap { white-space: nowrap; }
