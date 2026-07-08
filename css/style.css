@@ -6,12 +6,12 @@
 
 :root {
   /* モノクローム・エディトリアル・パレット（単一アクセント＝ワイン） */
-  --bg: #fbfbf9;
-  --bg-2: #f2f1ec;
+  --bg: #f1efe9;
+  --bg-2: #eae7de;
   --panel: #ffffff;
   --panel-2: #f4f3ef;
-  --line: #dedad2;
-  --line-soft: #eae7e0;
+  --line: #cfc8b8;
+  --line-soft: #e1dbcc;
   --text: #1a1815;
   --text-soft: #55524a;
   --muted: #96938a;
@@ -25,8 +25,8 @@
   --cream: #0d0c0b;          /* 見出し等：純黒に近いインク */
   --radius: 2px;
   --radius-sm: 2px;
-  --shadow: none;
-  --shadow-sm: none;
+  --shadow: 0 2px 4px rgba(13,12,11,.05), 0 12px 28px rgba(13,12,11,.09);
+  --shadow-sm: 0 1px 2px rgba(13,12,11,.05), 0 5px 14px rgba(13,12,11,.06);
   --serif: "Hiragino Mincho ProN", "Yu Mincho", "YuMincho", "Noto Serif JP", serif;
   --sans: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic", "Meiryo", "Noto Sans JP", system-ui, sans-serif;
 
@@ -351,8 +351,8 @@ main { max-width: 1180px; margin: 0 auto; padding: 0 20px 80px; }
   counter-increment: cardnum;
   content: counter(cardnum, decimal-leading-zero);
   grid-column: 1; grid-row: 1 / 3;
-  font-family: var(--sans); font-size: .76rem; font-weight: 600;
-  color: var(--muted); letter-spacing: .03em; align-self: start; margin-top: 3px;
+  font-family: var(--serif); font-size: .82rem; font-weight: 700;
+  color: var(--gold-bright); letter-spacing: .03em; align-self: start; margin-top: 3px;
 }
 .home-card:hover { background: var(--panel-2); padding-left: 16px; }
 .home-card:active, .home-card.is-pressed { background: var(--panel-2); padding-left: 16px; transition-duration: var(--dur-fast); }
@@ -423,6 +423,7 @@ main { max-width: 1180px; margin: 0 auto; padding: 0 20px 80px; }
   background: var(--panel);
   border: 1px solid var(--line-soft);
   border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
   padding: 24px;
 }
 .grid { display: grid; gap: 18px; }
@@ -478,7 +479,7 @@ td .ve { font-size: .74rem; color: var(--muted); letter-spacing: .04em; }
 .step-list { counter-reset: step; list-style: none; display: grid; grid-template-columns: minmax(0,1fr); gap: 10px; }
 .step-list li {
   position: relative; min-width: 0; padding: 16px 18px 16px 60px;
-  background: var(--panel); border: 1px solid var(--line-soft); border-radius: var(--radius-sm);
+  background: var(--panel); border: 1px solid var(--line-soft); border-radius: var(--radius-sm); box-shadow: var(--shadow-sm);
 }
 .step-list li::before {
   counter-increment: step; content: counter(step);
@@ -495,7 +496,7 @@ td .ve { font-size: .74rem; color: var(--muted); letter-spacing: .04em; }
 .anatomy-list { display: grid; grid-template-columns: minmax(0,1fr); gap: 10px; }
 .anatomy-list .item {
   display: grid; grid-template-columns: 160px minmax(0,1fr); gap: 14px; min-width: 0;
-  padding: 12px 14px; background: var(--panel); border:1px solid var(--line-soft); border-radius: var(--radius-sm);
+  padding: 12px 14px; background: var(--panel); border:1px solid var(--line-soft); border-radius: var(--radius-sm); box-shadow: var(--shadow-sm);
 }
 .anatomy-list .item .p-name { font-family: var(--serif); color: var(--cream); }
 .anatomy-list .item .p-en { font-size: .72rem; color: var(--gold); letter-spacing: .1em; display:block; }
@@ -505,7 +506,7 @@ td .ve { font-size: .74rem; color: var(--muted); letter-spacing: .04em; }
 .shade-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px,1fr)); gap: 12px; }
 .shade {
   border-radius: var(--radius-sm); overflow: hidden; border: 1px solid var(--line-soft);
-  background: var(--panel);
+  background: var(--panel); box-shadow: var(--shadow-sm);
 }
 .shade .swatch { height: 64px; }
 .shade .meta { padding: 10px 12px; }
@@ -515,7 +516,7 @@ td .ve { font-size: .74rem; color: var(--muted); letter-spacing: .04em; }
 
 /* glossary */
 .glossary { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px,1fr)); gap: 12px; }
-.gloss-item { padding: 14px 16px; background: var(--panel); border: 1px solid var(--line-soft); border-radius: var(--radius-sm); }
+.gloss-item { padding: 14px 16px; background: var(--panel); border: 1px solid var(--line-soft); border-radius: var(--radius-sm); box-shadow: var(--shadow-sm); }
 .gloss-item .gt { font-family: var(--serif); color: var(--cream); font-size: 1.05rem; }
 .gloss-item .ge { font-size: .72rem; color: var(--muted); letter-spacing: .04em; }
 .gloss-item .gd { font-size: .88rem; color: var(--text-soft); margin-top: 4px; }
@@ -608,7 +609,7 @@ td .ve { font-size: .74rem; color: var(--muted); letter-spacing: .04em; }
 .entry-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px,1fr)); gap: 16px; margin-top: 18px; }
 .entry {
   background: var(--panel);
-  border: 1px solid var(--line-soft); border-radius: var(--radius); padding: 18px 18px 16px;
+  border: 1px solid var(--line-soft); border-radius: var(--radius); box-shadow: var(--shadow-sm); padding: 18px 18px 16px;
   position: relative;
 }
 .entry .e-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 10px; }
@@ -791,7 +792,7 @@ button.footer-nav-note:hover { color: var(--gold); }
 .sub-view.active { display: block; animation: fade var(--dur-slow) var(--ease); }
 
 /* accordion */
-.acc { border: 1px solid var(--line-soft); border-radius: var(--radius-sm); overflow: hidden; margin-bottom: 10px; background: var(--panel); }
+.acc { border: 1px solid var(--line-soft); border-radius: var(--radius-sm); overflow: hidden; margin-bottom: 10px; background: var(--panel); box-shadow: var(--shadow-sm); }
 .acc summary {
   cursor: pointer; padding: 15px 18px; font-family: var(--serif); font-size: 1.12rem;
   color: var(--cream); list-style: none; display: flex; align-items: center; justify-content: space-between; gap: 10px;
@@ -832,7 +833,7 @@ button.footer-nav-note:hover { color: var(--gold); }
 .spec-row .v { color: var(--text-soft); font-size:.92rem; min-width: 0; }
 
 /* pairing cards */
-.pair-card { border:1px solid var(--line-soft); border-radius:var(--radius-sm); padding:16px; background:var(--panel); }
+.pair-card { border:1px solid var(--line-soft); border-radius:var(--radius-sm); padding:16px; background:var(--panel); box-shadow: var(--shadow-sm); }
 .pair-card h4 { font-family:var(--serif); font-size:1.2rem; color:var(--cream); display:flex; align-items:baseline; gap:8px; }
 .pair-card h4 .en { font-size:.72rem; color:var(--gold); letter-spacing:.15em; }
 .pair-card .pw { font-size:.78rem; color:var(--gold-bright); margin:6px 0; }
@@ -853,7 +854,7 @@ button.footer-nav-note:hover { color: var(--gold); }
 }
 .health-box .hb-h { color: var(--ember-glow); font-family: var(--serif); font-size: 1.05rem; margin-bottom: 6px; }
 .compound-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px,1fr)); gap: 12px; }
-.compound { background: var(--panel); border: 1px solid var(--line-soft); border-radius: var(--radius-sm); padding: 13px 15px; }
+.compound { background: var(--panel); border: 1px solid var(--line-soft); border-radius: var(--radius-sm); padding: 13px 15px; box-shadow: var(--shadow-sm); }
 .compound .cn { font-family: var(--serif); color: var(--cream); font-size: 1.05rem; }
 .compound .cc { font-size: .78rem; color: var(--gold-bright); margin: 3px 0 5px; font-style: italic; }
 .compound .cd { font-size: .85rem; color: var(--text-soft); }
@@ -885,7 +886,7 @@ table.ref { min-width: 480px; }
 .person-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px,1fr)); gap: 14px; }
 .person {
   background: var(--panel);
-  border: 1px solid var(--line-soft); border-radius: var(--radius); padding: 16px 18px;
+  border: 1px solid var(--line-soft); border-radius: var(--radius); box-shadow: var(--shadow-sm); padding: 16px 18px;
 }
 .person .pn { font-family: var(--serif); color: var(--cream); font-size: 1.18rem; }
 .person .pf { font-size: .72rem; letter-spacing:.1em; color: var(--gold); text-transform: uppercase; margin: 2px 0 8px; }
@@ -895,7 +896,7 @@ table.ref { min-width: 480px; }
 /* レビューカード */
 .review-card {
   background: var(--panel);
-  border: 1px solid var(--line-soft); border-radius: var(--radius); padding: 18px 20px;
+  border: 1px solid var(--line-soft); border-radius: var(--radius); box-shadow: var(--shadow-sm); padding: 18px 20px;
 }
 .review-card .rv-top { display:flex; justify-content:space-between; align-items:flex-start; gap:10px; flex-wrap:wrap; }
 .review-card h4 { font-family: var(--serif); color: var(--cream); font-size: 1.28rem; }
@@ -909,7 +910,7 @@ table.ref { min-width: 480px; }
 .review-card .rv-foot .k { color: var(--gold); font-size:.76rem; letter-spacing:.06em; }
 
 /* Q&A / 神話 */
-.qa-item, .myth-item { border:1px solid var(--line-soft); border-radius: var(--radius-sm); background: var(--panel); padding: 14px 16px; margin-bottom: 10px; }
+.qa-item, .myth-item { border:1px solid var(--line-soft); border-radius: var(--radius-sm); background: var(--panel); padding: 14px 16px; margin-bottom: 10px; box-shadow: var(--shadow-sm); }
 .qa-item .q { font-family: var(--serif); color: var(--cream); font-size: 1.05rem; }
 .qa-item .q::before { content:"Q. "; color: var(--gold); }
 .qa-item .a { font-size: .92rem; color: var(--text-soft); margin-top: 6px; }
@@ -923,7 +924,7 @@ table.ref { min-width: 480px; }
 
 /* 用語辞典グリッド */
 .lex-grid { display:grid; grid-template-columns: repeat(auto-fill, minmax(260px,1fr)); gap:10px; }
-.lex { border:1px solid var(--line-soft); border-radius: var(--radius-sm); background: var(--panel); padding: 12px 14px; }
+.lex { border:1px solid var(--line-soft); border-radius: var(--radius-sm); background: var(--panel); padding: 12px 14px; box-shadow: var(--shadow-sm); }
 .lex .lx-ja { font-family: var(--serif); color: var(--cream); font-size: 1.02rem; }
 .lex .lx-for { font-size:.74rem; color: var(--gold); margin: 2px 0 5px; }
 .lex .lx-for .es { color: var(--gold-bright); }
@@ -977,7 +978,7 @@ table.ref { min-width: 480px; }
 /* ゲージ（太さ）ビジュアル一覧 */
 .gauge-figure {
   background: var(--panel);
-  border: 1px solid var(--line-soft); border-radius: var(--radius);
+  border: 1px solid var(--line-soft); border-radius: var(--radius); box-shadow: var(--shadow-sm);
   padding: 22px 18px 18px;
 }
 .gauge-figure .gf-lead { text-align:center; color: var(--text-soft); font-size:.95rem; margin-bottom: 18px; }
@@ -1035,7 +1036,7 @@ table.ref { min-width: 480px; }
 .shop-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px,1fr)); gap: 14px; }
 .shop-card {
   background: var(--panel);
-  border: 1px solid var(--line-soft); border-radius: var(--radius); padding: 16px 18px;
+  border: 1px solid var(--line-soft); border-radius: var(--radius); box-shadow: var(--shadow-sm); padding: 16px 18px;
 }
 .shop-card .sh-name { font-family: var(--serif); color: var(--cream); font-size: 1.18rem; }
 .shop-card .sh-meta { display: flex; flex-wrap: wrap; gap: 6px; margin: 8px 0; }
