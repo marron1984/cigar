@@ -84,26 +84,57 @@ const NOTE = (() => {
     return `<span class="stars">${out}</span>`;
   }
 
-  /* ---------- ブランド一覧を各データから集約 ---------- */
-  function brandList() {
-    const seen = new Set();
-    const out = [];
-    const push = (n) => {
+  /* ---------- 国名の表記ゆれを統一（「ニカラグア/米」「ドミニカ(本社スイス)」等） ---------- */
+  function normalizeCountry(raw) {
+    if (!raw) return "";
+    // 括弧書きの補足（本社所在地など）と、複数国併記の2か国目以降を落として主産地だけ残す
+    let s = raw.replace(/[（(].*?[）)]/g, "").split("/")[0].trim();
+    const alias = { "米": "アメリカ", "ドミニカ": "ドミニカ共和国" };
+    return alias[s] || s;
+  }
+
+  // 主要生産国はこの並び順で表示し、それ以外は登録順で末尾に続ける
+  const COUNTRY_ORDER = [
+    "キューバ", "ドミニカ共和国", "ニカラグア", "ホンジュラス",
+    "メキシコ", "エクアドル", "アメリカ", "ブラジル", "カメルーン"
+  ];
+
+  /* ---------- ブランド一覧を国別にグルーピングして集約 ---------- */
+  function brandGroups() {
+    const groups = new Map();      // 国名 -> Set<ブランド名>
+    const assigned = new Set();    // 既にどこかの国に割り当て済みのブランド名（重複掲載を防ぐ）
+    const push = (country, n) => {
       const name = (n || "").trim();
-      if (name && !seen.has(name)) { seen.add(name); out.push(name); }
+      if (!name || assigned.has(name)) return;
+      const c = normalizeCountry(country) || "その他";
+      if (!groups.has(c)) groups.set(c, new Set());
+      groups.get(c).add(name);
+      assigned.add(name);
     };
     // 博士編DBの全マルカ（キューバ＋ニューワールド）を優先
-    try {
-      (PHD_DATA.db.cubanMarcas || []).forEach(m => push(m.ja));
-      (PHD_DATA.db.newWorld || []).forEach(m => push(m.ja));
-    } catch (e) {}
+    try { (PHD_DATA.db.cubanMarcas || []).forEach(m => push("キューバ", m.ja)); } catch (e) {}
+    try { (PHD_DATA.db.newWorld || []).forEach(m => push(m.country, m.ja)); } catch (e) {}
     // 上級編ブランドと産地別の代表銘柄でも補完
-    try { (ADVANCED_DATA.brands || []).forEach(b => push(b.ja)); } catch (e) {}
+    try { (ADVANCED_DATA.brands || []).forEach(b => push(b.country, b.ja)); } catch (e) {}
     try {
       (CIGAR_DATA.countries || []).forEach(c =>
-        (c.brands || []).forEach(b => { if (!/ラッパー|使用/.test(b.ja)) push(b.ja); }));
+        (c.brands || []).forEach(b => { if (!/ラッパー|使用/.test(b.ja)) push(c.name_ja, b.ja); }));
     } catch (e) {}
-    return out;
+
+    const orderedNames = [
+      ...COUNTRY_ORDER.filter(n => groups.has(n)),
+      ...[...groups.keys()].filter(n => n !== "その他" && !COUNTRY_ORDER.includes(n)),
+      ...(groups.has("その他") ? ["その他"] : []),
+    ];
+    return orderedNames.map(country => ({
+      country,
+      brands: [...groups.get(country)].sort((a, b) => a.localeCompare(b, "ja")),
+    }));
+  }
+
+  /* 国別グループを崩したフラットな一覧（検索・照合用） */
+  function brandList() {
+    return brandGroups().flatMap(g => g.brands);
   }
 
   /* ---------- フォームのセレクト初期化 ---------- */
@@ -113,7 +144,11 @@ const NOTE = (() => {
     const bSel = q("#fBrand");
     if (bSel && !bSel.dataset.filled) {
       bSel.innerHTML = `<option value="">—</option>` +
-        brandList().map(n => `<option>${escN(n)}</option>`).join("") +
+        brandGroups().map(g =>
+          `<optgroup label="${escN(g.country)}">` +
+          g.brands.map(n => `<option>${escN(n)}</option>`).join("") +
+          `</optgroup>`
+        ).join("") +
         `<option value="__other">その他（自由入力）</option>`;
       bSel.dataset.filled = "1";
     }
