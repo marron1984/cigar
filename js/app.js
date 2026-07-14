@@ -26,7 +26,8 @@ function brandChips(brands, extraClass = "brand") {
 const views = {
   home: "view-home", basics: "view-basics", countries: "view-countries",
   sizes: "view-sizes", prices: "view-prices", tools: "view-tools", humidor: "view-humidor",
-  advanced: "view-advanced", phd: "view-phd", world: "view-world", note: "view-note"
+  advanced: "view-advanced", phd: "view-phd", world: "view-world", brands: "view-brands",
+  note: "view-note"
 };
 function showView(name, opts = {}) {
   if (!views[name]) name = "home";
@@ -99,7 +100,8 @@ const HOME_CARDS = [
   { view: "humidor", h: "ヒュミドール大全", p: "歴史・メーカー・使い方・種類・価格を5つの観点で徹底調査。" },
   { view: "advanced", h: "上級編（オタクの世界）", p: "品種・発酵・キューバ通・名門・喫煙術・ペアリング・熟成科学。" },
   { view: "phd", h: "博士編（学術）", p: "化学・植物学・官能評価・銘柄DB・産業経済・健康科学。" },
-  { view: "world", h: "世界編（総覧）", p: "年表・文化・愛好家・日本・実践レビュー・投資・用語大全・トラベル・FAQ。" }
+  { view: "world", h: "世界編（総覧）", p: "年表・文化・愛好家・日本・実践レビュー・投資・用語大全・トラベル・FAQ。" },
+  { view: "brands", h: "ブランド大全", p: "世界の銘柄（マルカ）を創業からの歴史とともに。まずはキューバ全マルカ。" }
 ];
 function renderHome() {
   $("#homeGrid").innerHTML = HOME_CARDS.map(c => `
@@ -457,6 +459,7 @@ function init() {
   PHD.init();
   WORLD.init();
   HUMIDOR.init();
+  BRANDS.init();
   NOTE.init();
   const start = (location.hash || "#home").slice(1);
   showView(start, { replace: true });
