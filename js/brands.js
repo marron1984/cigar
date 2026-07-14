@@ -17,6 +17,8 @@ const BRANDS = (() => {
       intro: (n) => `世界最大級の高級葉巻生産国ドミニカ共和国の主要${n}ブランドを、創業からの歴史とともに収録。銘柄名で絞り込みできます。` },
     { key: "nicaragua", elId: "brandsNicaragua",
       intro: (n) => `近年最も評価を高めている生産国ニカラグアの主要${n}ブランドを、創業からの歴史とともに収録。銘柄名で絞り込みできます。` },
+    { key: "honduras", elId: "brandsHonduras",
+      intro: (n) => `伝統の葉巻生産国ホンジュラスの主要${n}ブランドを、創業からの歴史とともに収録。銘柄名で絞り込みできます。` },
   ];
 
   function specRow(k, en, v) {
