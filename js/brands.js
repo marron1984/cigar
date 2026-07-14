@@ -32,9 +32,12 @@ const BRANDS = (() => {
     return `<div class="spec-row"><div class="k">${e(k)}<span class="en">${e(en)}</span></div><div class="v">${e(v)}</div></div>`;
   }
 
-  // 「1966」→「1966年」／「1880年代」「1901/1902」「〜頃」などはそのまま表示
+  // サマリー行のタグ用に短い年号表示を作る。
+  // 「1966」→「1966年」、補足つきの長い値は括弧の前まで＋20字で切り詰める
+  // （完全な記述はアコーディオン内の「創業・誕生」スペック行に表示される）。
   function foundedLabel(f) {
-    const s = String(f || "").trim();
+    let s = String(f || "").trim().split(/[（(]/)[0].trim();
+    if (s.length > 20) s = s.slice(0, 20) + "…";
     return /^\d{4}$/.test(s) ? s + "年" : s;
   }
 
