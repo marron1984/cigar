@@ -28,17 +28,27 @@ const views = {
   sizes: "view-sizes", prices: "view-prices", tools: "view-tools", humidor: "view-humidor",
   advanced: "view-advanced", phd: "view-phd", world: "view-world", note: "view-note"
 };
-function showView(name) {
+function showView(name, opts = {}) {
   if (!views[name]) name = "home";
   $$(".view").forEach(v => v.classList.remove("active"));
   $("#" + views[name]).classList.add("active");
   $$("#navTabs button").forEach(b =>
     b.classList.toggle("active", b.dataset.view === name));
   window.scrollTo({ top: 0, behavior: "smooth" });
-  if (location.hash !== "#" + name) history.replaceState(null, "", "#" + name);
+  // 履歴に積む（pushState）ことで、ブラウザの「戻る」やスワイプバックで
+  // 直前のページに戻れるようにする。戻る操作由来（fromPop）のときは積まない。
+  if (location.hash !== "#" + name) {
+    if (opts.replace) history.replaceState(null, "", "#" + name);
+    else if (!opts.fromPop) history.pushState(null, "", "#" + name);
+  }
   if (name === "note") NOTE.render();
   closeNav();
 }
+
+/* 戻る／進む（スワイプバック含む）でビューを同期 */
+window.addEventListener("popstate", () => {
+  showView((location.hash || "#home").slice(1), { fromPop: true });
+});
 
 /* ---------- モバイル・ハンバーガーメニュー ---------- */
 function setNav(open) {
@@ -132,7 +142,7 @@ function renderBasics() {
   $("#basicsContent").innerHTML = `
     <div class="kb-block">
       <h3>葉巻とは</h3>
-      <div class="prose"><p>${esc(D.whatIsCigar)}</p></div>
+      <div class="prose">${FMT.prose(D.whatIsCigar)}</div>
     </div>
 
     <div class="kb-block">
@@ -154,7 +164,7 @@ function renderBasics() {
 
     <div class="kb-block">
       <h3>味わいの表現・テイスティング</h3>
-      <div class="prose"><p>${esc(D.tastingTerms)}</p></div>
+      <div class="prose">${FMT.prose(D.tastingTerms)}</div>
     </div>
 
     <div class="kb-block">
@@ -165,12 +175,12 @@ function renderBasics() {
 
     <div class="kb-block">
       <h3>葉巻の歴史</h3>
-      <div class="prose"><p>${esc(D.history)}</p></div>
+      <div class="prose">${FMT.prose(D.history)}</div>
     </div>
 
     <div class="kb-block">
       <h3>マナー・楽しみ方とペアリング</h3>
-      <div class="prose"><p>${esc(D.manners)}</p></div>
+      <div class="prose">${FMT.prose(D.manners)}</div>
     </div>
 
     <div class="kb-block">
@@ -197,13 +207,13 @@ const COUNTRY_SLUG = {
 
 function countryFields(c) {
   return `
-    <div class="field"><div class="lbl">風味の特徴</div><div class="val">${esc(c.flavor)}</div></div>
-    <div class="field"><div class="lbl">気候・土壌</div><div class="val">${esc(c.climate)}</div></div>
+    <div class="field"><div class="lbl">風味の特徴</div><div class="val">${FMT.prose(c.flavor)}</div></div>
+    <div class="field"><div class="lbl">気候・土壌</div><div class="val">${FMT.prose(c.climate)}</div></div>
     <div class="field"><div class="lbl">主な栽培地域</div>
       <div class="chips">${c.regions.map(r => `<span class="chip">${esc(r)}</span>`).join("")}</div></div>
     <div class="field"><div class="lbl">代表的な銘柄</div>${brandChips(c.brands)}</div>
-    <div class="field"><div class="lbl">歴史</div><div class="val">${esc(c.history)}</div></div>
-    <div class="field"><div class="lbl">豆知識</div><div class="val">${esc(c.trivia)}</div></div>`;
+    <div class="field"><div class="lbl">歴史</div><div class="val">${FMT.prose(c.history)}</div></div>
+    <div class="field"><div class="lbl">豆知識</div><div class="val">${FMT.prose(c.trivia)}</div></div>`;
 }
 
 function renderCountryDetail(idx) {
@@ -237,13 +247,13 @@ function renderPhilippinesDetail() {
   const sections = p.sections.map(s => `
     <details class="acc">
       <summary>${esc(s.h)}</summary>
-      <div class="acc-body">${s.body.split("\n").filter(Boolean).map(t => `<p>${esc(t)}</p>`).join("")}</div>
+      <div class="acc-body">${FMT.prose(s.body)}</div>
     </details>`).join("");
   return `
     <div class="kb-block" style="margin-top:30px">
       <h3>${p.flag} ${esc(p.name_ja)} — 埋もれた葉巻大国を掘り下げる</h3>
       <div class="field"><div class="lbl">強さの目安</div><div class="val">${strengthBadge(p.strength)}</div></div>
-      <div class="field"><div class="lbl">風味の特徴</div><div class="val">${esc(p.flavor)}</div></div>
+      <div class="field"><div class="lbl">風味の特徴</div><div class="val">${FMT.prose(p.flavor)}</div></div>
       <div class="field"><div class="lbl">主な栽培地域</div>
         <div class="chips">${p.regions.map(r => `<span class="chip">${esc(r)}</span>`).join("")}</div></div>
       <div class="field"><div class="lbl">現存する主要ブランド</div>${brandChips(p.brands)}</div>
@@ -401,11 +411,11 @@ function renderPrices() {
     <div class="grid grid-2">${tiers}</div>
     <div class="kb-block">
       <h3>価格を左右する要因</h3>
-      <div class="prose"><p>${esc(D.priceFactors)}</p></div>
+      <div class="prose">${FMT.prose(D.priceFactors)}</div>
     </div>
     <div class="kb-block">
       <h3>ドライシガーとプレミアムシガーの違い</h3>
-      <div class="prose"><p>${esc(D.dryVsPremium)}</p></div>
+      <div class="prose">${FMT.prose(D.dryVsPremium)}</div>
     </div>`;
 }
 
@@ -417,10 +427,10 @@ function renderTools() {
     <div class="card tool-card">
       <h3><span class="ic">${t.icon}</span>${esc(t.ja)}</h3>
       <div class="en-name">${esc(t.en)}</div>
-      <div class="field"><div class="lbl">役割</div><div class="val">${esc(t.role)}</div></div>
-      <div class="field"><div class="lbl">種類</div><div class="val">${esc(t.types)}</div></div>
-      <div class="field"><div class="lbl">選び方</div><div class="val">${esc(t.choose)}</div></div>
-      <div class="field"><div class="lbl">使い方</div><div class="val">${esc(t.use)}</div></div>
+      <div class="field"><div class="lbl">役割</div><div class="val">${FMT.prose(t.role)}</div></div>
+      <div class="field"><div class="lbl">種類</div><div class="val">${FMT.prose(t.types)}</div></div>
+      <div class="field"><div class="lbl">選び方</div><div class="val">${FMT.prose(t.choose)}</div></div>
+      <div class="field"><div class="lbl">使い方</div><div class="val">${FMT.prose(t.use)}</div></div>
       <div class="field"><div class="lbl">価格の目安</div><div class="val">${esc(t.price)}</div></div>
       <div class="field"><div class="lbl">おすすめブランド</div>${brandChips(t.brands)}</div>
     </div>`).join("");
@@ -429,7 +439,7 @@ function renderTools() {
     <div class="grid grid-2">${tools}</div>
     <div class="kb-block">
       <h3>保管の基礎知識</h3>
-      <div class="card prose">${D.storageBasics.split("\n").map(p => `<p>${esc(p)}</p>`).join("")}</div>
+      <div class="card prose">${FMT.prose(D.storageBasics)}</div>
     </div>`;
 }
 
@@ -449,6 +459,6 @@ function init() {
   HUMIDOR.init();
   NOTE.init();
   const start = (location.hash || "#home").slice(1);
-  showView(start);
+  showView(start, { replace: true });
 }
 document.addEventListener("DOMContentLoaded", init);

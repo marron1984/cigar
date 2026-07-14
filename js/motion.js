@@ -134,9 +134,47 @@
   /* ---------- 3. ハッシュ切り替えを View Transitions API で滑らかにクロスフェード ---------- */
   if (!reduceMotion && typeof showView === "function" && document.startViewTransition) {
     const originalShowView = showView;
-    showView = function (name) {
-      document.startViewTransition(() => originalShowView(name));
+    showView = function (...args) {
+      document.startViewTransition(() => originalShowView(...args));
     };
+  }
+
+  /* ---------- 3.5. スワイプで前のページへ戻る ----------
+     画面左端からの右スワイプで history.back()（iOS Safari のネイティブ
+     エッジスワイプが効かない Android・PWA 環境向けのフォールバック）。
+     横スクロールするUI（サブナビ・表など）の上では発動しない。 */
+  {
+    let sx = 0, sy = 0, tracking = false;
+    document.addEventListener("touchstart", (e) => {
+      const t = e.touches[0];
+      if (t.clientX > 32) return;                    // 左端起点のみ
+      if (e.target.closest(".subnav, .table-wrap, .gauge-scroll")) return;
+      sx = t.clientX; sy = t.clientY; tracking = true;
+    }, { passive: true });
+    document.addEventListener("touchend", (e) => {
+      if (!tracking) return;
+      tracking = false;
+      const t = e.changedTouches[0];
+      const dx = t.clientX - sx, dy = Math.abs(t.clientY - sy);
+      if (dx > 70 && dy < 60) history.back();
+    }, { passive: true });
+  }
+
+  /* ---------- 3.6. 「ページ上部へ」ボタン（長いページのユーザビリティ） ---------- */
+  {
+    const btn = document.createElement("button");
+    btn.className = "to-top";
+    btn.setAttribute("aria-label", "ページの先頭へ戻る");
+    btn.innerHTML = "↑";
+    document.body.appendChild(btn);
+    btn.addEventListener("click", () => window.scrollTo({ top: 0, behavior: reduceMotion ? "auto" : "smooth" }));
+    let visible = false;
+    const update = () => {
+      const show = window.scrollY > 900;
+      if (show !== visible) { visible = show; btn.classList.toggle("show", show); }
+    };
+    window.addEventListener("scroll", update, { passive: true });
+    update();
   }
 
   /* ---------- 4. 統計カードの数字をカウントアップ ---------- */

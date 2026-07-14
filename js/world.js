@@ -9,7 +9,7 @@ const WORLD = (() => {
   const qw = (s, el = document) => el.querySelector(s);
   const e = (s) => String(s == null ? "" : s)
     .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
-  const paras = (t) => e(t).split("\n").filter(Boolean).map(p => `<p>${p}</p>`).join("");
+  const paras = (t) => FMT.prose(t);  // 改行・【】見出し・長文を読みやすい段落に
   const block = (title, inner, count) =>
     `<div class="kb-block"><h3>${e(title)}${count ? `<span class="data-count">${e(count)}</span>` : ""}</h3>${inner}</div>`;
 

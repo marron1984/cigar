@@ -9,9 +9,8 @@ const ADV = (() => {
   const qq = (s, el = document) => el.querySelector(s);
   const e = (s) => String(s == null ? "" : s)
     .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
-  // 改行を段落に
-  const paras = (t) => e(t).split("\n").filter(Boolean)
-    .map(p => `<p>${p}</p>`).join("");
+  // 改行・【】見出し・長文を読みやすい段落に（共通フォーマッタ）
+  const paras = (t) => FMT.prose(t);
   const block = (title, inner) =>
     `<div class="kb-block"><h3>${e(title)}</h3>${inner}</div>`;
   const acc = (title, inner, tag) =>

@@ -475,6 +475,25 @@ td .ve { font-size: .74rem; color: var(--muted); letter-spacing: .04em; }
 }
 .prose { color: var(--text-soft); }
 .prose p { margin-bottom: 12px; }
+.prose p:last-child { margin-bottom: 0; }
+
+/* ---------- 長文内の小見出し（FMT.prose が【ラベル】から生成する .ph） ---------- */
+.ph {
+  display: block;
+  font-family: var(--sans);
+  font-weight: 700;
+  font-size: .95em;
+  color: var(--cream);
+  line-height: 1.5;
+  margin: 20px 0 8px;
+  padding-left: 10px;
+  border-left: 3px solid var(--gold);
+  word-break: keep-all;
+}
+.ph:first-child { margin-top: 2px; }
+/* .val（国別・喫煙具などのフィールド値）内でも段落として読みやすく */
+.field .val p { margin-bottom: 10px; }
+.field .val p:last-child { margin-bottom: 0; }
 
 .step-list { counter-reset: step; list-style: none; display: grid; grid-template-columns: minmax(0,1fr); gap: 10px; }
 .step-list li {
@@ -806,10 +825,11 @@ button.footer-nav-note:hover { color: var(--gold); }
 .acc summary:hover { background: var(--panel-2); }
 .acc summary:active, .acc summary.is-pressed { background: var(--panel-2); transform: scale(.99); }
 .acc .acc-body {
-  padding: 2px 18px 18px; color: var(--text-soft); font-size: .93rem;
+  padding: 2px 18px 18px; color: var(--text-soft); font-size: .95rem;
   overflow: hidden; transition: height var(--dur) var(--ease), opacity var(--dur) var(--ease);
 }
 .acc .acc-body p { margin-bottom: 10px; }
+.acc .acc-body p:last-child { margin-bottom: 0; }
 .acc .tag { font-size:.7rem; padding:2px 9px; border-radius:var(--radius-sm); background:var(--panel-2); border:1px solid var(--line); color:var(--gold-bright); margin-left:8px; font-family:var(--sans); }
 
 /* process timeline */
@@ -1044,6 +1064,23 @@ table.ref { min-width: 480px; }
 .shop-card .sh-area { font-size: .72rem; padding: 3px 10px; border-radius: var(--radius-sm); background: var(--panel-2); color: var(--text-soft); border: 1px solid var(--line); }
 .shop-card .sh-desc { font-size: .9rem; color: var(--text-soft); }
 .shop-card .sh-note { font-size: .78rem; color: var(--muted); margin-top: 8px; font-style: italic; }
+
+/* ---------- 「ページ上部へ」ボタン（長いページ用・スクロールで出現） ---------- */
+.to-top {
+  position: fixed; left: 18px; bottom: 26px; z-index: 60;
+  width: 44px; height: 44px; border-radius: 50%;
+  border: 1px solid var(--line);
+  background: var(--panel); color: var(--cream);
+  font-size: 1.15rem; line-height: 1; cursor: pointer;
+  box-shadow: var(--shadow-sm);
+  display: grid; place-items: center;
+  opacity: 0; transform: translateY(14px); pointer-events: none;
+  transition: opacity var(--dur) var(--ease), transform var(--dur) var(--ease),
+    background-color var(--dur-fast) var(--ease);
+}
+.to-top.show { opacity: 1; transform: none; pointer-events: auto; }
+.to-top:hover { background: var(--panel-2); }
+.to-top:active { transform: scale(.92); }
 
 /* scrollbar */
 ::-webkit-scrollbar { height: 10px; width: 10px; }
