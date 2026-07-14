@@ -230,6 +230,27 @@ function renderCountryDetail(idx) {
     </div>`;
 }
 
+/* その他・新興の葉巻生産国：フィリピンの詳細セクション（歴史・産地・現代の担い手を掘り下げ） */
+function renderPhilippinesDetail() {
+  const p = D.philippinesDetail;
+  if (!p) return "";
+  const sections = p.sections.map(s => `
+    <details class="acc">
+      <summary>${esc(s.h)}</summary>
+      <div class="acc-body">${s.body.split("\n").filter(Boolean).map(t => `<p>${esc(t)}</p>`).join("")}</div>
+    </details>`).join("");
+  return `
+    <div class="kb-block" style="margin-top:30px">
+      <h3>${p.flag} ${esc(p.name_ja)} — 埋もれた葉巻大国を掘り下げる</h3>
+      <div class="field"><div class="lbl">強さの目安</div><div class="val">${strengthBadge(p.strength)}</div></div>
+      <div class="field"><div class="lbl">風味の特徴</div><div class="val">${esc(p.flavor)}</div></div>
+      <div class="field"><div class="lbl">主な栽培地域</div>
+        <div class="chips">${p.regions.map(r => `<span class="chip">${esc(r)}</span>`).join("")}</div></div>
+      <div class="field"><div class="lbl">現存する主要ブランド</div>${brandChips(p.brands)}</div>
+      <div style="margin-top:16px">${sections}</div>
+    </div>`;
+}
+
 function renderCountries() {
   // 国・産地別の概要ポスター（画像が無ければ自動で非表示）
   $("#countryOverview").innerHTML = `
@@ -246,7 +267,8 @@ function renderCountries() {
         <img src="assets/countries/_others.png" alt="第三国・ニューワールド・その他の葉巻生産国 一覧"
              onerror="var o=this.closest('.kb-block');if(o)o.remove();">
       </a>
-    </div>`;
+    </div>
+    ${renderPhilippinesDetail()}`;
   $("#countryNav").innerHTML = D.countries.map((c, i) =>
     `<button data-country="${i}"${i === 0 ? ' class="active"' : ''}>${c.flag} ${esc(c.name_ja)}</button>`).join("");
   $("#countryNav").addEventListener("click", (e) => {
