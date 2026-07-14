@@ -13,11 +13,17 @@ const BRANDS = (() => {
     return `<div class="spec-row"><div class="k">${e(k)}<span class="en">${e(en)}</span></div><div class="v">${e(v)}</div></div>`;
   }
 
+  // 「1966」→「1966年」／「1880年代」「1901/1902」「〜頃」などはそのまま表示
+  function foundedLabel(f) {
+    const s = String(f || "").trim();
+    return /^\d{4}$/.test(s) ? s + "年" : s;
+  }
+
   function brandAcc(b) {
     const vitolas = (b.vitolas || []).map(v => `<span class="chip brand">${e(v)}</span>`).join("");
     return `
       <details class="acc brand-entry" data-search="${e((b.ja + " " + b.en).toLowerCase())}">
-        <summary>${e(b.ja)} — ${e(b.en)}<span class="tag">${e(b.founded)}年</span></summary>
+        <summary>${e(b.ja)} — ${e(b.en)}<span class="tag">${e(foundedLabel(b.founded))}</span></summary>
         <div class="acc-body">
           ${specRow("創業・誕生", "Founded", b.founded)}
           ${specRow("創業者・創設主体", "Founder", b.founder)}
