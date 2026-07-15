@@ -69,6 +69,7 @@ const BRANDS = (() => {
           <div class="brand-history">${FMT.prose(b.history)}</div>
           ${vitolas ? `<div class="field"><div class="lbl">代表的なヴィトラ・ライン</div><div class="chips">${vitolas}</div></div>` : ""}
           ${b.trivia ? `<div class="field"><div class="lbl">豆知識</div><div class="val">${FMT.prose(b.trivia)}</div></div>` : ""}
+          ${b.sources && b.sources.length ? `<div class="brand-refs"><div class="brand-refs-h">主要出典 <span class="brand-refs-n">${b.sources.length}件</span></div><ol>${b.sources.map(s => `<li>${e(s)}</li>`).join("")}</ol></div>` : ""}
         </div>
       </details>`;
   }

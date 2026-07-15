@@ -968,6 +968,17 @@ button.footer-nav-note:hover { color: var(--gold); }
   padding-left: 4px;
 }
 .lit-refs li::marker { color: var(--gold); font-variant-numeric: tabular-nums; }
+
+/* ブランド大全：各銘柄の主要出典 */
+.brand-refs { margin-top: 20px; padding-top: 14px; border-top: 1px solid var(--line); }
+.brand-refs-h {
+  font-family: var(--sans); font-size: .72rem; font-weight: 700; letter-spacing: .1em;
+  text-transform: uppercase; color: var(--gold-bright); margin-bottom: 10px;
+}
+.brand-refs-n { color: var(--muted); font-weight: 500; letter-spacing: 0; }
+.brand-refs ol { margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 7px; }
+.brand-refs li { font-family: var(--sans); font-size: .78rem; color: var(--text-soft); line-height: 1.6; padding-left: 3px; }
+.brand-refs li::marker { color: var(--gold); font-variant-numeric: tabular-nums; }
 @media (max-width: 480px) {
   .lit-acc > summary { padding: 15px 14px; }
   .lit-title { font-size: 1.08rem; }
