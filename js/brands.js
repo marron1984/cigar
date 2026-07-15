@@ -25,6 +25,10 @@ const BRANDS = (() => {
       intro: (n) => `世界最大のラッパー葉供給国エクアドル。完成品ブランドではなく、世界中の高級葉巻を支える栽培家系と葉の「ブランド」${n}件を収録。` },
     { key: "usa", elId: "brandsUSA",
       intro: (n) => `タンパの黄金時代からマイアミの micro-factory、マシンメイドの巨人まで。アメリカの主要${n}ブランドを、創業からの歴史とともに収録。` },
+    { key: "brazil", elId: "brandsBrazil",
+      intro: (n) => `バイーアのマタ・フィナを擁する南米の伝統産地ブラジルの主要${n}エントリを、創業からの歴史とともに収録。` },
+    { key: "cameroon", elId: "brandsCameroon",
+      intro: (n) => `世界で最も希少なラッパー葉の産地カメルーン。葉を支える一族と葉の「ブランド」${n}件を収録。` },
   ];
 
   function specRow(k, en, v) {
