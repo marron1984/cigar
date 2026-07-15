@@ -15,14 +15,15 @@ const NOTE = (() => {
   let searchTerm = "";
   let sortMode = "new";
   let currentPhotos = [];       // モーダル編集中の写真（dataURL配列）
-  const MAX_PHOTOS = 6;
+  const MAX_PHOTOS = 10;
   const cloudOn = typeof CLOUD !== "undefined" && CLOUD.enabled;
+  let usingIDB = false;         // IndexedDBが使えるか（localStorageの約5MB制限を回避）
 
   function authorName() { try { return localStorage.getItem(AUTHOR_KEY) || ""; } catch (e) { return ""; } }
   function setAuthorName(v) { try { localStorage.setItem(AUTHOR_KEY, v); } catch (e) {} }
 
-  /* ---------- 画像リサイズ（localStorage節約のため縮小・圧縮） ---------- */
-  function resizeImage(file, maxDim = 1000, quality = 0.72) {
+  /* ---------- 画像リサイズ（保存容量節約のため縮小・圧縮） ---------- */
+  function resizeImage(file, maxDim = 1400, quality = 0.8) {
     return new Promise((resolve, reject) => {
       const reader = new FileReader();
       reader.onload = () => {
@@ -46,10 +47,88 @@ const NOTE = (() => {
     });
   }
 
-  /* ---------- 永続化 ---------- */
+  /* ---------- 永続化 ----------
+     写真を含む記録は localStorage の約5MB制限をすぐ超えるため、
+     大容量の IndexedDB（端末により数百MB〜GB級）を主保存先にする。
+     旧 localStorage の記録は初回に自動移行。IDBが使えない環境では従来どおり。 */
+  const DB_NAME = "cigar_journal_db";
+  const DB_STORE = "entries";
+  let idb = null;
+  function idbOpen() {
+    return new Promise((resolve) => {
+      if (!("indexedDB" in window)) return resolve(null);
+      let req;
+      try { req = indexedDB.open(DB_NAME, 1); } catch (e) { return resolve(null); }
+      req.onupgradeneeded = () => req.result.createObjectStore(DB_STORE, { keyPath: "id" });
+      req.onsuccess = () => resolve(req.result);
+      req.onerror = () => resolve(null);
+      req.onblocked = () => resolve(null);
+    });
+  }
+  function idbReq(mode, fn) {
+    return new Promise((resolve, reject) => {
+      const tx = idb.transaction(DB_STORE, mode);
+      const r = fn(tx.objectStore(DB_STORE));
+      tx.oncomplete = () => resolve(r && r.result);
+      tx.onerror = () => reject(tx.error);
+      tx.onabort = () => reject(tx.error || new Error("保存が中断されました"));
+    });
+  }
+  const idbAll = () => idbReq("readonly", s => s.getAll());
+  const idbPut = (e) => idbReq("readwrite", s => s.put(e));
+  const idbDelete = (id) => idbReq("readwrite", s => s.delete(id));
+  const idbReplaceAll = (list) => idbReq("readwrite", s => { s.clear(); list.forEach(e => s.put(e)); });
+
   function load() {
     try { entries = JSON.parse(localStorage.getItem(KEY)) || []; }
     catch (e) { entries = []; }
+  }
+
+  /* IndexedDBを開き、旧localStorageの記録を移行して読み込む */
+  async function loadStore() {
+    idb = await idbOpen();
+    if (idb) {
+      try {
+        let list = await idbAll();
+        let legacy = [];
+        try { legacy = JSON.parse(localStorage.getItem(KEY)) || []; } catch (e) {}
+        if (legacy.length) {
+          const have = new Set(list.map(e => e.id));
+          const add = legacy.filter(e => e && e.id && !have.has(e.id));
+          if (add.length) { await idbReplaceAll([...list, ...add]); list = await idbAll(); }
+          localStorage.removeItem(KEY);   // 移行完了：localStorageの容量を空ける
+        }
+        entries = list.sort((a, b) => (b.created || 0) - (a.created || 0));
+        usingIDB = true;
+        // ブラウザに永続保存を要請（容量逼迫時の自動削除を防ぐ。失敗しても害なし）
+        try { navigator.storage && navigator.storage.persist && navigator.storage.persist(); } catch (e) {}
+        return;
+      } catch (e) { console.warn("IndexedDBを利用できないためlocalStorageを使用します:", e); }
+    }
+    load();
+  }
+
+  /* 1件保存／1件削除／全置換。IDB優先、使えなければlocalStorage */
+  async function persistPut(entry) {
+    if (usingIDB) {
+      try { await idbPut(entry); return true; }
+      catch (e) {
+        alert("保存できませんでした。端末の空き容量が不足している可能性があります。不要な写真や記録を削除してからお試しください。");
+        return false;
+      }
+    }
+    return save();
+  }
+  async function persistDelete(id) {
+    if (usingIDB) { try { await idbDelete(id); return true; } catch (e) { return save(); } }
+    return save();
+  }
+  async function persistReplaceAll(list) {
+    if (usingIDB) {
+      try { await idbReplaceAll(list); return true; }
+      catch (e) { alert("保存できませんでした。端末の空き容量が不足している可能性があります。"); return false; }
+    }
+    return save();
   }
   // クラウド有効時：共有DBから「自分（記録者名）の記録だけ」を読み込む
   async function loadCloud() {
@@ -304,7 +383,7 @@ const NOTE = (() => {
   }
 
   /* ---------- 保存処理 ---------- */
-  function submit(e) {
+  async function submit(e) {
     e.preventDefault();
     const id = q("#entryId").value;
     const data = {
@@ -339,7 +418,7 @@ const NOTE = (() => {
       entries.unshift(data);
       saved = data;
     }
-    if (!save()) { entries = backup; return; }   // 失敗時は元に戻しモーダルを開いたまま
+    if (!saved || !(await persistPut(saved))) { entries = backup; return; }   // 失敗時は元に戻しモーダルを開いたまま
     closeModal();
     render();
     // 共有DBへ書き込み（失敗しても手元の記録は残る）
@@ -354,7 +433,7 @@ const NOTE = (() => {
     const en = entries.find(x => x.id === id);
     if (!confirm(`「${en ? en.name : "この記録"}」を削除しますか？`)) return;
     entries = entries.filter(x => x.id !== id);
-    save();
+    persistDelete(id);
     render();
     if (cloudOn) CLOUD.remove(id).catch(err => { console.warn(err); alert("共有データベースからの削除に失敗しました。時間をおいて再度お試しください。"); });
   }
@@ -492,7 +571,7 @@ const NOTE = (() => {
         // 重複ID回避
         const seen = new Set();
         entries = entries.filter(e => (seen.has(e.id) ? (e.id = uid(), true) : (seen.add(e.id), true)));
-        save();
+        persistReplaceAll(entries);
         render();
         if (cloudOn) CLOUD.replaceAll(entries).catch(err => { console.warn(err); alert("共有DBへの反映に一部失敗しました。"); });
         alert(`${cleaned.length} 件の記録を読み込みました。`);
@@ -508,12 +587,13 @@ const NOTE = (() => {
     const el = q("#noteMode");
     if (!el) return;
     if (cloudOn) { el.textContent = "共有DB（自分の記録だけ表示）"; el.classList.add("cloud"); }
-    else { el.textContent = "この端末に保存"; el.classList.remove("cloud"); }
+    else { el.textContent = usingIDB ? "この端末に保存（大容量）" : "この端末に保存"; el.classList.remove("cloud"); }
   }
 
   /* ---------- 初期化 ---------- */
   function init() {
-    load(); load.done = true;
+    // 旧localStorage → IndexedDB の移行と読み込み（完了後に再描画）
+    loadStore().then(() => { load.done = true; renderMode(); render(); });
     renderMode();
 
     // 記録者名
