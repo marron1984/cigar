@@ -6,29 +6,29 @@
    ============================================================ */
 
 :root {
-  /* 渋色ラウンジ・パレット（焦げ茶×象牙×燻し真鍮） */
-  --bg: #171310;
-  --bg-2: #1e1915;
-  --panel: #201b16;
-  --panel-2: #29221b;
-  --line: #463c2e;
-  --line-soft: #302921;
-  --text: #d9d0bf;
-  --text-soft: #b3a892;
-  --muted: #83796a;
-  --gold: #a98b5f;            /* 差し色：燻した真鍮（控えめに使用） */
-  --gold-bright: #c6a672;
-  --wine-dark: #0d0b09;       /* フッター・CTA帯：最も深い闇 */
-  --rose-tint: #29221b;       /* 強調カード背景 */
-  --ember: #b0563c;
-  --ember-glow: #cd6f50;
-  --leaf: #8b9268;
-  --cream: #efe6d2;          /* 見出し等：象牙 */
-  --on-accent: #171310;      /* 象牙・真鍮地の上に置く文字色 */
+  /* 渋色ラウンジ・パレット（焦げ茶×象牙×燻し真鍮）— 明度を一段上げた版 */
+  --bg: #262019;
+  --bg-2: #2f2820;
+  --panel: #332c23;
+  --panel-2: #3e352b;
+  --line: #5f5341;
+  --line-soft: #473c30;
+  --text: #f0e8d9;
+  --text-soft: #cec2ac;
+  --muted: #a1957f;
+  --gold: #c09a6a;            /* 差し色：燻した真鍮（控えめに使用） */
+  --gold-bright: #ddbd84;
+  --wine-dark: #191410;       /* フッター・CTA帯：最も深い色 */
+  --rose-tint: #3e352b;       /* 強調カード背景 */
+  --ember: #c46647;
+  --ember-glow: #dc7d5a;
+  --leaf: #9aa176;
+  --cream: #f8f0dd;          /* 見出し等：象牙 */
+  --on-accent: #221c15;      /* 象牙・真鍮地の上に置く文字色 */
   --radius: 2px;
   --radius-sm: 2px;
-  --shadow: 0 2px 4px rgba(0,0,0,.4), 0 14px 34px rgba(0,0,0,.45);
-  --shadow-sm: 0 1px 2px rgba(0,0,0,.3), 0 6px 16px rgba(0,0,0,.3);
+  --shadow: 0 2px 4px rgba(0,0,0,.35), 0 14px 34px rgba(0,0,0,.4);
+  --shadow-sm: 0 1px 2px rgba(0,0,0,.25), 0 6px 16px rgba(0,0,0,.25);
   --serif: "Hiragino Mincho ProN", "Yu Mincho", "YuMincho", "Noto Serif JP", serif;
   --sans: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic", "Meiryo", "Noto Sans JP", system-ui, sans-serif;
 
@@ -91,7 +91,7 @@ button, .chip, .strength-badge, .go, .eyebrow, .kicker,
   position: sticky;
   top: 0;
   z-index: 50;
-  background: rgba(23,19,16,.88);
+  background: rgba(38,32,25,.86);
   -webkit-backdrop-filter: blur(14px);
   backdrop-filter: blur(14px);
   border-bottom: 1px solid var(--line-soft);
@@ -299,7 +299,7 @@ main { max-width: 1180px; margin: 0 auto; padding: 0 20px 80px; }
 .section-photo {
   display: block; width: 100%; height: min(34vw, 280px); object-fit: cover;
   border-radius: var(--radius); margin-top: 30px;
-  filter: grayscale(52%) sepia(8%) contrast(1.04) brightness(.82);
+  filter: grayscale(42%) sepia(6%) contrast(1.02) brightness(.94);
   border: 1px solid var(--line-soft);
 }
 
@@ -331,7 +331,7 @@ main { max-width: 1180px; margin: 0 auto; padding: 0 20px 80px; }
   display: block; width: 100vw;
   margin: 40px calc(50% - 50vw) 0;
   height: min(64vw, 420px); object-fit: cover; object-position: center 30%;
-  filter: grayscale(52%) sepia(8%) contrast(1.04) brightness(.8);
+  filter: grayscale(42%) sepia(6%) contrast(1.02) brightness(.92);
 }
 @media (max-width: 640px) {
   .hero-photo { height: 62vw; }
