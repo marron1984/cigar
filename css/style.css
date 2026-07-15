@@ -464,6 +464,42 @@ main { max-width: 1180px; margin: 0 auto; padding: 0 20px 80px; }
   .note-cta-go { flex-basis: 100%; margin-top: 10px; text-align: center; }
 }
 
+/* ---------- ビトラ一覧（表の代わりのカード：スマホで横スクロール不要） ---------- */
+.vitola-list { display: grid; gap: 14px; margin-top: 6px; }
+@media (min-width: 720px) { .vitola-list { grid-template-columns: 1fr 1fr; } }
+.vitola-card {
+  background: var(--panel); border: 1px solid var(--line-soft);
+  border-radius: var(--radius); box-shadow: var(--shadow-sm);
+  padding: 18px 18px 16px;
+}
+.vitola-card .vc-name {
+  font-family: var(--serif); font-size: 1.2rem; font-weight: 600; color: var(--cream);
+  line-height: 1.35;
+}
+.vitola-card .vc-en {
+  display: inline-block; font-family: var(--sans); font-size: .72rem; letter-spacing: .06em;
+  color: var(--muted); text-transform: uppercase; margin-left: 8px;
+}
+.vitola-card .vc-specs {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px;
+  margin: 13px 0 14px; background: var(--line); border: 1px solid var(--line);
+  border-radius: var(--radius-sm); overflow: hidden;
+}
+.vitola-card .vc-spec {
+  background: var(--panel-2); padding: 9px 6px; text-align: center;
+  display: flex; flex-direction: column; gap: 3px; min-width: 0;
+}
+.vitola-card .vc-k {
+  font-family: var(--sans); font-size: .64rem; letter-spacing: .04em; color: var(--muted);
+}
+.vitola-card .vc-v {
+  font-family: var(--sans); font-size: .92rem; font-weight: 700; color: var(--cream);
+  line-height: 1.2; word-break: keep-all;
+}
+.vitola-card .vc-feat {
+  font-family: var(--serif); font-size: .92rem; color: var(--text-soft); line-height: 1.85; margin: 0;
+}
+
 /* ---------- Generic cards ---------- */
 .card {
   background: var(--panel);

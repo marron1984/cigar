@@ -305,14 +305,17 @@ function renderCountries() {
    太さ・サイズ別
    ============================================================ */
 function renderSizes() {
-  const rows = D.vitolas.map(v => `
-    <tr>
-      <td><span class="vn">${esc(v.ja)}</span><br><span class="ve">${esc(v.en)}</span></td>
-      <td>${esc(v.len)}</td>
-      <td>${esc(v.rg)}</td>
-      <td>${esc(v.time)}</td>
-      <td>${esc(v.feat)}</td>
-    </tr>`).join("");
+  // スマホで横スクロールせず読めるよう、表ではなくカード形式で表示
+  const vitolaCards = D.vitolas.map(v => `
+    <div class="vitola-card">
+      <div class="vc-name">${esc(v.ja)}<span class="vc-en">${esc(v.en)}</span></div>
+      <div class="vc-specs">
+        <div class="vc-spec"><span class="vc-k">長さ</span><span class="vc-v">${esc(v.len)}</span></div>
+        <div class="vc-spec"><span class="vc-k">リングゲージ</span><span class="vc-v">${esc(v.rg)}</span></div>
+        <div class="vc-spec"><span class="vc-k">喫煙時間</span><span class="vc-v">${esc(v.time)}</span></div>
+      </div>
+      <p class="vc-feat">${esc(v.feat)}</p>
+    </div>`).join("");
 
   // ゲージ（太さ）ビジュアル一覧
   const gauges = [
@@ -382,12 +385,7 @@ function renderSizes() {
 
     <div class="kb-block">
       <h3>主要なビトラ（サイズ規格）一覧</h3>
-      <div class="table-wrap">
-        <table>
-          <thead><tr><th>ビトラ</th><th>長さ</th><th>リングゲージ</th><th>喫煙時間</th><th>特徴</th></tr></thead>
-          <tbody>${rows}</tbody>
-        </table>
-      </div>
+      <div class="vitola-list">${vitolaCards}</div>
     </div>
 
     <div class="kb-block">
