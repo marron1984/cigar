@@ -93,11 +93,15 @@ const NOTE = (() => {
         let legacy = [];
         try { legacy = JSON.parse(localStorage.getItem(KEY)) || []; } catch (e) {}
         if (legacy.length) {
+          // localStorage 側にしか無い記録は IndexedDB へ復元的にマージ
+          // （IDBが空になっていた場合でも、この経路で記録が戻る）
           const have = new Set(list.map(e => e.id));
           const add = legacy.filter(e => e && e.id && !have.has(e.id));
           if (add.length) { await idbReplaceAll([...list, ...add]); list = await idbAll(); }
-          localStorage.removeItem(KEY);   // 移行完了：localStorageの容量を空ける
         }
+        // localStorage は削除せず、写真を除いた軽量バックアップとして常に残す。
+        // これにより IndexedDB が消えても記録の本文（写真以外）を復元できる。
+        writeBackup(list);
         entries = list.sort((a, b) => (b.created || 0) - (a.created || 0));
         usingIDB = true;
         // ブラウザに永続保存を要請（容量逼迫時の自動削除を防ぐ。失敗しても害なし）
@@ -111,7 +115,7 @@ const NOTE = (() => {
   /* 1件保存／1件削除／全置換。IDB優先、使えなければlocalStorage */
   async function persistPut(entry) {
     if (usingIDB) {
-      try { await idbPut(entry); return true; }
+      try { await idbPut(entry); writeBackup(entries); return true; }
       catch (e) {
         alert("保存できませんでした。端末の空き容量が不足している可能性があります。不要な写真や記録を削除してからお試しください。");
         return false;
@@ -120,12 +124,12 @@ const NOTE = (() => {
     return save();
   }
   async function persistDelete(id) {
-    if (usingIDB) { try { await idbDelete(id); return true; } catch (e) { return save(); } }
+    if (usingIDB) { try { await idbDelete(id); writeBackup(entries); return true; } catch (e) { return save(); } }
     return save();
   }
   async function persistReplaceAll(list) {
     if (usingIDB) {
-      try { await idbReplaceAll(list); return true; }
+      try { await idbReplaceAll(list); writeBackup(list); return true; }
       catch (e) { alert("保存できませんでした。端末の空き容量が不足している可能性があります。"); return false; }
     }
     return save();
@@ -150,6 +154,14 @@ const NOTE = (() => {
       alert("保存できませんでした。写真の枚数が多いと端末の保存容量を超えることがあります。写真を減らすか、不要な記録を削除してからお試しください。");
       return false;
     }
+  }
+  // 写真を除いた軽量スナップショットを localStorage に保存（必ず容量内に収まる）。
+  // IndexedDB が失われても記録の本文を復元するための最後の砦。
+  function writeBackup(list) {
+    try {
+      const meta = (list || []).map(e => { const { photos, ...rest } = e; return rest; });
+      localStorage.setItem(KEY, JSON.stringify(meta));
+    } catch (e) { /* 容量超過などは無視（IDBが主保存先のため） */ }
   }
   function uid() {
     return "e" + Date.now().toString(36) + Math.floor(Math.random() * 1e6).toString(36);
