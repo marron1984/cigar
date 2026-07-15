@@ -55,7 +55,7 @@
 
     const PRESS_SELECTOR = [
       ".home-card", ".btn", ".subnav button", ".nav-tabs button",
-      ".note-fab", ".note-cta", ".entry-photo", ".acc > summary",
+      ".bottom-nav button", ".note-fab", ".note-cta", ".entry-photo", ".acc > summary",
       ".country-overview img", ".cd-imglink"
     ].join(",");
     const MIN_PRESS_MS = 120;

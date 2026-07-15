@@ -90,7 +90,7 @@ button, .chip, .strength-badge, .go, .eyebrow, .kicker,
 .site-header {
   position: sticky;
   top: 0;
-  z-index: 50;
+  z-index: 95; /* ボトムシート（#navTabsはこの子孫）をスクリム(80)より前面に */
   background: rgba(38,32,25,.86);
   -webkit-backdrop-filter: blur(14px);
   backdrop-filter: blur(14px);
@@ -191,38 +191,68 @@ button, .chip, .strength-badge, .go, .eyebrow, .kicker,
 .nav-toggle.open .nav-toggle-bars::after { transform: translateX(-50%) translateY(-7px) rotate(-45deg); }
 
 @media (max-width: 860px) {
-  .nav-toggle { display: block; }
-  .nav-tabs {
-    display: none;
-    position: absolute;
-    top: calc(100% + 1px); left: 0; right: 0;
-    flex-direction: column;
-    gap: 1px;
-    margin: 0;
-    padding: 8px;
+  /* モバイルはボトムナビ主体。ヘッダーのハンバーガーは隠す */
+  .nav-toggle { display: none; }
+
+  /* ヘッダーの backdrop-filter は固定配置の子孫（#navTabsのボトムシート）の
+     基準ボックスをヘッダーに変えてしまい、シートが正しく画面下に出ない。
+     モバイルではぼかしを外し不透明背景にして基準を viewport に戻す。 */
+  .site-header {
     background: var(--panel);
-    border-bottom: 1px solid var(--line);
-    box-shadow: var(--shadow);
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
   }
-  .nav-tabs.open { display: flex; animation: fade var(--dur) var(--ease); }
+
+  /* フルメニューはボトムシートとして下からせり上がる */
+  .nav-tabs {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    position: fixed;
+    left: 0; right: 0;
+    bottom: 0;
+    margin: 0;
+    padding: 10px 10px calc(14px + env(safe-area-inset-bottom));
+    max-height: 76vh;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    background: var(--panel);
+    border-top: 1px solid var(--line);
+    border-radius: 20px 20px 0 0;
+    box-shadow: 0 -12px 34px rgba(0,0,0,.5);
+    z-index: 90;
+    transform: translateY(102%);
+    visibility: hidden;
+    transition: transform var(--dur) var(--ease-spring), visibility var(--dur) var(--ease);
+  }
+  /* シート上部のつまみ（グラバー） */
+  .nav-tabs::before {
+    content: ""; display: block; flex: 0 0 auto;
+    width: 40px; height: 4px; border-radius: 2px;
+    background: var(--line); margin: 2px auto 10px;
+  }
+  .nav-tabs.open { transform: none; visibility: visible; }
   .nav-tabs button {
     width: 100%;
     justify-content: flex-start;
-    font-size: .98rem;
-    padding: 15px 16px;
-    border-radius: 0;
+    font-size: 1rem;
+    padding: 15px 18px;
+    border-radius: 12px;
     box-shadow: none;
-    border-left: 2px solid transparent;
   }
-  .nav-tabs button.active { background: var(--panel-2); color: var(--gold-bright); box-shadow: none; font-weight: 600; border-left-color: var(--gold); }
-  .nav-tabs button.is-pressed:not(.active) { background: var(--panel-2); border-left-color: var(--gold); }
-  .nav-tabs .nav-journal { margin-right: 0; padding-right: 16px; margin-bottom: 6px; border-right: none; border-bottom: 1px solid var(--line-soft); border-radius: 0; padding-bottom: 15px; }
+  .nav-tabs button.active { background: var(--panel-2); color: var(--gold-bright); box-shadow: none; font-weight: 600; }
+  .nav-tabs button.is-pressed:not(.active) { background: var(--panel-2); }
+  .nav-tabs .nav-journal { margin-right: 0; padding-right: 18px; margin-bottom: 4px; border-right: none; border-bottom: 1px solid var(--line-soft); border-radius: 12px 12px 0 0; padding-bottom: 16px; }
 }
 
 /* ---------- Layout ---------- */
 main { max-width: 1180px; margin: 0 auto; padding: 0 20px 80px; }
-.view { display: none; animation: fade var(--dur-slow) var(--ease); }
+/* .view はページ全体のコンテナ。transform を使うアニメを当てると、
+   アニメ中だけ position:fixed の子孫（FAB・トップへ）が絶対配置化して
+   飛ぶため、不透明度のみでフェードさせる（動きは View Transitions が担う）。 */
+.view { display: none; animation: viewIn var(--dur-slow) var(--ease); }
 .view.active { display: block; }
+@keyframes viewIn { from { opacity: 0; } to { opacity: 1; } }
 @keyframes fade { from { opacity: 0; transform: translateY(14px);} to {opacity:1; transform:none;} }
 
 /* ---------- View Transitions API：ハッシュ切り替えを滑らかにクロスフェード ---------- */
@@ -1175,6 +1205,54 @@ table.ref { min-width: 480px; }
 .shop-card .sh-area { font-size: .72rem; padding: 3px 10px; border-radius: var(--radius-sm); background: var(--panel-2); color: var(--text-soft); border: 1px solid var(--line); }
 .shop-card .sh-desc { font-size: .9rem; color: var(--text-soft); }
 .shop-card .sh-note { font-size: .78rem; color: var(--muted); margin-top: 8px; font-style: italic; }
+
+/* ---------- モバイル・ボトムナビ（今風のタブバー） ---------- */
+.bottom-nav { display: none; }
+.nav-scrim {
+  position: fixed; inset: 0; z-index: 80;
+  background: rgba(0,0,0,.55); -webkit-backdrop-filter: blur(2px); backdrop-filter: blur(2px);
+  opacity: 0; pointer-events: none; transition: opacity var(--dur) var(--ease);
+}
+.nav-scrim.show { opacity: 1; pointer-events: auto; }
+
+@media (max-width: 860px) {
+  .bottom-nav {
+    display: flex;
+    position: fixed; left: 0; right: 0; bottom: 0; z-index: 70;
+    background: rgba(38,32,25,.9);
+    -webkit-backdrop-filter: blur(16px); backdrop-filter: blur(16px);
+    border-top: 1px solid var(--line-soft);
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+  .bottom-nav button {
+    flex: 1; min-width: 0;
+    display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px;
+    background: none; border: none; cursor: pointer;
+    padding: 9px 2px 8px;
+    color: var(--muted);
+    font-family: var(--sans); font-size: .64rem; letter-spacing: .02em;
+    transition: color var(--dur-fast) var(--ease), transform var(--dur-fast) var(--ease-spring);
+  }
+  .bottom-nav button svg {
+    width: 24px; height: 24px; display: block;
+    fill: none; stroke: currentColor; stroke-width: 1.7;
+    stroke-linecap: round; stroke-linejoin: round;
+    transition: transform var(--dur-fast) var(--ease-spring);
+  }
+  .bottom-nav button span { white-space: nowrap; }
+  .bottom-nav button.active { color: var(--gold-bright); }
+  .bottom-nav button.active svg { transform: translateY(-1px) scale(1.06); }
+  .bottom-nav button.is-pressed { color: var(--gold-bright); }
+  .bottom-nav button.is-pressed svg { transform: scale(.86); }
+
+  /* コンテンツがバーに隠れないよう下部に余白。フッターの後にバー分を確保 */
+  body { padding-bottom: calc(58px + env(safe-area-inset-bottom)); }
+  /* メニュー展開中は背面固定 */
+  body.nav-open { overflow: hidden; }
+  /* FAB・トップへボタンはバーの上に持ち上げる */
+  .note-fab { bottom: calc(74px + env(safe-area-inset-bottom)); right: 18px; }
+  .to-top { bottom: calc(74px + env(safe-area-inset-bottom)); }
+}
 
 /* ---------- 「ページ上部へ」ボタン（長いページ用・スクロールで出現） ---------- */
 .to-top {

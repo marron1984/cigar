@@ -33,7 +33,7 @@ function showView(name, opts = {}) {
   if (!views[name]) name = "home";
   $$(".view").forEach(v => v.classList.remove("active"));
   $("#" + views[name]).classList.add("active");
-  $$("#navTabs button").forEach(b =>
+  $$("#navTabs button, .bottom-nav button").forEach(b =>
     b.classList.toggle("active", b.dataset.view === name));
   window.scrollTo({ top: 0, behavior: "smooth" });
   // 履歴に積む（pushState）ことで、ブラウザの「戻る」やスワイプバックで
@@ -55,24 +55,30 @@ window.addEventListener("popstate", () => {
 function setNav(open) {
   const tabs = $("#navTabs");
   const btn = $("#navToggle");
-  if (!tabs || !btn) return;
+  if (!tabs) return;
   tabs.classList.toggle("open", open);
-  btn.classList.toggle("open", open);
-  btn.setAttribute("aria-expanded", open ? "true" : "false");
+  if (btn) { btn.classList.toggle("open", open); btn.setAttribute("aria-expanded", open ? "true" : "false"); }
+  const scrim = $("#navScrim");
+  if (scrim) { scrim.hidden = !open; scrim.classList.toggle("show", open); }
+  const menuBtn = $(".bottom-nav .bn-menu");
+  if (menuBtn) menuBtn.classList.toggle("active", open);
+  // メニュー展開中は背面のスクロールを固定
+  document.body.classList.toggle("nav-open", open);
 }
 function closeNav() { setNav(false); }
 
 document.addEventListener("click", (e) => {
-  const toggle = e.target.closest("#navToggle");
+  const toggle = e.target.closest("[data-nav-toggle]");
   if (toggle) {
     e.preventDefault();
     setNav(!$("#navTabs").classList.contains("open"));
     return;
   }
+  if (e.target.closest("#navScrim")) { closeNav(); return; }
   const t = e.target.closest("[data-view]");
   if (t) { e.preventDefault(); showView(t.dataset.view); return; }
-  // メニュー外クリックで閉じる
-  if ($("#navTabs").classList.contains("open") && !e.target.closest(".site-header")) closeNav();
+  // メニュー外クリックで閉じる（シート内・ヘッダー内のタップでは閉じない）
+  if ($("#navTabs").classList.contains("open") && !e.target.closest(".site-header") && !e.target.closest("#navTabs")) closeNav();
 });
 document.addEventListener("keydown", (e) => {
   if (e.key === "Escape") closeNav();
