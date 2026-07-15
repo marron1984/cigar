@@ -55,8 +55,7 @@
 
     const PRESS_SELECTOR = [
       ".home-card", ".btn", ".subnav button", ".nav-tabs button",
-      ".bottom-nav button", ".note-fab", ".note-cta", ".entry-photo", ".acc > summary",
-      ".country-overview img", ".cd-imglink"
+      ".bottom-nav button", ".note-fab", ".note-cta", ".entry-photo", ".acc > summary"
     ].join(",");
     const MIN_PRESS_MS = 120;
     const pressState = new WeakMap();

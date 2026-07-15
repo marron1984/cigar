@@ -1140,14 +1140,7 @@ table.ref { min-width: 480px; }
 .lex .lx-d { font-size:.85rem; color: var(--text-soft); }
 .lex-search { margin-bottom: 14px; }
 
-/* 国別・国セレクター＋詳細インフォグラフィック */
-.country-overview { display: block; line-height: 0; margin-bottom: 18px; }
-.country-overview img {
-  width: 100%; height: auto; border-radius: var(--radius);
-  border: 1px solid var(--line-soft); box-shadow: var(--shadow-sm); cursor: zoom-in;
-  transition: transform var(--dur-fast) var(--ease-spring), opacity var(--dur-fast) var(--ease);
-}
-.country-overview img.is-pressed { transform: scale(.98); opacity: .85; }
+/* 国別・国セレクター＋詳細テキスト */
 /* 国セレクターは固定しない（画面を広く使えるように） */
 #countryNav { position: static; top: auto; background: transparent; backdrop-filter: none; border-bottom: none; padding: 6px 0 12px; }
 #countryNav button { font-size: .92rem; }
@@ -1157,23 +1150,13 @@ table.ref { min-width: 480px; }
 .cd-title .cd-name { font-family: var(--serif); font-size: 1.7rem; color: var(--cream); font-weight: 700; }
 .cd-title .cd-en { font-size: .74rem; letter-spacing: .2em; color: var(--gold); text-transform: uppercase; }
 .cd-head .strength-badge { margin-left: auto; }
-.cd-imglink { display: block; text-align: center; line-height: 0; }
-.cd-img {
-  width: 100%; height: auto; border-radius: var(--radius);
-  border: 1px solid var(--line); box-shadow: var(--shadow); cursor: zoom-in;
-  transition: transform var(--dur-fast) var(--ease-spring), opacity var(--dur-fast) var(--ease);
-}
-.cd-imglink.is-pressed .cd-img { transform: scale(.98); opacity: .85; }
-.cd-imglink .cf-hint { display: block; font-size: .76rem; color: var(--muted); margin-top: 8px; line-height: 1.4; }
+.cd-body .field:first-child { margin-top: 4px; }
+.cd-sections { margin-top: 18px; }
+.cd-sections .acc { margin-top: 10px; }
 .cd-placeholder {
   text-align: center; padding: 34px 20px; border: 1px dashed var(--line);
   border-radius: var(--radius); color: var(--text-soft); font-size: .95rem; background: var(--panel);
 }
-.cd-text { margin-top: 18px; }
-.cd-text.no-img { border: none; background: transparent; margin-top: 8px; }
-.cd-text.no-img > summary { display: none; }
-.cd-text.no-img .acc-body { padding: 0; }
-.cd-text .acc-body .field:first-child { margin-top: 4px; }
 
 /* 添付写真をそのまま表示（assets/gauge-size-chart.png があれば表示） */
 .gauge-photo { width: 100%; height: auto; display: block; border-radius: var(--radius); border: 1px solid var(--line-soft); box-shadow: var(--shadow-sm); }

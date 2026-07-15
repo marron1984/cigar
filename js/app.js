@@ -87,7 +87,7 @@ document.addEventListener("keydown", (e) => {
 
 /* 国別など大きな画像は、画面内に収まるライトボックスで表示（新規タブを開かない） */
 document.addEventListener("click", (e) => {
-  const im = e.target.closest(".cd-img, .country-overview img, #countryOthers img, .gauge-photo, .guide-photo");
+  const im = e.target.closest(".gauge-photo, .guide-photo");
   if (im && im.src) {
     e.preventDefault();
     const lb = $("#lightbox"), lbi = $("#lightboxImg");
@@ -201,18 +201,29 @@ function renderBasics() {
 /* ============================================================
    国・産地別
    ============================================================ */
-// 各国のインフォグラフィック画像のファイル名（assets/countries/<slug>.png）
-const COUNTRY_SLUG = {
-  "Cuba": "cuba",
-  "Dominican Republic": "dominican-republic",
-  "Nicaragua": "nicaragua",
-  "Honduras": "honduras",
-  "Mexico": "mexico",
-  "Ecuador": "ecuador",
-  "USA (Connecticut)": "usa-connecticut",
-  "Brazil": "brazil",
-  "Cameroon": "cameroon"
-};
+// 深掘りセクション（countries_deep.js が各国に追加する sections / sources）を描画
+function countrySections(c) {
+  if (!Array.isArray(c.sections) || !c.sections.length) return "";
+  return `<div class="cd-sections">` + c.sections.map(s => `
+    <details class="acc">
+      <summary>${esc(s.h)}</summary>
+      <div class="acc-body">${FMT.prose(s.body)}</div>
+    </details>`).join("") + `</div>`;
+}
+
+// 出典文字列内のURLをクリック可能なリンクにする（それ以外はエスケープ）
+function srcLink(s) {
+  return String(s).split(/(https?:\/\/[^\s、，）)]+)/g).map((part, i) =>
+    i % 2 ? `<a href="${esc(part)}" target="_blank" rel="noopener">${esc(part)}</a>` : esc(part)
+  ).join("");
+}
+
+function countrySources(c) {
+  if (!Array.isArray(c.sources) || !c.sources.length) return "";
+  return `
+    <div class="field"><div class="lbl">主な出典 <span class="brand-refs-n">${c.sources.length}件</span></div>
+      <ul class="brand-refs">${c.sources.map(s => `<li>${srcLink(s)}</li>`).join("")}</ul></div>`;
+}
 
 function countryFields(c) {
   return `
@@ -222,16 +233,14 @@ function countryFields(c) {
       <div class="chips">${c.regions.map(r => `<span class="chip">${esc(r)}</span>`).join("")}</div></div>
     <div class="field"><div class="lbl">代表的な銘柄</div>${brandChips(c.brands)}</div>
     <div class="field"><div class="lbl">歴史</div><div class="val">${FMT.prose(c.history)}</div></div>
-    <div class="field"><div class="lbl">豆知識</div><div class="val">${FMT.prose(c.trivia)}</div></div>`;
+    <div class="field"><div class="lbl">豆知識</div><div class="val">${FMT.prose(c.trivia)}</div></div>
+    ${countrySections(c)}
+    ${countrySources(c)}`;
 }
 
 function renderCountryDetail(idx) {
   const c = D.countries[idx];
   if (!c) return;
-  const slug = COUNTRY_SLUG[c.name_en];
-  const img = slug ? `assets/countries/${slug}.png` : "";
-  // 画像onerror: 画像リンクを消し、テキストを開いてプレースホルダーを表示
-  const onerr = "var d=this.closest('.country-detail');var lk=this.closest('.cd-imglink');if(lk)lk.remove();var t=d.querySelector('.cd-text');if(t){t.open=true;t.classList.add('no-img');}var ph=d.querySelector('.cd-placeholder');if(ph)ph.style.display='block';";
   $("#countryDetail").innerHTML = `
     <div class="country-detail">
       <div class="cd-head">
@@ -239,13 +248,7 @@ function renderCountryDetail(idx) {
         <div class="cd-title"><div class="cd-name">${esc(c.name_ja)}</div><div class="cd-en">${esc(c.name_en)}</div></div>
         ${strengthBadge(c.strength)}
       </div>
-      ${img ? `<a class="cd-imglink" href="${img}" target="_blank" rel="noopener">
-        <img class="cd-img" src="${img}" alt="${esc(c.name_ja)} 葉巻インフォグラフィック" onerror="${onerr}">
-        <span class="cf-hint">画像をタップで拡大</span></a>` : ""}
-      <div class="cd-placeholder" style="display:none"><b>${esc(c.name_ja)}</b> のインフォグラフィックは準備中です。下のテキスト情報をご覧ください。</div>
-      <details class="acc cd-text"><summary>テキストで詳しく見る</summary>
-        <div class="acc-body">${countryFields(c)}</div>
-      </details>
+      <div class="cd-body">${countryFields(c)}</div>
     </div>`;
 }
 
@@ -271,21 +274,12 @@ function renderPhilippinesDetail() {
 }
 
 function renderCountries() {
-  // 国・産地別の概要ポスター（画像が無ければ自動で非表示）
-  $("#countryOverview").innerHTML = `
-    <a class="country-overview" href="assets/countries/_overview.png" target="_blank" rel="noopener">
-      <img src="assets/countries/_overview.png" alt="世界の主要葉巻生産国 一覧"
-           onerror="var o=document.getElementById('countryOverview');if(o)o.innerHTML='';">
-    </a>`;
-  // その他・新興の葉巻生産国 概要ポスター（画像が無ければ自動で非表示）
+  if ($("#countryOverview")) $("#countryOverview").innerHTML = "";
+  // その他・新興の葉巻生産国
   $("#countryOthers").innerHTML = `
     <div class="kb-block">
       <h3>その他・新興の葉巻生産国</h3>
       <p class="prose" style="margin-bottom:12px">主要9か国のほかにも、高品質なラッパー葉や個性的な葉を支える産地があります（カメルーン、インドネシア／スマトラ、フィリピン、コスタリカ、パナマ、ペルー、コロンビア、エルサルバドル、パラグアイ 等）。</p>
-      <a class="country-overview" href="assets/countries/_others.png" target="_blank" rel="noopener">
-        <img src="assets/countries/_others.png" alt="第三国・ニューワールド・その他の葉巻生産国 一覧"
-             onerror="var o=this.closest('.kb-block');if(o)o.remove();">
-      </a>
     </div>
     ${renderPhilippinesDetail()}`;
   $("#countryNav").innerHTML = D.countries.map((c, i) =>
