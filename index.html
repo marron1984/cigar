@@ -285,6 +285,18 @@
         <form id="entryForm">
           <input type="hidden" id="entryId">
           <div class="entry-panel-body">
+            <!-- 写真を最初に：見ながら思い出して書ける -->
+            <div class="form-row">
+              <label>写真（バンド・本体など）</label>
+              <div class="photo-uploader">
+                <div class="photo-previews" id="photoPreviews"></div>
+                <label class="btn btn-ghost btn-sm photo-add-btn">
+                  ＋ 写真を追加
+                  <input type="file" id="fPhotoInput" accept="image/*" multiple hidden>
+                </label>
+              </div>
+              <div class="photo-hint">最大6枚。写真を見ながら下に記入できます。</div>
+            </div>
             <!-- 必須・かんたん入力 -->
             <div class="form-row">
               <label for="fName">銘柄名 <span style="color:var(--ember)">*</span></label>
@@ -332,18 +344,6 @@
               </div>
               <div class="photo-hint">タップすると言葉がメモに追加されます。</div>
             </div>
-            <div class="form-row">
-              <label>写真（バンド・本体など）</label>
-              <div class="photo-uploader">
-                <div class="photo-previews" id="photoPreviews"></div>
-                <label class="btn btn-ghost btn-sm photo-add-btn">
-                  ＋ 写真を追加
-                  <input type="file" id="fPhotoInput" accept="image/*" multiple hidden>
-                </label>
-              </div>
-              <div class="photo-hint">バンドや本体の写真（最大6枚）。</div>
-            </div>
-
             <!-- 詳細（そのまま表示：折りたたまず全項目を記入できる） -->
             <div class="entry-more">
               <div class="entry-more-title">詳細（任意）</div>

@@ -200,10 +200,10 @@ const NOTE = (() => {
     panel.hidden = false;
     // 記録ボタンは開いている間は隠して重複を防ぐ
     const hero = q("#btnNewEntry"); if (hero) hero.style.display = "none";
-    // フォームの先頭が見えるようスクロール
+    // フォームの先頭（写真）が見えるようスクロール。
+    // 自動フォーカスはしない：キーボードが出ると写真が隠れてしまうため
     setTimeout(() => {
       panel.scrollIntoView({ behavior: "smooth", block: "start" });
-      q("#fName").focus({ preventScroll: true });
     }, 30);
   }
   function closeModal() {
@@ -555,10 +555,12 @@ const NOTE = (() => {
       if (e.target.files && e.target.files.length) addPhotos(e.target.files);
       e.target.value = "";
     });
-    // 写真プレビューの削除
+    // 写真プレビュー：×で削除、写真タップで拡大表示
     q("#photoPreviews").addEventListener("click", (e) => {
       const rm = e.target.closest("[data-rmphoto]");
-      if (rm) { currentPhotos.splice(Number(rm.dataset.rmphoto), 1); renderPhotoPreviews(); }
+      if (rm) { currentPhotos.splice(Number(rm.dataset.rmphoto), 1); renderPhotoPreviews(); return; }
+      const img = e.target.closest(".photo-thumb img");
+      if (img) openLightbox(img.src);
     });
     // ライトボックス（記録カードの写真を拡大）
     q("#entriesArea").addEventListener("click", (e) => {
