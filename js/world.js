@@ -12,6 +12,12 @@ const WORLD = (() => {
   const paras = (t) => FMT.prose(t);  // 改行・【】見出し・長文を読みやすい段落に
   const block = (title, inner, count) =>
     `<div class="kb-block"><h3>${e(title)}${count ? `<span class="data-count">${e(count)}</span>` : ""}</h3>${inner}</div>`;
+  // 各サブセクション末尾に主要出典を表示（WORLD_DATA.sources[key]）
+  const sourcesBlock = (key) => {
+    const s = (W.sources && W.sources[key]) || [];
+    if (!s.length) return "";
+    return `<div class="kb-block"><div class="brand-refs" style="margin-top:0"><div class="brand-refs-h">主要出典 <span class="brand-refs-n">${s.length}件</span></div><ol>${s.map(x => `<li>${e(x)}</li>`).join("")}</ol></div></div>`;
+  };
 
   /* ---------- 1. 年表・通史 ---------- */
   function history() {
@@ -224,7 +230,7 @@ const WORLD = (() => {
 
   function showSub(name) {
     if (!R[name]) name = "history";
-    if (!done[name]) { qw("#wsub-" + name).innerHTML = R[name](); done[name] = true; wireSearch(name); }
+    if (!done[name]) { qw("#wsub-" + name).innerHTML = R[name]() + sourcesBlock(name); done[name] = true; wireSearch(name); }
     document.querySelectorAll("#view-world .sub-view").forEach(v => v.classList.remove("active"));
     qw("#wsub-" + name).classList.add("active");
     document.querySelectorAll("#worldSubnav button").forEach(b =>
