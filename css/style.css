@@ -1,32 +1,34 @@
 /* ============================================================
    葉巻大辞典 — Cigar Encyclopedia
-   Theme: モノクローム・エディトリアル — 白・黒・グレーを基調に、
-   ワイン一色だけを差し色として残す「広告代理店のブランドサイト」風
+   Theme: 渋色ラウンジ — 焦げ茶の闇に象牙の文字、
+   差し色は燻した真鍮。シガーラウンジの薄明かりを思わせる
+   ダーク・エディトリアル
    ============================================================ */
 
 :root {
-  /* モノクローム・エディトリアル・パレット（単一アクセント＝ワイン） */
-  --bg: #f1efe9;
-  --bg-2: #eae7de;
-  --panel: #ffffff;
-  --panel-2: #f4f3ef;
-  --line: #cfc8b8;
-  --line-soft: #e1dbcc;
-  --text: #1a1815;
-  --text-soft: #55524a;
-  --muted: #96938a;
-  --gold: #7c2f42;            /* 唯一の差し色：ワイン（控えめに使用） */
-  --gold-bright: #62212f;
-  --wine-dark: #0e0d0c;       /* フッター・CTA帯：ほぼ純黒 */
-  --rose-tint: #f4f3ef;       /* 中立グレー地（強調カード背景） */
-  --ember: #7c2f42;
-  --ember-glow: #8f2c3e;
-  --leaf: #5f6b49;
-  --cream: #0d0c0b;          /* 見出し等：純黒に近いインク */
+  /* 渋色ラウンジ・パレット（焦げ茶×象牙×燻し真鍮） */
+  --bg: #171310;
+  --bg-2: #1e1915;
+  --panel: #201b16;
+  --panel-2: #29221b;
+  --line: #463c2e;
+  --line-soft: #302921;
+  --text: #d9d0bf;
+  --text-soft: #b3a892;
+  --muted: #83796a;
+  --gold: #a98b5f;            /* 差し色：燻した真鍮（控えめに使用） */
+  --gold-bright: #c6a672;
+  --wine-dark: #0d0b09;       /* フッター・CTA帯：最も深い闇 */
+  --rose-tint: #29221b;       /* 強調カード背景 */
+  --ember: #b0563c;
+  --ember-glow: #cd6f50;
+  --leaf: #8b9268;
+  --cream: #efe6d2;          /* 見出し等：象牙 */
+  --on-accent: #171310;      /* 象牙・真鍮地の上に置く文字色 */
   --radius: 2px;
   --radius-sm: 2px;
-  --shadow: 0 2px 4px rgba(13,12,11,.05), 0 12px 28px rgba(13,12,11,.09);
-  --shadow-sm: 0 1px 2px rgba(13,12,11,.05), 0 5px 14px rgba(13,12,11,.06);
+  --shadow: 0 2px 4px rgba(0,0,0,.4), 0 14px 34px rgba(0,0,0,.45);
+  --shadow-sm: 0 1px 2px rgba(0,0,0,.3), 0 6px 16px rgba(0,0,0,.3);
   --serif: "Hiragino Mincho ProN", "Yu Mincho", "YuMincho", "Noto Serif JP", serif;
   --sans: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic", "Meiryo", "Noto Sans JP", system-ui, sans-serif;
 
@@ -61,6 +63,15 @@ body {
   overflow-wrap: break-word;
 }
 
+/* overflow-x:hidden は body をスクロールコンテナ化してヘッダーの
+   position:sticky を無効にする。対応ブラウザでは clip を使う
+   （はみ出し防止は同じで、スクロール文脈を作らない）。
+   ※ この節は上の html / body ルールより後に置くこと */
+@supports (overflow-x: clip) {
+  html { overflow-x: clip; }
+  body { overflow-x: clip; }
+}
+
 a { color: var(--gold-bright); text-decoration: none; }
 a:hover { text-decoration: underline; }
 
@@ -80,7 +91,9 @@ button, .chip, .strength-badge, .go, .eyebrow, .kicker,
   position: sticky;
   top: 0;
   z-index: 50;
-  background: var(--panel);
+  background: rgba(23,19,16,.88);
+  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(14px);
   border-bottom: 1px solid var(--line-soft);
 }
 .nav-inner {
@@ -145,11 +158,11 @@ button, .chip, .strength-badge, .go, .eyebrow, .kicker,
   font-weight: 600;
   box-shadow: inset 0 -2px 0 var(--gold-bright);
 }
-/* 記録ノートは事典から区切って強調 */
+/* 記録ノートは先頭側に置き、事典セクションと区切って強調 */
 .nav-tabs .nav-journal {
-  margin-left: 10px;
-  padding-left: 14px;
-  border-left: 1px solid var(--line);
+  margin-right: 10px;
+  padding-right: 14px;
+  border-right: 1px solid var(--line);
   color: var(--gold-bright);
   font-weight: 600;
 }
@@ -201,9 +214,9 @@ button, .chip, .strength-badge, .go, .eyebrow, .kicker,
     box-shadow: none;
     border-left: 2px solid transparent;
   }
-  .nav-tabs button.active { background: var(--wine-dark); color: #fff; box-shadow: none; font-weight: 600; border-left-color: var(--gold); }
+  .nav-tabs button.active { background: var(--panel-2); color: var(--gold-bright); box-shadow: none; font-weight: 600; border-left-color: var(--gold); }
   .nav-tabs button.is-pressed:not(.active) { background: var(--panel-2); border-left-color: var(--gold); }
-  .nav-tabs .nav-journal { margin-left: 0; padding-left: 16px; margin-top: 6px; border-left: none; border-top: 1px solid var(--line-soft); border-radius: 0; padding-top: 15px; }
+  .nav-tabs .nav-journal { margin-right: 0; padding-right: 16px; margin-bottom: 6px; border-right: none; border-bottom: 1px solid var(--line-soft); border-radius: 0; padding-bottom: 15px; }
 }
 
 /* ---------- Layout ---------- */
@@ -285,7 +298,9 @@ main { max-width: 1180px; margin: 0 auto; padding: 0 20px 80px; }
 /* セクション冒頭の写真バナー（世界編・記録ノートなど） */
 .section-photo {
   display: block; width: 100%; height: min(34vw, 280px); object-fit: cover;
-  border-radius: var(--radius); margin-top: 30px; filter: grayscale(72%) contrast(1.06);
+  border-radius: var(--radius); margin-top: 30px;
+  filter: grayscale(52%) sepia(8%) contrast(1.04) brightness(.82);
+  border: 1px solid var(--line-soft);
 }
 
 /* ---------- Hero（白地に大見出し＋グレースケール写真バンド） ---------- */
@@ -316,7 +331,7 @@ main { max-width: 1180px; margin: 0 auto; padding: 0 20px 80px; }
   display: block; width: 100vw;
   margin: 40px calc(50% - 50vw) 0;
   height: min(64vw, 420px); object-fit: cover; object-position: center 30%;
-  filter: grayscale(72%) contrast(1.06);
+  filter: grayscale(52%) sepia(8%) contrast(1.04) brightness(.8);
 }
 @media (max-width: 640px) {
   .hero-photo { height: 62vw; }
@@ -396,20 +411,20 @@ main { max-width: 1180px; margin: 0 auto; padding: 0 20px 80px; }
   display: flex; align-items: center; gap: 20px; width: 100%; text-align: left;
   margin-top: 30px; padding: 30px 28px;
   background: var(--wine-dark);
-  border: none;
+  border: 1px solid var(--line);
   border-radius: 0; cursor: pointer;
   box-shadow: none;
-  transition: padding-left var(--dur) var(--ease), opacity var(--dur-slow) var(--ease);
+  transition: padding-left var(--dur) var(--ease), border-color var(--dur-fast) var(--ease), opacity var(--dur-slow) var(--ease);
 }
-.note-cta:hover { padding-left: 34px; }
-.note-cta:active, .note-cta.is-pressed { background: #000; padding-left: 34px; transition-duration: var(--dur-fast); }
+.note-cta:hover { padding-left: 34px; border-color: var(--gold); }
+.note-cta:active, .note-cta.is-pressed { background: #000; border-color: var(--gold); padding-left: 34px; transition-duration: var(--dur-fast); }
 .note-cta-ic { display: none; }
 .note-cta-text { flex: 1; min-width: 0; }
-.note-cta-text h3 { font-family: var(--sans); font-size: 1.1rem; font-weight: 700; color: #fff; margin-bottom: 4px; }
-.note-cta-text p { font-family: var(--serif); font-size: .87rem; color: rgba(255,255,255,.68); }
+.note-cta-text h3 { font-family: var(--sans); font-size: 1.1rem; font-weight: 700; color: var(--cream); margin-bottom: 4px; }
+.note-cta-text p { font-family: var(--serif); font-size: .87rem; color: var(--text-soft); }
 .note-cta-go {
-  font-family: var(--sans); font-size: .8rem; font-weight: 600; color: var(--wine-dark); letter-spacing: .02em; flex: 0 0 auto;
-  background: #fff; padding: 11px 20px; border-radius: 0;
+  font-family: var(--sans); font-size: .8rem; font-weight: 600; color: var(--on-accent); letter-spacing: .02em; flex: 0 0 auto;
+  background: var(--gold-bright); padding: 11px 20px; border-radius: 0;
   transition: transform var(--dur) var(--ease-spring);
 }
 .note-cta:hover .note-cta-go { transform: translateX(4px); }
@@ -455,7 +470,7 @@ main { max-width: 1180px; margin: 0 auto; padding: 0 20px 80px; }
 }
 .s-mild   { background: none;          color: var(--muted);    border: 1px solid var(--line); }
 .s-medium { background: var(--panel-2); color: var(--text-soft); border: 1px solid var(--line); }
-.s-full   { background: var(--gold-bright); color: #fff;        border: 1px solid var(--gold-bright); }
+.s-full   { background: var(--gold-bright); color: var(--on-accent); border: 1px solid var(--gold-bright); }
 
 /* ---------- Table ---------- */
 .table-wrap { overflow-x: auto; border-radius: var(--radius-sm); border: 1px solid var(--line-soft); }
@@ -505,7 +520,7 @@ td .ve { font-size: .74rem; color: var(--muted); letter-spacing: .04em; }
   position: absolute; left: 16px; top: 15px;
   width: 30px; height: 30px; border-radius: 50%;
   background: var(--gold-bright);
-  color: #fdfcf9; font-weight: 700; display: grid; place-items: center;
+  color: var(--on-accent); font-weight: 700; display: grid; place-items: center;
   font-family: var(--serif); font-size: .95rem;
 }
 .step-list li .st { font-family: var(--serif); color: var(--cream); font-size: 1.08rem; display:block; margin-bottom: 2px; }
@@ -562,11 +577,11 @@ td .ve { font-size: .74rem; color: var(--muted); letter-spacing: .04em; }
   transition: background-color var(--dur-fast) var(--ease), border-color var(--dur-fast) var(--ease),
     color var(--dur-fast) var(--ease), transform var(--dur-fast) var(--ease-spring);
 }
-.btn:hover { background: var(--cream); color: #fff; }
-.btn:active, .btn.is-pressed { transform: scale(.96); background: var(--cream); color: #fff; }
+.btn:hover { background: var(--cream); color: var(--on-accent); }
+.btn:active, .btn.is-pressed { transform: scale(.96); background: var(--cream); color: var(--on-accent); }
 .btn-primary {
   background: var(--cream);
-  color: #fff; font-weight: 600; border-color: var(--cream);
+  color: var(--on-accent); font-weight: 600; border-color: var(--cream);
 }
 .btn-primary:hover { background: var(--gold-bright); border-color: var(--gold-bright); }
 .btn-danger { color: var(--ember-glow); border-color: var(--ember); background: transparent; }
@@ -613,8 +628,8 @@ td .ve { font-size: .74rem; color: var(--muted); letter-spacing: .04em; }
   position: fixed; right: 22px; bottom: 26px; z-index: 60;
   width: 54px; height: 54px; border-radius: 50%; border: none;
   background: var(--cream);
-  color: #fff; font-size: 1.7rem; font-weight: 400; cursor: pointer;
-  box-shadow: 0 4px 16px rgba(13,12,11,.28); line-height: 1;
+  color: var(--on-accent); font-size: 1.7rem; font-weight: 400; cursor: pointer;
+  box-shadow: 0 4px 16px rgba(0,0,0,.5); line-height: 1;
   display: grid; place-items: center; /* 親(#view-note)が非表示のときは一緒に隠れる */
   transition: transform var(--dur-fast) var(--ease-spring), background-color var(--dur-fast) var(--ease);
 }
@@ -883,7 +898,7 @@ button.footer-nav-note:hover { color: var(--gold); }
 }
 .acc .acc-body p { margin-bottom: 10px; }
 .acc .acc-body p:last-child { margin-bottom: 0; }
-.acc .tag { font-size:.7rem; padding:2px 9px; border-radius:var(--radius-sm); background:var(--panel-2); border:1px solid var(--line); color:var(--gold-bright); margin-left:8px; font-family:var(--sans); }
+.acc .tag { font-size:.7rem; padding:2px 9px; border-radius:var(--radius-sm); background:var(--panel-2); border:1px solid var(--line); color:var(--gold-bright); margin-left:8px; font-family:var(--sans); white-space:nowrap; }
 
 /* process timeline */
 .timeline { position: relative; margin: 10px 0 0 8px; padding-left: 26px; }

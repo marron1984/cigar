@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#171310">
   <title>葉巻大辞典 — Cigar Encyclopedia & Note</title>
   <meta name="description" content="葉巻（シガー）の基礎知識・国別・太さ別・価格別・喫煙具の総合事典と、あなただけの喫煙記録ノート。">
   <link rel="stylesheet" href="css/style.css">
@@ -26,6 +27,7 @@
       </button>
       <nav class="nav-tabs" id="navTabs">
         <button data-view="home"><span class="ic"></span><span class="lbl">ホーム</span></button>
+        <button class="nav-journal" data-view="note"><span class="ic"></span><span class="lbl">記録ノート</span></button>
         <button data-view="basics"><span class="ic"></span><span class="lbl">基礎知識</span></button>
         <button data-view="countries"><span class="ic"></span><span class="lbl">国・産地別</span></button>
         <button data-view="sizes"><span class="ic"></span><span class="lbl">太さ別</span></button>
@@ -36,7 +38,6 @@
         <button data-view="phd"><span class="ic"></span><span class="lbl">博士編</span></button>
         <button data-view="world"><span class="ic"></span><span class="lbl">世界編</span></button>
         <button data-view="brands"><span class="ic"></span><span class="lbl">ブランド大全</span></button>
-        <button class="nav-journal" data-view="note"><span class="ic"></span><span class="lbl">記録ノート</span></button>
       </nav>
     </div>
   </header>
@@ -54,8 +55,6 @@
         <img class="hero-photo" src="assets/hero-portrait.jpg" alt="葉巻をくゆらせる一服のひととき">
       </div>
 
-      <div class="home-grid" id="homeGrid"></div>
-
       <button class="note-cta" data-view="note">
         <div class="note-cta-text">
           <h3>記録ノートを書く</h3>
@@ -63,6 +62,8 @@
         </div>
         <div class="note-cta-go">開く →</div>
       </button>
+
+      <div class="home-grid" id="homeGrid"></div>
 
       <div class="callout" style="margin-top:34px">
         本サイトは葉巻文化・製品知識を紹介する情報・記録用の事典です。喫煙は20歳以上（成人）のみ。健康への影響に十分ご留意ください。
@@ -464,7 +465,7 @@
       </nav>
     </div>
 
-    <div class="disc">掲載の価格・仕様は目安です。銘柄や販売店により異なります。喫煙は成人（20歳以上）のみ。喫煙は健康を害するおそれがあります。記録データは通常はお使いのブラウザ内（localStorage）に保存されます。共有モード（クラウド設定）を有効にした場合のみ、設定した共有データベースに保存され複数人で閲覧できます。</div>
+    <div class="disc">掲載の価格・仕様は目安です。銘柄や販売店により異なります。喫煙は成人（20歳以上）のみ。喫煙は健康を害するおそれがあります。記録データは通常はお使いの端末のブラウザ内に保存されます。共有モード（クラウド設定）を有効にした場合のみ、設定した共有データベースに保存され複数人で閲覧できます。</div>
   </footer>
 
   <!-- 写真拡大表示 -->
