@@ -1142,8 +1142,13 @@ table.ref { min-width: 480px; }
 
 /* 国別・国セレクター＋詳細テキスト */
 /* 国セレクターは固定しない（画面を広く使えるように） */
-#countryNav { position: static; top: auto; background: transparent; backdrop-filter: none; border-bottom: none; padding: 6px 0 12px; }
-#countryNav button { font-size: .92rem; }
+/* 国セレクターは固定せず、全タブを折り返して表示（横スクロールで隠れないように） */
+#countryNav {
+  position: static; top: auto; background: transparent; backdrop-filter: none;
+  border-bottom: 1px solid var(--line); padding: 6px 0 4px;
+  flex-wrap: wrap; overflow-x: visible; column-gap: 20px; row-gap: 2px;
+}
+#countryNav button { font-size: .92rem; padding: 6px 0 10px; }
 .country-detail { max-width: 980px; margin: 0 auto; animation: fade var(--dur-slow) var(--ease); }
 .cd-head { display: flex; align-items: center; gap: 14px; margin-bottom: 18px; flex-wrap: wrap; }
 .cd-flag { font-size: 2.6rem; line-height: 1; }
