@@ -16,6 +16,12 @@ const ADV = (() => {
   const acc = (title, inner, tag) =>
     `<details class="acc"><summary>${e(title)}${tag ? `<span class="tag">${e(tag)}</span>` : ""}</summary><div class="acc-body">${inner}</div></details>`;
   const chips = (arr) => `<div class="chips">${arr.map(x => `<span class="chip brand">${e(x)}</span>`).join("")}</div>`;
+  // 各サブセクション末尾に主要出典を表示（ADVANCED_DATA.sources[key]）
+  const sourcesBlock = (key) => {
+    const s = (A.sources && A.sources[key]) || [];
+    if (!s.length) return "";
+    return `<div class="kb-block"><div class="brand-refs" style="margin-top:0"><div class="brand-refs-h">主要出典 <span class="brand-refs-n">${s.length}件</span></div><ol>${s.map(x => `<li>${e(x)}</li>`).join("")}</ol></div></div>`;
+  };
 
   /* ---------- 1. 葉と品種 ---------- */
   function leaf() {
@@ -41,7 +47,8 @@ const ADV = (() => {
       + block("葉位（プライミング）— 1株のどの高さの葉か", `<p class="prose" style="margin-bottom:12px">同じ株でも、日光を浴びる上部ほど強く難燃、下部ほど軽く良燃焼。ブレンダーはこの“葉位”を積み木のように組んでボディを設計します。</p>${primings}`)
       + block("栽培法 — シェード vs サン", `<div class="prose">${paras(A.cultivation)}</div>`)
       + block("ブレンド設計の哲学", `<div class="prose">${paras(A.blendingPhilosophy)}</div>`)
-      + block("ラッパーの種類と風味", wrappers);
+      + block("ラッパーの種類と風味", wrappers)
+      + sourcesBlock("leaf");
   }
 
   /* ---------- 2. 製造と技 ---------- */
@@ -60,7 +67,8 @@ const ADV = (() => {
       + block("ボックスプレス vs ラウンド", `<div class="prose">${paras(A.boxPress)}</div>`)
       + block("プルーム vs カビ — 通の見極め", `<div class="callout">この見極めは葉巻愛好家の必修科目。白い粉が“熟成の勲章”か“カビ”かで、一本の運命が分かれます。</div><div class="prose">${paras(A.plumeVsMold)}</div>`)
       + block("熟成による味変化の化学", `<div class="prose">${paras(A.agingChemistry)}</div>`)
-      + block("色による選別・格付け（エスコヒダ）", `<div class="prose">${paras(A.grading)}</div>`);
+      + block("色による選別・格付け（エスコヒダ）", `<div class="prose">${paras(A.grading)}</div>`)
+      + sourcesBlock("craft");
   }
 
   /* ---------- 3. キューバ学 ---------- */
@@ -88,7 +96,8 @@ const ADV = (() => {
       + block("限定・特別版の種類", editions)
       + block("偽物（フェイク）の見分け方", `<div class="callout warn">コイーバは世界で最も贋作が多い銘柄。以下のポイントを複合的に確認します。各項目をタップで展開。</div>${fakes}`)
       + block("CC vs NC — キューバ産 対 非キューバ産", `<div class="prose">${paras(A.ccVsNc)}</div>`)
-      + block("伝説の一本（キューバ）", legend);
+      + block("伝説の一本（キューバ）", legend)
+      + sourcesBlock("cuba");
   }
 
   /* ---------- 4. 名門ブランド ---------- */
@@ -112,7 +121,8 @@ const ADV = (() => {
 
     return block("名門ブランド・カタログ（16銘柄）", `<div class="grid grid-2">${cards}</div>`)
       + block("シガー・オブ・ザ・イヤー（COTY）とは", `<div class="prose">${paras(A.cotyConcept)}</div>`)
-      + block("殿堂級の高得点・伝説の銘柄", highscore);
+      + block("殿堂級の高得点・伝説の銘柄", highscore)
+      + sourcesBlock("brands");
   }
 
   /* ---------- 5. 喫煙の極意 ---------- */
@@ -130,7 +140,8 @@ const ADV = (() => {
       + block("喫煙ペースと燃焼温度の科学", `<div class="prose">${paras(A.pace)}</div>`)
       + block("ナブ（どこで止めるか）", `<div class="prose">${paras(A.nub)}</div>`)
       + block("味の三分割（Rule of Thirds）を読む", `<div class="prose">${paras(A.readingThirds)}</div>`)
-      + block("通の儀式（ドライボックス他）", `<div class="prose">${paras(A.rituals)}</div>`);
+      + block("通の儀式（ドライボックス他）", `<div class="prose">${paras(A.rituals)}</div>`)
+      + sourcesBlock("technique");
   }
 
   /* ---------- 6. ペアリング学 ---------- */
@@ -154,7 +165,8 @@ const ADV = (() => {
       + block("強さ別・早見表", quick)
       + block("フードとの相性", `<div class="prose">${paras(A.pairingFood)}</div>`)
       + block("時間帯で選ぶ", `<div class="prose">${paras(A.pairingTime)}</div>`)
-      + block("やってはいけないNG例", `<div class="callout warn">よくある失敗を避けるだけで、ペアリングの成功率は大きく上がります。</div><div class="prose">${paras(A.pairingNg)}</div>`);
+      + block("やってはいけないNG例", `<div class="callout warn">よくある失敗を避けるだけで、ペアリングの成功率は大きく上がります。</div><div class="prose">${paras(A.pairingNg)}</div>`)
+      + sourcesBlock("pairing");
   }
 
   /* ---------- 7. 保管と熟成の科学 ---------- */
@@ -174,7 +186,8 @@ const ADV = (() => {
       + block("タバコシバンムシ対策と冷凍法", `<div class="callout warn">高温（22℃超）が最大の引き金。1匹見つけたら全数処理を。</div><div class="prose">${paras(A.beetles)}</div>`)
       + block("長期熟成とマリッジ", `<div class="prose">${paras(A.longAging)}</div>`)
       + block("ヒュミドールの種類（上級）", htypes)
-      + block("輸送・気候順応", `<div class="prose">${paras(A.acclimation)}</div>`);
+      + block("輸送・気候順応", `<div class="prose">${paras(A.acclimation)}</div>`)
+      + sourcesBlock("storage");
   }
 
   const RENDERERS = { leaf, craft, cuba, brands, technique, pairing, storage };
