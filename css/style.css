@@ -716,6 +716,7 @@ td .ve { font-size: .74rem; color: var(--muted); letter-spacing: .04em; }
   cursor: pointer; transition: border-color .15s, color .15s, transform .12s;
 }
 .memo-chips button:active, .memo-chips button.is-pressed { transform: scale(.92); border-color: var(--gold); color: var(--gold-bright); }
+.memo-chips button.on { background: var(--cream); color: var(--bg); border-color: var(--cream); font-weight: 700; }
 .entry-panel-actions { display: flex; gap: 10px; justify-content: flex-end; padding: 14px 22px; border-top: 1px solid var(--line-soft); background: var(--panel-2); }
 .entry-panel-actions .btn-lg { flex: 1; max-width: 260px; }
 .rating-input { font-size: 2rem; }

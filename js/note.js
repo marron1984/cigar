@@ -191,6 +191,7 @@ const NOTE = (() => {
     q("#fDate").value = isEdit ? (entry.date || "") : todayStr();
     q("#fPrice").value = isEdit ? (entry.price ?? "") : "";
     q("#fLocation").value = isEdit ? (entry.location || "") : "";
+    syncLocChips();
     q("#fNote").value = isEdit ? (entry.note || "") : "";
     currentPhotos = isEdit && Array.isArray(entry.photos) ? entry.photos.slice() : [];
     renderPhotoPreviews();
@@ -291,6 +292,15 @@ const NOTE = (() => {
     const seg = q("#strengthSeg");
     if (seg) seg.querySelectorAll("[data-strength]").forEach(b =>
       b.classList.toggle("on", b.dataset.strength === v));
+  }
+
+  /* ---------- 喫煙場所チップ：入力値と一致する候補をハイライト ---------- */
+  function syncLocChips() {
+    const chips = q("#locationChips");
+    if (!chips) return;
+    const v = q("#fLocation").value.trim();
+    chips.querySelectorAll("[data-loc]").forEach(b =>
+      b.classList.toggle("on", b.dataset.loc === v));
   }
 
   /* ---------- 保存処理 ---------- */
@@ -580,6 +590,17 @@ const NOTE = (() => {
       const b = e.target.closest("[data-strength]");
       if (b) setStrength(q("#fStrength").value === b.dataset.strength ? "" : b.dataset.strength);
     });
+
+    // 喫煙場所チップ：タップで入力（同じ場所を再タップで解除、自由記載も可）
+    const locChips = q("#locationChips");
+    if (locChips) locChips.addEventListener("click", (e) => {
+      const b = e.target.closest("[data-loc]");
+      if (!b) return;
+      const inp = q("#fLocation");
+      inp.value = inp.value === b.dataset.loc ? "" : b.dataset.loc;
+      syncLocChips();
+    });
+    q("#fLocation").addEventListener("input", syncLocChips);
 
     // テイスティング用語チップ：タップでメモに追加（読点区切り）
     const chips = q("#memoChips");

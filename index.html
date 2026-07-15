@@ -381,25 +381,14 @@
                 </div>
                 <div class="form-row">
                   <label for="fLocation">喫煙場所</label>
-                  <input type="text" id="fLocation" list="locationList" placeholder="例：自宅、〇〇シガーバー…">
-                  <datalist id="locationList">
-                    <option>自宅</option>
-                    <option>自宅（書斎）</option>
-                    <option>自宅（ベランダ・庭）</option>
-                    <option>シガーバー</option>
-                    <option>シガーラウンジ</option>
-                    <option>喫煙可能なバー・カフェ</option>
-                    <option>ホテル・旅館</option>
-                    <option>ホテルのテラス</option>
-                    <option>ゴルフ場</option>
-                    <option>屋外・公園</option>
-                    <option>キャンプ・アウトドア</option>
-                    <option>旅行先</option>
-                    <option>友人宅</option>
-                    <option>クラブ・会員制ラウンジ</option>
-                    <option>喫煙所</option>
-                    <option>車内</option>
-                  </datalist>
+                  <input type="text" id="fLocation" placeholder="その他は自由記載…">
+                  <div class="memo-chips" id="locationChips">
+                    <button type="button" data-loc="自宅">自宅</button>
+                    <button type="button" data-loc="エドモンド">エドモンド</button>
+                    <button type="button" data-loc="スーペルノバ北新地">スーペルノバ北新地</button>
+                    <button type="button" data-loc="スーペルノバ淀屋橋">スーペルノバ淀屋橋</button>
+                    <button type="button" data-loc="洋煙">洋煙</button>
+                  </div>
                 </div>
               </div>
             </div>
