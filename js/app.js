@@ -483,26 +483,37 @@ function renderPrices() {
    ============================================================ */
 function renderTools() {
   const list = [...D.tools].sort((a, b) => (a.order || 0) - (b.order || 0));
-  const tools = list.map(t => `
-    <div class="card tool-card">
-      <h3><span class="ic">${t.icon}</span>${esc(t.ja)}</h3>
-      <div class="en-name">${esc(t.en)}</div>
-      <div class="field"><div class="lbl">役割</div><div class="val">${FMT.prose(t.role)}</div></div>
-      <div class="field"><div class="lbl">種類</div><div class="val">${FMT.prose(t.types)}</div></div>
-      <div class="field"><div class="lbl">選び方</div><div class="val">${FMT.prose(t.choose)}</div></div>
-      <div class="field"><div class="lbl">使い方</div><div class="val">${FMT.prose(t.use)}</div></div>
-      ${t.care ? `<div class="field"><div class="lbl">手入れ・トラブル対処</div><div class="val">${FMT.prose(t.care)}</div></div>` : ""}
-      ${t.history ? `<div class="field"><div class="lbl">歴史・文化・豆知識</div><div class="val">${FMT.prose(t.history)}</div></div>` : ""}
-      <div class="field"><div class="lbl">価格の目安</div><div class="val">${FMT.prose(t.price)}</div></div>
-      <div class="field"><div class="lbl">おすすめブランド</div>${brandChips(t.brands)}</div>
-    </div>`).join("");
+  // 各喫煙具をアコーディオン化し、長文が一度に並んで間延びしないようにする。
+  // 詳細内も「基本（役割・選び方・価格・ブランド）」を先に見せ、
+  // 参照色の濃い項目（種類・使い方・手入れ・歴史）は入れ子アコーディオンに畳む。
+  const sub = (label, body) => body
+    ? `<details class="acc tool-sub"><summary>${esc(label)}</summary><div class="acc-body">${FMT.prose(body)}</div></details>` : "";
+  const tools = list.map((t, i) => `
+    <details class="acc tool-acc"${i === 0 ? " open" : ""}>
+      <summary>
+        <span class="tool-sum"><span class="tool-ic">${t.icon}</span>
+          <span class="tool-sum-txt">${esc(t.ja)}<span class="tool-sum-en">${esc(t.en)}</span></span></span>
+      </summary>
+      <div class="acc-body tool-body">
+        <div class="field"><div class="lbl">役割</div><div class="val">${FMT.prose(t.role)}</div></div>
+        <div class="field"><div class="lbl">選び方</div><div class="val">${FMT.prose(t.choose)}</div></div>
+        <div class="tool-more">
+          ${sub("種類・バリエーション", t.types)}
+          ${sub("使い方", t.use)}
+          ${sub("手入れ・トラブル対処", t.care)}
+          ${sub("歴史・文化・豆知識", t.history)}
+        </div>
+        <div class="field"><div class="lbl">価格の目安</div><div class="val">${FMT.prose(t.price)}</div></div>
+        <div class="field"><div class="lbl">おすすめブランド</div>${brandChips(t.brands)}</div>
+      </div>
+    </details>`).join("");
 
   $("#toolsContent").innerHTML = `
-    <div class="grid">${tools}</div>
-    <div class="kb-block">
-      <h3>保管の基礎知識</h3>
-      <div class="card prose">${FMT.prose(D.storageBasics)}</div>
-    </div>`;
+    <div class="tool-list">${tools}</div>
+    <details class="acc storage-acc">
+      <summary>📦 保管の基礎知識</summary>
+      <div class="acc-body prose">${FMT.prose(D.storageBasics)}</div>
+    </details>`;
 }
 
 /* ============================================================
