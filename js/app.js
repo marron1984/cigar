@@ -14,11 +14,61 @@ function strengthBadge(s) {
   const cls = /フル/.test(s) ? "s-full" : /ミディアム/.test(s) ? "s-medium" : "s-mild";
   return `<span class="strength-badge ${cls}">${esc(s)}</span>`;
 }
-function brandChips(brands, extraClass = "brand") {
-  return `<div class="chips">${brands.map(b =>
-    `<span class="chip ${extraClass}">${esc(b.ja)}${b.en ? ` <span style="opacity:.6">${esc(b.en)}</span>` : ""}</span>`
-  ).join("")}</div>`;
+function brandChips(brands, extraClass = "brand", brandKey = null) {
+  return `<div class="chips">${brands.map(b => {
+    const inner = `${esc(b.ja)}${b.en ? ` <span style="opacity:.6">${esc(b.en)}</span>` : ""}`;
+    if (brandKey) {
+      return `<button type="button" class="chip ${extraClass} brand-link" data-bkey="${esc(brandKey)}" data-ben="${esc(b.en || "")}" data-bja="${esc(b.ja || "")}">${inner}<span class="brand-link-go" aria-hidden="true">›</span></button>`;
+    }
+    return `<span class="chip ${extraClass}">${inner}</span>`;
+  }).join("")}</div>`;
 }
+
+/* 国・産地別 → ブランド大全 の国キー対応 */
+const COUNTRY_BRAND_KEY = {
+  "Cuba": "cuba", "Dominican Republic": "dominican", "Nicaragua": "nicaragua",
+  "Honduras": "honduras", "Mexico": "mexico", "Ecuador": "ecuador",
+  "USA (Connecticut)": "usa", "Brazil": "brazil", "Cameroon": "cameroon",
+  "Philippines": "philippines"
+};
+
+/* ブランドチップから「ブランド大全」の該当国タブを開き、一致する銘柄があれば展開する */
+function openBrandInBrands(key, en, ja) {
+  showView("brands");
+  const btn = document.querySelector(`#brandsSubnav button[data-bsub="${key}"]`);
+  if (btn) btn.click();
+  const base = (s) => String(s || "").split(/[（(〔[]/)[0].trim().toLowerCase();
+  const enB = base(en), jaB = base(ja);
+  setTimeout(() => {
+    const container = document.querySelector("#view-brands .sub-view.active");
+    if (!container) return;
+    // 検索フィルタが残っていれば解除
+    const search = container.querySelector(".lex-search");
+    if (search && search.value) { search.value = ""; search.dispatchEvent(new Event("input")); }
+    let hit = null;
+    container.querySelectorAll(".brand-entry").forEach(d => {
+      if (hit) return;
+      const ds = d.dataset.search || "";
+      if ((enB.length >= 3 && ds.includes(enB)) || (jaB.length >= 2 && ds.includes(jaB))) hit = d;
+    });
+    if (hit) {
+      hit.open = true;
+      hit.scrollIntoView({ behavior: "smooth", block: "center" });
+      hit.classList.remove("brand-flash");
+      void hit.offsetWidth;
+      hit.classList.add("brand-flash");
+    } else if (container.scrollIntoView) {
+      container.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  }, 130);
+}
+
+document.addEventListener("click", (e) => {
+  const link = e.target.closest(".brand-link");
+  if (!link) return;
+  e.preventDefault();
+  openBrandInBrands(link.dataset.bkey, link.dataset.ben, link.dataset.bja);
+});
 
 /* ============================================================
    ナビゲーション
@@ -231,7 +281,7 @@ function countryFields(c) {
     <div class="field"><div class="lbl">気候・土壌</div><div class="val">${FMT.prose(c.climate)}</div></div>
     <div class="field"><div class="lbl">主な栽培地域</div>
       <div class="chips">${c.regions.map(r => `<span class="chip">${esc(r)}</span>`).join("")}</div></div>
-    <div class="field"><div class="lbl">代表的な銘柄</div>${brandChips(c.brands)}</div>
+    <div class="field"><div class="lbl">代表的な銘柄</div>${brandChips(c.brands, "brand", COUNTRY_BRAND_KEY[c.name_en])}</div>
     <div class="field"><div class="lbl">歴史</div><div class="val">${FMT.prose(c.history)}</div></div>
     <div class="field"><div class="lbl">豆知識</div><div class="val">${FMT.prose(c.trivia)}</div></div>
     ${countrySections(c)}
@@ -272,7 +322,7 @@ function renderPhilippinesDetail() {
         <div class="field"><div class="lbl">風味の特徴</div><div class="val">${FMT.prose(p.flavor)}</div></div>
         <div class="field"><div class="lbl">主な栽培地域</div>
           <div class="chips">${p.regions.map(r => `<span class="chip">${esc(r)}</span>`).join("")}</div></div>
-        <div class="field"><div class="lbl">現存する主要ブランド</div>${brandChips(p.brands)}</div>
+        <div class="field"><div class="lbl">現存する主要ブランド</div>${brandChips(p.brands, "brand", "philippines")}</div>
         <div class="cd-sections">${sections}</div>
       </div>
     </div>`;

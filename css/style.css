@@ -529,6 +529,17 @@ main { max-width: 1180px; margin: 0 auto; padding: 0 20px 80px; }
   background: none; border: 1px solid var(--line); color: var(--text-soft);
 }
 .chip.brand { border-color: var(--cream); color: var(--cream); font-weight: 600; }
+/* ブランド大全へリンクするチップ */
+.chip.brand-link {
+  cursor: pointer; font: inherit; font-size: .78rem; font-weight: 600;
+  display: inline-flex; align-items: baseline; gap: 5px;
+  transition: border-color var(--dur-fast) var(--ease), color var(--dur-fast) var(--ease), background var(--dur-fast) var(--ease);
+}
+.chip.brand-link:hover { border-color: var(--gold-bright); background: var(--panel); }
+.chip.brand-link .brand-link-go { color: var(--gold); font-weight: 700; transform: translateY(1px); }
+.chip.brand-link:hover .brand-link-go { color: var(--gold-bright); }
+@keyframes brandFlash { 0% { box-shadow: 0 0 0 2px var(--gold-bright); } 100% { box-shadow: 0 0 0 2px transparent; } }
+.brand-entry.brand-flash { animation: brandFlash 1.6s var(--ease); border-radius: var(--radius); }
 
 /* strength meter：無彩色2段階＋フルボディだけ差し色を塗って強調 */
 .strength-badge {
