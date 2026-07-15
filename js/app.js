@@ -252,44 +252,52 @@ function renderCountryDetail(idx) {
     </div>`;
 }
 
-/* その他・新興の葉巻生産国：フィリピンの詳細セクション（歴史・産地・現代の担い手を掘り下げ） */
+/* フィリピン：他国と同じタブ内詳細として表示（埋もれた葉巻大国を掘り下げる） */
 function renderPhilippinesDetail() {
   const p = D.philippinesDetail;
-  if (!p) return "";
+  if (!p) return;
   const sections = p.sections.map(s => `
     <details class="acc">
       <summary>${esc(s.h)}</summary>
       <div class="acc-body">${FMT.prose(s.body)}</div>
     </details>`).join("");
-  return `
-    <div class="kb-block" style="margin-top:30px">
-      <h3>${p.flag} ${esc(p.name_ja)} — 埋もれた葉巻大国を掘り下げる</h3>
-      <div class="field"><div class="lbl">強さの目安</div><div class="val">${strengthBadge(p.strength)}</div></div>
-      <div class="field"><div class="lbl">風味の特徴</div><div class="val">${FMT.prose(p.flavor)}</div></div>
-      <div class="field"><div class="lbl">主な栽培地域</div>
-        <div class="chips">${p.regions.map(r => `<span class="chip">${esc(r)}</span>`).join("")}</div></div>
-      <div class="field"><div class="lbl">現存する主要ブランド</div>${brandChips(p.brands)}</div>
-      <div style="margin-top:16px">${sections}</div>
+  $("#countryDetail").innerHTML = `
+    <div class="country-detail">
+      <div class="cd-head">
+        <span class="cd-flag">${p.flag}</span>
+        <div class="cd-title"><div class="cd-name">${esc(p.name_ja)}</div><div class="cd-en">${esc(p.name_en)}</div></div>
+        ${strengthBadge(p.strength)}
+      </div>
+      <div class="cd-body">
+        <div class="field"><div class="lbl">風味の特徴</div><div class="val">${FMT.prose(p.flavor)}</div></div>
+        <div class="field"><div class="lbl">主な栽培地域</div>
+          <div class="chips">${p.regions.map(r => `<span class="chip">${esc(r)}</span>`).join("")}</div></div>
+        <div class="field"><div class="lbl">現存する主要ブランド</div>${brandChips(p.brands)}</div>
+        <div class="cd-sections">${sections}</div>
+      </div>
     </div>`;
 }
 
 function renderCountries() {
   if ($("#countryOverview")) $("#countryOverview").innerHTML = "";
-  // その他・新興の葉巻生産国
+  // その他・新興の葉巻生産国（フィリピンは独立タブへ移動）
   $("#countryOthers").innerHTML = `
     <div class="kb-block">
       <h3>その他・新興の葉巻生産国</h3>
-      <p class="prose" style="margin-bottom:12px">主要9か国のほかにも、高品質なラッパー葉や個性的な葉を支える産地があります（カメルーン、インドネシア／スマトラ、フィリピン、コスタリカ、パナマ、ペルー、コロンビア、エルサルバドル、パラグアイ 等）。</p>
-    </div>
-    ${renderPhilippinesDetail()}`;
-  $("#countryNav").innerHTML = D.countries.map((c, i) =>
+      <p class="prose" style="margin-bottom:12px">主要国のほかにも、高品質なラッパー葉や個性的な葉を支える産地があります（インドネシア／スマトラ、コスタリカ、パナマ、ペルー、コロンビア、エルサルバドル、パラグアイ 等）。</p>
+    </div>`;
+  const tabs = D.countries.map((c, i) =>
     `<button data-country="${i}"${i === 0 ? ' class="active"' : ''}>${c.flag} ${esc(c.name_ja)}</button>`).join("");
+  const phTab = D.philippinesDetail
+    ? `<button data-country="ph">${D.philippinesDetail.flag} ${esc(D.philippinesDetail.name_ja)}</button>` : "";
+  $("#countryNav").innerHTML = tabs + phTab;
   $("#countryNav").addEventListener("click", (e) => {
     const b = e.target.closest("[data-country]");
     if (!b) return;
     $$("#countryNav button").forEach(x => x.classList.remove("active"));
     b.classList.add("active");
-    renderCountryDetail(Number(b.dataset.country));
+    if (b.dataset.country === "ph") renderPhilippinesDetail();
+    else renderCountryDetail(Number(b.dataset.country));
     $("#countryDetail").scrollIntoView({ behavior: "smooth", block: "nearest" });
   });
   renderCountryDetail(0);
