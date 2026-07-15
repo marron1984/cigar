@@ -697,15 +697,16 @@ td .ve { font-size: .74rem; color: var(--muted); letter-spacing: .04em; }
 .rating-input .star.on { color: var(--gold-bright); }
 .rating-input .star:active { transform: scale(1.25); }
 
-/* 強さのワンタップ三択 */
-.seg-input { display: flex; border: 1px solid var(--line); border-radius: var(--radius-sm); overflow: hidden; }
+/* テイスト（強さ）のワンタップ五択：長い選択肢もあるため折り返せるピル型 */
+.seg-input { display: flex; flex-wrap: wrap; gap: 8px; }
 .seg-input button {
-  flex: 1; padding: 12px 4px; background: var(--bg-2); color: var(--text-soft);
-  border: none; border-left: 1px solid var(--line); font-family: var(--sans); font-size: .9rem;
-  cursor: pointer; transition: background-color .15s, color .15s;
+  padding: 10px 15px; background: var(--bg-2); color: var(--text-soft);
+  border: 1px solid var(--line); border-radius: 999px; font-family: var(--sans); font-size: .88rem;
+  cursor: pointer; transition: background-color .15s, color .15s, border-color .15s, transform .12s;
+  word-break: keep-all;
 }
-.seg-input button:first-child { border-left: none; }
-.seg-input button.on { background: var(--cream); color: var(--bg); font-weight: 700; }
+.seg-input button:active, .seg-input button.is-pressed { transform: scale(.94); }
+.seg-input button.on { background: var(--cream); color: var(--bg); border-color: var(--cream); font-weight: 700; }
 
 /* テイスティング用語チップ（タップでメモへ追加） */
 .memo-chips { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 9px; }
@@ -763,14 +764,22 @@ td .ve { font-size: .74rem; color: var(--muted); letter-spacing: .04em; }
 }
 
 /* Stats bar for note（数字で見る、無彩色＋ワインの下線だけの控えめなスタット） */
-.note-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 1px; margin-top: 16px; background: var(--line); border: 1px solid var(--line); }
+.note-stats { display: grid; grid-template-columns: repeat(5, 1fr); gap: 1px; margin-top: 16px; background: var(--line); border: 1px solid var(--line); }
 .stat-box {
   background: var(--panel); border: none;
   border-radius: 0; padding: 20px 14px 16px; text-align: center; position: relative;
 }
 .stat-box::after { content: ""; position: absolute; left: 50%; bottom: 0; transform: translateX(-50%); width: 20px; height: 2px; background: var(--gold); }
-.stat-box .sv { font-family: var(--sans); font-size: 1.9rem; font-weight: 800; color: var(--cream); line-height: 1.1; }
-.stat-box .sl { font-size: .72rem; color: var(--text-soft); letter-spacing: .04em; margin-top: 8px; display: block; }
+.stat-box .sv {
+  font-family: var(--sans); font-size: clamp(1.15rem, 4.2vw, 1.9rem); font-weight: 800;
+  color: var(--cream); line-height: 1.1; white-space: nowrap; /* 金額などの折り返し崩れを防ぐ */
+}
+.stat-box .sl { font-size: .72rem; color: var(--text-soft); letter-spacing: .04em; margin-top: 8px; display: block; white-space: nowrap; }
+/* モバイルは2列。5個目（総額）は1行使いにして空きマスを作らない */
+@media (max-width: 720px) {
+  .note-stats { grid-template-columns: repeat(2, 1fr); }
+  .note-stats .stat-box:nth-child(5) { grid-column: 1 / -1; }
+}
 
 /* ---------- Footer（濃色バンド＋メニュー） ---------- */
 .site-footer {

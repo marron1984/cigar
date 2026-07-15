@@ -280,9 +280,14 @@ const NOTE = (() => {
     if (lbl) { lbl.textContent = RATING_WORDS[n] || ""; lbl.classList.toggle("set", n > 0); }
   }
 
-  /* ---------- 強さ入力（ワンタップの三択。再タップで解除） ---------- */
+  /* ---------- テイスト入力（ワンタップの五択。再タップで解除） ---------- */
+  // 旧3段階時代の「マイルド」を新5段階の「ライト」へ読み替える
+  function normalizeStrength(v) {
+    return v === "マイルド" ? "ライト" : (v || "");
+  }
   function setStrength(v) {
-    q("#fStrength").value = v || "";
+    v = normalizeStrength(v);
+    q("#fStrength").value = v;
     const seg = q("#strengthSeg");
     if (seg) seg.querySelectorAll("[data-strength]").forEach(b =>
       b.classList.toggle("on", b.dataset.strength === v));
@@ -428,7 +433,7 @@ const NOTE = (() => {
         <div class="e-meta">
           ${e.country ? `<span class="chip">${escN(e.country)}</span>` : ""}
           ${e.vitola ? `<span class="chip">${escN(e.vitola)}</span>` : ""}
-          ${e.strength ? `<span class="chip">${escN(e.strength)}</span>` : ""}
+          ${e.strength ? `<span class="chip">${escN(normalizeStrength(e.strength))}</span>` : ""}
           ${e.price ? `<span class="chip">¥${Number(e.price).toLocaleString()}</span>` : ""}
           ${e.location ? `<span class="chip">${escN(e.location)}</span>` : ""}
         </div>
