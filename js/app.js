@@ -430,7 +430,8 @@ function renderPrices() {
    喫煙具
    ============================================================ */
 function renderTools() {
-  const tools = D.tools.map(t => `
+  const list = [...D.tools].sort((a, b) => (a.order || 0) - (b.order || 0));
+  const tools = list.map(t => `
     <div class="card tool-card">
       <h3><span class="ic">${t.icon}</span>${esc(t.ja)}</h3>
       <div class="en-name">${esc(t.en)}</div>
@@ -438,12 +439,14 @@ function renderTools() {
       <div class="field"><div class="lbl">種類</div><div class="val">${FMT.prose(t.types)}</div></div>
       <div class="field"><div class="lbl">選び方</div><div class="val">${FMT.prose(t.choose)}</div></div>
       <div class="field"><div class="lbl">使い方</div><div class="val">${FMT.prose(t.use)}</div></div>
-      <div class="field"><div class="lbl">価格の目安</div><div class="val">${esc(t.price)}</div></div>
+      ${t.care ? `<div class="field"><div class="lbl">手入れ・トラブル対処</div><div class="val">${FMT.prose(t.care)}</div></div>` : ""}
+      ${t.history ? `<div class="field"><div class="lbl">歴史・文化・豆知識</div><div class="val">${FMT.prose(t.history)}</div></div>` : ""}
+      <div class="field"><div class="lbl">価格の目安</div><div class="val">${FMT.prose(t.price)}</div></div>
       <div class="field"><div class="lbl">おすすめブランド</div>${brandChips(t.brands)}</div>
     </div>`).join("");
 
   $("#toolsContent").innerHTML = `
-    <div class="grid grid-2">${tools}</div>
+    <div class="grid">${tools}</div>
     <div class="kb-block">
       <h3>保管の基礎知識</h3>
       <div class="card prose">${FMT.prose(D.storageBasics)}</div>
