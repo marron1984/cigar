@@ -298,12 +298,15 @@
               </div>
               <div class="form-row">
                 <label>評価</label>
-                <div class="rating-input" id="ratingInput">
-                  <span class="star" data-v="1">★</span>
-                  <span class="star" data-v="2">★</span>
-                  <span class="star" data-v="3">★</span>
-                  <span class="star" data-v="4">★</span>
-                  <span class="star" data-v="5">★</span>
+                <div class="rating-wrap">
+                  <div class="rating-input" id="ratingInput">
+                    <span class="star" data-v="1">★</span>
+                    <span class="star" data-v="2">★</span>
+                    <span class="star" data-v="3">★</span>
+                    <span class="star" data-v="4">★</span>
+                    <span class="star" data-v="5">★</span>
+                  </div>
+                  <span class="rating-label" id="ratingLabel">タップで評価</span>
                 </div>
                 <input type="hidden" id="fRating" value="0">
               </div>
@@ -311,6 +314,23 @@
             <div class="form-row">
               <label for="fNote">感想・テイスティングメモ</label>
               <textarea id="fNote" placeholder="香り、味わい、ペアリング、その日の気分など自由に…"></textarea>
+              <div class="memo-chips" id="memoChips">
+                <button type="button" data-word="ナッツ">ナッツ</button>
+                <button type="button" data-word="ウッディ">ウッディ</button>
+                <button type="button" data-word="シダー">シダー</button>
+                <button type="button" data-word="スパイシー">スパイシー</button>
+                <button type="button" data-word="ペッパー">ペッパー</button>
+                <button type="button" data-word="クリーミー">クリーミー</button>
+                <button type="button" data-word="コーヒー">コーヒー</button>
+                <button type="button" data-word="カカオ">カカオ</button>
+                <button type="button" data-word="キャラメル">キャラメル</button>
+                <button type="button" data-word="蜂蜜">蜂蜜</button>
+                <button type="button" data-word="柑橘">柑橘</button>
+                <button type="button" data-word="革">革</button>
+                <button type="button" data-word="土">土</button>
+                <button type="button" data-word="青草">青草</button>
+              </div>
+              <div class="photo-hint">タップすると言葉がメモに追加されます。</div>
             </div>
             <div class="form-row">
               <label>写真（バンド・本体など）</label>
@@ -339,13 +359,13 @@
               </div>
               <div class="form-two">
                 <div class="form-row">
-                  <label for="fStrength">強さ</label>
-                  <select id="fStrength">
-                    <option value="">—</option>
-                    <option>マイルド</option>
-                    <option>ミディアム</option>
-                    <option>フル</option>
-                  </select>
+                  <label>強さ</label>
+                  <div class="seg-input" id="strengthSeg">
+                    <button type="button" data-strength="マイルド">マイルド</button>
+                    <button type="button" data-strength="ミディアム">ミディアム</button>
+                    <button type="button" data-strength="フル">フル</button>
+                  </div>
+                  <input type="hidden" id="fStrength" value="">
                 </div>
                 <div class="form-row">
                   <label for="fPrice">価格（円）</label>
@@ -401,6 +421,12 @@
 
       <div class="note-utils">
         <input type="text" class="note-search" id="noteSearch" placeholder="銘柄・産地・喫煙場所・記録者・感想で検索…">
+        <select id="noteSort" class="note-sort" aria-label="並び替え">
+          <option value="new">新しい順</option>
+          <option value="old">古い順</option>
+          <option value="rating">評価が高い順</option>
+          <option value="price">価格が高い順</option>
+        </select>
         <span class="count-pill" id="entryCount">0 本</span>
         <button class="btn btn-ghost btn-sm" id="btnExport">エクスポート</button>
         <button class="btn btn-ghost btn-sm" id="btnImport">インポート</button>

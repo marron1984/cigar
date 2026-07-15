@@ -588,6 +588,11 @@ td .ve { font-size: .74rem; color: var(--muted); letter-spacing: .04em; }
 .note-add-hero .na-plus { font-size: 1.3rem; line-height: 1; font-weight: 400; }
 .note-utils { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin: 6px 0 4px; }
 .note-utils .note-search { flex: 1; min-width: 220px; margin: 0; }
+.note-sort {
+  padding: 10px 12px; border-radius: var(--radius-sm); border: 1px solid var(--line-soft);
+  background: var(--panel); color: var(--text); font-family: var(--sans); font-size: .88rem;
+}
+.note-sort:focus { outline: none; border-color: var(--gold); }
 
 /* 記録者・モード表示 */
 .note-topbar { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; margin: 6px 0 14px; }
@@ -595,7 +600,7 @@ td .ve { font-size: .74rem; color: var(--muted); letter-spacing: .04em; }
 .note-author label { font-size: .8rem; color: var(--muted); letter-spacing: .02em; }
 .note-author input {
   padding: 9px 14px; border-radius: var(--radius-sm); border: 1px solid var(--line);
-  background: var(--panel); color: var(--text); font-family: var(--sans); font-size: .92rem; min-width: 180px;
+  background: var(--panel); color: var(--text); font-family: var(--sans); font-size: 1rem; min-width: 180px;
 }
 .note-author input:focus { outline: none; border-color: var(--gold); }
 .note-mode { margin-left: auto; font-size: .76rem; padding: 5px 12px; border-radius: var(--radius-sm); border: 1px solid var(--line-soft); color: var(--muted); }
@@ -621,7 +626,7 @@ td .ve { font-size: .74rem; color: var(--muted); letter-spacing: .04em; }
 .note-search {
   width: 100%; padding: 11px 16px; border-radius: var(--radius-sm);
   background: var(--panel); border: 1px solid var(--line-soft); color: var(--text);
-  font-family: var(--sans); font-size: .95rem; margin: 14px 0 6px;
+  font-family: var(--sans); font-size: 1rem; margin: 14px 0 6px; /* 16px以上でiOSの自動ズームを防ぐ */
 }
 .note-search:focus { outline: none; border-color: var(--gold); }
 
@@ -632,14 +637,26 @@ td .ve { font-size: .74rem; color: var(--muted); letter-spacing: .04em; }
   position: relative;
 }
 .entry .e-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 10px; }
+.entry .e-title { min-width: 0; }
+.entry .e-side { text-align: right; flex-shrink: 0; }
 .entry h4 { font-family: var(--serif); font-size: 1.2rem; font-weight: 600; color: var(--cream); }
 .entry .e-brand { font-size: .82rem; color: var(--muted); }
-.entry .e-date { font-size: .74rem; color: var(--muted); }
+.entry .e-date { font-size: .74rem; color: var(--muted); font-variant-numeric: tabular-nums; }
 .entry .e-meta { display: flex; flex-wrap: wrap; gap: 6px; margin: 10px 0; }
-.entry .e-note { font-size: .9rem; color: var(--text-soft); white-space: pre-wrap; margin-top: 6px; }
-.entry .stars { color: var(--gold-bright); font-size: 1.05rem; letter-spacing: 2px; }
+.entry .e-note {
+  font-size: .92rem; color: var(--text-soft); white-space: pre-wrap; line-height: 1.85;
+  margin-top: 8px; padding: 10px 0 0; border-top: 1px dashed var(--line-soft);
+}
+.entry .e-note.clamp {
+  display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 4; overflow: hidden;
+}
+.entry .e-note-more {
+  background: none; border: none; padding: 4px 0 0; cursor: pointer;
+  font-family: var(--sans); font-size: .8rem; color: var(--gold-bright); letter-spacing: .04em;
+}
+.entry .stars { color: var(--gold-bright); font-size: 1.05rem; letter-spacing: 2px; white-space: nowrap; }
 .entry .stars .off { color: var(--line); }
-.entry .e-actions { display: flex; gap: 8px; margin-top: 14px; }
+.entry .e-actions { display: flex; gap: 8px; margin-top: 14px; padding-top: 12px; border-top: 1px solid var(--line-soft); }
 
 .empty-state {
   text-align: center; padding: 60px 20px; color: var(--muted);
@@ -665,16 +682,39 @@ td .ve { font-size: .74rem; color: var(--muted); letter-spacing: .04em; }
 .form-row { margin-bottom: 15px; }
 .form-row label { display: block; font-size: .8rem; letter-spacing: .08em; color: var(--gold); margin-bottom: 5px; text-transform: uppercase; }
 .form-row input, .form-row textarea, .form-row select {
-  width: 100%; padding: 11px 14px; border-radius: var(--radius-sm);
+  width: 100%; padding: 12px 14px; border-radius: var(--radius-sm);
   background: var(--bg-2); border: 1px solid var(--line); color: var(--text);
-  font-family: var(--sans); font-size: .95rem;
+  font-family: var(--sans); font-size: 1rem; /* 16px以上でiOSの自動ズームを防ぐ */
 }
 .form-row input:focus, .form-row textarea:focus, .form-row select:focus { outline: none; border-color: var(--gold); }
-.form-row textarea { resize: vertical; min-height: 90px; }
+.form-row textarea { resize: vertical; min-height: 110px; line-height: 1.7; }
 .form-two { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.rating-wrap { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+.rating-label { font-size: .8rem; color: var(--muted); letter-spacing: .04em; }
+.rating-label.set { color: var(--gold-bright); }
 .rating-input { display: flex; gap: 6px; font-size: 1.7rem; cursor: pointer; }
-.rating-input .star { color: var(--line); transition: color .12s; }
+.rating-input .star { color: var(--line); transition: color .12s, transform .12s; }
 .rating-input .star.on { color: var(--gold-bright); }
+.rating-input .star:active { transform: scale(1.25); }
+
+/* 強さのワンタップ三択 */
+.seg-input { display: flex; border: 1px solid var(--line); border-radius: var(--radius-sm); overflow: hidden; }
+.seg-input button {
+  flex: 1; padding: 12px 4px; background: var(--bg-2); color: var(--text-soft);
+  border: none; border-left: 1px solid var(--line); font-family: var(--sans); font-size: .9rem;
+  cursor: pointer; transition: background-color .15s, color .15s;
+}
+.seg-input button:first-child { border-left: none; }
+.seg-input button.on { background: var(--cream); color: var(--bg); font-weight: 700; }
+
+/* テイスティング用語チップ（タップでメモへ追加） */
+.memo-chips { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 9px; }
+.memo-chips button {
+  padding: 7px 13px; border-radius: 999px; border: 1px solid var(--line);
+  background: var(--panel); color: var(--text-soft); font-family: var(--sans); font-size: .82rem;
+  cursor: pointer; transition: border-color .15s, color .15s, transform .12s;
+}
+.memo-chips button:active, .memo-chips button.is-pressed { transform: scale(.92); border-color: var(--gold); color: var(--gold-bright); }
 .entry-panel-actions { display: flex; gap: 10px; justify-content: flex-end; padding: 14px 22px; border-top: 1px solid var(--line-soft); background: var(--panel-2); }
 .entry-panel-actions .btn-lg { flex: 1; max-width: 260px; }
 .rating-input { font-size: 2rem; }

@@ -13,6 +13,7 @@ const NOTE = (() => {
 
   let entries = [];
   let searchTerm = "";
+  let sortMode = "new";
   let currentPhotos = [];       // モーダル編集中の写真（dataURL配列）
   const MAX_PHOTOS = 6;
   const cloudOn = typeof CLOUD !== "undefined" && CLOUD.enabled;
@@ -137,6 +138,16 @@ const NOTE = (() => {
     return brandGroups().flatMap(g => g.brands);
   }
 
+  /* ブランド名 → 産地。ブランド選択時に産地欄を自動入力するための逆引き */
+  let brandCountryMap = null;
+  function countryOfBrand(name) {
+    if (!brandCountryMap) {
+      brandCountryMap = new Map();
+      brandGroups().forEach(g => g.brands.forEach(b => brandCountryMap.set(b, g.country)));
+    }
+    return brandCountryMap.get(name) || "";
+  }
+
   /* ---------- フォームのセレクト初期化 ---------- */
   function fillSelects() {
     const cSel = q("#fCountry");
@@ -176,7 +187,7 @@ const NOTE = (() => {
     setBrand(isEdit ? (entry.brand || "") : "");
     q("#fCountry").value = isEdit ? (entry.country || "") : "";
     q("#fVitola").value = isEdit ? (entry.vitola || "") : "";
-    q("#fStrength").value = isEdit ? (entry.strength || "") : "";
+    setStrength(isEdit ? (entry.strength || "") : "");
     q("#fDate").value = isEdit ? (entry.date || "") : todayStr();
     q("#fPrice").value = isEdit ? (entry.price ?? "") : "";
     q("#fLocation").value = isEdit ? (entry.location || "") : "";
@@ -260,10 +271,21 @@ const NOTE = (() => {
   }
 
   /* ---------- 星入力 ---------- */
+  const RATING_WORDS = { 0: "タップで評価", 1: "イマイチ", 2: "まずまず", 3: "良い", 4: "とても良い", 5: "最高の一本" };
   function setRating(n) {
     q("#fRating").value = n;
     q("#ratingInput").querySelectorAll(".star").forEach(s =>
       s.classList.toggle("on", Number(s.dataset.v) <= n));
+    const lbl = q("#ratingLabel");
+    if (lbl) { lbl.textContent = RATING_WORDS[n] || ""; lbl.classList.toggle("set", n > 0); }
+  }
+
+  /* ---------- 強さ入力（ワンタップの三択。再タップで解除） ---------- */
+  function setStrength(v) {
+    q("#fStrength").value = v || "";
+    const seg = q("#strengthSeg");
+    if (seg) seg.querySelectorAll("[data-strength]").forEach(b =>
+      b.classList.toggle("on", b.dataset.strength === v));
   }
 
   /* ---------- 保存処理 ---------- */
@@ -341,17 +363,32 @@ const NOTE = (() => {
   }
 
   /* ---------- 一覧描画 ---------- */
+  // 「2026-07-15」→「2026.7.15」の読みやすい表示に
+  function fmtDate(d) {
+    const m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(d || "");
+    return m ? `${m[1]}.${Number(m[2])}.${Number(m[3])}` : (d || "");
+  }
+  function sortEntries(list) {
+    const arr = list.slice();
+    const t = (e) => e.date ? new Date(e.date + "T12:00").getTime() : (e.created || 0);
+    if (sortMode === "old") arr.sort((a, b) => t(a) - t(b));
+    else if (sortMode === "rating") arr.sort((a, b) => (b.rating || 0) - (a.rating || 0) || t(b) - t(a));
+    else if (sortMode === "price") arr.sort((a, b) => (Number(b.price) || 0) - (Number(a.price) || 0) || t(b) - t(a));
+    else arr.sort((a, b) => t(b) - t(a));
+    return arr;
+  }
+
   function render() {
     load.done || (load(), load.done = true);
     renderStats();
     q("#entryCount").textContent = `${entries.length} 本`;
 
     const term = searchTerm.trim().toLowerCase();
-    const list = term
+    const list = sortEntries(term
       ? entries.filter(e =>
           [e.name, e.brand, e.country, e.vitola, e.location, e.author, e.note]
             .some(v => (v || "").toLowerCase().includes(term)))
-      : entries;
+      : entries);
 
     const area = q("#entriesArea");
     if (cloudOn && !authorName()) {
@@ -378,12 +415,15 @@ const NOTE = (() => {
     area.innerHTML = `<div class="entry-grid">${list.map(e => `
       <div class="entry">
         <div class="e-top">
-          <div>
+          <div class="e-title">
             <h4>${escN(e.name)}</h4>
             ${e.brand ? `<div class="e-brand">${escN(e.brand)}</div>` : ""}
             ${e.author ? `<div class="e-author">${escN(e.author)}</div>` : ""}
           </div>
-          <div class="e-date">${escN(e.date || "")}</div>
+          <div class="e-side">
+            <div class="e-date">${escN(fmtDate(e.date))}</div>
+            ${e.rating ? stars(e.rating) : ""}
+          </div>
         </div>
         <div class="e-meta">
           ${e.country ? `<span class="chip">${escN(e.country)}</span>` : ""}
@@ -392,8 +432,9 @@ const NOTE = (() => {
           ${e.price ? `<span class="chip">¥${Number(e.price).toLocaleString()}</span>` : ""}
           ${e.location ? `<span class="chip">${escN(e.location)}</span>` : ""}
         </div>
-        ${e.rating ? stars(e.rating) : ""}
-        ${e.note ? `<div class="e-note">${escN(e.note)}</div>` : ""}
+        ${e.note ? (e.note.length > 120
+          ? `<div class="e-note clamp">${escN(e.note)}</div><button type="button" class="e-note-more" data-more>続きを読む</button>`
+          : `<div class="e-note">${escN(e.note)}</div>`) : ""}
         ${Array.isArray(e.photos) && e.photos.length
           ? `<div class="entry-photos">${e.photos.map((src, i) =>
               `<img class="entry-photo" src="${src}" alt="${escN(e.name)}の写真${i + 1}">`).join("")}</div>`
@@ -513,7 +554,7 @@ const NOTE = (() => {
     lb.addEventListener("click", closeLightbox);
     q("#lbClose").addEventListener("click", closeLightbox);
 
-    // ブランド「その他」で自由入力欄を表示
+    // ブランド「その他」で自由入力欄を表示。既知ブランドなら産地を自動入力
     q("#fBrand").addEventListener("change", (e) => {
       const other = q("#fBrandOther");
       if (e.target.value === "__other") {
@@ -522,7 +563,30 @@ const NOTE = (() => {
       } else {
         other.style.display = "none";
         other.value = "";
+        const c = countryOfBrand(e.target.value);
+        const cSel = q("#fCountry");
+        if (c && cSel && !cSel.value && [...cSel.options].some(o => o.value === c)) cSel.value = c;
       }
+    });
+
+    // 強さ：ワンタップ選択（同じボタン再タップで解除）
+    const seg = q("#strengthSeg");
+    if (seg) seg.addEventListener("click", (e) => {
+      const b = e.target.closest("[data-strength]");
+      if (b) setStrength(q("#fStrength").value === b.dataset.strength ? "" : b.dataset.strength);
+    });
+
+    // テイスティング用語チップ：タップでメモに追加（読点区切り）
+    const chips = q("#memoChips");
+    if (chips) chips.addEventListener("click", (e) => {
+      const b = e.target.closest("[data-word]");
+      if (!b) return;
+      const ta = q("#fNote");
+      const cur = ta.value;
+      if (!cur.trim()) ta.value = b.dataset.word;
+      else if (/[。\n]\s*$/.test(cur)) ta.value = cur + b.dataset.word;
+      else ta.value = cur.replace(/[、,\s]*$/, "") + "、" + b.dataset.word;
+      ta.focus();
     });
 
     // 星入力
@@ -540,12 +604,22 @@ const NOTE = (() => {
       searchTerm = e.target.value; render();
     });
 
-    // 編集・削除（イベント委譲）
+    // 並び替え
+    const sortSel = q("#noteSort");
+    if (sortSel) sortSel.addEventListener("change", (e) => { sortMode = e.target.value; render(); });
+
+    // 編集・削除・「続きを読む」（イベント委譲）
     q("#entriesArea").addEventListener("click", (e) => {
       const ed = e.target.closest("[data-edit]");
       const dl = e.target.closest("[data-del]");
+      const more = e.target.closest("[data-more]");
       if (ed) openModal(entries.find(x => x.id === ed.dataset.edit));
       if (dl) removeEntry(dl.dataset.del);
+      if (more) {
+        const note = more.previousElementSibling;
+        const open = note.classList.toggle("clamp") === false;
+        more.textContent = open ? "閉じる" : "続きを読む";
+      }
     });
 
     // エクスポート/インポート
