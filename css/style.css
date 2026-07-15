@@ -1249,9 +1249,8 @@ table.ref { min-width: 480px; }
   body { padding-bottom: calc(58px + env(safe-area-inset-bottom)); }
   /* メニュー展開中は背面固定 */
   body.nav-open { overflow: hidden; }
-  /* FAB・トップへボタンはバーの上に持ち上げる */
+  /* FABはバーの上に持ち上げる */
   .note-fab { bottom: calc(74px + env(safe-area-inset-bottom)); right: 18px; }
-  .to-top { bottom: calc(74px + env(safe-area-inset-bottom)); }
 }
 
 /* ---------- 「ページ上部へ」ボタン（長いページ用・スクロールで出現） ---------- */
@@ -1270,6 +1269,10 @@ table.ref { min-width: 480px; }
 .to-top.show { opacity: 1; transform: none; pointer-events: auto; }
 .to-top:hover { background: var(--panel-2); }
 .to-top:active { transform: scale(.92); }
+/* モバイルではボトムナビと重なるため非表示。
+   代わりにアクティブなタブをタップするとページ先頭へスクロールする
+   （showView が毎回 window.scrollTo(top:0) を呼ぶ）。 */
+@media (max-width: 860px) { .to-top { display: none !important; } }
 
 /* scrollbar */
 ::-webkit-scrollbar { height: 10px; width: 10px; }

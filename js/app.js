@@ -68,6 +68,7 @@ function setNav(open) {
 function closeNav() { setNav(false); }
 
 document.addEventListener("click", (e) => {
+  if (!(e.target instanceof Element)) return;   // テキストノード等での closest 呼び出しを防ぐ
   const toggle = e.target.closest("[data-nav-toggle]");
   if (toggle) {
     e.preventDefault();
