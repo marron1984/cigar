@@ -158,11 +158,34 @@ const PHD = (() => {
       + block("法規制と喫煙可能年齢", `<div class="prose">${paras(H.regulation)}</div>`);
   }
 
-  const R = { chem, botany, sensory, db, industry, health };
+  /* ---------- 0. 論文精読（学術文献レビュー） ---------- */
+  function litreview() {
+    const L = P.litreview || [];
+    if (!L.length) return `<div class="cd-placeholder">論文精読を準備中です。</div>`;
+    const list = [...L].sort((a, b) => (a.order || 0) - (b.order || 0));
+    const intro = `<div class="health-box"><div class="hb-h">論文精読について — 文献レビューの方針</div>
+      <div class="prose" style="font-size:.9rem">各分野の査読論文・専門モノグラフ・公的機関の報告（IARC・WHO・NCI・FDA・Nature系誌ほか）を横断的に読み込み、日本語で平易に再構成した文献レビューです。解釈が分かれる論点や出典の乏しい主張は「〜とされる」「議論がある」等と明示し、断定を避けています。各編末尾に主要文献を掲げます。専門的な内容を含みますが、順を追って読めるよう配慮しました。</div></div>`;
+    const arts = list.map((a, i) => `
+      <details class="acc lit-acc"${i === 0 ? " open" : ""}>
+        <summary>
+          <span class="lit-field">${e(a.field)}</span>
+          <span class="lit-title">${e(a.ja)}</span>
+          <span class="lit-en">${e(a.en)}</span>
+        </summary>
+        <div class="acc-body">
+          ${a.abstract ? `<p class="lit-abstract">${e(a.abstract)}</p>` : ""}
+          <div class="prose">${paras(a.body)}</div>
+          ${a.refs && a.refs.length ? `<div class="lit-refs"><div class="lit-refs-h">主要文献 <span class="lit-refs-n">${a.refs.length}件</span></div><ol>${a.refs.map(r => `<li>${e(r)}</li>`).join("")}</ol></div>` : ""}
+        </div>
+      </details>`).join("");
+    return intro + `<div class="lit-list">${arts}</div>`;
+  }
+
+  const R = { litreview, chem, botany, sensory, db, industry, health };
   const done = {};
 
   function showSub(name) {
-    if (!R[name]) name = "chem";
+    if (!R[name]) name = "litreview";
     if (!done[name]) { qp("#psub-" + name).innerHTML = R[name](); done[name] = true; }
     document.querySelectorAll("#view-phd .sub-view").forEach(v => v.classList.remove("active"));
     qp("#psub-" + name).classList.add("active");
@@ -175,7 +198,7 @@ const PHD = (() => {
       const b = ev.target.closest("[data-psub]");
       if (b) showSub(b.dataset.psub);
     });
-    showSub("chem");
+    showSub("litreview");
   }
 
   return { init, showSub };

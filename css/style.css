@@ -900,6 +900,49 @@ button.footer-nav-note:hover { color: var(--gold); }
 .acc .acc-body p:last-child { margin-bottom: 0; }
 .acc .tag { font-size:.7rem; padding:2px 9px; border-radius:var(--radius-sm); background:var(--panel-2); border:1px solid var(--line); color:var(--gold-bright); margin-left:8px; font-family:var(--sans); white-space:nowrap; }
 
+/* ---------- 論文精読（文献レビュー） ---------- */
+.lit-list { margin-top: 18px; display: flex; flex-direction: column; gap: 14px; }
+.lit-acc { border-color: var(--line); }
+.lit-acc > summary { align-items: flex-start; padding: 18px 18px; }
+.lit-acc > summary::after { margin-top: 4px; }
+.lit-field {
+  display: inline-block; font-family: var(--sans); font-size: .66rem; font-weight: 700;
+  letter-spacing: .14em; text-transform: uppercase; color: var(--on-accent);
+  background: var(--gold); padding: 3px 9px; border-radius: var(--radius-sm); margin-bottom: 9px;
+}
+.lit-title {
+  display: block; font-family: var(--serif); font-size: 1.2rem; font-weight: 600;
+  color: var(--cream); line-height: 1.4;
+}
+.lit-en {
+  display: block; font-family: var(--sans); font-size: .72rem; letter-spacing: .08em;
+  color: var(--muted); text-transform: uppercase; margin-top: 4px;
+}
+.lit-abstract {
+  font-family: var(--serif); font-size: 1rem; color: var(--text); line-height: 1.9;
+  padding: 14px 16px; margin: 4px 0 18px; background: var(--panel-2);
+  border-left: 3px solid var(--gold); border-radius: var(--radius-sm);
+}
+.lit-acc .prose { font-size: .96rem; line-height: 1.95; }
+.lit-refs {
+  margin-top: 24px; padding-top: 16px; border-top: 1px solid var(--line);
+}
+.lit-refs-h {
+  font-family: var(--sans); font-size: .74rem; font-weight: 700; letter-spacing: .1em;
+  text-transform: uppercase; color: var(--gold-bright); margin-bottom: 12px;
+}
+.lit-refs-n { color: var(--muted); font-weight: 500; letter-spacing: 0; }
+.lit-refs ol { margin: 0; padding-left: 22px; display: flex; flex-direction: column; gap: 8px; }
+.lit-refs li {
+  font-family: var(--sans); font-size: .8rem; color: var(--text-soft); line-height: 1.65;
+  padding-left: 4px;
+}
+.lit-refs li::marker { color: var(--gold); font-variant-numeric: tabular-nums; }
+@media (max-width: 480px) {
+  .lit-acc > summary { padding: 15px 14px; }
+  .lit-title { font-size: 1.08rem; }
+}
+
 /* process timeline */
 .timeline { position: relative; margin: 10px 0 0 8px; padding-left: 26px; }
 .timeline::before { content:""; position:absolute; left:6px; top:6px; bottom:6px; width:1px; background: var(--line); }
