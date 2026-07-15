@@ -29,6 +29,16 @@ const BRANDS = (() => {
       intro: (n) => `バイーアのマタ・フィナを擁する南米の伝統産地ブラジルの主要${n}エントリを、創業からの歴史とともに収録。` },
     { key: "cameroon", elId: "brandsCameroon",
       intro: (n) => `世界で最も希少なラッパー葉の産地カメルーン。葉を支える一族と葉の「ブランド」${n}件を収録。` },
+    { key: "peru", elId: "brandsPeru",
+      intro: (n) => `アマゾン源流域タラポトに知られざる産地を持つペルーの${n}エントリを、歴史とともに収録。` },
+    { key: "colombia", elId: "brandsColombia",
+      intro: (n) => `カリブ沿岸に古い葉たばこ文化を持つコロンビアの${n}エントリを、歴史とともに収録。` },
+    { key: "philippines", elId: "brandsPhilippines",
+      intro: (n) => `アジア最古の葉巻産地フィリピンの主要${n}ブランドを、創業からの歴史とともに収録。` },
+    { key: "indonesia", elId: "brandsIndonesia",
+      intro: (n) => `スマトラ・ジャワに世界的な葉の産地を持つインドネシアの${n}エントリを、歴史とともに収録。` },
+    { key: "argentina", elId: "brandsArgentina",
+      intro: (n) => `サルタ州に小さな葉巻文化を持つアルゼンチンの${n}エントリを、歴史とともに収録。` },
   ];
 
   function specRow(k, en, v) {
