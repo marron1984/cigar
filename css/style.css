@@ -332,6 +332,7 @@ main { max-width: 1180px; margin: 0 auto; padding: 0 20px 80px; }
   filter: saturate(1.05) contrast(1.02);
   border: 1px solid var(--line-soft);
 }
+.basics-hero { height: min(44vw, 380px); margin-top: 22px; object-position: center 34%; }
 
 /* ---------- Hero（白地に大見出し＋グレースケール写真バンド） ---------- */
 .hero { padding-top: 40px; }
