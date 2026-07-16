@@ -76,7 +76,7 @@ document.addEventListener("click", (e) => {
 const views = {
   home: "view-home", basics: "view-basics", countries: "view-countries",
   sizes: "view-sizes", prices: "view-prices", tools: "view-tools", humidor: "view-humidor",
-  advanced: "view-advanced", phd: "view-phd", world: "view-world", brands: "view-brands",
+  advanced: "view-advanced", phd: "view-phd", japan: "view-japan", world: "view-world", brands: "view-brands",
   note: "view-note"
 };
 function showView(name, opts = {}) {
@@ -556,6 +556,7 @@ function init() {
   ADV.init();
   PHD.init();
   WORLD.init();
+  JAPAN.init();
   HUMIDOR.init();
   BRANDS.init();
   NOTE.init();

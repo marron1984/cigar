@@ -36,6 +36,7 @@
         <button data-view="humidor"><span class="ic"></span><span class="lbl">ヒュミドール</span></button>
         <button data-view="advanced"><span class="ic"></span><span class="lbl">上級編</span></button>
         <button data-view="phd"><span class="ic"></span><span class="lbl">博士編</span></button>
+        <button data-view="japan"><span class="ic"></span><span class="lbl">日本ガイド</span></button>
         <button data-view="world"><span class="ic"></span><span class="lbl">世界編</span></button>
         <button data-view="brands"><span class="ic"></span><span class="lbl">ブランド大全</span></button>
       </nav>
@@ -210,6 +211,16 @@
       <div class="sub-view" id="psub-health"></div>
     </section>
 
+    <!-- ===== JAPAN GUIDE (日本ガイド) ===== -->
+    <section class="view" id="view-japan">
+      <div class="section-head">
+        <div class="eyebrow">Japan Guide · 日本の葉巻案内</div>
+        <h2>日本ガイド</h2>
+        <p>日本で葉巻を買う・楽しむための総合ガイド。全国47都道府県の葉巻販売店・シガーバーの一覧、日本の歴史・税制・喫煙環境・和のマナー・初心者向けの始め方まで。掲載情報は変わりやすいため、来店前に各店の最新情報をご確認ください。</p>
+      </div>
+      <div id="japanGuide"></div>
+    </section>
+
     <!-- ===== WORLD (世界編) ===== -->
     <section class="view" id="view-world">
       <img class="section-photo" src="assets/Town.png" alt="世界の葉巻文化 — ラ・カサ・デル・ハバノの店先で葉巻を楽しむ人々"
@@ -223,7 +234,6 @@
         <button data-wsub="history" class="active">年表・通史</button>
         <button data-wsub="culture">世界の文化・名店</button>
         <button data-wsub="smokers">著名愛好家</button>
-        <button data-wsub="japan">日本ガイド</button>
         <button data-wsub="tasting">テイスティング集</button>
         <button data-wsub="other">その他の葉巻</button>
         <button data-wsub="invest">投資・コレクション</button>
@@ -234,7 +244,6 @@
       <div class="sub-view active" id="wsub-history"></div>
       <div class="sub-view" id="wsub-culture"></div>
       <div class="sub-view" id="wsub-smokers"></div>
-      <div class="sub-view" id="wsub-japan"></div>
       <div class="sub-view" id="wsub-tasting"></div>
       <div class="sub-view" id="wsub-other"></div>
       <div class="sub-view" id="wsub-invest"></div>
@@ -531,6 +540,7 @@
   <script src="data/phd_lit.js"></script>
   <script src="data/world.js"></script>
   <script src="data/world_deep.js"></script>
+  <script src="data/japan_shops.js"></script>
   <script src="data/humidor.js"></script>
   <script src="data/brands.js"></script>
   <script src="js/format.js"></script>
@@ -540,6 +550,7 @@
   <script src="js/advanced.js"></script>
   <script src="js/phd.js"></script>
   <script src="js/world.js"></script>
+  <script src="js/japan.js"></script>
   <script src="js/humidor.js"></script>
   <script src="js/brands.js"></script>
   <script src="js/app.js"></script>

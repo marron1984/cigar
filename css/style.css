@@ -1270,6 +1270,27 @@ table.ref { min-width: 480px; }
 .shop-card .sh-desc { font-size: .9rem; color: var(--text-soft); }
 .shop-card .sh-note { font-size: .78rem; color: var(--muted); margin-top: 8px; font-style: italic; }
 
+/* ---------- 日本ガイド：全国ディレクトリ ---------- */
+.jp-meta { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; margin: 2px 0 12px; }
+.jp-updated { font-size: .78rem; color: var(--muted); }
+.jp-region { margin-top: 20px; }
+.jp-region-h { font-family: var(--serif); color: var(--gold-bright); font-size: 1.05rem; letter-spacing: .04em;
+  margin: 0 0 8px; padding-bottom: 6px; border-bottom: 1px solid var(--line); }
+.pref-acc { background: var(--panel); }
+.pref-acc > summary { font-family: var(--serif); font-size: 1.02rem; }
+.pref-acc .pref-name { color: var(--cream); }
+.pref-acc .pref-count { font-family: var(--sans); font-size: .78rem; color: var(--muted); margin-left: auto; margin-right: 10px; }
+.pref-note { font-size: .84rem; color: var(--text-soft); margin-bottom: 12px; }
+.jp-shop .sh-head { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; }
+.shop-status { font-size: .68rem; font-weight: 700; padding: 2px 9px; border-radius: 999px; white-space: nowrap; flex: 0 0 auto; }
+.shop-status.open { background: rgba(90,140,90,.16); color: #6ea36e; border: 1px solid rgba(110,163,110,.5); }
+.shop-status.closed { background: rgba(150,150,150,.14); color: var(--muted); border: 1px solid var(--line); text-decoration: line-through; }
+.shop-status.moved { background: rgba(181,118,58,.14); color: var(--gold-bright); border: 1px solid var(--gold); }
+.shop-status.check { background: rgba(181,118,58,.10); color: var(--gold); border: 1px dashed var(--gold); }
+.jp-shop .sh-src { margin-top: 8px; font-size: .72rem; display: flex; flex-direction: column; gap: 3px; }
+.jp-shop .sh-src a { color: var(--gold); word-break: break-all; }
+.jp-guide { margin-top: 34px; }
+
 /* ---------- モバイル・ボトムナビ（今風のタブバー） ---------- */
 .bottom-nav { display: none; }
 .nav-scrim {

@@ -245,5 +245,8 @@ const WORLD = (() => {
     showSub("history");
   }
 
-  return { init, showSub };
+  // 日本ガイドは独立メニューへ昇格。既存の解説HTMLを外部（JAPANモジュール）へ提供する。
+  function japanGuideHTML() { return japan() + sourcesBlock("japan"); }
+
+  return { init, showSub, japanGuideHTML };
 })();
