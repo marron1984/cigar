@@ -203,17 +203,19 @@ button, .chip, .strength-badge, .go, .eyebrow, .kicker,
     backdrop-filter: none;
   }
 
-  /* フルメニューはボトムシートとして下からせり上がる */
+  /* フルメニューはボトムシートとして下からせり上がる。
+     項目数が多いため2列グリッドにし、全項目が一画面に収まるようにする。 */
   .nav-tabs {
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    align-content: start;
     position: fixed;
     left: 0; right: 0;
     bottom: 0;
     margin: 0;
-    padding: 10px 10px calc(14px + env(safe-area-inset-bottom));
-    max-height: 76vh;
+    padding: 8px 12px calc(14px + env(safe-area-inset-bottom));
+    max-height: 82vh;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
     background: var(--panel);
@@ -225,24 +227,27 @@ button, .chip, .strength-badge, .go, .eyebrow, .kicker,
     visibility: hidden;
     transition: transform var(--dur) var(--ease-spring), visibility var(--dur) var(--ease);
   }
-  /* シート上部のつまみ（グラバー） */
+  /* シート上部のつまみ（グラバー）：2列にまたがせる */
   .nav-tabs::before {
-    content: ""; display: block; flex: 0 0 auto;
+    content: ""; display: block; grid-column: 1 / -1;
     width: 40px; height: 4px; border-radius: 2px;
-    background: var(--line); margin: 2px auto 10px;
+    background: var(--line); margin: 2px auto 6px;
   }
   .nav-tabs.open { transform: none; visibility: visible; }
   .nav-tabs button {
     width: 100%;
     justify-content: flex-start;
-    font-size: 1rem;
-    padding: 15px 18px;
+    font-size: .95rem;
+    padding: 13px 14px;
     border-radius: 12px;
     box-shadow: none;
+    background: var(--panel-2);
   }
-  .nav-tabs button.active { background: var(--panel-2); color: var(--gold-bright); box-shadow: none; font-weight: 600; }
-  .nav-tabs button.is-pressed:not(.active) { background: var(--panel-2); }
-  .nav-tabs .nav-journal { margin-right: 0; padding-right: 18px; margin-bottom: 4px; border-right: none; border-bottom: 1px solid var(--line-soft); border-radius: 12px 12px 0 0; padding-bottom: 16px; }
+  .nav-tabs button.active { background: var(--gold); color: var(--on-accent); box-shadow: none; font-weight: 700; }
+  .nav-tabs button.is-pressed:not(.active) { background: var(--line-soft); }
+  /* ホーム・記録ノートは全幅で見出し的に。以下のカテゴリは2列 */
+  .nav-tabs button[data-view="home"] { grid-column: 1 / -1; }
+  .nav-tabs .nav-journal { grid-column: 1 / -1; margin: 0; padding: 14px 16px; border: none; border-radius: 12px; color: var(--gold-bright); font-weight: 700; }
 }
 
 /* ---------- Layout ---------- */
