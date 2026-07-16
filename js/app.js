@@ -455,19 +455,46 @@ function renderSizes() {
 /* ============================================================
    価格帯別
    ============================================================ */
+// 出典リスト（拡充データ用の共通ヘルパー）
+function sourcesField(sources) {
+  if (!Array.isArray(sources) || !sources.length) return "";
+  return `<div class="field"><div class="lbl">主な出典 <span class="brand-refs-n">${sources.length}件</span></div>
+    <ul class="brand-refs">${sources.map(s => `<li>${srcLink(s)}</li>`).join("")}</ul></div>`;
+}
+
 function renderPrices() {
-  const tiers = D.priceTiers.map(t => `
+  const tiers = D.priceTiers.map(t => {
+    const secs = Array.isArray(t.sections) && t.sections.length
+      ? `<div class="tool-more">${t.sections.map(s =>
+          `<details class="acc tool-sub"><summary>${esc(s.h)}</summary><div class="acc-body">${FMT.prose(s.body)}</div></details>`).join("")}</div>`
+      : "";
+    return `
     <div class="card tier-card">
       <h3>${esc(t.tier)}</h3>
       <div class="price-band">${esc(t.range)}</div>
-      <div class="field"><div class="lbl">特徴</div><div class="val">${esc(t.feat)}</div></div>
-      <div class="field"><div class="lbl">こんな人に</div><div class="val">${esc(t.whom)}</div></div>
+      <div class="field"><div class="lbl">特徴</div><div class="val">${FMT.prose(t.feat)}</div></div>
+      <div class="field"><div class="lbl">こんな人に</div><div class="val">${FMT.prose(t.whom)}</div></div>
       <div class="field"><div class="lbl">代表的な銘柄</div>${brandChips(t.brands)}</div>
-      <div class="field"><div class="lbl">アドバイス</div><div class="val">${esc(t.advice)}</div></div>
-    </div>`).join("");
+      <div class="field"><div class="lbl">アドバイス</div><div class="val">${FMT.prose(t.advice)}</div></div>
+      ${secs}
+      ${sourcesField(t.sources)}
+    </div>`;
+  }).join("");
+
+  const topics = Array.isArray(D.priceTopics) && D.priceTopics.length
+    ? `<div class="kb-block">
+        <h3>価格を深く読み解く</h3>
+        <div class="tool-list">${D.priceTopics.map(t => `
+          <details class="acc">
+            <summary>${esc(t.h)}</summary>
+            <div class="acc-body">${FMT.prose(t.body)}${sourcesField(t.sources)}</div>
+          </details>`).join("")}</div>
+      </div>`
+    : "";
 
   $("#pricesContent").innerHTML = `
     <div class="grid grid-2">${tiers}</div>
+    ${topics}
     <div class="kb-block">
       <h3>価格を左右する要因</h3>
       <div class="prose">${FMT.prose(D.priceFactors)}</div>
