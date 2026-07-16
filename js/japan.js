@@ -14,7 +14,7 @@ const JAPAN = (() => {
 
   function statusBadge(st) {
     const s = String(st || "");
-    const cls = /閉店/.test(s) ? "closed" : /移転/.test(s) ? "moved" : /要確認/.test(s) ? "check" : "open";
+    const cls = /閉店|終了|廃止|不可|中止/.test(s) ? "closed" : /移転/.test(s) ? "moved" : /要確認/.test(s) ? "check" : "open";
     return `<span class="shop-status ${cls}">${e(s || "要確認")}</span>`;
   }
 
