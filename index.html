@@ -327,6 +327,10 @@
                   <input type="file" id="fPhotoInput" accept="image/*" multiple hidden>
                 </label>
               </div>
+              <div class="ai-fill" id="aiFill" hidden>
+                <button type="button" class="btn btn-sm btn-ai" id="btnAiFill">✨ 写真からAIで自動入力</button>
+                <div class="ai-status" id="visionStatus" hidden></div>
+              </div>
               <div class="photo-hint">最大10枚。写真を見ながら下に記入できます。</div>
             </div>
             <!-- 必須・かんたん入力 -->
@@ -547,6 +551,7 @@
   <script src="js/format.js"></script>
   <script src="js/config.js"></script>
   <script src="js/cloud.js"></script>
+  <script src="js/vision.js"></script>
   <script src="js/note.js"></script>
   <script src="js/advanced.js"></script>
   <script src="js/phd.js"></script>

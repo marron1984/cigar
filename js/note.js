@@ -17,6 +17,8 @@ const NOTE = (() => {
   let currentPhotos = [];       // モーダル編集中の写真（dataURL配列）
   const MAX_PHOTOS = 10;
   const cloudOn = typeof CLOUD !== "undefined" && CLOUD.enabled;
+  const visionOn = typeof VISION !== "undefined" && VISION.enabled;   // 写真AI自動入力
+  let visionBusy = false;       // 認識中の二重起動を防ぐ
   let usingIDB = false;         // IndexedDBが使えるか（localStorageの約5MB制限を回避）
 
   function authorName() { try { return localStorage.getItem(AUTHOR_KEY) || ""; } catch (e) { return ""; } }
@@ -286,6 +288,7 @@ const NOTE = (() => {
     q("#fNote").value = isEdit ? (entry.note || "") : "";
     currentPhotos = isEdit && Array.isArray(entry.photos) ? entry.photos.slice() : [];
     renderPhotoPreviews();
+    setVisionStatus("", "");   // 前回の認識メッセージをクリア
     setRating(isEdit ? (entry.rating || 0) : 0);
     const panel = q("#entryPanel");
     panel.hidden = false;
@@ -327,12 +330,89 @@ const NOTE = (() => {
     if (remaining <= 0) { alert(`写真は最大${MAX_PHOTOS}枚までです。`); return; }
     const list = [...files].slice(0, remaining);
     if (files.length > remaining) alert(`写真は最大${MAX_PHOTOS}枚まで。${remaining}枚のみ追加しました。`);
+    const before = currentPhotos.length;
     for (const f of list) {
       if (!f.type.startsWith("image/")) continue;
       try { currentPhotos.push(await resizeImage(f)); }
       catch (err) { alert("画像の処理に失敗しました：" + err.message); }
     }
     renderPhotoPreviews();
+    // 1枚目の写真を追加したら、AIで銘柄などを自動読み取り（未入力の欄だけ埋める）
+    if (visionOn && before === 0 && currentPhotos.length && !q("#fName").value.trim()) {
+      runVision(currentPhotos[0]);
+    }
+  }
+
+  /* ---------- 写真からのAI自動入力 ---------- */
+  // AIが返した文字列を、セレクトの選択肢に寄せて一致させる（完全一致→部分一致）
+  function matchOption(sel, val) {
+    if (!sel || !val) return "";
+    const v = String(val).trim();
+    const opts = [...sel.options].map(o => o.value).filter(o => o && o !== "その他" && o !== "__other");
+    let hit = opts.find(o => o === v);
+    if (!hit) hit = opts.find(o => o.replace(/\s/g, "") === v.replace(/\s/g, ""));
+    if (!hit) hit = opts.find(o => v.includes(o) || o.includes(v));
+    return hit || "";
+  }
+  // 既知ブランドに寄せる。一致すればセレクト、無ければ自由入力欄へそのまま
+  function applyBrand(val) {
+    const sel = q("#fBrand");
+    const m = matchOption(sel, val);
+    setBrand(m || val);
+  }
+  function setVisionStatus(kind, msg) {
+    const el = q("#visionStatus");
+    if (!el) return;
+    el.hidden = !msg;
+    el.textContent = msg || "";
+    el.className = "ai-status" + (kind ? " " + kind : "");
+  }
+  function setAiBusy(busy) {
+    const btn = q("#btnAiFill");
+    if (btn) { btn.disabled = busy; btn.classList.toggle("busy", busy); }
+  }
+  // 認識結果をフォームへ反映（ユーザー入力済みの欄は上書きしない）
+  function applyVision(r) {
+    const filled = [];
+    if (r.name && !q("#fName").value.trim()) { q("#fName").value = r.name; filled.push("銘柄名"); }
+    if (r.brand && !getBrand()) { applyBrand(r.brand); filled.push("ブランド"); }
+    const cSel = q("#fCountry");
+    if (r.country && cSel && !cSel.value) { const m = matchOption(cSel, r.country); if (m) { cSel.value = m; filled.push("産地"); } }
+    const vSel = q("#fVitola");
+    if (r.vitola && vSel && !vSel.value) { const m = matchOption(vSel, r.vitola); if (m) { vSel.value = m; filled.push("サイズ"); } }
+    if (r.strength && !q("#fStrength").value) {
+      const s = normalizeStrength(r.strength);
+      if (["ライト", "ミディアムライト", "ミディアム", "ミディアムフル", "フル"].includes(s)) { setStrength(s); filled.push("強さ"); }
+    }
+    // 結果メッセージ
+    const low = r.confidence === "low";
+    if (!filled.length) {
+      setVisionStatus("warn", "写真からは判別できませんでした。お手数ですが手入力でお願いします。");
+    } else {
+      const lead = low ? "自信は高くありませんが、" : "";
+      setVisionStatus(low ? "warn" : "ok",
+        `✓ ${lead}${filled.join("・")}を入力しました。念のためご確認ください。`);
+    }
+  }
+  async function runVision(src) {
+    if (!visionOn || visionBusy) return;
+    if (!src) src = currentPhotos[0];
+    if (!src) { setVisionStatus("warn", "先に写真を追加してください。"); return; }
+    visionBusy = true; setAiBusy(true);
+    setVisionStatus("loading", "AIが写真を読み取っています…（数秒かかります）");
+    try {
+      const hints = {
+        countries: (CIGAR_DATA.countries || []).map(c => c.name_ja),
+        vitolas: (CIGAR_DATA.vitolas || []).map(v => v.ja),
+        brands: brandList(),
+      };
+      const r = await VISION.identify(src, hints);
+      applyVision(r);
+    } catch (err) {
+      setVisionStatus("error", "読み取れませんでした：" + (err.message || "エラー"));
+    } finally {
+      visionBusy = false; setAiBusy(false);
+    }
   }
 
   /* ブランド値をセレクト/自由入力へ振り分け */
@@ -647,6 +727,11 @@ const NOTE = (() => {
       if (e.target.files && e.target.files.length) addPhotos(e.target.files);
       e.target.value = "";
     });
+    // 写真AI自動入力：設定済みのときだけボタンを表示
+    const aiFill = q("#aiFill");
+    if (aiFill) aiFill.hidden = !visionOn;
+    const btnAi = q("#btnAiFill");
+    if (btnAi) btnAi.addEventListener("click", () => runVision(currentPhotos[0]));
     // 写真プレビュー：×で削除、写真タップで拡大表示
     q("#photoPreviews").addEventListener("click", (e) => {
       const rm = e.target.closest("[data-rmphoto]");
