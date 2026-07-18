@@ -1,17 +1,16 @@
 // ============================================================
 //  identify-cigar — 葉巻の写真から銘柄・ブランド・産地・サイズを推定する
-//  Supabase Edge Function（Deno）。
+//  Supabase Edge Function（Deno）。外部ライブラリ不使用（fetchで直接呼び出し）。
 //
 //  ブラウザ（記録ノート）から写真（dataURL）を受け取り、Claude の
 //  画像認識でバンド等を読み取って構造化した結果を返す。
 //  ANTHROPIC_API_KEY は Supabase のシークレットとしてサーバー側に保管し、
 //  ブラウザやリポジトリには絶対に置かないこと（VISION_SETUP.md 参照）。
 //
-//  デプロイ:  supabase functions deploy identify-cigar
-//  シークレット: supabase secrets set ANTHROPIC_API_KEY=sk-ant-...
+//  デプロイ:  ダッシュボードのエディタに貼り付けて Deploy
+//  シークレット: ダッシュボードの Edge Functions → Secrets に
+//                ANTHROPIC_API_KEY を登録
 // ============================================================
-
-import Anthropic from "npm:@anthropic-ai/sdk@0.112.3";
 
 const CORS = {
   "Access-Control-Allow-Origin": "*",
@@ -84,7 +83,7 @@ const TOOL = {
     required: ["name", "brand", "country", "vitola", "confidence"],
     additionalProperties: false,
   },
-} as const;
+};
 
 Deno.serve(async (req: Request) => {
   if (req.method === "OPTIONS") return new Response("ok", { headers: CORS });
@@ -93,7 +92,7 @@ Deno.serve(async (req: Request) => {
   const apiKey = Deno.env.get("ANTHROPIC_API_KEY");
   if (!apiKey) {
     return json(
-      { error: "サーバーに ANTHROPIC_API_KEY が設定されていません（管理者向け: supabase secrets set）" },
+      { error: "サーバーに ANTHROPIC_API_KEY が設定されていません（管理者向け: Edge Functions の Secrets に登録してください）" },
       500,
     );
   }
@@ -130,51 +129,66 @@ Deno.serve(async (req: Request) => {
     "・産地とサイズは必ず allowed_* のいずれかの表記に合わせる（一致するものが無ければ空文字）。\n" +
     "・出力は必ず record_cigar ツールで返す。";
 
-  const client = new Anthropic({ apiKey });
+  const body = {
+    model: "claude-opus-4-8",
+    max_tokens: 1024,
+    system,
+    tools: [TOOL],
+    tool_choice: { type: "tool", name: "record_cigar" },
+    messages: [
+      {
+        role: "user",
+        content: [
+          {
+            type: "image",
+            source: { type: "base64", media_type: img.media_type, data: img.data },
+          },
+          {
+            type: "text",
+            text:
+              "この葉巻の写真から、銘柄・ブランド・産地・サイズ（ビトラ）を読み取って record_cigar で記録してください。" +
+              (guide ? "\n\n" + guide : ""),
+          },
+        ],
+      },
+    ],
+  };
 
+  let resp: Response;
   try {
-    const resp = await client.messages.create({
-      model: "claude-opus-4-8",
-      max_tokens: 1024,
-      system,
-      tools: [TOOL as any],
-      tool_choice: { type: "tool", name: "record_cigar" },
-      messages: [
-        {
-          role: "user",
-          content: [
-            {
-              type: "image",
-              source: { type: "base64", media_type: img.media_type as any, data: img.data },
-            },
-            {
-              type: "text",
-              text:
-                "この葉巻の写真から、銘柄・ブランド・産地・サイズ（ビトラ）を読み取って record_cigar で記録してください。" +
-                (guide ? "\n\n" + guide : ""),
-            },
-          ],
-        },
-      ],
-    });
-
-    const block = resp.content.find((b: any) => b.type === "tool_use") as any;
-    if (!block) {
-      return json({ error: "写真から情報を読み取れませんでした" }, 502);
-    }
-    const out = block.input || {};
-    return json({
-      name: out.name || "",
-      brand: out.brand || "",
-      country: out.country || "",
-      vitola: out.vitola || "",
-      strength: out.strength || "",
-      band_readable: !!out.band_readable,
-      confidence: out.confidence || "low",
-      notes: out.notes || "",
+    resp = await fetch("https://api.anthropic.com/v1/messages", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+        "x-api-key": apiKey,
+        "anthropic-version": "2023-06-01",
+      },
+      body: JSON.stringify(body),
     });
   } catch (err) {
-    const msg = (err && (err as any).message) ? (err as any).message : String(err);
-    return json({ error: "画像認識に失敗しました: " + msg }, 502);
+    const msg = err && (err as any).message ? (err as any).message : String(err);
+    return json({ error: "Anthropic API に接続できませんでした: " + msg }, 502);
   }
+
+  const data: any = await resp.json().catch(() => null);
+  if (!resp.ok) {
+    const detail = data && data.error && data.error.message ? data.error.message : "HTTP " + resp.status;
+    return json({ error: "画像認識に失敗しました: " + detail }, 502);
+  }
+
+  const block = (data?.content || []).find((b: any) => b.type === "tool_use");
+  if (!block) {
+    return json({ error: "写真から情報を読み取れませんでした" }, 502);
+  }
+  const out = block.input || {};
+  return json({
+    name: out.name || "",
+    brand: out.brand || "",
+    country: out.country || "",
+    vitola: out.vitola || "",
+    strength: out.strength || "",
+    band_readable: !!out.band_readable,
+    confidence: out.confidence || "low",
+    notes: out.notes || "",
+  });
 });
