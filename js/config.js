@@ -29,8 +29,8 @@ window.CLOUD_CONFIG = {
 window.VISION_CONFIG = {
   // ↓ Edge Function（identify-cigar）のデプロイとシークレット登録が済んだら true に
   enabled: true,
-  // Edge Function の URL
-  endpoint: "https://pacwabnelvjpyfqdssar.supabase.co/functions/v1/identify-cigar",
+  // Edge Function の URL（Supabase上の実際の関数スラッグは quick-task）
+  endpoint: "https://pacwabnelvjpyfqdssar.supabase.co/functions/v1/quick-task",
   // Supabase の anon public キー（公開してよいキー）
   anonKey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBhY3dhYm5lbHZqcHlmcWRzc2FyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODQzMTgwNzUsImV4cCI6MjA5OTg5NDA3NX0.aLarnm2GI-auHc4uKH5a0Bs3mcmkbfynSrW9AM0bUE0"
 };
