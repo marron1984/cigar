@@ -867,6 +867,9 @@ td .ve { font-size: .74rem; color: var(--muted); letter-spacing: .04em; }
 .ai-status.warn { color: var(--gold-bright); border-color: rgba(181,118,58,.4); background: rgba(181,118,58,.08); }
 .ai-status.error { color: var(--ember); border-color: rgba(192,86,47,.4); background: rgba(192,86,47,.07); }
 
+/* クラウド未サインイン時の案内バナー（記録は表示したまま） */
+.cloud-hint { font-size: .82rem; line-height: 1.6; color: var(--gold-bright); padding: 10px 13px; border: 1px solid rgba(181,118,58,.35); background: rgba(181,118,58,.07); border-radius: 10px; margin-bottom: 14px; }
+
 /* 写真サムネイル（記録カード内） */
 .entry-photos { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 12px; }
 .entry-photo {

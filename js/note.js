@@ -157,7 +157,7 @@ const NOTE = (() => {
   async function loadCloud() {
     if (!cloudOn) return false;
     const owner = authorName();
-    if (!owner) { entries = []; return true; }   // 名前未入力なら空（下でヒント表示）
+    if (!owner) { return true; }   // 名前未入力：手元の記録をそのまま表示（消さない）
     try {
       const remote = await CLOUD.list(owner);
       const remoteIds = new Set(remote.map(e => e.id));
@@ -621,20 +621,15 @@ const NOTE = (() => {
       : entries);
 
     const area = q("#entriesArea");
-    if (cloudOn && !authorName()) {
-      area.innerHTML = `
-        <div class="empty-state">
-          
-          <p style="margin-top:10px">共有モードです。上の「記録者」にお名前を入力すると、<br><b>あなたの記録だけ</b>が表示されます。</p>
-        </div>`;
-      return;
-    }
+    const needName = cloudOn && !authorName();   // クラウド有効だが記録者名が未入力
     if (!entries.length) {
-      area.innerHTML = `
-        <div class="empty-state">
-          
-          <p style="margin-top:10px">まだ記録がありません。<br>「＋ 一本を記録する」から、最初の一本を書き留めましょう。</p>
-        </div>`;
+      area.innerHTML = needName
+        ? `<div class="empty-state">
+             <p style="margin-top:10px">「記録者」にお名前を入力すると、クラウドに保存した自分の記録が表示されます。<br>この端末にはまだ記録がありません。</p>
+           </div>`
+        : `<div class="empty-state">
+             <p style="margin-top:10px">まだ記録がありません。<br>「＋ 一本を記録する」から、最初の一本を書き留めましょう。</p>
+           </div>`;
       return;
     }
     if (!list.length) {
@@ -642,7 +637,11 @@ const NOTE = (() => {
       return;
     }
 
-    area.innerHTML = `<div class="entry-grid">${list.map(e => `
+    // 名前未入力でも手元の記録は隠さず、クラウド保存を促す案内だけ上に添える
+    const cloudBanner = needName
+      ? `<div class="cloud-hint">☁ この端末に保存された記録を表示中です。上の「記録者」にお名前を入れると、クラウドに保存されて別の端末でも使え、消えなくなります。</div>`
+      : "";
+    area.innerHTML = cloudBanner + `<div class="entry-grid">${list.map(e => `
       <div class="entry">
         <div class="e-top">
           <div class="e-title">
@@ -693,7 +692,14 @@ const NOTE = (() => {
       try {
         const data = JSON.parse(reader.result);
         if (!Array.isArray(data)) throw new Error("形式が不正です");
+        if (cloudOn && !authorName()) {
+          alert("先に上の「記録者」にお名前を入力してから読み込んでください（その名前であなたの記録として保存されます）。");
+          const ai = q("#authorName"); if (ai) ai.focus();
+          return;
+        }
         const merge = confirm("既存の記録に追加しますか？\n［OK＝追加 / キャンセル＝すべて置き換え］");
+        // 共有モードでは取り込む記録に記録者名を付与（自分の記録として同期・表示されるように）
+        const who = cloudOn ? authorName() : "";
         const cleaned = data.filter(d => d && d.name).map(d => ({
           id: d.id || (uid()), created: d.created || Date.now(),
           name: d.name, brand: d.brand || "", country: d.country || "",
@@ -701,7 +707,8 @@ const NOTE = (() => {
           date: d.date || "", price: d.price ?? null,
           location: d.location || "",
           rating: Number(d.rating) || 0, note: d.note || "",
-          photos: Array.isArray(d.photos) ? d.photos.filter(p => typeof p === "string") : []
+          photos: Array.isArray(d.photos) ? d.photos.filter(p => typeof p === "string") : [],
+          author: d.author || who, owner: who || d.owner || ""
         }));
         entries = merge ? [...cleaned, ...entries] : cleaned;
         // 重複ID回避
