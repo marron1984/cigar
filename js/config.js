@@ -28,7 +28,7 @@ window.CLOUD_CONFIG = {
    ------------------------------------------------------------ */
 window.VISION_CONFIG = {
   // ↓ Edge Function（identify-cigar）のデプロイとシークレット登録が済んだら true に
-  enabled: false,
+  enabled: true,
   // Edge Function の URL
   endpoint: "https://pacwabnelvjpyfqdssar.supabase.co/functions/v1/identify-cigar",
   // Supabase の anon public キー（公開してよいキー）
