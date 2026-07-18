@@ -184,8 +184,14 @@ const NOTE = (() => {
       entries = remote.sort((a, b) => (b.created || 0) - (a.created || 0));
       return true;
     } catch (err) {
+      // クラウドに繋がらない・テーブル未作成などのときは、手元の記録を表示して
+      // 「消えたように見える」状態を防ぐ（記録は端末内に残っている）。
       console.warn("クラウド読み込み失敗、ローカルを使用します:", err);
-      return false;
+      try {
+        const localList = await localDeviceEntries();
+        if (localList.length) entries = localList.sort((a, b) => (b.created || 0) - (a.created || 0));
+      } catch (e) {}
+      return true;
     }
   }
   function save() {
