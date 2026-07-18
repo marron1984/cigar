@@ -10,9 +10,9 @@
    ============================================================ */
 
 window.CLOUD_CONFIG = {
-  enabled: false,                 // ← 共有DBを使うときは true に
-  supabaseUrl: "",                // 例: "https://xxxxxxxx.supabase.co"
-  supabaseAnonKey: "",            // 例: "eyJhbGciOi..."（anon public キー）
+  enabled: true,                  // ← 共有DBを使うときは true に
+  supabaseUrl: "https://pacwabnelvjpyfqdssar.supabase.co",
+  supabaseAnonKey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBhY3dhYm5lbHZqcHlmcWRzc2FyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODQzMTgwNzUsImV4cCI6MjA5OTg5NDA3NX0.aLarnm2GI-auHc4uKH5a0Bs3mcmkbfynSrW9AM0bUE0",
   table: "cigar_notes"            // テーブル名（DATABASE_SETUP.md のSQLで作成）
 };
 

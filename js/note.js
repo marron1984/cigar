@@ -6,6 +6,7 @@
 const NOTE = (() => {
   const KEY = "cigar_journal_v1";
   const AUTHOR_KEY = "cigar_author";
+  const MIGRATED_KEY = "cigar_cloud_migrated";   // この端末の既存記録をクラウドへ引き上げ済みか
   const q = (s, el = document) => el.querySelector(s);
   const escN = (s) => String(s == null ? "" : s)
     .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")
@@ -136,14 +137,51 @@ const NOTE = (() => {
     }
     return save();
   }
-  // クラウド有効時：共有DBから「自分（記録者名）の記録だけ」を読み込む
+  // この端末に保存されている記録（写真込み）をすべて取得
+  async function localDeviceEntries() {
+    if (usingIDB && idb) { try { return (await idbAll()) || []; } catch (e) {} }
+    try { return JSON.parse(localStorage.getItem(KEY)) || []; } catch (e) { return []; }
+  }
+  // 1件ずつ順番にクラウドへ保存（写真込みで容量が大きいため分割）。成功した記録を返す
+  async function cloudUploadSeq(list) {
+    const done = [];
+    for (const e of list) {
+      try { await CLOUD.upsert(e); done.push(e); }
+      catch (err) { console.warn("1件のクラウド保存に失敗:", err); }
+    }
+    return done;
+  }
+
+  // クラウド有効時：共有DBから「自分（記録者名）の記録」を読み込む。
+  // 初回だけ、この端末にしか無い既存記録をクラウドへ引き上げて保全する（消失防止）。
   async function loadCloud() {
     if (!cloudOn) return false;
     const owner = authorName();
     if (!owner) { entries = []; return true; }   // 名前未入力なら空（下でヒント表示）
     try {
       const remote = await CLOUD.list(owner);
-      entries = remote;
+      const remoteIds = new Set(remote.map(e => e.id));
+      let migrated = "";
+      try { migrated = localStorage.getItem(MIGRATED_KEY) || ""; } catch (e) {}
+      if (!migrated) {
+        // この端末の既存記録のうち、まだクラウドに無いものを引き上げる（1回だけ）
+        const localList = await localDeviceEntries();
+        const localOnly = localList
+          .filter(e => e && e.id && e.name && !remoteIds.has(e.id))
+          .map(e => ({ ...e, owner, author: e.author || owner }));
+        // 先に手元の記録も含めて表示（アップロード完了を待たずに見える＝消えたように見えない）
+        entries = [...remote, ...localOnly].sort((a, b) => (b.created || 0) - (a.created || 0));
+        render();
+        if (localOnly.length) {
+          const done = await cloudUploadSeq(localOnly);   // バックグラウンドで1件ずつ保存
+          // 全件成功したときだけ「引き上げ済み」にする（一部失敗なら次回また試す）
+          if (done.length === localOnly.length) { try { localStorage.setItem(MIGRATED_KEY, "1"); } catch (e) {} }
+        } else {
+          try { localStorage.setItem(MIGRATED_KEY, "1"); } catch (e) {}
+        }
+        return true;
+      }
+      entries = remote.sort((a, b) => (b.created || 0) - (a.created || 0));
       return true;
     } catch (err) {
       console.warn("クラウド読み込み失敗、ローカルを使用します:", err);
@@ -684,27 +722,34 @@ const NOTE = (() => {
 
   /* ---------- 初期化 ---------- */
   function init() {
-    // 旧localStorage → IndexedDB の移行と読み込み（完了後に再描画）
-    loadStore().then(() => { load.done = true; renderMode(); render(); });
+    // 旧localStorage → IndexedDB の移行と読み込み（完了後に再描画）。
+    // 手元の記録を読み込んでから、クラウド同期（有効時）を行うことで既存記録を確実に引き上げる。
+    loadStore().then(() => {
+      load.done = true;
+      renderMode();
+      render();
+      if (cloudOn) loadCloud().then(ok => { if (ok) render(); });
+    });
     renderMode();
 
     // 記録者名
     const authorInput = q("#authorName");
-    let authorTimer = null;
     if (authorInput) {
       authorInput.value = authorName();
+      // 入力中はヒント/表示だけ更新
       authorInput.addEventListener("input", (e) => {
         setAuthorName(e.target.value.trim());
-        render();  // 即座にヒント/表示を更新
-        // 共有モードでは名前確定後に自分の記録を読み込み直す（入力途中の連打を抑制）
-        if (cloudOn) {
-          clearTimeout(authorTimer);
-          authorTimer = setTimeout(() => { loadCloud().then(() => render()); }, 600);
-        }
+        render();
       });
+      // 共有モードでは「入力が確定したとき（フォーカスを外す/Enter）」に読み込み直す。
+      // 途中の文字で誤って記録が別名に引き上げられるのを防ぐため input ではなく change を使う。
+      if (cloudOn) {
+        authorInput.addEventListener("change", () => {
+          setAuthorName(authorInput.value.trim());
+          loadCloud().then(() => render());
+        });
+      }
     }
-    // クラウド有効時は共有DBから最新を取得して再描画
-    if (cloudOn) loadCloud().then(ok => { if (ok) render(); });
 
     q("#btnNewEntry").addEventListener("click", () => openModal(null));
     q("#noteFab").addEventListener("click", () => openModal(null));
