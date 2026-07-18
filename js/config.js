@@ -27,10 +27,10 @@ window.CLOUD_CONFIG = {
    未設定（enabled:false）の場合は、従来どおり手入力になります。
    ------------------------------------------------------------ */
 window.VISION_CONFIG = {
-  enabled: false,                 // ← 写真AI自動入力を使うときは true に
+  // ↓ Edge Function（identify-cigar）のデプロイとシークレット登録が済んだら true に
+  enabled: false,
   // Edge Function の URL
-  //   例: "https://xxxxxxxx.supabase.co/functions/v1/identify-cigar"
-  endpoint: "",
-  // Supabase の anon public キー（CLOUD_CONFIG.supabaseAnonKey と同じでOK）
-  anonKey: ""
+  endpoint: "https://pacwabnelvjpyfqdssar.supabase.co/functions/v1/identify-cigar",
+  // Supabase の anon public キー（公開してよいキー）
+  anonKey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBhY3dhYm5lbHZqcHlmcWRzc2FyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODQzMTgwNzUsImV4cCI6MjA5OTg5NDA3NX0.aLarnm2GI-auHc4uKH5a0Bs3mcmkbfynSrW9AM0bUE0"
 };
