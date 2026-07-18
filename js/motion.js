@@ -7,6 +7,13 @@
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   if (reduceMotion) document.documentElement.classList.add("motion-off");
 
+  // e.target が Element でない（テキストノード等）場合にも安全に closest を辿る
+  function closestFrom(e, sel) {
+    let t = e && e.target;
+    if (t && t.nodeType === 3) t = t.parentElement;   // テキストノード → 親要素
+    return (t && typeof t.closest === "function") ? t.closest(sel) : null;
+  }
+
   /* ---------- 1. スクロールで要素をフェードアップ表示 ---------- */
   const REVEAL_SELECTOR = [
     ".home-card", ".card", ".country-card", ".tool-card", ".person",
@@ -72,12 +79,12 @@
     }
 
     document.addEventListener("pointerdown", (e) => {
-      const el = e.target.closest(PRESS_SELECTOR);
+      const el = closestFrom(e, PRESS_SELECTOR);
       if (el) pressStart(el);
     }, { passive: true });
     ["pointerup", "pointercancel", "pointerleave"].forEach((type) => {
       document.addEventListener(type, (e) => {
-        const el = e.target.closest(PRESS_SELECTOR);
+        const el = closestFrom(e, PRESS_SELECTOR);
         if (el) pressEnd(el);
       }, { passive: true });
     });
@@ -86,7 +93,7 @@
   /* ---------- 2. アコーディオン（<details class="acc">）の開閉を高さアニメーション ---------- */
   if (!reduceMotion) {
     document.addEventListener("click", (e) => {
-      const summary = e.target.closest(".acc > summary");
+      const summary = closestFrom(e, ".acc > summary");
       if (!summary) return;
       const details = summary.parentElement;
       const body = details.querySelector(":scope > .acc-body");
@@ -147,7 +154,7 @@
     document.addEventListener("touchstart", (e) => {
       const t = e.touches[0];
       if (t.clientX > 32) return;                    // 左端起点のみ
-      if (e.target.closest(".subnav, .table-wrap, .gauge-scroll")) return;
+      if (closestFrom(e, ".subnav, .table-wrap, .gauge-scroll")) return;
       sx = t.clientX; sy = t.clientY; tracking = true;
     }, { passive: true });
     document.addEventListener("touchend", (e) => {
