@@ -1437,9 +1437,23 @@ table.ref { min-width: 480px; }
 .gs-go { color: var(--gold-bright); font-size: 1.2rem; }
 .gs-empty { padding: 14px; font-size: .88rem; color: var(--text-soft); }
 
-/* --- 今日の一本 --- */
-.daily-card { border: 1px solid rgba(181,118,58,.5); background: linear-gradient(135deg, rgba(181,118,58,.10), rgba(181,118,58,.03)); }
+/* --- 今日の一本 ---
+   ホームの一覧は「番号｜本文｜→」の3列グリッドのため、
+   このカードだけは通常フローの独立カードとして表示する（番号も振らない） */
+.home-card.daily-card {
+  display: block;
+  border: 1px solid rgba(181,118,58,.5);
+  border-radius: var(--radius);
+  background: linear-gradient(135deg, rgba(181,118,58,.10), rgba(181,118,58,.03));
+  padding: 18px 20px;
+  margin: 18px 0 14px;
+}
+.home-card.daily-card::before { content: none; counter-increment: none; }
+.home-card.daily-card:hover, .home-card.daily-card.is-pressed { padding-left: 20px; background: linear-gradient(135deg, rgba(181,118,58,.16), rgba(181,118,58,.05)); }
 .daily-kicker { font-size: .74rem; letter-spacing: .08em; color: var(--gold-bright); font-weight: 700; margin-bottom: 8px; }
+.home-card.daily-card h3 { font-size: 1.06rem; margin-bottom: 6px; }
+.home-card.daily-card p { margin: 0 0 10px; }
+.home-card.daily-card .go { color: var(--gold-bright); }
 
 /* --- くわしい統計 --- */
 .insights { border: 1px solid var(--line-soft); border-radius: var(--radius-sm); background: var(--panel); margin-top: 14px; box-shadow: var(--shadow-sm); }
