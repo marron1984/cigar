@@ -55,11 +55,37 @@ const BRANDS = (() => {
     return /^\d{4}$/.test(s) ? s + "年" : s;
   }
 
+  /* ---------- ブランドのエンブレム（頭文字モノグラム。任意で実ロゴ画像に差し替え可） ---------- */
+  // 冠詞・一般語を除いた主要語の頭文字を1〜2字取り出す（例: Romeo y Julieta → RJ）
+  const EMBLEM_STOP = new Set(["de", "del", "la", "el", "y", "e", "and", "the", "of", "cigars", "cigar", "co", "company", "habanos", "tabacos", "tabacalera", "group"]);
+  function brandInitials(b) {
+    const base = String(b.en || b.ja || "");
+    const words = base.replace(/[^0-9A-Za-zÀ-ÿ\s]/g, " ").split(/\s+/).filter(w => w && !EMBLEM_STOP.has(w.toLowerCase()));
+    let ini;
+    if (!words.length) ini = base.replace(/[^0-9A-Za-zÀ-ÿ]/g, "").slice(0, 2);
+    else if (words.length === 1) ini = words[0].slice(0, 2);
+    else ini = words[0][0] + words[1][0];
+    return (ini || "•").toUpperCase();
+  }
+  // 落ち着いた葉巻色のパレットから、名前で決まる1色を選ぶ（同じブランドは常に同じ色）
+  const EMBLEM_COLORS = ["#6b4226", "#7d2e2e", "#2f5d50", "#3a4a6b", "#8a5a1f", "#5a4a6b", "#4a5b3f", "#7a3b26", "#4d4038", "#2f4858"];
+  function brandColor(b) {
+    const s = String(b.en || b.ja || "");
+    let h = 0;
+    for (let i = 0; i < s.length; i++) h = (h * 31 + s.charCodeAt(i)) >>> 0;
+    return EMBLEM_COLORS[h % EMBLEM_COLORS.length];
+  }
+  // b.logo に画像ファイル名（assets内）があればロゴ画像、無ければ頭文字エンブレム
+  function brandEmblem(b) {
+    if (b.logo) return `<span class="brand-emblem has-img"><img src="assets/${e(b.logo)}" alt="" loading="lazy"></span>`;
+    return `<span class="brand-emblem" style="--bg:${brandColor(b)}" aria-hidden="true">${e(brandInitials(b))}</span>`;
+  }
+
   function brandAcc(b) {
     const vitolas = (b.vitolas || []).map(v => `<span class="chip brand">${e(v)}</span>`).join("");
     return `
       <details class="acc brand-entry" data-search="${e((b.ja + " " + b.en).toLowerCase())}">
-        <summary>${e(b.ja)} — ${e(b.en)}<span class="tag">${e(foundedLabel(b.founded))}</span></summary>
+        <summary><span class="brand-sum-wrap">${brandEmblem(b)}<span class="brand-sum">${e(b.ja)} — ${e(b.en)}<span class="tag">${e(foundedLabel(b.founded))}</span></span></span></summary>
         <div class="acc-body">
           ${specRow("創業・誕生", "Founded", b.founded)}
           ${specRow("創業者・創設主体", "Founder", b.founder)}

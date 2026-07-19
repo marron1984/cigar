@@ -547,6 +547,21 @@ main { max-width: 1180px; margin: 0 auto; padding: 0 20px 80px; }
 @keyframes brandFlash { 0% { box-shadow: 0 0 0 2px var(--gold-bright); } 100% { box-shadow: 0 0 0 2px transparent; } }
 .brand-entry.brand-flash { animation: brandFlash 1.6s var(--ease); border-radius: var(--radius); }
 
+/* ブランドのエンブレム（頭文字モノグラム／任意で実ロゴ画像） */
+.brand-entry > summary { gap: 12px; }
+.brand-sum-wrap { display: flex; align-items: center; gap: 12px; min-width: 0; flex: 1 1 auto; }
+.brand-sum { min-width: 0; }
+.brand-emblem {
+  flex: 0 0 auto; width: 38px; height: 38px; border-radius: 50%;
+  display: inline-flex; align-items: center; justify-content: center;
+  background: var(--bg, #6b4226); color: #fdf6ea;
+  font-family: var(--serif); font-weight: 700; font-size: .85rem; letter-spacing: .01em;
+  box-shadow: inset 0 0 0 1.5px rgba(255, 255, 255, .22), 0 1px 3px rgba(0, 0, 0, .2);
+}
+.brand-emblem.has-img { background: #fff; }
+.brand-emblem img { width: 100%; height: 100%; object-fit: contain; border-radius: 50%; }
+@media (max-width: 640px) { .brand-emblem { width: 34px; height: 34px; font-size: .8rem; } }
+
 /* strength meter：無彩色2段階＋フルボディだけ差し色を塗って強調 */
 .strength-badge {
   display: inline-block; font-family: var(--sans); font-size: .72rem; padding: 3px 11px; border-radius: var(--radius-sm);
