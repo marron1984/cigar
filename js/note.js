@@ -582,7 +582,11 @@ const NOTE = (() => {
     entries = entries.filter(x => x.id !== id);
     persistDelete(id);
     render();
-    if (cloudOn) CLOUD.remove(id).catch(err => { console.warn(err); alert("共有データベースからの削除に失敗しました。時間をおいて再度お試しください。"); });
+    if (cloudOn) {
+      CLOUD.remove(id).catch(err => { console.warn(err); alert("共有データベースからの削除に失敗しました。時間をおいて再度お試しください。"); });
+      // 共有リンクを発行していた場合は、そのコピーも削除（リンクを無効化）
+      if (en && en.shareId) CLOUD.shareRemove(en.shareId).catch(() => {});
+    }
   }
 
   /* ---------- 統計 ---------- */
@@ -849,6 +853,144 @@ const NOTE = (() => {
     btn.disabled = false; btn.textContent = old;
   }
 
+  /* ---------- シェアメニュー（画像・リンク・テキスト） ---------- */
+  function shareUrlFor(token) {
+    return location.origin + location.pathname + "#share=" + token;
+  }
+  function randomToken() {
+    const a = new Uint8Array(16);
+    (crypto.getRandomValues ? crypto : { getRandomValues: (x) => { for (let i = 0; i < x.length; i++) x[i] = Math.floor(Math.random() * 256); return x; } }).getRandomValues(a);
+    return [...a].map(b => b.toString(36)).join("").slice(0, 22);
+  }
+  async function copyText(t) {
+    try { await navigator.clipboard.writeText(t); return true; }
+    catch (e) {
+      try {
+        const ta = document.createElement("textarea");
+        ta.value = t; document.body.appendChild(ta); ta.select();
+        const ok = document.execCommand("copy"); ta.remove(); return ok;
+      } catch (e2) { return false; }
+    }
+  }
+  function entryText(en) {
+    const star = en.rating ? "★".repeat(en.rating) + "☆".repeat(5 - en.rating) : "";
+    return [
+      `🚬 ${en.name}`,
+      [en.brand, en.country, en.vitola].filter(Boolean).join(" / "),
+      star,
+      [en.date ? fmtDate(en.date) : "", en.location ? "@" + en.location : ""].filter(Boolean).join(" "),
+      en.note ? `「${en.note}」` : "",
+      "— Cigar Cafe 記録ノート",
+    ].filter(Boolean).join("\n");
+  }
+  // テキストでシェア（LINE等に貼れる）
+  async function shareText(en) {
+    const t = entryText(en);
+    if (navigator.share) {
+      try { await navigator.share({ text: t }); return; }
+      catch (err) { if (err && err.name === "AbortError") return; }
+    }
+    alert((await copyText(t)) ? "テキストをコピーしました。LINEやメールに貼り付けてください。" : "コピーできませんでした。");
+  }
+  // リンクでシェア（クラウドに公開コピーを置き、URLを渡す）
+  async function shareLink(en, btn) {
+    if (!cloudOn) { alert("リンクでのシェアには共有データベース（クラウド設定）が必要です。"); return; }
+    const old = btn.textContent; btn.disabled = true; btn.textContent = "リンク作成中…";
+    try {
+      if (!en.shareId) { en.shareId = randomToken(); }
+      // 公開コピーには内部管理用の情報を含めない
+      const pub = {
+        name: en.name, brand: en.brand, country: en.country, vitola: en.vitola,
+        strength: en.strength, date: en.date, price: en.price, location: en.location,
+        rating: en.rating, note: en.note, photos: en.photos || [],
+        author: en.author || "", aiComment: en.aiComment || ""
+      };
+      await CLOUD.shareUpsert(en.shareId, pub);
+      await persistPut(en);
+      if (cloudOn) CLOUD.upsert(en).catch(() => {});
+      const url = shareUrlFor(en.shareId);
+      if (navigator.share) {
+        try { await navigator.share({ url, title: en.name || "葉巻の記録" }); btn.disabled = false; btn.textContent = old; return; }
+        catch (err) { if (err && err.name === "AbortError") { btn.disabled = false; btn.textContent = old; return; } }
+      }
+      alert((await copyText(url)) ? "共有リンクをコピーしました：\n" + url : "リンクを作成しました：\n" + url);
+    } catch (err) {
+      const msg = String(err && err.message || err);
+      if (/does not exist|42P01/i.test(msg)) {
+        alert("共有リンク用のテーブルが未作成です。DATABASE_SETUP.md の「共有リンク」のSQLをSupabaseで実行してください。");
+      } else {
+        alert("共有リンクを作成できませんでした：" + msg);
+      }
+    }
+    btn.disabled = false; btn.textContent = old;
+  }
+  function openShareMenu(id) {
+    const en = entries.find(x => x.id === id);
+    if (!en) return;
+    let ov = q("#shareMenuOv");
+    if (!ov) {
+      ov = document.createElement("div");
+      ov.id = "shareMenuOv"; ov.className = "wrapped-ov";
+      document.body.appendChild(ov);
+      ov.addEventListener("click", (ev) => { if (ev.target === ov) ov.classList.remove("open"); });
+    }
+    ov.innerHTML = `<div class="share-menu">
+      <div class="sm-title">「${escN(en.name)}」をシェア</div>
+      <button type="button" class="sm-item" data-sm="img">🖼 画像で共有<span class="sm-sub">写真つきのカード画像を作成して共有・保存</span></button>
+      <button type="button" class="sm-item" data-sm="link">🔗 リンクで共有<span class="sm-sub">URLを送るだけで、相手のブラウザで記録が見られる</span></button>
+      <button type="button" class="sm-item" data-sm="text">📝 テキストで共有<span class="sm-sub">LINEやメールに貼れる文章をコピー</span></button>
+      <button type="button" class="btn btn-ghost btn-sm sm-cancel">キャンセル</button>
+    </div>`;
+    ov.classList.add("open");
+    ov.querySelector(".sm-cancel").addEventListener("click", () => ov.classList.remove("open"));
+    ov.querySelectorAll("[data-sm]").forEach(b => b.addEventListener("click", async () => {
+      if (b.dataset.sm === "img") { ov.classList.remove("open"); shareEntry(id, b); }
+      else if (b.dataset.sm === "text") { ov.classList.remove("open"); shareText(en); }
+      else if (b.dataset.sm === "link") { await shareLink(en, b); ov.classList.remove("open"); }
+    }));
+  }
+
+  /* ---------- 共有リンクの閲覧（#share=トークン で誰でも見られる） ---------- */
+  async function maybeShowShared() {
+    const m = /#share=([a-z0-9]+)/i.exec(location.hash || "");
+    if (!m) return;
+    if (typeof CLOUD === "undefined" || !CLOUD.enabled) return;
+    let ov = document.createElement("div");
+    ov.className = "wrapped-ov open";
+    ov.innerHTML = `<div class="share-view"><p style="padding:30px;text-align:center">記録を読み込んでいます…</p></div>`;
+    document.body.appendChild(ov);
+    ov.addEventListener("click", (ev) => { if (ev.target === ov) ov.remove(); });
+    let en = null;
+    try { en = await CLOUD.shareGet(m[1]); } catch (err) { console.warn(err); }
+    if (!en) {
+      ov.querySelector(".share-view").innerHTML = `<button type="button" class="modal-x" data-svx>×</button><p style="padding:26px;text-align:center">共有された記録が見つかりませんでした。<br>リンクが削除されたか、期限切れの可能性があります。</p>`;
+      ov.querySelector("[data-svx]").addEventListener("click", () => ov.remove());
+      return;
+    }
+    ov.querySelector(".share-view").innerHTML = `
+      <button type="button" class="modal-x" data-svx aria-label="閉じる">×</button>
+      <div class="wr-kicker">SHARED FROM CIGAR CAFE</div>
+      <h3>${escN(en.name)}</h3>
+      ${en.brand ? `<div class="sv-brand">${escN(en.brand)}</div>` : ""}
+      ${en.rating ? `<div>${stars(en.rating)}</div>` : ""}
+      <div class="e-meta" style="margin-top:10px">
+        ${en.country ? `<span class="chip">${escN(en.country)}</span>` : ""}
+        ${en.vitola ? `<span class="chip">${escN(en.vitola)}</span>` : ""}
+        ${en.strength ? `<span class="chip">${escN(normalizeStrength(en.strength))}</span>` : ""}
+        ${en.price ? `<span class="chip">¥${Number(en.price).toLocaleString()}</span>` : ""}
+        ${en.location ? `<span class="chip">${escN(en.location)}</span>` : ""}
+        ${en.date ? `<span class="chip">${escN(fmtDate(en.date))}</span>` : ""}
+      </div>
+      ${en.note ? `<div class="e-note" style="margin-top:12px">${escN(en.note)}</div>` : ""}
+      ${en.aiComment ? `<div class="e-ai">✨ ${escN(en.aiComment)}</div>` : ""}
+      ${Array.isArray(en.photos) && en.photos.length
+        ? `<div class="entry-photos" style="margin-top:12px">${en.photos.map(src => `<img class="entry-photo sv-photo" src="${src}" alt="共有写真">`).join("")}</div>` : ""}
+      ${en.author ? `<div class="sv-author">記録：${escN(en.author)}</div>` : ""}
+      <div class="sv-foot">Cigar Cafe — 葉巻をたのしむ</div>`;
+    ov.querySelector("[data-svx]").addEventListener("click", () => ov.remove());
+    ov.querySelectorAll(".sv-photo").forEach(img => img.addEventListener("click", () => openLightbox(img.src)));
+  }
+
   /* ---------- 年間まとめ（Year in Smoke） ---------- */
   function openWrapped() {
     const years = [...new Set(entries.map(e => (e.date || "").slice(0, 4)).filter(v => /^\d{4}$/.test(v)))].sort().reverse();
@@ -979,7 +1121,7 @@ const NOTE = (() => {
           : ""}
         <div class="e-actions">
           <button class="btn btn-sm btn-ghost" data-edit="${e.id}">編集</button>
-          <button class="btn btn-sm btn-ghost" data-share="${e.id}">画像で共有</button>
+          <button class="btn btn-sm btn-ghost" data-share="${e.id}">シェア</button>
           ${visionOn && !e.aiComment ? `<button class="btn btn-sm btn-ghost" data-aic="${e.id}">AI講評</button>` : ""}
           <button class="btn btn-sm btn-danger" data-del="${e.id}">削除</button>
         </div>
@@ -1046,6 +1188,9 @@ const NOTE = (() => {
 
   /* ---------- 初期化 ---------- */
   function init() {
+    // 共有リンク（#share=…）で開かれた場合は、その記録を表示
+    maybeShowShared();
+
     // 旧localStorage → IndexedDB の移行と読み込み（完了後に再描画）。
     // 手元の記録を読み込んでから、クラウド同期（有効時）を行うことで既存記録を確実に引き上げる。
     loadStore().then(() => {
@@ -1220,7 +1365,7 @@ const NOTE = (() => {
       const more = e.target.closest("[data-more]");
       if (ed) openModal(entries.find(x => x.id === ed.dataset.edit));
       if (dl) removeEntry(dl.dataset.del);
-      if (sh) shareEntry(sh.dataset.share, sh);
+      if (sh) openShareMenu(sh.dataset.share);
       if (aic) aiCommentFor(aic.dataset.aic, aic);
       if (more) {
         const note = more.previousElementSibling;

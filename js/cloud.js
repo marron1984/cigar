@@ -60,5 +60,26 @@ const CLOUD = (() => {
     if (error) throw error;
   }
 
-  return { enabled, list, upsert, remove, replaceAll };
+  /* ---------- 共有リンク（1件の記録を誰でも見られるURLにする） ----------
+     テーブル: cigar_shares (id text primary key, created bigint, data jsonb)
+     id は推測不能なランダムトークン。DATABASE_SETUP.md のSQLで作成。 */
+  const SHARE_TABLE = "cigar_shares";
+  async function shareUpsert(token, data) {
+    const c = await getClient();
+    const { error } = await c.from(SHARE_TABLE).upsert({ id: token, created: Date.now(), data }, { onConflict: "id" });
+    if (error) throw error;
+  }
+  async function shareGet(token) {
+    const c = await getClient();
+    const { data, error } = await c.from(SHARE_TABLE).select("*").eq("id", token);
+    if (error) throw error;
+    return data && data[0] ? data[0].data : null;
+  }
+  async function shareRemove(token) {
+    const c = await getClient();
+    const { error } = await c.from(SHARE_TABLE).delete().eq("id", token);
+    if (error) throw error;
+  }
+
+  return { enabled, list, upsert, remove, replaceAll, shareUpsert, shareGet, shareRemove };
 })();

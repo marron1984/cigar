@@ -1587,3 +1587,17 @@ table.ref { min-width: 480px; }
 .news-sum { font-size: .9rem; line-height: 1.8; color: var(--text-soft); margin: 0 0 10px; }
 .news-src { font-size: .76rem; color: var(--muted); line-height: 1.7; }
 .news-src a { color: var(--gold-bright); font-weight: 600; margin-left: 6px; white-space: nowrap; }
+
+/* --- シェアメニュー & 共有リンク閲覧 --- */
+.share-menu { width: min(400px, 100%); background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); padding: 20px; box-shadow: 0 24px 60px rgba(0,0,0,.4); display: flex; flex-direction: column; gap: 10px; }
+.sm-title { font-weight: 700; margin-bottom: 4px; }
+.sm-item { text-align: left; padding: 13px 15px; border-radius: 10px; border: 1px solid var(--line); background: var(--panel); color: var(--cream); cursor: pointer; font-size: .95rem; font-weight: 600; }
+.sm-item:hover:not(:disabled) { background: var(--panel-2); }
+.sm-item:disabled { opacity: .6; }
+.sm-sub { display: block; font-weight: 400; font-size: .76rem; color: var(--text-soft); margin-top: 3px; }
+.sm-cancel { align-self: flex-end; margin-top: 2px; }
+.share-view { position: relative; width: min(480px, 100%); max-height: 88vh; overflow-y: auto; background: var(--panel); border: 1px solid var(--gold); border-radius: var(--radius); padding: 26px 24px; box-shadow: 0 24px 60px rgba(0,0,0,.4); }
+.share-view h3 { font-family: var(--serif); font-size: 1.4rem; margin: 6px 0 4px; }
+.sv-brand { color: var(--gold-bright); font-size: .95rem; margin-bottom: 6px; }
+.sv-author { margin-top: 14px; font-size: .82rem; color: var(--text-soft); }
+.sv-foot { margin-top: 16px; padding-top: 12px; border-top: 1px solid var(--line-soft); font-family: var(--serif); color: var(--gold-bright); font-size: .88rem; }

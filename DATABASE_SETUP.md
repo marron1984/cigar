@@ -59,6 +59,28 @@ window.CLOUD_CONFIG = {
 
 保存して push（またはアップロード）すれば完了です。
 
+## 3.5 共有リンク機能のテーブル（1件の記録をURLでシェアする）
+
+記録ノートの「シェア →🔗 リンクで共有」を使う場合は、**SQL Editor** で以下も実行してください：
+
+```sql
+create table if not exists cigar_shares (
+  id text primary key,   -- 推測不能なランダムトークン（URLの一部）
+  created bigint,
+  data jsonb             -- 共有する記録の公開コピー（写真含む）
+);
+
+alter table cigar_shares enable row level security;
+
+create policy "shares read for anon"   on cigar_shares for select using (true);
+create policy "shares write for anon"  on cigar_shares for insert with check (true);
+create policy "shares update for anon" on cigar_shares for update using (true) with check (true);
+create policy "shares delete for anon" on cigar_shares for delete using (true);
+```
+
+> 共有リンクを知っている人だけがその記録を見られます（リンクは長いランダム文字列）。
+> 記録を削除すると共有コピーも削除され、リンクは無効になります。
+
 ## 4. 使い方
 
 - 記録ノートを開くと、上部に **☁ 共有DB（自分の記録だけ表示）** と表示されます。
