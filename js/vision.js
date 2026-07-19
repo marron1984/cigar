@@ -52,5 +52,40 @@ const VISION = (() => {
     return data; // { name, brand, country, vitola, strength, band_readable, confidence, notes }
   }
 
-  return { enabled, identify };
+  // 保存済みの記録から、AIの一言講評（テキストのみ）を生成する
+  async function comment(entry) {
+    if (!enabled) throw new Error("AI機能は未設定です");
+    const headers = { "Content-Type": "application/json" };
+    if (cfg.anonKey) {
+      headers["Authorization"] = "Bearer " + cfg.anonKey;
+      headers["apikey"] = cfg.anonKey;
+    }
+    const ctrl = new AbortController();
+    const timer = setTimeout(() => ctrl.abort(), 45000);
+    let res;
+    try {
+      res = await fetch(cfg.endpoint, {
+        method: "POST",
+        headers,
+        body: JSON.stringify({ mode: "comment", entry: entry || {} }),
+        signal: ctrl.signal,
+      });
+    } catch (e) {
+      clearTimeout(timer);
+      throw new Error(e.name === "AbortError" ? "時間がかかりすぎました" : "サーバーに接続できませんでした");
+    }
+    clearTimeout(timer);
+    let data;
+    try { data = await res.json(); } catch { throw new Error("サーバーの応答を読み取れませんでした"); }
+    if (!res.ok || (data && data.error)) {
+      const msg = (data && data.error) || `サーバーエラー (${res.status})`;
+      // 旧バージョンの関数はcommentモード未対応（画像必須エラーを返す）
+      if (/画像/.test(msg)) throw new Error("サーバー関数の更新が必要です（VISION_SETUP.md の最新コードを再デプロイしてください）");
+      throw new Error(msg);
+    }
+    if (!data.comment) throw new Error("講評を生成できませんでした");
+    return data.comment;
+  }
+
+  return { enabled, identify, comment };
 })();

@@ -64,6 +64,11 @@
         <div class="note-cta-go">はじめる →</div>
       </button>
 
+      <div class="global-search" id="globalSearch">
+        <input type="text" id="gsInput" placeholder="🔍 サイト全体を検索（ブランド・産地・サイズ・用語…）" autocomplete="off">
+        <div class="gs-results" id="gsResults" hidden></div>
+      </div>
+
       <div class="home-grid" id="homeGrid"></div>
 
       <div class="callout" style="margin-top:34px">
@@ -209,6 +214,7 @@
       <div class="sub-view" id="psub-db"></div>
       <div class="sub-view" id="psub-industry"></div>
       <div class="sub-view" id="psub-health"></div>
+      <div id="quizBox"></div>
     </section>
 
     <!-- ===== JAPAN GUIDE (日本ガイド) ===== -->
@@ -261,6 +267,7 @@
       </div>
       <img class="section-photo" src="assets/Cigar.png" alt="名門ブランドの葉巻 — コイーバ、ロメオ、パルタガス、オヨ、パドロン"
            onerror="this.style.display='none'">
+      <div id="wishlistPanel"></div>
       <div class="subnav" id="brandsSubnav">
         <button data-bsub="cuba" class="active">キューバ（ハバノス）</button>
         <button data-bsub="dominican">ドミニカ共和国</button>
@@ -337,6 +344,7 @@
             <div class="form-row">
               <label for="fName">銘柄名 <span style="color:var(--ember)">*</span></label>
               <input type="text" id="fName" required placeholder="例：モンテクリスト No.4" autocomplete="off">
+              <div class="repeat-hint" id="repeatHint" hidden></div>
             </div>
             <div class="form-two">
               <div class="form-row">
@@ -408,12 +416,30 @@
                 <div class="form-row">
                   <label for="fPrice">価格（円）</label>
                   <input type="number" id="fPrice" min="0" placeholder="例：2500">
+                  <details class="fx-conv">
+                    <summary>海外通貨から円換算</summary>
+                    <div class="fx-row">
+                      <input type="number" id="fxAmount" placeholder="金額" step="any" min="0">
+                      <select id="fxCur">
+                        <option>USD</option><option>EUR</option><option>GBP</option><option>CHF</option><option>CUP</option>
+                      </select>
+                      <span class="fx-x">×</span>
+                      <input type="number" id="fxRate" placeholder="レート(円)" step="any" min="0">
+                      <button type="button" class="btn btn-sm btn-ghost" id="fxApply">円で入力</button>
+                    </div>
+                    <div class="photo-hint" id="fxHint">現地価格とレートを入れると、円額を上の価格欄に入れます。レートは通貨ごとに記憶されます。</div>
+                  </details>
                 </div>
               </div>
               <div class="form-two">
                 <div class="form-row">
                   <label for="fDate">喫煙日</label>
                   <input type="date" id="fDate">
+                  <div class="timer-wrap">
+                    <button type="button" class="btn btn-sm btn-ghost" id="btnTimer">▶ 喫煙タイマー開始</button>
+                    <span class="timer-disp" id="timerDisp"></span>
+                  </div>
+                  <input type="hidden" id="fDuration" value="">
                 </div>
                 <div class="form-row">
                   <label for="fLocation">喫煙場所</label>
@@ -446,6 +472,12 @@
       </div>
 
       <div class="note-stats" id="noteStats"></div>
+      <div id="noteInsights"></div>
+
+      <details class="stock-panel" id="stockPanel">
+        <summary>🗃 ヒュミドール在庫 <span class="count-pill" id="stockCount">0 本</span></summary>
+        <div id="stockBody"></div>
+      </details>
 
       <div class="note-utils">
         <input type="text" class="note-search" id="noteSearch" placeholder="銘柄・産地・喫煙場所・記録者・感想で検索…">
@@ -560,6 +592,10 @@
   <script src="js/humidor.js"></script>
   <script src="js/brands.js"></script>
   <script src="js/app.js"></script>
+  <script src="js/search.js"></script>
+  <script src="js/quiz.js"></script>
+  <script src="js/realsize.js"></script>
+  <script src="js/stock.js"></script>
   <script src="js/motion.js"></script>
 </body>
 </html>

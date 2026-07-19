@@ -81,11 +81,56 @@ const BRANDS = (() => {
     return `<span class="brand-emblem" style="--bg:${brandColor(b)}" aria-hidden="true">${e(brandInitials(b))}</span>`;
   }
 
-  function brandAcc(b) {
+  /* ---------- 吸いたいリスト（ウィッシュリスト） ---------- */
+  const WISH_KEY = "cigar_wishlist_v1";
+  const COUNTRY_JA = {
+    cuba: "キューバ", dominican: "ドミニカ共和国", nicaragua: "ニカラグア", honduras: "ホンジュラス",
+    mexico: "メキシコ", ecuador: "エクアドル", usa: "アメリカ", brazil: "ブラジル", cameroon: "カメルーン",
+    peru: "ペルー", colombia: "コロンビア", philippines: "フィリピン", indonesia: "インドネシア", argentina: "アルゼンチン"
+  };
+  function wishList() {
+    try { return JSON.parse(localStorage.getItem(WISH_KEY)) || []; } catch (err) { return []; }
+  }
+  function saveWish(list) { try { localStorage.setItem(WISH_KEY, JSON.stringify(list)); } catch (err) {} }
+  function isWished(en) { return wishList().some(w => w.en === en); }
+  function toggleWish(item) {
+    let list = wishList();
+    if (list.some(w => w.en === item.en)) list = list.filter(w => w.en !== item.en);
+    else list.push(item);
+    saveWish(list);
+    renderWishPanel();
+    // 全一覧の★表示を同期
+    qa(".wish-btn").forEach(btn => {
+      const on = list.some(w => w.en === btn.dataset.wen);
+      btn.classList.toggle("on", on);
+      btn.textContent = on ? "★" : "☆";
+      btn.title = on ? "吸いたいリストから外す" : "吸いたいリストへ";
+    });
+  }
+  function renderWishPanel() {
+    const el = q("#wishlistPanel");
+    if (!el) return;
+    const list = wishList();
+    if (!list.length) { el.innerHTML = ""; return; }
+    el.innerHTML = `
+      <div class="wish-panel">
+        <div class="wish-h">⭐ 吸いたいリスト <span class="count-pill">${list.length}件</span></div>
+        <div class="wish-items">${list.map(w => `
+          <span class="wish-item">
+            <span class="wi-name">${e(w.ja)}</span>
+            <button type="button" class="wi-log" data-wlog="${e(w.en)}" title="記録ノートに記録する">✎ 記録</button>
+            <button type="button" class="wi-rm" data-wrm="${e(w.en)}" title="リストから外す">×</button>
+          </span>`).join("")}</div>
+        <div class="photo-hint">★を押した銘柄のメモです。「✎ 記録」で吸った記録をすぐ書けます。</div>
+      </div>`;
+  }
+
+  function brandAcc(b, countryKey) {
     const vitolas = (b.vitolas || []).map(v => `<span class="chip brand">${e(v)}</span>`).join("");
+    const wished = isWished(b.en);
     return `
       <details class="acc brand-entry" data-search="${e((b.ja + " " + b.en).toLowerCase())}">
-        <summary><span class="brand-sum-wrap">${brandEmblem(b)}<span class="brand-sum">${e(b.ja)} — ${e(b.en)}<span class="tag">${e(foundedLabel(b.founded))}</span></span></span></summary>
+        <summary><span class="brand-sum-wrap">${brandEmblem(b)}<span class="brand-sum">${e(b.ja)} — ${e(b.en)}<span class="tag">${e(foundedLabel(b.founded))}</span></span></span><button type="button" class="wish-btn${wished ? " on" : ""}" data-wen="${e(b.en)}" data-wja="${e(b.ja)}" data-wc="${e(countryKey || "")}" title="${wished ? "吸いたいリストから外す" : "吸いたいリストへ"}">${wished ? "★" : "☆"}</button></summary>
         <div class="acc-body">
           ${specRow("創業・誕生", "Founded", b.founded)}
           ${specRow("創業者・創設主体", "Founder", b.founder)}
@@ -113,7 +158,7 @@ const BRANDS = (() => {
     el.innerHTML = `
       <p class="prose" style="margin-bottom:14px">${e(cfg.intro(list.length))}</p>
       <input type="text" class="note-search lex-search" id="${searchId}" placeholder="銘柄名で検索（例：コイーバ、Fuente…）">
-      <div id="${listId}">${list.map(brandAcc).join("")}</div>`;
+      <div id="${listId}">${list.map(b => brandAcc(b, cfg.key)).join("")}</div>`;
 
     q("#" + searchId).addEventListener("input", (ev) => {
       const term = ev.target.value.trim().toLowerCase();
@@ -137,9 +182,36 @@ const BRANDS = (() => {
     });
   }
 
+  function initWishlist() {
+    renderWishPanel();
+    // ★ボタン（summary内なので開閉を止める）と、パネル内の操作
+    document.addEventListener("click", (ev) => {
+      const star = ev.target.closest(".wish-btn");
+      if (star) {
+        ev.preventDefault(); ev.stopPropagation();
+        toggleWish({ en: star.dataset.wen, ja: star.dataset.wja, country: star.dataset.wc });
+        return;
+      }
+      const logBtn = ev.target.closest("[data-wlog]");
+      if (logBtn) {
+        const w = wishList().find(x => x.en === logBtn.dataset.wlog);
+        if (w && typeof NOTE !== "undefined" && NOTE.prefillNew) {
+          NOTE.prefillNew({ brand: w.ja, country: COUNTRY_JA[w.country] || "" });
+        }
+        return;
+      }
+      const rm = ev.target.closest("[data-wrm]");
+      if (rm) {
+        const w = wishList().find(x => x.en === rm.dataset.wrm);
+        if (w) toggleWish(w);
+      }
+    });
+  }
+
   function init() {
     COUNTRIES.forEach(renderCountry);
     initSubnav();
+    initWishlist();
   }
 
   return { init };

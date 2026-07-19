@@ -104,6 +104,53 @@ Deno.serve(async (req: Request) => {
     return json({ error: "リクエスト本文（JSON）を読み取れませんでした" }, 400);
   }
 
+  // ---- モード2: AI講評（テキストのみ。保存済みの記録に一言解説を付ける） ----
+  if (payload?.mode === "comment") {
+    const en = payload.entry || {};
+    const info = [
+      en.name ? `銘柄: ${en.name}` : "",
+      en.brand ? `ブランド: ${en.brand}` : "",
+      en.country ? `産地: ${en.country}` : "",
+      en.vitola ? `サイズ: ${en.vitola}` : "",
+      en.strength ? `強さ: ${en.strength}` : "",
+      en.rating ? `本人の評価: ★${en.rating}/5` : "",
+      en.price ? `価格: ¥${en.price}` : "",
+      en.note ? `本人の感想メモ: ${String(en.note).slice(0, 400)}` : "",
+    ].filter(Boolean).join("\n");
+    if (!info) return json({ error: "記録の内容が空です" }, 400);
+    try {
+      const resp = await fetch("https://api.anthropic.com/v1/messages", {
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+          "x-api-key": apiKey,
+          "anthropic-version": "2023-06-01",
+        },
+        body: JSON.stringify({
+          model: "claude-opus-4-8",
+          max_tokens: 400,
+          system:
+            "あなたは葉巻に非常に詳しい、温かみのあるソムリエです。愛好家の喫煙記録を読み、" +
+            "その銘柄の背景・味わいの特徴に触れつつ、記録者の感想に寄り添う短い講評を日本語で書きます。" +
+            "最後に「次の一本」のおすすめを1銘柄だけ添えてください。全体で2〜3文、120字以内。" +
+            "確実に知っていることだけを述べ、不確かな断定はしないこと。",
+          messages: [{ role: "user", content: "この喫煙記録に講評をお願いします。\n\n" + info }],
+        }),
+      });
+      const data: any = await resp.json().catch(() => null);
+      if (!resp.ok) {
+        const detail = data?.error?.message || "HTTP " + resp.status;
+        return json({ error: "講評の生成に失敗しました: " + detail }, 502);
+      }
+      const text = (data?.content || []).filter((b: any) => b.type === "text").map((b: any) => b.text).join("").trim();
+      if (!text) return json({ error: "講評を生成できませんでした" }, 502);
+      return json({ comment: text });
+    } catch (err) {
+      const msg = err && (err as any).message ? (err as any).message : String(err);
+      return json({ error: "Anthropic API に接続できませんでした: " + msg }, 502);
+    }
+  }
+
   const img = parseDataUrl(payload?.image || "");
   if (!img) {
     return json({ error: "画像（dataURL）が正しく渡されていません" }, 400);

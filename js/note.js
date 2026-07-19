@@ -21,6 +21,9 @@ const NOTE = (() => {
   const visionOn = typeof VISION !== "undefined" && VISION.enabled;   // 写真AI自動入力
   let visionBusy = false;       // 認識中の二重起動を防ぐ
   let usingIDB = false;         // IndexedDBが使えるか（localStorageの約5MB制限を回避）
+  let timerStart = null;        // 喫煙タイマーの開始時刻
+  let timerTick = null;         // タイマー表示の更新インターバル
+  const FX_KEY = "cigar_fx_rates";   // 通貨ごとの記憶レート
 
   function authorName() { try { return localStorage.getItem(AUTHOR_KEY) || ""; } catch (e) { return ""; } }
   function setAuthorName(v) { try { localStorage.setItem(AUTHOR_KEY, v); } catch (e) {} }
@@ -333,6 +336,8 @@ const NOTE = (() => {
     currentPhotos = isEdit && Array.isArray(entry.photos) ? entry.photos.slice() : [];
     renderPhotoPreviews();
     setVisionStatus("", "");   // 前回の認識メッセージをクリア
+    timerReset(isEdit ? (entry.duration || "") : "");
+    updateRepeatHint();
     setRating(isEdit ? (entry.rating || 0) : 0);
     const panel = q("#entryPanel");
     panel.hidden = false;
@@ -535,6 +540,12 @@ const NOTE = (() => {
       note: q("#fNote").value.trim(),
       photos: currentPhotos.slice()
     };
+    // タイマーが動いたままなら自動で止めて記録
+    if (timerStart) {
+      const mins = Math.max(1, Math.round((Date.now() - timerStart) / 60000));
+      timerReset(mins);
+    }
+    data.duration = Number(q("#fDuration").value) || null;
     if (!data.name) return;
     if (cloudOn && !authorName()) {
       alert("共有モードでは、先に「記録者」にお名前を入力してください（その名前があなたの記録の目印になります）。");
@@ -575,9 +586,25 @@ const NOTE = (() => {
   }
 
   /* ---------- 統計 ---------- */
+  // 記録の「時点」：喫煙日を優先、無ければ登録日時
+  function entryTime(e) {
+    return e.date ? new Date(e.date + "T12:00").getTime() : (e.created || 0);
+  }
+  function entryMonth(e) {
+    if (e.date) return e.date.slice(0, 7);
+    if (e.created) { const d = new Date(e.created); return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}`; }
+    return "";
+  }
+  function hbar(label, count, max, extra) {
+    const w = max ? Math.max(3, Math.round(count / max * 100)) : 0;
+    return `<div class="ch-row"><div class="ch-lbl">${escN(label)}</div>
+      <div class="ch-track"><div class="ch-fill" style="width:${w}%"></div></div>
+      <div class="ch-val">${count}${extra || ""}</div></div>`;
+  }
   function renderStats() {
     const box = q("#noteStats");
-    if (!entries.length) { box.innerHTML = ""; return; }
+    const ins = q("#noteInsights");
+    if (!entries.length) { box.innerHTML = ""; if (ins) ins.innerHTML = ""; return; }
     const rated = entries.filter(e => e.rating > 0);
     const avg = rated.length
       ? (rated.reduce((s, e) => s + e.rating, 0) / rated.length).toFixed(1) : "—";
@@ -590,6 +617,281 @@ const NOTE = (() => {
       <div class="stat-box"><div class="sv">${countries}</div><div class="sl">産地の数</div></div>
       <div class="stat-box"><div class="sv">${places}</div><div class="sl">喫煙場所の数</div></div>
       <div class="stat-box"><div class="sv">¥${spent.toLocaleString()}</div><div class="sl">総額の記録</div></div>`;
+    if (ins) renderInsights(ins);
+  }
+
+  /* くわしい統計（月別・産地・評価・喫煙時間） */
+  function renderInsights(ins) {
+    const now = new Date();
+    const thisYear = String(now.getFullYear());
+    const yearCount = entries.filter(e => (e.date || "").startsWith(thisYear)).length;
+
+    // 直近12か月の本数と支出
+    const months = [];
+    for (let i = 11; i >= 0; i--) {
+      const d = new Date(now.getFullYear(), now.getMonth() - i, 1);
+      months.push(`${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}`);
+    }
+    const mCount = {}, mSpend = {};
+    entries.forEach(e => {
+      const m = entryMonth(e);
+      if (!m) return;
+      mCount[m] = (mCount[m] || 0) + 1;
+      mSpend[m] = (mSpend[m] || 0) + (Number(e.price) || 0);
+    });
+    const maxM = Math.max(1, ...months.map(m => mCount[m] || 0));
+    const monthChart = `<div class="ch-h">月別の本数（直近12か月）</div><div class="mchart">` +
+      months.map(m => {
+        const c = mCount[m] || 0;
+        const h = Math.round(c / maxM * 72);
+        const lbl = Number(m.slice(5)) + "月";
+        const tip = mSpend[m] ? `¥${mSpend[m].toLocaleString()}` : "";
+        return `<div class="mcol" title="${escN(m)}：${c}本 ${tip}">
+          <div class="mval">${c || ""}</div><div class="mbar" style="height:${Math.max(c ? 6 : 2, h)}px"></div><div class="mlbl">${lbl}</div></div>`;
+      }).join("") + `</div>`;
+
+    // 産地トップ6
+    const byC = {};
+    entries.forEach(e => { if (e.country) byC[e.country] = (byC[e.country] || 0) + 1; });
+    const topC = Object.entries(byC).sort((a, b) => b[1] - a[1]).slice(0, 6);
+    const maxC = Math.max(1, ...topC.map(x => x[1]));
+    const countryChart = topC.length
+      ? `<div class="ch-h">よく吸う産地</div>` + topC.map(([k, v]) => hbar(k, v, maxC, "本")).join("") : "";
+
+    // 評価の分布
+    const byR = [0, 0, 0, 0, 0];
+    entries.forEach(e => { const r = Number(e.rating) || 0; if (r >= 1 && r <= 5) byR[r - 1]++; });
+    const maxR = Math.max(1, ...byR);
+    const ratingChart = byR.some(v => v)
+      ? `<div class="ch-h">評価の分布</div>` + [5, 4, 3, 2, 1].map(r => hbar("★" + r, byR[r - 1], maxR, "本")).join("") : "";
+
+    // 喫煙時間（タイマー記録があるものだけ）
+    const withDur = entries.filter(e => Number(e.duration) > 0);
+    let durBlock = "";
+    if (withDur.length) {
+      const byV = {};
+      withDur.forEach(e => {
+        const k = e.vitola || "その他";
+        (byV[k] = byV[k] || []).push(Number(e.duration));
+      });
+      const rows = Object.entries(byV).map(([k, arr]) =>
+        `<div class="dur-row">${escN(k)}：平均 <b>${Math.round(arr.reduce((s, x) => s + x, 0) / arr.length)}分</b>（${arr.length}回）</div>`).join("");
+      durBlock = `<div class="ch-h">喫煙時間（タイマー記録）</div>${rows}`;
+    }
+
+    ins.innerHTML = `
+      <details class="insights">
+        <summary>📊 くわしい統計 <span class="ins-year">今年 ${yearCount}本目</span></summary>
+        <div class="ins-body">
+          ${monthChart}
+          <div class="ins-grid">
+            <div>${countryChart}</div>
+            <div>${ratingChart}</div>
+          </div>
+          ${durBlock}
+          <div class="ins-actions"><button type="button" class="btn btn-sm btn-ghost" id="btnWrapped">🎁 年間まとめを見る</button></div>
+        </div>
+      </details>`;
+    const bw = q("#btnWrapped");
+    if (bw) bw.addEventListener("click", openWrapped);
+  }
+
+  /* ---------- リピート（同じ銘柄を何回吸ったか） ---------- */
+  function repeatMap() {
+    const m = new Map();
+    entries.forEach(e => {
+      const k = (e.name || "").trim();
+      if (!k) return;
+      if (!m.has(k)) m.set(k, []);
+      m.get(k).push(e);
+    });
+    m.forEach(list => list.sort((a, b) => entryTime(a) - entryTime(b)));
+    return m;
+  }
+  // フォームの銘柄名の下に、過去の記録のヒントを表示
+  function updateRepeatHint() {
+    const el = q("#repeatHint");
+    if (!el) return;
+    const name = q("#fName").value.trim();
+    const curId = q("#entryId").value;
+    const past = name ? entries.filter(x => (x.name || "").trim() === name && x.id !== curId) : [];
+    if (!past.length) { el.hidden = true; el.textContent = ""; return; }
+    const last = past.slice().sort((a, b) => entryTime(b) - entryTime(a))[0];
+    const snip = (last.note || "").slice(0, 40);
+    el.hidden = false;
+    el.innerHTML = `🔁 この銘柄は過去 <b>${past.length}回</b> 記録しています（前回 ${last.rating ? "★" + last.rating : "評価なし"}・${escN(fmtDate(last.date))}${snip ? "「" + escN(snip) + (last.note.length > 40 ? "…" : "") + "」" : ""}）`;
+  }
+
+  /* ---------- 喫煙タイマー ---------- */
+  function fmtElapsed(ms) {
+    const m = Math.floor(ms / 60000), s = Math.floor(ms / 1000) % 60;
+    return `${m}:${String(s).padStart(2, "0")}`;
+  }
+  function timerReset(dur) {
+    timerStart = null; clearInterval(timerTick);
+    const f = q("#fDuration"); if (f) f.value = dur || "";
+    const b = q("#btnTimer"); if (b) { b.textContent = "▶ 喫煙タイマー開始"; b.classList.remove("on"); }
+    const d = q("#timerDisp"); if (d) d.textContent = dur ? `記録済み：${dur}分` : "";
+  }
+  function timerToggle() {
+    const b = q("#btnTimer"), d = q("#timerDisp");
+    if (!timerStart) {
+      timerStart = Date.now();
+      b.textContent = "⏸ 終了して記録"; b.classList.add("on");
+      d.textContent = "0:00";
+      timerTick = setInterval(() => { d.textContent = fmtElapsed(Date.now() - timerStart); }, 1000);
+    } else {
+      const mins = Math.max(1, Math.round((Date.now() - timerStart) / 60000));
+      timerReset(mins);
+    }
+  }
+
+  /* ---------- AI講評（保存済みの記録に、AIの一言解説を付ける） ---------- */
+  async function aiCommentFor(id, btn) {
+    const en = entries.find(x => x.id === id);
+    if (!en) return;
+    const old = btn.textContent; btn.disabled = true; btn.textContent = "生成中…";
+    try {
+      const c = await VISION.comment({
+        name: en.name, brand: en.brand, country: en.country, vitola: en.vitola,
+        strength: en.strength, rating: en.rating, note: en.note, price: en.price
+      });
+      en.aiComment = c;
+      await persistPut(en);
+      if (cloudOn) CLOUD.upsert(en).catch(() => {});
+      render();
+    } catch (err) {
+      btn.disabled = false; btn.textContent = old;
+      alert("AI講評を生成できませんでした：" + (err.message || "エラー"));
+    }
+  }
+
+  /* ---------- シェアカード（1件の記録を画像にして共有・保存） ---------- */
+  function loadImg(src) {
+    return new Promise((res) => { const i = new Image(); i.onload = () => res(i); i.onerror = () => res(null); i.src = src; });
+  }
+  function wrapText(x, text, tx, ty, maxW, lh, maxLines) {
+    const chars = [...String(text || "")];
+    let line = "", lines = [];
+    for (const ch of chars) {
+      if (x.measureText(line + ch).width > maxW && line) {
+        lines.push(line); line = ch;
+        if (lines.length >= maxLines) { lines[maxLines - 1] += "…"; line = ""; break; }
+      } else line += ch;
+    }
+    if (line) lines.push(line);
+    lines = lines.slice(0, maxLines);
+    lines.forEach((l, i) => x.fillText(l, tx, ty + i * lh));
+    return ty + lines.length * lh;
+  }
+  async function drawShareCard(en) {
+    const W = 1080, H = 1350;
+    const c = document.createElement("canvas"); c.width = W; c.height = H;
+    const x = c.getContext("2d");
+    x.fillStyle = "#241812"; x.fillRect(0, 0, W, H);
+    let py = 170;
+    const img = en.photos && en.photos[0] ? await loadImg(en.photos[0]) : null;
+    if (img) {
+      const ph = 720;
+      const s = Math.max(W / img.width, ph / img.height);
+      const iw = img.width * s, ih = img.height * s;
+      x.save(); x.beginPath(); x.rect(0, 0, W, ph); x.clip();
+      x.drawImage(img, (W - iw) / 2, (ph - ih) / 2, iw, ih); x.restore();
+      const g = x.createLinearGradient(0, ph - 200, 0, ph);
+      g.addColorStop(0, "rgba(36,24,18,0)"); g.addColorStop(1, "rgba(36,24,18,1)");
+      x.fillStyle = g; x.fillRect(0, ph - 200, W, 200);
+      py = ph + 50;
+    }
+    x.strokeStyle = "#b5763a"; x.lineWidth = 2; x.strokeRect(34, 34, W - 68, H - 68);
+    const serif = "'Hiragino Mincho ProN','Yu Mincho',serif";
+    x.fillStyle = "#f3e9d8"; x.font = `600 60px ${serif}`;
+    py = wrapText(x, en.name, 80, py + 30, W - 160, 74, 2);
+    if (en.brand) { x.fillStyle = "#cf9a5e"; x.font = `40px ${serif}`; x.fillText(en.brand, 80, py + 24); py += 54; }
+    if (en.rating) {
+      x.font = "52px serif";
+      x.fillStyle = "#d8a35a"; x.fillText("★".repeat(en.rating), 80, py + 44);
+      x.fillStyle = "rgba(216,163,90,.3)"; x.fillText("★".repeat(5 - en.rating), 80 + x.measureText("★".repeat(en.rating)).width, py + 44);
+      py += 66;
+    }
+    const meta = [en.country, en.vitola, normalizeStrength(en.strength), en.duration ? `${en.duration}分` : "", en.price ? `¥${Number(en.price).toLocaleString()}` : "", en.location]
+      .filter(Boolean).join("　·　");
+    if (meta) { x.fillStyle = "#bba98f"; x.font = "33px sans-serif"; py = wrapText(x, meta, 80, py + 26, W - 160, 44, 2); }
+    if (en.note) {
+      x.fillStyle = "#d9cbb4"; x.font = `36px ${serif}`;
+      py = wrapText(x, en.note, 80, py + 46, W - 160, 54, 4);
+    }
+    x.fillStyle = "#8d7a63"; x.font = "30px sans-serif";
+    if (en.date) x.fillText(fmtDate(en.date), 80, H - 92);
+    x.textAlign = "right";
+    x.fillStyle = "#cf9a5e"; x.font = `34px ${serif}`;
+    x.fillText("Cigar Cafe — 葉巻をたのしむ", W - 80, H - 92);
+    x.textAlign = "left";
+    return c;
+  }
+  async function shareEntry(id, btn) {
+    const en = entries.find(x => x.id === id);
+    if (!en) return;
+    const old = btn.textContent; btn.disabled = true; btn.textContent = "作成中…";
+    try {
+      const canvas = await drawShareCard(en);
+      const blob = await new Promise(r => canvas.toBlob(r, "image/png"));
+      const file = new File([blob], "cigar-note.png", { type: "image/png" });
+      if (navigator.canShare && navigator.canShare({ files: [file] })) {
+        await navigator.share({ files: [file], title: en.name || "葉巻の記録" });
+      } else {
+        const a = document.createElement("a");
+        a.href = URL.createObjectURL(blob); a.download = file.name; a.click();
+        setTimeout(() => URL.revokeObjectURL(a.href), 5000);
+      }
+    } catch (err) {
+      if (!err || err.name !== "AbortError") alert("画像を作成できませんでした：" + (err && err.message || "エラー"));
+    }
+    btn.disabled = false; btn.textContent = old;
+  }
+
+  /* ---------- 年間まとめ（Year in Smoke） ---------- */
+  function openWrapped() {
+    const years = [...new Set(entries.map(e => (e.date || "").slice(0, 4)).filter(v => /^\d{4}$/.test(v)))].sort().reverse();
+    const y0 = years[0] || String(new Date().getFullYear());
+    let ov = q("#wrappedOv");
+    if (!ov) {
+      ov = document.createElement("div");
+      ov.id = "wrappedOv"; ov.className = "wrapped-ov";
+      document.body.appendChild(ov);
+      ov.addEventListener("click", (ev) => { if (ev.target === ov) ov.classList.remove("open"); });
+    }
+    const renderY = (year) => {
+      const list = entries.filter(e => (e.date || "").startsWith(year));
+      const spent = list.reduce((s, e) => s + (Number(e.price) || 0), 0);
+      const rated = list.filter(e => e.rating > 0);
+      const best = rated.slice().sort((a, b) => b.rating - a.rating || entryTime(b) - entryTime(a))[0];
+      const byB = {}; list.forEach(e => { if (e.brand) byB[e.brand] = (byB[e.brand] || 0) + 1; });
+      const topB = Object.entries(byB).sort((a, b) => b[1] - a[1])[0];
+      const byL = {}; list.forEach(e => { if (e.location) byL[e.location] = (byL[e.location] || 0) + 1; });
+      const topL = Object.entries(byL).sort((a, b) => b[1] - a[1])[0];
+      const cs = new Set(list.map(e => e.country).filter(Boolean)).size;
+      ov.innerHTML = `<div class="wrapped-card">
+        <button type="button" class="modal-x" id="wrClose" aria-label="閉じる">×</button>
+        <div class="wr-kicker">CIGAR CAFE · YEAR IN SMOKE</div>
+        <h3>${escN(year)}年のまとめ</h3>
+        ${years.length > 1 ? `<div class="wr-years">${years.map(v => `<button type="button" class="chip${v === year ? " on" : ""}" data-wy="${v}">${v}</button>`).join("")}</div>` : ""}
+        ${list.length ? `
+        <div class="wr-grid">
+          <div class="wr-stat"><div class="sv">${list.length}</div><div class="sl">吸った本数</div></div>
+          <div class="wr-stat"><div class="sv">¥${spent.toLocaleString()}</div><div class="sl">総額</div></div>
+          <div class="wr-stat"><div class="sv">${cs}</div><div class="sl">産地の数</div></div>
+          <div class="wr-stat"><div class="sv">${rated.length ? (rated.reduce((s, e) => s + e.rating, 0) / rated.length).toFixed(1) : "—"}</div><div class="sl">平均評価（★）</div></div>
+        </div>
+        ${topB ? `<div class="wr-line">いちばん吸ったブランド：<b>${escN(topB[0])}</b>（${topB[1]}本）</div>` : ""}
+        ${best ? `<div class="wr-line">ベストの一本：<b>${escN(best.name)}</b> ${stars(best.rating)}</div>` : ""}
+        ${topL ? `<div class="wr-line">よく楽しんだ場所：<b>${escN(topL[0])}</b>（${topL[1]}回）</div>` : ""}
+        ` : `<p class="wr-line">${escN(year)}年の記録はまだありません。</p>`}
+      </div>`;
+      ov.querySelector("#wrClose").addEventListener("click", () => ov.classList.remove("open"));
+      ov.querySelectorAll("[data-wy]").forEach(b => b.addEventListener("click", () => renderY(b.dataset.wy)));
+    };
+    renderY(y0);
+    ov.classList.add("open");
   }
 
   /* ---------- 一覧描画 ---------- */
@@ -641,7 +943,11 @@ const NOTE = (() => {
     const cloudBanner = needName
       ? `<div class="cloud-hint">☁ この端末に保存された記録を表示中です。上の「記録者」にお名前を入れると、クラウドに保存されて別の端末でも使え、消えなくなります。</div>`
       : "";
-    area.innerHTML = cloudBanner + `<div class="entry-grid">${list.map(e => `
+    const rm = repeatMap();
+    area.innerHTML = cloudBanner + `<div class="entry-grid">${list.map(e => {
+      const same = rm.get((e.name || "").trim()) || [];
+      const nth = same.length > 1 ? same.indexOf(e) + 1 : 0;
+      return `
       <div class="entry">
         <div class="e-top">
           <div class="e-title">
@@ -655,24 +961,29 @@ const NOTE = (() => {
           </div>
         </div>
         <div class="e-meta">
+          ${nth ? `<span class="chip repeat">🔁 ${nth}回目</span>` : ""}
           ${e.country ? `<span class="chip">${escN(e.country)}</span>` : ""}
           ${e.vitola ? `<span class="chip">${escN(e.vitola)}</span>` : ""}
           ${e.strength ? `<span class="chip">${escN(normalizeStrength(e.strength))}</span>` : ""}
+          ${Number(e.duration) > 0 ? `<span class="chip">⏱ ${Number(e.duration)}分</span>` : ""}
           ${e.price ? `<span class="chip">¥${Number(e.price).toLocaleString()}</span>` : ""}
           ${e.location ? `<span class="chip">${escN(e.location)}</span>` : ""}
         </div>
         ${e.note ? (e.note.length > 120
           ? `<div class="e-note clamp">${escN(e.note)}</div><button type="button" class="e-note-more" data-more>続きを読む</button>`
           : `<div class="e-note">${escN(e.note)}</div>`) : ""}
+        ${e.aiComment ? `<div class="e-ai">✨ ${escN(e.aiComment)}</div>` : ""}
         ${Array.isArray(e.photos) && e.photos.length
           ? `<div class="entry-photos">${e.photos.map((src, i) =>
               `<img class="entry-photo" src="${src}" alt="${escN(e.name)}の写真${i + 1}">`).join("")}</div>`
           : ""}
         <div class="e-actions">
           <button class="btn btn-sm btn-ghost" data-edit="${e.id}">編集</button>
+          <button class="btn btn-sm btn-ghost" data-share="${e.id}">画像で共有</button>
+          ${visionOn && !e.aiComment ? `<button class="btn btn-sm btn-ghost" data-aic="${e.id}">AI講評</button>` : ""}
           <button class="btn btn-sm btn-danger" data-del="${e.id}">削除</button>
         </div>
-      </div>`).join("")}</div>`;
+      </div>`; }).join("")}</div>`;
   }
 
   /* ---------- エクスポート / インポート ---------- */
@@ -790,6 +1101,35 @@ const NOTE = (() => {
     if (aiFill) aiFill.hidden = !visionOn;
     const btnAi = q("#btnAiFill");
     if (btnAi) btnAi.addEventListener("click", () => runVision(currentPhotos[0]));
+
+    // 喫煙タイマー
+    const btnT = q("#btnTimer");
+    if (btnT) btnT.addEventListener("click", timerToggle);
+
+    // 銘柄名：過去の記録ヒント（リピート表示）
+    let rhTimer = null;
+    q("#fName").addEventListener("input", () => {
+      clearTimeout(rhTimer);
+      rhTimer = setTimeout(updateRepeatHint, 300);
+    });
+
+    // 為替換算（レートは通貨ごとに記憶）
+    const fxCur = q("#fxCur"), fxRate = q("#fxRate"), fxAmount = q("#fxAmount");
+    if (fxCur && fxRate && fxAmount) {
+      const rates = (() => { try { return JSON.parse(localStorage.getItem(FX_KEY)) || {}; } catch (e) { return {}; } })();
+      const loadRate = () => { if (rates[fxCur.value]) fxRate.value = rates[fxCur.value]; };
+      loadRate();
+      fxCur.addEventListener("change", loadRate);
+      q("#fxApply").addEventListener("click", () => {
+        const a = Number(fxAmount.value), r = Number(fxRate.value);
+        if (!(a > 0) || !(r > 0)) { q("#fxHint").textContent = "金額とレート（1通貨＝何円か）を入れてください。"; return; }
+        rates[fxCur.value] = r;
+        try { localStorage.setItem(FX_KEY, JSON.stringify(rates)); } catch (e) {}
+        const yen = Math.round(a * r);
+        q("#fPrice").value = yen;
+        q("#fxHint").textContent = `${a} ${fxCur.value} × ${r}円 ＝ 約 ¥${yen.toLocaleString()} を価格欄に入れました。`;
+      });
+    }
     // 写真プレビュー：×で削除、写真タップで拡大表示
     q("#photoPreviews").addEventListener("click", (e) => {
       const rm = e.target.closest("[data-rmphoto]");
@@ -871,13 +1211,17 @@ const NOTE = (() => {
     const sortSel = q("#noteSort");
     if (sortSel) sortSel.addEventListener("change", (e) => { sortMode = e.target.value; render(); });
 
-    // 編集・削除・「続きを読む」（イベント委譲）
+    // 編集・削除・共有・AI講評・「続きを読む」（イベント委譲）
     q("#entriesArea").addEventListener("click", (e) => {
       const ed = e.target.closest("[data-edit]");
       const dl = e.target.closest("[data-del]");
+      const sh = e.target.closest("[data-share]");
+      const aic = e.target.closest("[data-aic]");
       const more = e.target.closest("[data-more]");
       if (ed) openModal(entries.find(x => x.id === ed.dataset.edit));
       if (dl) removeEntry(dl.dataset.del);
+      if (sh) shareEntry(sh.dataset.share, sh);
+      if (aic) aiCommentFor(aic.dataset.aic, aic);
       if (more) {
         const note = more.previousElementSibling;
         const open = note.classList.toggle("clamp") === false;
@@ -894,5 +1238,21 @@ const NOTE = (() => {
     });
   }
 
-  return { init, render };
+  /* 他モジュール（吸いたいリスト・在庫）から、値を入れた状態で記録フォームを開く */
+  function prefillNew(v) {
+    if (typeof showView === "function") showView("note");
+    openModal(null);
+    if (v) {
+      fillSelects();
+      if (v.name) q("#fName").value = v.name;
+      if (v.brand) setBrand(v.brand);
+      if (v.country) {
+        const cs = q("#fCountry");
+        if (cs && [...cs.options].some(o => o.value === v.country)) cs.value = v.country;
+      }
+      updateRepeatHint();
+    }
+  }
+
+  return { init, render, prefillNew };
 })();

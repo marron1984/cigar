@@ -1405,3 +1405,156 @@ table.ref { min-width: 480px; }
   .form-two { grid-template-columns: 1fr; }
   .section-head h2 { font-size: 1.6rem; }
 }
+
+/* ============================================================
+   追加機能：横断検索・今日の一本・統計・タイマー・為替・在庫・
+   吸いたいリスト・クイズ・実寸表示・シェア・年間まとめ
+   ============================================================ */
+
+/* --- 横断検索（ホーム） --- */
+.global-search { position: relative; margin: 26px 0 6px; }
+.global-search input {
+  width: 100%; padding: 14px 16px; border-radius: var(--radius); border: 1px solid var(--line);
+  background: var(--panel); color: var(--cream); font-size: 1rem;
+}
+.gs-results {
+  position: absolute; z-index: 40; left: 0; right: 0; top: calc(100% + 6px);
+  background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius);
+  box-shadow: 0 12px 32px rgba(0,0,0,.25); overflow: hidden; max-height: 420px; overflow-y: auto;
+}
+.gs-item {
+  display: flex; align-items: center; gap: 12px; width: 100%; text-align: left;
+  padding: 12px 14px; background: none; border: none; border-bottom: 1px solid var(--line-soft);
+  cursor: pointer; color: var(--cream);
+}
+.gs-item:last-child { border-bottom: none; }
+.gs-item:hover { background: var(--panel-2); }
+.gs-item.gs-static { cursor: default; }
+.gs-ico { flex: 0 0 auto; font-size: 1.1rem; }
+.gs-txt { min-width: 0; flex: 1; }
+.gs-label { display: block; font-weight: 600; font-size: .95rem; }
+.gs-sub { display: block; font-size: .78rem; color: var(--text-soft); margin-top: 2px; overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; }
+.gs-go { color: var(--gold-bright); font-size: 1.2rem; }
+.gs-empty { padding: 14px; font-size: .88rem; color: var(--text-soft); }
+
+/* --- 今日の一本 --- */
+.daily-card { border: 1px solid rgba(181,118,58,.5); background: linear-gradient(135deg, rgba(181,118,58,.10), rgba(181,118,58,.03)); }
+.daily-kicker { font-size: .74rem; letter-spacing: .08em; color: var(--gold-bright); font-weight: 700; margin-bottom: 8px; }
+
+/* --- くわしい統計 --- */
+.insights { border: 1px solid var(--line-soft); border-radius: var(--radius-sm); background: var(--panel); margin-top: 14px; box-shadow: var(--shadow-sm); }
+.insights > summary { cursor: pointer; padding: 14px 18px; list-style: none; font-weight: 700; color: var(--cream); display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+.insights > summary::-webkit-details-marker { display: none; }
+.ins-year { font-size: .76rem; color: var(--gold-bright); background: var(--panel-2); border: 1px solid var(--line); padding: 3px 10px; border-radius: 999px; white-space: nowrap; }
+.ins-body { padding: 4px 18px 18px; }
+.ch-h { font-size: .82rem; font-weight: 700; color: var(--gold-bright); margin: 16px 0 8px; }
+.mchart { display: flex; align-items: flex-end; gap: 4px; height: 110px; }
+.mcol { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: flex-end; min-width: 0; }
+.mval { font-size: .68rem; color: var(--text-soft); }
+.mbar { width: 70%; max-width: 26px; background: linear-gradient(180deg, var(--gold), var(--gold-bright)); border-radius: 3px 3px 0 0; }
+.mlbl { font-size: .62rem; color: var(--text-soft); margin-top: 4px; white-space: nowrap; }
+.ins-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0 24px; }
+@media (max-width: 640px) { .ins-grid { grid-template-columns: 1fr; } }
+.ch-row { display: flex; align-items: center; gap: 8px; margin-bottom: 6px; }
+.ch-lbl { flex: 0 0 92px; font-size: .78rem; color: var(--text-soft); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.ch-track { flex: 1; height: 10px; background: var(--panel-2); border-radius: 999px; overflow: hidden; }
+.ch-fill { height: 100%; background: linear-gradient(90deg, var(--gold), var(--gold-bright)); border-radius: 999px; }
+.ch-val { flex: 0 0 auto; font-size: .76rem; color: var(--text-soft); }
+.dur-row { font-size: .85rem; margin-bottom: 4px; }
+.ins-actions { text-align: right; margin-top: 14px; }
+
+/* --- リピート表示 --- */
+.repeat-hint { font-size: .8rem; line-height: 1.6; color: var(--gold-bright); background: rgba(181,118,58,.08); border: 1px solid rgba(181,118,58,.3); border-radius: 9px; padding: 8px 11px; margin-top: 8px; }
+.chip.repeat { color: var(--gold-bright); border-color: rgba(181,118,58,.45); }
+
+/* --- 喫煙タイマー --- */
+.timer-wrap { display: flex; align-items: center; gap: 10px; margin-top: 8px; }
+#btnTimer.on { color: var(--ember); border-color: rgba(192,86,47,.5); }
+.timer-disp { font-variant-numeric: tabular-nums; font-weight: 700; color: var(--gold-bright); }
+
+/* --- 為替換算 --- */
+.fx-conv { margin-top: 8px; font-size: .82rem; }
+.fx-conv > summary { cursor: pointer; color: var(--gold-bright); }
+.fx-row { display: flex; align-items: center; gap: 6px; margin-top: 8px; flex-wrap: wrap; }
+.fx-row input { width: 90px; padding: 8px; border-radius: 8px; border: 1px solid var(--line); background: var(--panel); color: var(--cream); }
+.fx-row select { padding: 8px; border-radius: 8px; border: 1px solid var(--line); background: var(--panel); color: var(--cream); }
+.fx-x { color: var(--text-soft); }
+
+/* --- AI講評 --- */
+.e-ai { font-size: .84rem; line-height: 1.7; color: var(--text-soft); background: rgba(181,118,58,.07); border-left: 3px solid var(--gold); padding: 9px 12px; border-radius: 0 9px 9px 0; margin-top: 10px; }
+
+/* --- 吸いたいリスト --- */
+.wish-btn { flex: 0 0 auto; background: none; border: none; cursor: pointer; font-size: 1.25rem; color: var(--line); padding: 2px 6px; line-height: 1; transition: transform .15s var(--ease); }
+.wish-btn.on { color: var(--gold); }
+.wish-btn:hover { transform: scale(1.2); }
+.wish-panel { border: 1px solid rgba(181,118,58,.4); background: rgba(181,118,58,.06); border-radius: var(--radius); padding: 14px 16px; margin-bottom: 16px; }
+.wish-h { font-weight: 700; color: var(--cream); display: flex; align-items: center; gap: 8px; margin-bottom: 10px; }
+.wish-items { display: flex; flex-wrap: wrap; gap: 8px; }
+.wish-item { display: inline-flex; align-items: center; gap: 6px; background: var(--panel); border: 1px solid var(--line); border-radius: 999px; padding: 5px 6px 5px 12px; font-size: .84rem; }
+.wi-name { font-weight: 600; }
+.wi-log { border: none; background: var(--panel-2); color: var(--gold-bright); border-radius: 999px; padding: 3px 9px; font-size: .76rem; cursor: pointer; }
+.wi-rm { border: none; background: none; color: var(--text-soft); cursor: pointer; font-size: 1rem; padding: 0 4px; }
+.wi-rm:hover { color: var(--ember); }
+
+/* --- ヒュミドール在庫 --- */
+.stock-panel { border: 1px solid var(--line-soft); border-radius: var(--radius-sm); background: var(--panel); margin-top: 14px; box-shadow: var(--shadow-sm); }
+.stock-panel > summary { cursor: pointer; padding: 14px 18px; list-style: none; font-weight: 700; color: var(--cream); display: flex; align-items: center; gap: 10px; }
+.stock-panel > summary::-webkit-details-marker { display: none; }
+#stockBody { padding: 4px 18px 18px; }
+.stk-list { display: flex; flex-direction: column; gap: 8px; margin-bottom: 14px; }
+.stk-row { display: flex; align-items: center; gap: 12px; border: 1px solid var(--line-soft); border-radius: 10px; padding: 10px 12px; flex-wrap: wrap; }
+.stk-main { flex: 1 1 200px; min-width: 0; }
+.stk-name { font-weight: 700; }
+.stk-brand { font-weight: 400; color: var(--text-soft); font-size: .8rem; margin-left: 8px; }
+.stk-sub { font-size: .76rem; color: var(--text-soft); margin-top: 2px; }
+.stk-qty { display: flex; align-items: center; gap: 8px; }
+.stk-btn { width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--line); background: var(--panel-2); color: var(--cream); cursor: pointer; font-size: 1rem; line-height: 1; }
+.stk-n { min-width: 22px; text-align: center; font-weight: 700; font-variant-numeric: tabular-nums; }
+.stk-acts { display: flex; gap: 6px; }
+.stk-form { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.stk-form input { padding: 9px 10px; border-radius: 8px; border: 1px solid var(--line); background: var(--panel); color: var(--cream); font-size: .88rem; }
+#stkName { flex: 2 1 180px; } #stkBrand { flex: 1 1 120px; }
+#stkQty { width: 64px; } #stkDate { width: 140px; } #stkPrice { width: 120px; }
+
+/* --- 用語クイズ --- */
+.quiz-card { border: 1px solid var(--line-soft); border-radius: var(--radius); background: var(--panel); padding: 20px; margin-top: 26px; box-shadow: var(--shadow-sm); }
+.qz-head { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+.qz-head h3 { margin: 0; }
+.qz-score { font-size: .8rem; color: var(--gold-bright); font-weight: 700; }
+.qz-q { font-weight: 700; margin: 14px 0 8px; }
+.qz-desc { font-size: .92rem; line-height: 1.8; color: var(--text-soft); background: var(--panel-2); border-radius: 10px; padding: 12px 14px; }
+.qz-choices { display: flex; flex-direction: column; gap: 8px; margin-top: 12px; }
+.qz-c { text-align: left; padding: 12px 14px; border-radius: 10px; border: 1px solid var(--line); background: var(--panel); color: var(--cream); cursor: pointer; font-size: .95rem; }
+.qz-c:hover:not(:disabled) { background: var(--panel-2); }
+.qz-es { color: var(--text-soft); font-size: .78rem; margin-left: 8px; }
+.qz-c.right { border-color: #2f6d3a; background: rgba(47,109,58,.12); }
+.qz-c.wrong { border-color: var(--ember); background: rgba(192,86,47,.1); }
+.qz-fb { margin-top: 12px; display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+.qz-ok { color: #2f6d3a; font-weight: 700; }
+.qz-ng { color: var(--ember); font-weight: 700; }
+
+/* --- サイズ実寸表示 --- */
+.rs-cardbox { margin: 10px 0; }
+.rs-card { height: 54px; border: 2px dashed var(--gold); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: .74rem; color: var(--gold-bright); max-width: 100%; }
+.rs-picker { display: flex; flex-wrap: wrap; gap: 8px; margin: 14px 0; }
+.rs-pick { cursor: pointer; border: 1px solid var(--line); background: var(--panel); }
+.rs-pick.on { background: var(--gold); color: var(--on-accent); border-color: var(--gold); }
+.rs-scroll { overflow-x: auto; padding: 18px 4px; }
+.rs-cigar { position: relative; background: linear-gradient(180deg, #8a5a34, #6b4226 55%, #5a361e); border-radius: 999px / 40%; box-shadow: 0 3px 8px rgba(0,0,0,.25); min-width: 40px; }
+.rs-band { position: absolute; top: 0; bottom: 0; left: 18%; background: linear-gradient(180deg, #d8b25e, #b5763a); border-left: 1px solid rgba(255,255,255,.35); border-right: 1px solid rgba(255,255,255,.35); }
+.rs-caption { font-size: .84rem; margin-top: 6px; }
+
+/* --- 年間まとめ --- */
+.wrapped-ov { position: fixed; inset: 0; z-index: 200; background: rgba(20,12,8,.7); display: none; align-items: center; justify-content: center; padding: 20px; backdrop-filter: blur(3px); }
+.wrapped-ov.open { display: flex; }
+.wrapped-card { position: relative; width: min(460px, 100%); max-height: 86vh; overflow-y: auto; background: var(--panel); border: 1px solid var(--gold); border-radius: var(--radius); padding: 26px 24px; box-shadow: 0 24px 60px rgba(0,0,0,.4); }
+.wr-kicker { font-size: .68rem; letter-spacing: .18em; color: var(--gold-bright); font-weight: 700; }
+.wrapped-card h3 { font-family: var(--serif); font-size: 1.5rem; margin: 6px 0 12px; }
+.wr-years { display: flex; gap: 8px; margin-bottom: 12px; }
+.wr-years .chip { cursor: pointer; }
+.wr-years .chip.on { background: var(--gold); color: var(--on-accent); border-color: var(--gold); }
+.wr-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 14px 0; }
+.wr-stat { border: 1px solid var(--line-soft); border-radius: 10px; padding: 12px; text-align: center; }
+.wr-stat .sv { font-family: var(--serif); font-size: 1.4rem; color: var(--gold-bright); }
+.wr-stat .sl { font-size: .72rem; color: var(--text-soft); margin-top: 4px; }
+.wr-line { font-size: .9rem; margin: 8px 0; line-height: 1.7; }

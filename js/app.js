@@ -161,13 +161,41 @@ const HOME_CARDS = [
   { view: "world", h: "世界編（総覧）", p: "年表・文化・愛好家・日本・実践レビュー・投資・用語大全・トラベル・FAQ。" },
   { view: "brands", h: "ブランド大全", p: "世界の銘柄（マルカ）を創業からの歴史とともに。まずはキューバ全マルカ。" }
 ];
+/* 今日の一本：全ブランドから日替わりで1つ紹介（日付で決まるので1日固定） */
+function dailyBrandPick() {
+  try {
+    const COUNTRY_JA_MAP = {
+      cuba: "キューバ", dominican: "ドミニカ共和国", nicaragua: "ニカラグア", honduras: "ホンジュラス",
+      mexico: "メキシコ", ecuador: "エクアドル", usa: "アメリカ", brazil: "ブラジル", cameroon: "カメルーン",
+      peru: "ペルー", colombia: "コロンビア", philippines: "フィリピン", indonesia: "インドネシア", argentina: "アルゼンチン"
+    };
+    const flat = [];
+    Object.keys(BRANDS_DATA).forEach(key =>
+      (BRANDS_DATA[key] || []).forEach(b => flat.push({ key, b, cja: COUNTRY_JA_MAP[key] || "" })));
+    if (!flat.length) return null;
+    const now = new Date();
+    const seed = now.getFullYear() * 372 + (now.getMonth() + 1) * 31 + now.getDate();
+    return flat[seed % flat.length];
+  } catch (e) { return null; }
+}
+
 function renderHome() {
-  $("#homeGrid").innerHTML = HOME_CARDS.map(c => `
+  const pick = dailyBrandPick();
+  const daily = pick ? `
+    <div class="home-card daily-card" data-daily="1">
+      <div class="daily-kicker">☀️ 今日の一本 · ${pick.cja}</div>
+      <h3>${esc(pick.b.ja)} — ${esc(pick.b.en)}</h3>
+      <p>${esc(String(pick.b.history || "").slice(0, 72))}…</p>
+      <div class="go">ブランド大全で読む →</div>
+    </div>` : "";
+  $("#homeGrid").innerHTML = daily + HOME_CARDS.map(c => `
     <div class="home-card" data-view="${c.view}">
       <h3>${c.h}</h3>
       <p>${c.p}</p>
       <div class="go">開く →</div>
     </div>`).join("");
+  const dc = $("#homeGrid .daily-card");
+  if (dc && pick) dc.addEventListener("click", () => openBrandInBrands(pick.key, pick.b.en, pick.b.ja));
 }
 
 /* ============================================================
@@ -450,7 +478,9 @@ function renderSizes() {
     <div class="kb-block">
       <h3>形状の分類（パラホ / フィギュラード）</h3>
       <div class="prose"><p>${esc(D.shapeClassification)}</p></div>
-    </div>`;
+    </div>
+
+    <div class="kb-block" id="realSizeBox"></div>`;
 }
 
 /* ============================================================
