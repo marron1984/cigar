@@ -1572,3 +1572,18 @@ table.ref { min-width: 480px; }
 .wr-stat .sv { font-family: var(--serif); font-size: 1.4rem; color: var(--gold-bright); }
 .wr-stat .sl { font-size: .72rem; color: var(--text-soft); margin-top: 4px; }
 .wr-line { font-size: .9rem; margin: 8px 0; line-height: 1.7; }
+
+/* --- 葉巻ニュース --- */
+.news-note { margin: 14px 0 18px; }
+.news-filter { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 18px; }
+.news-filter .nf { cursor: pointer; border: 1px solid var(--line); background: var(--panel); }
+.news-filter .nf.on { background: var(--gold); color: var(--on-accent); border-color: var(--gold); }
+.news-list { display: flex; flex-direction: column; gap: 14px; }
+.news-card { border: 1px solid var(--line-soft); border-radius: var(--radius-sm); background: var(--panel); padding: 18px 20px; box-shadow: var(--shadow-sm); }
+.news-top { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
+.news-date { font-family: var(--serif); font-weight: 700; color: var(--gold-bright); font-size: .9rem; }
+.news-cat { font-size: .7rem; padding: 2px 10px; border-radius: 999px; background: var(--panel-2); border: 1px solid var(--line); color: var(--text-soft); }
+.news-title { font-family: var(--sans); font-size: 1.05rem; font-weight: 700; margin: 0 0 8px; line-height: 1.5; }
+.news-sum { font-size: .9rem; line-height: 1.8; color: var(--text-soft); margin: 0 0 10px; }
+.news-src { font-size: .76rem; color: var(--muted); line-height: 1.7; }
+.news-src a { color: var(--gold-bright); font-weight: 600; margin-left: 6px; white-space: nowrap; }

@@ -77,6 +77,7 @@ const views = {
   home: "view-home", basics: "view-basics", countries: "view-countries",
   sizes: "view-sizes", prices: "view-prices", tools: "view-tools", humidor: "view-humidor",
   advanced: "view-advanced", phd: "view-phd", japan: "view-japan", world: "view-world", brands: "view-brands",
+  news: "view-news",
   note: "view-note"
 };
 function showView(name, opts = {}) {
@@ -159,7 +160,8 @@ const HOME_CARDS = [
   { view: "phd", h: "博士編（学術）", p: "化学・植物学・官能評価・銘柄DB・産業経済・健康科学。" },
   { view: "japan", h: "日本ガイド", p: "全国47都道府県の販売店・シガーバー一覧。日本の歴史・税制・喫煙環境・マナーも。" },
   { view: "world", h: "世界編（総覧）", p: "年表・文化・愛好家・日本・実践レビュー・投資・用語大全・トラベル・FAQ。" },
-  { view: "brands", h: "ブランド大全", p: "世界の銘柄（マルカ）を創業からの歴史とともに。まずはキューバ全マルカ。" }
+  { view: "brands", h: "ブランド大全", p: "世界の銘柄（マルカ）を創業からの歴史とともに。まずはキューバ全マルカ。" },
+  { view: "news", h: "葉巻ニュース", p: "海外一次ソースの最新ニュースを翻訳・要約。新製品・業界・イベント・規制。" }
 ];
 /* 今日の一本：全ブランドから日替わりで1つ紹介（日付で決まるので1日固定） */
 function dailyBrandPick() {
