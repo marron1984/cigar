@@ -355,6 +355,7 @@ function renderPhilippinesDetail() {
           <div class="chips">${p.regions.map(r => `<span class="chip">${esc(r)}</span>`).join("")}</div></div>
         <div class="field"><div class="lbl">現存する主要ブランド</div>${brandChips(p.brands, "brand", "philippines")}</div>
         <div class="cd-sections">${sections}</div>
+        ${sourcesField(p.sources)}
       </div>
     </div>`;
 }
