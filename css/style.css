@@ -784,8 +784,10 @@ td .ve { font-size: .74rem; color: var(--muted); letter-spacing: .04em; }
   background: none; border: none; padding: 4px 0 0; cursor: pointer;
   font-family: var(--sans); font-size: .8rem; color: var(--gold-bright); letter-spacing: .04em;
 }
-.entry .stars { color: var(--gold-bright); font-size: 1.05rem; letter-spacing: 2px; white-space: nowrap; }
-.entry .stars .off { color: var(--line); }
+/* 星表示（半個刻み対応：背景の5つ星に、評価分だけ幅クリップした金色を重ねる） */
+.stars { position: relative; display: inline-block; white-space: nowrap; letter-spacing: 2px; line-height: 1; font-size: 1.05rem; }
+.stars .s-bg { color: var(--line); }
+.stars .s-fg { position: absolute; left: 0; top: 0; overflow: hidden; color: var(--gold-bright); }
 .entry .e-actions { display: flex; gap: 8px; margin-top: 14px; padding-top: 12px; border-top: 1px solid var(--line-soft); }
 
 .empty-state {
@@ -823,8 +825,10 @@ td .ve { font-size: .74rem; color: var(--muted); letter-spacing: .04em; }
 .rating-label { font-size: .8rem; color: var(--muted); letter-spacing: .04em; }
 .rating-label.set { color: var(--gold-bright); }
 .rating-input { display: flex; gap: 6px; font-size: 1.7rem; cursor: pointer; }
-.rating-input .star { color: var(--line); transition: color .12s, transform .12s; }
-.rating-input .star.on { color: var(--gold-bright); }
+.rating-input .star { position: relative; color: var(--line); transition: transform .12s; }
+.rating-input .star::after { content: "★"; position: absolute; left: 0; top: 0; width: 0; overflow: hidden; color: var(--gold-bright); pointer-events: none; }
+.rating-input .star.half::after { width: 50%; }
+.rating-input .star.on::after { width: 100%; }
 .rating-input .star:active { transform: scale(1.25); }
 
 /* テイスト（強さ）のワンタップ五択：長い選択肢もあるため折り返せるピル型 */

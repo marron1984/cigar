@@ -217,12 +217,11 @@ const NOTE = (() => {
   }
 
   /* ---------- 星評価 ---------- */
+  // 半個刻み（0〜5、0.5単位＝実質10段階）に対応。幅クリップで任意の割合を表示
   function stars(n) {
-    n = Number(n) || 0;
-    let out = "";
-    for (let i = 1; i <= 5; i++)
-      out += `<span class="${i <= n ? "" : "off"}">★</span>`;
-    return `<span class="stars">${out}</span>`;
+    n = Math.max(0, Math.min(5, Number(n) || 0));
+    const pct = (n / 5 * 100).toFixed(2);
+    return `<span class="stars"><span class="s-bg">★★★★★</span><span class="s-fg" style="width:${pct}%">★★★★★</span></span>`;
   }
 
   /* ---------- 国名の表記ゆれを統一（「ニカラグア/米」「ドミニカ(本社スイス)」等） ---------- */
@@ -260,6 +259,15 @@ const NOTE = (() => {
     try {
       (CIGAR_DATA.countries || []).forEach(c =>
         (c.brands || []).forEach(b => { if (!/ラッパー|使用/.test(b.ja)) push(c.name_ja, b.ja); }));
+    } catch (e) {}
+    // ブランド大全（BRANDS_DATA）の全銘柄も選択肢に統合（フィリピン・タバカレラ、
+    // ニカラグアのアロマデニカ等を含む。産地キーを日本語グループ名に対応づけ）
+    try {
+      const CK = { cuba: "キューバ", dominican: "ドミニカ共和国", nicaragua: "ニカラグア", honduras: "ホンジュラス", mexico: "メキシコ", ecuador: "エクアドル", usa: "アメリカ", brazil: "ブラジル", cameroon: "カメルーン", peru: "ペルー", colombia: "コロンビア", philippines: "フィリピン", indonesia: "インドネシア", argentina: "アルゼンチン" };
+      if (typeof BRANDS_DATA !== "undefined") {
+        Object.keys(BRANDS_DATA).forEach(k =>
+          (BRANDS_DATA[k] || []).forEach(b => { if (b && b.ja) push(CK[k] || "その他", b.ja); }));
+      }
     } catch (e) {}
 
     const orderedNames = [
@@ -493,12 +501,20 @@ const NOTE = (() => {
 
   /* ---------- 星入力 ---------- */
   const RATING_WORDS = { 0: "タップで評価", 1: "イマイチ", 2: "まずまず", 3: "良い", 4: "とても良い", 5: "最高の一本" };
+  function ratingLabelText(n) {
+    if (!n) return "タップで評価（半個刻み）";
+    return `${n.toFixed(1)}／5　${RATING_WORDS[Math.round(n)] || ""}`;
+  }
   function setRating(n) {
+    n = Math.max(0, Math.min(5, Number(n) || 0));
     q("#fRating").value = n;
-    q("#ratingInput").querySelectorAll(".star").forEach(s =>
-      s.classList.toggle("on", Number(s.dataset.v) <= n));
+    q("#ratingInput").querySelectorAll(".star").forEach(s => {
+      const v = Number(s.dataset.v);
+      s.classList.toggle("on", n >= v);
+      s.classList.toggle("half", n >= v - 0.5 && n < v);
+    });
     const lbl = q("#ratingLabel");
-    if (lbl) { lbl.textContent = RATING_WORDS[n] || ""; lbl.classList.toggle("set", n > 0); }
+    if (lbl) { lbl.textContent = ratingLabelText(n); lbl.classList.toggle("set", n > 0); }
   }
 
   /* ---------- テイスト入力（ワンタップの五択。再タップで解除） ---------- */
@@ -664,7 +680,7 @@ const NOTE = (() => {
 
     // 評価の分布
     const byR = [0, 0, 0, 0, 0];
-    entries.forEach(e => { const r = Number(e.rating) || 0; if (r >= 1 && r <= 5) byR[r - 1]++; });
+    entries.forEach(e => { const r = Math.round(Number(e.rating) || 0); if (r >= 1 && r <= 5) byR[r - 1]++; });
     const maxR = Math.max(1, ...byR);
     const ratingChart = byR.some(v => v)
       ? `<div class="ch-h">評価の分布</div>` + [5, 4, 3, 2, 1].map(r => hbar("★" + r, byR[r - 1], maxR, "本")).join("") : "";
@@ -812,9 +828,14 @@ const NOTE = (() => {
     py = wrapText(x, en.name, 80, py + 30, W - 160, 74, 2);
     if (en.brand) { x.fillStyle = "#cf9a5e"; x.font = `40px ${serif}`; x.fillText(en.brand, 80, py + 24); py += 54; }
     if (en.rating) {
+      const r = Math.max(0, Math.min(5, Number(en.rating) || 0));
       x.font = "52px serif";
-      x.fillStyle = "#d8a35a"; x.fillText("★".repeat(en.rating), 80, py + 44);
-      x.fillStyle = "rgba(216,163,90,.3)"; x.fillText("★".repeat(5 - en.rating), 80 + x.measureText("★".repeat(en.rating)).width, py + 44);
+      const fiveStars = "★★★★★";
+      const wFull = x.measureText(fiveStars).width;
+      // 背景（薄い5つ星）＋ 評価分だけ幅クリップして金色（半個も表現）
+      x.fillStyle = "rgba(216,163,90,.3)"; x.fillText(fiveStars, 80, py + 44);
+      x.save(); x.beginPath(); x.rect(80, py, wFull * (r / 5), 80); x.clip();
+      x.fillStyle = "#d8a35a"; x.fillText(fiveStars, 80, py + 44); x.restore();
       py += 66;
     }
     const meta = [en.country, en.vitola, normalizeStrength(en.strength), en.duration ? `${en.duration}分` : "", en.price ? `¥${Number(en.price).toLocaleString()}` : "", en.location]
@@ -873,7 +894,9 @@ const NOTE = (() => {
     }
   }
   function entryText(en) {
-    const star = en.rating ? "★".repeat(en.rating) + "☆".repeat(5 - en.rating) : "";
+    const rt = Math.max(0, Math.min(5, Number(en.rating) || 0));
+    const full = Math.floor(rt);
+    const star = rt ? "★".repeat(full) + "☆".repeat(5 - full) + `（${rt}/5）` : "";
     return [
       `🚬 ${en.name}`,
       [en.brand, en.country, en.vitola].filter(Boolean).join(" / "),
@@ -1337,14 +1360,15 @@ const NOTE = (() => {
       ta.focus();
     });
 
-    // 星入力
+    // 星入力：星の左半分タップで0.5、右半分で1.0（半個刻み＝10段階）。同じ値を再タップで0.5下げる
     q("#ratingInput").addEventListener("click", (e) => {
       const s = e.target.closest(".star");
-      if (s) {
-        const v = Number(s.dataset.v);
-        // 同じ星を再クリックで解除
-        setRating(Number(q("#fRating").value) === v ? v - 1 : v);
-      }
+      if (!s) return;
+      const v = Number(s.dataset.v);
+      const rect = s.getBoundingClientRect();
+      const leftHalf = (e.clientX - rect.left) < rect.width / 2;
+      const val = leftHalf ? v - 0.5 : v;
+      setRating(Number(q("#fRating").value) === val ? val - 0.5 : val);
     });
 
     // 検索
