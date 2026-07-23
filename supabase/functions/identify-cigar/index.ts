@@ -104,6 +104,38 @@ Deno.serve(async (req: Request) => {
     return json({ error: "リクエスト本文（JSON）を読み取れませんでした" }, 400);
   }
 
+  // ---- モード3: 翻訳（日本語の記録テキストを自然な英語にする） ----
+  if (payload?.mode === "translate") {
+    const text = String(payload.text || "").slice(0, 2000);
+    if (!text) return json({ error: "翻訳するテキストが空です" }, 400);
+    try {
+      const resp = await fetch("https://api.anthropic.com/v1/messages", {
+        method: "POST",
+        headers: { "content-type": "application/json", "x-api-key": apiKey, "anthropic-version": "2023-06-01" },
+        body: JSON.stringify({
+          model: "claude-opus-4-8",
+          max_tokens: 1024,
+          system:
+            "You translate a Japanese cigar tasting note into natural, fluent English. " +
+            "Keep cigar brand names, marca names, and vitola/size names as they are normally written in English (romanize Japanese katakana brand names to their standard Latin spelling when known). " +
+            "Preserve the line structure and any star rating. Output ONLY the English translation — no preamble, no notes, no quotation marks.",
+          messages: [{ role: "user", content: text }],
+        }),
+      });
+      const data: any = await resp.json().catch(() => null);
+      if (!resp.ok) {
+        const detail = data?.error?.message || "HTTP " + resp.status;
+        return json({ error: "翻訳に失敗しました: " + detail }, 502);
+      }
+      const outText = (data?.content || []).filter((b: any) => b.type === "text").map((b: any) => b.text).join("").trim();
+      if (!outText) return json({ error: "翻訳結果が空でした" }, 502);
+      return json({ text: outText });
+    } catch (err) {
+      const msg = err && (err as any).message ? (err as any).message : String(err);
+      return json({ error: "Anthropic API に接続できませんでした: " + msg }, 502);
+    }
+  }
+
   // ---- モード2: AI講評（テキストのみ。保存済みの記録に一言解説を付ける） ----
   if (payload?.mode === "comment") {
     const en = payload.entry || {};

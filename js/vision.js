@@ -87,5 +87,35 @@ const VISION = (() => {
     return data.comment;
   }
 
-  return { enabled, identify, comment };
+  // 日本語のテキストを自然な英語に翻訳して返す
+  async function translate(text) {
+    if (!enabled) throw new Error("AI機能は未設定です");
+    const headers = { "Content-Type": "application/json" };
+    if (cfg.anonKey) { headers["Authorization"] = "Bearer " + cfg.anonKey; headers["apikey"] = cfg.anonKey; }
+    const ctrl = new AbortController();
+    const timer = setTimeout(() => ctrl.abort(), 45000);
+    let res;
+    try {
+      res = await fetch(cfg.endpoint, {
+        method: "POST", headers,
+        body: JSON.stringify({ mode: "translate", text: String(text || "") }),
+        signal: ctrl.signal,
+      });
+    } catch (e) {
+      clearTimeout(timer);
+      throw new Error(e.name === "AbortError" ? "時間がかかりすぎました" : "サーバーに接続できませんでした");
+    }
+    clearTimeout(timer);
+    let data;
+    try { data = await res.json(); } catch { throw new Error("サーバーの応答を読み取れませんでした"); }
+    if (!res.ok || (data && data.error)) {
+      const msg = (data && data.error) || `サーバーエラー (${res.status})`;
+      if (/画像/.test(msg)) throw new Error("サーバー関数の更新が必要です（VISION_SETUP.md の最新コードを再デプロイしてください）");
+      throw new Error(msg);
+    }
+    if (!data.text) throw new Error("翻訳結果を取得できませんでした");
+    return data.text;
+  }
+
+  return { enabled, identify, comment, translate };
 })();
