@@ -938,7 +938,7 @@ const NOTE = (() => {
       catch (e) { failed = true; }
       if (btn) { btn.disabled = false; btn.textContent = old; }
     }
-    if (enText) out = jp + "\n\n———（English）———\n\n" + enText;
+    if (enText) out = jp + "\n\n" + enText;
     if (navigator.share) {
       try { await navigator.share({ text: out }); return; }
       catch (err) { if (err && err.name === "AbortError") return; }
