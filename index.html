@@ -449,10 +449,12 @@
                   <label for="fDate">喫煙日</label>
                   <input type="date" id="fDate">
                   <div class="timer-wrap">
-                    <button type="button" class="btn btn-sm btn-ghost" id="btnTimer">▶ 喫煙タイマー開始</button>
+                    <button type="button" class="btn btn-sm btn-ghost" id="btnTimer">▶ タイマー開始</button>
+                    <input type="number" id="fDuration" min="0" step="1" inputmode="numeric" placeholder="分" class="dur-input">
+                    <span class="dur-unit">分</span>
                     <span class="timer-disp" id="timerDisp"></span>
                   </div>
-                  <input type="hidden" id="fDuration" value="">
+                  <div class="photo-hint">タイマーで計るか、喫煙時間（分）を直接入力できます。</div>
                 </div>
                 <div class="form-row">
                   <label for="fLocation">喫煙場所</label>

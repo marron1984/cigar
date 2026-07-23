@@ -767,11 +767,12 @@ const NOTE = (() => {
     const m = Math.floor(ms / 60000), s = Math.floor(ms / 1000) % 60;
     return `${m}:${String(s).padStart(2, "0")}`;
   }
-  function timerReset(dur) {
+  // dur を渡すと入力欄へ反映。writeInput=false なら手入力値を尊重して上書きしない
+  function timerReset(dur, writeInput = true) {
     timerStart = null; clearInterval(timerTick);
-    const f = q("#fDuration"); if (f) f.value = dur || "";
-    const b = q("#btnTimer"); if (b) { b.textContent = "▶ 喫煙タイマー開始"; b.classList.remove("on"); }
-    const d = q("#timerDisp"); if (d) d.textContent = dur ? `記録済み：${dur}分` : "";
+    const f = q("#fDuration"); if (f && writeInput) f.value = dur || "";
+    const b = q("#btnTimer"); if (b) { b.textContent = "▶ タイマー開始"; b.classList.remove("on"); }
+    const d = q("#timerDisp"); if (d) d.textContent = "";
   }
   function timerToggle() {
     const b = q("#btnTimer"), d = q("#timerDisp");

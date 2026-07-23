@@ -1486,8 +1486,10 @@ table.ref { min-width: 480px; }
 .chip.repeat { color: var(--gold-bright); border-color: rgba(181,118,58,.45); }
 
 /* --- 喫煙タイマー --- */
-.timer-wrap { display: flex; align-items: center; gap: 10px; margin-top: 8px; }
+.timer-wrap { display: flex; align-items: center; gap: 8px; margin-top: 8px; flex-wrap: wrap; }
 #btnTimer.on { color: var(--ember); border-color: rgba(192,86,47,.5); }
+.dur-input { width: 76px; padding: 9px 10px; border-radius: 8px; border: 1px solid var(--line); background: var(--panel); color: var(--cream); font-size: .95rem; }
+.dur-unit { color: var(--text-soft); font-size: .85rem; margin-left: -4px; }
 .timer-disp { font-variant-numeric: tabular-nums; font-weight: 700; color: var(--gold-bright); }
 
 /* --- 為替換算 --- */
