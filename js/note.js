@@ -312,9 +312,11 @@ const NOTE = (() => {
       bSel.dataset.filled = "1";
     }
     if (cSel && !cSel.dataset.filled) {
+      // 産地はブランドと同じ国ぞろえ（フィリピン等も含む）＋自由入力
+      const countries = brandGroups().map(g => g.country).filter(c => c && c !== "その他");
       cSel.innerHTML = `<option value="">—</option>` +
-        CIGAR_DATA.countries.map(c => `<option>${escN(c.name_ja)}</option>`).join("") +
-        `<option>その他</option>`;
+        countries.map(c => `<option>${escN(c)}</option>`).join("") +
+        `<option value="__other">その他（自由入力）</option>`;
       cSel.dataset.filled = "1";
     }
     if (vSel && !vSel.dataset.filled) {
@@ -333,7 +335,7 @@ const NOTE = (() => {
     q("#entryId").value = isEdit ? entry.id : "";
     q("#fName").value = isEdit ? entry.name : "";
     setBrand(isEdit ? (entry.brand || "") : "");
-    q("#fCountry").value = isEdit ? (entry.country || "") : "";
+    setCountry(isEdit ? (entry.country || "") : "");
     q("#fVitola").value = isEdit ? (entry.vitola || "") : "";
     setStrength(isEdit ? (entry.strength || "") : "");
     q("#fDate").value = isEdit ? (entry.date || "") : todayStr();
@@ -434,7 +436,7 @@ const NOTE = (() => {
     if (r.name && !q("#fName").value.trim()) { q("#fName").value = r.name; filled.push("銘柄名"); }
     if (r.brand && !getBrand()) { applyBrand(r.brand); filled.push("ブランド"); }
     const cSel = q("#fCountry");
-    if (r.country && cSel && !cSel.value) { const m = matchOption(cSel, r.country); if (m) { cSel.value = m; filled.push("産地"); } }
+    if (r.country && !getCountry()) { setCountry(matchOption(cSel, r.country) || r.country); filled.push("産地"); }
     const vSel = q("#fVitola");
     if (r.vitola && vSel && !vSel.value) { const m = matchOption(vSel, r.vitola); if (m) { vSel.value = m; filled.push("サイズ"); } }
     if (r.strength && !q("#fStrength").value) {
@@ -492,6 +494,24 @@ const NOTE = (() => {
     const sel = q("#fBrand");
     return sel.value === "__other" ? q("#fBrandOther").value.trim() : sel.value;
   }
+  /* 産地：ブランドと同じ仕組み（選択肢に無ければ自由入力欄へ） */
+  function setCountry(val) {
+    const sel = q("#fCountry");
+    const other = q("#fCountryOther");
+    if (!sel) return;
+    const listed = [...sel.options].some(o => o.value === val && o.value !== "" && o.value !== "__other");
+    if (val && !listed) {
+      sel.value = "__other";
+      if (other) { other.style.display = ""; other.value = val; }
+    } else {
+      sel.value = val || "";
+      if (other) { other.style.display = "none"; other.value = ""; }
+    }
+  }
+  function getCountry() {
+    const sel = q("#fCountry");
+    return sel.value === "__other" ? (q("#fCountryOther").value || "").trim() : sel.value;
+  }
 
   function todayStr() {
     const d = new Date();
@@ -546,7 +566,7 @@ const NOTE = (() => {
     const data = {
       name: q("#fName").value.trim(),
       brand: getBrand(),
-      country: q("#fCountry").value,
+      country: getCountry(),
       vitola: q("#fVitola").value,
       strength: q("#fStrength").value,
       date: q("#fDate").value,
@@ -1342,9 +1362,15 @@ const NOTE = (() => {
         other.style.display = "none";
         other.value = "";
         const c = countryOfBrand(e.target.value);
-        const cSel = q("#fCountry");
-        if (c && cSel && !cSel.value && [...cSel.options].some(o => o.value === c)) cSel.value = c;
+        if (c && !getCountry()) setCountry(c);
       }
+    });
+
+    // 産地：「その他」で自由入力欄を表示
+    q("#fCountry").addEventListener("change", (e) => {
+      const other = q("#fCountryOther");
+      if (e.target.value === "__other") { other.style.display = ""; other.focus(); }
+      else { other.style.display = "none"; other.value = ""; }
     });
 
     // 強さ：ワンタップ選択（同じボタン再タップで解除）
@@ -1433,10 +1459,7 @@ const NOTE = (() => {
       fillSelects();
       if (v.name) q("#fName").value = v.name;
       if (v.brand) setBrand(v.brand);
-      if (v.country) {
-        const cs = q("#fCountry");
-        if (cs && [...cs.options].some(o => o.value === v.country)) cs.value = v.country;
-      }
+      if (v.country) setCountry(v.country);
       updateRepeatHint();
     }
   }
