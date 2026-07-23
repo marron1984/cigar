@@ -927,29 +927,25 @@ const NOTE = (() => {
     ].filter(Boolean).join("\n");
   }
   // テキストでシェア（LINE等に貼れる）
-  async function shareText(en) {
-    const t = entryText(en);
+  // テキスト共有。AI設定時は英語訳を自動で付けて日英併記にする（翻訳失敗時は日本語のみ）
+  async function shareText(en, btn) {
+    const jp = entryText(en);
+    let out = jp, enText = "", failed = false;
+    if (visionOn) {
+      const old = btn ? btn.textContent : "";
+      if (btn) { btn.disabled = true; btn.textContent = "英語を生成中…"; }
+      try { enText = await VISION.translate(jp); }
+      catch (e) { failed = true; }
+      if (btn) { btn.disabled = false; btn.textContent = old; }
+    }
+    if (enText) out = jp + "\n\n———（English）———\n\n" + enText;
     if (navigator.share) {
-      try { await navigator.share({ text: t }); return; }
+      try { await navigator.share({ text: out }); return; }
       catch (err) { if (err && err.name === "AbortError") return; }
     }
-    alert((await copyText(t)) ? "テキストをコピーしました。LINEやメールに貼り付けてください。" : "コピーできませんでした。");
-  }
-  // 英語に翻訳してシェア／コピー（AI設定が必要）
-  async function shareTextEN(en, btn) {
-    if (!visionOn) { alert("英語翻訳にはAI機能の設定が必要です（VISION_SETUP.md 参照）。"); return; }
-    const old = btn.textContent; btn.disabled = true; btn.textContent = "翻訳中…";
-    try {
-      const enText = await VISION.translate(entryText(en));
-      if (navigator.share) {
-        try { await navigator.share({ text: enText }); btn.disabled = false; btn.textContent = old; return; }
-        catch (err) { if (err && err.name === "AbortError") { btn.disabled = false; btn.textContent = old; return; } }
-      }
-      alert((await copyText(enText)) ? "英語のテキストをコピーしました。\n\n" + enText : enText);
-    } catch (err) {
-      alert("英語に翻訳できませんでした：" + (err.message || "エラー"));
-    }
-    btn.disabled = false; btn.textContent = old;
+    const ok = await copyText(out);
+    const suffix = failed ? "（英語の付加に失敗したため日本語のみ。サーバー関数の更新が必要かもしれません）" : (enText ? "（日本語＋英語）" : "");
+    alert(ok ? `テキスト${suffix}をコピーしました。LINEやメールに貼り付けてください。` : out);
   }
   // リンクでシェア（クラウドに公開コピーを置き、URLを渡す）
   async function shareLink(en, btn) {
@@ -997,16 +993,14 @@ const NOTE = (() => {
       <div class="sm-title">「${escN(en.name)}」をシェア</div>
       <button type="button" class="sm-item" data-sm="img">🖼 画像で共有<span class="sm-sub">写真つきのカード画像を作成して共有・保存</span></button>
       <button type="button" class="sm-item" data-sm="link">🔗 リンクで共有<span class="sm-sub">URLを送るだけで、相手のブラウザで記録が見られる</span></button>
-      <button type="button" class="sm-item" data-sm="text">📝 テキストで共有<span class="sm-sub">LINEやメールに貼れる文章をコピー</span></button>
-      ${visionOn ? `<button type="button" class="sm-item" data-sm="en">🌐 英語テキストで共有<span class="sm-sub">AIが英語に翻訳してコピー・共有</span></button>` : ""}
+      <button type="button" class="sm-item" data-sm="text">📝 テキストで共有<span class="sm-sub">${visionOn ? "日本語＋英語（AI自動翻訳）をコピー・共有" : "LINEやメールに貼れる文章をコピー"}</span></button>
       <button type="button" class="btn btn-ghost btn-sm sm-cancel">キャンセル</button>
     </div>`;
     ov.classList.add("open");
     ov.querySelector(".sm-cancel").addEventListener("click", () => ov.classList.remove("open"));
     ov.querySelectorAll("[data-sm]").forEach(b => b.addEventListener("click", async () => {
       if (b.dataset.sm === "img") { ov.classList.remove("open"); shareEntry(id, b); }
-      else if (b.dataset.sm === "text") { ov.classList.remove("open"); shareText(en); }
-      else if (b.dataset.sm === "en") { await shareTextEN(en, b); ov.classList.remove("open"); }
+      else if (b.dataset.sm === "text") { await shareText(en, b); ov.classList.remove("open"); }
       else if (b.dataset.sm === "link") { await shareLink(en, b); ov.classList.remove("open"); }
     }));
   }
