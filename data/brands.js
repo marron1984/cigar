@@ -6725,7 +6725,8 @@ var BRANDS_DATA = {
         "CigarStudio (n.d.) 『What is a Connecticut Wrapper?』cigarstudio.com.",
         "Drew Estate / CigarCraig (n.d.) 『Undercrown Shade』cigarcraig.com.",
         "Cigar Journal (n.d.) 『Why the Cigar Industry Loves Ecuador's Outstanding Wrapper Leaf』cigarjournal.com."
-      ]
+      ],
+      "kind": "leaf"
     },
     {
       "order": 4,
@@ -6764,7 +6765,8 @@ var BRANDS_DATA = {
         "Cigar Country (n.d.) 『Ecuador Wrapper Cigars / Sumatra Wrapper Cigars』cigarcountry.com.",
         "Cigars Direct (n.d.) 『Ecuador Habano』cigarsdirect.com.",
         "Famous Smoke Shop / Cigar Advisor (n.d.) 『10 Sumatra Wrapper Cigars』famous-smoke.com."
-      ]
+      ],
+      "kind": "leaf"
     },
     {
       "order": 5,
@@ -8470,7 +8472,8 @@ var BRANDS_DATA = {
         "Brasilbar (n.d.) 『Brazil Cigar Tobacco Regions』brasilbar.com.",
         "Cigar Inspector (n.d.) 『Exploring Brazilian Arapiraca Tobacco』cigarinspector.com.",
         "Taylors Tobacconists (n.d.) 『Spicy Tobacco from Bahia』taylors-tobacconists.co.uk."
-      ]
+      ],
+      "kind": "leaf"
     },
     {
       "order": 5,
@@ -8904,7 +8907,8 @@ var BRANDS_DATA = {
         "House of Horvath 『The Road Less Travelled: The World Of Cameroon Tobacco』hofhcanada.com.",
         "Holt's Cigar Company 『History of Arturo Fuente Cigar Wrappers』holts.com.",
         "Cigar Inspector 『Cigar Industry Legends – Richard Meerapfel』cigarinspector.com."
-      ]
+      ],
+      "kind": "leaf"
     },
     {
       "order": 3,
@@ -9074,7 +9078,8 @@ var BRANDS_DATA = {
         "Ritual Cigars Peru (n.d.) 『Ritual Cigars Peru（Amazónico）』ritualcigarsperu.com.",
         "Inca Cigars (n.d.) 『Inca Peruvian Cigars』incacigars.com.",
         "StogiePro (2009) 『Review: San Martin Corona Gorda』stogiepro.wordpress.com."
-      ]
+      ],
+      "kind": "leaf"
     },
     {
       "order": 2,
@@ -9319,7 +9324,8 @@ var BRANDS_DATA = {
         "Gobernación de Santander (n.d.) 『Tabaco, símbolo de Santandereanidad en Piedecuesta』santander.gov.co.",
         "Wikipedia (n.d.) 『Economic history of Colombia』en.wikipedia.org.",
         "Harrison, J. P. (1952) 『The Evolution of the Colombian Tobacco Trade, to 1875』Hispanic American Historical Review (JSTOR)."
-      ]
+      ],
+      "kind": "leaf"
     },
     {
       "order": 2,
@@ -10162,7 +10168,8 @@ var BRANDS_DATA = {
         "JR Cigars (n.d.) 『An Introduction to the Popular European Style Dry-Cured Cigar』jrcigars.com.",
         "Wikipedia (n.d.) 『Ecuadorian Sumatra Tobacco』en.wikipedia.org.",
         "Luxury Cigar Club (n.d.) 『What is Sumatra Wrapper?』luxurycigarclub.com."
-      ]
+      ],
+      "kind": "leaf"
     },
     {
       "order": 2,
@@ -10702,7 +10709,8 @@ var BRANDS_DATA = {
         "inSalta (n.d.) 『Puros del Valle de Lerma: una historia de éxito que traspasó las fronteras』insalta.info.",
         "Encyclopedia.com (n.d.) 『Nobleza Piccardo SAICF』encyclopedia.com.",
         "TrendEconomy (2023) 『Raw tobacco — Imports and Exports 2023』trendeconomy.com."
-      ]
+      ],
+      "kind": "leaf"
     },
     {
       "order": 2,

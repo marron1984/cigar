@@ -1032,6 +1032,8 @@ button.footer-nav-note:hover { color: var(--gold); }
 .acc .acc-body p { margin-bottom: 10px; }
 .acc .acc-body p:last-child { margin-bottom: 0; }
 .acc .tag { font-size:.7rem; padding:2px 9px; border-radius:var(--radius-sm); background:var(--panel-2); border:1px solid var(--line); color:var(--gold-bright); margin-left:8px; font-family:var(--sans); white-space:nowrap; }
+/* 葉・産地の項目（銘柄ではないもの）を一目で区別するためのバッジ */
+.acc .tag.leaf { color:var(--leaf, #6f9c6a); border-color:currentColor; opacity:.95; }
 
 /* ---------- 論文精読（文献レビュー） ---------- */
 .lit-list { margin-top: 18px; display: flex; flex-direction: column; gap: 14px; }

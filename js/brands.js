@@ -127,10 +127,16 @@ const BRANDS = (() => {
 
   function brandAcc(b, countryKey) {
     const vitolas = (b.vitolas || []).map(v => `<span class="chip brand">${e(v)}</span>`).join("");
+    // 葉・産地の項目（kind:"leaf"）は銘柄ではないので、「吸いたいリスト」には入れられない。
+    // 代わりに種別バッジを出して、ブランドの項目と一目で区別できるようにする。
+    const isLeaf = b.kind === "leaf";
     const wished = isWished(b.en);
+    const wishBtn = isLeaf ? "" :
+      `<button type="button" class="wish-btn${wished ? " on" : ""}" data-wen="${e(b.en)}" data-wja="${e(b.ja)}" data-wc="${e(countryKey || "")}" title="${wished ? "吸いたいリストから外す" : "吸いたいリストへ"}">${wished ? "★" : "☆"}</button>`;
+    const kindBadge = isLeaf ? `<span class="tag leaf">葉・産地</span>` : "";
     return `
-      <details class="acc brand-entry" data-search="${e((b.ja + " " + b.en).toLowerCase())}">
-        <summary><span class="brand-sum-wrap">${brandEmblem(b)}<span class="brand-sum">${e(b.ja)} — ${e(b.en)}<span class="tag">${e(foundedLabel(b.founded))}</span></span></span><button type="button" class="wish-btn${wished ? " on" : ""}" data-wen="${e(b.en)}" data-wja="${e(b.ja)}" data-wc="${e(countryKey || "")}" title="${wished ? "吸いたいリストから外す" : "吸いたいリストへ"}">${wished ? "★" : "☆"}</button></summary>
+      <details class="acc brand-entry${isLeaf ? " is-leaf" : ""}" data-search="${e((b.ja + " " + b.en).toLowerCase())}">
+        <summary><span class="brand-sum-wrap">${brandEmblem(b)}<span class="brand-sum">${e(b.ja)} — ${e(b.en)}${kindBadge}<span class="tag">${e(foundedLabel(b.founded))}</span></span></span>${wishBtn}</summary>
         <div class="acc-body">
           ${specRow("創業・誕生", "Founded", b.founded)}
           ${specRow("創業者・創設主体", "Founder", b.founder)}
