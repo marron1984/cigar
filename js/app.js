@@ -95,6 +95,28 @@ function showView(name, opts = {}) {
   }
   if (name === "note") NOTE.render();
   closeNav();
+  trackPageView(name);
+}
+
+/* ページ切替をアクセス解析へ送る。
+   このサイトは1枚のHTMLでハッシュ（#brands 等）を切り替える作りなので、
+   タグを貼るだけでは最初の表示しか計測されない。画面が変わるたびに
+   page_view を送ることで、どのページが読まれているかが分かるようにする。
+   解析タグが未読込／ブロックされている場合は何もしない（サイトの動作には影響しない）。 */
+const VIEW_TITLES = {
+  home: "ホーム", basics: "基礎知識", countries: "国と産地", sizes: "太さと長さ",
+  prices: "価格", tools: "喫煙具", humidor: "ヒュミドール", advanced: "上級編",
+  phd: "葉巻博士", japan: "日本の葉巻", world: "世界の名店", brands: "ブランド大全",
+  news: "ニュース", note: "記録ノート"
+};
+function trackPageView(name) {
+  if (typeof gtag !== "function") return;
+  const label = VIEW_TITLES[name] || name;
+  gtag("event", "page_view", {
+    page_title: label + "｜Cigar Cafe",
+    page_location: location.origin + location.pathname + "#" + name,
+    page_path: "/#" + name
+  });
 }
 
 /* 戻る／進む（スワイプバック含む）でビューを同期 */
