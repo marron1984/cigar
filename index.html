@@ -58,14 +58,39 @@
 
     <!-- ===== HOME ===== -->
     <section class="view" id="view-home">
-      <div class="hero">
-        <div class="hero-text">
-          <div class="kicker">Welcome · はじめての一本へ</div>
-          <h1>Cigar Cafe<span class="hero-en">ようこそ、葉巻の世界へ</span></h1>
-          <p class="desc">「葉巻ってなんだか難しそう」——そんな方に。<b>基礎知識・国や産地・太さ・価格・道具</b>を、はじめての人にもわかりやすく。<br>気に入った一本は<b class="nowrap">記録ノート</b>に残していけます。肩の力を抜いて、ゆっくりどうぞ。</p>
+      <!-- ===== 全画面のヒーロー ===== -->
+      <div class="hero-cine">
+        <img class="hc-media" src="assets/hero-welcome.png" alt="" aria-hidden="true">
+        <div class="hc-veil" aria-hidden="true"></div>
+        <p class="hc-tate" aria-hidden="true"><span>急がない人の、</span><span>ための時間。</span></p>
+        <div class="hc-inner">
+          <div class="hc-main">
+            <div class="hc-kicker">Welcome — はじめての一本へ</div>
+            <h1 class="hc-title">Cigar&nbsp;Cafe</h1>
+            <p class="hc-sub">ようこそ、葉巻の世界へ</p>
+            <p class="hc-lead">「葉巻ってなんだか難しそう」——そんな方に。基礎知識から産地・太さ・価格・道具まで、はじめての人にもわかりやすく。気に入った一本は記録ノートに残していけます。</p>
+            <div class="hc-actions">
+              <button class="hc-btn primary" data-view="note">一本を記録する</button>
+              <button class="hc-btn" data-view="brands">銘柄をさがす</button>
+            </div>
+          </div>
         </div>
-        <img class="hero-photo" src="assets/hero-welcome.png" alt="葉巻を片手に語らう、くつろいだひととき">
+        <div class="hc-scroll" aria-hidden="true"><span>SCROLL</span></div>
       </div>
+
+      <!-- ===== 数字で見る（データから自動生成） ===== -->
+      <div class="home-figures" id="homeFigures"></div>
+
+      <div class="global-search" id="globalSearch">
+        <input type="text" id="gsInput" placeholder="🔍 サイト全体を検索（ブランド・産地・サイズ・用語…）" autocomplete="off">
+        <div class="gs-results" id="gsResults" hidden></div>
+      </div>
+
+      <!-- ===== 今日の一本（特集） ===== -->
+      <div id="homeFeature"></div>
+
+      <!-- ===== 銘柄をのぞく（横スクロール） ===== -->
+      <div id="homeShowcase"></div>
 
       <button class="note-cta" data-view="note">
         <div class="note-cta-text">
@@ -75,11 +100,11 @@
         <div class="note-cta-go">はじめる →</div>
       </button>
 
-      <div class="global-search" id="globalSearch">
-        <input type="text" id="gsInput" placeholder="🔍 サイト全体を検索（ブランド・産地・サイズ・用語…）" autocomplete="off">
-        <div class="gs-results" id="gsResults" hidden></div>
+      <!-- ===== 索引 ===== -->
+      <div class="home-index-head">
+        <span class="hi-num">INDEX</span>
+        <h2>読みたいところから</h2>
       </div>
-
       <div class="home-grid" id="homeGrid"></div>
 
       <div class="callout" style="margin-top:34px">

@@ -19,7 +19,7 @@
     ".home-card", ".card", ".country-card", ".tool-card", ".person",
     ".review-card", ".entry", ".shop-card", ".gloss-item", ".compound",
     ".pair-card", ".qa-item", ".myth-item", ".lex", ".gauge-figure",
-    ".stat-box", ".tier-card", ".shade"
+    ".stat-box", ".tier-card", ".shade", ".feature-brand"
   ].join(",");
 
   let revealIO = null;

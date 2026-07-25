@@ -203,23 +203,108 @@ function dailyBrandPick() {
   } catch (e) { return null; }
 }
 
+/* 収録内容から「数字」を集計する。データを足せば自動で増えるので、
+   手で書いた数字が古くなることがない。 */
+function homeFigures() {
+  const out = [];
+  try {
+    const keys = Object.keys(BRANDS_DATA || {});
+    const brands = keys.reduce((n, k) => n + (BRANDS_DATA[k] || []).length, 0);
+    if (brands) out.push({ v: brands, u: "", l: "収録ブランド", s: "世界の銘柄（マルカ）を創業から現在まで" });
+    if (keys.length) out.push({ v: keys.length, u: "", l: "産地・国", s: "キューバから東南アジアまで" });
+  } catch (e) { /* データ未読込でも他は出す */ }
+  try {
+    const v = (CIGAR_DATA && CIGAR_DATA.vitolas || []).length;
+    if (v) out.push({ v, u: "", l: "サイズ（ビトラ）", s: "寸法と味わいの目安つき" });
+  } catch (e) {}
+  try {
+    const n = (window.NEWS_DATA || []).length;
+    if (n) out.push({ v: n, u: "", l: "翻訳ニュース", s: "海外一次ソース＋国内の動き" });
+  } catch (e) {}
+  return out;
+}
+
+/* 横スクロールで見せる銘柄。日替わりで並びが変わる */
+function showcaseBrands(n) {
+  try {
+    const COUNTRY_JA_MAP = {
+      cuba: "キューバ", dominican: "ドミニカ", nicaragua: "ニカラグア", honduras: "ホンジュラス",
+      mexico: "メキシコ", ecuador: "エクアドル", usa: "アメリカ", brazil: "ブラジル", cameroon: "カメルーン",
+      peru: "ペルー", colombia: "コロンビア", philippines: "フィリピン", indonesia: "インドネシア", argentina: "アルゼンチン"
+    };
+    const flat = [];
+    Object.keys(BRANDS_DATA).forEach(key =>
+      (BRANDS_DATA[key] || []).forEach(b => {
+        if (b.kind === "leaf") return;              // 葉・産地の項目は銘柄ではないので出さない
+        flat.push({ key, b, cja: COUNTRY_JA_MAP[key] || "" });
+      }));
+    if (!flat.length) return [];
+    const now = new Date();
+    let seed = now.getFullYear() * 372 + (now.getMonth() + 1) * 31 + now.getDate();
+    const out = [], used = new Set();
+    while (out.length < Math.min(n, flat.length)) {
+      seed = (seed * 1103515245 + 12345) & 0x7fffffff;   // 日付から決まる擬似乱数
+      const i = seed % flat.length;
+      if (used.has(i)) continue;
+      used.add(i); out.push(flat[i]);
+    }
+    return out;
+  } catch (e) { return []; }
+}
+
 function renderHome() {
+  /* --- 数字 --- */
+  const figs = homeFigures();
+  $("#homeFigures").innerHTML = figs.length ? figs.map(f => `
+    <div class="stat-box fig">
+      <div class="sv">${f.v}${f.u}</div>
+      <div class="sl">${esc(f.l)}</div>
+      <div class="sn">${esc(f.s)}</div>
+    </div>`).join("") : "";
+
+  /* --- 今日の一本 --- */
   const pick = dailyBrandPick();
-  const daily = pick ? `
-    <div class="home-card daily-card" data-daily="1">
-      <div class="daily-kicker">☀️ 今日の一本 · ${pick.cja}</div>
-      <h3>${esc(pick.b.ja)} — ${esc(pick.b.en)}</h3>
-      <p>${esc(String(pick.b.history || "").slice(0, 72))}…</p>
-      <div class="go">ブランド大全で読む →</div>
+  $("#homeFeature").innerHTML = pick ? `
+    <article class="feature-brand" data-daily="1">
+      <div class="fb-kicker">今日の一本 — ${esc(pick.cja)}</div>
+      <h2 class="fb-title">${esc(pick.b.ja)}</h2>
+      <div class="fb-en">${esc(pick.b.en)}</div>
+      <p class="fb-lead">${esc(String(pick.b.history || "").replace(/【[^】]*】/g, "").trim().slice(0, 150))}…</p>
+      <div class="fb-go">ブランド大全で読む →</div>
+    </article>` : "";
+  const dc = $("#homeFeature .feature-brand");
+  if (dc && pick) dc.addEventListener("click", () => openBrandInBrands(pick.key, pick.b.en, pick.b.ja));
+
+  /* --- 銘柄ショーケース（横スクロール） --- */
+  const show = showcaseBrands(12);
+  $("#homeShowcase").innerHTML = show.length ? `
+    <div class="showcase-head">
+      <span class="hi-num">BRANDS</span>
+      <h2>今日の並び</h2>
+      <button class="sc-more" data-view="brands">すべて見る →</button>
+    </div>
+    <div class="showcase-rail" role="list">
+      ${show.map(s => `
+        <button class="sc-card" role="listitem" data-sc-key="${esc(s.key)}" data-sc-en="${esc(s.b.en)}" data-sc-ja="${esc(s.b.ja)}">
+          <span class="sc-country">${esc(s.cja)}</span>
+          <span class="sc-ja">${esc(s.b.ja)}</span>
+          <span class="sc-en">${esc(s.b.en)}</span>
+          <span class="sc-founded">${esc(String(s.b.founded || "").slice(0, 18))}</span>
+        </button>`).join("")}
     </div>` : "";
-  $("#homeGrid").innerHTML = daily + HOME_CARDS.map(c => `
+  $$("#homeShowcase .sc-card").forEach(el => {
+    el.addEventListener("click", () =>
+      openBrandInBrands(el.dataset.scKey, el.dataset.scEn, el.dataset.scJa));
+  });
+
+  /* --- 索引 --- */
+  /* 通し番号は .home-card 側の CSS カウンタが自動で振る */
+  $("#homeGrid").innerHTML = HOME_CARDS.map(c => `
     <div class="home-card" data-view="${c.view}">
       <h3>${c.h}</h3>
       <p>${c.p}</p>
       <div class="go">開く →</div>
     </div>`).join("");
-  const dc = $("#homeGrid .daily-card");
-  if (dc && pick) dc.addEventListener("click", () => openBrandInBrands(pick.key, pick.b.en, pick.b.ja));
 }
 
 /* ============================================================
