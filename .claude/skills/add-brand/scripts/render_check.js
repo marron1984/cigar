@@ -36,7 +36,7 @@ function findChrome() {
 
   const browser = await chromium.launch(exe ? { executablePath: exe } : {});
   const page = await browser.newPage({ viewport: { width: 390, height: 844 } });
-  const routes = ["home","basics","countries","sizes","prices","tools","humidor","advanced","phd","world","brands","note"];
+  const routes = ["home","basics","countries","sizes","prices","tools","humidor","advanced","phd","world","brands","note","admin"];
   let totalErr = 0, totalOverflow = 0;
   for (const r of routes) {
     const errors = [];

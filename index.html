@@ -336,6 +336,23 @@
       <div class="sub-view" id="brandsArgentina"></div>
     </section>
 
+    <!-- ===== ADMIN (管理画面) =====
+         ナビには載せず #admin で開く。共有データベースの記録者と記録を一覧する。 -->
+    <section class="view" id="view-admin">
+      <div class="section-head">
+        <div class="eyebrow">Admin · 管理</div>
+        <h2>記録の管理</h2>
+        <p>共有データベースに保存されている記録を、記録者ごとに一覧します。件数の多いデータを読み込むため、開いただけでは取得せず、ボタンを押したときだけ読み込みます。</p>
+      </div>
+      <div class="admin-warn" id="adminWarn"></div>
+      <div class="admin-actions">
+        <button class="btn btn-primary" id="adminLoad">共有データベースを読み込む</button>
+        <button class="btn btn-ghost" id="adminExport" hidden>CSVで書き出す</button>
+      </div>
+      <div id="adminStats"></div>
+      <div id="adminRoot"></div>
+    </section>
+
     <!-- ===== NEWS (葉巻ニュース) ===== -->
     <section class="view" id="view-news">
       <div class="section-head">
@@ -645,6 +662,7 @@
   <script src="js/brands.js"></script>
   <script src="js/app.js"></script>
   <script src="js/news.js"></script>
+  <script src="js/admin.js"></script>
   <script src="js/search.js"></script>
   <script src="js/quiz.js"></script>
   <script src="js/realsize.js"></script>

@@ -1808,3 +1808,56 @@ table.ref { min-width: 480px; }
 .sv-brand { color: var(--gold-bright); font-size: .95rem; margin-bottom: 6px; }
 .sv-author { margin-top: 14px; font-size: .82rem; color: var(--text-soft); }
 .sv-foot { margin-top: 16px; padding-top: 12px; border-top: 1px solid var(--line-soft); font-family: var(--serif); color: var(--gold-bright); font-size: .88rem; }
+
+/* ============================================================
+   管理画面（#admin）
+   ナビには出さない補助的な画面。表形式で読みやすさを優先する。
+   ============================================================ */
+.admin-warn {
+  background: #fdf3ec; border: 1px solid #e6c4ae; border-left: 4px solid var(--ember);
+  border-radius: var(--radius-sm); padding: 16px 18px; margin-top: 18px;
+  font-family: var(--serif); font-size: .9rem; line-height: 1.85; color: var(--text);
+}
+.admin-warn code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: .86em; background: rgba(0,0,0,.05); padding: 1px 5px; border-radius: 4px; }
+.admin-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 20px; }
+.admin-stats {
+  display: grid; gap: 1px; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  background: var(--line-soft); border: 1px solid var(--line-soft);
+  border-radius: var(--radius); overflow: hidden; margin-top: 26px;
+}
+.admin-stats .stat-box { background: var(--panel); padding: 20px 14px; border: none; border-radius: 0; text-align: center; }
+.admin-sort { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-top: 22px; font-family: var(--sans); font-size: .8rem; color: var(--muted); }
+.as-btn {
+  font-family: var(--sans); font-size: .8rem; padding: 6px 14px; border-radius: 999px;
+  border: 1px solid var(--line); background: var(--panel); color: var(--text-soft); cursor: pointer;
+}
+.as-btn.on { background: var(--gold); border-color: var(--gold); color: var(--on-accent); font-weight: 700; }
+.admin-owners { margin-top: 14px; border-top: 1px solid var(--line); }
+.admin-owner { border-bottom: 1px solid var(--line); }
+.ao-head {
+  width: 100%; display: flex; flex-wrap: wrap; align-items: center; gap: 14px;
+  background: none; border: none; padding: 18px 6px; cursor: pointer; text-align: left;
+  transition: background-color var(--dur) var(--ease);
+}
+.ao-head:hover { background: var(--panel-2); }
+.ao-name { font-family: var(--sans); font-weight: 700; color: var(--cream); font-size: 1rem; flex: 1 1 auto; min-width: 0; }
+.ao-count { font-family: var(--serif); color: var(--gold-bright); font-size: 1.05rem; }
+.ao-meta { font-family: var(--sans); font-size: .76rem; color: var(--muted); }
+.ao-caret { font-size: .7rem; color: var(--muted); }
+.ao-body { overflow-x: auto; padding-bottom: 18px; }
+.admin-table { width: 100%; border-collapse: collapse; font-family: var(--sans); font-size: .84rem; min-width: 560px; }
+.admin-table th {
+  text-align: left; font-size: .72rem; letter-spacing: .08em; color: var(--muted);
+  font-weight: 700; padding: 8px 10px; border-bottom: 1px solid var(--line);
+}
+.admin-table td { padding: 10px; border-bottom: 1px solid var(--line-soft); color: var(--text); vertical-align: top; }
+.at-sub { display: block; font-size: .72rem; color: var(--muted); margin-top: 2px; }
+.at-del {
+  font-family: var(--sans); font-size: .74rem; padding: 5px 12px; border-radius: 999px;
+  border: 1px solid var(--line); background: var(--panel); color: var(--ember); cursor: pointer;
+}
+.at-del:hover { background: var(--ember); border-color: var(--ember); color: #fff; }
+@media (max-width: 640px) {
+  .ao-head { gap: 8px 12px; padding: 16px 4px; }
+  .ao-name { flex: 1 1 100%; }
+}

@@ -42,6 +42,19 @@ const CLOUD = (() => {
     if (error) throw error;
     return (data || []).map(rowToEntry);
   }
+  // 管理画面用：記録者で絞らず全件取得する。
+  // 注意：この構成では anon キーで全件読めるため、これは新たな穴を開けるものではなく
+  // 既にできることを画面から使えるようにしているだけ。厳密な非公開が必要なら
+  // Supabase の認証（Auth）＋ owner = auth.uid() の RLS に切り替える必要がある
+  // （DATABASE_SETUP.md のプライバシー注記を参照）。
+  async function listAll(limit) {
+    const c = await getClient();
+    let qy = c.from(TABLE).select("*").order("created", { ascending: false });
+    if (limit) qy = qy.limit(limit);
+    const { data, error } = await qy;
+    if (error) throw error;
+    return (data || []).map(rowToEntry);
+  }
   async function upsert(entry) {
     const c = await getClient();
     const { error } = await c.from(TABLE).upsert(entryToRow(entry), { onConflict: "id" });
@@ -81,5 +94,5 @@ const CLOUD = (() => {
     if (error) throw error;
   }
 
-  return { enabled, list, upsert, remove, replaceAll, shareUpsert, shareGet, shareRemove };
+  return { enabled, list, listAll, upsert, remove, replaceAll, shareUpsert, shareGet, shareRemove };
 })();

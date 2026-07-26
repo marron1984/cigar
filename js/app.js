@@ -78,6 +78,7 @@ const views = {
   sizes: "view-sizes", prices: "view-prices", tools: "view-tools", humidor: "view-humidor",
   advanced: "view-advanced", phd: "view-phd", japan: "view-japan", world: "view-world", brands: "view-brands",
   news: "view-news",
+  admin: "view-admin",        /* 管理画面。ナビには出さず #admin で開く */
   note: "view-note"
 };
 function showView(name, opts = {}) {
