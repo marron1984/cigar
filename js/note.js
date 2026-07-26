@@ -899,6 +899,18 @@ const NOTE = (() => {
   function shareUrlFor(token) {
     return location.origin + location.pathname + "#share=" + token;
   }
+  // 共有テキストの末尾に添えるサイトのアドレス。
+  // 実際に見ているURLを使うので、独自ドメインでもプレビュー環境でも正しくなる。
+  // file:// で開いているとき（ローカル確認）だけ、公開先のアドレスを使う。
+  const CANONICAL_URL = "https://cigar.cafe/";
+  function siteUrl() {
+    try {
+      if (location.protocol === "http:" || location.protocol === "https:") {
+        return location.origin + location.pathname.replace(/index\.html$/i, "");
+      }
+    } catch (e) { /* 参照できない環境では下の既定値を使う */ }
+    return CANONICAL_URL;
+  }
   function randomToken() {
     const a = new Uint8Array(16);
     (crypto.getRandomValues ? crypto : { getRandomValues: (x) => { for (let i = 0; i < x.length; i++) x[i] = Math.floor(Math.random() * 256); return x; } }).getRandomValues(a);
@@ -940,6 +952,9 @@ const NOTE = (() => {
       if (btn) { btn.disabled = false; btn.textContent = old; }
     }
     if (enText) out = jp + "\n\n" + enText;
+    // サイトのアドレスは、日英を結ねた最後に一度だけ添える。
+    // 本文に含めると翻訳文にもURLが入って二重になるため、この順番にしている。
+    out = out + "\n" + siteUrl();
     if (navigator.share) {
       try { await navigator.share({ text: out }); return; }
       catch (err) { if (err && err.name === "AbortError") return; }
