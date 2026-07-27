@@ -86,17 +86,6 @@ const STOCK = (() => {
     const value = items.reduce((s, it) => s + (Number(it.price) || 0) * (Number(it.qty) || 0), 0);
     const oldest = items.reduce((m, it) => Math.max(m, agingMonths(it.date)), 0);
 
-    /* 棚：1本ずつ並べる。多いときは上限を設けて残数を添える */
-    const MAX_STICKS = 60;
-    const sticks = [];
-    items.forEach(it => {
-      const n = Math.min(Number(it.qty) || 0, MAX_STICKS);
-      for (let i = 0; i < n && sticks.length < MAX_STICKS; i++) {
-        sticks.push(`<span class="stk-stick" style="--tone:${toneOf(it.country)};--i:${sticks.length}" title="${esc(it.name)}"></span>`);
-      }
-    });
-    const restCount = totalQty - sticks.length;
-
     /* 産地の内訳 */
     const byCountry = {};
     items.forEach(it => {
@@ -105,10 +94,46 @@ const STOCK = (() => {
     });
     const cList = Object.entries(byCountry).filter(([, n]) => n > 0).sort((a, b) => b[1] - a[1]);
     const unset = byCountry["産地未設定"] || 0;
-    const bar = cList.map(([k, n]) =>
-      `<span class="stk-seg" style="width:${(n / totalQty * 100).toFixed(2)}%;background:${toneOf(k)}" title="${esc(k)} ${n}本"></span>`).join("");
     const legend = cList.map(([k, n]) =>
-      `<span class="stk-lg"><i style="background:${toneOf(k)}"></i>${esc(k)} <b>${n}</b></span>`).join("");
+      `<span class="stk-lg"><i style="background:${toneOf(k)}"></i>${esc(k)} <b>${n}</b>（${Math.round(n / totalQty * 100)}%）</span>`).join("");
+
+    /* 花：在庫を中心から放射状に並べる。同じ産地を隣り合わせに置くので、
+       1枚＝等しい角度のまま、産地別の円グラフとしても読める。
+       72本までは1枚＝1本。それを超えるときは枚数を割合で配分し、
+       （先頭だけ描いて後ろの産地が欠けることがないように）比率を保つ。 */
+    const MAX_PETALS = 72;
+    const scaled = totalQty > MAX_PETALS;
+    const target = Math.min(totalQty, MAX_PETALS);
+    const petalList = [];
+    if (!scaled) {
+      cList.forEach(([c]) => items.forEach(it => {
+        if ((it.country || "産地未設定") !== c) return;
+        for (let i = 0, n = Number(it.qty) || 0; i < n; i++)
+          petalList.push({ tone: toneOf(c), title: `${it.name}（${c}）` });
+      }));
+    } else {
+      /* 最大剰余法で配分。1本でもある産地は必ず1枚は残す */
+      const raw = cList.map(([c, n]) => ({ c, n, v: n / totalQty * target }));
+      raw.forEach(r => { r.k = Math.max(1, Math.floor(r.v)); });
+      let sum = raw.reduce((s, r) => s + r.k, 0);
+      const byRem = raw.slice().sort((a, b) => (b.v - b.k) - (a.v - a.k));
+      for (let i = 0; sum < target; i++) { byRem[i % byRem.length].k++; sum++; }
+      const byK = raw.slice().sort((a, b) => b.k - a.k);
+      for (let i = 0; sum > target && i < 5000; i++) {
+        const r = byK[i % byK.length];
+        if (r.k > 1) { r.k--; sum--; }
+      }
+      raw.forEach(r => {
+        for (let i = 0; i < r.k; i++) petalList.push({ tone: toneOf(r.c), title: `${r.c} ${r.n}本` });
+      });
+    }
+    const step = 360 / (petalList.length || 1);
+    /* 本数が少ないほど1枚を太くして、輪がすかすかに見えないようにする */
+    const pn = petalList.length;
+    const petalW = pn <= 6 ? 18 : pn <= 10 ? 14 : pn <= 16 ? 11 : pn <= 24 ? 9 : pn <= 40 ? 7 : pn <= 56 ? 6 : 5;
+    const petals = petalList.map((p, i) =>
+      `<span class="stk-petal" style="--a:${(i * step).toFixed(3)}deg;--tone:${p.tone};--i:${i}"
+         title="${esc(p.title)}"></span>`).join("");
 
     /* 熟成の分布 */
     const buckets = [
@@ -131,14 +156,19 @@ const STOCK = (() => {
 
     return `
       <div class="stk-viz">
+        <div class="stk-flower" style="--pw:${petalW}px">
+          ${petals}
+          <div class="stk-core">
+            <span class="sc-n">${totalQty}</span><span class="sc-u">本</span>
+            ${scaled ? `<span class="sc-note">図は割合で表示</span>` : ""}
+          </div>
+        </div>
+        ${cList.length ? `<div class="stk-legend">${legend}</div>` : ""}
         <div class="stk-figs">
-          <div class="sf"><span class="sf-v">${totalQty}</span><span class="sf-l">本</span></div>
           <div class="sf"><span class="sf-v">${kinds}</span><span class="sf-l">銘柄</span></div>
           ${value ? `<div class="sf"><span class="sf-v">¥${value.toLocaleString()}</span><span class="sf-l">在庫金額</span></div>` : ""}
           ${oldest ? `<div class="sf"><span class="sf-v">${oldest < 12 ? oldest + "ヶ月" : Math.floor(oldest / 12) + "年"}</span><span class="sf-l">最長の熟成</span></div>` : ""}
         </div>
-        <div class="stk-rack" aria-hidden="true">${sticks.join("")}${restCount > 0 ? `<span class="stk-rest">＋${restCount}</span>` : ""}</div>
-        ${cList.length ? `<div class="stk-bar">${bar}</div><div class="stk-legend">${legend}</div>` : ""}
         ${unset ? `
         <div class="stk-fix">
           <span>産地未設定が <b>${unset}本</b> あります。</span>
