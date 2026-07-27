@@ -140,8 +140,11 @@ const STOCK = (() => {
     }
   }
 
+  /* 描画のたびに作り直される要素（フォームのボタン類）だけをつなぐ。
+     一覧のクリック監視は #stockBody 自身に付けるが、この要素は innerHTML の
+     置き換えでは消えないので、ここで付けると描画のたびに監視が積み上がり、
+     1回のクリックで何度も処理が走ってしまう。監視は init() で一度だけ付ける。 */
   function wire() {
-    const body = q("#stockBody");
     const pbtn = q("#stkPhotoBtn"), pfile = q("#stkPhoto");
     if (pbtn && pfile) {
       pbtn.addEventListener("click", () => pfile.click());
@@ -164,6 +167,13 @@ const STOCK = (() => {
       aiMeta = { country: "", vitola: "" };   // 次の登録に持ち越さない
       save(); render();
     });
+  }
+
+  /* 一覧のクリック処理。#stockBody に一度だけ付ける（init から呼ぶ） */
+  function wireList() {
+    const body = q("#stockBody");
+    if (!body || body.dataset.wired === "1") return;
+    body.dataset.wired = "1";
     body.addEventListener("click", (e) => {
       const inc = e.target.closest("[data-sinc]");
       const dec = e.target.closest("[data-sdec]");
@@ -194,6 +204,7 @@ const STOCK = (() => {
   function init() {
     if (!q("#stockPanel")) return;
     load();
+    wireList();     // 一覧のクリック監視は最初に一度だけ
     render();
   }
 
