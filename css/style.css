@@ -917,6 +917,16 @@ td .ve { font-size: .74rem; color: var(--muted); letter-spacing: .04em; }
 .note-add-hero .na-plus { font-size: 1.3rem; line-height: 1; font-weight: 400; }
 .note-utils { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin: 6px 0 4px; }
 .note-utils .note-search { flex: 1; min-width: 220px; margin: 0; }
+/* スマホでは折り返しで最後のボタンだけが余ってしまうため、
+   検索／並び替え＋件数／書き出し＋読み込み の3段にきちんと割り付ける */
+@media (max-width: 640px) {
+  .note-utils { display: grid; grid-template-columns: 1fr auto; align-items: center; }
+  .note-utils .note-search { grid-column: 1 / -1; min-width: 0; }
+  .note-utils .note-sort { grid-column: 1; width: 100%; }
+  .note-utils .count-pill { grid-column: 2; justify-self: end; }
+  .note-utils #btnExport { grid-column: 1; }
+  .note-utils #btnImport { grid-column: 2; }
+}
 .note-sort {
   padding: 10px 12px; border-radius: var(--radius-sm); border: 1px solid var(--line-soft);
   background: var(--panel); color: var(--text); font-family: var(--sans); font-size: .88rem;
@@ -1114,22 +1124,109 @@ td .ve { font-size: .74rem; color: var(--muted); letter-spacing: .04em; }
   cursor: pointer; line-height: 1; background: none; border: none;
 }
 
-/* Stats bar for note（数字で見る、無彩色＋ワインの下線だけの控えめなスタット） */
-.note-stats { display: grid; grid-template-columns: repeat(5, 1fr); gap: 1px; margin-top: 16px; background: var(--line); border: 1px solid var(--line); }
-.stat-box {
-  background: var(--panel); border: none;
-  border-radius: 0; padding: 20px 14px 16px; text-align: center; position: relative;
+/* ============================================================
+   記録ノートの統計パネル
+   本数を主役に据えた濃色のパネル。ホームのヒーローや今日の一本と
+   同じ色調でそろえ、記録ページの入口を印象づける。
+   ============================================================ */
+.note-stats {
+  margin-top: 16px;
+  border-radius: 16px;
+  overflow: hidden;
+  background:
+    radial-gradient(120% 100% at 80% 0%, rgba(181,118,58,.28), transparent 62%),
+    linear-gradient(150deg, #3a2c1f 0%, #4d3a2a 100%);
+  color: var(--on-accent);
+  padding: 30px 24px 24px;
+  box-shadow: var(--shadow);
 }
-.stat-box::after { content: ""; position: absolute; left: 50%; bottom: 0; transform: translateX(-50%); width: 20px; height: 2px; background: var(--gold); }
-.stat-box .sv {
-  font-family: var(--sans); font-size: clamp(1.15rem, 4.2vw, 1.9rem); font-weight: 800;
-  color: var(--cream); line-height: 1.1; white-space: nowrap; /* 金額などの折り返し崩れを防ぐ */
+.note-stats .stat-box { background: none; border: none; border-radius: 0; padding: 0; text-align: left; position: relative; }
+.note-stats .stat-box::after { content: none; }
+
+/* 主役：記録した本数 */
+.ns-hero { display: grid; grid-template-columns: auto auto 1fr; align-items: baseline; column-gap: 10px; }
+.ns-kicker {
+  grid-column: 1 / -1;
+  font-family: var(--sans); font-size: .62rem; letter-spacing: .28em;
+  text-transform: uppercase; font-weight: 700; color: var(--gold);
 }
-.stat-box .sl { font-size: .72rem; color: var(--text-soft); letter-spacing: .04em; margin-top: 8px; display: block; white-space: nowrap; }
-/* モバイルは2列。5個目（総額）は1行使いにして空きマスを作らない */
+.ns-hero .sv {
+  font-family: var(--serif); font-weight: 400;
+  font-size: clamp(3.2rem, 17vw, 4.6rem); line-height: .95;
+  color: #fffaf2; margin-top: 10px; white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+.ns-unit { font-family: var(--serif); font-size: 1.05rem; color: rgba(255,250,242,.7); }
+.ns-hero .sl {
+  grid-column: 1 / -1;
+  font-family: var(--serif); font-size: .84rem; color: rgba(255,250,242,.62);
+  margin-top: 8px; letter-spacing: .04em;
+}
+
+/* 3つ並び */
+.ns-row {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  margin-top: 26px; padding-top: 22px;
+  border-top: 1px solid rgba(255,250,242,.16);
+}
+.ns-row .stat-box + .stat-box { border-left: 1px solid rgba(255,250,242,.13); padding-left: 16px; }
+.ns-row .sv {
+  font-family: var(--serif); font-weight: 400; font-size: clamp(1.5rem, 6.5vw, 2rem);
+  color: var(--gold); line-height: 1.1; white-space: nowrap; font-variant-numeric: tabular-nums;
+}
+.ns-row .sl { font-family: var(--sans); font-size: .68rem; color: rgba(255,250,242,.6); margin-top: 8px; display: block; letter-spacing: .06em; }
+
+/* 総額 */
+.ns-total {
+  display: flex; align-items: baseline; justify-content: space-between; gap: 14px;
+  margin-top: 22px; padding-top: 18px;
+  border-top: 1px solid rgba(255,250,242,.16);
+}
+.ns-total .sl { font-family: var(--sans); font-size: .7rem; color: rgba(255,250,242,.6); letter-spacing: .08em; }
+.ns-total .sv {
+  font-family: var(--serif); font-size: clamp(1.35rem, 5.5vw, 1.7rem); color: #fffaf2;
+  white-space: nowrap; font-variant-numeric: tabular-nums;
+}
+
+/* ---- 登場のモーション（順にせり上がる） ---- */
+@media (prefers-reduced-motion: no-preference) {
+  .note-stats .ns-kicker { animation: nsUp .7s var(--ease) both; }
+  .note-stats .ns-hero .sv, .note-stats .ns-unit { animation: nsUp .9s .08s var(--ease-spring) both; }
+  .note-stats .ns-hero .sl { animation: nsUp .8s .18s var(--ease) both; }
+  .note-stats .ns-row .stat-box:nth-child(1) { animation: nsUp .8s .24s var(--ease) both; }
+  .note-stats .ns-row .stat-box:nth-child(2) { animation: nsUp .8s .30s var(--ease) both; }
+  .note-stats .ns-row .stat-box:nth-child(3) { animation: nsUp .8s .36s var(--ease) both; }
+  .note-stats .ns-total { animation: nsUp .8s .44s var(--ease) both; }
+}
+@keyframes nsUp { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+
+/* ---- スクロール連動（対応ブラウザのみ）----
+   スクロール量に追従して動くため、指の動きに張り付いたなめらかさになる。
+   合成スレッドで動くのでスマホでもカクつきにくい。
+   未対応のブラウザは上の登場モーションと既存のフェードインだけが効く。 */
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .note-stats {
+      animation: nsPanel linear both;
+      animation-timeline: view();
+      animation-range: exit 0% exit 70%;
+    }
+    @keyframes nsPanel { to { transform: scale(.965); opacity: .55; } }
+
+    /* 統計・在庫のカードは、画面に入ってくる量に合わせてせり上がる */
+    #view-note .insights, #view-note .stock-panel {
+      animation: nsCard linear both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 58%;
+    }
+    @keyframes nsCard { from { opacity: 0; transform: translateY(26px) scale(.97); } to { opacity: 1; transform: none; } }
+  }
+}
+
+/* モバイルでの詰め */
 @media (max-width: 720px) {
-  .note-stats { grid-template-columns: repeat(2, 1fr); }
-  .note-stats .stat-box:nth-child(5) { grid-column: 1 / -1; }
+  .note-stats { padding: 26px 20px 20px; }
+  .ns-row .stat-box + .stat-box { padding-left: 12px; }
 }
 
 /* ---------- Footer（濃色バンド＋メニュー） ---------- */

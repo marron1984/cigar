@@ -651,12 +651,24 @@ const NOTE = (() => {
     const spent = entries.reduce((s, e) => s + (Number(e.price) || 0), 0);
     const countries = new Set(entries.map(e => e.country).filter(Boolean)).size;
     const places = new Set(entries.map(e => e.location).filter(Boolean)).size;
+    /* 本数を主役に据えた構成。数字のカウントアップ演出は .stat-box .sv を
+       目印に動くので、見た目を変えてもこのクラス構成は保っている。 */
     box.innerHTML = `
-      <div class="stat-box"><div class="sv">${entries.length}</div><div class="sl">記録した本数</div></div>
-      <div class="stat-box"><div class="sv">${avg}</div><div class="sl">平均評価（★）</div></div>
-      <div class="stat-box"><div class="sv">${countries}</div><div class="sl">産地の数</div></div>
-      <div class="stat-box"><div class="sv">${places}</div><div class="sl">喫煙場所の数</div></div>
-      <div class="stat-box"><div class="sv">¥${spent.toLocaleString()}</div><div class="sl">総額の記録</div></div>`;
+      <div class="ns-hero stat-box">
+        <span class="ns-kicker">Records</span>
+        <span class="sv">${entries.length}</span>
+        <span class="ns-unit">本</span>
+        <span class="sl">これまでに記録した葉巻</span>
+      </div>
+      <div class="ns-row">
+        <div class="stat-box"><div class="sv">${avg}</div><div class="sl">平均評価</div></div>
+        <div class="stat-box"><div class="sv">${countries}</div><div class="sl">産地</div></div>
+        <div class="stat-box"><div class="sv">${places}</div><div class="sl">喫煙場所</div></div>
+      </div>
+      <div class="ns-total stat-box">
+        <div class="sl">総額の記録</div>
+        <div class="sv">¥${spent.toLocaleString()}</div>
+      </div>`;
     if (ins) renderInsights(ins);
   }
 
