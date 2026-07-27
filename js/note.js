@@ -1482,9 +1482,16 @@ const NOTE = (() => {
       if (v.name) q("#fName").value = v.name;
       if (v.brand) setBrand(v.brand);
       if (v.country) setCountry(v.country);
+      // サイズ・価格も、選択肢にある値・数値であれば引き継ぐ
+      if (v.vitola) {
+        const sel = q("#fVitola");
+        if (sel && [...sel.options].some(o => o.value === v.vitola)) sel.value = v.vitola;
+      }
+      if (v.price) q("#fPrice").value = v.price;
       updateRepeatHint();
     }
   }
 
-  return { init, render, prefillNew };
+  /* resizeImage はヒュミドール在庫の写真読み取りでも使うので公開する */
+  return { init, render, prefillNew, resizeImage };
 })();

@@ -1829,6 +1829,13 @@ table.ref { min-width: 480px; }
 .stk-btn { width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--line); background: var(--panel-2); color: var(--cream); cursor: pointer; font-size: 1rem; line-height: 1; }
 .stk-n { min-width: 22px; text-align: center; font-weight: 700; font-variant-numeric: tabular-nums; }
 .stk-acts { display: flex; gap: 6px; }
+/* 在庫フォームの写真AI自動入力（ボタンと結果表示は1行使い） */
+.stk-ai { flex: 1 0 100%; display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin-bottom: 4px; }
+.stk-ai-status { font-family: var(--sans); font-size: .78rem; line-height: 1.6; color: var(--text-soft); flex: 1 1 200px; min-width: 0; }
+.stk-ai-status.loading { color: var(--gold-bright); }
+.stk-ai-status.ok { color: var(--leaf); }
+.stk-ai-status.warn { color: var(--gold-bright); }
+.stk-ai-status.error { color: var(--ember); }
 .stk-form { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
 .stk-form input { padding: 9px 10px; border-radius: 8px; border: 1px solid var(--line); background: var(--panel); color: var(--cream); font-size: .88rem; }
 #stkName { flex: 2 1 180px; } #stkBrand { flex: 1 1 120px; }
