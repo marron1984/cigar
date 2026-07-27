@@ -58,9 +58,26 @@ const STOCK = (() => {
     "ニカラグア": "#6f3f22", "ホンジュラス": "#b5763a", "メキシコ": "#4a2c18",
     "ブラジル": "#5c3a1e", "エクアドル": "#c08a4e", "アメリカ": "#8a6a45",
     "ペルー": "#7a5230", "コロンビア": "#9c6238", "フィリピン": "#a8814a",
-    "インドネシア": "#6b4526", "カメルーン": "#94643a", "アルゼンチン": "#7f5a35"
+    "インドネシア": "#6b4526", "カメルーン": "#94643a", "アルゼンチン": "#7f5a35",
+    "コスタリカ": "#9a7b52", "パナマ": "#87582f", "ジャマイカ": "#b0885a",
+    "イタリア": "#6d5233", "産地未設定": "#c9bda8"
   };
   const toneOf = (c) => COUNTRY_TONE[c] || "#8a6a45";
+
+  /* 在庫に付けられる産地。並びは主要生産国から */
+  const STOCK_COUNTRIES = [
+    "キューバ", "ドミニカ共和国", "ニカラグア", "ホンジュラス", "メキシコ",
+    "ブラジル", "エクアドル", "アメリカ", "フィリピン", "インドネシア",
+    "カメルーン", "ペルー", "コロンビア", "コスタリカ", "パナマ",
+    "ジャマイカ", "イタリア", "その他"
+  ];
+  /* 既に入っている産地が一覧に無い場合（AIの読み取り結果など）も選択肢として残す */
+  function countryOptions(cur) {
+    const list = STOCK_COUNTRIES.slice();
+    if (cur && !list.includes(cur)) list.unshift(cur);
+    return `<option value="">産地未設定</option>` +
+      list.map(c => `<option${c === cur ? " selected" : ""}>${esc(c)}</option>`).join("");
+  }
 
   /* 在庫の中身を見える形にする（本数・棚・産地の内訳・熟成の分布） */
   function vizHtml(totalQty) {
@@ -87,6 +104,7 @@ const STOCK = (() => {
       byCountry[k] = (byCountry[k] || 0) + (Number(it.qty) || 0);
     });
     const cList = Object.entries(byCountry).filter(([, n]) => n > 0).sort((a, b) => b[1] - a[1]);
+    const unset = byCountry["産地未設定"] || 0;
     const bar = cList.map(([k, n]) =>
       `<span class="stk-seg" style="width:${(n / totalQty * 100).toFixed(2)}%;background:${toneOf(k)}" title="${esc(k)} ${n}本"></span>`).join("");
     const legend = cList.map(([k, n]) =>
@@ -121,6 +139,12 @@ const STOCK = (() => {
         </div>
         <div class="stk-rack" aria-hidden="true">${sticks.join("")}${restCount > 0 ? `<span class="stk-rest">＋${restCount}</span>` : ""}</div>
         ${cList.length ? `<div class="stk-bar">${bar}</div><div class="stk-legend">${legend}</div>` : ""}
+        ${unset ? `
+        <div class="stk-fix">
+          <span>産地未設定が <b>${unset}本</b> あります。</span>
+          <select id="stkFixTo" title="まとめて設定する産地">${countryOptions("")}</select>
+          <button type="button" class="btn btn-sm btn-ghost" id="stkFixApply">まとめて設定</button>
+        </div>` : ""}
         <div class="stk-aging"><div class="stk-sub-h">熟成の内訳</div>${aging}</div>
       </div>`;
   }
@@ -136,6 +160,7 @@ const STOCK = (() => {
         <div class="stk-main">
           <div class="stk-name">${esc(it.name)}${it.brand ? `<span class="stk-brand">${esc(it.brand)}</span>` : ""}</div>
           <div class="stk-sub">${it.date ? `購入 ${esc(it.date)} · <b>${esc(agingLabel(it.date))}</b>` : ""}${it.price ? ` · ¥${Number(it.price).toLocaleString()}/本` : ""}</div>
+          <select class="stk-csel${it.country ? "" : " none"}" data-scountry="${it.id}" title="産地（変えるとグラフに反映されます）">${countryOptions(it.country || "")}</select>
         </div>
         <div class="stk-qty">
           <button type="button" class="stk-btn" data-sdec="${it.id}" title="1本減らす">−</button>
@@ -159,6 +184,7 @@ const STOCK = (() => {
         </div>` : ""}
         <input type="text" id="stkName" placeholder="銘柄名（例：モンテクリスト No.4）">
         <input type="text" id="stkBrand" placeholder="ブランド（任意）">
+        <select id="stkCountry" title="産地">${countryOptions("")}</select>
         <input type="number" id="stkQty" min="1" value="1" title="本数">
         <input type="date" id="stkDate" value="${todayStr()}" title="購入日">
         <input type="number" id="stkPrice" min="0" placeholder="1本の価格（任意）">
@@ -207,6 +233,11 @@ const STOCK = (() => {
       };
       put("#stkName", r.name, "銘柄名");
       put("#stkBrand", r.brand, "ブランド");
+      /* 産地は選択肢に同じものがあるときだけ入れる（未選択のときのみ） */
+      const cSel = q("#stkCountry");
+      if (cSel && !cSel.value && r.country && [...cSel.options].some(o => o.value === r.country)) {
+        cSel.value = r.country; filled.push("産地");
+      }
       aiMeta = { country: r.country || "", vitola: r.vitola || "" };
       if (!filled.length) {
         setAiStatus("warn", r.band_readable === false
@@ -247,7 +278,7 @@ const STOCK = (() => {
         qty: Math.max(1, Number(q("#stkQty").value) || 1),
         date: q("#stkDate").value || todayStr(),
         price: Number(q("#stkPrice").value) || null,
-        country: aiMeta.country || "", vitola: aiMeta.vitola || ""
+        country: q("#stkCountry").value || aiMeta.country || "", vitola: aiMeta.vitola || ""
       });
       aiMeta = { country: "", vitola: "" };   // 次の登録に持ち越さない
       save(); render();
@@ -259,7 +290,28 @@ const STOCK = (() => {
     const body = q("#stockBody");
     if (!body || body.dataset.wired === "1") return;
     body.dataset.wired = "1";
+    /* 産地の変更（行ごとのプルダウン） */
+    body.addEventListener("change", (e) => {
+      const sel = e.target.closest("[data-scountry]");
+      if (!sel) return;
+      const it = items.find(x => x.id === sel.dataset.scountry);
+      if (!it) return;
+      it.country = sel.value;
+      save(); render();
+    });
     body.addEventListener("click", (e) => {
+      /* 産地未設定をまとめて設定 */
+      if (e.target.closest("#stkFixApply")) {
+        const to = (q("#stkFixTo") || {}).value || "";
+        if (!to) { const s = q("#stkFixTo"); if (s) s.focus(); return; }
+        const target = items.filter(x => !x.country);
+        if (!target.length) return;
+        const qty = target.reduce((s, x) => s + (Number(x.qty) || 0), 0);
+        if (!confirm(`産地未設定の ${target.length}銘柄（${qty}本）を、すべて「${to}」にします。\nよろしいですか？`)) return;
+        items.forEach(x => { if (!x.country) x.country = to; });
+        save(); render();
+        return;
+      }
       const inc = e.target.closest("[data-sinc]");
       const dec = e.target.closest("[data-sdec]");
       const del = e.target.closest("[data-sdel]");

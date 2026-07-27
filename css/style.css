@@ -1842,6 +1842,11 @@ table.ref { min-width: 480px; }
 .stk-lg i { width: 9px; height: 9px; border-radius: 2px; display: inline-block; }
 .stk-lg b { color: var(--cream); font-variant-numeric: tabular-nums; }
 
+/* 産地未設定をまとめて直す欄 */
+.stk-fix { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-top: 12px; padding: 9px 10px; border: 1px dashed var(--line); border-radius: 9px; background: var(--panel); font-size: .76rem; color: var(--text-soft); }
+.stk-fix b { color: var(--cream); }
+.stk-fix select { padding: 5px 8px; border-radius: 7px; border: 1px solid var(--line); background: var(--panel); color: var(--text); font-size: .78rem; }
+
 /* 熟成の分布 */
 .stk-aging { margin-top: 14px; }
 .stk-sub-h { font-size: .72rem; letter-spacing: .12em; color: var(--text-soft); margin-bottom: 6px; }
@@ -1860,6 +1865,9 @@ table.ref { min-width: 480px; }
 .stk-name { font-weight: 700; }
 .stk-brand { font-weight: 400; color: var(--text-soft); font-size: .8rem; margin-left: 8px; }
 .stk-sub { font-size: .76rem; color: var(--text-soft); margin-top: 2px; }
+/* 行ごとの産地。未設定のときだけ点線にして、直すべき箇所が分かるようにする */
+.stk-csel { margin-top: 5px; max-width: 100%; padding: 4px 8px; border-radius: 7px; border: 1px solid var(--line); background: var(--panel-2); color: var(--text); font-size: .74rem; }
+.stk-csel.none { border-style: dashed; color: var(--muted); }
 .stk-qty { display: flex; align-items: center; gap: 8px; }
 .stk-btn { width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--line); background: var(--panel-2); color: var(--cream); cursor: pointer; font-size: 1rem; line-height: 1; }
 .stk-n { min-width: 22px; text-align: center; font-weight: 700; font-variant-numeric: tabular-nums; }
@@ -1872,7 +1880,8 @@ table.ref { min-width: 480px; }
 .stk-ai-status.warn { color: var(--gold-bright); }
 .stk-ai-status.error { color: var(--ember); }
 .stk-form { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
-.stk-form input { padding: 9px 10px; border-radius: 8px; border: 1px solid var(--line); background: var(--panel); color: var(--cream); font-size: .88rem; }
+.stk-form input, .stk-form select { padding: 9px 10px; border-radius: 8px; border: 1px solid var(--line); background: var(--panel); color: var(--cream); font-size: .88rem; }
+#stkCountry { flex: 1 1 120px; }
 #stkName { flex: 2 1 180px; } #stkBrand { flex: 1 1 120px; }
 #stkQty { width: 64px; } #stkDate { width: 140px; } #stkPrice { width: 120px; }
 
