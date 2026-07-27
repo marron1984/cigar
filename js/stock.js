@@ -41,6 +41,90 @@ const STOCK = (() => {
     return `熟成 ${Math.floor(months / 12)}年${months % 12 ? months % 12 + "ヶ月" : ""}`;
   }
 
+  /* 熟成の月数（表示用のラベルではなく数値がほしいとき） */
+  function agingMonths(dateStr) {
+    if (!dateStr) return 0;
+    const from = new Date(dateStr + "T12:00");
+    if (isNaN(from)) return 0;
+    const now = new Date();
+    let m = (now.getFullYear() - from.getFullYear()) * 12 + (now.getMonth() - from.getMonth());
+    if (now.getDate() < from.getDate()) m--;
+    return Math.max(0, m);
+  }
+
+  /* 産地ごとの色。ラッパーの色合いを思わせる並びにしている */
+  const COUNTRY_TONE = {
+    "キューバ": "#8d4f2a", "ドミニカ": "#a9713c", "ドミニカ共和国": "#a9713c",
+    "ニカラグア": "#6f3f22", "ホンジュラス": "#b5763a", "メキシコ": "#4a2c18",
+    "ブラジル": "#5c3a1e", "エクアドル": "#c08a4e", "アメリカ": "#8a6a45",
+    "ペルー": "#7a5230", "コロンビア": "#9c6238", "フィリピン": "#a8814a",
+    "インドネシア": "#6b4526", "カメルーン": "#94643a", "アルゼンチン": "#7f5a35"
+  };
+  const toneOf = (c) => COUNTRY_TONE[c] || "#8a6a45";
+
+  /* 在庫の中身を見える形にする（本数・棚・産地の内訳・熟成の分布） */
+  function vizHtml(totalQty) {
+    if (!totalQty) return "";
+    const kinds = items.filter(it => (Number(it.qty) || 0) > 0).length;
+    const value = items.reduce((s, it) => s + (Number(it.price) || 0) * (Number(it.qty) || 0), 0);
+    const oldest = items.reduce((m, it) => Math.max(m, agingMonths(it.date)), 0);
+
+    /* 棚：1本ずつ並べる。多いときは上限を設けて残数を添える */
+    const MAX_STICKS = 60;
+    const sticks = [];
+    items.forEach(it => {
+      const n = Math.min(Number(it.qty) || 0, MAX_STICKS);
+      for (let i = 0; i < n && sticks.length < MAX_STICKS; i++) {
+        sticks.push(`<span class="stk-stick" style="--tone:${toneOf(it.country)};--i:${sticks.length}" title="${esc(it.name)}"></span>`);
+      }
+    });
+    const restCount = totalQty - sticks.length;
+
+    /* 産地の内訳 */
+    const byCountry = {};
+    items.forEach(it => {
+      const k = it.country || "産地未設定";
+      byCountry[k] = (byCountry[k] || 0) + (Number(it.qty) || 0);
+    });
+    const cList = Object.entries(byCountry).filter(([, n]) => n > 0).sort((a, b) => b[1] - a[1]);
+    const bar = cList.map(([k, n]) =>
+      `<span class="stk-seg" style="width:${(n / totalQty * 100).toFixed(2)}%;background:${toneOf(k)}" title="${esc(k)} ${n}本"></span>`).join("");
+    const legend = cList.map(([k, n]) =>
+      `<span class="stk-lg"><i style="background:${toneOf(k)}"></i>${esc(k)} <b>${n}</b></span>`).join("");
+
+    /* 熟成の分布 */
+    const buckets = [
+      { l: "6ヶ月未満", n: 0 }, { l: "6ヶ月〜1年", n: 0 },
+      { l: "1〜2年", n: 0 }, { l: "2年以上", n: 0 }
+    ];
+    items.forEach(it => {
+      const m = agingMonths(it.date), n = Number(it.qty) || 0;
+      if (!n) return;
+      if (m < 6) buckets[0].n += n; else if (m < 12) buckets[1].n += n;
+      else if (m < 24) buckets[2].n += n; else buckets[3].n += n;
+    });
+    const maxB = Math.max(...buckets.map(b => b.n), 1);
+    const aging = buckets.map(b => `
+      <div class="stk-age">
+        <span class="sa-l">${b.l}</span>
+        <span class="sa-t"><span class="sa-f" style="width:${(b.n / maxB * 100).toFixed(1)}%"></span></span>
+        <span class="sa-n">${b.n}</span>
+      </div>`).join("");
+
+    return `
+      <div class="stk-viz">
+        <div class="stk-figs">
+          <div class="sf"><span class="sf-v">${totalQty}</span><span class="sf-l">本</span></div>
+          <div class="sf"><span class="sf-v">${kinds}</span><span class="sf-l">銘柄</span></div>
+          ${value ? `<div class="sf"><span class="sf-v">¥${value.toLocaleString()}</span><span class="sf-l">在庫金額</span></div>` : ""}
+          ${oldest ? `<div class="sf"><span class="sf-v">${oldest < 12 ? oldest + "ヶ月" : Math.floor(oldest / 12) + "年"}</span><span class="sf-l">最長の熟成</span></div>` : ""}
+        </div>
+        <div class="stk-rack" aria-hidden="true">${sticks.join("")}${restCount > 0 ? `<span class="stk-rest">＋${restCount}</span>` : ""}</div>
+        ${cList.length ? `<div class="stk-bar">${bar}</div><div class="stk-legend">${legend}</div>` : ""}
+        <div class="stk-aging"><div class="stk-sub-h">熟成の内訳</div>${aging}</div>
+      </div>`;
+  }
+
   function render() {
     const body = q("#stockBody");
     const cnt = q("#stockCount");
@@ -64,6 +148,7 @@ const STOCK = (() => {
         </div>
       </div>`).join("");
     body.innerHTML = `
+      ${vizHtml(totalQty)}
       ${items.length ? `<div class="stk-list">${rows}</div>` : `<p class="photo-hint" style="margin:10px 0">在庫はまだありません。買った葉巻を登録しておくと、熟成期間がひと目で分かります。</p>`}
       <div class="stk-form">
         ${visionOn ? `
