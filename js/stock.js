@@ -6,6 +6,7 @@
 const STOCK = (() => {
   const KEY = "cigar_stock_v1";
   const q = (s) => document.querySelector(s);
+  const qa = (s) => [...document.querySelectorAll(s)];
   const esc = (s) => String(s == null ? "" : s)
     .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
 
@@ -94,8 +95,9 @@ const STOCK = (() => {
     });
     const cList = Object.entries(byCountry).filter(([, n]) => n > 0).sort((a, b) => b[1] - a[1]);
     const unset = byCountry["産地未設定"] || 0;
+    /* 凡例はそのまま産地の絞り込みボタンにする */
     const legend = cList.map(([k, n]) =>
-      `<span class="stk-lg"><i style="background:${toneOf(k)}"></i>${esc(k)} <b>${n}</b>（${Math.round(n / totalQty * 100)}%）</span>`).join("");
+      `<button type="button" class="stk-lg${sCountry === k ? " on" : ""}" data-fc="${esc(k)}" title="${esc(k)}だけを表示"><i style="background:${toneOf(k)}"></i>${esc(k)} <b>${n}</b>（${Math.round(n / totalQty * 100)}%）</button>`).join("");
 
     /* 花：在庫を中心から放射状に並べる。同じ産地を隣り合わせに置くので、
        1枚＝等しい角度のまま、産地別の円グラフとしても読める。
@@ -179,16 +181,67 @@ const STOCK = (() => {
       </div>`;
   }
 
-  function render() {
-    const body = q("#stockBody");
-    const cnt = q("#stockCount");
-    if (!body) return;
-    const totalQty = items.reduce((s, it) => s + (Number(it.qty) || 0), 0);
-    if (cnt) cnt.textContent = `${totalQty} 本`;
-    const rows = items.map(it => `
+  /* ---------- 探すための絞り込み ---------- */
+  let sQuery = "";          // 検索語
+  let sSort = "recent";     // 並び順
+  let sCountry = "";        // 産地での絞り込み（花の凡例をタップして切り替える）
+  let hideZero = true;      // 在庫0を隠すか
+
+  const kana = (s) => String(s || "").replace(/[ァ-ン]/g, c => String.fromCharCode(c.charCodeAt(0) - 0x60));
+  const key = (s) => kana(String(s || "").toLowerCase().replace(/\s+/g, ""));
+
+  /* 検索語は 銘柄名・ブランド・産地 のどれかに当たれば通す。
+     カタカナ／ひらがなの違いは無視する（「もんて」でモンテクリストが出る）。 */
+  function match(it) {
+    if (sCountry && (it.country || "産地未設定") !== sCountry) return false;
+    if (hideZero && !(Number(it.qty) > 0)) return false;
+    if (!sQuery) return true;
+    const hay = key(it.name) + " " + key(it.brand) + " " + key(it.country);
+    return key(sQuery).split(/\s+/).filter(Boolean).every(w => hay.includes(w));
+  }
+
+  const SORTS = {
+    recent: ["追加した順", null],
+    aged: ["熟成が長い順", (a, b) => agingMonths(b.date) - agingMonths(a.date)],
+    fresh: ["熟成が短い順", (a, b) => agingMonths(a.date) - agingMonths(b.date)],
+    name: ["銘柄名順", (a, b) => String(a.name).localeCompare(String(b.name), "ja")],
+    country: ["産地順", (a, b) => String(a.country || "ん").localeCompare(String(b.country || "ん"), "ja") || String(a.name).localeCompare(String(b.name), "ja")],
+    qty: ["本数が多い順", (a, b) => (Number(b.qty) || 0) - (Number(a.qty) || 0)],
+    price: ["価格が高い順", (a, b) => (Number(b.price) || 0) - (Number(a.price) || 0)]
+  };
+
+  function visible() {
+    const out = items.filter(match);
+    const cmp = SORTS[sSort] && SORTS[sSort][1];
+    return cmp ? out.slice().sort(cmp) : out;
+  }
+
+  /* 一覧だけを描き直す。検索欄に文字を打つたびに全体を描き直すと
+     入力欄からフォーカスが外れてしまうため、ここだけ差し替える。 */
+  function renderList() {
+    const list = q("#stkList"), hits = q("#stkHits");
+    if (!list) return;
+    const shown = visible();
+    const zeroHidden = hideZero ? items.filter(it => !(Number(it.qty) > 0)).length : 0;
+    if (hits) {
+      const qty = shown.reduce((s, it) => s + (Number(it.qty) || 0), 0);
+      const filtered = sQuery || sCountry;
+      hits.innerHTML = (filtered
+        ? `<b>${shown.length}銘柄・${qty}本</b> が該当${sCountry ? `（産地：${esc(sCountry)}）` : ""}`
+        : `${shown.length}銘柄・${qty}本`)
+        + (zeroHidden ? `<button type="button" class="stk-showzero" id="stkShowZero">在庫0の${zeroHidden}件を表示</button>` : "")
+        + (filtered ? `<button type="button" class="stk-clear" id="stkClear">絞り込みを解除</button>` : "");
+    }
+    list.innerHTML = shown.length ? shown.map(rowHtml).join("")
+      : `<p class="photo-hint" style="margin:10px 0">該当する在庫がありません。${sQuery || sCountry ? "検索や絞り込みを解除してみてください。" : ""}</p>`;
+    qa(".stk-lg").forEach(b => b.classList.toggle("on", b.dataset.fc === sCountry && !!sCountry));
+  }
+
+  function rowHtml(it) {
+    return `
       <div class="stk-row">
         <div class="stk-main">
-          <div class="stk-name">${esc(it.name)}${it.brand ? `<span class="stk-brand">${esc(it.brand)}</span>` : ""}</div>
+          <div class="stk-name"><i class="stk-dot" style="background:${toneOf(it.country || "産地未設定")}" aria-hidden="true"></i>${esc(it.name)}${it.brand ? `<span class="stk-brand">${esc(it.brand)}</span>` : ""}</div>
           <div class="stk-sub">${it.date ? `購入 ${esc(it.date)} · <b>${esc(agingLabel(it.date))}</b>` : ""}${it.price ? ` · ¥${Number(it.price).toLocaleString()}/本` : ""}</div>
           <select class="stk-csel${it.country ? "" : " none"}" data-scountry="${it.id}" title="産地（変えるとグラフに反映されます）">${countryOptions(it.country || "")}</select>
         </div>
@@ -201,10 +254,27 @@ const STOCK = (() => {
           <button type="button" class="btn btn-sm btn-ghost" data-ssmoke="${it.id}">🔥 吸う</button>
           <button type="button" class="btn btn-sm btn-danger" data-sdel="${it.id}">削除</button>
         </div>
-      </div>`).join("");
+      </div>`;
+  }
+
+  function render() {
+    const body = q("#stockBody");
+    const cnt = q("#stockCount");
+    if (!body) return;
+    const totalQty = items.reduce((s, it) => s + (Number(it.qty) || 0), 0);
+    if (cnt) cnt.textContent = `${totalQty} 本`;
     body.innerHTML = `
       ${vizHtml(totalQty)}
-      ${items.length ? `<div class="stk-list">${rows}</div>` : `<p class="photo-hint" style="margin:10px 0">在庫はまだありません。買った葉巻を登録しておくと、熟成期間がひと目で分かります。</p>`}
+      ${items.length ? `
+      <div class="stk-tools">
+        <input type="search" id="stkSearch" placeholder="🔍 銘柄・ブランド・産地で探す" value="${esc(sQuery)}" autocomplete="off">
+        <select id="stkSort" title="並び替え">
+          ${Object.entries(SORTS).map(([k, v]) => `<option value="${k}"${sSort === k ? " selected" : ""}>${v[0]}</option>`).join("")}
+        </select>
+      </div>
+      <div class="stk-hits" id="stkHits"></div>
+      <div class="stk-list" id="stkList"></div>`
+      : `<p class="photo-hint" style="margin:10px 0">在庫はまだありません。買った葉巻を登録しておくと、熟成期間がひと目で分かります。</p>`}
       <div class="stk-form">
         ${visionOn ? `
         <div class="stk-ai">
@@ -220,7 +290,8 @@ const STOCK = (() => {
         <input type="number" id="stkPrice" min="0" placeholder="1本の価格（任意）">
         <button type="button" class="btn btn-sm btn-primary" id="stkAdd">＋ 在庫に追加</button>
       </div>
-      <div class="photo-hint">${visionOn ? "箱やバンドの写真を選ぶと、銘柄名とブランドをAIが読み取って入れます（入力済みの欄は上書きしません）。<br>" : ""}「🔥 吸う」で在庫が1本減り、記録ノートのフォームが銘柄入りで開きます。</div>`;
+      <div class="photo-hint">${visionOn ? "箱やバンドの写真を選ぶと、銘柄名とブランドをAIが読み取って入れます（入力済みの欄は上書きしません）。<br>" : ""}「🔥 吸う」で在庫が1本減り、記録ノートのフォームが銘柄入りで開きます。産地の色の凡例をタップすると、その産地だけを表示します。</div>`;
+    renderList();
     wire();
   }
 
@@ -320,8 +391,16 @@ const STOCK = (() => {
     const body = q("#stockBody");
     if (!body || body.dataset.wired === "1") return;
     body.dataset.wired = "1";
-    /* 産地の変更（行ごとのプルダウン） */
+    /* 検索は打つたびに一覧だけ描き直す（入力欄のフォーカスを保つため） */
+    body.addEventListener("input", (e) => {
+      if (!e.target.closest("#stkSearch")) return;
+      sQuery = e.target.value;
+      renderList();
+    });
     body.addEventListener("change", (e) => {
+      /* 並び替え */
+      if (e.target.closest("#stkSort")) { sSort = e.target.value; renderList(); return; }
+      /* 産地の変更（行ごとのプルダウン） */
       const sel = e.target.closest("[data-scountry]");
       if (!sel) return;
       const it = items.find(x => x.id === sel.dataset.scountry);
@@ -330,6 +409,15 @@ const STOCK = (() => {
       save(); render();
     });
     body.addEventListener("click", (e) => {
+      /* 産地の凡例をタップして、その産地だけを表示 */
+      const chip = e.target.closest("[data-fc]");
+      if (chip) { sCountry = (sCountry === chip.dataset.fc) ? "" : chip.dataset.fc; renderList(); return; }
+      if (e.target.closest("#stkShowZero")) { hideZero = false; renderList(); return; }
+      if (e.target.closest("#stkClear")) {
+        sQuery = ""; sCountry = "";
+        const s = q("#stkSearch"); if (s) s.value = "";
+        renderList(); return;
+      }
       /* 産地未設定をまとめて設定 */
       if (e.target.closest("#stkFixApply")) {
         const to = (q("#stkFixTo") || {}).value || "";
@@ -368,9 +456,21 @@ const STOCK = (() => {
     });
   }
 
+  /* 前回開いていたなら開いた状態で出す（吸うたびに開き直す手間をなくす） */
+  const OPEN_KEY = "cigar_stock_open";
+  function wirePanel() {
+    const p = q("#stockPanel");
+    if (!p) return;
+    try { if (localStorage.getItem(OPEN_KEY) === "1") p.open = true; } catch (e) {}
+    p.addEventListener("toggle", () => {
+      try { localStorage.setItem(OPEN_KEY, p.open ? "1" : "0"); } catch (e) {}
+    });
+  }
+
   function init() {
     if (!q("#stockPanel")) return;
     load();
+    wirePanel();
     wireList();     // 一覧のクリック監視は最初に一度だけ
     render();
   }

@@ -1858,9 +1858,11 @@ table.ref { min-width: 480px; }
 @keyframes stkBloom { from { transform: rotate(var(--a, 0deg)) scaleY(.06); opacity: 0; } }
 @keyframes stkGrow { from { width: 0; } }
 
-/* 産地の内訳（花の色の凡例） */
-.stk-legend { display: flex; flex-wrap: wrap; justify-content: center; gap: 4px 12px; margin-top: 10px; font-size: .72rem; color: var(--text-soft); }
-.stk-lg { display: inline-flex; align-items: center; gap: 5px; }
+/* 産地の内訳（花の色の凡例。そのまま絞り込みボタンになっている） */
+.stk-legend { display: flex; flex-wrap: wrap; justify-content: center; gap: 5px; margin-top: 10px; font-size: .72rem; color: var(--text-soft); }
+.stk-lg { display: inline-flex; align-items: center; gap: 5px; padding: 3px 9px; border-radius: 999px; border: 1px solid transparent; background: none; font: inherit; color: inherit; cursor: pointer; transition: background var(--dur-fast) var(--ease), border-color var(--dur-fast) var(--ease); }
+.stk-lg:hover { background: var(--panel); border-color: var(--line-soft); }
+.stk-lg.on { background: var(--panel); border-color: var(--gold); color: var(--cream); }
 .stk-lg i { width: 9px; height: 9px; border-radius: 2px; display: inline-block; }
 .stk-lg b { color: var(--cream); font-variant-numeric: tabular-nums; }
 
@@ -1881,7 +1883,23 @@ table.ref { min-width: 480px; }
   .stk-petal, .sa-f { animation: none; }
 }
 
+/* 探すための道具立て（検索・並び替え） */
+.stk-tools { display: flex; flex-wrap: wrap; gap: 8px; margin: 14px 0 8px; }
+.stk-tools input[type="search"] { flex: 3 1 180px; min-width: 0; padding: 9px 12px; border-radius: 999px; border: 1px solid var(--line); background: var(--panel); color: var(--text); font-size: .86rem; }
+.stk-tools select { flex: 1 1 120px; padding: 9px 10px; border-radius: 999px; border: 1px solid var(--line); background: var(--panel); color: var(--text); font-size: .8rem; }
+/* スマホでは検索欄を1行使いにして、説明文が切れないようにする */
+@media (max-width: 520px) {
+  .stk-tools input[type="search"] { flex: 1 1 100%; }
+  .stk-tools select { flex: 0 1 auto; min-width: 150px; }
+}
+.stk-hits { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; font-size: .74rem; color: var(--text-soft); margin-bottom: 8px; }
+.stk-hits b { color: var(--cream); }
+.stk-showzero, .stk-clear { border: 1px solid var(--line); background: var(--panel); color: var(--text-soft); border-radius: 999px; padding: 3px 10px; font-size: .72rem; font-family: var(--sans); cursor: pointer; }
+.stk-showzero:hover, .stk-clear:hover { border-color: var(--gold); color: var(--cream); }
+
 .stk-list { display: flex; flex-direction: column; gap: 8px; margin-bottom: 14px; }
+/* 行頭の点は産地の色。花の色と同じなので、一覧でも産地が目で追える */
+.stk-dot { width: 8px; height: 8px; border-radius: 50%; display: inline-block; margin-right: 7px; vertical-align: 1px; }
 .stk-row { display: flex; align-items: center; gap: 12px; border: 1px solid var(--line-soft); border-radius: 10px; padding: 10px 12px; flex-wrap: wrap; }
 .stk-main { flex: 1 1 200px; min-width: 0; }
 .stk-name { font-weight: 700; }
