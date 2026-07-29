@@ -45,10 +45,10 @@ const NOTE = (() => {
           try { resolve(canvas.toDataURL("image/jpeg", quality)); }
           catch (err) { reject(err); }
         };
-        img.onerror = () => reject(new Error("画像を読み込めませんでした"));
+        img.onerror = () => reject(new Error(T("画像を読み込めませんでした")));
         img.src = reader.result;
       };
-      reader.onerror = () => reject(new Error("ファイルを読み込めませんでした"));
+      reader.onerror = () => reject(new Error(T("ファイルを読み込めませんでした")));
       reader.readAsDataURL(file);
     });
   }
@@ -77,7 +77,7 @@ const NOTE = (() => {
       const r = fn(tx.objectStore(DB_STORE));
       tx.oncomplete = () => resolve(r && r.result);
       tx.onerror = () => reject(tx.error);
-      tx.onabort = () => reject(tx.error || new Error("保存が中断されました"));
+      tx.onabort = () => reject(tx.error || new Error(T("保存が中断されました")));
     });
   }
   const idbAll = () => idbReq("readonly", s => s.getAll());
@@ -123,7 +123,7 @@ const NOTE = (() => {
     if (usingIDB) {
       try { await idbPut(entry); writeBackup(entries); return true; }
       catch (e) {
-        alert("保存できませんでした。端末の空き容量が不足している可能性があります。不要な写真や記録を削除してからお試しください。");
+        alert(T("保存できませんでした。端末の空き容量が不足している可能性があります。不要な写真や記録を削除してからお試しください。"));
         return false;
       }
     }
@@ -136,7 +136,7 @@ const NOTE = (() => {
   async function persistReplaceAll(list) {
     if (usingIDB) {
       try { await idbReplaceAll(list); writeBackup(list); return true; }
-      catch (e) { alert("保存できませんでした。端末の空き容量が不足している可能性があります。"); return false; }
+      catch (e) { alert(T("保存できませんでした。端末の空き容量が不足している可能性があります。")); return false; }
     }
     return save();
   }
@@ -200,7 +200,7 @@ const NOTE = (() => {
   function save() {
     try { localStorage.setItem(KEY, JSON.stringify(entries)); return true; }
     catch (e) {
-      alert("保存できませんでした。写真の枚数が多いと端末の保存容量を超えることがあります。写真を減らすか、不要な記録を削除してからお試しください。");
+      alert(T("保存できませんでした。写真の枚数が多いと端末の保存容量を超えることがあります。写真を減らすか、不要な記録を削除してからお試しください。"));
       return false;
     }
   }
@@ -304,25 +304,25 @@ const NOTE = (() => {
     if (bSel && !bSel.dataset.filled) {
       bSel.innerHTML = `<option value="">—</option>` +
         brandGroups().map(g =>
-          `<optgroup label="${escN(g.country)}">` +
+          `<optgroup label="${escN(I18N.country(g.country))}">` +
           g.brands.map(n => `<option>${escN(n)}</option>`).join("") +
           `</optgroup>`
         ).join("") +
-        `<option value="__other">その他（自由入力）</option>`;
+        `<option value="__other">${escN(T("その他（自由入力）"))}</option>`;
       bSel.dataset.filled = "1";
     }
     if (cSel && !cSel.dataset.filled) {
       // 産地はブランドと同じ国ぞろえ（フィリピン等も含む）＋自由入力
       const countries = brandGroups().map(g => g.country).filter(c => c && c !== "その他");
       cSel.innerHTML = `<option value="">—</option>` +
-        countries.map(c => `<option>${escN(c)}</option>`).join("") +
-        `<option value="__other">その他（自由入力）</option>`;
+        countries.map(c => `<option value="${escN(c)}">${escN(I18N.country(c))}</option>`).join("") +
+        `<option value="__other">${escN(T("その他（自由入力）"))}</option>`;
       cSel.dataset.filled = "1";
     }
     if (vSel && !vSel.dataset.filled) {
       vSel.innerHTML = `<option value="">—</option>` +
-        CIGAR_DATA.vitolas.map(v => `<option>${escN(v.ja)}</option>`).join("") +
-        `<option>その他</option>`;
+        CIGAR_DATA.vitolas.map(v => `<option value="${escN(v.ja)}">${escN(I18N.vitola(v.ja))}</option>`).join("") +
+        `<option value="その他">${escN(T("その他"))}</option>`;
       vSel.dataset.filled = "1";
     }
   }
@@ -331,7 +331,7 @@ const NOTE = (() => {
   function openModal(entry) {
     fillSelects();
     const isEdit = !!entry;
-    q("#modalTitle").textContent = isEdit ? "記録を編集する" : "葉巻を記録する";
+    q("#modalTitle").textContent = isEdit ? T("記録を編集する") : T("葉巻を記録する");
     q("#entryId").value = isEdit ? entry.id : "";
     q("#fName").value = isEdit ? entry.name : "";
     setBrand(isEdit ? (entry.brand || "") : "");
@@ -379,21 +379,21 @@ const NOTE = (() => {
   function renderPhotoPreviews() {
     const box = q("#photoPreviews");
     box.innerHTML = currentPhotos.map((src, i) =>
-      `<div class="photo-thumb"><img src="${src}" alt="写真${i + 1}"><button type="button" class="rm" data-rmphoto="${i}" title="削除">×</button></div>`
+      `<div class="photo-thumb"><img src="${src}" alt="${escN(T("写真{n}", { n: i + 1 }))}"><button type="button" class="rm" data-rmphoto="${i}" title="${escN(T("削除"))}">×</button></div>`
     ).join("");
   }
 
   /* ファイル選択→リサイズ→プレビューへ追加 */
   async function addPhotos(files) {
     const remaining = MAX_PHOTOS - currentPhotos.length;
-    if (remaining <= 0) { alert(`写真は最大${MAX_PHOTOS}枚までです。`); return; }
+    if (remaining <= 0) { alert(T("写真は最大{n}枚までです。", { n: MAX_PHOTOS })); return; }
     const list = [...files].slice(0, remaining);
-    if (files.length > remaining) alert(`写真は最大${MAX_PHOTOS}枚まで。${remaining}枚のみ追加しました。`);
+    if (files.length > remaining) alert(T("写真は最大{max}枚まで。{n}枚のみ追加しました。", { max: MAX_PHOTOS, n: remaining }));
     const before = currentPhotos.length;
     for (const f of list) {
       if (!f.type.startsWith("image/")) continue;
       try { currentPhotos.push(await resizeImage(f)); }
-      catch (err) { alert("画像の処理に失敗しました：" + err.message); }
+      catch (err) { alert(T("画像の処理に失敗しました：{msg}", { msg: err.message })); }
     }
     renderPhotoPreviews();
     // 1枚目の写真を追加したら、AIで銘柄などを自動読み取り（未入力の欄だけ埋める）
@@ -433,32 +433,33 @@ const NOTE = (() => {
   // 認識結果をフォームへ反映（ユーザー入力済みの欄は上書きしない）
   function applyVision(r) {
     const filled = [];
-    if (r.name && !q("#fName").value.trim()) { q("#fName").value = r.name; filled.push("銘柄名"); }
-    if (r.brand && !getBrand()) { applyBrand(r.brand); filled.push("ブランド"); }
+    if (r.name && !q("#fName").value.trim()) { q("#fName").value = r.name; filled.push(T("銘柄名")); }
+    if (r.brand && !getBrand()) { applyBrand(r.brand); filled.push(T("ブランド")); }
     const cSel = q("#fCountry");
-    if (r.country && !getCountry()) { setCountry(matchOption(cSel, r.country) || r.country); filled.push("産地"); }
+    if (r.country && !getCountry()) { setCountry(matchOption(cSel, r.country) || r.country); filled.push(T("産地")); }
     const vSel = q("#fVitola");
-    if (r.vitola && vSel && !vSel.value) { const m = matchOption(vSel, r.vitola); if (m) { vSel.value = m; filled.push("サイズ"); } }
+    if (r.vitola && vSel && !vSel.value) { const m = matchOption(vSel, r.vitola); if (m) { vSel.value = m; filled.push(T("サイズ")); } }
     if (r.strength && !q("#fStrength").value) {
       const s = normalizeStrength(r.strength);
-      if (["ライト", "ミディアムライト", "ミディアム", "ミディアムフル", "フル"].includes(s)) { setStrength(s); filled.push("強さ"); }
+      if (["ライト", "ミディアムライト", "ミディアム", "ミディアムフル", "フル"].includes(s)) { setStrength(s); filled.push(T("強さ")); }
     }
     // 結果メッセージ
     const low = r.confidence === "low";
     if (!filled.length) {
-      setVisionStatus("warn", "写真からは判別できませんでした。お手数ですが手入力でお願いします。");
+      setVisionStatus("warn", T("写真からは判別できませんでした。お手数ですが手入力でお願いします。"));
     } else {
-      const lead = low ? "自信は高くありませんが、" : "";
+      const what = filled.join(I18N.isEn ? " and " : "・");
       setVisionStatus(low ? "warn" : "ok",
-        `✓ ${lead}${filled.join("・")}を入力しました。念のためご確認ください。`);
+        low ? T("✓ 自信は高くありませんが、{what}を入力しました。念のためご確認ください。", { what })
+            : T("✓ {what}を入力しました。念のためご確認ください。", { what }));
     }
   }
   async function runVision(src) {
     if (!visionOn || visionBusy) return;
     if (!src) src = currentPhotos[0];
-    if (!src) { setVisionStatus("warn", "先に写真を追加してください。"); return; }
+    if (!src) { setVisionStatus("warn", T("先に写真を追加してください。")); return; }
     visionBusy = true; setAiBusy(true);
-    setVisionStatus("loading", "AIが写真を読み取っています…（数秒かかります）");
+    setVisionStatus("loading", T("AIが写真を読み取っています…（数秒かかります）"));
     try {
       const hints = {
         countries: (CIGAR_DATA.countries || []).map(c => c.name_ja),
@@ -468,7 +469,7 @@ const NOTE = (() => {
       const r = await VISION.identify(src, hints);
       applyVision(r);
     } catch (err) {
-      setVisionStatus("error", "読み取れませんでした：" + (err.message || "エラー"));
+      setVisionStatus("error", T("読み取れませんでした：{msg}", { msg: err.message || T("エラー") }));
     } finally {
       visionBusy = false; setAiBusy(false);
     }
@@ -520,10 +521,10 @@ const NOTE = (() => {
   }
 
   /* ---------- 星入力 ---------- */
-  const RATING_WORDS = { 0: "タップで評価", 1: "イマイチ", 2: "まずまず", 3: "良い", 4: "とても良い", 5: "最高の一本" };
+  const RATING_WORDS = { 0: "タップで評価", 1: "イマイチ", 2: "まずまず", 3: "良い", 4: "とても良い", 5: "最高の一本" };   // 表示時に T() を通す
   function ratingLabelText(n) {
-    if (!n) return "タップで評価（半個刻み）";
-    return `${n.toFixed(1)}／5　${RATING_WORDS[Math.round(n)] || ""}`;
+    if (!n) return T("タップで評価（半個刻み）");
+    return T("{n}／5　{word}", { n: n.toFixed(1), word: T(RATING_WORDS[Math.round(n)] || "") });
   }
   function setRating(n) {
     n = Math.max(0, Math.min(5, Number(n) || 0));
@@ -584,7 +585,7 @@ const NOTE = (() => {
     data.duration = Number(q("#fDuration").value) || null;
     if (!data.name) return;
     if (cloudOn && !authorName()) {
-      alert("共有モードでは、先に「記録者」にお名前を入力してください（その名前があなたの記録の目印になります）。");
+      alert(T("共有モードでは、先に「記録者」にお名前を入力してください（その名前があなたの記録の目印になります）。"));
       closeModal(); const ai = q("#authorName"); if (ai) ai.focus();
       return;
     }
@@ -607,19 +608,19 @@ const NOTE = (() => {
     // 共有DBへ書き込み（失敗しても手元の記録は残る）
     if (cloudOn && saved) {
       CLOUD.upsert(saved).catch(err => {
-        console.warn(err); alert("共有データベースへの保存に失敗しました。手元には保存されています。時間をおいて再度お試しください。");
+        console.warn(err); alert(T("共有データベースへの保存に失敗しました。手元には保存されています。時間をおいて再度お試しください。"));
       });
     }
   }
 
   function removeEntry(id) {
     const en = entries.find(x => x.id === id);
-    if (!confirm(`「${en ? en.name : "この記録"}」を削除しますか？`)) return;
+    if (!confirm(T("「{name}」を削除しますか？", { name: en ? en.name : T("この記録") }))) return;
     entries = entries.filter(x => x.id !== id);
     persistDelete(id);
     render();
     if (cloudOn) {
-      CLOUD.remove(id).catch(err => { console.warn(err); alert("共有データベースからの削除に失敗しました。時間をおいて再度お試しください。"); });
+      CLOUD.remove(id).catch(err => { console.warn(err); alert(T("共有データベースからの削除に失敗しました。時間をおいて再度お試しください。")); });
       // 共有リンクを発行していた場合は、そのコピーも削除（リンクを無効化）
       if (en && en.shareId) CLOUD.shareRemove(en.shareId).catch(() => {});
     }
@@ -657,16 +658,16 @@ const NOTE = (() => {
       <div class="ns-hero stat-box">
         <span class="ns-kicker">Records</span>
         <span class="sv">${entries.length}</span>
-        <span class="ns-unit">本</span>
-        <span class="sl">これまでに記録した葉巻</span>
+        <span class="ns-unit">${escN(T("本"))}</span>
+        <span class="sl">${escN(T("これまでに記録した葉巻"))}</span>
       </div>
       <div class="ns-row">
-        <div class="stat-box"><div class="sv">${avg}</div><div class="sl">平均評価</div></div>
-        <div class="stat-box"><div class="sv">${countries}</div><div class="sl">産地</div></div>
-        <div class="stat-box"><div class="sv">${places}</div><div class="sl">喫煙場所</div></div>
+        <div class="stat-box"><div class="sv">${avg}</div><div class="sl">${escN(T("平均評価"))}</div></div>
+        <div class="stat-box"><div class="sv">${countries}</div><div class="sl">${escN(T("産地", null, "stats"))}</div></div>
+        <div class="stat-box"><div class="sv">${places}</div><div class="sl">${escN(T("喫煙場所"))}</div></div>
       </div>
       <div class="ns-total stat-box">
-        <div class="sl">総額の記録</div>
+        <div class="sl">${escN(T("総額の記録"))}</div>
         <div class="sv">¥${spent.toLocaleString()}</div>
       </div>`;
     if (ins) renderInsights(ins);
@@ -692,13 +693,13 @@ const NOTE = (() => {
       mSpend[m] = (mSpend[m] || 0) + (Number(e.price) || 0);
     });
     const maxM = Math.max(1, ...months.map(m => mCount[m] || 0));
-    const monthChart = `<div class="ch-h">月別の本数（直近12か月）</div><div class="mchart">` +
+    const monthChart = `<div class="ch-h">${escN(T("月別の本数（直近12か月）"))}</div><div class="mchart">` +
       months.map(m => {
         const c = mCount[m] || 0;
         const h = Math.round(c / maxM * 72);
-        const lbl = Number(m.slice(5)) + "月";
+        const lbl = T("{n}月", { n: Number(m.slice(5)) });
         const tip = mSpend[m] ? `¥${mSpend[m].toLocaleString()}` : "";
-        return `<div class="mcol" title="${escN(m)}：${c}本 ${tip}">
+        return `<div class="mcol" title="${escN(m)}：${escN(T("{n}本", { n: c }))} ${tip}">
           <div class="mval">${c || ""}</div><div class="mbar" style="height:${Math.max(c ? 6 : 2, h)}px"></div><div class="mlbl">${lbl}</div></div>`;
       }).join("") + `</div>`;
 
@@ -708,14 +709,14 @@ const NOTE = (() => {
     const topC = Object.entries(byC).sort((a, b) => b[1] - a[1]).slice(0, 6);
     const maxC = Math.max(1, ...topC.map(x => x[1]));
     const countryChart = topC.length
-      ? `<div class="ch-h">よく吸う産地</div>` + topC.map(([k, v]) => hbar(k, v, maxC, "本")).join("") : "";
+      ? `<div class="ch-h">${escN(T("よく吸う産地"))}</div>` + topC.map(([k, v]) => hbar(I18N.country(k), v, maxC, T("本"))).join("") : "";
 
     // 評価の分布
     const byR = [0, 0, 0, 0, 0];
     entries.forEach(e => { const r = Math.round(Number(e.rating) || 0); if (r >= 1 && r <= 5) byR[r - 1]++; });
     const maxR = Math.max(1, ...byR);
     const ratingChart = byR.some(v => v)
-      ? `<div class="ch-h">評価の分布</div>` + [5, 4, 3, 2, 1].map(r => hbar("★" + r, byR[r - 1], maxR, "本")).join("") : "";
+      ? `<div class="ch-h">${escN(T("評価の分布"))}</div>` + [5, 4, 3, 2, 1].map(r => hbar("★" + r, byR[r - 1], maxR, T("本"))).join("") : "";
 
     // 喫煙時間（タイマー記録があるものだけ）
     const withDur = entries.filter(e => Number(e.duration) > 0);
@@ -727,13 +728,13 @@ const NOTE = (() => {
         (byV[k] = byV[k] || []).push(Number(e.duration));
       });
       const rows = Object.entries(byV).map(([k, arr]) =>
-        `<div class="dur-row">${escN(k)}：平均 <b>${Math.round(arr.reduce((s, x) => s + x, 0) / arr.length)}分</b>（${arr.length}回）</div>`).join("");
-      durBlock = `<div class="ch-h">喫煙時間（タイマー記録）</div>${rows}`;
+        T("<div class=\"dur-row\">{k}：平均 <b>{avg}分</b>（{n}回）</div>", { k: escN(I18N.vitola(k)), avg: Math.round(arr.reduce((s, x) => s + x, 0) / arr.length), n: arr.length })).join("");
+      durBlock = `<div class="ch-h">${escN(T("喫煙時間（タイマー記録）"))}</div>${rows}`;
     }
 
     ins.innerHTML = `
       <details class="insights">
-        <summary>📊 くわしい統計 <span class="ins-year">今年 ${yearCount}本目</span></summary>
+        <summary>${escN(T("📊 くわしい統計"))} <span class="ins-year">${escN(T("今年 {n}本目", { n: yearCount }))}</span></summary>
         <div class="ins-body">
           ${monthChart}
           <div class="ins-grid">
@@ -741,7 +742,7 @@ const NOTE = (() => {
             <div>${ratingChart}</div>
           </div>
           ${durBlock}
-          <div class="ins-actions"><button type="button" class="btn btn-sm btn-ghost" id="btnWrapped">🎁 年間まとめを見る</button></div>
+          <div class="ins-actions"><button type="button" class="btn btn-sm btn-ghost" id="btnWrapped">${escN(T("🎁 年間まとめを見る"))}</button></div>
         </div>
       </details>`;
     const bw = q("#btnWrapped");
@@ -771,7 +772,9 @@ const NOTE = (() => {
     const last = past.slice().sort((a, b) => entryTime(b) - entryTime(a))[0];
     const snip = (last.note || "").slice(0, 40);
     el.hidden = false;
-    el.innerHTML = `🔁 この銘柄は過去 <b>${past.length}回</b> 記録しています（前回 ${last.rating ? "★" + last.rating : "評価なし"}・${escN(fmtDate(last.date))}${snip ? "「" + escN(snip) + (last.note.length > 40 ? "…" : "") + "」" : ""}）`;
+    const quote = snip ? "「" + escN(snip) + (last.note.length > 40 ? "…" : "") + "」" : "";
+    el.innerHTML = T("🔁 この銘柄は過去 <b>{n}回</b> 記録しています（前回 {rating}・{date}{quote}）",
+      { n: past.length, rating: last.rating ? "★" + last.rating : T("評価なし"), date: escN(fmtDate(last.date)), quote });
   }
 
   /* ---------- 喫煙タイマー ---------- */
@@ -783,14 +786,14 @@ const NOTE = (() => {
   function timerReset(dur, writeInput = true) {
     timerStart = null; clearInterval(timerTick);
     const f = q("#fDuration"); if (f && writeInput) f.value = dur || "";
-    const b = q("#btnTimer"); if (b) { b.textContent = "▶ タイマー開始"; b.classList.remove("on"); }
+    const b = q("#btnTimer"); if (b) { b.textContent = T("▶ タイマー開始"); b.classList.remove("on"); }
     const d = q("#timerDisp"); if (d) d.textContent = "";
   }
   function timerToggle() {
     const b = q("#btnTimer"), d = q("#timerDisp");
     if (!timerStart) {
       timerStart = Date.now();
-      b.textContent = "⏸ 終了して記録"; b.classList.add("on");
+      b.textContent = T("⏸ 終了して記録"); b.classList.add("on");
       d.textContent = "0:00";
       timerTick = setInterval(() => { d.textContent = fmtElapsed(Date.now() - timerStart); }, 1000);
     } else {
@@ -803,7 +806,7 @@ const NOTE = (() => {
   async function aiCommentFor(id, btn) {
     const en = entries.find(x => x.id === id);
     if (!en) return;
-    const old = btn.textContent; btn.disabled = true; btn.textContent = "生成中…";
+    const old = btn.textContent; btn.disabled = true; btn.textContent = T("生成中…");
     try {
       const c = await VISION.comment({
         name: en.name, brand: en.brand, country: en.country, vitola: en.vitola,
@@ -815,7 +818,7 @@ const NOTE = (() => {
       render();
     } catch (err) {
       btn.disabled = false; btn.textContent = old;
-      alert("AI講評を生成できませんでした：" + (err.message || "エラー"));
+      alert(T("AI講評を生成できませんでした：{msg}", { msg: err.message || T("エラー") }));
     }
   }
 
@@ -871,7 +874,7 @@ const NOTE = (() => {
       x.fillStyle = "#d8a35a"; x.fillText(fiveStars, 80, py + 44); x.restore();
       py += 66;
     }
-    const meta = [en.country, en.vitola, normalizeStrength(en.strength), en.duration ? `${en.duration}分` : "", en.price ? `¥${Number(en.price).toLocaleString()}` : "", en.location]
+    const meta = [I18N.country(en.country), I18N.vitola(en.vitola), I18N.strength(normalizeStrength(en.strength)), en.duration ? T("{n}分", { n: en.duration }) : "", en.price ? `¥${Number(en.price).toLocaleString()}` : "", en.location]
       .filter(Boolean).join("　·　");
     if (meta) { x.fillStyle = "#bba98f"; x.font = "33px sans-serif"; py = wrapText(x, meta, 80, py + 26, W - 160, 44, 2); }
     if (en.note) {
@@ -882,27 +885,27 @@ const NOTE = (() => {
     if (en.date) x.fillText(fmtDate(en.date), 80, H - 92);
     x.textAlign = "right";
     x.fillStyle = "#cf9a5e"; x.font = `34px ${serif}`;
-    x.fillText("Cigar Cafe — 葉巻をたのしむ", W - 80, H - 92);
+    x.fillText(T("Cigar Cafe — 葉巻をたのしむ"), W - 80, H - 92);
     x.textAlign = "left";
     return c;
   }
   async function shareEntry(id, btn) {
     const en = entries.find(x => x.id === id);
     if (!en) return;
-    const old = btn.textContent; btn.disabled = true; btn.textContent = "作成中…";
+    const old = btn.textContent; btn.disabled = true; btn.textContent = T("作成中…");
     try {
       const canvas = await drawShareCard(en);
       const blob = await new Promise(r => canvas.toBlob(r, "image/png"));
       const file = new File([blob], "cigar-note.png", { type: "image/png" });
       if (navigator.canShare && navigator.canShare({ files: [file] })) {
-        await navigator.share({ files: [file], title: en.name || "葉巻の記録" });
+        await navigator.share({ files: [file], title: en.name || T("葉巻の記録") });
       } else {
         const a = document.createElement("a");
         a.href = URL.createObjectURL(blob); a.download = file.name; a.click();
         setTimeout(() => URL.revokeObjectURL(a.href), 5000);
       }
     } catch (err) {
-      if (!err || err.name !== "AbortError") alert("画像を作成できませんでした：" + (err && err.message || "エラー"));
+      if (!err || err.name !== "AbortError") alert(T("画像を作成できませんでした：{msg}", { msg: (err && err.message) || T("エラー") }));
     }
     btn.disabled = false; btn.textContent = old;
   }
@@ -944,11 +947,11 @@ const NOTE = (() => {
     const star = rt ? "★".repeat(full) + "☆".repeat(5 - full) + `（${rt}/5）` : "";
     return [
       `🚬 ${en.name}`,
-      [en.brand, en.country, en.vitola].filter(Boolean).join(" / "),
+      [en.brand, I18N.country(en.country), I18N.vitola(en.vitola)].filter(Boolean).join(" / "),
       star,
       [en.date ? fmtDate(en.date) : "", en.location ? "@" + en.location : ""].filter(Boolean).join(" "),
       en.note ? `「${en.note}」` : "",
-      "— Cigar Cafe 記録ノート",
+      T("— Cigar Cafe 記録ノート"),
     ].filter(Boolean).join("\n");
   }
   // テキストでシェア（LINE等に貼れる）
@@ -956,9 +959,10 @@ const NOTE = (() => {
   async function shareText(en, btn) {
     const jp = entryText(en);
     let out = jp, enText = "", failed = false;
-    if (visionOn) {
+    /* 英語版は本文がすでに英語なので、英訳を足す処理は行わない */
+    if (visionOn && !I18N.isEn) {
       const old = btn ? btn.textContent : "";
-      if (btn) { btn.disabled = true; btn.textContent = "英語を生成中…"; }
+      if (btn) { btn.disabled = true; btn.textContent = T("英語を生成中…"); }
       try { enText = await VISION.translate(jp); }
       catch (e) { failed = true; }
       if (btn) { btn.disabled = false; btn.textContent = old; }
@@ -972,13 +976,13 @@ const NOTE = (() => {
       catch (err) { if (err && err.name === "AbortError") return; }
     }
     const ok = await copyText(out);
-    const suffix = failed ? "（英語の付加に失敗したため日本語のみ。サーバー関数の更新が必要かもしれません）" : (enText ? "（日本語＋英語）" : "");
-    alert(ok ? `テキスト${suffix}をコピーしました。LINEやメールに貼り付けてください。` : out);
+    const suffix = failed ? T("（英語の付加に失敗したため日本語のみ。サーバー関数の更新が必要かもしれません）") : (enText ? T("（日本語＋英語）") : "");
+    alert(ok ? T("テキスト{suffix}をコピーしました。LINEやメールに貼り付けてください。", { suffix }) : out);
   }
   // リンクでシェア（クラウドに公開コピーを置き、URLを渡す）
   async function shareLink(en, btn) {
-    if (!cloudOn) { alert("リンクでのシェアには共有データベース（クラウド設定）が必要です。"); return; }
-    const old = btn.textContent; btn.disabled = true; btn.textContent = "リンク作成中…";
+    if (!cloudOn) { alert(T("リンクでのシェアには共有データベース（クラウド設定）が必要です。")); return; }
+    const old = btn.textContent; btn.disabled = true; btn.textContent = T("リンク作成中…");
     try {
       if (!en.shareId) { en.shareId = randomToken(); }
       // 公開コピーには内部管理用の情報を含めない
@@ -993,16 +997,16 @@ const NOTE = (() => {
       if (cloudOn) CLOUD.upsert(en).catch(() => {});
       const url = shareUrlFor(en.shareId);
       if (navigator.share) {
-        try { await navigator.share({ url, title: en.name || "葉巻の記録" }); btn.disabled = false; btn.textContent = old; return; }
+        try { await navigator.share({ url, title: en.name || T("葉巻の記録") }); btn.disabled = false; btn.textContent = old; return; }
         catch (err) { if (err && err.name === "AbortError") { btn.disabled = false; btn.textContent = old; return; } }
       }
-      alert((await copyText(url)) ? "共有リンクをコピーしました：\n" + url : "リンクを作成しました：\n" + url);
+      alert(T((await copyText(url)) ? "共有リンクをコピーしました：" : "リンクを作成しました：") + "\n" + url);
     } catch (err) {
       const msg = String(err && err.message || err);
       if (/does not exist|42P01/i.test(msg)) {
-        alert("共有リンク用のテーブルが未作成です。DATABASE_SETUP.md の「共有リンク」のSQLをSupabaseで実行してください。");
+        alert(T("共有リンク用のテーブルが未作成です。DATABASE_SETUP.md の「共有リンク」のSQLをSupabaseで実行してください。"));
       } else {
-        alert("共有リンクを作成できませんでした：" + msg);
+        alert(T("共有リンクを作成できませんでした：{msg}", { msg }));
       }
     }
     btn.disabled = false; btn.textContent = old;
@@ -1018,11 +1022,11 @@ const NOTE = (() => {
       ov.addEventListener("click", (ev) => { if (ev.target === ov) ov.classList.remove("open"); });
     }
     ov.innerHTML = `<div class="share-menu">
-      <div class="sm-title">「${escN(en.name)}」をシェア</div>
-      <button type="button" class="sm-item" data-sm="img">🖼 画像で共有<span class="sm-sub">写真つきのカード画像を作成して共有・保存</span></button>
-      <button type="button" class="sm-item" data-sm="link">🔗 リンクで共有<span class="sm-sub">URLを送るだけで、相手のブラウザで記録が見られる</span></button>
-      <button type="button" class="sm-item" data-sm="text">📝 テキストで共有<span class="sm-sub">${visionOn ? "日本語＋英語（AI自動翻訳）をコピー・共有" : "LINEやメールに貼れる文章をコピー"}</span></button>
-      <button type="button" class="btn btn-ghost btn-sm sm-cancel">キャンセル</button>
+      <div class="sm-title">${escN(T("「{name}」をシェア", { name: escN(en.name) }))}</div>
+      <button type="button" class="sm-item" data-sm="img">${escN(T("🖼 画像で共有"))}<span class="sm-sub">${escN(T("写真つきのカード画像を作成して共有・保存"))}</span></button>
+      <button type="button" class="sm-item" data-sm="link">${escN(T("🔗 リンクで共有"))}<span class="sm-sub">${escN(T("URLを送るだけで、相手のブラウザで記録が見られる"))}</span></button>
+      <button type="button" class="sm-item" data-sm="text">${escN(T("📝 テキストで共有"))}<span class="sm-sub">${escN(visionOn && !I18N.isEn ? T("日本語＋英語（AI自動翻訳）をコピー・共有") : T("LINEやメールに貼れる文章をコピー"))}</span></button>
+      <button type="button" class="btn btn-ghost btn-sm sm-cancel">${escN(T("キャンセル"))}</button>
     </div>`;
     ov.classList.add("open");
     ov.querySelector(".sm-cancel").addEventListener("click", () => ov.classList.remove("open"));
@@ -1040,26 +1044,26 @@ const NOTE = (() => {
     if (typeof CLOUD === "undefined" || !CLOUD.enabled) return;
     let ov = document.createElement("div");
     ov.className = "wrapped-ov open";
-    ov.innerHTML = `<div class="share-view"><p style="padding:30px;text-align:center">記録を読み込んでいます…</p></div>`;
+    ov.innerHTML = `<div class="share-view"><p style="padding:30px;text-align:center">${escN(T("記録を読み込んでいます…"))}</p></div>`;
     document.body.appendChild(ov);
     ov.addEventListener("click", (ev) => { if (ev.target === ov) ov.remove(); });
     let en = null;
     try { en = await CLOUD.shareGet(m[1]); } catch (err) { console.warn(err); }
     if (!en) {
-      ov.querySelector(".share-view").innerHTML = `<button type="button" class="modal-x" data-svx>×</button><p style="padding:26px;text-align:center">共有された記録が見つかりませんでした。<br>リンクが削除されたか、期限切れの可能性があります。</p>`;
+      ov.querySelector(".share-view").innerHTML = `<button type="button" class="modal-x" data-svx>×</button><p style="padding:26px;text-align:center">${escN(T("共有された記録が見つかりませんでした。"))}<br>${escN(T("リンクが削除されたか、期限切れの可能性があります。"))}</p>`;
       ov.querySelector("[data-svx]").addEventListener("click", () => ov.remove());
       return;
     }
     ov.querySelector(".share-view").innerHTML = `
-      <button type="button" class="modal-x" data-svx aria-label="閉じる">×</button>
+      <button type="button" class="modal-x" data-svx aria-label="${escN(T("閉じる"))}">×</button>
       <div class="wr-kicker">SHARED FROM CIGAR CAFE</div>
       <h3>${escN(en.name)}</h3>
       ${en.brand ? `<div class="sv-brand">${escN(en.brand)}</div>` : ""}
       ${en.rating ? `<div>${stars(en.rating)}</div>` : ""}
       <div class="e-meta" style="margin-top:10px">
-        ${en.country ? `<span class="chip">${escN(en.country)}</span>` : ""}
-        ${en.vitola ? `<span class="chip">${escN(en.vitola)}</span>` : ""}
-        ${en.strength ? `<span class="chip">${escN(normalizeStrength(en.strength))}</span>` : ""}
+        ${en.country ? `<span class="chip">${escN(I18N.country(en.country))}</span>` : ""}
+        ${en.vitola ? `<span class="chip">${escN(I18N.vitola(en.vitola))}</span>` : ""}
+        ${en.strength ? `<span class="chip">${escN(I18N.strength(normalizeStrength(en.strength)))}</span>` : ""}
         ${en.price ? `<span class="chip">¥${Number(en.price).toLocaleString()}</span>` : ""}
         ${en.location ? `<span class="chip">${escN(en.location)}</span>` : ""}
         ${en.date ? `<span class="chip">${escN(fmtDate(en.date))}</span>` : ""}
@@ -1067,9 +1071,9 @@ const NOTE = (() => {
       ${en.note ? `<div class="e-note" style="margin-top:12px">${escN(en.note)}</div>` : ""}
       ${en.aiComment ? `<div class="e-ai">✨ ${escN(en.aiComment)}</div>` : ""}
       ${Array.isArray(en.photos) && en.photos.length
-        ? `<div class="entry-photos" style="margin-top:12px">${en.photos.map(src => `<img class="entry-photo sv-photo" src="${src}" alt="共有写真">`).join("")}</div>` : ""}
-      ${en.author ? `<div class="sv-author">記録：${escN(en.author)}</div>` : ""}
-      <div class="sv-foot">Cigar Cafe — 葉巻をたのしむ</div>`;
+        ? `<div class="entry-photos" style="margin-top:12px">${en.photos.map(src => `<img class="entry-photo sv-photo" src="${src}" alt="${escN(T("共有写真"))}">`).join("")}</div>` : ""}
+      ${en.author ? `<div class="sv-author">${escN(T("記録：{name}", { name: escN(en.author) }))}</div>` : ""}
+      <div class="sv-foot">${escN(T("Cigar Cafe — 葉巻をたのしむ"))}</div>`;
     ov.querySelector("[data-svx]").addEventListener("click", () => ov.remove());
     ov.querySelectorAll(".sv-photo").forEach(img => img.addEventListener("click", () => openLightbox(img.src)));
   }
@@ -1096,21 +1100,21 @@ const NOTE = (() => {
       const topL = Object.entries(byL).sort((a, b) => b[1] - a[1])[0];
       const cs = new Set(list.map(e => e.country).filter(Boolean)).size;
       ov.innerHTML = `<div class="wrapped-card">
-        <button type="button" class="modal-x" id="wrClose" aria-label="閉じる">×</button>
+        <button type="button" class="modal-x" id="wrClose" aria-label="${escN(T("閉じる"))}">×</button>
         <div class="wr-kicker">CIGAR CAFE · YEAR IN SMOKE</div>
-        <h3>${escN(year)}年のまとめ</h3>
+        <h3>${escN(T("{y}年のまとめ", { y: year }))}</h3>
         ${years.length > 1 ? `<div class="wr-years">${years.map(v => `<button type="button" class="chip${v === year ? " on" : ""}" data-wy="${v}">${v}</button>`).join("")}</div>` : ""}
         ${list.length ? `
         <div class="wr-grid">
-          <div class="wr-stat"><div class="sv">${list.length}</div><div class="sl">吸った本数</div></div>
-          <div class="wr-stat"><div class="sv">¥${spent.toLocaleString()}</div><div class="sl">総額</div></div>
-          <div class="wr-stat"><div class="sv">${cs}</div><div class="sl">産地の数</div></div>
-          <div class="wr-stat"><div class="sv">${rated.length ? (rated.reduce((s, e) => s + e.rating, 0) / rated.length).toFixed(1) : "—"}</div><div class="sl">平均評価（★）</div></div>
+          <div class="wr-stat"><div class="sv">${list.length}</div><div class="sl">${escN(T("吸った本数"))}</div></div>
+          <div class="wr-stat"><div class="sv">¥${spent.toLocaleString()}</div><div class="sl">${escN(T("総額"))}</div></div>
+          <div class="wr-stat"><div class="sv">${cs}</div><div class="sl">${escN(T("産地の数"))}</div></div>
+          <div class="wr-stat"><div class="sv">${rated.length ? (rated.reduce((s, e) => s + e.rating, 0) / rated.length).toFixed(1) : "—"}</div><div class="sl">${escN(T("平均評価（★）"))}</div></div>
         </div>
-        ${topB ? `<div class="wr-line">いちばん吸ったブランド：<b>${escN(topB[0])}</b>（${topB[1]}本）</div>` : ""}
-        ${best ? `<div class="wr-line">ベストの一本：<b>${escN(best.name)}</b> ${stars(best.rating)}</div>` : ""}
-        ${topL ? `<div class="wr-line">よく楽しんだ場所：<b>${escN(topL[0])}</b>（${topL[1]}回）</div>` : ""}
-        ` : `<p class="wr-line">${escN(year)}年の記録はまだありません。</p>`}
+        ${topB ? `<div class="wr-line">${T("いちばん吸ったブランド：<b>{name}</b>（{n}本）", { name: escN(topB[0]), n: topB[1] })}</div>` : ""}
+        ${best ? `<div class="wr-line">${T("ベストの一本：<b>{name}</b>", { name: escN(best.name) })} ${stars(best.rating)}</div>` : ""}
+        ${topL ? `<div class="wr-line">${T("よく楽しんだ場所：<b>{name}</b>（{n}回）", { name: escN(topL[0]), n: topL[1] })}</div>` : ""}
+        ` : `<p class="wr-line">${escN(T("{y}年の記録はまだありません。", { y: year }))}</p>`}
       </div>`;
       ov.querySelector("#wrClose").addEventListener("click", () => ov.classList.remove("open"));
       ov.querySelectorAll("[data-wy]").forEach(b => b.addEventListener("click", () => renderY(b.dataset.wy)));
@@ -1138,7 +1142,7 @@ const NOTE = (() => {
   function render() {
     load.done || (load(), load.done = true);
     renderStats();
-    q("#entryCount").textContent = `${entries.length} 本`;
+    q("#entryCount").textContent = T("{n} 本", { n: entries.length });
 
     const term = searchTerm.trim().toLowerCase();
     const list = sortEntries(term
@@ -1152,21 +1156,21 @@ const NOTE = (() => {
     if (!entries.length) {
       area.innerHTML = needName
         ? `<div class="empty-state">
-             <p style="margin-top:10px">「記録者」にお名前を入力すると、クラウドに保存した自分の記録が表示されます。<br>この端末にはまだ記録がありません。</p>
+             <p style="margin-top:10px">${escN(T("「記録者」にお名前を入力すると、クラウドに保存した自分の記録が表示されます。"))}<br>${escN(T("この端末にはまだ記録がありません。"))}</p>
            </div>`
         : `<div class="empty-state">
-             <p style="margin-top:10px">まだ記録がありません。<br>「＋ 一本を記録する」から、最初の一本を書き留めましょう。</p>
+             <p style="margin-top:10px">${escN(T("まだ記録がありません。"))}<br>${escN(T("「＋ 一本を記録する」から、最初の一本を書き留めましょう。"))}</p>
            </div>`;
       return;
     }
     if (!list.length) {
-      area.innerHTML = `<div class="empty-state"><p style="margin-top:10px">「${escN(searchTerm)}」に一致する記録は見つかりませんでした。</p></div>`;
+      area.innerHTML = `<div class="empty-state"><p style="margin-top:10px">${escN(T("「{q}」に一致する記録は見つかりませんでした。", { q: searchTerm }))}</p></div>`;
       return;
     }
 
     // 名前未入力でも手元の記録は隠さず、クラウド保存を促す案内だけ上に添える
     const cloudBanner = needName
-      ? `<div class="cloud-hint">☁ この端末に保存された記録を表示中です。上の「記録者」にお名前を入れると、クラウドに保存されて別の端末でも使え、消えなくなります。</div>`
+      ? `<div class="cloud-hint">${escN(T("☁ この端末に保存された記録を表示中です。上の「記録者」にお名前を入れると、クラウドに保存されて別の端末でも使え、消えなくなります。"))}</div>`
       : "";
     const rm = repeatMap();
     area.innerHTML = cloudBanner + `<div class="entry-grid">${list.map(e => {
@@ -1186,34 +1190,34 @@ const NOTE = (() => {
           </div>
         </div>
         <div class="e-meta">
-          ${nth ? `<span class="chip repeat">🔁 ${nth}回目</span>` : ""}
-          ${e.country ? `<span class="chip">${escN(e.country)}</span>` : ""}
-          ${e.vitola ? `<span class="chip">${escN(e.vitola)}</span>` : ""}
-          ${e.strength ? `<span class="chip">${escN(normalizeStrength(e.strength))}</span>` : ""}
-          ${Number(e.duration) > 0 ? `<span class="chip">⏱ ${Number(e.duration)}分</span>` : ""}
+          ${nth ? `<span class="chip repeat">${escN(T("🔁 {n}回目", { n: nth }))}</span>` : ""}
+          ${e.country ? `<span class="chip">${escN(I18N.country(e.country))}</span>` : ""}
+          ${e.vitola ? `<span class="chip">${escN(I18N.vitola(e.vitola))}</span>` : ""}
+          ${e.strength ? `<span class="chip">${escN(I18N.strength(normalizeStrength(e.strength)))}</span>` : ""}
+          ${Number(e.duration) > 0 ? `<span class="chip">${escN(T("⏱ {n}分", { n: Number(e.duration) }))}</span>` : ""}
           ${e.price ? `<span class="chip">¥${Number(e.price).toLocaleString()}</span>` : ""}
           ${e.location ? `<span class="chip">${escN(e.location)}</span>` : ""}
         </div>
         ${e.note ? (e.note.length > 120
-          ? `<div class="e-note clamp">${escN(e.note)}</div><button type="button" class="e-note-more" data-more>続きを読む</button>`
+          ? `<div class="e-note clamp">${escN(e.note)}</div><button type="button" class="e-note-more" data-more>${escN(T("続きを読む"))}</button>`
           : `<div class="e-note">${escN(e.note)}</div>`) : ""}
         ${e.aiComment ? `<div class="e-ai">✨ ${escN(e.aiComment)}</div>` : ""}
         ${Array.isArray(e.photos) && e.photos.length
           ? `<div class="entry-photos">${e.photos.map((src, i) =>
-              `<img class="entry-photo" src="${src}" alt="${escN(e.name)}の写真${i + 1}">`).join("")}</div>`
+              `<img class="entry-photo" src="${src}" alt="${escN(T("{name}の写真{n}", { name: e.name, n: i + 1 }))}">`).join("")}</div>`
           : ""}
         <div class="e-actions">
-          <button class="btn btn-sm btn-ghost" data-edit="${e.id}">編集</button>
-          <button class="btn btn-sm btn-ghost" data-share="${e.id}">シェア</button>
-          ${visionOn && !e.aiComment ? `<button class="btn btn-sm btn-ghost" data-aic="${e.id}">AI講評</button>` : ""}
-          <button class="btn btn-sm btn-danger" data-del="${e.id}">削除</button>
+          <button class="btn btn-sm btn-ghost" data-edit="${e.id}">${escN(T("編集"))}</button>
+          <button class="btn btn-sm btn-ghost" data-share="${e.id}">${escN(T("シェア"))}</button>
+          ${visionOn && !e.aiComment ? `<button class="btn btn-sm btn-ghost" data-aic="${e.id}">${escN(T("AI講評"))}</button>` : ""}
+          <button class="btn btn-sm btn-danger" data-del="${e.id}">${escN(T("削除"))}</button>
         </div>
       </div>`; }).join("")}</div>`;
   }
 
   /* ---------- エクスポート / インポート ---------- */
   function exportJSON() {
-    if (!entries.length) { alert("記録がまだありません。"); return; }
+    if (!entries.length) { alert(T("記録がまだありません。")); return; }
     const blob = new Blob([JSON.stringify(entries, null, 2)], { type: "application/json" });
     const url = URL.createObjectURL(blob);
     const a = document.createElement("a");
@@ -1227,13 +1231,13 @@ const NOTE = (() => {
     reader.onload = () => {
       try {
         const data = JSON.parse(reader.result);
-        if (!Array.isArray(data)) throw new Error("形式が不正です");
+        if (!Array.isArray(data)) throw new Error(T("形式が不正です"));
         if (cloudOn && !authorName()) {
-          alert("先に上の「記録者」にお名前を入力してから読み込んでください（その名前であなたの記録として保存されます）。");
+          alert(T("先に上の「記録者」にお名前を入力してから読み込んでください（その名前であなたの記録として保存されます）。"));
           const ai = q("#authorName"); if (ai) ai.focus();
           return;
         }
-        const merge = confirm("既存の記録に追加しますか？\n［OK＝追加 / キャンセル＝すべて置き換え］");
+        const merge = confirm(T("既存の記録に追加しますか？\n［OK＝追加 / キャンセル＝すべて置き換え］"));
         // 共有モードでは取り込む記録に記録者名を付与（自分の記録として同期・表示されるように）
         const who = cloudOn ? authorName() : "";
         const cleaned = data.filter(d => d && d.name).map(d => ({
@@ -1252,10 +1256,10 @@ const NOTE = (() => {
         entries = entries.filter(e => (seen.has(e.id) ? (e.id = uid(), true) : (seen.add(e.id), true)));
         persistReplaceAll(entries);
         render();
-        if (cloudOn) CLOUD.replaceAll(entries).catch(err => { console.warn(err); alert("共有DBへの反映に一部失敗しました。"); });
-        alert(`${cleaned.length} 件の記録を読み込みました。`);
+        if (cloudOn) CLOUD.replaceAll(entries).catch(err => { console.warn(err); alert(T("共有DBへの反映に一部失敗しました。")); });
+        alert(T("{n} 件の記録を読み込みました。", { n: cleaned.length }));
       } catch (err) {
-        alert("読み込みに失敗しました：" + err.message);
+        alert(T("読み込みに失敗しました：{msg}", { msg: err.message }));
       }
     };
     reader.readAsText(file);
@@ -1265,8 +1269,8 @@ const NOTE = (() => {
   function renderMode() {
     const el = q("#noteMode");
     if (!el) return;
-    if (cloudOn) { el.textContent = "共有DB（自分の記録だけ表示）"; el.classList.add("cloud"); }
-    else { el.textContent = usingIDB ? "この端末に保存（大容量）" : "この端末に保存"; el.classList.remove("cloud"); }
+    if (cloudOn) { el.textContent = T("共有DB（自分の記録だけ表示）"); el.classList.add("cloud"); }
+    else { el.textContent = usingIDB ? T("この端末に保存（大容量）") : T("この端末に保存"); el.classList.remove("cloud"); }
   }
 
   /* ---------- 初期化 ---------- */
@@ -1350,12 +1354,12 @@ const NOTE = (() => {
       fxCur.addEventListener("change", loadRate);
       q("#fxApply").addEventListener("click", () => {
         const a = Number(fxAmount.value), r = Number(fxRate.value);
-        if (!(a > 0) || !(r > 0)) { q("#fxHint").textContent = "金額とレート（1通貨＝何円か）を入れてください。"; return; }
+        if (!(a > 0) || !(r > 0)) { q("#fxHint").textContent = T("金額とレート（1通貨＝何円か）を入れてください。"); return; }
         rates[fxCur.value] = r;
         try { localStorage.setItem(FX_KEY, JSON.stringify(rates)); } catch (e) {}
         const yen = Math.round(a * r);
         q("#fPrice").value = yen;
-        q("#fxHint").textContent = `${a} ${fxCur.value} × ${r}円 ＝ 約 ¥${yen.toLocaleString()} を価格欄に入れました。`;
+        q("#fxHint").textContent = T("{a} {cur} × {r}円 ＝ 約 ¥{yen} を価格欄に入れました。", { a, cur: fxCur.value, r, yen: yen.toLocaleString() });
       });
     }
     // 写真プレビュー：×で削除、写真タップで拡大表示
@@ -1460,7 +1464,7 @@ const NOTE = (() => {
       if (more) {
         const note = more.previousElementSibling;
         const open = note.classList.toggle("clamp") === false;
-        more.textContent = open ? "閉じる" : "続きを読む";
+        more.textContent = open ? T("閉じる") : T("続きを読む");
       }
     });
 

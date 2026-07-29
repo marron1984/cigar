@@ -164,7 +164,154 @@ var I18N = (function () {
     "読み取れませんでした：{msg}": "Could not read the photo: {msg}",
     "エラー": "error",
     "銘柄名": "the name",
-    "ブランド": "the brand"
+    "ブランド": "the brand",
+
+    /* ---------- 記録ノート ---------- */
+    "画像を読み込めませんでした": "Could not load the image",
+    "ファイルを読み込めませんでした": "Could not read the file",
+    "保存が中断されました": "Saving was interrupted",
+    "保存できませんでした。端末の空き容量が不足している可能性があります。不要な写真や記録を削除してからお試しください。":
+      "Could not save. Your device may be low on storage. Try deleting some photos or entries first.",
+    "保存できませんでした。端末の空き容量が不足している可能性があります。":
+      "Could not save. Your device may be low on storage.",
+    "保存できませんでした。写真の枚数が多いと端末の保存容量を超えることがあります。写真を減らすか、不要な記録を削除してからお試しください。":
+      "Could not save. A lot of photos can exceed what your device will hold. Try using fewer photos, or deleting some entries.",
+    "その他（自由入力）": "Other (type your own)",
+    "その他": "Other",
+    "記録を編集する": "Edit entry",
+    "葉巻を記録する": "Log a cigar",
+    "写真{n}": "Photo {n}",
+    "写真は最大{n}枚までです。": "You can add up to {n} photos.",
+    "写真は最大{max}枚まで。{n}枚のみ追加しました。": "Up to {max} photos — only {n} were added.",
+    "画像の処理に失敗しました：{msg}": "Could not process the image: {msg}",
+    "サイズ": "the size",
+    "強さ": "the strength",
+    "写真からは判別できませんでした。お手数ですが手入力でお願いします。":
+      "The photo could not be identified. Please fill the form in yourself.",
+    "✓ {what}を入力しました。念のためご確認ください。": "✓ Filled in {what}. Please double-check it.",
+    "✓ 自信は高くありませんが、{what}を入力しました。念のためご確認ください。":
+      "✓ Not fully confident, but filled in {what}. Please double-check it.",
+    "先に写真を追加してください。": "Add a photo first.",
+
+    "タップで評価（半個刻み）": "Tap to rate (half stars)",
+    "{n}／5　{word}": "{n}/5 · {word}",
+    "タップで評価": "Tap to rate",
+    "イマイチ": "Disappointing",
+    "まずまず": "Fair",
+    "良い": "Good",
+    "とても良い": "Very good",
+    "最高の一本": "Outstanding",
+
+    "共有モードでは、先に「記録者」にお名前を入力してください（その名前があなたの記録の目印になります）。":
+      "In shared mode, enter your name under \"Logged by\" first — that name marks the entries as yours.",
+    "共有データベースへの保存に失敗しました。手元には保存されています。時間をおいて再度お試しください。":
+      "Could not save to the shared database. Your copy is safe on this device. Please try again later.",
+    "「{name}」を削除しますか？": "Delete \"{name}\"?",
+    "この記録": "this entry",
+    "共有データベースからの削除に失敗しました。時間をおいて再度お試しください。":
+      "Could not delete from the shared database. Please try again later.",
+
+    "これまでに記録した葉巻": "cigars logged so far",
+    "stats::産地": "origins",
+    "平均評価": "avg rating",
+    "喫煙場所": "places",
+    "総額の記録": "total spent",
+    "月別の本数（直近12か月）": "By month (last 12 months)",
+    "{n}月": "{n}",
+    "{n}本": "{n} cigars",
+    "よく吸う産地": "Most-smoked origins",
+    "評価の分布": "Ratings",
+    "<div class=\"dur-row\">{k}：平均 <b>{avg}分</b>（{n}回）</div>":
+      "<div class=\"dur-row\">{k} · <b>{avg} min</b> on average ({n} logged)</div>",
+    "喫煙時間（タイマー記録）": "Smoking time (from the timer)",
+    "📊 くわしい統計": "📊 More statistics",
+    "今年 {n}本目": "{n} this year",
+    "🎁 年間まとめを見る": "🎁 See your year in smoke",
+
+    "🔁 この銘柄は過去 <b>{n}回</b> 記録しています（前回 {rating}・{date}{quote}）":
+      "🔁 You have logged this cigar <b>{n} times</b> before (last time {rating} · {date}{quote})",
+    "評価なし": "unrated",
+    "▶ タイマー開始": "▶ Start timer",
+    "⏸ 終了して記録": "⏸ Stop and log",
+    "生成中…": "Writing…",
+    "AI講評を生成できませんでした：{msg}": "Could not write the AI note: {msg}",
+    "{n}分": "{n} min",
+    "Cigar Cafe — 葉巻をたのしむ": "Cigar Cafe — enjoy the cigar",
+    "作成中…": "Creating…",
+    "葉巻の記録": "Cigar journal entry",
+    "画像を作成できませんでした：{msg}": "Could not create the image: {msg}",
+
+    "— Cigar Cafe 記録ノート": "— Cigar Cafe journal",
+    "英語を生成中…": "Translating…",
+    "（英語の付加に失敗したため日本語のみ。サーバー関数の更新が必要かもしれません）":
+      " (Japanese only — the translation failed; the server function may need updating)",
+    "（日本語＋英語）": " (Japanese + English)",
+    "テキスト{suffix}をコピーしました。LINEやメールに貼り付けてください。":
+      "Copied the text{suffix}. Paste it into a message or email.",
+    "リンクでのシェアには共有データベース（クラウド設定）が必要です。":
+      "Sharing by link needs the shared database (cloud settings) to be set up.",
+    "リンク作成中…": "Creating link…",
+    "共有リンクをコピーしました：": "Share link copied:",
+    "リンクを作成しました：": "Link created:",
+    "共有リンク用のテーブルが未作成です。DATABASE_SETUP.md の「共有リンク」のSQLをSupabaseで実行してください。":
+      "The table for share links has not been created. Run the \"share links\" SQL from DATABASE_SETUP.md in Supabase.",
+    "共有リンクを作成できませんでした：{msg}": "Could not create a share link: {msg}",
+
+    "「{name}」をシェア": "Share \"{name}\"",
+    "🖼 画像で共有": "🖼 Share as an image",
+    "写真つきのカード画像を作成して共有・保存": "Make a card image with your photos, to share or save",
+    "🔗 リンクで共有": "🔗 Share a link",
+    "URLを送るだけで、相手のブラウザで記録が見られる": "Send a URL and they can read the entry in their browser",
+    "📝 テキストで共有": "📝 Share as text",
+    "日本語＋英語（AI自動翻訳）をコピー・共有": "Copy Japanese + English (translated by AI)",
+    "LINEやメールに貼れる文章をコピー": "Copy text you can paste into a message or email",
+    "記録を読み込んでいます…": "Loading the entry…",
+    "共有された記録が見つかりませんでした。": "That shared entry could not be found.",
+    "リンクが削除されたか、期限切れの可能性があります。": "The link may have been deleted or expired.",
+    "共有写真": "Shared photo",
+    "記録：{name}": "Logged by {name}",
+
+    "{y}年のまとめ": "{y} in review",
+    "吸った本数": "cigars smoked",
+    "総額": "total spent",
+    "産地の数": "origins",
+    "平均評価（★）": "avg rating (★)",
+    "いちばん吸ったブランド：<b>{name}</b>（{n}本）": "Most-smoked brand: <b>{name}</b> ({n})",
+    "ベストの一本：<b>{name}</b>": "Best of the year: <b>{name}</b>",
+    "よく楽しんだ場所：<b>{name}</b>（{n}回）": "Favourite spot: <b>{name}</b> ({n} visits)",
+    "{y}年の記録はまだありません。": "No entries yet for {y}.",
+
+    "「記録者」にお名前を入力すると、クラウドに保存した自分の記録が表示されます。":
+      "Enter your name under \"Logged by\" to see the entries you saved to the cloud.",
+    "この端末にはまだ記録がありません。": "There are no entries on this device yet.",
+    "まだ記録がありません。": "No entries yet.",
+    "「＋ 一本を記録する」から、最初の一本を書き留めましょう。":
+      "Tap \"＋ Log a cigar\" to write down your first one.",
+    "「{q}」に一致する記録は見つかりませんでした。": "Nothing matches \"{q}\".",
+    "☁ この端末に保存された記録を表示中です。上の「記録者」にお名前を入れると、クラウドに保存されて別の端末でも使え、消えなくなります。":
+      "☁ Showing the entries stored on this device. Put your name in \"Logged by\" above and they will be saved to the cloud — available on your other devices, and safe from being lost.",
+    "🔁 {n}回目": "🔁 #{n}",
+    "⏱ {n}分": "⏱ {n} min",
+    "続きを読む": "Read more",
+    "{name}の写真{n}": "{name}, photo {n}",
+    "編集": "Edit",
+    "シェア": "Share",
+    "AI講評": "AI note",
+
+    "記録がまだありません。": "There are no entries yet.",
+    "形式が不正です": "The file is not in the right format",
+    "先に上の「記録者」にお名前を入力してから読み込んでください（その名前であなたの記録として保存されます）。":
+      "Enter your name under \"Logged by\" above before importing — the entries will be saved under that name.",
+    "既存の記録に追加しますか？\n［OK＝追加 / キャンセル＝すべて置き換え］":
+      "Add to your existing entries?\n[OK = add / Cancel = replace everything]",
+    "共有DBへの反映に一部失敗しました。": "Some entries could not be written to the shared database.",
+    "{n} 件の記録を読み込みました。": "Imported {n} entries.",
+    "読み込みに失敗しました：{msg}": "Import failed: {msg}",
+    "共有DB（自分の記録だけ表示）": "Shared database (only your entries)",
+    "この端末に保存（大容量）": "Saved on this device (large capacity)",
+    "この端末に保存": "Saved on this device",
+    "金額とレート（1通貨＝何円か）を入れてください。": "Enter an amount and a rate (how many yen to one unit).",
+    "{a} {cur} × {r}円 ＝ 約 ¥{yen} を価格欄に入れました。": "{a} {cur} × ¥{r} ≈ ¥{yen} — put into the price field."
   };
 
   function fill(s, vars) {
@@ -174,11 +321,26 @@ var I18N = (function () {
     });
   }
 
-  /* 文言。英語版で辞書に無いものは日本語のまま返す（表示が消えるより良い） */
-  function t(s, vars) {
+  /* 文言。英語版で辞書に無いものは日本語のまま返す（表示が消えるより良い）。
+     ctx は「同じ日本語でも置き場所によって英語が変わる」場合の目印。
+     例：「産地」はフォームの項目名なら Origin、統計の見出しなら origins。 */
+  function t(s, vars, ctx) {
     if (LANG !== "en") return fill(s, vars);
-    var en = Object.prototype.hasOwnProperty.call(EN, s) ? EN[s] : s;
+    var key = ctx ? ctx + "::" + s : null;
+    var en = key && Object.prototype.hasOwnProperty.call(EN, key) ? EN[key]
+           : (Object.prototype.hasOwnProperty.call(EN, s) ? EN[s] : s);
     return fill(en, vars);
+  }
+  /* ビトラ（サイズ）名。データ側に英語名があるのでそれを使う */
+  var VITOLA = null;
+  function vitola(v) {
+    if (LANG !== "en" || !v) return v || "";
+    if (!VITOLA) {
+      VITOLA = {};
+      try { (CIGAR_DATA.vitolas || []).forEach(function (x) { if (x.ja && x.en) VITOLA[x.ja] = x.en; }); }
+      catch (e) { /* データ未読み込みの環境ではそのまま返す */ }
+    }
+    return VITOLA[v] || v;
   }
   /* 産地名。保存される値は日本語のまま、表示だけ英語にする */
   function country(c) {
@@ -195,7 +357,7 @@ var I18N = (function () {
     return c + " " + (COUNTRY[c] || "");
   }
 
-  return { lang: LANG, isEn: LANG === "en", t: t, country: country, strength: strength, both: both };
+  return { lang: LANG, isEn: LANG === "en", t: t, country: country, strength: strength, vitola: vitola, both: both };
 })();
 
 /* 呼び出しを短くするための別名。
