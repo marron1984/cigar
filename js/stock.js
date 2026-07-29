@@ -21,7 +21,7 @@ const STOCK = (() => {
     try { items = JSON.parse(localStorage.getItem(KEY)) || []; } catch (e) { items = []; }
   }
   function save() {
-    try { localStorage.setItem(KEY, JSON.stringify(items)); } catch (e) { alert("在庫を保存できませんでした。"); }
+    try { localStorage.setItem(KEY, JSON.stringify(items)); } catch (e) { alert(T("在庫を保存できませんでした。")); }
   }
   function uid() { return "s" + Date.now().toString(36) + Math.floor(Math.random() * 1e5).toString(36); }
   function todayStr() {
@@ -37,9 +37,10 @@ const STOCK = (() => {
     let months = (now.getFullYear() - from.getFullYear()) * 12 + (now.getMonth() - from.getMonth());
     if (now.getDate() < from.getDate()) months--;
     if (months < 0) months = 0;
-    if (months < 1) return "熟成 1ヶ月未満";
-    if (months < 12) return `熟成 ${months}ヶ月`;
-    return `熟成 ${Math.floor(months / 12)}年${months % 12 ? months % 12 + "ヶ月" : ""}`;
+    if (months < 1) return T("熟成 1ヶ月未満");
+    if (months < 12) return T("熟成 {n}ヶ月", { n: months });
+    const y = Math.floor(months / 12), m = months % 12;
+    return m ? T("熟成 {y}年{m}ヶ月", { y, m }) : T("熟成 {y}年", { y });
   }
 
   /* 熟成の月数（表示用のラベルではなく数値がほしいとき） */
@@ -76,8 +77,8 @@ const STOCK = (() => {
   function countryOptions(cur) {
     const list = STOCK_COUNTRIES.slice();
     if (cur && !list.includes(cur)) list.unshift(cur);
-    return `<option value="">産地未設定</option>` +
-      list.map(c => `<option${c === cur ? " selected" : ""}>${esc(c)}</option>`).join("");
+    return `<option value="">${esc(T("産地未設定"))}</option>` +
+      list.map(c => `<option value="${esc(c)}"${c === cur ? " selected" : ""}>${esc(I18N.country(c))}</option>`).join("");
   }
 
   /* 在庫の中身を見える形にする（本数・棚・産地の内訳・熟成の分布） */
@@ -97,7 +98,7 @@ const STOCK = (() => {
     const unset = byCountry["産地未設定"] || 0;
     /* 凡例はそのまま産地の絞り込みボタンにする */
     const legend = cList.map(([k, n]) =>
-      `<button type="button" class="stk-lg${sCountry === k ? " on" : ""}" data-fc="${esc(k)}" title="${esc(k)}だけを表示"><i style="background:${toneOf(k)}"></i>${esc(k)} <b>${n}</b>（${Math.round(n / totalQty * 100)}%）</button>`).join("");
+      `<button type="button" class="stk-lg${sCountry === k ? " on" : ""}" data-fc="${esc(k)}" title="${esc(T("{c}だけを表示", { c: I18N.country(k) }))}"><i style="background:${toneOf(k)}"></i>${esc(I18N.country(k))} <b>${n}</b>${T("（{p}%）", { p: Math.round(n / totalQty * 100) })}</button>`).join("");
 
     /* 花：在庫を中心から放射状に並べる。同じ産地を隣り合わせに置くので、
        1枚＝等しい角度のまま、産地別の円グラフとしても読める。
@@ -111,7 +112,7 @@ const STOCK = (() => {
       cList.forEach(([c]) => items.forEach(it => {
         if ((it.country || "産地未設定") !== c) return;
         for (let i = 0, n = Number(it.qty) || 0; i < n; i++)
-          petalList.push({ tone: toneOf(c), title: `${it.name}（${c}）` });
+          petalList.push({ tone: toneOf(c), title: `${it.name}（${I18N.country(c)}）` });
       }));
     } else {
       /* 最大剰余法で配分。1本でもある産地は必ず1枚は残す */
@@ -126,7 +127,7 @@ const STOCK = (() => {
         if (r.k > 1) { r.k--; sum--; }
       }
       raw.forEach(r => {
-        for (let i = 0; i < r.k; i++) petalList.push({ tone: toneOf(r.c), title: `${r.c} ${r.n}本` });
+        for (let i = 0; i < r.k; i++) petalList.push({ tone: toneOf(r.c), title: `${I18N.country(r.c)} ${T("{n}本", { n: r.n })}` });
       });
     }
     const step = 360 / (petalList.length || 1);
@@ -139,8 +140,8 @@ const STOCK = (() => {
 
     /* 熟成の分布 */
     const buckets = [
-      { l: "6ヶ月未満", n: 0 }, { l: "6ヶ月〜1年", n: 0 },
-      { l: "1〜2年", n: 0 }, { l: "2年以上", n: 0 }
+      { l: T("6ヶ月未満"), n: 0 }, { l: T("6ヶ月〜1年"), n: 0 },
+      { l: T("1〜2年"), n: 0 }, { l: T("2年以上"), n: 0 }
     ];
     items.forEach(it => {
       const m = agingMonths(it.date), n = Number(it.qty) || 0;
@@ -161,23 +162,23 @@ const STOCK = (() => {
         <div class="stk-flower" style="--pw:${petalW}px">
           ${petals}
           <div class="stk-core">
-            <span class="sc-n">${totalQty}</span><span class="sc-u">本</span>
-            ${scaled ? `<span class="sc-note">図は割合で表示</span>` : ""}
+            <span class="sc-n">${totalQty}</span><span class="sc-u">${esc(T("本"))}</span>
+            ${scaled ? `<span class="sc-note">${esc(T("図は割合で表示"))}</span>` : ""}
           </div>
         </div>
         ${cList.length ? `<div class="stk-legend">${legend}</div>` : ""}
         <div class="stk-figs">
-          <div class="sf"><span class="sf-v">${kinds}</span><span class="sf-l">銘柄</span></div>
-          ${value ? `<div class="sf"><span class="sf-v">¥${value.toLocaleString()}</span><span class="sf-l">在庫金額</span></div>` : ""}
-          ${oldest ? `<div class="sf"><span class="sf-v">${oldest < 12 ? oldest + "ヶ月" : Math.floor(oldest / 12) + "年"}</span><span class="sf-l">最長の熟成</span></div>` : ""}
+          <div class="sf"><span class="sf-v">${kinds}</span><span class="sf-l">${esc(T("銘柄"))}</span></div>
+          ${value ? `<div class="sf"><span class="sf-v">¥${value.toLocaleString()}</span><span class="sf-l">${esc(T("在庫金額"))}</span></div>` : ""}
+          ${oldest ? `<div class="sf"><span class="sf-v">${oldest < 12 ? T("{n}ヶ月", { n: oldest }) : T("{y}年", { y: Math.floor(oldest / 12) })}</span><span class="sf-l">${esc(T("最長の熟成"))}</span></div>` : ""}
         </div>
         ${unset ? `
         <div class="stk-fix">
-          <span>産地未設定が <b>${unset}本</b> あります。</span>
-          <select id="stkFixTo" title="まとめて設定する産地">${countryOptions("")}</select>
-          <button type="button" class="btn btn-sm btn-ghost" id="stkFixApply">まとめて設定</button>
+          <span>${T("産地未設定が <b>{n}本</b> あります。", { n: unset })}</span>
+          <select id="stkFixTo" title="${esc(T("まとめて設定する産地"))}">${countryOptions("")}</select>
+          <button type="button" class="btn btn-sm btn-ghost" id="stkFixApply">${esc(T("まとめて設定"))}</button>
         </div>` : ""}
-        <div class="stk-aging"><div class="stk-sub-h">熟成の内訳</div>${aging}</div>
+        <div class="stk-aging"><div class="stk-sub-h">${esc(T("熟成の内訳"))}</div>${aging}</div>
       </div>`;
   }
 
@@ -196,7 +197,7 @@ const STOCK = (() => {
     if (sCountry && (it.country || "産地未設定") !== sCountry) return false;
     if (hideZero && !(Number(it.qty) > 0)) return false;
     if (!sQuery) return true;
-    const hay = key(it.name) + " " + key(it.brand) + " " + key(it.country);
+    const hay = key(it.name) + " " + key(it.brand) + " " + key(I18N.both(it.country));
     return key(sQuery).split(/\s+/).filter(Boolean).every(w => hay.includes(w));
   }
 
@@ -205,7 +206,7 @@ const STOCK = (() => {
     aged: ["熟成が長い順", (a, b) => agingMonths(b.date) - agingMonths(a.date)],
     fresh: ["熟成が短い順", (a, b) => agingMonths(a.date) - agingMonths(b.date)],
     name: ["銘柄名順", (a, b) => String(a.name).localeCompare(String(b.name), "ja")],
-    country: ["産地順", (a, b) => String(a.country || "ん").localeCompare(String(b.country || "ん"), "ja") || String(a.name).localeCompare(String(b.name), "ja")],
+    country: ["産地順", (a, b) => String(I18N.country(a.country) || "zz").localeCompare(String(I18N.country(b.country) || "zz"), "ja") || String(a.name).localeCompare(String(b.name), "ja")],
     qty: ["本数が多い順", (a, b) => (Number(b.qty) || 0) - (Number(a.qty) || 0)],
     price: ["価格が高い順", (a, b) => (Number(b.price) || 0) - (Number(a.price) || 0)]
   };
@@ -227,13 +228,14 @@ const STOCK = (() => {
       const qty = shown.reduce((s, it) => s + (Number(it.qty) || 0), 0);
       const filtered = sQuery || sCountry;
       hits.innerHTML = (filtered
-        ? `<b>${shown.length}銘柄・${qty}本</b> が該当${sCountry ? `（産地：${esc(sCountry)}）` : ""}`
-        : `${shown.length}銘柄・${qty}本`)
-        + (zeroHidden ? `<button type="button" class="stk-showzero" id="stkShowZero">在庫0の${zeroHidden}件を表示</button>` : "")
-        + (filtered ? `<button type="button" class="stk-clear" id="stkClear">絞り込みを解除</button>` : "");
+        ? T("<b>{k}銘柄・{n}本</b> が該当", { k: shown.length, n: qty })
+          + (sCountry ? T("（産地：{c}）", { c: esc(I18N.country(sCountry)) }) : "")
+        : T("{k}銘柄・{n}本", { k: shown.length, n: qty }))
+        + (zeroHidden ? `<button type="button" class="stk-showzero" id="stkShowZero">${esc(T("在庫0の{n}件を表示", { n: zeroHidden }))}</button>` : "")
+        + (filtered ? `<button type="button" class="stk-clear" id="stkClear">${esc(T("絞り込みを解除"))}</button>` : "");
     }
     list.innerHTML = shown.length ? shown.map(rowHtml).join("")
-      : `<p class="photo-hint" style="margin:10px 0">該当する在庫がありません。${sQuery || sCountry ? "検索や絞り込みを解除してみてください。" : ""}</p>`;
+      : `<p class="photo-hint" style="margin:10px 0">${esc(T("該当する在庫がありません。"))}${sQuery || sCountry ? esc(T("検索や絞り込みを解除してみてください。")) : ""}</p>`;
     qa(".stk-lg").forEach(b => b.classList.toggle("on", b.dataset.fc === sCountry && !!sCountry));
   }
 
@@ -242,17 +244,17 @@ const STOCK = (() => {
       <div class="stk-row">
         <div class="stk-main">
           <div class="stk-name"><i class="stk-dot" style="background:${toneOf(it.country || "産地未設定")}" aria-hidden="true"></i>${esc(it.name)}${it.brand ? `<span class="stk-brand">${esc(it.brand)}</span>` : ""}</div>
-          <div class="stk-sub">${it.date ? `購入 ${esc(it.date)} · <b>${esc(agingLabel(it.date))}</b>` : ""}${it.price ? ` · ¥${Number(it.price).toLocaleString()}/本` : ""}</div>
-          <select class="stk-csel${it.country ? "" : " none"}" data-scountry="${it.id}" title="産地（変えるとグラフに反映されます）">${countryOptions(it.country || "")}</select>
+          <div class="stk-sub">${it.date ? `${esc(T("購入 {date}", { date: it.date }))} · <b>${esc(agingLabel(it.date))}</b>` : ""}${it.price ? ` · ${esc(T("¥{n}/本", { n: Number(it.price).toLocaleString() }))}` : ""}</div>
+          <select class="stk-csel${it.country ? "" : " none"}" data-scountry="${it.id}" title="${esc(T("産地（変えるとグラフに反映されます）"))}">${countryOptions(it.country || "")}</select>
         </div>
         <div class="stk-qty">
-          <button type="button" class="stk-btn" data-sdec="${it.id}" title="1本減らす">−</button>
+          <button type="button" class="stk-btn" data-sdec="${it.id}" title="${esc(T("1本減らす"))}">−</button>
           <span class="stk-n">${Number(it.qty) || 0}</span>
-          <button type="button" class="stk-btn" data-sinc="${it.id}" title="1本増やす">＋</button>
+          <button type="button" class="stk-btn" data-sinc="${it.id}" title="${esc(T("1本増やす"))}">＋</button>
         </div>
         <div class="stk-acts">
-          <button type="button" class="btn btn-sm btn-ghost" data-ssmoke="${it.id}">🔥 吸う</button>
-          <button type="button" class="btn btn-sm btn-danger" data-sdel="${it.id}">削除</button>
+          <button type="button" class="btn btn-sm btn-ghost" data-ssmoke="${it.id}">${esc(T("🔥 吸う"))}</button>
+          <button type="button" class="btn btn-sm btn-danger" data-sdel="${it.id}">${esc(T("削除"))}</button>
         </div>
       </div>`;
   }
@@ -262,35 +264,35 @@ const STOCK = (() => {
     const cnt = q("#stockCount");
     if (!body) return;
     const totalQty = items.reduce((s, it) => s + (Number(it.qty) || 0), 0);
-    if (cnt) cnt.textContent = `${totalQty} 本`;
+    if (cnt) cnt.textContent = T("{n} 本", { n: totalQty });
     body.innerHTML = `
       ${vizHtml(totalQty)}
       ${items.length ? `
       <div class="stk-tools">
-        <input type="search" id="stkSearch" placeholder="🔍 銘柄・ブランド・産地で探す" value="${esc(sQuery)}" autocomplete="off">
-        <select id="stkSort" title="並び替え">
-          ${Object.entries(SORTS).map(([k, v]) => `<option value="${k}"${sSort === k ? " selected" : ""}>${v[0]}</option>`).join("")}
+        <input type="search" id="stkSearch" placeholder="${esc(T("🔍 銘柄・ブランド・産地で探す"))}" value="${esc(sQuery)}" autocomplete="off">
+        <select id="stkSort" title="${esc(T("並び替え"))}">
+          ${Object.entries(SORTS).map(([k, v]) => `<option value="${k}"${sSort === k ? " selected" : ""}>${esc(T(v[0]))}</option>`).join("")}
         </select>
       </div>
       <div class="stk-hits" id="stkHits"></div>
       <div class="stk-list" id="stkList"></div>`
-      : `<p class="photo-hint" style="margin:10px 0">在庫はまだありません。買った葉巻を登録しておくと、熟成期間がひと目で分かります。</p>`}
+      : `<p class="photo-hint" style="margin:10px 0">${esc(T("在庫はまだありません。買った葉巻を登録しておくと、熟成期間がひと目で分かります。"))}</p>`}
       <div class="stk-form">
         ${visionOn ? `
         <div class="stk-ai">
-          <button type="button" class="btn btn-sm btn-ghost" id="stkPhotoBtn">📷 写真から自動入力</button>
+          <button type="button" class="btn btn-sm btn-ghost" id="stkPhotoBtn">${esc(T("📷 写真から自動入力"))}</button>
           <input type="file" id="stkPhoto" accept="image/*" hidden>
           <span class="stk-ai-status" id="stkAiStatus"></span>
         </div>` : ""}
-        <input type="text" id="stkName" placeholder="銘柄名（例：モンテクリスト No.4）">
-        <input type="text" id="stkBrand" placeholder="ブランド（任意）">
-        <select id="stkCountry" title="産地">${countryOptions("")}</select>
-        <input type="number" id="stkQty" min="1" value="1" title="本数">
-        <input type="date" id="stkDate" value="${todayStr()}" title="購入日">
-        <input type="number" id="stkPrice" min="0" placeholder="1本の価格（任意）">
-        <button type="button" class="btn btn-sm btn-primary" id="stkAdd">＋ 在庫に追加</button>
+        <input type="text" id="stkName" placeholder="${esc(T("銘柄名（例：モンテクリスト No.4）"))}">
+        <input type="text" id="stkBrand" placeholder="${esc(T("ブランド（任意）"))}">
+        <select id="stkCountry" title="${esc(T("産地"))}">${countryOptions("")}</select>
+        <input type="number" id="stkQty" min="1" value="1" title="${esc(T("本数"))}">
+        <input type="date" id="stkDate" value="${todayStr()}" title="${esc(T("購入日"))}">
+        <input type="number" id="stkPrice" min="0" placeholder="${esc(T("1本の価格（任意）"))}">
+        <button type="button" class="btn btn-sm btn-primary" id="stkAdd">${esc(T("＋ 在庫に追加"))}</button>
       </div>
-      <div class="photo-hint">${visionOn ? "箱やバンドの写真を選ぶと、銘柄名とブランドをAIが読み取って入れます（入力済みの欄は上書きしません）。<br>" : ""}「🔥 吸う」で在庫が1本減り、記録ノートのフォームが銘柄入りで開きます。産地の色の凡例をタップすると、その産地だけを表示します。</div>`;
+      <div class="photo-hint">${visionOn ? esc(T("箱やバンドの写真を選ぶと、銘柄名とブランドをAIが読み取って入れます（入力済みの欄は上書きしません）。")) + "<br>" : ""}${esc(T("「🔥 吸う」で在庫が1本減り、記録ノートのフォームが銘柄入りで開きます。産地の色の凡例をタップすると、その産地だけを表示します。"))}</div>`;
     renderList();
     wire();
   }
@@ -318,7 +320,7 @@ const STOCK = (() => {
     const btn = q("#stkPhotoBtn");
     aiBusy = true;
     if (btn) btn.disabled = true;
-    setAiStatus("loading", "AIが写真を読み取っています…（数秒かかります）");
+    setAiStatus("loading", T("AIが写真を読み取っています…（数秒かかります）"));
     try {
       const src = await NOTE.resizeImage(file);
       const hints = {
@@ -332,25 +334,27 @@ const STOCK = (() => {
         const el = q(sel);
         if (el && val && !el.value.trim()) { el.value = val; filled.push(label); }
       };
-      put("#stkName", r.name, "銘柄名");
-      put("#stkBrand", r.brand, "ブランド");
+      put("#stkName", r.name, T("銘柄名"));
+      put("#stkBrand", r.brand, T("ブランド"));
       /* 産地は選択肢に同じものがあるときだけ入れる（未選択のときのみ） */
       const cSel = q("#stkCountry");
       if (cSel && !cSel.value && r.country && [...cSel.options].some(o => o.value === r.country)) {
-        cSel.value = r.country; filled.push("産地");
+        cSel.value = r.country; filled.push(T("産地"));
       }
       aiMeta = { country: r.country || "", vitola: r.vitola || "" };
       if (!filled.length) {
         setAiStatus("warn", r.band_readable === false
-          ? "バンドの文字が読み取れませんでした。明るく正面から撮り直すか、手で入力してください。"
-          : "新しく入れられる項目がありませんでした（すでに入力済みのようです）。");
+          ? T("バンドの文字が読み取れませんでした。明るく正面から撮り直すか、手で入力してください。")
+          : T("新しく入れられる項目がありませんでした（すでに入力済みのようです）。"));
       } else {
         const low = r.confidence === "low";
+        const what = filled.join(I18N.isEn ? " and " : "・");
         setAiStatus(low ? "warn" : "ok",
-          `✓ ${low ? "自信は高くありませんが、" : ""}${filled.join("・")}を入力しました。ご確認ください。`);
+          low ? T("✓ 自信は高くありませんが、{what}を入力しました。ご確認ください。", { what })
+              : T("✓ {what}を入力しました。ご確認ください。", { what }));
       }
     } catch (err) {
-      setAiStatus("error", "読み取れませんでした：" + (err && err.message || "エラー"));
+      setAiStatus("error", T("読み取れませんでした：{msg}", { msg: (err && err.message) || T("エラー") }));
     } finally {
       aiBusy = false;
       if (btn) btn.disabled = false;
@@ -425,7 +429,7 @@ const STOCK = (() => {
         const target = items.filter(x => !x.country);
         if (!target.length) return;
         const qty = target.reduce((s, x) => s + (Number(x.qty) || 0), 0);
-        if (!confirm(`産地未設定の ${target.length}銘柄（${qty}本）を、すべて「${to}」にします。\nよろしいですか？`)) return;
+        if (!confirm(T("産地未設定の {k}銘柄（{n}本）を、すべて「{to}」にします。\nよろしいですか？", { k: target.length, n: qty, to: I18N.country(to) }))) return;
         items.forEach(x => { if (!x.country) x.country = to; });
         save(); render();
         return;
@@ -438,7 +442,7 @@ const STOCK = (() => {
       if (dec) { const it = items.find(x => x.id === dec.dataset.sdec); if (it) { it.qty = Math.max(0, (Number(it.qty) || 0) - 1); save(); render(); } }
       if (del) {
         const it = items.find(x => x.id === del.dataset.sdel);
-        if (it && confirm(`「${it.name}」を在庫から削除しますか？`)) { items = items.filter(x => x.id !== it.id); save(); render(); }
+        if (it && confirm(T("「{name}」を在庫から削除しますか？", { name: it.name }))) { items = items.filter(x => x.id !== it.id); save(); render(); }
       }
       if (smk) {
         const it = items.find(x => x.id === smk.dataset.ssmoke);

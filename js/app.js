@@ -112,7 +112,7 @@ const VIEW_TITLES = {
 };
 function trackPageView(name) {
   if (typeof gtag !== "function") return;
-  const label = VIEW_TITLES[name] || name;
+  const label = T(VIEW_TITLES[name] || name);
   gtag("event", "page_view", {
     page_title: label + "｜Cigar Cafe",
     page_location: location.origin + location.pathname + "#" + name,

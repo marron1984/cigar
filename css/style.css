@@ -102,7 +102,7 @@ button, .chip, .strength-badge, .go, .eyebrow, .kicker,
   padding: 14px 20px;
   display: flex;
   align-items: center;
-  gap: 18px;
+  gap: 10px;
   position: relative;
 }
 .brand {
@@ -133,15 +133,21 @@ button, .chip, .strength-badge, .go, .eyebrow, .kicker,
   gap: 2px;
   margin-left: auto;
   align-items: center;
+  /* 項目数が多く、日本語でも英語でも1行に収まりきらない幅がある。
+     入りきらないときは中で横スクロールさせ、末尾の項目が消えないようにする。 */
+  min-width: 0;
+  overflow-x: auto;
+  scrollbar-width: none;
 }
+.nav-tabs::-webkit-scrollbar { display: none; }
 .nav-tabs button {
   font-family: var(--sans);
-  font-size: .87rem;
+  font-size: .81rem;
   color: var(--text-soft);
   background: transparent;
   border: none;
   box-shadow: inset 0 -2px 0 transparent;
-  padding: 8px 12px;
+  padding: 8px 6px;
   border-radius: 0;
   cursor: pointer;
   transition: color var(--dur-fast) var(--ease), box-shadow var(--dur-fast) var(--ease);
@@ -160,17 +166,31 @@ button, .chip, .strength-badge, .go, .eyebrow, .kicker,
 }
 /* 記録ノートは先頭側に置き、事典セクションと区切って強調 */
 .nav-tabs .nav-journal {
-  margin-right: 10px;
-  padding-right: 14px;
+  margin-right: 5px;
+  padding-right: 9px;
   border-right: 1px solid var(--line);
   color: var(--gold-bright);
   font-weight: 600;
 }
 
+/* 言語切替 */
+.lang-switch {
+  order: 3;
+  display: inline-flex; align-items: center; justify-content: center;
+  min-width: 38px; height: 34px; padding: 0 9px;
+  border: 1px solid var(--line); border-radius: 999px;
+  background: var(--panel); color: var(--text-soft);
+  font-family: var(--sans); font-size: .74rem; font-weight: 700; letter-spacing: .06em;
+  text-decoration: none; white-space: nowrap;
+  transition: border-color var(--dur-fast) var(--ease), color var(--dur-fast) var(--ease);
+}
+.lang-switch:hover { border-color: var(--gold); color: var(--gold-bright); }
+
 /* ハンバーガー（モバイル用・デフォルト非表示） */
 .nav-toggle {
   display: none;
-  margin-left: auto;
+  order: 4;
+  margin-left: 10px;
   width: 42px; height: 42px;
   border: 1px solid var(--line);
   background: var(--panel);
@@ -193,6 +213,8 @@ button, .chip, .strength-badge, .go, .eyebrow, .kicker,
 @media (max-width: 860px) {
   /* モバイルはボトムナビ主体。ヘッダーのハンバーガーは隠す */
   .nav-toggle { display: none; }
+  /* ボトムシートは固定配置で流れから外れるため、ここで右端に寄せる */
+  .lang-switch { margin-left: auto; }
 
   /* ヘッダーの backdrop-filter は固定配置の子孫（#navTabsのボトムシート）の
      基準ボックスをヘッダーに変えてしまい、シートが正しく画面下に出ない。
@@ -438,6 +460,10 @@ main { max-width: 1180px; margin: 0 auto; padding: 0 20px 80px; }
   line-height: 1.85;
   text-align: center;
 }
+/* 英語版は縦書きにする理由が無いので、右寄せの2行に戻す */
+html[lang="en"] .hc-tate { flex-direction: column; align-items: flex-end; gap: 0; text-align: right; }
+html[lang="en"] .hc-tate span { width: auto; word-break: normal; line-height: 1.35; text-align: right; }
+
 .hc-main { flex: 1 1 auto; min-width: 0; }
 .hc-kicker {
   display: inline-flex; align-items: center; gap: 10px;
@@ -1876,6 +1902,8 @@ table.ref { min-width: 480px; }
 .stk-sub-h { font-size: .72rem; letter-spacing: .12em; color: var(--text-soft); margin-bottom: 6px; }
 .stk-age { display: grid; grid-template-columns: 5.6em 1fr 2.2em; align-items: center; gap: 8px; margin-top: 5px; font-size: .74rem; }
 .sa-l { color: var(--text-soft); }
+/* 英語のほうがラベルが長いので、左の列を広げて折り返さないようにする */
+html[lang="en"] .stk-age { grid-template-columns: 7.2em 1fr 2.2em; }
 .sa-t { height: 7px; border-radius: 999px; background: var(--panel-2); border: 1px solid var(--line-soft); overflow: hidden; }
 .sa-f { display: block; height: 100%; border-radius: 999px; background: linear-gradient(90deg, var(--gold), var(--gold-bright)); animation: stkGrow .8s cubic-bezier(.2, .9, .25, 1) backwards; }
 .sa-n { text-align: right; color: var(--cream); font-weight: 700; font-variant-numeric: tabular-nums; }
