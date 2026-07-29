@@ -311,7 +311,34 @@ var I18N = (function () {
     "この端末に保存（大容量）": "Saved on this device (large capacity)",
     "この端末に保存": "Saved on this device",
     "金額とレート（1通貨＝何円か）を入れてください。": "Enter an amount and a rate (how many yen to one unit).",
-    "{a} {cur} × {r}円 ＝ 約 ¥{yen} を価格欄に入れました。": "{a} {cur} × ¥{r} ≈ ¥{yen} — put into the price field."
+    "{a} {cur} × {r}円 ＝ 約 ¥{yen} を価格欄に入れました。": "{a} {cur} × ¥{r} ≈ ¥{yen} — put into the price field.",
+
+    /* ---------- 日本ガイド ---------- */
+    "全国の葉巻販売店・シガーバー": "Cigar shops and cigar bars across Japan",
+    "全国一覧はただいま調査・整備中です。": "The nationwide list is still being researched.",
+    "公開情報では確認できませんでした。": "Nothing could be confirmed from published sources.",
+    "要確認": "Unconfirmed",
+    "{n}軒": "{n} open",
+    "{n}件": "{n} listed",
+    "{n}店": "{n} shops",
+    "情報更新日：{date}": "Updated {date}",
+    "掲載情報は公開情報（各店公式・食べログ・正規取扱店リスト・報道等）をもとにした<b>{date}時点の目安</b>です。営業状況・移転・閉店・品揃え・喫煙可否・持込ルールは変わりやすいため、<b>来店前に必ず各店の公式・電話で最新情報をご確認ください</b>。「要確認」表示は特にご注意を。閉店が判明した店も記録として残しています。":
+      "This list is drawn from published sources — each venue's own pages, Tabelog, authorised-stockist lists and press reports — and reflects <b>the position as of {date}</b>. Opening status, moves, closures, stock, whether smoking is allowed and rules on bringing your own all change easily, so <b>please check with the venue directly before you go</b>. Take particular care with anything marked \"Unconfirmed\". Venues known to have closed are kept here as a record.",
+    "店名・エリア・都道府県で検索（例：銀座、シガーバー…）": "Search by name, area or prefecture (Ginza, cigar bar…)",
+    "掲載の店舗情報は公開情報をもとにした<b>目安</b>です。営業状況・品揃え・喫煙可否・持込ルールは変わりやすいため、来店前に各店の公式・電話でご確認ください（「※要確認」付きは特に）。":
+      "The venue information here is drawn from published sources and is <b>a guide only</b>. Opening status, stock, whether smoking is allowed and rules on bringing your own change easily — please check with the venue before you go, especially anything marked as needing confirmation.",
+    "葉巻を買える専門店・売り場": "Where to buy: shops and counters",
+    "シガーバー・ラウンジ（店内で購入・喫煙）": "Cigar bars and lounges (buy and smoke on the premises)",
+    "大阪で葉巻を探すコツ": "Finding cigars in Osaka",
+    "日本の葉巻の歴史": "The history of the cigar in Japan",
+    "輸入・流通・税制": "Import, distribution and tax",
+    "日本で葉巻を買う": "Buying a cigar in Japan",
+    "【大阪】葉巻が買えるお店・シガーバー": "Osaka — shops and cigar bars",
+    "日本の喫煙環境": "Where you may smoke in Japan",
+    "日本の葉巻文化・和のマナー": "Cigar culture and Japanese etiquette",
+    "初心者が日本で葉巻を始めるには": "Starting out with cigars in Japan",
+    "まずは信頼できるシガーバーで一本を、が最短ルートです。":
+      "The shortest way in: one cigar, at a cigar bar you can trust."
   };
 
   function fill(s, vars) {

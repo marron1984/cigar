@@ -12,20 +12,29 @@ const JAPAN = (() => {
   const link = (s) => String(s).split(/(https?:\/\/[^\s、，）)]+)/g)
     .map((p, i) => i % 2 ? `<a href="${e(p)}" target="_blank" rel="noopener">${e(p)}</a>` : e(p)).join("");
 
+  /* ---------- 英語版の差し替えデータ ----------
+     店名・住所にあたる情報は日本語のまま残す（現地で店を探すのに要るため）。
+     説明文・エリア・業態・営業状況だけを英語に差し替える。
+     data/en/japan_shops.js が読み込まれているときだけ効く。 */
+  const EN = (typeof JAPAN_EN !== "undefined" && I18N.isEn) ? JAPAN_EN : null;
+  const enShop = (code, name) => (EN && EN.shops && EN.shops[code + "|" + name]) || null;
+  const enPick = (map, v) => (EN && map && map[v]) || v;
+
   function statusBadge(st) {
     const s = String(st || "");
     const cls = /閉店|終了|廃止|不可|中止/.test(s) ? "closed" : /移転/.test(s) ? "moved" : /要確認/.test(s) ? "check" : "open";
-    return `<span class="shop-status ${cls}">${e(s || "要確認")}</span>`;
+    return `<span class="shop-status ${cls}">${e(enPick(EN && EN.statuses, s) || T("要確認"))}</span>`;
   }
 
-  function shopCard(s) {
+  function shopCard(s, code) {
+    const t = enShop(code, s.name) || {};
     const src = Array.isArray(s.sources) && s.sources.length
       ? `<div class="sh-src">${s.sources.map(x => `<span>${link(x)}</span>`).join("")}</div>` : "";
     return `<div class="shop-card jp-shop">
       <div class="sh-head"><div class="sh-name">${e(s.name)}</div>${statusBadge(s.status)}</div>
-      <div class="sh-meta"><span class="sh-type">${e(s.type)}</span><span class="sh-area">${e(s.area)}</span></div>
-      ${s.desc ? `<div class="sh-desc">${e(s.desc)}</div>` : ""}
-      ${s.note ? `<div class="sh-note">${e(s.note)}</div>` : ""}
+      <div class="sh-meta"><span class="sh-type">${e(enPick(EN && EN.types, s.type))}</span><span class="sh-area">${e(t.area || s.area)}</span></div>
+      ${(t.desc || s.desc) ? `<div class="sh-desc">${e(t.desc || s.desc)}</div>` : ""}
+      ${(t.note || s.note) ? `<div class="sh-note">${e(t.note || s.note)}</div>` : ""}
       ${src}
     </div>`;
   }
@@ -33,14 +42,20 @@ const JAPAN = (() => {
   function prefBlock(p) {
     const shops = Array.isArray(p.shops) ? p.shops : [];
     const openN = shops.filter(s => !/閉店|移転/.test(String(s.status))).length;
-    const search = shops.map(s => `${s.name} ${s.area} ${s.type} ${s.status}`).join(" ").toLowerCase();
+    const prefNote = (EN && EN.prefNotes && EN.prefNotes[p.code]) || p.prefNote;
+    /* 検索は日本語・英語どちらの語でも当たるようにする */
+    const search = shops.map(s => {
+      const t = enShop(p.code, s.name) || {};
+      return `${s.name} ${s.area} ${t.area || ""} ${s.type} ${enPick(EN && EN.types, s.type)} ${s.status}`;
+    }).join(" ").toLowerCase();
+    const prefName = I18N.isEn && p.pref_en ? p.pref_en : p.pref;
     const body = shops.length
-      ? `<div class="shop-grid">${shops.map(shopCard).join("")}</div>`
-      : `<div class="callout">${e(p.prefNote || "公開情報では確認できませんでした。")}</div>`;
-    const note = shops.length && p.prefNote ? `<div class="pref-note">${e(p.prefNote)}</div>` : "";
-    return `<details class="acc pref-acc" data-search="${e(search)}" data-count="${shops.length}">
-      <summary><span class="pref-name">${e(p.pref)}</span>
-        <span class="pref-count">${shops.length ? `${openN}軒` : "—"}</span></summary>
+      ? `<div class="shop-grid">${shops.map(s => shopCard(s, p.code)).join("")}</div>`
+      : `<div class="callout">${e(prefNote || T("公開情報では確認できませんでした。"))}</div>`;
+    const note = shops.length && prefNote ? `<div class="pref-note">${e(prefNote)}</div>` : "";
+    return `<details class="acc pref-acc" data-search="${e(search + " " + prefName)}" data-count="${shops.length}">
+      <summary><span class="pref-name">${e(prefName)}</span>
+        <span class="pref-count">${shops.length ? T("{n}軒", { n: openN }) : "—"}</span></summary>
       <div class="acc-body">${note}${body}</div>
     </details>`;
   }
@@ -48,8 +63,8 @@ const JAPAN = (() => {
   function directory() {
     const D = (typeof JAPAN_GUIDE_DATA !== "undefined") ? JAPAN_GUIDE_DATA : null;
     if (!D || !Array.isArray(D.regions) || !D.regions.length) {
-      return `<div class="kb-block"><h3>全国の葉巻販売店・シガーバー</h3>
-        <div class="callout">全国一覧はただいま調査・整備中です。</div></div>`;
+      return `<div class="kb-block"><h3>${e(T("全国の葉巻販売店・シガーバー"))}</h3>
+        <div class="callout">${e(T("全国一覧はただいま調査・整備中です。"))}</div></div>`;
     }
     let totalShops = 0, totalClosed = 0;
     D.regions.forEach(r => (r.prefectures || []).forEach(p => {
@@ -58,17 +73,17 @@ const JAPAN = (() => {
     }));
     const regions = D.regions.map(r => `
       <div class="jp-region">
-        <h4 class="jp-region-h">${e(r.region)}</h4>
+        <h4 class="jp-region-h">${e(enPick(EN && EN.regions, r.region))}</h4>
         ${(r.prefectures || []).map(prefBlock).join("")}
       </div>`).join("");
     return `<div class="kb-block jp-directory">
-      <h3>全国の葉巻販売店・シガーバー</h3>
+      <h3>${e(T("全国の葉巻販売店・シガーバー"))}</h3>
       <div class="jp-meta">
-        <span class="data-count">${totalShops}件</span>
-        <span class="jp-updated">情報更新日：${e(D.updated || "")}</span>
+        <span class="data-count">${T("{n}件", { n: totalShops })}</span>
+        <span class="jp-updated">${e(T("情報更新日：{date}", { date: D.updated || "" }))}</span>
       </div>
-      <div class="callout warn">掲載情報は公開情報（各店公式・食べログ・正規取扱店リスト・報道等）をもとにした<b>${e(D.updated || "")}時点の目安</b>です。営業状況・移転・閉店・品揃え・喫煙可否・持込ルールは変わりやすいため、<b>来店前に必ず各店の公式・電話で最新情報をご確認ください</b>。「要確認」表示は特にご注意を。閉店が判明した店も記録として残しています。</div>
-      <input type="text" class="note-search lex-search" id="jpSearch" placeholder="店名・エリア・都道府県で検索（例：銀座、シガーバー…）">
+      <div class="callout warn">${T("掲載情報は公開情報（各店公式・食べログ・正規取扱店リスト・報道等）をもとにした<b>{date}時点の目安</b>です。営業状況・移転・閉店・品揃え・喫煙可否・持込ルールは変わりやすいため、<b>来店前に必ず各店の公式・電話で最新情報をご確認ください</b>。「要確認」表示は特にご注意を。閉店が判明した店も記録として残しています。", { date: e(D.updated || "") })}</div>
+      <input type="text" class="note-search lex-search" id="jpSearch" placeholder="${e(T("店名・エリア・都道府県で検索（例：銀座、シガーバー…）"))}">
       <div id="jpRegions">${regions}</div>
     </div>`;
   }

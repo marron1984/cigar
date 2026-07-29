@@ -32,10 +32,11 @@ const FMT = (() => {
       .map(s => s.trim()).filter(Boolean);
     const html = [];
     for (const par of paragraphs) {
-      // 【ラベル】の直前で分割し、各セグメントを見出し付き段落として描画
-      const segs = par.split(/(?=【)/).filter(s => s.trim());
+      // 【ラベル】の直前で分割し、各セグメントを見出し付き段落として描画。
+      // 英語版の本文は同じ役割に [ラベル] を使うので、そちらも見出しとして扱う。
+      const segs = par.split(/(?=【)|(?=^\[)/m).filter(s => s.trim());
       for (const seg of segs) {
-        const m = seg.match(/^【(.+?)】\s*([\s\S]*)$/);
+        const m = seg.match(/^【(.+?)】\s*([\s\S]*)$/) || seg.match(/^\[([^\]]+)\]\s*([\s\S]*)$/);
         if (m) {
           html.push(`<span class="ph">${esc(m[1])}</span>`);
           for (const c of chunkSentences(m[2])) {
