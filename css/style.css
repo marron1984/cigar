@@ -1806,20 +1806,52 @@ table.ref { min-width: 480px; }
 .insights > summary::-webkit-details-marker { display: none; }
 .ins-year { font-size: .76rem; color: var(--gold-bright); background: var(--panel-2); border: 1px solid var(--line); padding: 3px 10px; border-radius: 999px; white-space: nowrap; }
 .ins-body { padding: 4px 18px 18px; }
-.ch-h { font-size: .82rem; font-weight: 700; color: var(--gold-bright); margin: 16px 0 8px; }
-.mchart { display: flex; align-items: flex-end; gap: 4px; height: 110px; }
-.mcol { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: flex-end; min-width: 0; }
-.mval { font-size: .68rem; color: var(--text-soft); }
-.mbar { width: 70%; max-width: 26px; background: linear-gradient(180deg, var(--gold), var(--gold-bright)); border-radius: 3px 3px 0 0; }
-.mlbl { font-size: .62rem; color: var(--text-soft); margin-top: 4px; white-space: nowrap; }
-.ins-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0 24px; }
+/* --- くわしい統計のグラフ ---
+   ・棒は細く、データ側の角だけ丸め、目盛りは背景に退かせる
+   ・数値は色に頼らず必ず文字でも読めるようにする
+   ・値のラベルは「今月」と「最も多い月」だけに出す（全部に出すと形が読めない） */
+.chart { margin-top: 18px; }
+.ch-head { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; margin-bottom: 10px; flex-wrap: wrap; }
+.ch-h { font-size: .82rem; font-weight: 700; color: var(--cream); letter-spacing: .02em; }
+.ch-sub { font-size: .7rem; color: var(--muted); font-variant-numeric: tabular-nums; }
+
+.mchart { padding-top: 4px; }
+.m-plot { position: relative; height: 120px; }
+.m-grid { position: absolute; left: 0; right: 0; height: 1px; background: var(--line-soft); }
+.m-grid.top { top: 0; }
+.m-grid.mid { top: 50%; }
+.m-avg { position: absolute; left: 0; right: 0; height: 0; border-top: 1px dashed var(--gold); opacity: .75; }
+.m-avg i { position: absolute; left: 0; top: -9px; font-style: normal; font-size: .6rem; letter-spacing: .08em;
+  color: var(--gold-bright); background: var(--panel); padding: 0 5px 0 0; }
+.m-cols { position: absolute; inset: 0; display: flex; align-items: flex-end; gap: 4px; }
+.mcol { flex: 1; min-width: 0; height: 100%; display: flex; flex-direction: column; justify-content: flex-end; align-items: center; cursor: default; }
+.mval { font-size: .66rem; font-weight: 700; color: var(--cream); line-height: 1; margin-bottom: 3px; font-variant-numeric: tabular-nums; }
+.mbar { width: 100%; max-width: 34px; height: var(--h, 0%); min-height: 2px; background: #b5763a; border-radius: 4px 4px 0 0;
+  transform-origin: bottom; animation: chGrow .6s cubic-bezier(.2, .9, .25, 1) backwards; }
+.mcol.now .mbar { background: #815322; }
+.mcol.now .mlbl { color: var(--cream); font-weight: 700; }
+.mcol:hover .mbar { filter: brightness(1.08); }
+.mlbl { font-size: .6rem; color: var(--muted); margin-top: 5px; white-space: nowrap; }
+@keyframes chGrow { from { transform: scaleY(0); opacity: .3; } }
+
+.ins-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0 26px; }
 @media (max-width: 640px) { .ins-grid { grid-template-columns: 1fr; } }
-.ch-row { display: flex; align-items: center; gap: 8px; margin-bottom: 6px; }
-.ch-lbl { flex: 0 0 92px; font-size: .78rem; color: var(--text-soft); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-.ch-track { flex: 1; height: 10px; background: var(--panel-2); border-radius: 999px; overflow: hidden; }
-.ch-fill { height: 100%; background: linear-gradient(90deg, var(--gold), var(--gold-bright)); border-radius: 999px; }
-.ch-val { flex: 0 0 auto; font-size: .76rem; color: var(--text-soft); }
-.dur-row { font-size: .85rem; margin-bottom: 4px; }
+
+/* 吹き出し */
+.ch-tip { position: absolute; z-index: 60; pointer-events: none; opacity: 0;
+  background: var(--wine-dark); color: var(--on-accent); font-family: var(--sans); font-size: .72rem;
+  padding: 6px 10px; border-radius: 8px; white-space: nowrap; box-shadow: var(--shadow-sm);
+  transition: opacity var(--dur-fast) var(--ease); }
+.ch-row { display: flex; align-items: center; gap: 10px; margin-bottom: 7px; cursor: default; }
+.ch-lbl { flex: 0 0 84px; font-size: .76rem; color: var(--text-soft); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.ch-track { flex: 1; height: 9px; background: var(--panel-2); border-radius: 999px; overflow: hidden; min-width: 0; }
+.ch-fill { height: 100%; border-radius: 999px; transform-origin: left;
+  animation: chWidth .65s cubic-bezier(.2, .9, .25, 1) backwards; }
+@keyframes chWidth { from { transform: scaleX(0); } }
+.ch-row:hover .ch-fill { filter: brightness(1.08); }
+.ch-val { flex: 0 0 auto; min-width: 3.4em; text-align: right; font-size: .74rem; color: var(--text-soft); font-variant-numeric: tabular-nums; }
+.ch-val b { color: var(--cream); font-size: .84rem; }
+.ch-n { color: var(--muted); font-size: .68rem; margin-left: 2px; }
 .ins-actions { text-align: right; margin-top: 14px; }
 
 /* --- リピート表示 --- */

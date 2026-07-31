@@ -636,11 +636,29 @@ const NOTE = (() => {
     if (e.created) { const d = new Date(e.created); return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}`; }
     return "";
   }
-  function hbar(label, count, max, extra) {
-    const w = max ? Math.max(3, Math.round(count / max * 100)) : 0;
-    return `<div class="ch-row"><div class="ch-lbl">${escN(label)}</div>
-      <div class="ch-track"><div class="ch-fill" style="width:${w}%"></div></div>
-      <div class="ch-val">${count}${extra || ""}</div></div>`;
+  /* ---------- グラフの部品 ----------
+     色の決めごと（データ可視化の作法に沿って選び、検証ツールを通したもの）：
+     ・棒の色は「量」を長さで表しているので、色は1色に固定する。
+       値ごとに色を変えると、長さで分かることを色でもう一度言うだけになり、
+       色が本来担うべき「どれのことか」を伝える力を無駄づかいしてしまう。
+     ・評価の分布だけは★1〜★5という順番そのものが意味を持つので、
+       1色の濃淡を段階的に変える（薄い＝低い、濃い＝高い）。
+       この5段階は薄い端が背景に埋もれないことを検証済み。 */
+  const RATING_RAMP = ["#c69258", "#b17c3f", "#9c672d", "#815322", "#644016"];   // ★1→★5
+  const BAR_HUE = "#b5763a";
+  /* 単位。日本語は「10本」と続けて書くが、英語は「10 cigars」と空ける */
+  const unit = (jp) => T(jp, null, "chart");
+  /* 横軸の月。英語では月名の略、日本語では「7月」 */
+  const MON_EN = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+  const monthLabel = (n) => I18N.isEn ? MON_EN[n - 1] : T("{n}月", { n });
+
+  /* 横棒。数値は必ず棒の右に出す（色だけに頼らず読めるようにするため） */
+  function hbar(label, count, max, extra, color) {
+    const w = (count && max) ? Math.max(2, Math.round(count / max * 100)) : 0;
+    return `<div class="ch-row" data-tip="${escN(label + "：" + count + (extra || ""))}">
+      <div class="ch-lbl">${escN(label)}</div>
+      <div class="ch-track"><div class="ch-fill" style="width:${w}%;background:${color || BAR_HUE}"></div></div>
+      <div class="ch-val"><b>${count}</b>${extra || ""}</div></div>`;
   }
   function renderStats() {
     const box = q("#noteStats");
@@ -693,15 +711,37 @@ const NOTE = (() => {
       mSpend[m] = (mSpend[m] || 0) + (Number(e.price) || 0);
     });
     const maxM = Math.max(1, ...months.map(m => mCount[m] || 0));
-    const monthChart = `<div class="ch-h">${escN(T("月別の本数（直近12か月）"))}</div><div class="mchart">` +
-      months.map(m => {
-        const c = mCount[m] || 0;
-        const h = Math.round(c / maxM * 72);
-        const lbl = T("{n}月", { n: Number(m.slice(5)) });
-        const tip = mSpend[m] ? `¥${mSpend[m].toLocaleString()}` : "";
-        return `<div class="mcol" title="${escN(m)}：${escN(T("{n}本", { n: c }))} ${tip}">
-          <div class="mval">${c || ""}</div><div class="mbar" style="height:${Math.max(c ? 6 : 2, h)}px"></div><div class="mlbl">${lbl}</div></div>`;
-      }).join("") + `</div>`;
+    const total12 = months.reduce((s, m) => s + (mCount[m] || 0), 0);
+    const avg12 = total12 / 12;
+    const thisMonth = months[months.length - 1];
+    /* 目盛りは上端と中間の2本だけ。線を増やすほど棒が読みにくくなるため。 */
+    const cols = months.map(m => {
+      const c = mCount[m] || 0;
+      const isNow = m === thisMonth;
+      const tip = T("{m}：{n}本", { m: m.replace("-", "/"), n: c })
+        + (mSpend[m] ? " · ¥" + mSpend[m].toLocaleString() : "");
+      /* 値は「今月」と「最も多い月」だけに出す。全部に出すと数字が壁になって形が読めなくなる。 */
+      const showVal = c > 0 && (isNow || c === maxM);
+      return `<div class="mcol${isNow ? " now" : ""}" data-tip="${escN(tip)}">
+        <div class="mval">${showVal ? c : ""}</div>
+        <div class="mbar" style="--h:${(c / maxM * 100).toFixed(1)}%"></div>
+        <div class="mlbl">${escN(monthLabel(Number(m.slice(5))))}</div></div>`;
+    }).join("");
+    const monthChart = `
+      <section class="chart">
+        <div class="ch-head">
+          <span class="ch-h">${escN(T("月別の本数（直近12か月）"))}</span>
+          <span class="ch-sub">${escN(T("合計 {n}本 · 月平均 {a}本", { n: total12, a: avg12.toFixed(1) }))}</span>
+        </div>
+        <div class="mchart">
+          <div class="m-plot">
+            <span class="m-grid top"></span>
+            <span class="m-grid mid"></span>
+            ${avg12 > 0 ? `<span class="m-avg" style="bottom:${(avg12 / maxM * 100).toFixed(1)}%"><i>${escN(T("平均"))}</i></span>` : ""}
+            <div class="m-cols">${cols}</div>
+          </div>
+        </div>
+      </section>`;
 
     // 産地トップ6
     const byC = {};
@@ -709,14 +749,20 @@ const NOTE = (() => {
     const topC = Object.entries(byC).sort((a, b) => b[1] - a[1]).slice(0, 6);
     const maxC = Math.max(1, ...topC.map(x => x[1]));
     const countryChart = topC.length
-      ? `<div class="ch-h">${escN(T("よく吸う産地"))}</div>` + topC.map(([k, v]) => hbar(I18N.country(k), v, maxC, T("本"))).join("") : "";
+      ? `<section class="chart"><div class="ch-head"><span class="ch-h">${escN(T("よく吸う産地"))}</span>
+           <span class="ch-sub">${escN(T("上位{n}件", { n: topC.length }))}</span></div>`
+        + topC.map(([k, v]) => hbar(I18N.country(k), v, maxC, unit("本"))).join("") + `</section>` : "";
 
     // 評価の分布
     const byR = [0, 0, 0, 0, 0];
     entries.forEach(e => { const r = Math.round(Number(e.rating) || 0); if (r >= 1 && r <= 5) byR[r - 1]++; });
     const maxR = Math.max(1, ...byR);
+    const rated = byR.reduce((s, v) => s + v, 0);
+    const avgR = rated ? byR.reduce((s, v, i) => s + v * (i + 1), 0) / rated : 0;
     const ratingChart = byR.some(v => v)
-      ? `<div class="ch-h">${escN(T("評価の分布"))}</div>` + [5, 4, 3, 2, 1].map(r => hbar("★" + r, byR[r - 1], maxR, T("本"))).join("") : "";
+      ? `<section class="chart"><div class="ch-head"><span class="ch-h">${escN(T("評価の分布"))}</span>
+           <span class="ch-sub">${escN(T("平均 ★{a}", { a: avgR.toFixed(1) }))}</span></div>`
+        + [5, 4, 3, 2, 1].map(r => hbar("★" + r, byR[r - 1], maxR, unit("本"), RATING_RAMP[r - 1])).join("") + `</section>` : "";
 
     // 喫煙時間（タイマー記録があるものだけ）
     const withDur = entries.filter(e => Number(e.duration) > 0);
@@ -727,9 +773,16 @@ const NOTE = (() => {
         const k = e.vitola || "その他";
         (byV[k] = byV[k] || []).push(Number(e.duration));
       });
-      const rows = Object.entries(byV).map(([k, arr]) =>
-        T("<div class=\"dur-row\">{k}：平均 <b>{avg}分</b>（{n}回）</div>", { k: escN(I18N.vitola(k)), avg: Math.round(arr.reduce((s, x) => s + x, 0) / arr.length), n: arr.length })).join("");
-      durBlock = `<div class="ch-h">${escN(T("喫煙時間（タイマー記録）"))}</div>${rows}`;
+      /* 平均の長い順に並べ、いちばん長いものを基準に棒の長さを決める */
+      const durs = Object.entries(byV)
+        .map(([k, arr]) => ({ k, avg: Math.round(arr.reduce((s, x) => s + x, 0) / arr.length), n: arr.length }))
+        .sort((a, b) => b.avg - a.avg);
+      const maxD = Math.max(1, ...durs.map(d => d.avg));
+      const rows = durs.map(d =>
+        hbar(I18N.vitola(d.k), d.avg, maxD, unit("分"))
+          .replace('</div></div>', `<span class="ch-n">${escN(T("（{n}回）", { n: d.n }))}</span></div></div>`)).join("");
+      durBlock = `<section class="chart"><div class="ch-head"><span class="ch-h">${escN(T("喫煙時間（タイマー記録）"))}</span>
+        <span class="ch-sub">${escN(T("サイズ別の平均 · {n}件から", { n: withDur.length }))}</span></div>${rows}</section>`;
     }
 
     ins.innerHTML = `
@@ -747,6 +800,41 @@ const NOTE = (() => {
       </details>`;
     const bw = q("#btnWrapped");
     if (bw) bw.addEventListener("click", openWrapped);
+    wireChartTips(ins);
+  }
+
+  /* ---------- グラフの吹き出し ----------
+     棒に触れた／指を置いたときに中身を出す。ブラウザ標準の title は
+     出るまで時間がかかり、スマホでは出ないため自前で用意している。 */
+  function wireChartTips(root) {
+    if (!root || root.dataset.tipWired === "1") return;
+    root.dataset.tipWired = "1";
+    let tip = null;
+    const show = (el) => {
+      const text = el.getAttribute("data-tip");
+      if (!text) return;
+      if (!tip) { tip = document.createElement("div"); tip.className = "ch-tip"; document.body.appendChild(tip); }
+      tip.textContent = text;
+      const r = el.getBoundingClientRect();
+      tip.style.opacity = "1";
+      /* 画面の外にはみ出さないように、左右だけ内側へ寄せる */
+      const w = tip.offsetWidth;
+      let x = r.left + r.width / 2 - w / 2;
+      x = Math.max(8, Math.min(x, window.innerWidth - w - 8));
+      tip.style.left = x + "px";
+      tip.style.top = (r.top + window.scrollY - tip.offsetHeight - 8) + "px";
+    };
+    const hide = () => { if (tip) tip.style.opacity = "0"; };
+    root.addEventListener("pointerover", (e) => { const el = e.target.closest("[data-tip]"); if (el) show(el); });
+    root.addEventListener("pointerout", (e) => {
+      const from = e.target.closest("[data-tip]");
+      if (!from) return;
+      /* 同じ棒の中で子要素へ移っただけのときは消さない */
+      const to = e.relatedTarget && e.relatedTarget.closest && e.relatedTarget.closest("[data-tip]");
+      if (to !== from) hide();
+    });
+    root.addEventListener("pointerdown", (e) => { const el = e.target.closest("[data-tip]"); if (el) show(el); });
+    window.addEventListener("scroll", hide, { passive: true });
   }
 
   /* ---------- リピート（同じ銘柄を何回吸ったか） ---------- */
