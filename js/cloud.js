@@ -73,6 +73,34 @@ const CLOUD = (() => {
     if (error) throw error;
   }
 
+  /* ---------- ヒュミドール在庫 ----------
+     テーブル: cigar_stock (id text primary key, created bigint, owner text, data jsonb)
+     記録ノートと同じく owner（＝記録者名）で自分の在庫だけを出し入れする。
+     在庫は端末ごとの持ち物ではなく本人の持ち物なので、記録と同じ扱いに揃えている。 */
+  const STOCK_TABLE = "cigar_stock";
+  async function stockList(owner) {
+    const c = await getClient();
+    const { data, error } = await c.from(STOCK_TABLE).select("*")
+      .eq("owner", owner || "").order("created", { ascending: false });
+    if (error) throw error;
+    return (data || []).map(rowToEntry);
+  }
+  const stockRow = (it, owner) => ({
+    id: it.id, created: it.created || Date.now(), owner: owner || "", data: it
+  });
+  async function stockUpsert(items, owner) {
+    const c = await getClient();
+    const rows = (Array.isArray(items) ? items : [items]).map(it => stockRow(it, owner));
+    if (!rows.length) return;
+    const { error } = await c.from(STOCK_TABLE).upsert(rows, { onConflict: "id" });
+    if (error) throw error;
+  }
+  async function stockRemove(id) {
+    const c = await getClient();
+    const { error } = await c.from(STOCK_TABLE).delete().eq("id", id);
+    if (error) throw error;
+  }
+
   /* ---------- 共有リンク（1件の記録を誰でも見られるURLにする） ----------
      テーブル: cigar_shares (id text primary key, created bigint, data jsonb)
      id は推測不能なランダムトークン。DATABASE_SETUP.md のSQLで作成。 */
@@ -94,5 +122,7 @@ const CLOUD = (() => {
     if (error) throw error;
   }
 
-  return { enabled, list, listAll, upsert, remove, replaceAll, shareUpsert, shareGet, shareRemove };
+  return { enabled, list, listAll, upsert, remove, replaceAll,
+           stockList, stockUpsert, stockRemove,
+           shareUpsert, shareGet, shareRemove };
 })();

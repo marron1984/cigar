@@ -313,6 +313,18 @@ var I18N = (function () {
     "金額とレート（1通貨＝何円か）を入れてください。": "Enter an amount and a rate (how many yen to one unit).",
     "{a} {cur} × {r}円 ＝ 約 ¥{yen} を価格欄に入れました。": "{a} {cur} × ¥{r} ≈ ¥{yen} — put into the price field.",
 
+    /* ---------- 在庫の同期 ---------- */
+    "☁ 共有データベースと同期しています…": "☁ Syncing with the shared database…",
+    "☁ 共有データベースと同期しました（{n}本）。": "☁ Synced with the shared database ({n} cigars).",
+    "☁ 共有データベースに保存しました。": "☁ Saved to the shared database.",
+    "☁ 共有データベースへの保存に失敗しました（手元には保存されています）。":
+      "☁ Could not save to the shared database (your copy on this device is safe).",
+    "☁ 同期できませんでした：{msg}": "☁ Could not sync: {msg}",
+    "☁ 在庫用のテーブルがまだ作られていません。DATABASE_SETUP.md の「ヒュミドール在庫」のSQLをSupabaseで実行してください。":
+      "☁ The table for humidor stock has not been created yet. Run the \"humidor stock\" SQL from DATABASE_SETUP.md in Supabase.",
+    "☁ 上の「記録者」にお名前を入れると、在庫がスマホとパソコンで同じになります。":
+      "☁ Put your name in \"Logged by\" above and your humidor will be the same on your phone and your computer.",
+
     /* ---------- 日本ガイド ---------- */
     "全国の葉巻販売店・シガーバー": "Cigar shops and cigar bars across Japan",
     "全国一覧はただいま調査・整備中です。": "The nationwide list is still being researched.",

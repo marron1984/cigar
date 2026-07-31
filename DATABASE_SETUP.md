@@ -81,6 +81,38 @@ create policy "shares delete for anon" on cigar_shares for delete using (true);
 > 共有リンクを知っている人だけがその記録を見られます（リンクは長いランダム文字列）。
 > 記録を削除すると共有コピーも削除され、リンクは無効になります。
 
+## 3.6 ヒュミドール在庫のテーブル（在庫をスマホとパソコンで同じにする）
+
+記録ノートの中の「🗃 ヒュミドール在庫」を複数の端末で共有する場合は、**SQL Editor** で以下も実行してください：
+
+```sql
+create table if not exists cigar_stock (
+  id text primary key,   -- 在庫1件のID
+  created bigint,
+  owner text,            -- 記録者名（記録ノートと同じ名前で紐づく）
+  data jsonb             -- 在庫の中身（銘柄・本数・購入日・価格・産地など）
+);
+
+create index if not exists cigar_stock_owner_idx on cigar_stock (owner);
+
+alter table cigar_stock enable row level security;
+
+create policy "stock read for anon"   on cigar_stock for select using (true);
+create policy "stock write for anon"  on cigar_stock for insert with check (true);
+create policy "stock update for anon" on cigar_stock for update using (true) with check (true);
+create policy "stock delete for anon" on cigar_stock for delete using (true);
+```
+
+> 実行後、記録ノートの「記録者」に**両方の端末で同じ名前**を入れると、在庫が揃います。
+> 在庫パネルの上に同期の状態（`☁ 共有データベースと同期しました（◯本）`）が出ます。
+>
+> **削除の扱い**：在庫を削除すると「消した印」がデータベースに残ります。これが無いと、
+> もう一方の端末が古い在庫を持ったままなので、次の同期で削除した在庫が復活してしまいます。
+>
+> **同時に触ったとき**：両方の端末で同じ在庫を変えた場合は、**後に変更したほうが残ります**。
+>
+> 通信に失敗しても、その端末の中には保存されるので在庫は失われません。
+
 ## 4. 使い方
 
 - 記録ノートを開くと、上部に **☁ 共有DB（自分の記録だけ表示）** と表示されます。
