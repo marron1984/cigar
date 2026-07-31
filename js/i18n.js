@@ -151,6 +151,8 @@ var I18N = (function () {
     "「🔥 吸う」で在庫が1本減り、記録ノートのフォームが銘柄入りで開きます。産地の色の凡例をタップすると、その産地だけを表示します。":
       "\"🔥 Smoke\" takes one off the count and opens the journal form with the cigar filled in. Tap a colour in the legend to show only that origin.",
     "{n} 本": "{n} cigars",
+    "在庫はこの端末にのみ保存されます（記録ノートとは別で、他の端末とは共有されません）。":
+      "Your humidor is stored on this device only — separately from the journal, and not shared with your other devices.",
 
     /* ---------- 写真からのAI入力 ---------- */
     "AIが写真を読み取っています…（数秒かかります）": "AI is reading the photo… (a few seconds)",
@@ -312,18 +314,6 @@ var I18N = (function () {
     "この端末に保存": "Saved on this device",
     "金額とレート（1通貨＝何円か）を入れてください。": "Enter an amount and a rate (how many yen to one unit).",
     "{a} {cur} × {r}円 ＝ 約 ¥{yen} を価格欄に入れました。": "{a} {cur} × ¥{r} ≈ ¥{yen} — put into the price field.",
-
-    /* ---------- 在庫の同期 ---------- */
-    "☁ 共有データベースと同期しています…": "☁ Syncing with the shared database…",
-    "☁ 共有データベースと同期しました（{n}本）。": "☁ Synced with the shared database ({n} cigars).",
-    "☁ 共有データベースに保存しました。": "☁ Saved to the shared database.",
-    "☁ 共有データベースへの保存に失敗しました（手元には保存されています）。":
-      "☁ Could not save to the shared database (your copy on this device is safe).",
-    "☁ 同期できませんでした：{msg}": "☁ Could not sync: {msg}",
-    "☁ 在庫用のテーブル cigar_stock が見つかりません。DATABASE_SETUP.md の「3.6 ヒュミドール在庫のテーブル」のSQLを、記録ノートと同じSupabaseプロジェクトのSQL Editorで実行してください。実行済みなら <code>notify pgrst, 'reload schema';</code> を流すか、Supabaseの Settings → API で Reload schema cache を押してください。":
-      "☁ The table cigar_stock could not be found. Run the SQL from \"3.6 humidor stock table\" in DATABASE_SETUP.md in the SQL Editor of the same Supabase project the journal uses. If you have already run it, run <code>notify pgrst, 'reload schema';</code> or press Reload schema cache under Settings → API in Supabase.",
-    "☁ 上の「記録者」にお名前を入れると、在庫がスマホとパソコンで同じになります。":
-      "☁ Put your name in \"Logged by\" above and your humidor will be the same on your phone and your computer.",
 
     /* ---------- 日本ガイド ---------- */
     "全国の葉巻販売店・シガーバー": "Cigar shops and cigar bars across Japan",

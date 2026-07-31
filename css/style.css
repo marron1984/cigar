@@ -1862,14 +1862,6 @@ table.ref { min-width: 480px; }
 .stock-panel > summary { cursor: pointer; padding: 14px 18px; list-style: none; font-weight: 700; color: var(--cream); display: flex; align-items: center; gap: 10px; }
 .stock-panel > summary::-webkit-details-marker { display: none; }
 #stockBody { padding: 4px 18px 18px; }
-/* 共有データベースとの同期の状態 */
-.stk-sync { font-family: var(--sans); font-size: .74rem; line-height: 1.6; color: var(--text-soft); margin: 10px 0 0; }
-.stk-sync:empty { display: none; }
-.stk-sync.loading { color: var(--gold-bright); }
-.stk-sync.ok { color: var(--leaf); }
-.stk-sync.warn { color: var(--gold-bright); }
-.stk-sync.error { color: var(--ember); }
-
 /* 在庫の可視化：数字・棚・産地の内訳・熟成の分布 */
 .stk-viz { border: 1px solid var(--line-soft); border-radius: 12px; background: linear-gradient(160deg, var(--panel), var(--panel-2)); padding: 14px 14px 16px; margin: 8px 0 14px; }
 .stk-figs { display: grid; grid-template-columns: repeat(auto-fit, minmax(104px, 1fr)); gap: 8px; margin-top: 12px; }

@@ -1,9 +1,7 @@
 /* ============================================================
    葉巻大辞典 — ヒュミドール在庫管理（記録ノート内）
    持っている葉巻の在庫を、購入日・熟成期間つきで管理する。
-   保存はこの端末（localStorage）。共有DBが有効で「記録者」名が入っている
-   ときは、記録ノートと同じくその名前で共有データベースにも同期する
-   （スマホとパソコンで同じ在庫が見えるようにするため）。
+   この端末（localStorage）に保存。
    ============================================================ */
 const STOCK = (() => {
   const KEY = "cigar_stock_v1";
@@ -12,127 +10,25 @@ const STOCK = (() => {
   const esc = (s) => String(s == null ? "" : s)
     .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
 
-  let items = [];      // 生きている在庫
-  let graves = [];     // 削除済みの印（他の端末にも削除を伝えるために残す）
+  let items = [];
   const visionOn = typeof VISION !== "undefined" && VISION.enabled;   // 写真からのAI自動入力
   let aiBusy = false;
   /* AIが読み取った産地・サイズ。在庫フォームには欄が無いが、
      在庫に持たせておくと「🔥 吸う」で記録フォームへそのまま引き継げる。 */
   let aiMeta = { country: "", vitola: "" };
 
-  /* 保存の形：{ items: 生きている在庫, graves: 削除済みの印 }。
-     以前は在庫の配列をそのまま入れていたので、その形も読めるようにしている。 */
+  /* 保存は在庫の配列そのまま。
+     一時期 { items, graves } という形で保存していた期間があるため、
+     その形も読めるようにしている（その頃の在庫が消えないようにするため）。 */
   function load() {
     let raw = null;
     try { raw = JSON.parse(localStorage.getItem(KEY)); } catch (e) { raw = null; }
-    if (Array.isArray(raw)) { items = raw; graves = []; }                       // 旧形式
-    else if (raw && typeof raw === "object") { items = raw.items || []; graves = raw.graves || []; }
-    else { items = []; graves = []; }
+    if (Array.isArray(raw)) items = raw;
+    else if (raw && Array.isArray(raw.items)) items = raw.items;
+    else items = [];
   }
-  function saveLocal() {
-    try { localStorage.setItem(KEY, JSON.stringify({ items, graves })); }
-    catch (e) { alert(T("在庫を保存できませんでした。")); }
-  }
-
-  /* ---------- 共有データベースとの同期 ----------
-     在庫は「端末の持ち物」ではなく「その人の持ち物」なので、
-     記録ノートと同じく記録者名（owner）で共有データベースに置く。
-     記録ノートは同期するのに在庫だけ端末ごと、という食い違いを無くすため。
-
-     ■ 競合の扱い
-     どの端末でも触れるので、同じ在庫が両方で変わることがある。
-     各在庫に updated（最終更新時刻）を持たせ、新しいほうを採用する。
-     削除は tombstone（deleted 印）として残し、他の端末にも伝わるようにする。
-     消えた在庫が別の端末から復活する、という事故を防ぐため。 */
-  const AUTHOR_KEY = "cigar_author";        // 記録ノートと同じ名前を使う
-  const cloudOn = typeof CLOUD !== "undefined" && CLOUD.enabled;
-  const ownerName = () => { try { return (localStorage.getItem(AUTHOR_KEY) || "").trim(); } catch (e) { return ""; } };
-  let syncing = false;
-  let lastSyncOwner = null;
-
-  function stamp(it) { it.updated = Date.now(); return it; }
-  const all = () => items.concat(graves);
-
-  /* 同じidは updated が新しいほうを採る。片方にしか無いものは残す。
-     戻り値は全件（削除済みの印を含む）。 */
-  function mergeStock(mine, theirs) {
-    const map = new Map();
-    const put = (it) => {
-      if (!it || !it.id) return;
-      const cur = map.get(it.id);
-      if (!cur || (Number(it.updated) || 0) > (Number(cur.updated) || 0)) map.set(it.id, it);
-    };
-    mine.forEach(put);
-    theirs.forEach(put);
-    return [...map.values()];
-  }
-  /* 全件を、生きている在庫と削除済みの印に分け直す */
-  function applyMerged(list) {
-    items = list.filter(x => !x.deleted);
-    graves = list.filter(x => x.deleted);
-  }
-
-  function setSyncStatus(kind, msg) {
-    const el = q("#stkSyncStatus");
-    if (!el) return;
-    el.className = "stk-sync" + (kind ? " " + kind : "");
-    el.innerHTML = msg || "";
-  }
-
-  /* 変更を共有データベースへ送る（失敗しても手元には残る） */
-  function pushCloud(changed) {
-    if (!cloudOn || !ownerName() || !changed || !changed.length) return;
-    CLOUD.stockUpsert(changed, ownerName())
-      .then(() => setSyncStatus("ok", T("☁ 共有データベースに保存しました。")))
-      .catch(err => {
-        console.warn(err);
-        setSyncStatus("error", T("☁ 共有データベースへの保存に失敗しました（手元には保存されています）。"));
-      });
-  }
-
-  /* 手元の変更を保存し、共有データベースにも送る。
-     引数に渡した在庫だけを送る（全件送らないので通信が軽い）。 */
-  function save(changed) {
-    saveLocal();
-    pushCloud(changed ? (Array.isArray(changed) ? changed : [changed]) : all());
-  }
-
-  /* 共有データベースと突き合わせる。開いたときと、記録者名を入れたときに走る。 */
-  async function sync() {
-    const owner = ownerName();
-    if (!cloudOn || !owner || syncing) return;
-    syncing = true;
-    lastSyncOwner = owner;
-    setSyncStatus("loading", T("☁ 共有データベースと同期しています…"));
-    try {
-      const theirs = await CLOUD.stockList(owner);
-      const before = JSON.stringify(items);
-      const merged = mergeStock(all(), theirs);
-      /* 手元にしか無い、または手元のほうが新しいものを送り返す */
-      const theirMap = new Map(theirs.map(x => [x.id, x]));
-      const toPush = merged.filter(x => {
-        const t = theirMap.get(x.id);
-        return !t || (Number(x.updated) || 0) > (Number(t.updated) || 0);
-      });
-      applyMerged(merged);
-      saveLocal();
-      if (JSON.stringify(items) !== before) render();
-      if (toPush.length) await CLOUD.stockUpsert(toPush, owner);
-      setSyncStatus("ok", T("☁ 共有データベースと同期しました（{n}本）。",
-        { n: items.reduce((s, x) => s + (Number(x.qty) || 0), 0) }));
-    } catch (err) {
-      console.warn(err);
-      const msg = String((err && err.message) || err);
-      /* テーブル未作成のときの言い回しは Supabase 側で何通りかある。
-         schema cache 系（PGRST205）は「作ったが反映待ち」のこともあるので、
-         SQLの実行とキャッシュ再読込の両方を案内する。 */
-      if (/does not exist|42P01|PGRST205|schema cache|Could not find the table/i.test(msg)) {
-        setSyncStatus("error", T("☁ 在庫用のテーブル cigar_stock が見つかりません。DATABASE_SETUP.md の「3.6 ヒュミドール在庫のテーブル」のSQLを、記録ノートと同じSupabaseプロジェクトのSQL Editorで実行してください。実行済みなら <code>notify pgrst, 'reload schema';</code> を流すか、Supabaseの Settings → API で Reload schema cache を押してください。"));
-      } else {
-        setSyncStatus("error", T("☁ 同期できませんでした：{msg}", { msg }));
-      }
-    }
-    syncing = false;
+  function save() {
+    try { localStorage.setItem(KEY, JSON.stringify(items)); } catch (e) { alert(T("在庫を保存できませんでした。")); }
   }
   function uid() { return "s" + Date.now().toString(36) + Math.floor(Math.random() * 1e5).toString(36); }
   function todayStr() {
@@ -377,7 +273,6 @@ const STOCK = (() => {
     const totalQty = items.reduce((s, it) => s + (Number(it.qty) || 0), 0);
     if (cnt) cnt.textContent = T("{n} 本", { n: totalQty });
     body.innerHTML = `
-      ${cloudOn ? `<div class="stk-sync" id="stkSyncStatus"></div>` : ""}
       ${vizHtml(totalQty)}
       ${items.length ? `
       <div class="stk-tools">
@@ -404,13 +299,9 @@ const STOCK = (() => {
         <input type="number" id="stkPrice" min="0" placeholder="${esc(T("1本の価格（任意）"))}">
         <button type="button" class="btn btn-sm btn-primary" id="stkAdd">${esc(T("＋ 在庫に追加"))}</button>
       </div>
-      <div class="photo-hint">${visionOn ? esc(T("箱やバンドの写真を選ぶと、銘柄名とブランドをAIが読み取って入れます（入力済みの欄は上書きしません）。")) + "<br>" : ""}${esc(T("「🔥 吸う」で在庫が1本減り、記録ノートのフォームが銘柄入りで開きます。産地の色の凡例をタップすると、その産地だけを表示します。"))}</div>`;
+      <div class="photo-hint">${visionOn ? esc(T("箱やバンドの写真を選ぶと、銘柄名とブランドをAIが読み取って入れます（入力済みの欄は上書きしません）。")) + "<br>" : ""}${esc(T("「🔥 吸う」で在庫が1本減り、記録ノートのフォームが銘柄入りで開きます。産地の色の凡例をタップすると、その産地だけを表示します。"))}<br>${esc(T("在庫はこの端末にのみ保存されます（記録ノートとは別で、他の端末とは共有されません）。"))}</div>`;
     renderList();
     wire();
-    /* 共有モードなのに記録者名が空だと、どの端末の在庫か決められない */
-    if (cloudOn && !ownerName()) {
-      setSyncStatus("warn", T("☁ 上の「記録者」にお名前を入れると、在庫がスマホとパソコンで同じになります。"));
-    }
   }
 
   /* ---------- 写真からのAI自動入力 ----------
@@ -494,16 +385,15 @@ const STOCK = (() => {
     q("#stkAdd").addEventListener("click", () => {
       const name = q("#stkName").value.trim();
       if (!name) { q("#stkName").focus(); return; }
-      const added = stamp({
-        id: uid(), created: Date.now(), name, brand: q("#stkBrand").value.trim(),
+      items.unshift({
+        id: uid(), name, brand: q("#stkBrand").value.trim(),
         qty: Math.max(1, Number(q("#stkQty").value) || 1),
         date: q("#stkDate").value || todayStr(),
         price: Number(q("#stkPrice").value) || null,
         country: q("#stkCountry").value || aiMeta.country || "", vitola: aiMeta.vitola || ""
       });
-      items.unshift(added);
       aiMeta = { country: "", vitola: "" };   // 次の登録に持ち越さない
-      save(added); render();
+      save(); render();
     });
   }
 
@@ -527,7 +417,7 @@ const STOCK = (() => {
       const it = items.find(x => x.id === sel.dataset.scountry);
       if (!it) return;
       it.country = sel.value;
-      save(stamp(it)); render();
+      save(); render();
     });
     body.addEventListener("click", (e) => {
       /* 産地の凡例をタップして、その産地だけを表示 */
@@ -547,31 +437,25 @@ const STOCK = (() => {
         if (!target.length) return;
         const qty = target.reduce((s, x) => s + (Number(x.qty) || 0), 0);
         if (!confirm(T("産地未設定の {k}銘柄（{n}本）を、すべて「{to}」にします。\nよろしいですか？", { k: target.length, n: qty, to: I18N.country(to) }))) return;
-        target.forEach(x => { x.country = to; stamp(x); });
-        save(target); render();
+        items.forEach(x => { if (!x.country) x.country = to; });
+        save(); render();
         return;
       }
       const inc = e.target.closest("[data-sinc]");
       const dec = e.target.closest("[data-sdec]");
       const del = e.target.closest("[data-sdel]");
       const smk = e.target.closest("[data-ssmoke]");
-      if (inc) { const it = items.find(x => x.id === inc.dataset.sinc); if (it) { it.qty = (Number(it.qty) || 0) + 1; save(stamp(it)); render(); } }
-      if (dec) { const it = items.find(x => x.id === dec.dataset.sdec); if (it) { it.qty = Math.max(0, (Number(it.qty) || 0) - 1); save(stamp(it)); render(); } }
+      if (inc) { const it = items.find(x => x.id === inc.dataset.sinc); if (it) { it.qty = (Number(it.qty) || 0) + 1; save(); render(); } }
+      if (dec) { const it = items.find(x => x.id === dec.dataset.sdec); if (it) { it.qty = Math.max(0, (Number(it.qty) || 0) - 1); save(); render(); } }
       if (del) {
         const it = items.find(x => x.id === del.dataset.sdel);
-        if (it && confirm(T("「{name}」を在庫から削除しますか？", { name: it.name }))) {
-          items = items.filter(x => x.id !== it.id);
-          /* 削除した印を残す。これが無いと、別の端末との同期で消した在庫が復活してしまう */
-          const grave = stamp({ id: it.id, deleted: true, created: it.created });
-          graves.push(grave);
-          save(grave); render();
-        }
+        if (it && confirm(T("「{name}」を在庫から削除しますか？", { name: it.name }))) { items = items.filter(x => x.id !== it.id); save(); render(); }
       }
       if (smk) {
         const it = items.find(x => x.id === smk.dataset.ssmoke);
         if (!it) return;
         it.qty = Math.max(0, (Number(it.qty) || 0) - 1);
-        save(stamp(it)); render();
+        save(); render();
         if (typeof NOTE !== "undefined" && NOTE.prefillNew) {
           NOTE.prefillNew({
             name: it.name, brand: it.brand || "",
@@ -591,12 +475,7 @@ const STOCK = (() => {
     try { if (localStorage.getItem(OPEN_KEY) === "1") p.open = true; } catch (e) {}
     p.addEventListener("toggle", () => {
       try { localStorage.setItem(OPEN_KEY, p.open ? "1" : "0"); } catch (e) {}
-      if (p.open) sync();          // 開くたびに最新の在庫を取り直す
     });
-    /* 記録者名が確定したら（フォーカスを外す／Enter）その人の在庫を読み込む。
-       入力の途中で走らせると、打ちかけの名前で同期してしまうため change を使う。 */
-    const an = q("#authorName");
-    if (an && cloudOn) an.addEventListener("change", () => { if (ownerName() !== lastSyncOwner) sync(); });
   }
 
   function init() {
@@ -605,7 +484,6 @@ const STOCK = (() => {
     wirePanel();
     wireList();     // 一覧のクリック監視は最初に一度だけ
     render();
-    sync();         // 共有モードで記録者名があれば、開いた時点で突き合わせる
   }
 
   document.addEventListener("DOMContentLoaded", init);
