@@ -320,8 +320,8 @@ var I18N = (function () {
     "☁ 共有データベースへの保存に失敗しました（手元には保存されています）。":
       "☁ Could not save to the shared database (your copy on this device is safe).",
     "☁ 同期できませんでした：{msg}": "☁ Could not sync: {msg}",
-    "☁ 在庫用のテーブルがまだ作られていません。DATABASE_SETUP.md の「ヒュミドール在庫」のSQLをSupabaseで実行してください。":
-      "☁ The table for humidor stock has not been created yet. Run the \"humidor stock\" SQL from DATABASE_SETUP.md in Supabase.",
+    "☁ 在庫用のテーブル cigar_stock が見つかりません。DATABASE_SETUP.md の「3.6 ヒュミドール在庫のテーブル」のSQLを、記録ノートと同じSupabaseプロジェクトのSQL Editorで実行してください。実行済みなら <code>notify pgrst, 'reload schema';</code> を流すか、Supabaseの Settings → API で Reload schema cache を押してください。":
+      "☁ The table cigar_stock could not be found. Run the SQL from \"3.6 humidor stock table\" in DATABASE_SETUP.md in the SQL Editor of the same Supabase project the journal uses. If you have already run it, run <code>notify pgrst, 'reload schema';</code> or press Reload schema cache under Settings → API in Supabase.",
     "☁ 上の「記録者」にお名前を入れると、在庫がスマホとパソコンで同じになります。":
       "☁ Put your name in \"Logged by\" above and your humidor will be the same on your phone and your computer.",
 

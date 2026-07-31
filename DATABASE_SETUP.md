@@ -103,6 +103,12 @@ create policy "stock update for anon" on cigar_stock for update using (true) wit
 create policy "stock delete for anon" on cigar_stock for delete using (true);
 ```
 
+> **「テーブルが見つかりません（schema cache）」と出るとき**：
+> 1. **記録ノートと同じプロジェクト**で実行したか確認してください（`js/config.js` の `supabaseUrl` と同じプロジェクトです）。
+> 2. 実行済みなら、PostgRESTのキャッシュがまだ古い可能性があります。SQL Editor で
+>    `notify pgrst, 'reload schema';` を実行するか、**Settings → API → Reload schema cache** を押してください。
+> 3. Table Editor に `cigar_stock` が見えているかも確認できます。
+>
 > 実行後、記録ノートの「記録者」に**両方の端末で同じ名前**を入れると、在庫が揃います。
 > 在庫パネルの上に同期の状態（`☁ 共有データベースと同期しました（◯本）`）が出ます。
 >

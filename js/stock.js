@@ -123,8 +123,11 @@ const STOCK = (() => {
     } catch (err) {
       console.warn(err);
       const msg = String((err && err.message) || err);
-      if (/does not exist|42P01/i.test(msg)) {
-        setSyncStatus("error", T("☁ 在庫用のテーブルがまだ作られていません。DATABASE_SETUP.md の「ヒュミドール在庫」のSQLをSupabaseで実行してください。"));
+      /* テーブル未作成のときの言い回しは Supabase 側で何通りかある。
+         schema cache 系（PGRST205）は「作ったが反映待ち」のこともあるので、
+         SQLの実行とキャッシュ再読込の両方を案内する。 */
+      if (/does not exist|42P01|PGRST205|schema cache|Could not find the table/i.test(msg)) {
+        setSyncStatus("error", T("☁ 在庫用のテーブル cigar_stock が見つかりません。DATABASE_SETUP.md の「3.6 ヒュミドール在庫のテーブル」のSQLを、記録ノートと同じSupabaseプロジェクトのSQL Editorで実行してください。実行済みなら <code>notify pgrst, 'reload schema';</code> を流すか、Supabaseの Settings → API で Reload schema cache を押してください。"));
       } else {
         setSyncStatus("error", T("☁ 同期できませんでした：{msg}", { msg }));
       }
