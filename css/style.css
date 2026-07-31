@@ -1865,9 +1865,11 @@ table.ref { min-width: 480px; }
 /* 在庫の可視化：数字・棚・産地の内訳・熟成の分布 */
 .stk-viz { border: 1px solid var(--line-soft); border-radius: 12px; background: linear-gradient(160deg, var(--panel), var(--panel-2)); padding: 14px 14px 16px; margin: 8px 0 14px; }
 .stk-figs { display: grid; grid-template-columns: repeat(auto-fit, minmax(104px, 1fr)); gap: 8px; margin-top: 12px; }
-.sf { border: 1px solid var(--line-soft); border-radius: 10px; background: var(--panel); padding: 9px 8px; text-align: center; }
-.sf-v { display: block; font-family: var(--serif); font-size: 1.05rem; font-weight: 700; line-height: 1.2; color: var(--gold-bright); font-variant-numeric: tabular-nums; }
-.sf-l { display: block; margin-top: 3px; font-size: .66rem; letter-spacing: .1em; color: var(--text-soft); }
+/* .sf は基礎知識のラッパー色の説明でも使われている名前のため、
+   ここでは必ず .stk-figs の中に限定する（他ページに枠が付くのを防ぐ）。 */
+.stk-figs .sf { border: 1px solid var(--line-soft); border-radius: 10px; background: var(--panel); padding: 9px 8px; text-align: center; }
+.stk-figs .sf-v { display: block; font-family: var(--serif); font-size: 1.05rem; font-weight: 700; line-height: 1.2; color: var(--gold-bright); font-variant-numeric: tabular-nums; }
+.stk-figs .sf-l { display: block; margin-top: 3px; font-size: .66rem; letter-spacing: .1em; color: var(--text-soft); }
 
 /* 葉巻の花：在庫を1本ずつ中心から放射状に並べる。
    同じ産地を隣り合わせに置くので、1本＝等しい角度のまま円グラフとしても読める。 */
