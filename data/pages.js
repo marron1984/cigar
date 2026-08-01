@@ -32,7 +32,7 @@ var PAGE_META = {
     }
   },
   basics: {
-    enReady: false,
+    enReady: true,
     path: "basics",
     ja: {
       title: "葉巻の基礎知識 — 構造・吸い方・味わい・歴史｜Cigar Cafe",
@@ -44,7 +44,7 @@ var PAGE_META = {
     }
   },
   countries: {
-    enReady: false,
+    enReady: true,
     path: "countries",
     ja: {
       title: "国・産地別の葉巻 — キューバ／ドミニカ／ニカラグアほか｜Cigar Cafe",
@@ -56,7 +56,7 @@ var PAGE_META = {
     }
   },
   sizes: {
-    enReady: false,
+    enReady: true,
     path: "sizes",
     ja: {
       title: "葉巻の太さとサイズ — リングゲージとビトラ早見表｜Cigar Cafe",
@@ -68,7 +68,7 @@ var PAGE_META = {
     }
   },
   prices: {
-    enReady: false,
+    enReady: true,
     path: "prices",
     ja: {
       title: "葉巻の価格帯別ガイド — 入門からハイエンドまで｜Cigar Cafe",
@@ -80,7 +80,7 @@ var PAGE_META = {
     }
   },
   tools: {
-    enReady: false,
+    enReady: true,
     /* URLは accessories（喫煙具＝アクセサリー）。
        tools/ はビルド用スクリプトの置き場なので、そこと重ならないようにしている。 */
     path: "accessories",

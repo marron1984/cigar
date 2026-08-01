@@ -21,30 +21,90 @@
   </url>
   <url>
     <loc>https://cigar.cafe/basics/</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://cigar.cafe/basics/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cigar.cafe/en/basics/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cigar.cafe/basics/"/>
+    <lastmod>2026-08-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://cigar.cafe/en/basics/</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://cigar.cafe/basics/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cigar.cafe/en/basics/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cigar.cafe/basics/"/>
     <lastmod>2026-08-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://cigar.cafe/countries/</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://cigar.cafe/countries/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cigar.cafe/en/countries/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cigar.cafe/countries/"/>
+    <lastmod>2026-08-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://cigar.cafe/en/countries/</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://cigar.cafe/countries/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cigar.cafe/en/countries/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cigar.cafe/countries/"/>
     <lastmod>2026-08-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://cigar.cafe/sizes/</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://cigar.cafe/sizes/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cigar.cafe/en/sizes/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cigar.cafe/sizes/"/>
+    <lastmod>2026-08-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://cigar.cafe/en/sizes/</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://cigar.cafe/sizes/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cigar.cafe/en/sizes/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cigar.cafe/sizes/"/>
     <lastmod>2026-08-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://cigar.cafe/prices/</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://cigar.cafe/prices/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cigar.cafe/en/prices/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cigar.cafe/prices/"/>
+    <lastmod>2026-08-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://cigar.cafe/en/prices/</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://cigar.cafe/prices/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cigar.cafe/en/prices/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cigar.cafe/prices/"/>
     <lastmod>2026-08-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://cigar.cafe/accessories/</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://cigar.cafe/accessories/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cigar.cafe/en/accessories/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cigar.cafe/accessories/"/>
+    <lastmod>2026-08-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://cigar.cafe/en/accessories/</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://cigar.cafe/accessories/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cigar.cafe/en/accessories/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cigar.cafe/accessories/"/>
     <lastmod>2026-08-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
