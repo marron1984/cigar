@@ -45,7 +45,8 @@ const DATA = (() => {
                  en: ["data/en/japan_guide.js", "data/en/world_1.js", "data/en/world_2.js", "data/en/world_3.js", "data/en/world_4.js", "data/en/world_5.js", "data/en/world_6.js"] },
     /* 日本ガイドの解説は世界編（WORLD_DATA.japan）から作るので、世界編も要る */
     japan:     { needs: ["world"], files: ["data/japan_shops.js"], en: ["data/en/japan_shops.js", "data/en/japan_visitor.js"] },
-    brands:    { files: ["data/brands.js"] },
+    brands:    { files: ["data/brands.js"],
+                 en: ["data/en/brands_cuba_1.js", "data/en/brands_cuba_2.js", "data/en/brands_cuba_3.js", "data/en/brands_cuba_4.js", "data/en/brands_cuba_5.js", "data/en/brands_cuba_6.js", "data/en/brands_cuba_7.js", "data/en/brands_cuba_8.js"] },
     news:      { files: ["data/news.js"] }
   };
 

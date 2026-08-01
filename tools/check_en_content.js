@@ -21,10 +21,10 @@ const ROOT = path.resolve(__dirname, "..");
 const BASE = ["data/data.js", "data/countries_deep.js", "data/philippines_deep.js",
   "data/prices_deep.js", "data/tools.js", "data/humidor.js",
   "data/advanced.js", "data/advanced_deep.js", "data/phd.js", "data/phd_lit.js",
-  "data/world.js", "data/world_deep.js"];
+  "data/world.js", "data/world_deep.js", "data/brands.js"];
 const enDir = path.join(ROOT, "data/en");
 const OVERLAYS = fs.existsSync(enDir)
-  ? fs.readdirSync(enDir).filter(f => /^(basics|sizes|prices|tools_[ab]|countries_[ab]|humidor|advanced_\d|phd_\d|world_\d)\.js$/.test(f)).map(f => "data/en/" + f)
+  ? fs.readdirSync(enDir).filter(f => /^(basics|sizes|prices|tools_[ab]|countries_[ab]|humidor|advanced_\d|phd_\d|world_\d|brands_[a-z]+_\d+)\.js$/.test(f)).map(f => "data/en/" + f)
   : [];
 
 const src = [...BASE, ...OVERLAYS].map(f => fs.readFileSync(path.join(ROOT, f), "utf8")).join("\n;\n");
@@ -33,10 +33,11 @@ const H = new Function(src + "\n;return HUMIDOR_DATA;")();
 const ADV = new Function(src + "\n;return ADVANCED_DATA;")();
 const PHD = new Function(src + "\n;return PHD_DATA;")();
 const WLD = new Function(src + "\n;return WORLD_DATA;")();
+const BRD = new Function(src + "\n;return BRANDS_DATA;")();
 
 /* 深掘り走査：構造ごと歩き、文字列の葉をすべて確かめる。
    ja/es（意図して残す日本語名）・refs/sources（出典）・japan（翻訳済み別ファイル）は対象外 */
-const SKIP_KEYS = new Set(["ja", "name_ja", "es", "refs", "sources", "icons", "abbr", "japan"]);
+const SKIP_KEYS = new Set(["ja", "name_ja", "es", "refs", "sources", "icons", "abbr", "japan", "strength", "logo", "kind"]);
 function deepScan(obj, prefix, out) {
   if (obj == null) return out;
   if (typeof obj === "string") { out.push([prefix, obj]); return out; }
@@ -85,6 +86,12 @@ const SCOPES = {
     ["humidor.usage", H.usage], ["humidor.types", H.types], ["humidor.price", H.price],
     ...H.historyTimeline.map((t, i) => [`historyTimeline[${i}].t`, t.t])
   ],
+  /* ブランド大全：差し替えファイルが存在する国だけ検査する
+     （国ごとに波を分けて翻訳するため。全国そろえば全量が対象になる） */
+  brands: () => {
+    const covered = [...new Set(OVERLAYS.map(f => (f.match(/brands_([a-z]+)_/) || [])[1]).filter(Boolean))];
+    return covered.flatMap(c => deepScan(BRD[c], "BRANDS." + c, []));
+  },
   advanced: () => deepScan(ADV, "ADV", []),
   phd: () => deepScan(PHD, "PHD", []),
   world: () => deepScan(WLD, "WORLD", []),
