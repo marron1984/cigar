@@ -15,15 +15,18 @@ const JAPAN = (() => {
   /* ---------- 英語版の差し替えデータ ----------
      店名・住所にあたる情報は日本語のまま残す（現地で店を探すのに要るため）。
      説明文・エリア・業態・営業状況だけを英語に差し替える。
-     data/en/japan_shops.js が読み込まれているときだけ効く。 */
-  const EN = (typeof JAPAN_EN !== "undefined" && I18N.isEn) ? JAPAN_EN : null;
-  const enShop = (code, name) => (EN && EN.shops && EN.shops[code + "|" + name]) || null;
-  const enPick = (map, v) => (EN && map && map[v]) || v;
+     data/en/japan_shops.js が読み込まれているときだけ効く。
+     この差し替えは日本ガイドを開いたときに読み込まれるので、
+     読み込みより前に固定してしまわないよう、使うたびに見に行く。 */
+  const en = () => ((typeof JAPAN_EN !== "undefined" && I18N.isEn) ? JAPAN_EN : null);
+  const enShop = (code, name) => { const E = en(); return (E && E.shops && E.shops[code + "|" + name]) || null; };
+  const enPick = (map, v) => (map && map[v]) || v;
+  const enMap = (key) => { const E = en(); return E ? E[key] : null; };
 
   function statusBadge(st) {
     const s = String(st || "");
     const cls = /閉店|終了|廃止|不可|中止/.test(s) ? "closed" : /移転/.test(s) ? "moved" : /要確認/.test(s) ? "check" : "open";
-    return `<span class="shop-status ${cls}">${e(enPick(EN && EN.statuses, s) || T("要確認"))}</span>`;
+    return `<span class="shop-status ${cls}">${e(enPick(enMap("statuses"), s) || T("要確認"))}</span>`;
   }
 
   function shopCard(s, code) {
@@ -32,7 +35,7 @@ const JAPAN = (() => {
       ? `<div class="sh-src">${s.sources.map(x => `<span>${link(x)}</span>`).join("")}</div>` : "";
     return `<div class="shop-card jp-shop">
       <div class="sh-head"><div class="sh-name">${e(s.name)}</div>${statusBadge(s.status)}</div>
-      <div class="sh-meta"><span class="sh-type">${e(enPick(EN && EN.types, s.type))}</span><span class="sh-area">${e(t.area || s.area)}</span></div>
+      <div class="sh-meta"><span class="sh-type">${e(enPick(enMap("types"), s.type))}</span><span class="sh-area">${e(t.area || s.area)}</span></div>
       ${(t.desc || s.desc) ? `<div class="sh-desc">${e(t.desc || s.desc)}</div>` : ""}
       ${(t.note || s.note) ? `<div class="sh-note">${e(t.note || s.note)}</div>` : ""}
       ${src}
@@ -42,11 +45,12 @@ const JAPAN = (() => {
   function prefBlock(p) {
     const shops = Array.isArray(p.shops) ? p.shops : [];
     const openN = shops.filter(s => !/閉店|移転/.test(String(s.status))).length;
-    const prefNote = (EN && EN.prefNotes && EN.prefNotes[p.code]) || p.prefNote;
+    const enNotes = enMap("prefNotes");
+    const prefNote = (enNotes && enNotes[p.code]) || p.prefNote;
     /* 検索は日本語・英語どちらの語でも当たるようにする */
     const search = shops.map(s => {
       const t = enShop(p.code, s.name) || {};
-      return `${s.name} ${s.area} ${t.area || ""} ${s.type} ${enPick(EN && EN.types, s.type)} ${s.status}`;
+      return `${s.name} ${s.area} ${t.area || ""} ${s.type} ${enPick(enMap("types"), s.type)} ${s.status}`;
     }).join(" ").toLowerCase();
     const prefName = I18N.isEn && p.pref_en ? p.pref_en : p.pref;
     const body = shops.length
@@ -73,7 +77,7 @@ const JAPAN = (() => {
     }));
     const regions = D.regions.map(r => `
       <div class="jp-region">
-        <h4 class="jp-region-h">${e(enPick(EN && EN.regions, r.region))}</h4>
+        <h4 class="jp-region-h">${e(enPick(enMap("regions"), r.region))}</h4>
         ${(r.prefectures || []).map(prefBlock).join("")}
       </div>`).join("");
     return `<div class="kb-block jp-directory">

@@ -5,7 +5,10 @@
    ============================================================ */
 
 const WORLD = (() => {
-  const W = WORLD_DATA;
+  /* データ本体は、このページを開いたときに読み込む（js/dataload.js）。
+     読み込みが済んでから init() が呼ばれるので、そこで受け取る。 */
+  let W = null;
+  const useData = () => { if (!W) W = WORLD_DATA; };
   const qw = (s, el = document) => el.querySelector(s);
   const e = (s) => String(s == null ? "" : s)
     .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
@@ -229,6 +232,7 @@ const WORLD = (() => {
   }
 
   function showSub(name) {
+    useData();
     if (!R[name]) name = "history";
     if (!done[name]) { qw("#wsub-" + name).innerHTML = R[name]() + sourcesBlock(name); done[name] = true; wireSearch(name); }
     document.querySelectorAll("#view-world .sub-view").forEach(v => v.classList.remove("active"));
@@ -238,6 +242,7 @@ const WORLD = (() => {
   }
 
   function init() {
+    useData();
     qw("#worldSubnav").addEventListener("click", (ev) => {
       const b = ev.target.closest("[data-wsub]");
       if (b) showSub(b.dataset.wsub);
@@ -246,7 +251,8 @@ const WORLD = (() => {
   }
 
   // 日本ガイドは独立メニューへ昇格。既存の解説HTMLを外部（JAPANモジュール）へ提供する。
-  function japanGuideHTML() { return japan() + sourcesBlock("japan"); }
+  function japanGuideHTML() {
+    useData(); return japan() + sourcesBlock("japan"); }
 
   return { init, showSub, japanGuideHTML };
 })();

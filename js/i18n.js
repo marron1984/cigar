@@ -325,6 +325,10 @@ var I18N = (function () {
     "金額とレート（1通貨＝何円か）を入れてください。": "Enter an amount and a rate (how many yen to one unit).",
     "{a} {cur} × {r}円 ＝ 約 ¥{yen} を価格欄に入れました。": "{a} {cur} × ¥{r} ≈ ¥{yen} — put into the price field.",
 
+    /* ---------- ページのデータ読み込み ---------- */
+    "データを読み込めませんでした。通信環境をご確認のうえ、もう一度お試しください。":
+      "This page's data could not be loaded. Please check your connection and try again.",
+
     /* ---------- 日本ガイド ---------- */
     "全国の葉巻販売店・シガーバー": "Cigar shops and cigar bars across Japan",
     "全国一覧はただいま調査・整備中です。": "The nationwide list is still being researched.",

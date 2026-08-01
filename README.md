@@ -70,12 +70,36 @@
 
 ```
 .
-├── index.html         # ページ本体
-├── css/style.css      # スタイル（シガーラウンジ風テーマ）
+├── index.html          # ページ本体（日本語版）
+├── en/index.html       # 英語版シェル（tools/build_en.js が自動生成）
+├── css/style.css       # スタイル（シガーラウンジ風テーマ）
 ├── js/
-│   ├── app.js         # ナビゲーション & 事典レンダリング
-│   └── note.js        # 記録ノート（localStorage）
-└── data/data.js       # 事典データ
+│   ├── app.js          # ナビゲーション & 事典レンダリング
+│   ├── dataload.js     # 各ページのデータを開いたときに読み込む段取り
+│   ├── i18n.js         # 日本語↔英語の対訳
+│   └── note.js         # 記録ノート（localStorage）
+├── data/
+│   ├── data.js         # 事典の基本データ（最初に読む）
+│   ├── summary.js      # 銘柄名・用語の要約（自動生成／最初に読む）
+│   ├── brands.js …     # 各ページの本体データ（そのページを開いたときに読む）
+│   └── en/             # 英語版でだけ読み込む差し替えデータ
+└── tools/
+    ├── build_summary.js  # data/summary.js を作る
+    └── build_en.js       # en/index.html を作る
+```
+
+### データの読み込みについて
+
+収録量が増えたため、`data/` 以下は合計6.7MBあります。これを全部先に読むと最初の表示が
+遅くなるので、**開いたページのデータだけを読み込む**形にしています（`js/dataload.js`）。
+ホーム・横断検索・記録ノートのブランド選択肢などが必要とする「銘柄の名前」だけは、
+軽い要約ファイル `data/summary.js` にまとめて先に読んでいます。
+
+`data/*.js` を編集したら、要約と英語版シェルを作り直してください：
+
+```bash
+NODE_PATH=/opt/node22/lib/node_modules node tools/build_summary.js
+NODE_PATH=/opt/node22/lib/node_modules node tools/build_en.js
 ```
 
 ## 情報の収集について

@@ -41,11 +41,19 @@ function findChrome() {
   const page = await ctx.newPage();
   await page.goto("file://" + path.join(ROOT, "index.html"));
 
-  /* data/en/ に置いた差し替えデータは、英語版だけで読み込む */
+  /* data/en/ に置いた差し替えデータは、英語版だけで読み込む。
+     読み込む段取りは js/dataload.js が持っているので（ページを開いたときに
+     本体データと一緒に読む）、ここでは「書き忘れ」がないかだけ確かめる。 */
   const enDir = path.join(ROOT, "data/en");
   const overlays = fs.existsSync(enDir) ? fs.readdirSync(enDir).filter(f => f.endsWith(".js")).sort() : [];
+  const loaderSrc = fs.readFileSync(path.join(ROOT, "js/dataload.js"), "utf8");
+  const unwired = overlays.filter(f => !loaderSrc.includes("data/en/" + f));
+  if (unwired.length) {
+    console.error("js/dataload.js の PACKS に書かれていない差し替えデータがあります: " + unwired.join(", "));
+    process.exit(1);
+  }
 
-  const result = await page.evaluate(([dict, SITE, overlays]) => {
+  const result = await page.evaluate(([dict, SITE]) => {
     const JP = /[぀-ヿ㐀-鿿]/;
     const ATTRS = ["placeholder", "title", "alt", "aria-label", "content", "label"];
     const missing = [];
@@ -109,21 +117,6 @@ function findChrome() {
     setLink(null, "en", SITE + "en/");
     setLink(null, "x-default", SITE);
 
-    // 英語用の差し替えデータ（data/en/*.js）を、元データの後・アプリのJSの前に足す
-    if (overlays.length) {
-      var anchor = document.querySelector('script[src*="data/"][src$=".js"]:last-of-type');
-      var all = [...document.querySelectorAll('script[src]')];
-      anchor = all.filter(function (x) { return /\/data\//.test(x.getAttribute("src")); }).pop();
-      if (anchor) {
-        overlays.forEach(function (f) {
-          var el = document.createElement("script");
-          el.setAttribute("src", "../data/en/" + f);
-          anchor.parentNode.insertBefore(el, anchor.nextSibling);
-          anchor = el;
-        });
-      }
-    }
-
     // 表示言語をJSに伝える（最初のスクリプトより前に置く）
     const s = document.createElement("script");
     s.textContent = 'window.SITE_LANG = "en";';
@@ -132,7 +125,7 @@ function findChrome() {
     else document.head.appendChild(s);
 
     return { html: document.documentElement.outerHTML, missing };
-  }, [dict, SITE, overlays]);
+  }, [dict, SITE]);
 
   await browser.close();
 

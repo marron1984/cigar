@@ -641,27 +641,21 @@
     <div class="disc">掲載の価格・仕様は目安です。銘柄や販売店により異なります。喫煙は成人（20歳以上）のみ。喫煙は健康を害するおそれがあります。記録データは通常はお使いの端末のブラウザ内に保存されます。共有モード（クラウド設定）を有効にした場合のみ、設定した共有データベースに保存され複数人で閲覧できます。</div>
   </footer>
 
+  <!-- ページのデータを読み込み中に、画面上端で動く細い線 -->
+  <div class="data-progress" id="dataProgress" role="status" aria-live="polite" aria-label="読み込み中"></div>
+
   <!-- 写真拡大表示 -->
   <div class="lightbox" id="lightbox">
     <button class="lb-close" id="lbClose" aria-label="閉じる">×</button>
     <img id="lightboxImg" src="" alt="記録写真">
   </div>
 
+  <!-- 各ページの本体データ（合計6.7MB）は、そのページを開いたときに読み込む。
+       ここで読むのは、どのページでも要る基本データと、銘柄名・用語だけの要約。
+       読み込みの段取りは js/dataload.js に、どのページで何を読むかもそこに。 -->
   <script src="data/data.js"></script>
-  <script src="data/countries_deep.js"></script>
-  <script src="data/philippines_deep.js"></script>
-  <script src="data/prices_deep.js"></script>
-  <script src="data/tools.js"></script>
-  <script src="data/advanced.js"></script>
-  <script src="data/advanced_deep.js"></script>
-  <script src="data/phd.js"></script>
-  <script src="data/phd_lit.js"></script>
-  <script src="data/world.js"></script>
-  <script src="data/world_deep.js"></script>
-  <script src="data/japan_shops.js"></script>
-  <script src="data/humidor.js"></script>
-  <script src="data/news.js"></script>
-  <script src="data/brands.js"></script>
+  <script src="data/summary.js"></script>
+  <script src="js/dataload.js"></script>
   <script src="js/i18n.js"></script>
   <script src="js/format.js"></script>
   <script src="js/config.js"></script>

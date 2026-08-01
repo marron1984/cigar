@@ -64,7 +64,8 @@ const NEWS = (() => {
       btn.addEventListener("click", () => { filter = btn.dataset.nf; render(); }));
   }
 
+  /* 描画は data/news.js を読み終えてから（js/app.js の ensureView が呼ぶ）。
+     起動時に描画すると、ニュースを開いていないのにデータを待つことになる。 */
   function init() { render(); }
-  document.addEventListener("DOMContentLoaded", init);
   return { init, render };
 })();

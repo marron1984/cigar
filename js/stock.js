@@ -313,12 +313,15 @@ const STOCK = (() => {
     el.className = "stk-ai-status" + (kind ? " " + kind : "");
     el.textContent = msg || "";
   }
-  /* ブランド一覧を手がかりとして渡すと、表記ゆれが減る */
+  /* ブランド一覧を手がかりとして渡すと、表記ゆれが減る。
+     名前しか要らないので要約データ（data/summary.js）から取る。 */
   function brandHints() {
     try {
+      const src = (typeof BRANDS_SUMMARY !== "undefined" && BRANDS_SUMMARY.brands)
+        || (typeof BRANDS_DATA !== "undefined" && BRANDS_DATA) || {};
       const out = [];
-      Object.keys(BRANDS_DATA || {}).forEach(k =>
-        (BRANDS_DATA[k] || []).forEach(b => { if (b.kind !== "leaf") { out.push(b.ja); out.push(b.en); } }));
+      Object.keys(src).forEach(k =>
+        (src[k] || []).forEach(b => { if (b.k !== "leaf" && b.kind !== "leaf") { out.push(b.ja); out.push(b.en); } }));
       return out.filter(Boolean).slice(0, 400);
     } catch (e) { return []; }
   }

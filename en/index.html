@@ -629,27 +629,21 @@
     <div class="disc">Prices and specifications shown are a guide only and vary by brand and retailer. Smoking is for adults only (20 and over in Japan). Smoking may harm your health. Journal entries are normally stored in your own browser; they are saved to a shared database, readable by others, only if you turn on shared mode in the cloud settings.</div>
   </footer>
 
+  <!-- ページのデータを読み込み中に、画面上端で動く細い線 -->
+  <div class="data-progress" id="dataProgress" role="status" aria-live="polite" aria-label="Loading"></div>
+
   <!-- 写真拡大表示 -->
   <div class="lightbox" id="lightbox">
     <button class="lb-close" id="lbClose" aria-label="Close">×</button>
     <img id="lightboxImg" src="" alt="Journal photo">
   </div>
 
+  <!-- 各ページの本体データ（合計6.7MB）は、そのページを開いたときに読み込む。
+       ここで読むのは、どのページでも要る基本データと、銘柄名・用語だけの要約。
+       読み込みの段取りは js/dataload.js に、どのページで何を読むかもそこに。 -->
   <script src="../data/data.js"></script>
-  <script src="../data/countries_deep.js"></script>
-  <script src="../data/philippines_deep.js"></script>
-  <script src="../data/prices_deep.js"></script>
-  <script src="../data/tools.js"></script>
-  <script src="../data/advanced.js"></script>
-  <script src="../data/advanced_deep.js"></script>
-  <script src="../data/phd.js"></script>
-  <script src="../data/phd_lit.js"></script>
-  <script src="../data/world.js"></script>
-  <script src="../data/world_deep.js"></script>
-  <script src="../data/japan_shops.js"></script>
-  <script src="../data/humidor.js"></script>
-  <script src="../data/news.js"></script>
-  <script src="../data/brands.js"></script><script src="../data/en/japan_guide.js"></script><script src="../data/en/japan_shops.js"></script>
+  <script src="../data/summary.js"></script>
+  <script src="../js/dataload.js"></script>
   <script src="../js/i18n.js"></script>
   <script src="../js/format.js"></script>
   <script src="../js/config.js"></script>

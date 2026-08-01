@@ -239,8 +239,20 @@ const NOTE = (() => {
     "メキシコ", "エクアドル", "アメリカ", "ブラジル", "カメルーン"
   ];
 
-  /* ---------- ブランド一覧を国別にグルーピングして集約 ---------- */
+  /* ---------- ブランド一覧を国別にグルーピングして集約 ----------
+     選択肢に要るのは「名前」だけなので、普段は要約データ（data/summary.js）を使う。
+     博士編・上級編・ブランド大全の本体（合計5MB超）を記録ノートのために
+     読み込まなくて済むようにするため。要約は tools/build_summary.js が
+     下の集約手順とまったく同じ手順で作っている。
+     要約が無い（生成前・読み込み失敗）ときは、その場で組み立てる。 */
+  let groupCache = null;
   function brandGroups() {
+    if (groupCache) return groupCache;
+    const pre = (typeof BRANDS_SUMMARY !== "undefined") && BRANDS_SUMMARY.noteBrands;
+    if (Array.isArray(pre) && pre.length) return (groupCache = pre);
+    return (groupCache = buildBrandGroups());
+  }
+  function buildBrandGroups() {
     const groups = new Map();      // 国名 -> Set<ブランド名>
     const assigned = new Set();    // 既にどこかの国に割り当て済みのブランド名（重複掲載を防ぐ）
     const push = (country, n) => {

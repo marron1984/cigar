@@ -1,11 +1,9 @@
 {
   "_readme": "index.html の日本語テキスト → 英語。tools/build_en.js が en/index.html を生成するときに使う。キーは index.html の文字列そのまま（前後の空白は無視）。訳が無い項目は生成時に「未翻訳」として報告される。",
-
   "Cigar Cafe｜はじめての葉巻を、やさしく": "Cigar Cafe — A Gentle Introduction to Cigars",
   "はじめての人でも入りやすい葉巻（シガー）の入門サイト。基礎知識・国や産地・太さ・価格・道具をやさしく解説。吸った一本を記録できるノート付き。": "An approachable guide to cigars for newcomers. Clear explanations of the basics, origins, sizes, prices and tools — with a journal for logging every cigar you smoke.",
   "葉巻をたのしむ": "Enjoy the cigar",
   "メニューを開閉": "Open or close the menu",
-
   "ホーム": "Home",
   "記録ノート": "Journal",
   "基礎知識": "Basics",
@@ -20,7 +18,6 @@
   "世界編": "The World",
   "ブランド大全": "Brands",
   "ニュース": "News",
-
   "急がない人の、": "Time for those",
   "ための時間。": "in no hurry.",
   "Welcome — はじめての一本へ": "Welcome — to your first cigar",
@@ -34,7 +31,6 @@
   "はじめる →": "Get started →",
   "読みたいところから": "Start anywhere",
   "本サイトは葉巻文化・製品知識を紹介する情報・記録用の事典です。喫煙は20歳以上（成人）のみ。健康への影響に十分ご留意ください。": "This site is a reference and journal covering cigar culture and product knowledge. Smoking is for adults only (20+ in Japan). Please be mindful of the health effects.",
-
   "葉巻とは何か、構造、吸い方、味わいの表現、ラッパーの色、歴史とマナー。初めての一本の前に読んでおきたい基本を網羅。": "What a cigar is, how it is built, how to smoke one, the vocabulary of flavour, wrapper shades, history and etiquette — everything worth reading before your first cigar.",
   "焚き火のそばで葉巻をくゆらせ、くつろぐひととき": "Unwinding with a cigar beside a fire",
   "葉巻の個性は生まれた土地の気候と土壌が決める。主要10の産地から選び、地理・歴史・栽培・味わいまで、出典付きで詳しく読めます。": "A cigar's character is decided by the climate and soil where it was grown. Ten major origins, covered in depth — geography, history, cultivation and flavour, with sources.",
@@ -48,7 +44,6 @@
   "喫煙具・保管": "Tools & storage",
   "カッター、ライター、ヒュミドール、灰皿……葉巻を美味しく味わい、良い状態で保つための道具の選び方と使い方。": "Cutters, lighters, humidors, ashtrays — how to choose and use the tools that keep a cigar at its best.",
   "シガーカッター — 葉巻を切るための道具": "A cigar cutter — the tool for opening a cigar",
-
   "The Humidor · 専門調査": "The Humidor · In depth",
   "ヒュミドール大全": "The Complete Humidor",
   "葉巻を美味しく味わうための要、ヒュミドール（加湿保存庫）だけに焦点を当てた専門ページ。歴史、世界のメーカー・ブランド、使い方とメンテナンス、種類・分類、価格帯を、5つの観点から徹底調査してまとめました。": "A dedicated study of the humidor — the one piece of equipment that decides whether a cigar is worth smoking. Its history, the makers and brands worldwide, use and maintenance, types, and price bands, researched from five angles.",
@@ -58,7 +53,6 @@
   "使い方": "Use",
   "種類": "Types",
   "価格": "Prices",
-
   "For the Connoisseur · 玄人の領域": "For the Connoisseur",
   "上級編 — 葉巻オタクの世界": "Advanced — for the obsessed",
   "葉の品種と葉位、発酵と巻きの技、キューバ通の見分け方、名門ブランド、喫煙の極意、ペアリング学、そして保管・熟成の科学まで。ここから先は、一本を深く味わうための知識の沼です。": "Leaf varieties and priming, fermentation and the roller's craft, how to read a Cuban, the great houses, the finer points of smoking, pairing, and the science of storage and ageing. Past this point lies the deep end.",
@@ -70,7 +64,6 @@
   "喫煙の極意": "The art of smoking",
   "ペアリング学": "Pairing",
   "保管と熟成の科学": "Storage & ageing",
-
   "Doctorate · 専門研究の領域": "Doctorate · Research",
   "博士編 — 葉巻の学術": "Doctorate — the scholarship of cigars",
   "化学・燃焼・植物学・農学・官能評価・産業経済・地政学・健康科学まで。英語圏を中心とした世界中の学術・専門資料を横断解析し、日本語に編纂した最上級リファレンス。ここは知識の最深部です。冒頭の": "Chemistry, combustion, botany, agronomy, sensory science, industrial economics, geopolitics and health science. A top-tier reference compiled from academic and specialist sources worldwide. This is the deepest part of the site. The opening",
@@ -83,11 +76,9 @@
   "銘柄・規格DB": "Marca & vitola database",
   "産業・経済・地政学": "Industry & geopolitics",
   "健康と法規制": "Health & regulation",
-
   "Japan Guide · 日本の葉巻案内": "Japan Guide · Cigars in Japan",
   "日本で葉巻を買う・楽しむための総合ガイド。全国47都道府県の葉巻販売店・シガーバーの一覧、日本の歴史・税制・喫煙環境・和のマナー・初心者向けの始め方まで。掲載情報は変わりやすいため、来店前に各店の最新情報をご確認ください。": "A complete guide to buying and enjoying cigars in Japan: shops and cigar bars across all 47 prefectures, plus the country's history, taxes, smoking rules, Japanese etiquette and how to begin. Details change often — please check with each venue before visiting.",
   "世界の葉巻文化 — ラ・カサ・デル・ハバノの店先で葉巻を楽しむ人々": "Cigar culture worldwide — outside a La Casa del Habano",
-
   "The World of Cigars · 世界の葉巻を知り尽くす": "The World of Cigars",
   "世界編 — 葉巻のすべて": "The World — everything cigar",
   "世界中の資料を横断リサーチした10領域の総覧。通史年表、世界の文化と名店、著名愛好家、日本ガイド、実践テイスティング集、その他の葉巻、投資とコレクション、多言語用語大全、トラベル購入ガイド、神話とFAQ。ここに葉巻の世界のすべてが集約されています。": "Ten domains researched across sources worldwide: a full timeline, cultures and famous venues, notable aficionados, the Japan guide, tasting notes in practice, other kinds of cigars, investment and collecting, a multilingual glossary, a travel and buying guide, and the myths and FAQ.",
@@ -100,7 +91,6 @@
   "用語大全": "Glossary",
   "トラベル・購入": "Travel & buying",
   "神話・FAQ": "Myths & FAQ",
-
   "The Marcas · 銘柄事典": "The Marcas · Brand encyclopedia",
   "世界の葉巻ブランド（マルカ）を、創業からの歴史・名前の由来・代表ヴィトラとともに収録する銘柄事典。まずはキューバ（ハバノス）の全マルカから。": "An encyclopedia of the world's cigar brands (marcas), each with its history from founding, the origin of its name, and its signature vitolas — beginning with every Cuban marca.",
   "名門ブランドの葉巻 — コイーバ、ロメオ、パルタガス、オヨ、パドロン": "Cigars from the great houses — Cohiba, Romeo, Partagás, Hoyo, Padrón",
@@ -118,18 +108,15 @@
   "フィリピン": "Philippines",
   "インドネシア": "Indonesia",
   "アルゼンチン": "Argentina",
-
   "Admin · 管理": "Admin",
   "記録の管理": "Manage journal entries",
   "共有データベースに保存されている記録を、記録者ごとに一覧します。件数の多いデータを読み込むため、開いただけでは取得せず、ボタンを押したときだけ読み込みます。": "Lists the entries stored in the shared database, grouped by author. Because this can be a large amount of data, nothing is fetched until you press the button.",
   "共有データベースを読み込む": "Load the shared database",
   "CSVで書き出す": "Export as CSV",
-
   "World Cigar News · 世界の葉巻ニュース": "World Cigar News",
   "葉巻ニュース": "Cigar news",
   "海外の専門メディア・公式発表（一次ソース）から主要ニュースを翻訳・要約し、日本国内の葉巻ニュースとあわせてお届けします。各記事に元記事へのリンクを明記しています。": "The main stories from specialist media and official announcements abroad, summarised alongside news from within Japan. Every item links to its original source.",
   "シガーラウンジで葉巻を楽しむ若者たち — LIFE IS BETTER WITH A CIGAR": "Friends enjoying cigars in a lounge — LIFE IS BETTER WITH A CIGAR",
-
   "吸った葉巻を記録して一冊に。銘柄・産地・サイズ・価格・喫煙場所・評価・感想・写真を残せます。": "Turn the cigars you smoke into a book of your own — brand, origin, size, price, place, rating, notes and photos.",
   "葉巻を記録する": "Log a cigar",
   "閉じる": "Close",
@@ -203,7 +190,6 @@
   "エクスポート": "Export",
   "インポート": "Import",
   "記録する": "Log",
-
   "モバイルナビゲーション": "Mobile navigation",
   "メニュー": "Menu",
   "事典": "Guide",
@@ -213,5 +199,6 @@
   "製作者": "Made by",
   "製作者のXへ（別のタブで開きます）": "The maker's X profile (opens in a new tab)",
   "掲載の価格・仕様は目安です。銘柄や販売店により異なります。喫煙は成人（20歳以上）のみ。喫煙は健康を害するおそれがあります。記録データは通常はお使いの端末のブラウザ内に保存されます。共有モード（クラウド設定）を有効にした場合のみ、設定した共有データベースに保存され複数人で閲覧できます。": "Prices and specifications shown are a guide only and vary by brand and retailer. Smoking is for adults only (20 and over in Japan). Smoking may harm your health. Journal entries are normally stored in your own browser; they are saved to a shared database, readable by others, only if you turn on shared mode in the cloud settings.",
-  "記録写真": "Journal photo"
+  "記録写真": "Journal photo",
+  "読み込み中": "Loading"
 }

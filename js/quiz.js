@@ -70,7 +70,13 @@ const QUIZ = (() => {
   function init() {
     const root = q("#quizBox");
     if (!root) return;
-    try { pool = (WORLD_DATA.lexicon || []).filter(t => t.ja && t.desc && t.desc.length > 20); } catch (e) { pool = []; }
+    // 用語は要約データ（data/summary.js）から取る。世界編の本体（0.5MB）を
+    // クイズのためだけに読み込まないようにするため。
+    try {
+      const lex = (typeof BRANDS_SUMMARY !== "undefined" && BRANDS_SUMMARY.lexicon)
+        || (typeof WORLD_DATA !== "undefined" && WORLD_DATA.lexicon) || [];
+      pool = lex.filter(t => t.ja && t.desc && t.desc.length > 20);
+    } catch (e) { pool = []; }
     if (pool.length < 6) return;
     root.innerHTML = `
       <div class="quiz-card">

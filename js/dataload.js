@@ -1,0 +1,106 @@
+/* ============================================================
+   Cigar Cafe — データの後読み込み
+   ------------------------------------------------------------
+   以前は data/*.js（合計 6.7MB）を全部 <script> で先に読んでいたため、
+   ホームを開くだけでブランド大全4.8MBまで待たされていた。
+   ここでは「そのページを開いたときに、そのページのデータだけ読む」形にする。
+
+   ・DATA.pack("brands") … そのビューに要るファイルを読み終えたら解決する Promise
+   ・一度読んだファイルは覚えておき、二度は読まない
+   ・script.async = false で挿し込むので、入れた順に実行される
+     （world_deep.js は world.js の後、という前提が守られる）
+   ・英語版（/en/）では data/en/*.js の差し替えも同じ組に入れて読む
+   ============================================================ */
+const DATA = (() => {
+  /* このファイル自身の場所から、data/ までの道のりを割り出す。
+     日本語版は "js/dataload.js"、英語版は "../js/dataload.js" なので
+     前者は ""、後者は "../" が土台になる。 */
+  const BASE = (() => {
+    const el = document.currentScript;
+    const src = el ? (el.getAttribute("src") || "") : "";
+    const i = src.lastIndexOf("js/dataload.js");
+    return i >= 0 ? src.slice(0, i) : "";
+  })();
+
+  const isEn = (typeof window !== "undefined" && window.SITE_LANG === "en");
+
+  /* ビュー名 → 読み込むファイル。en は英語版でだけ足す差し替えデータ。 */
+  const PACKS = {
+    countries: { files: ["data/countries_deep.js", "data/philippines_deep.js"] },
+    prices:    { files: ["data/prices_deep.js"] },
+    tools:     { files: ["data/tools.js"] },
+    humidor:   { files: ["data/humidor.js"] },
+    advanced:  { files: ["data/advanced.js", "data/advanced_deep.js"] },
+    phd:       { files: ["data/phd.js", "data/phd_lit.js"] },
+    world:     { files: ["data/world.js", "data/world_deep.js"], en: ["data/en/japan_guide.js"] },
+    /* 日本ガイドの解説は世界編（WORLD_DATA.japan）から作るので、世界編も要る */
+    japan:     { needs: ["world"], files: ["data/japan_shops.js"], en: ["data/en/japan_shops.js"] },
+    brands:    { files: ["data/brands.js"] },
+    news:      { files: ["data/news.js"] }
+  };
+
+  const loading = new Map();      // ファイル名 → Promise（読み込み中／済み）
+  let pending = 0;                // いま読み込み中の本数（進捗バーの表示に使う）
+
+  function bump(d) {
+    pending += d;
+    const el = document.getElementById("dataProgress");
+    if (el) el.classList.toggle("on", pending > 0);
+  }
+
+  function loadFile(rel) {
+    if (loading.has(rel)) return loading.get(rel);
+    const p = new Promise((resolve, reject) => {
+      const s = document.createElement("script");
+      s.src = BASE + rel;
+      s.async = false;            // 挿し込んだ順に実行させる（読み込み順が意味を持つため）
+      s.onload = () => { bump(-1); resolve(rel); };
+      s.onerror = () => {
+        bump(-1);
+        // 失敗は覚えない。通信が戻ったあと、もう一度開けばやり直せるように
+        loading.delete(rel);
+        s.remove();
+        reject(new Error(rel));
+      };
+      bump(1);
+      document.head.appendChild(s);
+    });
+    loading.set(rel, p);
+    return p;
+  }
+
+  function filesOf(name) {
+    const p = PACKS[name];
+    if (!p) return [];
+    const out = [];
+    (p.needs || []).forEach(n => out.push(...filesOf(n)));
+    out.push(...(p.files || []));
+    if (isEn) out.push(...(p.en || []));
+    return out;
+  }
+
+  /* 指定ビューのデータを揃える。読むものが無いビューは即座に解決する。 */
+  function pack(name) {
+    const files = filesOf(name);
+    if (!files.length) return Promise.resolve();
+    return Promise.all(files.map(loadFile)).then(() => undefined);
+  }
+
+  /* すでに読み始めている（＝待たずに済む）か */
+  const has = (name) => { const f = filesOf(name); return f.length > 0 && f.every(x => loading.has(x)); };
+
+  /* 先読み。回線が細い端末や通信量節約モードでは何もしない。
+     opts.now が真なら（メニューに触れた等、すぐ開きそうなとき）待たずに読み始める。 */
+  function prefetch(names, opts) {
+    const c = navigator.connection;
+    if (c && (c.saveData || /^(slow-)?2g$/.test(c.effectiveType || ""))) return;
+    const todo = names.filter(n => PACKS[n] && !has(n));
+    if (!todo.length) return;
+    const run = () => todo.forEach(n => pack(n).catch(() => {}));
+    if (opts && opts.now) run();
+    else if (typeof requestIdleCallback === "function") requestIdleCallback(run, { timeout: 4000 });
+    else setTimeout(run, 1500);
+  }
+
+  return { pack, prefetch, has, packs: Object.keys(PACKS) };
+})();

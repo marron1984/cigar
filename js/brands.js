@@ -3,7 +3,10 @@
    国別の銘柄（マルカ）を検索付きアコーディオン一覧で表示
    ============================================================ */
 const BRANDS = (() => {
-  const B = BRANDS_DATA;
+  /* データ本体は、このページを開いたときに読み込む（js/dataload.js）。
+     読み込みが済んでから init() が呼ばれるので、そこで受け取る。 */
+  let B = null;
+  const useData = () => { if (!B) B = BRANDS_DATA; };
   const q = (s, el = document) => el.querySelector(s);
   const qa = (s, el = document) => [...el.querySelectorAll(s)];
   const e = (s) => String(s == null ? "" : s)
@@ -215,6 +218,7 @@ const BRANDS = (() => {
   }
 
   function init() {
+    useData();
     COUNTRIES.forEach(renderCountry);
     initSubnav();
     initWishlist();

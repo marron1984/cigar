@@ -5,7 +5,10 @@
    ============================================================ */
 
 const ADV = (() => {
-  const A = ADVANCED_DATA;
+  /* データ本体は、このページを開いたときに読み込む（js/dataload.js）。
+     読み込みが済んでから init() が呼ばれるので、そこで受け取る。 */
+  let A = null;
+  const useData = () => { if (!A) A = ADVANCED_DATA; };
   const qq = (s, el = document) => el.querySelector(s);
   const e = (s) => String(s == null ? "" : s)
     .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
@@ -194,6 +197,7 @@ const ADV = (() => {
   const rendered = {};
 
   function showSub(name) {
+    useData();
     if (!RENDERERS[name]) name = "leaf";
     if (!rendered[name]) { qq("#sub-" + name).innerHTML = RENDERERS[name](); rendered[name] = true; }
     document.querySelectorAll("#view-advanced .sub-view").forEach(v => v.classList.remove("active"));
@@ -203,6 +207,7 @@ const ADV = (() => {
   }
 
   function init() {
+    useData();
     qq("#advSubnav").addEventListener("click", (ev) => {
       const b = ev.target.closest("[data-sub]");
       if (b) showSub(b.dataset.sub);

@@ -4,7 +4,10 @@
    ============================================================ */
 
 const HUMIDOR = (() => {
-  const H = HUMIDOR_DATA;
+  /* データ本体は、このページを開いたときに読み込む（js/dataload.js）。
+     読み込みが済んでから init() が呼ばれるので、そこで受け取る。 */
+  let H = null;
+  const useData = () => { if (!H) H = HUMIDOR_DATA; };
   const qh = (s, el = document) => el.querySelector(s);
   const e = (s) => String(s == null ? "" : s)
     .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
@@ -47,6 +50,7 @@ const HUMIDOR = (() => {
   const done = {};
 
   function showSub(name) {
+    useData();
     if (!R[name]) name = "history";
     if (!done[name]) { qh("#hsub-" + name).innerHTML = R[name](); done[name] = true; }
     document.querySelectorAll("#view-humidor .sub-view").forEach(v => v.classList.remove("active"));
@@ -56,6 +60,7 @@ const HUMIDOR = (() => {
   }
 
   function init() {
+    useData();
     qh("#humidorSubnav").addEventListener("click", (ev) => {
       const b = ev.target.closest("[data-hsub]");
       if (b) showSub(b.dataset.hsub);

@@ -17,10 +17,13 @@ const SEARCH = (() => {
   function buildIndex() {
     if (index) return index;
     index = [];
-    // ブランド大全（全産地）
+    // ブランド大全（全産地）。名前しか使わないので要約データ（data/summary.js）から。
+    // 開くのは選ばれた1件だけなので、本体は openBrandInBrands 側で読み込む。
     try {
-      Object.keys(BRANDS_DATA).forEach(key => {
-        (BRANDS_DATA[key] || []).forEach(b => {
+      const SRC = (typeof BRANDS_SUMMARY !== "undefined" && BRANDS_SUMMARY.brands)
+        || (typeof BRANDS_DATA !== "undefined" && BRANDS_DATA) || {};
+      Object.keys(SRC).forEach(key => {
+        (SRC[key] || []).forEach(b => {
           index.push({
             type: "brand", icon: "🏷", label: `${b.ja} — ${b.en}`, sub: COUNTRY_JA[key] || key,
             hay: `${b.ja} ${b.en}`.toLowerCase(),
@@ -37,10 +40,13 @@ const SEARCH = (() => {
           hay: `${c.name_ja} ${c.name_en}`.toLowerCase(),
           go: () => {
             showView("countries");
-            setTimeout(() => {
+            // 産地のデータは開いたときに読み込むので、描画を待ってから選ぶ
+            const after = () => setTimeout(() => {
               const btn = document.querySelector(`#countryNav [data-country="${i}"]`);
               if (btn) btn.click();
             }, 120);
+            if (typeof ensureView === "function") ensureView("countries").then(after).catch(() => {});
+            else after();
           }
         });
       });
@@ -55,9 +61,11 @@ const SEARCH = (() => {
         });
       });
     } catch (e) {}
-    // 用語大全（説明をその場で表示）
+    // 用語大全（説明をその場で表示）。世界編の本体は読まずに要約から。
     try {
-      (WORLD_DATA.lexicon || []).forEach(t => {
+      const LEX = (typeof BRANDS_SUMMARY !== "undefined" && BRANDS_SUMMARY.lexicon)
+        || (typeof WORLD_DATA !== "undefined" && WORLD_DATA.lexicon) || [];
+      LEX.forEach(t => {
         index.push({
           type: "term", icon: "📖", label: `${t.ja}${t.es ? "（" + t.es + "）" : ""}`, sub: t.desc,
           hay: `${t.ja} ${t.es || ""} ${t.en || ""} ${t.desc}`.toLowerCase(),

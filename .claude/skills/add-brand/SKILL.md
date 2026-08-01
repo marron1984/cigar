@@ -23,10 +23,11 @@ Cigar Cafe のブランド大全（`data/brands.js` の `BRANDS_DATA`）へ、1�
 1. **対象を確定** — ブランド名（日本語・英語）と、どの国キーに属するかを決める
 2. **リサーチ** — WebSearch 専門のサブエージェントに海外一次ソースを横断調査させ、JSON断片を書かせる
 3. **マージ＋検証** — `scripts/merge_brand.js` で品質しきい値を満たすものだけを取り込む
-4. **レンダリング確認** — `scripts/render_check.js` で全ページがエラー0・はみ出し0か確認
-5. **コミット＆プッシュ** — 作業ブランチへ
+4. **要約データを作り直す** — `tools/build_summary.js` で `data/summary.js` を更新
+5. **レンダリング確認** — `scripts/render_check.js` で全ページがエラー0・はみ出し0か確認
+6. **コミット＆プッシュ** — 作業ブランチへ
 
-順にやり切ること。特に 3→4 を飛ばして 5 に進まない（壊れたデータを公開しないため）。
+順にやり切ること。特に 3→4→5 を飛ばして 6 に進まない（壊れたデータ・古い要約を公開しないため）。
 
 ---
 
@@ -128,7 +129,23 @@ CRITICAL — WebFetch は使用禁止（この環境では失敗する）。調�
 
 ---
 
-## 4. レンダリング確認
+## 4. 要約データを作り直す
+
+`data/brands.js` は重い（約4.8MB）ので、サイトはブランド大全を開いたときにだけ読み込む。
+ホーム（今日の一本・銘柄ショーケース・収録数）・横断検索・記録ノートのブランド選択肢・
+在庫のAI手がかりは、名前だけを抜き出した **`data/summary.js`** を見ている。
+ブランドを足したら、これを作り直さないと新しい銘柄がそれらに出てこない：
+
+```bash
+NODE_PATH=/opt/node22/lib/node_modules /opt/node22/bin/node tools/build_summary.js
+```
+
+（`data/data.js` `data/phd.js` `data/advanced*.js` `data/world*.js` `data/news.js` を
+変えたときも同じく作り直す。要約はこれらからも作っている。）
+
+---
+
+## 5. レンダリング確認
 
 データを変えたら、全ページが壊れていないか実ブラウザで確認する。これが通って初めて公開してよい：
 
@@ -139,20 +156,31 @@ NODE_PATH=/opt/node22/lib/node_modules /opt/node22/bin/node .claude/skills/add-b
 合格の目印は次の一行：
 
 ```
-TOTAL JS ERRORS: 0 | routes with overflow: 0
+TOTAL JS ERRORS: 0 | routes with overflow: 0 | empty routes: 0
 ```
 
-エラーやはみ出しが出たら、その行に出るページ名と内容を手がかりに原因を直してから再実行する。
+このスクリプトは `data/summary.js` が最新かどうかも確かめ、古ければ作り直したうえで不合格にする
+（＝作り直した summary.js も一緒にコミットすればよい）。`empty routes` は、データの後読み込みが
+うまくいかず中身が出なかったページの数。エラー・はみ出し・空ページが出たら、その行に出る
+ページ名を手がかりに原因を直してから再実行する。
+
+英語版のシェル（`en/index.html`）を作り直したときは、そちらも確認する：
+
+```bash
+NODE_PATH=/opt/node22/lib/node_modules /opt/node22/bin/node tools/build_en.js
+NODE_PATH=/opt/node22/lib/node_modules /opt/node22/bin/node .claude/skills/add-brand/scripts/render_check.js en/index.html
+```
 
 ---
 
-## 5. コミット＆プッシュ
+## 6. コミット＆プッシュ
 
 作業ブランチ（このプロジェクトの指定ブランチ）へコミットしてプッシュする。
-断片ファイル（`data/fragments/`）は .gitignore 済みなので、コミット対象は `data/brands.js` のみ：
+断片ファイル（`data/fragments/`）は .gitignore 済みなので、コミット対象は
+`data/brands.js` と作り直した `data/summary.js`：
 
 ```bash
-git add data/brands.js
+git add data/brands.js data/summary.js
 git commit -m "ブランド大全に〈ブランド名〉を追加（海外一次ソース基づく深掘り・出典N件）"
 git push -u origin <作業ブランチ>
 ```

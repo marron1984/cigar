@@ -5,7 +5,10 @@
    ============================================================ */
 
 const PHD = (() => {
-  const P = PHD_DATA;
+  /* データ本体は、このページを開いたときに読み込む（js/dataload.js）。
+     読み込みが済んでから init() が呼ばれるので、そこで受け取る。 */
+  let P = null;
+  const useData = () => { if (!P) P = PHD_DATA; };
   const qp = (s, el = document) => el.querySelector(s);
   const e = (s) => String(s == null ? "" : s)
     .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
@@ -185,6 +188,7 @@ const PHD = (() => {
   const done = {};
 
   function showSub(name) {
+    useData();
     if (!R[name]) name = "litreview";
     if (!done[name]) { qp("#psub-" + name).innerHTML = R[name](); done[name] = true; }
     document.querySelectorAll("#view-phd .sub-view").forEach(v => v.classList.remove("active"));
@@ -194,6 +198,7 @@ const PHD = (() => {
   }
 
   function init() {
+    useData();
     qp("#phdSubnav").addEventListener("click", (ev) => {
       const b = ev.target.closest("[data-psub]");
       if (b) showSub(b.dataset.psub);

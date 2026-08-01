@@ -35,6 +35,10 @@ const COUNTRY_BRAND_KEY = {
 /* ブランドチップから「ブランド大全」の該当国タブを開き、一致する銘柄があれば展開する */
 function openBrandInBrands(key, en, ja) {
   showView("brands");
+  // ブランド大全のデータは開いたときに読み込むので、描画を待ってから探す
+  ensureView("brands").then(() => openBrandAfterRender(key, en, ja)).catch(() => {});
+}
+function openBrandAfterRender(key, en, ja) {
   const btn = document.querySelector(`#brandsSubnav button[data-bsub="${key}"]`);
   if (btn) btn.click();
   const base = (s) => String(s || "").split(/[（(〔[]/)[0].trim().toLowerCase();
@@ -81,8 +85,52 @@ const views = {
   admin: "view-admin",        /* 管理画面。ナビには出さず #admin で開く */
   note: "view-note"
 };
+/* ---------- ページごとの遅延描画 ----------
+   以前は起動時に全ページを描画していたため、そのために全データを
+   先に読み込む必要があった。いまは「開いたページだけ」データを読み、
+   そのとき初めて描画する。二度目からは何もしない。 */
+const RENDER = {
+  basics: () => renderBasics(),
+  countries: () => renderCountries(),
+  /* 実寸表示の置き場（#realSizeBox）は renderSizes が作るので、その後に */
+  sizes: () => { renderSizes(); if (typeof REALSIZE !== "undefined") REALSIZE.init(); },
+  prices: () => renderPrices(),
+  tools: () => renderTools(),
+  humidor: () => HUMIDOR.init(),
+  advanced: () => ADV.init(),
+  phd: () => PHD.init(),
+  world: () => WORLD.init(),
+  japan: () => JAPAN.init(),
+  brands: () => BRANDS.init(),
+  news: () => (typeof NEWS !== "undefined" ? NEWS.init() : undefined)
+};
+const viewReady = {};      // ビュー名 → 描画済みの Promise
+function ensureView(name) {
+  if (viewReady[name]) return viewReady[name];
+  const p = DATA.pack(name)
+    .then(() => {
+      const old = $("#" + views[name] + " .data-error");   // 前回の読み込み失敗の断り書きを消す
+      if (old) old.remove();
+      if (RENDER[name]) RENDER[name]();
+    })
+    .catch((err) => {
+      delete viewReady[name];        // 通信が戻ったら次の表示でやり直せるように
+      const host = $("#" + views[name]);
+      if (host && !host.querySelector(".data-error")) {
+        const box = document.createElement("div");
+        box.className = "callout warn data-error";
+        box.textContent = T("データを読み込めませんでした。通信環境をご確認のうえ、もう一度お試しください。");
+        host.appendChild(box);
+      }
+      throw err;
+    });
+  viewReady[name] = p;
+  return p;
+}
+
 function showView(name, opts = {}) {
   if (!views[name]) name = "home";
+  ensureView(name).catch(() => {});
   $$(".view").forEach(v => v.classList.remove("active"));
   $("#" + views[name]).classList.add("active");
   $$("#navTabs button, .bottom-nav button").forEach(b =>
@@ -186,6 +234,18 @@ const HOME_CARDS = [
   { view: "brands", h: "ブランド大全", p: "世界の銘柄（マルカ）を創業からの歴史とともに。まずはキューバ全マルカ。" },
   { view: "news", h: "葉巻ニュース", p: "海外一次ソースの翻訳＋日本国内ニュース。新製品・業界・イベント・規制。" }
 ];
+/* ホームで使う銘柄一覧は、名前まわりだけを抜き出した要約データ（data/summary.js）。
+   ブランド大全の本体（約4.8MB）はブランド大全を開いたときに読み込むので、
+   ホームの表示のためだけに待たされることがなくなる。
+   要約のキーは短縮してある（d=導入文 / f=創業 / k=種別）。 */
+function brandsIndex() {
+  if (typeof BRANDS_SUMMARY !== "undefined" && BRANDS_SUMMARY.brands) return BRANDS_SUMMARY.brands;
+  return (typeof BRANDS_DATA !== "undefined") ? BRANDS_DATA : {};
+}
+const bLead = (b) => b.d || String(b.history || "").replace(/【[^】]*】/g, "").trim().slice(0, 150);
+const bFounded = (b) => b.f || String(b.founded || "").slice(0, 18);
+const bKind = (b) => b.k || b.kind || "";
+
 /* 今日の一本：全ブランドから日替わりで1つ紹介（日付で決まるので1日固定） */
 function dailyBrandPick() {
   try {
@@ -194,9 +254,10 @@ function dailyBrandPick() {
       mexico: "メキシコ", ecuador: "エクアドル", usa: "アメリカ", brazil: "ブラジル", cameroon: "カメルーン",
       peru: "ペルー", colombia: "コロンビア", philippines: "フィリピン", indonesia: "インドネシア", argentina: "アルゼンチン"
     };
+    const IDX = brandsIndex();
     const flat = [];
-    Object.keys(BRANDS_DATA).forEach(key =>
-      (BRANDS_DATA[key] || []).forEach(b => flat.push({ key, b, cja: COUNTRY_JA_MAP[key] || "" })));
+    Object.keys(IDX).forEach(key =>
+      (IDX[key] || []).forEach(b => flat.push({ key, b, cja: COUNTRY_JA_MAP[key] || "" })));
     if (!flat.length) return null;
     const now = new Date();
     const seed = now.getFullYear() * 372 + (now.getMonth() + 1) * 31 + now.getDate();
@@ -209,8 +270,9 @@ function dailyBrandPick() {
 function homeFigures() {
   const out = [];
   try {
-    const keys = Object.keys(BRANDS_DATA || {});
-    const brands = keys.reduce((n, k) => n + (BRANDS_DATA[k] || []).length, 0);
+    const IDX = brandsIndex();
+    const keys = Object.keys(IDX);
+    const brands = keys.reduce((n, k) => n + (IDX[k] || []).length, 0);
     if (brands) out.push({ v: brands, u: "", l: "収録ブランド", s: "世界の銘柄（マルカ）を創業から現在まで" });
     if (keys.length) out.push({ v: keys.length, u: "", l: "産地・国", s: "キューバから東南アジアまで" });
   } catch (e) { /* データ未読込でも他は出す */ }
@@ -219,7 +281,9 @@ function homeFigures() {
     if (v) out.push({ v, u: "", l: "サイズ（ビトラ）", s: "寸法と味わいの目安つき" });
   } catch (e) {}
   try {
-    const n = (window.NEWS_DATA || []).length;
+    // ニュース本体はニュースページを開くまで読まないので、件数は要約データから
+    const n = (typeof BRANDS_SUMMARY !== "undefined" && BRANDS_SUMMARY.newsCount)
+      || ((window.NEWS_DATA && window.NEWS_DATA.items) || []).length;
     if (n) out.push({ v: n, u: "", l: "翻訳ニュース", s: "海外一次ソース＋国内の動き" });
   } catch (e) {}
   return out;
@@ -233,10 +297,11 @@ function showcaseBrands(n) {
       mexico: "メキシコ", ecuador: "エクアドル", usa: "アメリカ", brazil: "ブラジル", cameroon: "カメルーン",
       peru: "ペルー", colombia: "コロンビア", philippines: "フィリピン", indonesia: "インドネシア", argentina: "アルゼンチン"
     };
+    const IDX = brandsIndex();
     const flat = [];
-    Object.keys(BRANDS_DATA).forEach(key =>
-      (BRANDS_DATA[key] || []).forEach(b => {
-        if (b.kind === "leaf") return;              // 葉・産地の項目は銘柄ではないので出さない
+    Object.keys(IDX).forEach(key =>
+      (IDX[key] || []).forEach(b => {
+        if (bKind(b) === "leaf") return;            // 葉・産地の項目は銘柄ではないので出さない
         flat.push({ key, b, cja: COUNTRY_JA_MAP[key] || "" });
       }));
     if (!flat.length) return [];
@@ -270,7 +335,7 @@ function renderHome() {
       <div class="fb-kicker">今日の一本 — ${esc(pick.cja)}</div>
       <h2 class="fb-title">${esc(pick.b.ja)}</h2>
       <div class="fb-en">${esc(pick.b.en)}</div>
-      <p class="fb-lead">${esc(String(pick.b.history || "").replace(/【[^】]*】/g, "").trim().slice(0, 150))}…</p>
+      <p class="fb-lead">${esc(bLead(pick.b))}…</p>
       <div class="fb-go">ブランド大全で読む →</div>
     </article>` : "";
   const dc = $("#homeFeature .feature-brand");
@@ -290,7 +355,7 @@ function renderHome() {
           <span class="sc-country">${esc(s.cja)}</span>
           <span class="sc-ja">${esc(s.b.ja)}</span>
           <span class="sc-en">${esc(s.b.en)}</span>
-          <span class="sc-founded">${esc(String(s.b.founded || "").slice(0, 18))}</span>
+          <span class="sc-founded">${esc(bFounded(s.b))}</span>
         </button>`).join("")}
     </div>` : "";
   $$("#homeShowcase .sc-card").forEach(el => {
@@ -690,19 +755,27 @@ function renderTools() {
    ============================================================ */
 function init() {
   renderHome();
-  renderBasics();
-  renderCountries();
-  renderSizes();
-  renderPrices();
-  renderTools();
-  ADV.init();
-  PHD.init();
-  WORLD.init();
-  JAPAN.init();
-  HUMIDOR.init();
-  BRANDS.init();
   NOTE.init();
   const start = (location.hash || "#home").slice(1);
   showView(start, { replace: true });
+  /* 最初の表示が済んだら、軽いページのデータだけ裏でそっと取っておく。
+     世界編・日本ガイド・ブランド大全は大きいので自動では取りに行かず、
+     メニューに触れた時点（下の「触れたら先読み」）で読み始める。
+     通信量節約モードや細い回線では先読みそのものをやめる
+     （判断は js/dataload.js の prefetch にまとめてある）。 */
+  DATA.prefetch(["countries", "prices", "tools", "humidor", "news", "advanced", "phd"]);
+  wirePrefetchOnIntent();
+}
+
+/* 触れたら先読み：メニューやカードに指・カーソルが乗った時点で
+   そのページのデータを取り始める。押してから読み始めるより待ち時間が短くなる。 */
+function wirePrefetchOnIntent() {
+  const hit = (e) => {
+    const el = e.target instanceof Element ? e.target.closest("[data-view]") : null;
+    if (el && el.dataset.view) DATA.prefetch([el.dataset.view], { now: true });
+  };
+  document.addEventListener("pointerover", hit, { passive: true });
+  document.addEventListener("touchstart", hit, { passive: true });
+  document.addEventListener("focusin", hit);
 }
 document.addEventListener("DOMContentLoaded", init);

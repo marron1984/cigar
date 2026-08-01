@@ -86,6 +86,7 @@ const REALSIZE = (() => {
     drawCigar(vitolas[0]);
   }
 
-  document.addEventListener("DOMContentLoaded", init);
+  /* 置き場（#realSizeBox）は renderSizes が作るので、
+     初期化は「太さ・サイズ別」を開いたときに js/app.js から呼ばれる。 */
   return { init };
 })();
