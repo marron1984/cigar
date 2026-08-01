@@ -159,6 +159,18 @@
   </url>
   <url>
     <loc>https://cigar.cafe/news/</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://cigar.cafe/news/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cigar.cafe/en/news/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cigar.cafe/news/"/>
+    <lastmod>2026-08-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://cigar.cafe/en/news/</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://cigar.cafe/news/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cigar.cafe/en/news/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cigar.cafe/news/"/>
     <lastmod>2026-08-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>

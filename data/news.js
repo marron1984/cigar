@@ -13,7 +13,9 @@ var NEWS_DATA = {
       "summary_ja": "ダビドフが小売パートナーと各国市場に捧げる限定シリーズ「Exclusive Editions 2026」として11種の限定シガーを発表した。今年はベリコソ、ペルフェクト、グラン・トロの3フォーマットで、エクアドル、ドミニカ共和国、ニカラグア、米国産の熟成葉をブレンドしている。2026年1月29日から世界の選ばれたダビドフ小売店で限定数量で販売される。",
       "source": "halfwheel",
       "source_title": "Davidoff Releasing 11 Exclusive Editions for 2026",
-      "url": "https://halfwheel.com/davidoff-releasing-11-exclusive-editions-for-2026/460494/"
+      "url": "https://halfwheel.com/davidoff-releasing-11-exclusive-editions-for-2026/460494/",
+      "title_en": "Davidoff Releasing 11 Exclusive Editions for 2026",
+      "summary_en": "Davidoff has announced 11 limited-edition cigars under its Exclusive Editions 2026 series, a limited range dedicated to retail partners and individual national markets. This year's releases come in three formats — Belicoso, Perfecto and Gran Toro — blending aged tobaccos from Ecuador, the Dominican Republic, Nicaragua and the United States. The cigars will go on sale in limited quantities at selected Davidoff retailers around the world from 29 January 2026."
     },
     {
       "date": "2026-02",
@@ -22,7 +24,9 @@ var NEWS_DATA = {
       "summary_ja": "ハバノスS.A.が旧正月（午年）を記念したトリニダッド初のスペシャルリリース「コルセル」を発表した。リングゲージ55×長さ135mmでミディアムストレングスのプロファイルを持ち、1月29日に香港でグローバルローンチが行われた。18本入りの番号付きケースにはNFC技術が組み込まれ、真贋確認と製品情報の提供に対応する。",
       "source": "Habanos S.A. (PR Newswire)",
       "source_title": "HABANOS, S.A. PRESENTS TRINIDAD CORCEL: AN EXCLUSIVE VITOLA TO CELEBRATE THE CHINESE NEW YEAR",
-      "url": "http://www.prnewswire.com/news-releases/habanos-sa-presents-trinidad-corcel-an-exclusive-vitola-to-celebrate-the-chinese-new-year-302676763.html"
+      "url": "http://www.prnewswire.com/news-releases/habanos-sa-presents-trinidad-corcel-an-exclusive-vitola-to-celebrate-the-chinese-new-year-302676763.html",
+      "title_en": "Habanos S.A. Unveils Trinidad Corcel to Mark Chinese New Year",
+      "summary_en": "Habanos S.A. has announced the Corcel, the first special release from Trinidad, created to celebrate the Chinese New Year of the Horse. The vitola measures 135mm in length with a 55 ring gauge and offers a medium-strength profile; its global launch took place in Hong Kong on 29 January. Each numbered case of 18 cigars incorporates NFC technology, enabling authentication and access to product information."
     },
     {
       "date": "2026-03",
@@ -31,7 +35,9 @@ var NEWS_DATA = {
       "summary_ja": "コイーバのブランド誕生60周年を記念するエディシオン・リミターダ2026「エクセレンテス」が3月にローンチされると報じられた。長年噂されてきた「BHK59」とも呼ばれるファットピラミッド形状で、サイズは59×約140mmとなる。2026年2月23〜27日開催のフェスティバル・デル・ハバノXXVIはコイーバ60周年への需要でチケットが完売した。",
       "source": "Friends of el Habano Forum",
       "source_title": "\"Excelentes\": Cohiba's New 60 Aniversario Edición Limitada 2026 is Launching in March",
-      "url": "https://www.fohcigars.com/forum/topic/164666-excelentes-cohibas-new-60-aniversario-edici%C3%B3n-limitada-2026-is-launching-in-march/"
+      "url": "https://www.fohcigars.com/forum/topic/164666-excelentes-cohibas-new-60-aniversario-edici%C3%B3n-limitada-2026-is-launching-in-march/",
+      "title_en": "Cohiba 60th Anniversary Edición Limitada 'Excelentes' Launching in March",
+      "summary_en": "The Edición Limitada 2026 'Excelentes', marking the 60th anniversary of the Cohiba brand, is reported to be launching in March. Long rumoured under the name 'BHK59', the cigar takes a fat pyramid shape measuring 59 ring gauge by roughly 140mm. Tickets for the Festival del Habano XXVI, to be held from 23 to 27 February 2026, sold out on the strength of demand surrounding Cohiba's 60th anniversary."
     },
     {
       "date": "2026-04",
@@ -40,7 +46,9 @@ var NEWS_DATA = {
       "summary_ja": "マイ・ファーザー・シガーズがホンジュラス工場製の2作目となるレギュラーライン「La Lealtad（忠誠）」を発表した。エクアドル産ハバノ・オスクロのラッパーにホンジュラスとニカラグアのダブルバインダーを合わせたミディアム〜フルボディの一本だ。ロブスト、トロ、トロ・ゴルド、トルペードの4サイズで、価格は11〜13.5ドル、2026年4月リリースとなる。",
       "source": "halfwheel",
       "source_title": "My Father Announces La Lealtad",
-      "url": "https://halfwheel.com/my-father-announces-la-lealtad/465936/"
+      "url": "https://halfwheel.com/my-father-announces-la-lealtad/465936/",
+      "title_en": "My Father Announces La Lealtad, New Line from Honduran Factory",
+      "summary_en": "My Father Cigars has announced La Lealtad ('Loyalty'), its second regular-production line made at the company's Honduran factory. The medium-to-full-bodied cigar pairs an Ecuadorian Habano Oscuro wrapper with a double binder from Honduras and Nicaragua. It will be offered in four sizes — Robusto, Toro, Toro Gordo and Torpedo — priced between $11 and $13.50, with release set for April 2026."
     },
     {
       "date": "2026-04",
@@ -49,7 +57,9 @@ var NEWS_DATA = {
       "summary_ja": "ロッキー・パテルが中国の干支シリーズ第3弾となる「Year of the Horse」を発表し、4月に小売店へ出荷された。メキシコ産サンアンドレスのラッパーにニカラグア産バインダー、ニカラグアとホンジュラスのフィラーを使い、7×48のチャーチル1サイズのみの展開だ。米国市場向けは4,000本限定で、1本25ドルとなる。",
       "source": "halfwheel",
       "source_title": "Rocky Patel Year of the Horse Announced",
-      "url": "https://halfwheel.com/rocky-patel-year-of-the-horse-announced/462485/"
+      "url": "https://halfwheel.com/rocky-patel-year-of-the-horse-announced/462485/",
+      "title_en": "Rocky Patel Releases Year of the Horse, Third Zodiac Instalment",
+      "summary_en": "Rocky Patel has announced Year of the Horse, the third instalment in its Chinese zodiac series, which shipped to retailers in April. The cigar uses a Mexican San Andrés wrapper over a Nicaraguan binder with fillers from Nicaragua and Honduras, and comes in a single 7 x 48 Churchill size. The release is limited to 4,000 cigars for the US market, priced at $25 per cigar."
     },
     {
       "date": "2026-04",
@@ -58,7 +68,9 @@ var NEWS_DATA = {
       "summary_ja": "オリバがPCA 2026で、特別なタバコ葉を使った5 3/8×54の独特な形状のペルフェクトを披露した。2023〜2024年のニカラグア・ハラパ産の葉は温暖で雨に恵まれた生育期の恩恵を受け、同社が「グラン・クリュ」に値すると評価するものだ。9,000箱が生産され、うち4,000箱が米国、5,000箱が国際市場向けで、出荷は秋の予定となる。",
       "source": "halfwheel",
       "source_title": "Oliva Serie V Melanio Edición Año 2026 Perfecto Coming This Fall",
-      "url": "https://halfwheel.com/oliva-serie-v-melanio-edicion-ano-2026-perfecto/466473/"
+      "url": "https://halfwheel.com/oliva-serie-v-melanio-edicion-ano-2026-perfecto/466473/",
+      "title_en": "Oliva Serie V Melanio Edición Año 2026 Perfecto Coming This Autumn",
+      "summary_en": "At PCA 2026, Oliva showed a distinctively shaped 5 3/8 x 54 perfecto made with special tobacco. The leaf, grown in Jalapa, Nicaragua in 2023–2024, benefited from a warm growing season blessed with rain, and the company rates it as worthy of 'grand cru' status. Production totals 9,000 boxes, with 4,000 destined for the United States and 5,000 for international markets; shipping is planned for the autumn."
     },
     {
       "date": "2026-05",
@@ -67,7 +79,9 @@ var NEWS_DATA = {
       "summary_ja": "E.P.カリーヨの高級ブランド、ペレス=カリーヨから「Deep Blue Limited Edition 2026」がリリースされた。6×56のトロ・エクストラで、ニカラグア・ハラパ産ラッパーにホンジュラス産バインダー、ニカラグア産フィラーを合わせている。2026年版は20本入りナンバリング入り2,500箱が生産され、5月中旬に全米の店舗へ出荷された。",
       "source": "halfwheel",
       "source_title": "Perez-Carrillo Deep Blue Limited Edition 2026",
-      "url": "https://halfwheel.com/perez-carrillo-deep-blue-limited-edition-2026/474232/"
+      "url": "https://halfwheel.com/perez-carrillo-deep-blue-limited-edition-2026/474232/",
+      "title_en": "Perez-Carrillo Deep Blue Limited Edition 2026 Ships Across the US",
+      "summary_en": "The Deep Blue Limited Edition 2026 has been released under Perez-Carrillo, E.P. Carrillo's premium brand. The 6 x 56 Toro Extra combines a wrapper from Jalapa, Nicaragua with a Honduran binder and Nicaraguan fillers. For the 2026 edition, 2,500 numbered boxes of 20 cigars were produced, shipping to shops across the United States in mid-May."
     },
     {
       "date": "2026-06-12",
@@ -76,7 +90,9 @@ var NEWS_DATA = {
       "summary_ja": "アルトゥーロ・フエンテの「Father & Son 2026 Collection」が6月12日に店舗へ出荷された。サンプラーには2つの新作が含まれ、ひとつはダブルロブスト版の「OpusX 25」、もうひとつは特別なキャップを備えた新バージョンの「ドン・カルロス The Man」だ。OpusX誕生25周年を記念する動きの一環となる。",
       "source": "halfwheel",
       "source_title": "Arturo Fuente's Father and Son 2026 Sampler Includes Two New Cigars",
-      "url": "https://halfwheel.com/arturo-fuentes-father-and-son-2026-sampler-includes-two-new-cigars/472930/"
+      "url": "https://halfwheel.com/arturo-fuentes-father-and-son-2026-sampler-includes-two-new-cigars/472930/",
+      "title_en": "Arturo Fuente Father & Son 2026 Sampler Includes Two New Cigars",
+      "summary_en": "Arturo Fuente's Father & Son 2026 Collection shipped to retailers on 12 June. The sampler contains two new cigars: the OpusX 25, a double robusto version, and a new version of the Don Carlos The Man featuring a special cap. The release forms part of the celebrations marking the 25th anniversary of OpusX."
     },
     {
       "date": "2026-06",
@@ -85,7 +101,9 @@ var NEWS_DATA = {
       "summary_ja": "プラセンシアが2026年サッカー・ワールドカップを前に新作「Triunfal」をリリースし、店頭に並び始めた。サイズは6 1/4×54のトロ・エクストラで、ホンジュラス産のラッパーとバインダーを使用している。オリバもサッカーボール型ヒュミドール入りの「セリエV メラニオ グラン・レゼルバ・リミターダ W杯2026エディション」を用意するなど、W杯関連リリースが相次いでいる。",
       "source": "halfwheel",
       "source_title": "Plasencia Triunfal, a World Cup 2026 Cigar, Arrives at Stores",
-      "url": "https://halfwheel.com/plasencia-triunfal-a-world-cup-2026-cigar-arrives-at-stores/471086/"
+      "url": "https://halfwheel.com/plasencia-triunfal-a-world-cup-2026-cigar-arrives-at-stores/471086/",
+      "title_en": "Plasencia Triunfal, a World Cup 2026 Cigar, Arrives in Shops",
+      "summary_en": "Plasencia has released the Triunfal, a new cigar launched ahead of the 2026 football World Cup, which has begun appearing in shops. The cigar is a 6 1/4 x 54 Toro Extra using a Honduran wrapper and binder. It joins a wave of World Cup-related releases, with Oliva also preparing a Serie V Melanio Gran Reserva Limitada World Cup 2026 Edition presented in a football-shaped humidor."
     },
     {
       "date": "2026-01-07",
@@ -94,7 +112,9 @@ var NEWS_DATA = {
       "summary_ja": "Habanos S.A.のキューバ政府以外で最大の株主（シェルカンパニー経由で28.55%を保有）とされるチェン・ジー（陳志）が、カンボジア当局に逮捕され2026年1月7日に中国へ引き渡された。同氏は2025年10月に米司法当局から「豚の屠殺（ピッグ・ブッチャリング）」詐欺の首謀者として起訴されており、カンボジア政府は同氏の市民権も剥奪した。キューバ葉巻の販売網を揺るがす前代未聞の事態となっている。",
       "source": "halfwheel",
       "source_title": "Chen Zhi, Habanos S.A. Co-Owner, Arrested & Deported to China",
-      "url": "https://halfwheel.com/chen-zhi-habanos-s-a-co-owner-arrested-deported-to-china/459784/"
+      "url": "https://halfwheel.com/chen-zhi-habanos-s-a-co-owner-arrested-deported-to-china/459784/",
+      "title_en": "Chen Zhi, Habanos S.A. Co-Owner, Arrested and Deported to China",
+      "summary_en": "Chen Zhi, said to be the largest shareholder in Habanos S.A. outside the Cuban government, holding 28.55% through shell companies, was arrested by Cambodian authorities and handed over to China on 7 January 2026. He had been indicted by US justice authorities in October 2025 as the alleged mastermind of a 'pig butchering' fraud scheme, and the Cambodian government has also stripped him of his citizenship. The unprecedented affair has shaken the sales network for Cuban cigars."
     },
     {
       "date": "2026-02",
@@ -103,7 +123,9 @@ var NEWS_DATA = {
       "summary_ja": "2026年2月23〜27日にハバナで開催された第26回フェスティバル・デル・ハバノは、コイーバ・ブランド60周年が重なったことで異例の需要となり、チケットはHabanos S.A.の販売網を通じて完売した。同フェスティバルはHabanosが前年の業績発表や新製品披露を行う業界最大級のイベントである。",
       "source": "Cigars-connect",
       "source_title": "For Cohiba's 60th anniversary, the 2026 Festival del Habano is sold out",
-      "url": "https://www.cigars-connect.com/en/for-cohibas-60th-anniversary-the-2026-festival-del-habano-is-sold-out/"
+      "url": "https://www.cigars-connect.com/en/for-cohibas-60th-anniversary-the-2026-festival-del-habano-is-sold-out/",
+      "title_en": "Festival del Habano XXVI Sells Out for Cohiba's 60th Anniversary",
+      "summary_en": "The 26th Festival del Habano, held in Havana from 23 to 27 February 2026, saw exceptional demand as it coincided with the 60th anniversary of the Cohiba brand, and tickets sold out through the Habanos S.A. sales network. The festival is one of the industry's largest events, at which Habanos announces the previous year's results and presents new products."
     },
     {
       "date": "2026-03",
@@ -112,7 +134,9 @@ var NEWS_DATA = {
       "summary_ja": "STGの2025年通期純売上高はDKK 90億（約14億ドル）で前年比1.8%減、オーガニック成長率は-3.1%だった。1株あたりDKK 4.50の配当を提案し、2026年は恒常為替ベースで売上高成長率-2%〜2%、特別項目前EBITマージン13.0〜14.5%を見込む。2026年の優先課題として、マシンメイド葉巻・喫煙用たばこ事業の収益安定化とハンドメイド葉巻事業の再成長を掲げた。",
       "source": "Yahoo Finance",
       "source_title": "Scandinavian Tobacco Group A/S Reports Full-Year Results and Proposes a DKK 4.50 Dividend Per Share",
-      "url": "https://uk.finance.yahoo.com/news/scandinavian-tobacco-group-reports-full-162800816.html"
+      "url": "https://uk.finance.yahoo.com/news/scandinavian-tobacco-group-reports-full-162800816.html",
+      "title_en": "Scandinavian Tobacco Group Reports 2025 Results and 2026 Guidance",
+      "summary_en": "STG's full-year 2025 net sales came to DKK 9.0 billion (roughly $1.4 billion), down 1.8% year on year, with organic growth of -3.1%. The company proposed a dividend of DKK 4.50 per share and, for 2026, expects net sales growth of -2% to 2% at constant currency and an EBIT margin before special items of 13.0-14.5%. As priorities for 2026, it cited stabilising earnings in the machine-rolled cigar and smoking tobacco businesses and returning the handmade cigar business to growth."
     },
     {
       "date": "2026-04-15",
@@ -121,7 +145,9 @@ var NEWS_DATA = {
       "summary_ja": "米連邦地裁のアミット・メータ判事は、Cigar Association of America対FDA訴訟において2020年以来使われてきた「プレミアムシガー」の定義を維持する判断を下した。これにより、フレーバー無添加のハンドメイド葉巻の多くはFDAの規制（製品承認やユーザーフィーなど）の対象外のままとなる一方、フレーバー付き葉巻やマシンメイド葉巻を除外対象に含めるべきとするCAAの主張は退けられた。",
       "source": "halfwheel",
       "source_title": "Court Keeps \"Premium Cigar\" Definition, Flavored Cigars Not Exempt",
-      "url": "https://halfwheel.com/court-keeps-premium-cigar-definition-flavored-cigars-not-exempt/467465/"
+      "url": "https://halfwheel.com/court-keeps-premium-cigar-definition-flavored-cigars-not-exempt/467465/",
+      "title_en": "US Court Upholds Premium Cigar Definition; Flavoured Cigars Not Exempt",
+      "summary_en": "In the Cigar Association of America v FDA case, US District Judge Amit Mehta ruled to uphold the definition of 'premium cigar' in use since 2020. As a result, most unflavoured handmade cigars remain outside the scope of FDA regulation, including product approvals and user fees, while the court rejected the CAA's argument that flavoured and machine-made cigars should also be included in the exemption."
     },
     {
       "date": "2026-04",
@@ -130,7 +156,9 @@ var NEWS_DATA = {
       "summary_ja": "プレミアム・シガー・アソシエーション（PCA）の2026年トレードショーが4月17〜20日にニューオーリンズのアーネスト・N・モリアル・コンベンションセンターで開催された。出展262社、970超の小売アカウントから2,540人以上の小売業者が参加し、総来場者数は5,945人超だった。PCAは2027年のラスベガス開催復帰も発表した。",
       "source": "Premium Cigar Association",
       "source_title": "The Premium Cigar Association Concludes a Successful PCA26 Trade Show in New Orleans",
-      "url": "https://premiumcigars.org/the-premium-cigar-association-concludes-a-successful-pca26-trade-show-in-new-orleans/"
+      "url": "https://premiumcigars.org/the-premium-cigar-association-concludes-a-successful-pca26-trade-show-in-new-orleans/",
+      "title_en": "PCA 2026 Trade Show Closes in New Orleans; Las Vegas in 2027",
+      "summary_en": "The Premium Cigar Association's 2026 trade show was held from 17 to 20 April at the Ernest N. Morial Convention Center in New Orleans. The event drew 262 exhibitors and more than 2,540 retailers from over 970 retail accounts, with total attendance exceeding 5,945. The PCA also announced that the show will return to Las Vegas in 2027."
     },
     {
       "date": "2026-04-30",
@@ -139,7 +167,9 @@ var NEWS_DATA = {
       "summary_ja": "ドミニカ共和国の葉巻製造者団体Procigarは4月30日、アルトゥーロ・フエンテ社長のシロ・A・カセージャを2026〜2028年期の会長に選出した。カセージャは同団体の副会長を務めており、2024〜2026年に会長を務めたラ・フロール・ドミニカーナ共同創業者のリット・ゴメスの後任となる。",
       "source": "halfwheel",
       "source_title": "Ciro Cascella Appointed Procigar President",
-      "url": "https://halfwheel.com/ciro-cascella-appointed-procigar-president/470549/"
+      "url": "https://halfwheel.com/ciro-cascella-appointed-procigar-president/470549/",
+      "title_en": "Arturo Fuente President Ciro Cascella Appointed Procigar President",
+      "summary_en": "Procigar, the association of cigar manufacturers in the Dominican Republic, elected Ciro A. Cascella, president of Arturo Fuente, as its president for the 2026-2028 term on 30 April. Cascella had been serving as the association's vice-president and succeeds Litto Gomez, co-founder of La Flor Dominicana, who held the presidency from 2024 to 2026."
     },
     {
       "date": "2026-05",
@@ -148,7 +178,9 @@ var NEWS_DATA = {
       "summary_ja": "チェン・ジー関連企業への米国の制裁により停止していた、世界最大級の葉巻工場タバカレラ・デ・ガルシア（ドミニカ共和国）とフロール・デ・コパン（ホンジュラス）からAltadis U.S.A.およびJR Cigarへの出荷が再開された。制裁は同氏に関連する100超の事業体に及び、米国側は一時ニカラグアなど別工場への生産移管を進めていた。",
       "source": "halfwheel",
       "source_title": "Tabacalera de García, Flor de Copán Resume Shipments to Altadis U.S.A./JR Cigar",
-      "url": "https://halfwheel.com/tabacalera-de-garcia-flor-de-copan-resume-shipments-to-altadis-u-s-a-jr-cigar/470794/"
+      "url": "https://halfwheel.com/tabacalera-de-garcia-flor-de-copan-resume-shipments-to-altadis-u-s-a-jr-cigar/470794/",
+      "title_en": "Tabacalera de García, Flor de Copán Resume Altadis U.S.A. Shipments",
+      "summary_en": "Shipments to Altadis U.S.A. and JR Cigar have resumed from Tabacalera de García in the Dominican Republic — one of the world's largest cigar factories — and Flor de Copán in Honduras, after being halted by US sanctions on companies linked to Chen Zhi. The sanctions extended to more than 100 entities connected to him, and the US side had temporarily been moving production to other factories, including in Nicaragua."
     },
     {
       "date": "2026-05",
@@ -157,7 +189,9 @@ var NEWS_DATA = {
       "summary_ja": "Cigars InternationalやGeneral Cigar Co.を傘下に持つSTGの2026年第1四半期売上高はDKK 18.59億（約2億8,900万ドル）で、前年同期比約6%減となった。為替の影響で報告ベースは減収だったものの、北米市場ではハンドメイド葉巻カテゴリーを中心にオーガニック売上がプラス成長となり、CAOとコイーバ（米国版）の販売が好調だった。",
       "source": "halfwheel",
       "source_title": "STG Starts Off 2026 With Mixed Cigar Performance",
-      "url": "https://halfwheel.com/stg-starts-off-2026-with-mixed-cigar-performance/471581/"
+      "url": "https://halfwheel.com/stg-starts-off-2026-with-mixed-cigar-performance/471581/",
+      "title_en": "STG Starts 2026 With Mixed Cigar Performance in First Quarter",
+      "summary_en": "STG, whose portfolio includes Cigars International and General Cigar Co., reported first-quarter 2026 net sales of DKK 1,859 million (roughly $289 million), down about 6% year on year. Although reported revenue declined owing to currency effects, organic sales in the North American market grew, led by the handmade cigar category, with strong sales of CAO and the US version of Cohiba."
     },
     {
       "date": "2026-05",
@@ -166,7 +200,9 @@ var NEWS_DATA = {
       "summary_ja": "Cigar Association of Americaのデータによると、2026年第1四半期に米国が輸入したプレミアムシガーは9,090万本で前年同期比3%の微減となった。ニカラグアは5,680万本（シェア62.5%）で首位を維持した一方、ホンジュラスは前年比12%増の1,720万本を出荷し、史上初めてドミニカ共和国を上回って2位となった。",
       "source": "Cigar Aficionado",
       "source_title": "Premium Cigar Imports Down Slightly In First Quarter",
-      "url": "https://www.cigaraficionado.com/article/premium-cigar-imports-down-slightly-in-first-quarter"
+      "url": "https://www.cigaraficionado.com/article/premium-cigar-imports-down-slightly-in-first-quarter",
+      "title_en": "US Premium Cigar Imports Dip 3%; Honduras Takes Second Place",
+      "summary_en": "According to Cigar Association of America data, the United States imported 90.9 million premium cigars in the first quarter of 2026, a slight decline of 3% year on year. Nicaragua retained first place with 56.8 million cigars and a 62.5% share, while Honduras shipped 17.2 million cigars, up 12% on the previous year, overtaking the Dominican Republic for the first time in history to take second place."
     },
     {
       "date": "2025-12",
@@ -175,7 +211,9 @@ var NEWS_DATA = {
       "summary_ja": "Cigar Aficionado誌の「Top 25 Cigars of 2025」で、Padrón 60th Anniversary Perfectoが97点で第1位に選出された。ニカラグア産の熟成タバコのみで作られ、同ブランドが商業リリースした史上2本目のペルフェクト形状という。ダークココアやエスプレッソから始まる深い複雑さが評価された。",
       "source": "cigaraficionado.com",
       "source_title": "The Best Cigars of 2025 | Cigar Aficionado",
-      "url": "https://www.cigaraficionado.com/article/the-best-cigars-of-2025"
+      "url": "https://www.cigaraficionado.com/article/the-best-cigars-of-2025",
+      "title_en": "Padrón 60th Anniversary Perfecto Named Cigar Aficionado's 2025 Cigar of the Year",
+      "summary_en": "In Cigar Aficionado's Top 25 Cigars of 2025, the Padrón 60th Anniversary Perfecto was ranked first with a score of 97 points. Made solely from aged Nicaraguan tobacco, it is said to be only the second perfecto shape the brand has ever released commercially. It was praised for its deep complexity, opening with notes of dark cocoa and espresso."
     },
     {
       "date": "2026-01",
@@ -184,7 +222,9 @@ var NEWS_DATA = {
       "summary_ja": "halfwheelが50の媒体・ブログ・YouTuberのトップ10/トップ25リストを集計する「The Consensus 2025」を発表し、My Father Blue - Hondurasが1位となった。同シガーは集計対象リストの約3分の1に登場した。なお同サイトの読者投票「Readers' Choice Awards 2025」ではSobremesa Solita Redが選ばれている。",
       "source": "halfwheel.com",
       "source_title": "The Consensus 2025 | halfwheel",
-      "url": "https://halfwheel.com/the-consensus-2025/460719/"
+      "url": "https://halfwheel.com/the-consensus-2025/460719/",
+      "title_en": "My Father Blue - Honduras Tops halfwheel's The Consensus 2025",
+      "summary_en": "halfwheel has published The Consensus 2025, which aggregates the top 10 and top 25 lists of 50 publications, blogs and YouTubers, with My Father Blue - Honduras taking first place. The cigar appeared on roughly a third of the lists surveyed. Separately, the Sobremesa Solita Red was chosen in the site's Readers' Choice Awards 2025."
     },
     {
       "date": "2026-01",
@@ -193,7 +233,9 @@ var NEWS_DATA = {
       "summary_ja": "ニカラグア煙草会議所主催の第13回Puro Saborフェスティバルが2026年1月18日から24日にかけて開催された。プレミアムシガーの中心地エステリを軸に、Scandinavian Tobacco GroupやJoya de Nicaraguaなどの工場見学、農園ツアー、グラナダなどでの文化体験、ガラディナーが行われた。",
       "source": "cigarjournal.com",
       "source_title": "Puro Sabor 2026 Day 6: A Unifying Force | Cigar Journal",
-      "url": "https://www.cigarjournal.com/puro-sabor-2026-day-6-a-unifying-force/"
+      "url": "https://www.cigarjournal.com/puro-sabor-2026-day-6-a-unifying-force/",
+      "title_en": "Nicaragua's Puro Sabor 2026 Cigar Festival Takes Place",
+      "summary_en": "The 13th Puro Sabor festival, organised by the Nicaraguan Chamber of Tobacco, was held from 18 to 24 January 2026. Centred on Estelí, the heartland of premium cigars, the programme included visits to factories such as Scandinavian Tobacco Group and Joya de Nicaragua, farm tours, cultural experiences in Granada and elsewhere, and a gala dinner."
     },
     {
       "date": "2026-02",
@@ -202,7 +244,9 @@ var NEWS_DATA = {
       "summary_ja": "「From Soil to Soul」をテーマとする第18回Procigarフェスティバルが2026年2月15日から20日、ラ・ロマーナとサンティアゴで開催された。40カ国以上から約1,000人が参加し、工場・農園ツアーやセミナー、テイスティングが行われた。締めくくりのガラディナーとチャリティーオークションでは61万8,000ドル超を集め、記録的な結果となった。",
       "source": "premiumcigars.org",
       "source_title": "PCA Joins Procigar Festival 2026 in Celebrating \"Our Soil and Soul\"",
-      "url": "https://premiumcigars.org/pca-joins-procigar-festival-2026-in-celebrating-our-soil-and-soul/"
+      "url": "https://premiumcigars.org/pca-joins-procigar-festival-2026-in-celebrating-our-soil-and-soul/",
+      "title_en": "18th Procigar Festival Held in the Dominican Republic",
+      "summary_en": "The 18th Procigar Festival, themed 'From Soil to Soul', took place from 15 to 20 February 2026 in La Romana and Santiago. Around 1,000 participants from more than 40 countries attended factory and farm tours, seminars and tastings. The closing gala dinner and charity auction raised more than $618,000, a record result."
     },
     {
       "date": "2026-02",
@@ -211,7 +255,9 @@ var NEWS_DATA = {
       "summary_ja": "2026年2月23日から27日に予定されていた第26回Festival del Habanoが延期された。1999年の開始以来、公式に「延期」となるのは初めて。キューバの深刻な燃料・電力不足など経済状況が背景にあり、主催側は品質と体験の水準を守るためと説明、新日程は公式チャンネルで告知するとしている。今回はコイーバ・ブランド60周年が目玉となる予定だった。",
       "source": "halfwheel.com",
       "source_title": "Cuba's Festival del Habano XXVI Will be \"Postponed\" (Update) | halfwheel",
-      "url": "https://halfwheel.com/cubas-festival-del-habano-xxvi-will-be-postponed/462367/"
+      "url": "https://halfwheel.com/cubas-festival-del-habano-xxvi-will-be-postponed/462367/",
+      "title_en": "Havana's Festival del Habano XXVI Postponed",
+      "summary_en": "The 26th Festival del Habano, scheduled for 23 to 27 February 2026, has been postponed — the first official postponement since the event began in 1999. Cuba's economic situation, including severe fuel and electricity shortages, lies behind the decision; the organisers explain it is intended to safeguard standards of quality and experience, with new dates to be announced through official channels. This edition was to have had the 60th anniversary of the Cohiba brand as its centrepiece."
     },
     {
       "date": "2026-02",
@@ -220,7 +266,9 @@ var NEWS_DATA = {
       "summary_ja": "Habanos S.A.は公式サイトでFestival del Habanoの延期を発表した。組織委員会は「この国際イベントを特徴づける品質・卓越性・体験の最高水準を守るため」とし、すべての活動やプレゼンテーションを十全に実施できる環境を確保する狙いと説明している。新たな開催日は現在調整中とされる。",
       "source": "habanos.com",
       "source_title": "Habanos Festival Postponed – Habanos, S.A. – Official site",
-      "url": "https://www.habanos.com/en/news/habano-festival-posponed/"
+      "url": "https://www.habanos.com/en/news/habano-festival-posponed/",
+      "title_en": "Habanos S.A. Officially Announces Festival del Habano Postponement",
+      "summary_en": "Habanos S.A. has announced the postponement of the Festival del Habano on its official website. The organising committee said the decision was taken 'to protect the highest standards of quality, excellence and experience that characterise this international event', explaining that the aim is to secure conditions in which all activities and presentations can be carried out in full. New dates are said to be under arrangement."
     },
     {
       "date": "2026-04",
@@ -229,7 +277,9 @@ var NEWS_DATA = {
       "summary_ja": "業界最大の展示会PCA Convention & Trade Showが2026年4月17日から20日、ニューオーリンズ・コンベンションセンターで開催された。初日は会議・プレゼンテーション、土曜から月曜が展示会で、従来の半日形式は廃止され、ショーフロアでの喫煙も認められた。ブース賞では大型部門をAltadis U.S.A.、中型部門をEDM Cigars、小型部門をStoic Cigarsが受賞した。",
       "source": "halfwheel.com",
       "source_title": "PCA 2026: April 17-20 in New Orleans | halfwheel",
-      "url": "https://halfwheel.com/pca-2026-april-17-20-in-new-orleans/437476/"
+      "url": "https://halfwheel.com/pca-2026-april-17-20-in-new-orleans/437476/",
+      "title_en": "PCA 2026 Trade Show Held in New Orleans",
+      "summary_en": "The industry's largest exhibition, the PCA Convention & Trade Show, was held from 17 to 20 April 2026 at the New Orleans convention centre. The first day was devoted to meetings and presentations, with the trade show running from Saturday to Monday; the traditional half-day format was scrapped and smoking was permitted on the show floor. In the booth awards, Altadis U.S.A. won the large category, EDM Cigars the medium category and Stoic Cigars the small category."
     },
     {
       "date": "2026-04-17",
@@ -238,7 +288,9 @@ var NEWS_DATA = {
       "summary_ja": "Premium Cigar Association（PCA）は4月17日、ニューオーリンズのThe Warehouseで開かれたアワードレセプションで2026年Best of the Leafアワードの受賞者を発表した。米国内外の優れたプレミアムシガー小売店、ラウンジ、バーを表彰するもので、Arango Cigar Co.がスポンサーを務めた。",
       "source": "premiumcigars.org",
       "source_title": "Premium Cigar Association (PCA) Announces 2026 Best of the Leaf Award Winners",
-      "url": "https://premiumcigars.org/premium-cigar-association-pca-announces-2026-best-of-the-leaf-award-winners/"
+      "url": "https://premiumcigars.org/premium-cigar-association-pca-announces-2026-best-of-the-leaf-award-winners/",
+      "title_en": "PCA Announces 2026 Best of the Leaf Award Winners",
+      "summary_en": "The Premium Cigar Association (PCA) announced the winners of the 2026 Best of the Leaf awards at an awards reception held on 17 April at The Warehouse in New Orleans. The awards recognise outstanding premium cigar retailers, lounges and bars in the United States and abroad, and were sponsored by Arango Cigar Co."
     },
     {
       "date": "2026-04",
@@ -247,7 +299,9 @@ var NEWS_DATA = {
       "summary_ja": "PCAはニューオーリンズでの2026年トレードショーを成功裏に終え、2027年の開催地がラスベガスに戻ることを発表した。会場では数百の新作シガーやアクセサリーが小売業者やメディアに披露され、J.C. Newmanによる「America250」公式シガーを記念したヒュミドールの展示なども話題となった。",
       "source": "cigardojo.com",
       "source_title": "PCA Wraps Up 2026 Trade Show in New Orleans, Announces 2027 Return to Las Vegas - Cigar Dojo",
-      "url": "https://cigardojo.com/2026/04/pca-wraps-up-2026-trade-show-in-new-orleans-announces-2027-return-to-las-vegas/"
+      "url": "https://cigardojo.com/2026/04/pca-wraps-up-2026-trade-show-in-new-orleans-announces-2027-return-to-las-vegas/",
+      "title_en": "PCA 2026 Closes; Trade Show Returns to Las Vegas in 2027",
+      "summary_en": "The PCA brought its 2026 trade show in New Orleans to a successful close and announced that the 2027 event will return to Las Vegas. Hundreds of new cigars and accessories were presented to retailers and the media at the venue, and a humidor exhibited by J.C. Newman commemorating its official 'America250' cigar was among the talking points."
     },
     {
       "date": "2026-07",
@@ -256,7 +310,9 @@ var NEWS_DATA = {
       "summary_ja": "1998年に始まった業界で唯一の一般投票アワード「Cigar Trophy」の2026年版は、5月16日から6月7日にノミネート受付、6月29日から7月12日に最終投票が行われた。授賞式は2026年9月15日にInterTabac（ドルトムント）で開催され、Facebookでライブ配信される予定。編集部選定のジュリー賞（Best Art、Lifetime Achievementなど）も同時に発表される。",
       "source": "cigarjournal.com",
       "source_title": "CIGAR TROPHY 2026 – IT'S TIME TO VOTE! | Cigar Journal",
-      "url": "https://www.cigarjournal.com/cigar-trophy-2026-its-time-to-vote/"
+      "url": "https://www.cigarjournal.com/cigar-trophy-2026-its-time-to-vote/",
+      "title_en": "Cigar Journal's Cigar Trophy 2026 Heads for September Ceremony",
+      "summary_en": "The 2026 edition of the Cigar Trophy, the industry's only public-vote award since its launch in 1998, accepted nominations from 16 May to 7 June, with final voting held from 29 June to 12 July. The awards ceremony is due to take place on 15 September 2026 at InterTabac in Dortmund and will be streamed live on Facebook. Jury awards chosen by the editorial team, including Best Art and Lifetime Achievement, will be announced at the same time."
     },
     {
       "date": "2026-06",
@@ -265,7 +321,9 @@ var NEWS_DATA = {
       "summary_ja": "FDAは2026年6月26日、外国のたばこ製品製造業者に施設登録と製品リストの提出を義務付ける規則案を公表した。これまで国内製造業者のみに課されていた要件を海外にも拡大し、未承認製品の流入阻止を狙うもの。裁判所の定義に基づくプレミアムシガーのみを製造する施設は対象外とされる。パブリックコメントの締切は2026年9月14日。",
       "source": "fda.gov",
       "source_title": "FDA Proposes Rule That Would Help Hold Foreign Tobacco Product Manufacturers Accountable, Protect Public Health",
-      "url": "https://www.fda.gov/news-events/press-announcements/fda-proposes-rule-would-help-hold-foreign-tobacco-product-manufacturers-accountable-protect-public"
+      "url": "https://www.fda.gov/news-events/press-announcements/fda-proposes-rule-would-help-hold-foreign-tobacco-product-manufacturers-accountable-protect-public",
+      "title_en": "FDA Proposes Registration Rule for Foreign Tobacco Manufacturers",
+      "summary_en": "On 26 June 2026 the FDA published a proposed rule requiring foreign tobacco product manufacturers to register their facilities and submit product lists. The measure extends requirements previously imposed only on domestic manufacturers to overseas producers, with the aim of blocking the inflow of unauthorised products. Facilities manufacturing only premium cigars as defined by the courts would be exempt. The deadline for public comments is 14 September 2026."
     },
     {
       "date": "2026-07",
@@ -274,7 +332,9 @@ var NEWS_DATA = {
       "summary_ja": "プレミアムシガー協会（PCA）は、FDAのたばこ製品施設登録・製品リスト規則案について、9月14日の期限までに会員を代表して意見を提出すると表明した。プレミアムシガー製造業者は訴訟の勝利により対象外だが、定義を満たさない葉巻やパイプたばこなど、約3,500の小売会員が扱う多くの製品が新たな要件の影響を受けると警告している。",
       "source": "premiumcigars.org",
       "source_title": "Premium Cigar Association Responds to FDA's Proposed Tobacco Product Registration Rule",
-      "url": "https://premiumcigars.org/premium-cigar-association-responds-to-fdas-proposed-tobacco-product-registration-rule/"
+      "url": "https://premiumcigars.org/premium-cigar-association-responds-to-fdas-proposed-tobacco-product-registration-rule/",
+      "title_en": "PCA to Comment on FDA Registration Rule, Citing Retailer Impact",
+      "summary_en": "The Premium Cigar Association (PCA) has stated that it will submit comments on behalf of its members on the FDA's proposed tobacco product facility registration and product listing rule by the 14 September deadline. Although premium cigar manufacturers are exempt thanks to a court victory, the association warns that many products handled by its roughly 3,500 retail members — including cigars that do not meet the definition and pipe tobacco — will be affected by the new requirements."
     },
     {
       "date": "2026-02",
@@ -283,7 +343,9 @@ var NEWS_DATA = {
       "summary_ja": "トランプ大統領は1974年通商法122条に基づく一律関税を表明し、当初15%とSNSで発表したが、実際には基本税率10%で発効した。ドミニカ共和国とホンジュラス産の葉巻は10%のままとなり、ニカラグアは18%から10%に低下。この3カ国は米国のプレミアム葉巻輸入の99%を占めるため、業界は価格改定や供給網の見直しを迫られている。",
       "source": "halfwheel.com",
       "source_title": "New Tariffs Go Into Effect at 10 Percent, Not 15 Percent",
-      "url": "https://halfwheel.com/new-tariffs-go-into-effect-at-10-percent-not-15-percent/462997/"
+      "url": "https://halfwheel.com/new-tariffs-go-into-effect-at-10-percent-not-15-percent/462997/",
+      "title_en": "New Trump Tariffs Take Effect at 10%, Not the Announced 15%",
+      "summary_en": "President Trump announced across-the-board tariffs under Section 122 of the Trade Act of 1974, initially declaring 15% on social media, but they took effect at a base rate of 10%. Cigars from the Dominican Republic and Honduras remain at 10%, while Nicaragua's rate fell from 18% to 10%. As these three countries account for 99% of US premium cigar imports, the industry faces pressure to revise prices and rethink supply chains."
     },
     {
       "date": "2026-01",
@@ -292,7 +354,9 @@ var NEWS_DATA = {
       "summary_ja": "スペインの2026年新価格表では、約350SKUのキューバ産葉巻が平均3.83%の値上げとなり、近年の大幅値上げから一転して穏やかな改定となった。多くのブランドは3〜5%の上昇にとどまる一方、LGCは約17%上昇するなど例外もある。コイーバは1本100ユーロ以上の銘柄が19本に達し、最高値のコイーバ・イデアレスは1本550ユーロとなった。",
       "source": "halfwheel.com",
       "source_title": "Cuban Cigars Get Modest Price Increases for 2026",
-      "url": "https://halfwheel.com/cuban-cigars-get-modest-price-increases-for-2026/460235/"
+      "url": "https://halfwheel.com/cuban-cigars-get-modest-price-increases-for-2026/460235/",
+      "title_en": "Cuban Cigars Receive Modest Price Increases for 2026",
+      "summary_en": "Spain's new 2026 price list shows an average rise of 3.83% across roughly 350 SKUs of Cuban cigars, a mild revision after the steep increases of recent years. Most brands rise by only 3-5%, though there are exceptions, with LGC up about 17%. Cohiba now has 19 cigars priced at €100 or more apiece, and the most expensive, the Cohiba Ideales, stands at €550 per cigar."
     },
     {
       "date": "2026-06",
@@ -301,7 +365,9 @@ var NEWS_DATA = {
       "summary_ja": "イリノイ州議会はプレミアムシガーに対する物品税を1本あたり75セントに上限設定する法案を可決した。上限は1月1日から発効し、店頭販売と遠隔（通販）販売の双方に適用される。葉巻税の上限設定法案は少なくとも11州で提出されており、オンライン小売との競争条件を整える動きが各州に広がっている。",
       "source": "cigarsnobmag.com",
       "source_title": "Illinois Enacts Premium Cigar Tax Cap",
-      "url": "https://www.cigarsnobmag.com/news/2026/06/19/illinois-enacts-premium-cigar-tax-cap/"
+      "url": "https://www.cigarsnobmag.com/news/2026/06/19/illinois-enacts-premium-cigar-tax-cap/",
+      "title_en": "Illinois Enacts 75-Cent Cap on Premium Cigar Tax",
+      "summary_en": "The Illinois legislature has passed a bill capping the excise tax on premium cigars at 75 cents per cigar. The cap takes effect from 1 January and applies to both in-store and remote (mail-order) sales. Bills to cap cigar taxes have been introduced in at least 11 states, as moves to level the competitive playing field with online retail spread from state to state."
     },
     {
       "date": "2026-07",
@@ -310,7 +376,9 @@ var NEWS_DATA = {
       "summary_ja": "コロラド州の法案SB26-086により、プレミアムシガーに対する州物品税率がメーカー表示価格（MLP）の20%に引き下げられ、2026年7月1日に発効する。一方で全米では、ニューハンプシャー州やインディアナ州、ウェストバージニア州など、財政圧力を背景にたばこ増税を目指す動きも並行して進んでおり、州レベルの税制は減税と増税の両方向に分かれている。",
       "source": "leg.colorado.gov",
       "source_title": "SB26-086 Reduce Premium Cigar Excise Tax Rate",
-      "url": "https://leg.colorado.gov/bills/SB26-086"
+      "url": "https://leg.colorado.gov/bills/SB26-086",
+      "title_en": "Colorado Cuts Premium Cigar Excise Tax Rate to 20%",
+      "summary_en": "Under Colorado bill SB26-086, the state excise tax rate on premium cigars is reduced to 20% of the manufacturer's list price (MLP), taking effect on 1 July 2026. Meanwhile, across the United States, moves towards tobacco tax increases driven by fiscal pressure are proceeding in parallel in states such as New Hampshire, Indiana and West Virginia, leaving state-level tax policy split between cuts and rises."
     },
     {
       "date": "2026-01",
@@ -319,7 +387,9 @@ var NEWS_DATA = {
       "summary_ja": "欧州委員会が提案したたばこ税制指令（Tobacco Taxation Directive）の改正案では、シガーとシガリロに1kgあたり90ユーロ以上または小売価格の5%以上の最低物品税を課すことが盛り込まれ、EU理事会で協議が続いている。葉巻類には新税率到達まで4年間の移行期間が認められる。改正案は電子たばこや加熱式たばこ、ニコチンパウチにも課税対象を拡大する内容となっている。",
       "source": "taxation-customs.ec.europa.eu",
       "source_title": "Revision of the Tobacco Taxation Directive (proposal)",
-      "url": "https://taxation-customs.ec.europa.eu/taxation/excise-duties/excise-duties-tobacco/revision-tobacco-taxation-directive-proposal_en"
+      "url": "https://taxation-customs.ec.europa.eu/taxation/excise-duties/excise-duties-tobacco/revision-tobacco-taxation-directive-proposal_en",
+      "title_en": "EU Debates Higher Minimum Cigar Taxes Under Revised Directive",
+      "summary_en": "The European Commission's proposed revision of the Tobacco Taxation Directive would impose a minimum excise duty on cigars and cigarillos of at least €90 per kilogram or 5% of the retail price, and discussions are continuing in the Council of the EU. Cigars would be granted a four-year transition period before the new rates are reached. The proposal also extends taxation to e-cigarettes, heated tobacco products and nicotine pouches."
     },
     {
       "date": "2026-02",
@@ -328,7 +398,9 @@ var NEWS_DATA = {
       "summary_ja": "インターコンチネンタル商事が輸入するアメリカ定番シガー「スウィッシャースイート」のフォイルパウチから、新フレーバー「グリーン」と「ハニーバナナ」の2銘柄が2月2日より全国発売された。すっきりした甘さのグリーンと、ハニー＆バナナの甘い香りのハニーバナナで、2本入り290円と気軽に試せる価格設定となっている。",
       "source": "マイナビニュース",
       "source_title": "気軽に試せる2本290円。アメリカ定番シガー「スウィッシャースイート」に2つの新フレーバー",
-      "url": "https://news.mynavi.jp/article/20260204-4074054/"
+      "url": "https://news.mynavi.jp/article/20260204-4074054/",
+      "title_en": "Swisher Sweets Foil Pouches Add Two New Flavours Nationwide in Japan",
+      "summary_en": "Two new flavours, Green and Honey Banana, went on sale nationwide from 2 February in the foil-pouch range of Swisher Sweets, the classic American cigar imported by Intercontinental Shoji. Green offers a clean sweetness, while Honey Banana carries the sweet aroma of honey and banana; at 290 yen for a pack of two, they are priced for easy trial."
     },
     {
       "date": "2026-03",
@@ -337,7 +409,9 @@ var NEWS_DATA = {
       "summary_ja": "たばこ税は2026年4月と10月に加熱式たばこを対象に引き上げられ、その後は加熱式・紙巻きともに1本あたり0.5円ずつ3回に分けて段階的に増税される予定。JTもこれを受け、4月1日からプルーム用たばこスティック「エボ」「メビウス」「キャメル」などを1箱あたり20〜30円値上げした。",
       "source": "SOMPOインスティチュート・プラス",
       "source_title": "たばこ税が2026年4月に引上げへ",
-      "url": "https://www.sompo-ri.co.jp/topics_plus/20260303-22123/"
+      "url": "https://www.sompo-ri.co.jp/topics_plus/20260303-22123/",
+      "title_en": "Japan's Tobacco Tax to Rise on Heated Products in April and October 2026",
+      "summary_en": "Japan's tobacco tax will be raised on heated tobacco products in April and October 2026, after which taxes on both heated tobacco and cigarettes are set to rise in three stages of 0.5 yen per stick. In response, JT raised prices of its Ploom tobacco sticks, including Evo, Mevius and Camel, by 20 to 30 yen per pack from 1 April."
     },
     {
       "date": "2026-04",
@@ -346,7 +420,9 @@ var NEWS_DATA = {
       "summary_ja": "ダブルハピネスなどのリトルシガーは2026年4月の加熱式たばこ増税の対象外で、価格は2021年10月以来据え置きが続いている。ただし紙巻たばことリトルシガーは2027年4月・2028年4月・2029年4月の3段階で1本あたり0.5円ずつ増税される計画で、1回あたり10円前後の値上げが3年続く見通しとされる。",
       "source": "プライシー",
       "source_title": "【2026年最新】ダブルハピネスの値上げ後の値段と銘柄一覧",
-      "url": "https://www.pricey.jp/web/articles/4782"
+      "url": "https://www.pricey.jp/web/articles/4782",
+      "title_en": "Little Cigars Exempt from 2026 Tax Rise; Three-Stage Increases from April 2027",
+      "summary_en": "Little cigars such as Double Happiness are not covered by the April 2026 tax increase on heated tobacco products, and their prices have remained unchanged since October 2021. However, cigarettes and little cigars are due to be taxed an additional 0.5 yen per stick in three stages — April 2027, April 2028 and April 2029 — with price rises of around 10 yen expected each time over three consecutive years."
     },
     {
       "date": "2026-04-08",
@@ -355,7 +431,9 @@ var NEWS_DATA = {
       "summary_ja": "JTは4月8日付で紙巻たばこ2銘柄の廃止を発表し、2026年5月下旬より順次、在庫売り尽くしをもって販売を終了するとした。JTは過去にも「わかば」「エコー」を紙巻から葉巻（リトルシガー）へ移行させるなど、税制動向に応じた製品ラインの再編を続けている。",
       "source": "JT公式",
       "source_title": "紙巻たばこ2銘柄の廃止について",
-      "url": "https://www.jti.co.jp/news/20260408_01.html"
+      "url": "https://www.jti.co.jp/news/20260408_01.html",
+      "title_en": "JT Announces Discontinuation of Two Cigarette Brands",
+      "summary_en": "JT announced on 8 April that it will discontinue two cigarette brands, with sales ending progressively from late May 2026 as remaining stock sells out. JT has previously continued to reorganise its product lines in response to tax developments, including moving Wakaba and Echo from cigarettes to little cigars."
     },
     {
       "date": "2026-07",
@@ -364,7 +442,9 @@ var NEWS_DATA = {
       "summary_ja": "日本たばこアイメックスが取り扱う手巻き用シャグ、パイプ葉、葉巻などの輸入・専門たばこが2026年7月1日より一斉に定価改定された。コイーバ、モンテクリスト、ロメオ・Y・ジュリエッタ、パルタガスなどのシガリロ・ミニシガーも対象で、クラブサイズ（20本入）は1箱あたり700〜900円、トスカネロは1箱（5本入）あたり100円の値上げとなった。",
       "source": "ブリケオンライン",
       "source_title": "【2026年7月】シャグ・パイプ葉・葉巻値上がり情報！チョイスやトスカネロの新価格とまとめ買い期限",
-      "url": "https://www.briquetonline.com/news/choicetoscanelloneage2026-7"
+      "url": "https://www.briquetonline.com/news/choicetoscanelloneage2026-7",
+      "title_en": "Japan Tobacco Imex Raises Prices on Imported Cigars from 1 July",
+      "summary_en": "Imported and speciality tobacco handled by Japan Tobacco Imex — including hand-rolling shag, pipe tobacco and cigars — underwent an across-the-board price revision from 1 July 2026. Cigarillos and mini cigars from Cohiba, Montecristo, Romeo y Julieta and Partagás are among the products affected, with club sizes (packs of 20) rising by 700 to 900 yen per pack and Toscanello by 100 yen per pack of five."
     },
     {
       "date": "2026-07",
@@ -373,7 +453,9 @@ var NEWS_DATA = {
       "summary_ja": "JTは2026年7月1日より「キャメル・クラフト」全18銘柄と「ナチュラル アメリカン スピリット」全7銘柄の計25銘柄を値上げした。キャメル・クラフトは450円から470円、アメリカン スピリット（14本入）は420円から440円への改定で、あわせて販売終了品の情報もまとめられている。",
       "source": "ブリケオンライン",
       "source_title": "【2026年7月】紙巻きたばこ値上がり情報！キャメル・アメスピ新価格と販売終了品まとめ",
-      "url": "https://www.briquetonline.com/news/camelamespineage2026-7"
+      "url": "https://www.briquetonline.com/news/camelamespineage2026-7",
+      "title_en": "JT Revises Prices on 25 Camel Craft and American Spirit Brands",
+      "summary_en": "From 1 July 2026, JT raised prices on a total of 25 products: all 18 Camel Craft variants and all seven Natural American Spirit variants. Camel Craft moves from 450 yen to 470 yen, while American Spirit (packs of 14) rises from 420 yen to 440 yen. Information on discontinued products has also been compiled alongside the changes."
     },
     {
       "date": "2026-07-15",
@@ -382,7 +464,9 @@ var NEWS_DATA = {
       "summary_ja": "日本シガー協会は2026年6月25日にキューバシガーの定価を追加し、7月15日にも定価表を更新した。同協会はハバノスの日本定価表を公式サイトで公開しており、財務省未登録の葉巻の販売や定価以上での販売はたばこ事業法により禁止されている。世界的にはハバノスS.A.の値上げとシガー葉の不作による供給不足も報告されている。",
       "source": "日本シガー協会",
       "source_title": "日本シガー協会 | ハバノス日本定価表",
-      "url": "https://cigar.or.jp/"
+      "url": "https://cigar.or.jp/",
+      "title_en": "Japan Cigar Association Updates Official Habanos Price List",
+      "summary_en": "The Japan Cigar Association added new Cuban cigar prices on 25 June 2026 and updated its price list again on 15 July. The association publishes the official Japanese price list for Habanos on its website; under the Tobacco Business Act, selling cigars not registered with the Ministry of Finance, or selling above the official price, is prohibited. Globally, price rises by Habanos S.A. and supply shortages caused by poor cigar-leaf harvests have also been reported."
     }
   ]
 };

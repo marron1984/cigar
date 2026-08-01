@@ -166,7 +166,7 @@ var PAGE_META = {
     }
   },
   news: {
-    enReady: false,
+    enReady: true,
     path: "news",
     ja: {
       title: "葉巻ニュース — 新製品・業界・イベント・規制｜Cigar Cafe",
