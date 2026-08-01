@@ -41,7 +41,7 @@ const DATA = (() => {
     phd:       { files: ["data/phd.js", "data/phd_lit.js"] },
     world:     { files: ["data/world.js", "data/world_deep.js"], en: ["data/en/japan_guide.js"] },
     /* 日本ガイドの解説は世界編（WORLD_DATA.japan）から作るので、世界編も要る */
-    japan:     { needs: ["world"], files: ["data/japan_shops.js"], en: ["data/en/japan_shops.js"] },
+    japan:     { needs: ["world"], files: ["data/japan_shops.js"], en: ["data/en/japan_shops.js", "data/en/japan_visitor.js"] },
     brands:    { files: ["data/brands.js"] },
     news:      { files: ["data/news.js"] }
   };

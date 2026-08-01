@@ -110,11 +110,32 @@ const JAPAN = (() => {
     });
   }
 
+  /* 訪日外国人向けの実用ガイド（英語版専用）。
+     data/en/japan_visitor.js が読み込まれているときだけ、一覧の前に出す。
+     定価制・キューバ産の合法性・免税範囲など「まず知るべき要点」を出典つきで。 */
+  function visitorSection() {
+    if (!I18N.isEn || typeof JAPAN_VISITOR === "undefined") return "";
+    const V = JAPAN_VISITOR;
+    const topics = (V.topics || []).map((t, i) => `
+      <details class="acc"${i === 0 ? " open" : ""}>
+        <summary>${e(t.h)}</summary>
+        <div class="acc-body">${FMT.prose(t.body)}</div>
+      </details>`).join("");
+    const src = (V.sources || []).length ? `
+      <div class="brand-refs" style="margin-top:14px"><div class="brand-refs-h">Sources <span class="brand-refs-n">${V.sources.length}</span></div>
+      <ol>${V.sources.map(x => `<li>${link(x)}</li>`).join("")}</ol></div>` : "";
+    return `<div class="kb-block jp-visitor">
+      <h3>${e(V.title)}</h3>
+      <div class="prose" style="margin-bottom:12px">${FMT.prose(V.lead)}</div>
+      ${topics}${src}
+    </div>`;
+  }
+
   function init() {
     const host = q("#japanGuide");
     if (!host) return;
     const guide = (typeof WORLD !== "undefined" && WORLD.japanGuideHTML) ? WORLD.japanGuideHTML() : "";
-    host.innerHTML = directory() + (guide ? `<div class="jp-guide">${guide}</div>` : "");
+    host.innerHTML = visitorSection() + directory() + (guide ? `<div class="jp-guide">${guide}</div>` : "");
     wireSearch();
   }
 

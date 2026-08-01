@@ -137,8 +137,8 @@ var PAGE_META = {
       desc: "全国47都道府県の葉巻販売店・シガーバーを出典つきで一覧。日本の葉巻の歴史、たばこ税、受動喫煙対策と喫煙環境、持込みルール、はじめての歩き方も。"
     },
     en: {
-      title: "Japan guide — cigar shops and cigar bars in all 47 prefectures | Cigar Cafe",
-      desc: "Cigar shops and cigar bars across all 47 prefectures, each with sources. Plus the history of the cigar in Japan, tobacco tax, the smoking-environment rules, and how to start."
+      title: "Cigars in Japan — fixed prices, legal Cubans, where to buy and smoke | Cigar Cafe",
+      desc: "How cigars really work in Japan: retail prices fixed by law, Cuban cigars sold legally, customs allowances, where smoking is allowed — plus shops and cigar bars in all 47 prefectures."
     }
   },
   world: {
