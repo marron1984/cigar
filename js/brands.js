@@ -17,38 +17,40 @@ const BRANDS = (() => {
   /* 収録国の定義（タブ表示順） */
   const COUNTRIES = [
     { key: "cuba", elId: "brandsCuba",
-      intro: (n) => `現行ハバノス（Habanos S.A.）ポートフォリオの全${n}マルカを、創業からの歴史とともに収録。銘柄名で絞り込みできます。` },
+      intro: (n) => T("現行ハバノス（Habanos S.A.）ポートフォリオの全{n}マルカを、創業からの歴史とともに収録。銘柄名で絞り込みできます。", { n }) },
     { key: "dominican", elId: "brandsDominican",
-      intro: (n) => `世界最大級の高級葉巻生産国ドミニカ共和国の主要${n}ブランドを、創業からの歴史とともに収録。銘柄名で絞り込みできます。` },
+      intro: (n) => T("世界最大級の高級葉巻生産国ドミニカ共和国の主要{n}ブランドを、創業からの歴史とともに収録。銘柄名で絞り込みできます。", { n }) },
     { key: "nicaragua", elId: "brandsNicaragua",
-      intro: (n) => `近年最も評価を高めている生産国ニカラグアの主要${n}ブランドを、創業からの歴史とともに収録。銘柄名で絞り込みできます。` },
+      intro: (n) => T("近年最も評価を高めている生産国ニカラグアの主要{n}ブランドを、創業からの歴史とともに収録。銘柄名で絞り込みできます。", { n }) },
     { key: "honduras", elId: "brandsHonduras",
-      intro: (n) => `伝統の葉巻生産国ホンジュラスの主要${n}ブランドを、創業からの歴史とともに収録。銘柄名で絞り込みできます。` },
+      intro: (n) => T("伝統の葉巻生産国ホンジュラスの主要{n}ブランドを、創業からの歴史とともに収録。銘柄名で絞り込みできます。", { n }) },
     { key: "mexico", elId: "brandsMexico",
-      intro: (n) => `マドゥーロ用ラッパーの聖地サン・アンドレスを擁するメキシコの主要${n}ブランドを、創業からの歴史とともに収録。銘柄名で絞り込みできます。` },
+      intro: (n) => T("マドゥーロ用ラッパーの聖地サン・アンドレスを擁するメキシコの主要{n}ブランドを、創業からの歴史とともに収録。銘柄名で絞り込みできます。", { n }) },
     { key: "ecuador", elId: "brandsEcuador",
-      intro: (n) => `世界最大のラッパー葉供給国エクアドル。完成品ブランドではなく、世界中の高級葉巻を支える栽培家系と葉の「ブランド」${n}件を収録。` },
+      intro: (n) => T("世界最大のラッパー葉供給国エクアドル。完成品ブランドではなく、世界中の高級葉巻を支える栽培家系と葉の「ブランド」{n}件を収録。", { n }) },
     { key: "usa", elId: "brandsUSA",
-      intro: (n) => `タンパの黄金時代からマイアミの micro-factory、マシンメイドの巨人まで。アメリカの主要${n}ブランドを、創業からの歴史とともに収録。` },
+      intro: (n) => T("タンパの黄金時代からマイアミの micro-factory、マシンメイドの巨人まで。アメリカの主要{n}ブランドを、創業からの歴史とともに収録。", { n }) },
     { key: "brazil", elId: "brandsBrazil",
-      intro: (n) => `バイーアのマタ・フィナを擁する南米の伝統産地ブラジルの主要${n}エントリを、創業からの歴史とともに収録。` },
+      intro: (n) => T("バイーアのマタ・フィナを擁する南米の伝統産地ブラジルの主要{n}エントリを、創業からの歴史とともに収録。", { n }) },
     { key: "cameroon", elId: "brandsCameroon",
-      intro: (n) => `世界で最も希少なラッパー葉の産地カメルーン。葉を支える一族と葉の「ブランド」${n}件を収録。` },
+      intro: (n) => T("世界で最も希少なラッパー葉の産地カメルーン。葉を支える一族と葉の「ブランド」{n}件を収録。", { n }) },
     { key: "peru", elId: "brandsPeru",
-      intro: (n) => `アマゾン源流域タラポトに知られざる産地を持つペルーの${n}エントリを、歴史とともに収録。` },
+      intro: (n) => T("アマゾン源流域タラポトに知られざる産地を持つペルーの{n}エントリを、歴史とともに収録。", { n }) },
     { key: "colombia", elId: "brandsColombia",
-      intro: (n) => `カリブ沿岸に古い葉たばこ文化を持つコロンビアの${n}エントリを、歴史とともに収録。` },
+      intro: (n) => T("カリブ沿岸に古い葉たばこ文化を持つコロンビアの{n}エントリを、歴史とともに収録。", { n }) },
     { key: "philippines", elId: "brandsPhilippines",
-      intro: (n) => `アジア最古の葉巻産地フィリピンの主要${n}ブランドを、創業からの歴史とともに収録。` },
+      intro: (n) => T("アジア最古の葉巻産地フィリピンの主要{n}ブランドを、創業からの歴史とともに収録。", { n }) },
     { key: "indonesia", elId: "brandsIndonesia",
-      intro: (n) => `スマトラ・ジャワに世界的な葉の産地を持つインドネシアの${n}エントリを、歴史とともに収録。` },
+      intro: (n) => T("スマトラ・ジャワに世界的な葉の産地を持つインドネシアの{n}エントリを、歴史とともに収録。", { n }) },
     { key: "argentina", elId: "brandsArgentina",
-      intro: (n) => `サルタ州に小さな葉巻文化を持つアルゼンチンの${n}エントリを、歴史とともに収録。` },
+      intro: (n) => T("サルタ州に小さな葉巻文化を持つアルゼンチンの{n}エントリを、歴史とともに収録。", { n }) },
   ];
 
   function specRow(k, en, v) {
     if (!v) return "";
-    return `<div class="spec-row"><div class="k">${e(k)}<span class="en">${e(en)}</span></div><div class="v">${e(v)}</div></div>`;
+    // 見出しは日本語版で「日本語＋英語の小見出し」、英語版で主副が入れ替わる（advanced.js 等と同じ流儀）
+    const [k1, k2] = namePair(k, en);
+    return `<div class="spec-row"><div class="k">${e(k1)}<span class="en">${e(k2)}</span></div><div class="v">${e(v)}</div></div>`;
   }
 
   // サマリー行のタグ用に短い年号表示を作る。
@@ -57,7 +59,7 @@ const BRANDS = (() => {
   function foundedLabel(f) {
     let s = String(f || "").trim().split(/[（(]/)[0].trim();
     if (s.length > 20) s = s.slice(0, 20) + "…";
-    return /^\d{4}$/.test(s) ? s + "年" : s;
+    return /^\d{4}$/.test(s) ? T("{y}年", { y: s }, "brands") : s;
   }
 
   /* ---------- ブランドのエンブレム（頭文字モノグラム。任意で実ロゴ画像に差し替え可） ---------- */
@@ -109,7 +111,7 @@ const BRANDS = (() => {
       const on = list.some(w => w.en === btn.dataset.wen);
       btn.classList.toggle("on", on);
       btn.textContent = on ? "★" : "☆";
-      btn.title = on ? "吸いたいリストから外す" : "吸いたいリストへ";
+      btn.title = on ? T("吸いたいリストから外す") : T("吸いたいリストへ");
     });
   }
   function renderWishPanel() {
@@ -119,14 +121,14 @@ const BRANDS = (() => {
     if (!list.length) { el.innerHTML = ""; return; }
     el.innerHTML = `
       <div class="wish-panel">
-        <div class="wish-h">⭐ 吸いたいリスト <span class="count-pill">${list.length}件</span></div>
+        <div class="wish-h">${T("⭐ 吸いたいリスト")} <span class="count-pill">${T("{n}件", { n: list.length })}</span></div>
         <div class="wish-items">${list.map(w => `
           <span class="wish-item">
-            <span class="wi-name">${e(w.ja)}</span>
-            <button type="button" class="wi-log" data-wlog="${e(w.en)}" title="記録ノートに記録する">✎ 記録</button>
-            <button type="button" class="wi-rm" data-wrm="${e(w.en)}" title="リストから外す">×</button>
+            <span class="wi-name">${e(namePair(w.ja, w.en)[0])}</span>
+            <button type="button" class="wi-log" data-wlog="${e(w.en)}" title="${e(T("記録ノートに記録する"))}">${T("✎ 記録")}</button>
+            <button type="button" class="wi-rm" data-wrm="${e(w.en)}" title="${e(T("リストから外す"))}">×</button>
           </span>`).join("")}</div>
-        <div class="photo-hint">★を押した銘柄のメモです。「✎ 記録」で吸った記録をすぐ書けます。</div>
+        <div class="photo-hint">${T("★を押した銘柄のメモです。「✎ 記録」で吸った記録をすぐ書けます。")}</div>
       </div>`;
   }
 
@@ -137,21 +139,22 @@ const BRANDS = (() => {
     const isLeaf = b.kind === "leaf";
     const wished = isWished(b.en);
     const wishBtn = isLeaf ? "" :
-      `<button type="button" class="wish-btn${wished ? " on" : ""}" data-wen="${e(b.en)}" data-wja="${e(b.ja)}" data-wc="${e(countryKey || "")}" title="${wished ? "吸いたいリストから外す" : "吸いたいリストへ"}">${wished ? "★" : "☆"}</button>`;
-    const kindBadge = isLeaf ? `<span class="tag leaf">葉・産地</span>` : "";
+      `<button type="button" class="wish-btn${wished ? " on" : ""}" data-wen="${e(b.en)}" data-wja="${e(b.ja)}" data-wc="${e(countryKey || "")}" title="${e(wished ? T("吸いたいリストから外す") : T("吸いたいリストへ"))}">${wished ? "★" : "☆"}</button>`;
+    const kindBadge = isLeaf ? `<span class="tag leaf">${T("葉・産地")}</span>` : "";
+    const [n1, n2] = namePair(b.ja, b.en);
     return `
       <details class="acc brand-entry${isLeaf ? " is-leaf" : ""}" data-search="${e((b.ja + " " + b.en).toLowerCase())}">
-        <summary><span class="brand-sum-wrap">${brandEmblem(b)}<span class="brand-sum">${e(b.ja)} — ${e(b.en)}${kindBadge}<span class="tag">${e(foundedLabel(b.founded))}</span></span></span>${wishBtn}</summary>
+        <summary><span class="brand-sum-wrap">${brandEmblem(b)}<span class="brand-sum">${e(n1)} — ${e(n2)}${kindBadge}<span class="tag">${e(foundedLabel(b.founded))}</span></span></span>${wishBtn}</summary>
         <div class="acc-body">
           ${specRow("創業・誕生", "Founded", b.founded)}
           ${specRow("創業者・創設主体", "Founder", b.founder)}
           ${specRow("名前の由来", "Name", b.meaning)}
-          ${specRow("強さの目安", "Body", b.strength)}
+          ${specRow("強さの目安", "Body", I18N.strength(b.strength))}
           ${specRow("現在の位置づけ", "Status", b.status)}
           <div class="brand-history">${FMT.prose(b.history)}</div>
-          ${vitolas ? `<div class="field"><div class="lbl">代表的なヴィトラ・ライン</div><div class="chips">${vitolas}</div></div>` : ""}
-          ${b.trivia ? `<div class="field"><div class="lbl">豆知識</div><div class="val">${FMT.prose(b.trivia)}</div></div>` : ""}
-          ${b.sources && b.sources.length ? `<div class="brand-refs"><div class="brand-refs-h">主要出典 <span class="brand-refs-n">${b.sources.length}件</span></div><ol>${b.sources.map(s => `<li>${e(s)}</li>`).join("")}</ol></div>` : ""}
+          ${vitolas ? `<div class="field"><div class="lbl">${T("代表的なヴィトラ・ライン")}</div><div class="chips">${vitolas}</div></div>` : ""}
+          ${b.trivia ? `<div class="field"><div class="lbl">${T("豆知識")}</div><div class="val">${FMT.prose(b.trivia)}</div></div>` : ""}
+          ${b.sources && b.sources.length ? `<div class="brand-refs"><div class="brand-refs-h">${T("主要出典")} <span class="brand-refs-n">${T("{n}件", { n: b.sources.length })}</span></div><ol>${b.sources.map(s => `<li>${e(s)}</li>`).join("")}</ol></div>` : ""}
         </div>
       </details>`;
   }
@@ -161,14 +164,14 @@ const BRANDS = (() => {
     if (!el) return;
     const list = [...(B[cfg.key] || [])].sort((a, b2) => (a.order || 0) - (b2.order || 0));
     if (!list.length) {
-      el.innerHTML = `<div class="cd-placeholder">ブランド情報を準備中です。</div>`;
+      el.innerHTML = `<div class="cd-placeholder">${T("ブランド情報を準備中です。")}</div>`;
       return;
     }
     const searchId = `brandSearch-${cfg.key}`;
     const listId = `brandList-${cfg.key}`;
     el.innerHTML = `
       <p class="prose" style="margin-bottom:14px">${e(cfg.intro(list.length))}</p>
-      <input type="text" class="note-search lex-search" id="${searchId}" placeholder="銘柄名で検索（例：コイーバ、Fuente…）">
+      <input type="text" class="note-search lex-search" id="${searchId}" placeholder="${e(T("銘柄名で検索（例：コイーバ、Fuente…）"))}">
       <div id="${listId}">${list.map(b => brandAcc(b, cfg.key)).join("")}</div>`;
 
     q("#" + searchId).addEventListener("input", (ev) => {

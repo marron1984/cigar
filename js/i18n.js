@@ -731,6 +731,50 @@ var I18N = (function () {
     "初心者からのよくある質問（FAQ）": "Frequently asked questions",
     "{n}問": "{n} questions",
 
+    /* ---------- ブランド大全 ---------- */
+    "現行ハバノス（Habanos S.A.）ポートフォリオの全{n}マルカを、創業からの歴史とともに収録。銘柄名で絞り込みできます。":
+      "All {n} marcas in the current Habanos S.A. portfolio, each with its history from the founding. Filter the list by name below.",
+    "世界最大級の高級葉巻生産国ドミニカ共和国の主要{n}ブランドを、創業からの歴史とともに収録。銘柄名で絞り込みできます。":
+      "The {n} principal brands of the Dominican Republic, one of the world's great producers of premium cigars — each with its history from the founding. Filter the list by name below.",
+    "近年最も評価を高めている生産国ニカラグアの主要{n}ブランドを、創業からの歴史とともに収録。銘柄名で絞り込みできます。":
+      "The {n} principal brands of Nicaragua, the origin whose standing has risen furthest in recent years — each with its history from the founding. Filter the list by name below.",
+    "伝統の葉巻生産国ホンジュラスの主要{n}ブランドを、創業からの歴史とともに収録。銘柄名で絞り込みできます。":
+      "The {n} principal brands of Honduras, a cigar country of long tradition — each with its history from the founding. Filter the list by name below.",
+    "マドゥーロ用ラッパーの聖地サン・アンドレスを擁するメキシコの主要{n}ブランドを、創業からの歴史とともに収録。銘柄名で絞り込みできます。":
+      "The {n} principal brands of Mexico, home of San Andrés, the holy ground of maduro wrapper — each with its history from the founding. Filter the list by name below.",
+    "世界最大のラッパー葉供給国エクアドル。完成品ブランドではなく、世界中の高級葉巻を支える栽培家系と葉の「ブランド」{n}件を収録。":
+      "Ecuador, the world's largest supplier of wrapper leaf. Not finished-cigar brands, but the {n} growing families and leaf \"brands\" behind fine cigars everywhere.",
+    "タンパの黄金時代からマイアミの micro-factory、マシンメイドの巨人まで。アメリカの主要{n}ブランドを、創業からの歴史とともに収録。":
+      "From Tampa's golden age to Miami's micro-factories and the machine-made giants — the {n} principal American brands, each with its history from the founding.",
+    "バイーアのマタ・フィナを擁する南米の伝統産地ブラジルの主要{n}エントリを、創業からの歴史とともに収録。":
+      "The {n} principal entries for Brazil, South America's traditional origin and home of Bahia's Mata Fina — each with its history from the founding.",
+    "世界で最も希少なラッパー葉の産地カメルーン。葉を支える一族と葉の「ブランド」{n}件を収録。":
+      "Cameroon, origin of the world's scarcest wrapper leaf — the {n} families and leaf \"brands\" behind it.",
+    "アマゾン源流域タラポトに知られざる産地を持つペルーの{n}エントリを、歴史とともに収録。":
+      "The {n} entries for Peru, whose little-known growing region lies at Tarapoto in the Amazon headwaters — with their histories.",
+    "カリブ沿岸に古い葉たばこ文化を持つコロンビアの{n}エントリを、歴史とともに収録。":
+      "The {n} entries for Colombia, whose Caribbean coast keeps an old tobacco culture — with their histories.",
+    "アジア最古の葉巻産地フィリピンの主要{n}ブランドを、創業からの歴史とともに収録。":
+      "The {n} principal brands of the Philippines, Asia's oldest cigar origin — each with its history from the founding.",
+    "スマトラ・ジャワに世界的な葉の産地を持つインドネシアの{n}エントリを、歴史とともに収録。":
+      "The {n} entries for Indonesia, whose Sumatra and Java grow leaf of world renown — with their histories.",
+    "サルタ州に小さな葉巻文化を持つアルゼンチンの{n}エントリを、歴史とともに収録。":
+      "The {n} entries for Argentina, which keeps a small cigar culture in Salta province — with their histories.",
+    /* サマリー行の創業年タグ：「1966年」→「1966」（汎用の「{n}年」= years と衝突するので ctx 付き） */
+    "brands::{y}年": "{y}",
+    "吸いたいリストへ": "Add to your wish list",
+    "吸いたいリストから外す": "Remove from your wish list",
+    "⭐ 吸いたいリスト": "⭐ Wish list",
+    "記録ノートに記録する": "Log it in the journal",
+    "✎ 記録": "✎ Log",
+    "リストから外す": "Remove from the list",
+    "★を押した銘柄のメモです。「✎ 記録」で吸った記録をすぐ書けます。":
+      "The cigars you starred. Tap \"✎ Log\" to write one up the moment you smoke it.",
+    "葉・産地": "Leaf & origin",
+    "代表的なヴィトラ・ライン": "Key vitolas & lines",
+    "ブランド情報を準備中です。": "Brand entries are being prepared.",
+    "銘柄名で検索（例：コイーバ、Fuente…）": "Search by name (e.g. Cohiba, Fuente…)",
+
     /* ---------- ページのデータ読み込み ---------- */
     "データを読み込めませんでした。通信環境をご確認のうえ、もう一度お試しください。":
       "This page's data could not be loaded. Please check your connection and try again.",
