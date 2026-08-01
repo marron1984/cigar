@@ -47,7 +47,8 @@ const DATA = (() => {
     japan:     { needs: ["world"], files: ["data/japan_shops.js"], en: ["data/en/japan_shops.js", "data/en/japan_visitor.js"] },
     brands:    { files: ["data/brands.js"],
                  en: ["data/en/brands_cuba_1.js", "data/en/brands_cuba_2.js", "data/en/brands_cuba_3.js", "data/en/brands_cuba_4.js", "data/en/brands_cuba_5.js", "data/en/brands_cuba_6.js", "data/en/brands_cuba_7.js", "data/en/brands_cuba_8.js",
-                      "data/en/brands_dominican_1.js", "data/en/brands_dominican_2.js", "data/en/brands_dominican_3.js", "data/en/brands_dominican_4.js", "data/en/brands_dominican_5.js", "data/en/brands_dominican_6.js", "data/en/brands_dominican_7.js", "data/en/brands_dominican_8.js", "data/en/brands_dominican_9.js", "data/en/brands_dominican_10.js"] },
+                      "data/en/brands_dominican_1.js", "data/en/brands_dominican_2.js", "data/en/brands_dominican_3.js", "data/en/brands_dominican_4.js", "data/en/brands_dominican_5.js", "data/en/brands_dominican_6.js", "data/en/brands_dominican_7.js", "data/en/brands_dominican_8.js", "data/en/brands_dominican_9.js", "data/en/brands_dominican_10.js",
+                      "data/en/brands_nicaragua_1.js", "data/en/brands_nicaragua_2.js", "data/en/brands_nicaragua_3.js", "data/en/brands_nicaragua_4.js", "data/en/brands_nicaragua_5.js", "data/en/brands_nicaragua_6.js", "data/en/brands_nicaragua_7.js", "data/en/brands_nicaragua_8.js", "data/en/brands_nicaragua_9.js", "data/en/brands_nicaragua_10.js"] },
     news:      { files: ["data/news.js"] }
   };
 
