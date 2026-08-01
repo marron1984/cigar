@@ -50,7 +50,13 @@ const DATA = (() => {
                       "data/en/brands_dominican_1.js", "data/en/brands_dominican_2.js", "data/en/brands_dominican_3.js", "data/en/brands_dominican_4.js", "data/en/brands_dominican_5.js", "data/en/brands_dominican_6.js", "data/en/brands_dominican_7.js", "data/en/brands_dominican_8.js", "data/en/brands_dominican_9.js", "data/en/brands_dominican_10.js",
                       "data/en/brands_nicaragua_1.js", "data/en/brands_nicaragua_2.js", "data/en/brands_nicaragua_3.js", "data/en/brands_nicaragua_4.js", "data/en/brands_nicaragua_5.js", "data/en/brands_nicaragua_6.js", "data/en/brands_nicaragua_7.js", "data/en/brands_nicaragua_8.js", "data/en/brands_nicaragua_9.js", "data/en/brands_nicaragua_10.js",
                       "data/en/brands_usa_1.js", "data/en/brands_usa_2.js", "data/en/brands_usa_3.js", "data/en/brands_usa_4.js", "data/en/brands_usa_5.js", "data/en/brands_usa_6.js",
-                      "data/en/brands_honduras_1.js", "data/en/brands_honduras_2.js", "data/en/brands_honduras_3.js", "data/en/brands_honduras_4.js", "data/en/brands_honduras_5.js"] },
+                      "data/en/brands_honduras_1.js", "data/en/brands_honduras_2.js", "data/en/brands_honduras_3.js", "data/en/brands_honduras_4.js", "data/en/brands_honduras_5.js",
+                      "data/en/brands_mexico_1.js", "data/en/brands_mexico_2.js", "data/en/brands_mexico_3.js",
+                      "data/en/brands_philippines_1.js", "data/en/brands_philippines_2.js", "data/en/brands_philippines_3.js",
+                      "data/en/brands_indonesia_1.js", "data/en/brands_indonesia_2.js",
+                      "data/en/brands_brazil_1.js", "data/en/brands_brazil_2.js",
+                      "data/en/brands_colombia_1.js", "data/en/brands_colombia_2.js",
+                      "data/en/brands_argentina_1.js", "data/en/brands_ecuador_1.js", "data/en/brands_peru_1.js", "data/en/brands_cameroon_1.js"] },
     news:      { files: ["data/news.js"] }
   };
 
