@@ -19,15 +19,33 @@ const path = require("path");
 const ROOT = path.resolve(__dirname, "..");
 
 const BASE = ["data/data.js", "data/countries_deep.js", "data/philippines_deep.js",
-  "data/prices_deep.js", "data/tools.js", "data/humidor.js"];
+  "data/prices_deep.js", "data/tools.js", "data/humidor.js",
+  "data/advanced.js", "data/advanced_deep.js", "data/phd.js", "data/phd_lit.js",
+  "data/world.js", "data/world_deep.js"];
 const enDir = path.join(ROOT, "data/en");
 const OVERLAYS = fs.existsSync(enDir)
-  ? fs.readdirSync(enDir).filter(f => /^(basics|sizes|prices|tools_[ab]|countries_[ab]|humidor)\.js$/.test(f)).map(f => "data/en/" + f)
+  ? fs.readdirSync(enDir).filter(f => /^(basics|sizes|prices|tools_[ab]|countries_[ab]|humidor|advanced_\d|phd_\d|world_\d)\.js$/.test(f)).map(f => "data/en/" + f)
   : [];
 
 const src = [...BASE, ...OVERLAYS].map(f => fs.readFileSync(path.join(ROOT, f), "utf8")).join("\n;\n");
 const D = new Function(src + "\n;return CIGAR_DATA;")();
 const H = new Function(src + "\n;return HUMIDOR_DATA;")();
+const ADV = new Function(src + "\n;return ADVANCED_DATA;")();
+const PHD = new Function(src + "\n;return PHD_DATA;")();
+const WLD = new Function(src + "\n;return WORLD_DATA;")();
+
+/* 深掘り走査：構造ごと歩き、文字列の葉をすべて確かめる。
+   ja/es（意図して残す日本語名）・refs/sources（出典）・japan（翻訳済み別ファイル）は対象外 */
+const SKIP_KEYS = new Set(["ja", "name_ja", "es", "refs", "sources", "icons", "abbr", "japan"]);
+function deepScan(obj, prefix, out) {
+  if (obj == null) return out;
+  if (typeof obj === "string") { out.push([prefix, obj]); return out; }
+  if (Array.isArray(obj)) { obj.forEach((v, i) => deepScan(v, `${prefix}[${i}]`, out)); return out; }
+  if (typeof obj === "object") {
+    Object.keys(obj).forEach(k => { if (!SKIP_KEYS.has(k)) deepScan(obj[k], `${prefix}.${k}`, out); });
+  }
+  return out;
+}
 
 const ja = (s) => (String(s == null ? "" : s).match(/[ぁ-んァ-ヶ一-龠]/g) || []).length;
 const LIMIT = 15;   // 補足の括弧書きとして許す日本語の字数
@@ -67,6 +85,9 @@ const SCOPES = {
     ["humidor.usage", H.usage], ["humidor.types", H.types], ["humidor.price", H.price],
     ...H.historyTimeline.map((t, i) => [`historyTimeline[${i}].t`, t.t])
   ],
+  advanced: () => deepScan(ADV, "ADV", []),
+  phd: () => deepScan(PHD, "PHD", []),
+  world: () => deepScan(WLD, "WORLD", []),
   countries: () => [
     ...D.countries.flatMap((c) => [
       [`${c.name_en}.flavor`, c.flavor], [`${c.name_en}.climate`, c.climate],
