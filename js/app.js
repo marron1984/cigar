@@ -512,7 +512,7 @@ function renderBasics() {
     </div>
 
     <div class="kb-block">
-      <img class="guide-photo" src="${ASSET}anatomy-guide.png"
+      <img class="guide-photo" loading="lazy" decoding="async" src="${ASSET}anatomy-guide.webp"
            alt="葉巻の構造（アナトミー）と吸い方 ビジュアルガイド"
            onerror="this.closest('.kb-block').remove()">
     </div>
@@ -708,7 +708,7 @@ function renderSizes() {
   const gaugeFigure = `
     <div class="kb-block">
       <h3>葉巻の太さの種類（ゲージサイズ）一覧</h3>
-      <img class="gauge-photo" src="${ASSET}gauge-size-chart.png"
+      <img class="gauge-photo" loading="lazy" decoding="async" src="${ASSET}gauge-size-chart.webp"
            alt="葉巻の太さの種類（ゲージサイズ）一覧"
            style="display:none"
            onload="this.style.display='block';var f=document.getElementById('gaugeFallback');if(f)f.style.display='none';"

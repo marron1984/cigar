@@ -24,7 +24,14 @@
 
 ※ ファイル名の対応は `js/app.js` の `COUNTRY_SLUG` で定義しています。
 
-## gauge-size-chart.png（葉巻の太さの種類 ゲージサイズ一覧）
+## gauge-size-chart.webp（葉巻の太さの種類 ゲージサイズ一覧）
 
-「太さ・サイズ別」ページ先頭のゲージサイズ一覧の画像。`assets/gauge-size-chart.png` に置くと表示され、
+「太さ・サイズ別」ページ先頭のゲージサイズ一覧の画像。`assets/gauge-size-chart.webp` に置くと表示され、
 無い場合は同等の CSS 版グラフィックが自動フォールバック表示されます。
+
+## 画像の形式について
+
+写真・イラストは **WebP** で置くこと（PNGだと1枚2MB前後になり、表示が遅くなる）。
+手元にPNGしか無いときは、`python3 tools/webp_images.py` で一括変換できる
+（assets/ 直下の 300KB 超のPNGをWebPにして元を消す。ロゴ・ファビコンは対象外）。
+参照側（index.html / js）は `.webp` を指すこと。
