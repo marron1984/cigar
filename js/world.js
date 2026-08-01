@@ -19,7 +19,7 @@ const WORLD = (() => {
   const sourcesBlock = (key) => {
     const s = (W.sources && W.sources[key]) || [];
     if (!s.length) return "";
-    return `<div class="kb-block"><div class="brand-refs" style="margin-top:0"><div class="brand-refs-h">主要出典 <span class="brand-refs-n">${s.length}件</span></div><ol>${s.map(x => `<li>${e(x)}</li>`).join("")}</ol></div></div>`;
+    return `<div class="kb-block"><div class="brand-refs" style="margin-top:0"><div class="brand-refs-h">${T("主要出典")} <span class="brand-refs-n">${T("{n}件", { n: s.length })}</span></div><ol>${s.map(x => `<li>${e(x)}</li>`).join("")}</ol></div></div>`;
   };
 
   /* ---------- 1. 年表・通史 ---------- */
@@ -36,8 +36,8 @@ const WORLD = (() => {
         <div class="pf">${e(f.era)}</div>
         <div class="ps">${e(f.contribution)}</div>
       </div>`).join("")}</div>`;
-    return block("葉巻の通史・詳細年表", tl, `${W.timeline.length}項目`)
-      + block("歴史を作った重要人物", fig, `${W.figures.length}名`);
+    return block(T("葉巻の通史・詳細年表"), tl, T("{n}項目", { n: W.timeline.length }))
+      + block(T("歴史を作った重要人物"), fig, T("{n}名", { n: W.figures.length }));
   }
 
   /* ---------- 2. 世界の文化・名店 ---------- */
@@ -52,10 +52,10 @@ const WORLD = (() => {
         <div class="val" style="font-size:.9rem;color:var(--text-soft)">${e(v.desc)}</div></div>`).join("")}</div>`;
     const reg = W.regionalCulture.map(r => `
       <details class="acc"><summary>${e(r.region)}</summary><div class="acc-body"><p>${e(r.desc)}</p></div></details>`).join("");
-    return block("世界の葉巻フェスティバル・イベント", fes, `${W.festivals.length}件`)
-      + block("世界の著名シガーバー・名店", ven, `${W.venues.length}軒`)
-      + block("地域別の葉巻文化", `<p class="prose" style="margin-bottom:10px">各地域をタップで展開。</p>${reg}`, `${W.regionalCulture.length}地域`)
-      + block("葉巻にまつわる慣習・豆知識", `<div class="prose">${paras(W.cultureCustoms)}</div>`);
+    return block(T("世界の葉巻フェスティバル・イベント"), fes, T("{n}件", { n: W.festivals.length }))
+      + block(T("世界の著名シガーバー・名店"), ven, T("{n}軒", { n: W.venues.length }, "world"))
+      + block(T("地域別の葉巻文化"), `<p class="prose" style="margin-bottom:10px">${T("各地域をタップで展開。")}</p>${reg}`, T("{n}地域", { n: W.regionalCulture.length }))
+      + block(T("葉巻にまつわる慣習・豆知識"), `<div class="prose">${paras(W.cultureCustoms)}</div>`);
   }
 
   /* ---------- 3. 著名愛好家 ---------- */
@@ -65,9 +65,9 @@ const WORLD = (() => {
         <div class="pn">${e(s.name)}</div>
         <div class="pf">${e(s.field)} ・ ${e(s.era)}</div>
         <div class="ps">${e(s.story)}</div>
-        ${s.favorite ? `<div class="pfav">好んだ銘柄：${e(s.favorite)}</div>` : ""}
+        ${s.favorite ? `<div class="pfav">${T("好んだ銘柄：")}${e(s.favorite)}</div>` : ""}
       </div>`).join("")}</div>`;
-    return block("歴史上・現代の著名な葉巻愛好家", cards, `${W.smokers.length}名`);
+    return block(T("歴史上・現代の著名な葉巻愛好家"), cards, T("{n}名", { n: W.smokers.length }));
   }
 
   /* ---------- 4. 日本ガイド ---------- */
@@ -103,9 +103,9 @@ const WORLD = (() => {
   function tasting() {
     let searchWired = false;
     const cards = W.reviews.map(r => reviewCard(r)).join("");
-    const html = block("実践テイスティングノート集",
-      `<input type="text" class="note-search lex-search" id="reviewSearch" placeholder="銘柄・産地・強さ・風味で検索…">
-       <div id="reviewList" class="grid grid-2">${cards}</div>`, `${W.reviews.length}本`);
+    const html = block(T("実践テイスティングノート集"),
+      `<input type="text" class="note-search lex-search" id="reviewSearch" placeholder="${T("銘柄・産地・強さ・風味で検索…")}">
+       <div id="reviewList" class="grid grid-2">${cards}</div>`, T("{n}本", { n: W.reviews.length }));
     return html;
   }
   function strengthBadge(s) {
@@ -120,32 +120,32 @@ const WORLD = (() => {
       </div>
       <div class="rv-chips"><span class="chip">${e(r.price)}</span></div>
       <div class="rv-thirds">
-        <div class="rv-third"><span class="lb">序盤</span><span class="tx">${e(r.first)}</span></div>
-        <div class="rv-third"><span class="lb">中盤</span><span class="tx">${e(r.middle)}</span></div>
-        <div class="rv-third"><span class="lb">終盤</span><span class="tx">${e(r.final)}</span></div>
-        <div class="rv-third"><span class="lb">造り</span><span class="tx">${e(r.construction)}</span></div>
-        <div class="rv-third"><span class="lb">ペア</span><span class="tx">${e(r.pairing)}</span></div>
+        <div class="rv-third"><span class="lb">${T("序盤")}</span><span class="tx">${e(r.first)}</span></div>
+        <div class="rv-third"><span class="lb">${T("中盤")}</span><span class="tx">${e(r.middle)}</span></div>
+        <div class="rv-third"><span class="lb">${T("終盤")}</span><span class="tx">${e(r.final)}</span></div>
+        <div class="rv-third"><span class="lb">${T("造り")}</span><span class="tx">${e(r.construction)}</span></div>
+        <div class="rv-third"><span class="lb">${T("ペア")}</span><span class="tx">${e(r.pairing)}</span></div>
       </div>
-      <div class="rv-foot"><span class="k">総評</span> ${e(r.summary)}</div>
+      <div class="rv-foot"><span class="k">${T("総評")}</span> ${e(r.summary)}</div>
     </div>`;
   }
 
   /* ---------- 6. その他の葉巻 ---------- */
   function other() {
     const cats = `<div class="table-wrap"><table class="ref">
-      <thead><tr><th>種類</th><th>価格（日本）</th><th>喫煙時間</th><th>特徴</th></tr></thead>
+      <thead><tr><th>${T("種類")}</th><th>${T("価格（日本）")}</th><th>${T("喫煙時間")}</th><th>${T("特徴", null, "th")}</th></tr></thead>
       <tbody>${W.otherCategories.map(c => `<tr>
         <td><span class="vn" style="font-size:.95rem">${e(c.type)}</span></td>
         <td>${e(c.price)}</td><td>${e(c.time)}</td><td>${e(c.desc)}</td></tr>`).join("")}</tbody></table></div>`;
     const brands = `<div class="table-wrap"><table class="ref">
-      <thead><tr><th>ブランド</th><th>国</th><th>タイプ</th><th>特徴</th></tr></thead>
+      <thead><tr><th>${T("ブランド", null, "th")}</th><th>${T("国")}</th><th>${T("タイプ")}</th><th>${T("特徴", null, "th")}</th></tr></thead>
       <tbody>${W.otherBrands.map(b => `<tr>
         <td><span class="vn" style="font-size:.9rem">${e(b.name)}</span></td>
         <td>${e(b.country)}</td><td>${e(b.type)}</td><td>${e(b.desc)}</td></tr>`).join("")}</tbody></table></div>`;
-    return block("カテゴリ解説（リトル/シガリロ/ドライ/フレーバー/機械巻き）", cats, `${W.otherCategories.length}種`)
-      + block("主要ブランド一覧", brands, `${W.otherBrands.length}銘柄`)
-      + block("日本で買えるドライ/リトルシガー", `<div class="prose">${paras(W.otherJapan)}</div>`)
-      + block("プレミアムとの違い・位置づけ", `<div class="prose">${paras(W.otherVsPremium)}</div>`);
+    return block(T("カテゴリ解説（リトル/シガリロ/ドライ/フレーバー/機械巻き）"), cats, T("{n}種", { n: W.otherCategories.length }))
+      + block(T("主要ブランド一覧"), brands, T("{n}銘柄", { n: W.otherBrands.length }))
+      + block(T("日本で買えるドライ/リトルシガー"), `<div class="prose">${paras(W.otherJapan)}</div>`)
+      + block(T("プレミアムとの違い・位置づけ"), `<div class="prose">${paras(W.otherVsPremium)}</div>`);
   }
 
   /* ---------- 7. 投資・コレクション ---------- */
@@ -157,12 +157,12 @@ const WORLD = (() => {
         <div class="val" style="font-size:.88rem;color:var(--text-soft)">${e(m.note)}</div></div>`).join("")}</div>`;
     const leg = W.invest.vintageLegends.map(v => `
       <details class="acc"><summary>${e(v.name)}</summary><div class="acc-body"><p>${e(v.desc)}</p></div></details>`).join("");
-    return block("葉巻投資の考え方", `<div class="research-note"><span class="rn-h">Note</span>数値はいずれも概算。嗜好品ゆえ流動性が低く、あくまで趣味の延長・分散資産の一つとして。</div><div class="prose">${paras(I.thesis)}</div>`)
-      + block("オークション市場", `<div class="prose">${paras(I.auctions)}</div>`)
-      + block("史上最も高価な葉巻", exp, `${I.mostExpensive.length}選`)
-      + block("ヴィンテージ・生産終了の伝説的銘柄", `<p class="prose" style="margin-bottom:10px">各銘柄をタップで展開。</p>${leg}`, `${W.invest.vintageLegends.length}選`)
-      + block("年代の見分け方と保管", `<div class="prose">${paras(I.dating)}</div>`)
-      + block("コレクションの始め方", `<div class="prose">${paras(I.start)}</div>`);
+    return block(T("葉巻投資の考え方"), `<div class="research-note"><span class="rn-h">Note</span>${T("数値はいずれも概算。嗜好品ゆえ流動性が低く、あくまで趣味の延長・分散資産の一つとして。")}</div><div class="prose">${paras(I.thesis)}</div>`)
+      + block(T("オークション市場"), `<div class="prose">${paras(I.auctions)}</div>`)
+      + block(T("史上最も高価な葉巻"), exp, T("{n}選", { n: I.mostExpensive.length }))
+      + block(T("ヴィンテージ・生産終了の伝説的銘柄"), `<p class="prose" style="margin-bottom:10px">${T("各銘柄をタップで展開。")}</p>${leg}`, T("{n}選", { n: W.invest.vintageLegends.length }))
+      + block(T("年代の見分け方と保管"), `<div class="prose">${paras(I.dating)}</div>`)
+      + block(T("コレクションの始め方"), `<div class="prose">${paras(I.start)}</div>`);
   }
 
   /* ---------- 8. 用語大全 ---------- */
@@ -173,25 +173,25 @@ const WORLD = (() => {
         <div class="lx-for"><span class="es">${e(l.es)}</span> / ${e(l.en)}</div>
         <div class="lx-d">${e(l.desc)}</div>
       </div>`).join("");
-    return block("多言語・葉巻用語大全（西 / 英 / 日）",
-      `<input type="text" class="note-search lex-search" id="lexSearch" placeholder="用語を検索（日本語・スペイン語・英語）…">
-       <div id="lexList" class="lex-grid">${items}</div>`, `${W.lexicon.length}語`);
+    return block(T("多言語・葉巻用語大全（西 / 英 / 日）"),
+      `<input type="text" class="note-search lex-search" id="lexSearch" placeholder="${T("用語を検索（日本語・スペイン語・英語）…")}">
+       <div id="lexList" class="lex-grid">${items}</div>`, T("{n}語", { n: W.lexicon.length }));
   }
 
   /* ---------- 9. トラベル・購入 ---------- */
   function travel() {
-    const T = W.travel;
+    const TR = W.travel;  // ※ T は翻訳関数（js/i18n.js）なので別名にする
     const cust = `<div class="table-wrap"><table class="ref">
-      <thead><tr><th>国・地域</th><th>葉巻の免税持込み（目安）</th><th>注意</th></tr></thead>
-      <tbody>${T.customs.map(c => `<tr>
+      <thead><tr><th>${T("国・地域")}</th><th>${T("葉巻の免税持込み（目安）")}</th><th>${T("注意")}</th></tr></thead>
+      <tbody>${TR.customs.map(c => `<tr>
         <td><span class="vn" style="font-size:.92rem">${e(c.country)}</span></td>
         <td>${e(c.allowance)}</td><td>${e(c.note)}</td></tr>`).join("")}</tbody></table></div>`;
-    return block("ハバナ（キューバ）での購入ガイド", `<div class="callout warn">『工員のおすそ分け』を騙る路上販売はほぼ偽物。公認店で正価・領収書つきが鉄則です。</div><div class="prose">${paras(T.havana)}</div>`)
-      + block("旅先での偽物回避チェックリスト", `<div class="prose">${paras(T.fakes)}</div>`)
-      + block("主要国の免税・持込み規制", `<div class="research-note"><span class="rn-h">Note</span>数値はいずれも目安で、改定されうるため各国税関公式で最新確認を。</div>${cust}`, `${T.customs.length}か国`)
-      + block("免税店（デューティフリー）活用のコツ", `<div class="prose">${paras(T.dutyFree)}</div>`)
-      + block("オンライン購入・個人輸入の注意", `<div class="prose">${paras(T.online)}</div>`)
-      + block("日本への持込み・個人輸入", `<div class="prose">${paras(T.japanBring)}</div>`);
+    return block(T("ハバナ（キューバ）での購入ガイド"), `<div class="callout warn">${T("『工員のおすそ分け』を騙る路上販売はほぼ偽物。公認店で正価・領収書つきが鉄則です。")}</div><div class="prose">${paras(TR.havana)}</div>`)
+      + block(T("旅先での偽物回避チェックリスト"), `<div class="prose">${paras(TR.fakes)}</div>`)
+      + block(T("主要国の免税・持込み規制"), `<div class="research-note"><span class="rn-h">Note</span>${T("数値はいずれも目安で、改定されうるため各国税関公式で最新確認を。")}</div>${cust}`, T("{n}か国", { n: TR.customs.length }))
+      + block(T("免税店（デューティフリー）活用のコツ"), `<div class="prose">${paras(TR.dutyFree)}</div>`)
+      + block(T("オンライン購入・個人輸入の注意"), `<div class="prose">${paras(TR.online)}</div>`)
+      + block(T("日本への持込み・個人輸入"), `<div class="prose">${paras(TR.japanBring)}</div>`);
   }
 
   /* ---------- 10. 神話・FAQ ---------- */
@@ -200,13 +200,13 @@ const WORLD = (() => {
     const m = W.myths.map(x => `
       <div class="myth-item">
         <div class="mc">「${e(x.claim)}」</div>
-        <span class="myth-verdict ${verdictClass(x.verdict)}">判定：${e(x.verdict)}</span>
+        <span class="myth-verdict ${verdictClass(x.verdict)}">${T("判定：")}${e(x.verdict)}</span>
         <div class="me">${e(x.explanation)}</div>
       </div>`).join("");
     const f = W.faq.map(x => `
       <div class="qa-item"><div class="q">${e(x.q)}</div><div class="a">${e(x.a)}</div></div>`).join("");
-    return block("葉巻の神話・都市伝説の検証", `<p class="prose" style="margin-bottom:12px">よくある俗説を事実で検証します。</p>${m}`, `${W.myths.length}件`)
-      + block("初心者からのよくある質問（FAQ）", f, `${W.faq.length}問`);
+    return block(T("葉巻の神話・都市伝説の検証"), `<p class="prose" style="margin-bottom:12px">${T("よくある俗説を事実で検証します。")}</p>${m}`, T("{n}件", { n: W.myths.length }))
+      + block(T("初心者からのよくある質問（FAQ）"), f, T("{n}問", { n: W.faq.length }));
   }
 
   const R = { history, culture, smokers, japan, tasting, other, invest, lexicon, travel, myths };

@@ -106,7 +106,7 @@ var PAGE_META = {
     }
   },
   advanced: {
-    enReady: false,
+    enReady: true,
     path: "advanced",
     ja: {
       title: "葉巻の上級編 — 品種・発酵・キューバ学・ペアリング・熟成｜Cigar Cafe",
@@ -118,7 +118,7 @@ var PAGE_META = {
     }
   },
   phd: {
-    enReady: false,
+    enReady: true,
     path: "phd",
     ja: {
       title: "葉巻の学術 — 化学・植物学・官能評価・産業経済・健康科学｜Cigar Cafe",
@@ -142,7 +142,7 @@ var PAGE_META = {
     }
   },
   world: {
-    enReady: false,
+    enReady: true,
     path: "world",
     ja: {
       title: "世界の葉巻 — 年表・文化・名店・投資・用語大全・トラベル｜Cigar Cafe",
