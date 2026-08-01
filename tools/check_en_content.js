@@ -19,14 +19,15 @@ const path = require("path");
 const ROOT = path.resolve(__dirname, "..");
 
 const BASE = ["data/data.js", "data/countries_deep.js", "data/philippines_deep.js",
-  "data/prices_deep.js", "data/tools.js"];
+  "data/prices_deep.js", "data/tools.js", "data/humidor.js"];
 const enDir = path.join(ROOT, "data/en");
 const OVERLAYS = fs.existsSync(enDir)
-  ? fs.readdirSync(enDir).filter(f => /^(basics|sizes|prices|tools_[ab]|countries_[ab])\.js$/.test(f)).map(f => "data/en/" + f)
+  ? fs.readdirSync(enDir).filter(f => /^(basics|sizes|prices|tools_[ab]|countries_[ab]|humidor)\.js$/.test(f)).map(f => "data/en/" + f)
   : [];
 
 const src = [...BASE, ...OVERLAYS].map(f => fs.readFileSync(path.join(ROOT, f), "utf8")).join("\n;\n");
 const D = new Function(src + "\n;return CIGAR_DATA;")();
+const H = new Function(src + "\n;return HUMIDOR_DATA;")();
 
 const ja = (s) => (String(s == null ? "" : s).match(/[ぁ-んァ-ヶ一-龠]/g) || []).length;
 const LIMIT = 15;   // 補足の括弧書きとして許す日本語の字数
@@ -60,6 +61,11 @@ const SCOPES = {
     ["storageBasics", D.storageBasics],
     ...D.tools.flatMap((t, i) => ["role", "types", "choose", "use", "care", "history", "price"]
       .map(k => [`tools[${i}(${t.en})].${k}`, t[k]]))
+  ],
+  humidor: () => [
+    ["humidor.history", H.history], ["humidor.brands", H.brands],
+    ["humidor.usage", H.usage], ["humidor.types", H.types], ["humidor.price", H.price],
+    ...H.historyTimeline.map((t, i) => [`historyTimeline[${i}].t`, t.t])
   ],
   countries: () => [
     ...D.countries.flatMap((c) => [

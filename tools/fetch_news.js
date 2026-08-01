@@ -141,7 +141,12 @@ const SYSTEM = `あなたは葉巻専門メディアの日本語版デスクで�
 日本国内の媒体・出来事は「日本国内」を選ぶ。
 
 【出典】source には媒体名を入れる。媒体名が記事タイトルの末尾に「 - 媒体名」の形で
-付いている場合は、そこから取り出し、title_en からは取り除く。`;
+付いている場合は、そこから取り出し、title_en からは取り除く。
+
+【英語版】このサイトには英語版もある。各記事に英語の見出し title_en と
+英語の要約 summary_en も書くこと。英語ソースの記事は原文見出し・本文に忠実に、
+日本語ソースの記事は日本語の見出し・要約を自然な英語に。summary_en は
+summary_ja と同じ情報量（イギリス英語・報道文体・60〜120語）。`;
 
 const SCHEMA = {
   type: "object",
@@ -157,9 +162,10 @@ const SCHEMA = {
           title_ja: { type: "string", description: "日本語の見出し（全角35字以内）" },
           summary_ja: { type: "string", description: "日本語の要約（80〜200字）" },
           source: { type: "string", description: "媒体名" },
-          title_en: { type: "string", description: "原文の見出し（媒体名を除く）" }
+          title_en: { type: "string", description: "英語の見出し（英語ソースは原文見出しを基に、媒体名は除く。日本語ソースは英訳）" },
+          summary_en: { type: "string", description: "英語の要約（summary_ja と同じ情報量、60〜120語）" }
         },
-        required: ["i", "category", "title_ja", "summary_ja", "source", "title_en"],
+        required: ["i", "category", "title_ja", "summary_ja", "source", "title_en", "summary_en"],
         additionalProperties: false
       }
     }
@@ -203,7 +209,7 @@ async function translate(candidates) {
 /* ---------- 書き出す前の点検 ----------
    自動で書き足すぶん、形の崩れたものが混じるとページ全体が壊れる。
    入れる直前に、必要な項目が揃っているかだけ機械で確かめる。 */
-const REQUIRED = ["date", "category", "title_ja", "summary_ja", "source", "source_title", "url"];
+const REQUIRED = ["date", "category", "title_ja", "summary_ja", "title_en", "summary_en", "source", "source_title", "url"];
 function validate(items) {
   const bad = [];
   items.forEach((x, i) => {
@@ -294,6 +300,8 @@ var NEWS_DATA = `;
       category: p.category,
       title_ja: p.title_ja,
       summary_ja: p.summary_ja,
+      title_en: p.title_en || c.title,
+      summary_en: p.summary_en || "",
       source: p.source || c.source,
       source_title: p.title_en || c.title,
       url: c.url

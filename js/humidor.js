@@ -19,31 +19,31 @@ const HUMIDOR = (() => {
   function history() {
     const tl = `<div class="htimeline">${H.historyTimeline.map(t => `
       <div class="ht-item">
-        <div class="ht-y">${e(t.y)}</div>
+        <div class="ht-y">${e(I18N.isEn ? String(t.y).replace(/年/g, "") : t.y)}</div>
         <div class="ht-t">${e(t.t)}</div>
       </div>`).join("")}</div>`;
-    return block("ヒュミドールの歴史", `<div class="prose">${paras(H.history)}</div>`)
-      + block("簡易年表", tl, `${H.historyTimeline.length}項目`);
+    return block(T("ヒュミドールの歴史"), `<div class="prose">${paras(H.history)}</div>`)
+      + block(T("簡易年表"), tl, T("{n}項目", { n: H.historyTimeline.length }));
   }
 
   /* ---------- 2. メーカー・ブランド ---------- */
   function brands() {
-    return block("世界のヒュミドールメーカー・ブランド", `<div class="prose">${paras(H.brands)}</div>`);
+    return block(T("世界のヒュミドールメーカー・ブランド"), `<div class="prose">${paras(H.brands)}</div>`);
   }
 
   /* ---------- 3. 使い方・メンテナンス ---------- */
   function usage() {
-    return block("使い方・日常メンテナンス", `<div class="prose">${paras(H.usage)}</div>`);
+    return block(T("使い方・日常メンテナンス"), `<div class="prose">${paras(H.usage)}</div>`);
   }
 
   /* ---------- 4. 種類・分類 ---------- */
   function types() {
-    return block("ヒュミドールの種類・分類", `<div class="prose">${paras(H.types)}</div>`);
+    return block(T("ヒュミドールの種類・分類"), `<div class="prose">${paras(H.types)}</div>`);
   }
 
   /* ---------- 5. 価格 ---------- */
   function price() {
-    return block("価格帯別ガイド", `<div class="prose">${paras(H.price)}</div>`);
+    return block(T("価格帯別ガイド"), `<div class="prose">${paras(H.price)}</div>`);
   }
 
   const R = { history, brands, usage, types, price };

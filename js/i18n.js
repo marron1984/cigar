@@ -472,6 +472,31 @@ var I18N = (function () {
     "おすすめブランド": "Recommended makers",
     "保管の基礎知識": "The basics of storage",
 
+    /* ---------- ヒュミドール大全 ---------- */
+    "ヒュミドールの歴史": "A history of the humidor",
+    "簡易年表": "Timeline",
+    "{n}項目": "{n} entries",
+    "世界のヒュミドールメーカー・ブランド": "The world's humidor makers",
+    "使い方・日常メンテナンス": "Use and daily upkeep",
+    "ヒュミドールの種類・分類": "Types of humidor",
+    "価格帯別ガイド": "A guide by price",
+
+    /* ---------- ニュース ---------- */
+    "ニュースを準備中です。": "News is on its way.",
+    "最終更新：": "Last updated: ",
+    "{n}件掲載": "{n} stories",
+    "海外ニュースは英語の一次ソースをAIが翻訳・要約したもの、日本国内ニュースは国内ソースを要約したものです。正確な内容・最新の情報は、各記事の元記事リンクでご確認ください。掲載内容は最終更新時点の情報です（毎日自動更新）。":
+      "Stories are AI summaries of their sources — follow the link on each story for the full original. Content reflects the last update (refreshed daily).",
+    "すべて": "All",
+    "newscat::新製品": "New releases",
+    "newscat::業界・企業": "Industry",
+    "newscat::イベント・アワード": "Events & awards",
+    "newscat::規制・市場": "Regulation & markets",
+    "newscat::日本国内": "Japan",
+    "出典：": "Source: ",
+    "元記事を読む →": "Read the original →",
+    "原文を読む（英語）→": "Read the original →",
+
     /* ---------- ページのデータ読み込み ---------- */
     "データを読み込めませんでした。通信環境をご確認のうえ、もう一度お試しください。":
       "This page's data could not be loaded. Please check your connection and try again.",

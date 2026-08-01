@@ -36,7 +36,7 @@ const DATA = (() => {
                  en: ["data/en/countries_a.js", "data/en/countries_b.js"] },
     prices:    { files: ["data/prices_deep.js"], en: ["data/en/prices.js"] },
     tools:     { files: ["data/tools.js"], en: ["data/en/tools_a.js", "data/en/tools_b.js"] },
-    humidor:   { files: ["data/humidor.js"] },
+    humidor:   { files: ["data/humidor.js"], en: ["data/en/humidor.js"] },
     advanced:  { files: ["data/advanced.js", "data/advanced_deep.js"] },
     phd:       { files: ["data/phd.js", "data/phd_lit.js"] },
     world:     { files: ["data/world.js", "data/world_deep.js"], en: ["data/en/japan_guide.js"] },

@@ -27,7 +27,7 @@ const NEWS = (() => {
     const root = q("#newsRoot");
     if (!root) return;
     if (typeof NEWS_DATA === "undefined" || !Array.isArray(NEWS_DATA.items) || !NEWS_DATA.items.length) {
-      root.innerHTML = `<div class="cd-placeholder">ニュースを準備中です。</div>`;
+      root.innerHTML = `<div class="cd-placeholder">${T("ニュースを準備中です。")}</div>`;
       return;
     }
     const cats = [...new Set(NEWS_DATA.items.map(n => n.category).filter(Boolean))];
@@ -38,24 +38,24 @@ const NEWS = (() => {
 
     root.innerHTML = `
       <div class="jp-meta">
-        <span class="jp-updated">最終更新：${esc(NEWS_DATA.updated || "")}</span>
-        <span class="jp-count">${NEWS_DATA.items.length}件掲載</span>
+        <span class="jp-updated">${T("最終更新：")}${esc(NEWS_DATA.updated || "")}</span>
+        <span class="jp-count">${T("{n}件掲載", { n: NEWS_DATA.items.length })}</span>
       </div>
-      <div class="callout news-note">海外ニュースは英語の一次ソースをAIが翻訳・要約したもの、日本国内ニュースは国内ソースを要約したものです。正確な内容・最新の情報は、各記事の元記事リンクでご確認ください。掲載内容は最終更新時点の情報です（毎日自動更新）。</div>
+      <div class="callout news-note">${T("海外ニュースは英語の一次ソースをAIが翻訳・要約したもの、日本国内ニュースは国内ソースを要約したものです。正確な内容・最新の情報は、各記事の元記事リンクでご確認ください。掲載内容は最終更新時点の情報です（毎日自動更新）。")}</div>
       <div class="news-filter">
-        <button type="button" class="chip nf${filter === "all" ? " on" : ""}" data-nf="all">すべて</button>
-        ${cats.map(c => `<button type="button" class="chip nf${filter === c ? " on" : ""}" data-nf="${esc(c)}">${esc(c)}</button>`).join("")}
+        <button type="button" class="chip nf${filter === "all" ? " on" : ""}" data-nf="all">${T("すべて")}</button>
+        ${cats.map(c => `<button type="button" class="chip nf${filter === c ? " on" : ""}" data-nf="${esc(c)}">${esc(T(c, null, "newscat"))}</button>`).join("")}
       </div>
       <div class="news-list">${items.map(n => `
         <article class="news-card">
           <div class="news-top">
             <span class="news-date">${esc(fmtDate(n.date))}</span>
-            <span class="news-cat">${esc(n.category || "")}</span>
+            <span class="news-cat">${esc(T(n.category || "", null, "newscat"))}</span>
           </div>
-          <h3 class="news-title">${esc(n.title_ja)}</h3>
-          <p class="news-sum">${esc(n.summary_ja)}</p>
-          <div class="news-src">出典：${esc(n.source || "")}${n.source_title ? `「${esc(n.source_title)}」` : ""}
-            ${n.url ? `<a href="${esc(n.url)}" target="_blank" rel="noopener">${n.category === "日本国内" ? "元記事を読む →" : "原文を読む（英語）→"}</a>` : ""}
+          <h3 class="news-title">${esc(I18N.isEn && n.title_en ? n.title_en : n.title_ja)}</h3>
+          <p class="news-sum">${esc(I18N.isEn && n.summary_en ? n.summary_en : n.summary_ja)}</p>
+          <div class="news-src">${T("出典：")}${esc(n.source || "")}${n.source_title ? `「${esc(n.source_title)}」` : ""}
+            ${n.url ? `<a href="${esc(n.url)}" target="_blank" rel="noopener">${T(n.category === "日本国内" ? "元記事を読む →" : "原文を読む（英語）→")}</a>` : ""}
           </div>
         </article>`).join("")}
       </div>`;
