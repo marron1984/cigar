@@ -41,7 +41,7 @@ const NEWS = (() => {
         <span class="jp-updated">最終更新：${esc(NEWS_DATA.updated || "")}</span>
         <span class="jp-count">${NEWS_DATA.items.length}件掲載</span>
       </div>
-      <div class="callout news-note">海外ニュースは英語の一次ソースをAIが翻訳・要約したもの、日本国内ニュースは国内ソースを要約したものです。正確な内容・最新の情報は、各記事の元記事リンクでご確認ください。掲載内容は最終更新時点の情報です（毎週自動更新）。</div>
+      <div class="callout news-note">海外ニュースは英語の一次ソースをAIが翻訳・要約したもの、日本国内ニュースは国内ソースを要約したものです。正確な内容・最新の情報は、各記事の元記事リンクでご確認ください。掲載内容は最終更新時点の情報です（毎日自動更新）。</div>
       <div class="news-filter">
         <button type="button" class="chip nf${filter === "all" ? " on" : ""}" data-nf="all">すべて</button>
         ${cats.map(c => `<button type="button" class="chip nf${filter === c ? " on" : ""}" data-nf="${esc(c)}">${esc(c)}</button>`).join("")}

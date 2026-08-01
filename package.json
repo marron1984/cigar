@@ -1,0 +1,16 @@
+{
+  "name": "cigar-cafe",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Cigar Cafe（葉巻大辞典）— サイト本体は依存なしの静的ページ。この package.json はニュース自動取り込み（tools/fetch_news.js）のためだけにあります。",
+  "type": "commonjs",
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "build": "node tools/build.js",
+    "news": "node tools/fetch_news.js",
+    "news:dry": "node tools/fetch_news.js --dry-run"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.115.0"
+  }
+}

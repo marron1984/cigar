@@ -1,0 +1,87 @@
+# ============================================================
+# 葉巻ニュースの毎日更新
+# ------------------------------------------------------------
+# 毎朝、海外・国内のRSSを見に行き、まだ載せていない記事のうち
+# ニュース性のあるものを Claude が日本語にして data/news.js に足す。
+# 足すものが無い日は何もコミットしない（＝空の更新はしない）。
+#
+# 動かすのに必要なもの：
+#   リポジトリの Settings → Secrets and variables → Actions に
+#   ANTHROPIC_API_KEY を登録しておくこと。
+#
+# 手で試したいとき：Actions タブ → このワークフロー → Run workflow。
+# dry_run を true にすると、取得元の生死と拾えた記事だけを表示して終わる
+# （Claude を呼ばないので費用もかからない）。
+# ============================================================
+name: ニュース更新（毎日）
+
+on:
+  schedule:
+    # 毎日 07:00（日本時間）＝ 22:00 UTC
+    - cron: "0 22 * * *"
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "取得元の確認だけ行う（Claudeを呼ばない）"
+        type: boolean
+        default: false
+      days:
+        description: "さかのぼる日数"
+        default: "14"
+
+# 生成物をコミットして戻すので書き込み権限が要る
+permissions:
+  contents: write
+
+concurrency:
+  group: news-daily
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: npm
+
+      - name: 依存を入れる
+        run: npm ci
+
+      - name: 取得元の確認だけ（手動実行で dry_run のとき）
+        if: ${{ inputs.dry_run }}
+        run: node tools/fetch_news.js --days "${{ inputs.days || '14' }}" --dry-run
+
+      - name: ニュースを取り込む
+        if: ${{ !inputs.dry_run }}
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: node tools/fetch_news.js --days "${{ inputs.days || '14' }}"
+
+      - name: 要約データを作り直す
+        if: ${{ !inputs.dry_run }}
+        # ホームの「翻訳ニュース ○件」は data/summary.js を見ているので合わせる。
+        # 英語版シェルと各ページの入口はニュースでは変わらないため、ここでは作らない。
+        run: node tools/build_summary.js
+
+      - name: 変わっていたらコミットして反映
+        if: ${{ !inputs.dry_run }}
+        run: |
+          if git diff --quiet -- data/news.js data/summary.js; then
+            echo "今日は足すものがありませんでした。コミットしません。"
+            exit 0
+          fi
+          COUNT=$(node -e 'const fs=require("fs");const N=new Function(fs.readFileSync("data/news.js","utf8")+"\n;return NEWS_DATA;")();console.log(N.items.length)')
+          git config user.name  "cigar-cafe-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/news.js data/summary.js
+          git commit -m "葉巻ニュースを更新（合計${COUNT}件・自動取り込み）"
+          for i in 1 2 3 4; do
+            git pull --rebase origin "${GITHUB_REF_NAME}" && git push origin "HEAD:${GITHUB_REF_NAME}" && exit 0
+            sleep $((2 ** i))
+          done
+          echo "プッシュに失敗しました"; exit 1

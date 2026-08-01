@@ -87,13 +87,17 @@
 │   ├── pages.js        # ページごとのURL・題・説明文（手書き）
 │   ├── brands.js …     # 各ページの本体データ（そのページを開いたときに読む）
 │   └── en/             # 英語版でだけ読み込む差し替えデータ
-└── tools/
-    ├── build.js          # 下の4つをまとめて走らせる
-    ├── build_summary.js  # data/summary.js を作る
-    ├── build_en.js       # en/index.html を作る
-    ├── build_pages.js    # 各ページ・sitemap.xml・robots.txt を作る
-    ├── check_seo.js      # 題の重複・canonical・hreflang の抜けを確かめる
-    └── build_og.js       # SNS共有カード画像を作る（写真や煽り文を変えたときだけ）
+├── tools/
+│   ├── build.js          # 下の4つをまとめて走らせる
+│   ├── build_summary.js  # data/summary.js を作る
+│   ├── build_en.js       # en/index.html を作る
+│   ├── build_pages.js    # 各ページ・sitemap.xml・robots.txt を作る
+│   ├── check_seo.js      # 題の重複・canonical・hreflang の抜けを確かめる
+│   ├── build_og.js       # SNS共有カード画像を作る（写真や煽り文を変えたときだけ）
+│   ├── news_sources.js   # ニュースの取得元（RSS）一覧
+│   └── fetch_news.js     # ニュースを取り込む（毎日自動実行）
+└── .github/workflows/
+    └── news-daily.yml    # 毎朝7時（日本時間）にニュースを更新
 ```
 
 ### データの読み込みについて
@@ -109,6 +113,34 @@
 **本物のURL**を持たせています（対応表は `data/pages.js`）。それぞれに固有の題・説明文・
 正規URL・SNSカードが付くので、検索エンジンからはページ単位で拾われます。
 古い `#brands` 形式のリンクも今までどおり開けます（開いたあと `/brands/` に直ります）。
+
+### ニュースの毎日更新
+
+葉巻ニュース（`/news/`）は毎朝7時（日本時間）に自動で更新されます。
+
+1. `tools/news_sources.js` に並べたRSS（halfwheel・Cigar Journal・Tobacco Business ほか、
+   国内はGoogleニュースの検索フィード）を見に行く
+2. まだ載せていない記事だけを Claude に渡し、**ニュース性のあるものだけ**を選ばせる
+   （個別銘柄のレビュー・ランキング・販促は載せない）
+3. 日本語の見出しと要約にして `data/news.js` に足し、コミットして反映
+
+要約は渡したRSS本文だけから書かせています（無い情報は書かせない）。原文へのリンクは必ず残ります。
+取得元が落ちていても、その媒体を飛ばして残りで動きます。
+
+**動かすのに必要な設定**（一度だけ）：GitHub の
+`Settings → Secrets and variables → Actions` に `ANTHROPIC_API_KEY` を登録してください。
+費用の目安は月3〜6ドル程度です。
+
+手で確かめたいとき：
+
+```bash
+node tools/fetch_news.js --dry-run     # 取得元の生死と拾えた記事の一覧（APIを呼ばない）
+node tools/fetch_news.js               # 実際に取り込む（ANTHROPIC_API_KEY が要る）
+```
+
+GitHub の Actions タブからも「ニュース更新（毎日）」→ Run workflow で手動実行できます
+（`dry_run` を true にすると取得元の確認だけ行います）。
+取得元を足したいときは `tools/news_sources.js` に1行足すだけです。
 
 ### ビルド
 
