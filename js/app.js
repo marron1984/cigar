@@ -13,14 +13,19 @@ const esc = (s) => String(s == null ? "" : s)
   .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")
   .replace(/"/g, "&quot;");
 
+/* 日英の名前ペアを、表示言語に合わせて[主,副]の順で返す。
+   英語版では英名を主にし、日本語名は参照用に添える。 */
+function namePair(ja, en) { return I18N.isEn ? [en || ja, ja] : [ja, en || ""]; }
+
 /* ---------- 強さ → バッジクラス ---------- */
 function strengthBadge(s) {
   const cls = /フル/.test(s) ? "s-full" : /ミディアム/.test(s) ? "s-medium" : "s-mild";
-  return `<span class="strength-badge ${cls}">${esc(s)}</span>`;
+  return `<span class="strength-badge ${cls}">${esc(I18N.strength(s))}</span>`;
 }
 function brandChips(brands, extraClass = "brand", brandKey = null) {
   return `<div class="chips">${brands.map(b => {
-    const inner = `${esc(b.ja)}${b.en ? ` <span style="opacity:.6">${esc(b.en)}</span>` : ""}`;
+    const [n1, n2] = namePair(b.ja, b.en);
+    const inner = `${esc(n1)}${n2 ? ` <span style="opacity:.6">${esc(n2)}</span>` : ""}`;
     if (brandKey) {
       return `<button type="button" class="chip ${extraClass} brand-link" data-bkey="${esc(brandKey)}" data-ben="${esc(b.en || "")}" data-bja="${esc(b.ja || "")}">${inner}<span class="brand-link-go" aria-hidden="true">›</span></button>`;
     }
@@ -373,18 +378,18 @@ function homeFigures() {
     const IDX = brandsIndex();
     const keys = Object.keys(IDX);
     const brands = keys.reduce((n, k) => n + (IDX[k] || []).length, 0);
-    if (brands) out.push({ v: brands, u: "", l: "収録ブランド", s: "世界の銘柄（マルカ）を創業から現在まで" });
-    if (keys.length) out.push({ v: keys.length, u: "", l: "産地・国", s: "キューバから東南アジアまで" });
+    if (brands) out.push({ v: brands, u: "", l: T("収録ブランド"), s: T("世界の銘柄（マルカ）を創業から現在まで") });
+    if (keys.length) out.push({ v: keys.length, u: "", l: T("産地・国"), s: T("キューバから東南アジアまで") });
   } catch (e) { /* データ未読込でも他は出す */ }
   try {
     const v = (CIGAR_DATA && CIGAR_DATA.vitolas || []).length;
-    if (v) out.push({ v, u: "", l: "サイズ（ビトラ）", s: "寸法と味わいの目安つき" });
+    if (v) out.push({ v, u: "", l: T("サイズ（ビトラ）"), s: T("寸法と味わいの目安つき") });
   } catch (e) {}
   try {
     // ニュース本体はニュースページを開くまで読まないので、件数は要約データから
     const n = (typeof BRANDS_SUMMARY !== "undefined" && BRANDS_SUMMARY.newsCount)
       || ((window.NEWS_DATA && window.NEWS_DATA.items) || []).length;
-    if (n) out.push({ v: n, u: "", l: "翻訳ニュース", s: "海外一次ソース＋国内の動き" });
+    if (n) out.push({ v: n, u: "", l: T("翻訳ニュース"), s: T("海外一次ソース＋国内の動き") });
   } catch (e) {}
   return out;
 }
@@ -432,11 +437,11 @@ function renderHome() {
   const pick = dailyBrandPick();
   $("#homeFeature").innerHTML = pick ? `
     <article class="feature-brand" data-daily="1">
-      <div class="fb-kicker">今日の一本 — ${esc(pick.cja)}</div>
-      <h2 class="fb-title">${esc(pick.b.ja)}</h2>
-      <div class="fb-en">${esc(pick.b.en)}</div>
-      <p class="fb-lead">${esc(bLead(pick.b))}…</p>
-      <div class="fb-go">ブランド大全で読む →</div>
+      <div class="fb-kicker">${T("今日の一本")} — ${esc(I18N.country(pick.cja))}</div>
+      <h2 class="fb-title">${esc(namePair(pick.b.ja, pick.b.en)[0])}</h2>
+      <div class="fb-en">${esc(namePair(pick.b.ja, pick.b.en)[1])}</div>
+      ${I18N.isEn ? "" : `<p class="fb-lead">${esc(bLead(pick.b))}…</p>`}
+      <div class="fb-go">${T("ブランド大全で読む")} →</div>
     </article>` : "";
   const dc = $("#homeFeature .feature-brand");
   if (dc && pick) dc.addEventListener("click", () => openBrandInBrands(pick.key, pick.b.en, pick.b.ja));
@@ -446,16 +451,16 @@ function renderHome() {
   $("#homeShowcase").innerHTML = show.length ? `
     <div class="showcase-head">
       <span class="hi-num">BRANDS</span>
-      <h2>今日の並び</h2>
-      <button class="sc-more" data-view="brands">すべて見る →</button>
+      <h2>${T("今日の並び")}</h2>
+      <button class="sc-more" data-view="brands">${T("すべて見る")} →</button>
     </div>
     <div class="showcase-rail" role="list">
       ${show.map(s => `
         <button class="sc-card" role="listitem" data-sc-key="${esc(s.key)}" data-sc-en="${esc(s.b.en)}" data-sc-ja="${esc(s.b.ja)}">
-          <span class="sc-country">${esc(s.cja)}</span>
-          <span class="sc-ja">${esc(s.b.ja)}</span>
-          <span class="sc-en">${esc(s.b.en)}</span>
-          <span class="sc-founded">${esc(bFounded(s.b))}</span>
+          <span class="sc-country">${esc(I18N.country(s.cja))}</span>
+          <span class="sc-ja">${esc(namePair(s.b.ja, s.b.en)[0])}</span>
+          <span class="sc-en">${esc(namePair(s.b.ja, s.b.en)[1])}</span>
+          <span class="sc-founded">${esc(I18N.isEn ? bFounded(s.b).replace("年頃", " (c.)").replace("年", "") : bFounded(s.b))}</span>
         </button>`).join("")}
     </div>` : "";
   $$("#homeShowcase .sc-card").forEach(el => {
@@ -470,9 +475,9 @@ function renderHome() {
      リンクにしておくことで検索エンジンが各ページを辿れる。 */
   $("#homeGrid").innerHTML = HOME_CARDS.map(c => `
     <a class="home-card" href="${esc(viewUrl(c.view))}" data-view="${c.view}">
-      <h3>${c.h}</h3>
-      <p>${c.p}</p>
-      <div class="go">開く →</div>
+      <h3>${T(c.h, null, "home")}</h3>
+      <p>${T(c.p, null, "home")}</p>
+      <div class="go">${T("開く")} →</div>
     </a>`).join("");
 }
 
@@ -480,77 +485,77 @@ function renderHome() {
    基礎知識
    ============================================================ */
 function renderBasics() {
-  const anatomy = D.anatomy.map(a => `
+  const anatomy = D.anatomy.map(a => { const [p1, p2] = namePair(a.ja, a.en); return `
     <div class="item">
-      <div><span class="p-name">${esc(a.ja)}</span><span class="p-en">${esc(a.en)}</span></div>
+      <div><span class="p-name">${esc(p1)}</span><span class="p-en">${esc(p2)}</span></div>
       <div class="p-desc">${esc(a.desc)}</div>
-    </div>`).join("");
+    </div>`; }).join("");
 
   const steps = D.howToSmoke.map(s => `
     <li><span class="st">${esc(s.title)}</span><span class="sd">${esc(s.desc)}</span></li>`).join("");
 
-  const shades = D.wrapperShades.map(s => `
+  const shades = D.wrapperShades.map(s => { const [p1, p2] = namePair(s.ja, s.en); return `
     <div class="shade">
       <div class="swatch" style="background:${s.hex}"></div>
       <div class="meta">
-        <div class="sn">${esc(s.ja)}</div>
-        <div class="se">${esc(s.en)}</div>
+        <div class="sn">${esc(p1)}</div>
+        <div class="se">${esc(p2)}</div>
         <div class="sf">${esc(s.flavor)}</div>
       </div>
-    </div>`).join("");
+    </div>`; }).join("");
 
-  const gloss = D.glossary.map(g => `
+  const gloss = D.glossary.map(g => { const [p1, p2] = namePair(g.ja, g.en); return `
     <div class="gloss-item">
-      <span class="gt">${esc(g.ja)}</span> <span class="ge">${esc(g.en)}</span>
+      <span class="gt">${esc(p1)}</span> <span class="ge">${esc(p2)}</span>
       <div class="gd">${esc(g.desc)}</div>
-    </div>`).join("");
+    </div>`; }).join("");
 
   $("#basicsContent").innerHTML = `
     <div class="kb-block">
-      <h3>葉巻とは</h3>
+      <h3>${T("葉巻とは")}</h3>
       <div class="prose">${FMT.prose(D.whatIsCigar)}</div>
     </div>
 
-    <div class="kb-block">
+    ${I18N.isEn ? "" : `<div class="kb-block">
       <img class="guide-photo" loading="lazy" decoding="async" src="${ASSET}anatomy-guide.webp"
            alt="葉巻の構造（アナトミー）と吸い方 ビジュアルガイド"
            onerror="this.closest('.kb-block').remove()">
-    </div>
+    </div>`}
 
     <div class="kb-block">
-      <h3>葉巻の構造（アナトミー）</h3>
+      <h3>${T("葉巻の構造（アナトミー）")}</h3>
       <div class="anatomy-list">${anatomy}</div>
     </div>
 
     <div class="kb-block">
-      <h3>葉巻の吸い方（初心者向け 5ステップ）</h3>
+      <h3>${T("葉巻の吸い方（初心者向け 5ステップ）")}</h3>
       <ol class="step-list">${steps}</ol>
-      <div class="callout warn">よくある失敗：紙巻き感覚で肺に吸い込んでむせる／早いペースで吸って火が高温になり苦く・辛くなる／深く切りすぎて巻きがほどける。ゆっくり、少しずつが基本です。</div>
+      <div class="callout warn">${T("よくある失敗：紙巻き感覚で肺に吸い込んでむせる／早いペースで吸って火が高温になり苦く・辛くなる／深く切りすぎて巻きがほどける。ゆっくり、少しずつが基本です。")}</div>
     </div>
 
     <div class="kb-block">
-      <h3>味わいの表現・テイスティング</h3>
+      <h3>${T("味わいの表現・テイスティング")}</h3>
       <div class="prose">${FMT.prose(D.tastingTerms)}</div>
     </div>
 
     <div class="kb-block">
-      <h3>ラッパーの色（シェード）による分類</h3>
-      <p class="prose" style="margin-bottom:14px">葉巻の一番外側の葉「ラッパー」の色は、味わいの傾向を映す目安になります（※色の濃さ＝強さ ではなく、強さは主にフィラーが決めます）。</p>
+      <h3>${T("ラッパーの色（シェード）による分類")}</h3>
+      <p class="prose" style="margin-bottom:14px">${T("葉巻の一番外側の葉「ラッパー」の色は、味わいの傾向を映す目安になります（※色の濃さ＝強さ ではなく、強さは主にフィラーが決めます）。")}</p>
       <div class="shade-grid">${shades}</div>
     </div>
 
     <div class="kb-block">
-      <h3>葉巻の歴史</h3>
+      <h3>${T("葉巻の歴史")}</h3>
       <div class="prose">${FMT.prose(D.history)}</div>
     </div>
 
     <div class="kb-block">
-      <h3>マナー・楽しみ方とペアリング</h3>
+      <h3>${T("マナー・楽しみ方とペアリング")}</h3>
       <div class="prose">${FMT.prose(D.manners)}</div>
     </div>
 
     <div class="kb-block">
-      <h3>用語集</h3>
+      <h3>${T("用語集")}</h3>
       <div class="glossary">${gloss}</div>
     </div>`;
 }
@@ -578,19 +583,19 @@ function srcLink(s) {
 function countrySources(c) {
   if (!Array.isArray(c.sources) || !c.sources.length) return "";
   return `
-    <div class="field"><div class="lbl">主な出典 <span class="brand-refs-n">${c.sources.length}件</span></div>
+    <div class="field"><div class="lbl">${T("主な出典")} <span class="brand-refs-n">${T("{n}件", { n: c.sources.length })}</span></div>
       <ul class="brand-refs">${c.sources.map(s => `<li>${srcLink(s)}</li>`).join("")}</ul></div>`;
 }
 
 function countryFields(c) {
   return `
-    <div class="field"><div class="lbl">風味の特徴</div><div class="val">${FMT.prose(c.flavor)}</div></div>
-    <div class="field"><div class="lbl">気候・土壌</div><div class="val">${FMT.prose(c.climate)}</div></div>
-    <div class="field"><div class="lbl">主な栽培地域</div>
+    <div class="field"><div class="lbl">${T("風味の特徴")}</div><div class="val">${FMT.prose(c.flavor)}</div></div>
+    <div class="field"><div class="lbl">${T("気候・土壌")}</div><div class="val">${FMT.prose(c.climate)}</div></div>
+    <div class="field"><div class="lbl">${T("主な栽培地域")}</div>
       <div class="chips">${c.regions.map(r => `<span class="chip">${esc(r)}</span>`).join("")}</div></div>
-    <div class="field"><div class="lbl">代表的な銘柄</div>${brandChips(c.brands, "brand", COUNTRY_BRAND_KEY[c.name_en])}</div>
-    <div class="field"><div class="lbl">歴史</div><div class="val">${FMT.prose(c.history)}</div></div>
-    <div class="field"><div class="lbl">豆知識</div><div class="val">${FMT.prose(c.trivia)}</div></div>
+    <div class="field"><div class="lbl">${T("代表的な銘柄")}</div>${brandChips(c.brands, "brand", COUNTRY_BRAND_KEY[c.name_en])}</div>
+    <div class="field"><div class="lbl">${T("歴史")}</div><div class="val">${FMT.prose(c.history)}</div></div>
+    <div class="field"><div class="lbl">${T("豆知識")}</div><div class="val">${FMT.prose(c.trivia)}</div></div>
     ${countrySections(c)}
     ${countrySources(c)}`;
 }
@@ -602,7 +607,7 @@ function renderCountryDetail(idx) {
     <div class="country-detail">
       <div class="cd-head">
         <span class="cd-flag">${c.flag}</span>
-        <div class="cd-title"><div class="cd-name">${esc(c.name_ja)}</div><div class="cd-en">${esc(c.name_en)}</div></div>
+        <div class="cd-title"><div class="cd-name">${esc(namePair(c.name_ja, c.name_en)[0])}</div><div class="cd-en">${esc(namePair(c.name_ja, c.name_en)[1])}</div></div>
         ${strengthBadge(c.strength)}
       </div>
       <div class="cd-body">${countryFields(c)}</div>
@@ -622,14 +627,14 @@ function renderPhilippinesDetail() {
     <div class="country-detail">
       <div class="cd-head">
         <span class="cd-flag">${p.flag}</span>
-        <div class="cd-title"><div class="cd-name">${esc(p.name_ja)}</div><div class="cd-en">${esc(p.name_en)}</div></div>
+        <div class="cd-title"><div class="cd-name">${esc(namePair(p.name_ja, p.name_en)[0])}</div><div class="cd-en">${esc(namePair(p.name_ja, p.name_en)[1])}</div></div>
         ${strengthBadge(p.strength)}
       </div>
       <div class="cd-body">
-        <div class="field"><div class="lbl">風味の特徴</div><div class="val">${FMT.prose(p.flavor)}</div></div>
-        <div class="field"><div class="lbl">主な栽培地域</div>
+        <div class="field"><div class="lbl">${T("風味の特徴")}</div><div class="val">${FMT.prose(p.flavor)}</div></div>
+        <div class="field"><div class="lbl">${T("主な栽培地域")}</div>
           <div class="chips">${p.regions.map(r => `<span class="chip">${esc(r)}</span>`).join("")}</div></div>
-        <div class="field"><div class="lbl">現存する主要ブランド</div>${brandChips(p.brands, "brand", "philippines")}</div>
+        <div class="field"><div class="lbl">${T("現存する主要ブランド")}</div>${brandChips(p.brands, "brand", "philippines")}</div>
         <div class="cd-sections">${sections}</div>
         ${sourcesField(p.sources)}
       </div>
@@ -641,13 +646,13 @@ function renderCountries() {
   // その他・新興の葉巻生産国（フィリピンは独立タブへ移動）
   $("#countryOthers").innerHTML = `
     <div class="kb-block">
-      <h3>その他・新興の葉巻生産国</h3>
-      <p class="prose" style="margin-bottom:12px">主要国のほかにも、高品質なラッパー葉や個性的な葉を支える産地があります（インドネシア／スマトラ、コスタリカ、パナマ、ペルー、コロンビア、エルサルバドル、パラグアイ 等）。</p>
+      <h3>${T("その他・新興の葉巻生産国")}</h3>
+      <p class="prose" style="margin-bottom:12px">${T("主要国のほかにも、高品質なラッパー葉や個性的な葉を支える産地があります（インドネシア／スマトラ、コスタリカ、パナマ、ペルー、コロンビア、エルサルバドル、パラグアイ 等）。")}</p>
     </div>`;
   const tabs = D.countries.map((c, i) =>
-    `<button data-country="${i}"${i === 0 ? ' class="active"' : ''}>${c.flag} ${esc(c.name_ja)}</button>`).join("");
+    `<button data-country="${i}"${i === 0 ? ' class="active"' : ''}>${c.flag} ${esc(namePair(c.name_ja, c.name_en)[0])}</button>`).join("");
   const phTab = D.philippinesDetail
-    ? `<button data-country="ph">${D.philippinesDetail.flag} ${esc(D.philippinesDetail.name_ja)}</button>` : "";
+    ? `<button data-country="ph">${D.philippinesDetail.flag} ${esc(namePair(D.philippinesDetail.name_ja, D.philippinesDetail.name_en)[0])}</button>` : "";
   $("#countryNav").innerHTML = tabs + phTab;
   $("#countryNav").addEventListener("click", (e) => {
     const b = e.target.closest("[data-country]");
@@ -666,16 +671,16 @@ function renderCountries() {
    ============================================================ */
 function renderSizes() {
   // スマホで横スクロールせず読めるよう、表ではなくカード形式で表示
-  const vitolaCards = D.vitolas.map(v => `
+  const vitolaCards = D.vitolas.map(v => { const [p1, p2] = namePair(v.ja, v.en); return `
     <div class="vitola-card">
-      <div class="vc-name">${esc(v.ja)}<span class="vc-en">${esc(v.en)}</span></div>
+      <div class="vc-name">${esc(p1)}<span class="vc-en">${esc(p2)}</span></div>
       <div class="vc-specs">
-        <div class="vc-spec"><span class="vc-k">長さ</span><span class="vc-v">${esc(v.len)}</span></div>
-        <div class="vc-spec"><span class="vc-k">リングゲージ</span><span class="vc-v">${esc(v.rg)}</span></div>
-        <div class="vc-spec"><span class="vc-k">喫煙時間</span><span class="vc-v">${esc(v.time)}</span></div>
+        <div class="vc-spec"><span class="vc-k">${T("長さ")}</span><span class="vc-v">${esc(v.len)}</span></div>
+        <div class="vc-spec"><span class="vc-k">${T("リングゲージ")}</span><span class="vc-v">${esc(v.rg)}</span></div>
+        <div class="vc-spec"><span class="vc-k">${T("喫煙時間")}</span><span class="vc-v">${esc(v.time)}</span></div>
       </div>
       <p class="vc-feat">${esc(v.feat)}</p>
-    </div>`).join("");
+    </div>`; }).join("");
 
   // ゲージ（太さ）ビジュアル一覧
   const gauges = [
@@ -694,8 +699,8 @@ function renderSizes() {
     return `<div class="gauge-col">
       <div class="cig" style="width:${w}px"><div class="band"></div></div>
       <div class="g-num">${x.g}</div>
-      <div class="g-name">${esc(x.name)}</div>
-      <div class="g-mm">${esc(x.mm)}</div>
+      <div class="g-name">${esc(T(x.name, null, "vitola"))}</div>
+      <div class="g-mm">${esc(I18N.isEn ? x.mm.replace("約", "≈") : x.mm)}</div>
     </div>`;
   }).join("");
   const refRows = [
@@ -703,59 +708,59 @@ function renderSizes() {
     { g: "40〜46", mm: "約16〜18mm", img: "細め〜中細", feat: "バランスが良く、スタンダード" },
     { g: "50〜54", mm: "約20〜21.5mm", img: "中太", feat: "味わいと煙量のバランスが良い" },
     { g: "60〜64", mm: "約24〜25.4mm", img: "太め〜極太", feat: "濃厚で煙量も多く、長時間向き" }
-  ].map(r => `<tr><td style="color:var(--gold-bright)">${r.g}</td><td>${r.mm}</td><td>${r.img}</td><td>${r.feat}</td></tr>`).join("");
+  ].map(r => `<tr><td style="color:var(--gold-bright)">${r.g}</td><td>${I18N.isEn ? r.mm.replace("約", "≈") : r.mm}</td><td>${T(r.img, null, "gauge")}</td><td>${T(r.feat, null, "gauge")}</td></tr>`).join("");
 
   const gaugeFigure = `
     <div class="kb-block">
-      <h3>葉巻の太さの種類（ゲージサイズ）一覧</h3>
-      <img class="gauge-photo" loading="lazy" decoding="async" src="${ASSET}gauge-size-chart.webp"
+      <h3>${T("葉巻の太さの種類（ゲージサイズ）一覧")}</h3>
+      ${I18N.isEn ? "" : `<img class="gauge-photo" loading="lazy" decoding="async" src="${ASSET}gauge-size-chart.webp"
            alt="葉巻の太さの種類（ゲージサイズ）一覧"
            style="display:none"
            onload="this.style.display='block';var f=document.getElementById('gaugeFallback');if(f)f.style.display='none';"
-           onerror="this.remove()">
+           onerror="this.remove()">`}
       <div id="gaugeFallback" class="gauge-figure">
-        <div class="gf-lead">葉巻の太さは「ゲージ（直径）」で表され、数値が大きいほど太くなります。</div>
+        <div class="gf-lead">${T("葉巻の太さは「ゲージ（直径）」で表され、数値が大きいほど太くなります。")}</div>
         <div class="gauge-scroll"><div class="gauge-track">${cigs}</div></div>
         <div class="gauge-gradients">
-          <div class="gg-row"><div class="gg-lbl">味わい<br>（目安）</div>
-            <div class="gg-bar"><span class="l">軽やか・ライト</span><span class="arrow">→</span><span class="r">濃厚・フルボディ</span></div></div>
-          <div class="gg-row"><div class="gg-lbl">喫煙時間<br>（目安）</div>
-            <div class="gg-bar"><span class="l">短い（20〜30分）</span><span class="arrow">→</span><span class="r">長い（60〜120分）</span></div></div>
+          <div class="gg-row"><div class="gg-lbl">${T("味わい<br>（目安）")}</div>
+            <div class="gg-bar"><span class="l">${T("軽やか・ライト")}</span><span class="arrow">→</span><span class="r">${T("濃厚・フルボディ")}</span></div></div>
+          <div class="gg-row"><div class="gg-lbl">${T("喫煙時間<br>（目安）")}</div>
+            <div class="gg-bar"><span class="l">${T("短い（20〜30分）")}</span><span class="arrow">→</span><span class="r">${T("長い（60〜120分）")}</span></div></div>
         </div>
         <div class="gauge-explain">
           <div class="gauge-def">
-            <h4>ゲージ（Ring Gauge）とは？</h4>
-            <p>葉巻の直径を1/64インチ単位で表したもの。ゲージが大きいほど太く、煙の量や味わいの濃さ、喫煙時間に影響します。</p>
-            <div class="ring-vis"><div class="ring-circle"></div><div class="ring-cap">直径（ゲージ）<br>＝1/64インチ単位</div></div>
+            <h4>${T("ゲージ（Ring Gauge）とは？")}</h4>
+            <p>${T("葉巻の直径を1/64インチ単位で表したもの。ゲージが大きいほど太く、煙の量や味わいの濃さ、喫煙時間に影響します。")}</p>
+            <div class="ring-vis"><div class="ring-circle"></div><div class="ring-cap">${T("直径（ゲージ）<br>＝1/64インチ単位")}</div></div>
           </div>
           <div class="table-wrap">
-            <table class="ref"><thead><tr><th>ゲージ</th><th>直径(mm)</th><th>太さのイメージ</th><th>特徴</th></tr></thead>
+            <table class="ref"><thead><tr><th>${T("ゲージ")}</th><th>${T("直径(mm)")}</th><th>${T("太さのイメージ")}</th><th>${T("特徴", null, "gauge")}</th></tr></thead>
             <tbody>${refRows}</tbody></table>
           </div>
         </div>
-        <div class="callout" style="margin-top:16px">※葉巻の長さ（リングゲージ以外）や形状（パレホ、トーピード、チャーチル等）によっても、喫煙体験は異なります。</div>
+        <div class="callout" style="margin-top:16px">${T("※葉巻の長さ（リングゲージ以外）や形状（パレホ、トーピード、チャーチル等）によっても、喫煙体験は異なります。")}</div>
       </div>
     </div>`;
 
   $("#sizesContent").innerHTML = gaugeFigure + `
     <div class="kb-block">
-      <h3>リングゲージとは</h3>
+      <h3>${T("リングゲージとは")}</h3>
       <div class="prose"><p>${esc(D.ringGaugeIntro)}</p></div>
     </div>
 
     <div class="kb-block">
-      <h3>主要なビトラ（サイズ規格）一覧</h3>
+      <h3>${T("主要なビトラ（サイズ規格）一覧")}</h3>
       <div class="vitola-list">${vitolaCards}</div>
     </div>
 
     <div class="kb-block">
-      <h3>太さ別ガイド（細い vs 太い）</h3>
+      <h3>${T("太さ別ガイド（細い vs 太い）")}</h3>
       <div class="prose"><p>${esc(D.thicknessGuide)}</p></div>
-      <div class="callout">初心者の最初の一本には <b>ロブスト（約5インチ × RG50）</b> がおすすめ。まろやかで扱いやすく、30〜45分で楽しめます。</div>
+      <div class="callout">${T("初心者の最初の一本には <b>ロブスト（約5インチ × RG50）</b> がおすすめ。まろやかで扱いやすく、30〜45分で楽しめます。")}</div>
     </div>
 
     <div class="kb-block">
-      <h3>形状の分類（パラホ / フィギュラード）</h3>
+      <h3>${T("形状の分類（パラホ / フィギュラード）")}</h3>
       <div class="prose"><p>${esc(D.shapeClassification)}</p></div>
     </div>
 
@@ -768,7 +773,7 @@ function renderSizes() {
 // 出典リスト（拡充データ用の共通ヘルパー）
 function sourcesField(sources) {
   if (!Array.isArray(sources) || !sources.length) return "";
-  return `<div class="field"><div class="lbl">主な出典 <span class="brand-refs-n">${sources.length}件</span></div>
+  return `<div class="field"><div class="lbl">${T("主な出典")} <span class="brand-refs-n">${T("{n}件", { n: sources.length })}</span></div>
     <ul class="brand-refs">${sources.map(s => `<li>${srcLink(s)}</li>`).join("")}</ul></div>`;
 }
 
@@ -782,10 +787,10 @@ function renderPrices() {
     <div class="card tier-card">
       <h3>${esc(t.tier)}</h3>
       <div class="price-band">${esc(t.range)}</div>
-      <div class="field"><div class="lbl">特徴</div><div class="val">${FMT.prose(t.feat)}</div></div>
-      <div class="field"><div class="lbl">こんな人に</div><div class="val">${FMT.prose(t.whom)}</div></div>
-      <div class="field"><div class="lbl">代表的な銘柄</div>${brandChips(t.brands)}</div>
-      <div class="field"><div class="lbl">アドバイス</div><div class="val">${FMT.prose(t.advice)}</div></div>
+      <div class="field"><div class="lbl">${T("特徴")}</div><div class="val">${FMT.prose(t.feat)}</div></div>
+      <div class="field"><div class="lbl">${T("こんな人に")}</div><div class="val">${FMT.prose(t.whom)}</div></div>
+      <div class="field"><div class="lbl">${T("代表的な銘柄")}</div>${brandChips(t.brands)}</div>
+      <div class="field"><div class="lbl">${T("アドバイス")}</div><div class="val">${FMT.prose(t.advice)}</div></div>
       ${secs}
       ${sourcesField(t.sources)}
     </div>`;
@@ -793,7 +798,7 @@ function renderPrices() {
 
   const topics = Array.isArray(D.priceTopics) && D.priceTopics.length
     ? `<div class="kb-block">
-        <h3>価格を深く読み解く</h3>
+        <h3>${T("価格を深く読み解く")}</h3>
         <div class="tool-list">${D.priceTopics.map(t => `
           <details class="acc">
             <summary>${esc(t.h)}</summary>
@@ -806,11 +811,11 @@ function renderPrices() {
     <div class="grid grid-2">${tiers}</div>
     ${topics}
     <div class="kb-block">
-      <h3>価格を左右する要因</h3>
+      <h3>${T("価格を左右する要因")}</h3>
       <div class="prose">${FMT.prose(D.priceFactors)}</div>
     </div>
     <div class="kb-block">
-      <h3>ドライシガーとプレミアムシガーの違い</h3>
+      <h3>${T("ドライシガーとプレミアムシガーの違い")}</h3>
       <div class="prose">${FMT.prose(D.dryVsPremium)}</div>
     </div>`;
 }
@@ -829,26 +834,26 @@ function renderTools() {
     <details class="acc tool-acc"${i === 0 ? " open" : ""}>
       <summary>
         <span class="tool-sum"><span class="tool-ic">${t.icon}</span>
-          <span class="tool-sum-txt">${esc(t.ja)}<span class="tool-sum-en">${esc(t.en)}</span></span></span>
+          <span class="tool-sum-txt">${esc(namePair(t.ja, t.en)[0])}<span class="tool-sum-en">${esc(namePair(t.ja, t.en)[1])}</span></span></span>
       </summary>
       <div class="acc-body tool-body">
-        <div class="field"><div class="lbl">役割</div><div class="val">${FMT.prose(t.role)}</div></div>
-        <div class="field"><div class="lbl">選び方</div><div class="val">${FMT.prose(t.choose)}</div></div>
+        <div class="field"><div class="lbl">${T("役割")}</div><div class="val">${FMT.prose(t.role)}</div></div>
+        <div class="field"><div class="lbl">${T("選び方")}</div><div class="val">${FMT.prose(t.choose)}</div></div>
         <div class="tool-more">
-          ${sub("種類・バリエーション", t.types)}
-          ${sub("使い方", t.use)}
-          ${sub("手入れ・トラブル対処", t.care)}
-          ${sub("歴史・文化・豆知識", t.history)}
+          ${sub(T("種類・バリエーション"), t.types)}
+          ${sub(T("使い方"), t.use)}
+          ${sub(T("手入れ・トラブル対処"), t.care)}
+          ${sub(T("歴史・文化・豆知識"), t.history)}
         </div>
-        <div class="field"><div class="lbl">価格の目安</div><div class="val">${FMT.prose(t.price)}</div></div>
-        <div class="field"><div class="lbl">おすすめブランド</div>${brandChips(t.brands)}</div>
+        <div class="field"><div class="lbl">${T("価格の目安")}</div><div class="val">${FMT.prose(t.price)}</div></div>
+        <div class="field"><div class="lbl">${T("おすすめブランド")}</div>${brandChips(t.brands)}</div>
       </div>
     </details>`).join("");
 
   $("#toolsContent").innerHTML = `
     <div class="tool-list">${tools}</div>
     <details class="acc storage-acc">
-      <summary>📦 保管の基礎知識</summary>
+      <summary>📦 ${T("保管の基礎知識")}</summary>
       <div class="acc-body prose">${FMT.prose(D.storageBasics)}</div>
     </details>`;
 }

@@ -27,11 +27,15 @@ const DATA = (() => {
 
   const isEn = (typeof window !== "undefined" && window.SITE_LANG === "en");
 
-  /* ビュー名 → 読み込むファイル。en は英語版でだけ足す差し替えデータ。 */
+  /* ビュー名 → 読み込むファイル。en は英語版でだけ足す差し替えデータ
+     （元データの後に読み、該当項目を英語文に置き換える）。 */
   const PACKS = {
-    countries: { files: ["data/countries_deep.js", "data/philippines_deep.js"] },
-    prices:    { files: ["data/prices_deep.js"] },
-    tools:     { files: ["data/tools.js"] },
+    basics:    { files: [], en: ["data/en/basics.js"] },
+    sizes:     { files: [], en: ["data/en/sizes.js"] },
+    countries: { files: ["data/countries_deep.js", "data/philippines_deep.js"],
+                 en: ["data/en/countries_a.js", "data/en/countries_b.js"] },
+    prices:    { files: ["data/prices_deep.js"], en: ["data/en/prices.js"] },
+    tools:     { files: ["data/tools.js"], en: ["data/en/tools_a.js", "data/en/tools_b.js"] },
     humidor:   { files: ["data/humidor.js"] },
     advanced:  { files: ["data/advanced.js", "data/advanced_deep.js"] },
     phd:       { files: ["data/phd.js", "data/phd_lit.js"] },
@@ -81,12 +85,26 @@ const DATA = (() => {
     if (isEn) out.push(...(p.en || []));
     return out;
   }
+  /* 英語の差し替えファイルだけを列挙（読み込み失敗の扱いを分けるため） */
+  function enFilesOf(name) {
+    const p = PACKS[name];
+    if (!p || !isEn) return [];
+    const out = [];
+    (p.needs || []).forEach(n => out.push(...enFilesOf(n)));
+    out.push(...(p.en || []));
+    return out;
+  }
 
-  /* 指定ビューのデータを揃える。読むものが無いビューは即座に解決する。 */
+  /* 指定ビューのデータを揃える。読むものが無いビューは即座に解決する。
+     英語の差し替えは「無ければ日本語のまま表示」でよいので、
+     読み込みに失敗してもページの表示は止めない（本体データの失敗は止める）。 */
   function pack(name) {
     const files = filesOf(name);
     if (!files.length) return Promise.resolve();
-    return Promise.all(files.map(loadFile)).then(() => undefined);
+    const en = new Set(enFilesOf(name));
+    return Promise.all(files.map(f =>
+      en.has(f) ? loadFile(f).catch(() => undefined) : loadFile(f)
+    )).then(() => undefined);
   }
 
   /* すでに読み始めている（＝待たずに済む）か */

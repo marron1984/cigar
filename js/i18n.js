@@ -325,6 +325,153 @@ var I18N = (function () {
     "金額とレート（1通貨＝何円か）を入れてください。": "Enter an amount and a rate (how many yen to one unit).",
     "{a} {cur} × {r}円 ＝ 約 ¥{yen} を価格欄に入れました。": "{a} {cur} × ¥{r} ≈ ¥{yen} — put into the price field.",
 
+    /* ---------- ホーム ---------- */
+    "今日の一本": "Cigar of the day",
+    "ブランド大全で読む": "Read in the brand encyclopaedia",
+    "今日の並び": "Today's line-up",
+    "すべて見る": "See all",
+    "開く": "Open",
+    "収録ブランド": "brands covered",
+    "世界の銘柄（マルカ）を創業から現在まで": "The world's marcas, from founding to now",
+    "産地・国": "origins & countries",
+    "キューバから東南アジアまで": "From Cuba to South-East Asia",
+    "サイズ（ビトラ）": "sizes (vitolas)",
+    "寸法と味わいの目安つき": "With dimensions and flavour notes",
+    "翻訳ニュース": "news stories",
+    "海外一次ソース＋国内の動き": "Overseas reporting plus Japan",
+    /* ホームの索引カード（見出しと説明） */
+    "home::基礎知識": "Basics",
+    "home::葉巻とは？構造・吸い方・味わいの表現・歴史・マナーまで。": "What a cigar is — anatomy, how to smoke, flavour, history and etiquette.",
+    "home::国・産地別": "By country",
+    "home::キューバ、ドミニカ、ニカラグア…主要10産地の個性を比較。": "Cuba, the Dominican Republic, Nicaragua… ten origins compared.",
+    "home::太さ・サイズ別": "By size",
+    "home::リングゲージとビトラ。定番サイズを一覧で。": "Ring gauge and vitolas — the standard sizes at a glance.",
+    "home::価格帯別": "By price",
+    "home::入門からハイエンドまで、価格別の選び方。": "From first buys to high end — how to choose at each price.",
+    "home::喫煙具・保管": "Accessories & storage",
+    "home::カッター、ライター、ヒュミドールの選び方。": "Choosing cutters, lighters and humidors.",
+    "home::ヒュミドール大全": "The humidor in full",
+    "home::歴史・メーカー・使い方・種類・価格を5つの観点で徹底調査。": "History, makers, use, types and prices — five angles in depth.",
+    "home::上級編（オタクの世界）": "Going deeper",
+    "home::品種・発酵・キューバ通・名門・喫煙術・ペアリング・熟成科学。": "Varietals, fermentation, Cuba lore, the great houses, technique, pairing, ageing.",
+    "home::博士編（学術）": "The scholarship",
+    "home::化学・植物学・官能評価・銘柄DB・産業経済・健康科学。": "Chemistry, botany, sensory science, a brand database, economics, health.",
+    "home::日本ガイド": "Japan guide",
+    "home::全国47都道府県の販売店・シガーバー一覧。日本の歴史・税制・喫煙環境・マナーも。": "Shops and cigar bars in all 47 prefectures, plus Japan's history, tax and smoking rules.",
+    "home::世界編（総覧）": "The cigar world",
+    "home::年表・文化・愛好家・日本・実践レビュー・投資・用語大全・トラベル・FAQ。": "Timeline, culture, devotees, tasting, investment, glossary, travel, FAQ.",
+    "home::ブランド大全": "Brand encyclopaedia",
+    "home::世界の銘柄（マルカ）を創業からの歴史とともに。まずはキューバ全マルカ。": "The world's marcas with their histories — starting with every Cuban marca.",
+    "home::葉巻ニュース": "Cigar news",
+    "home::海外一次ソースの翻訳＋日本国内ニュース。新製品・業界・イベント・規制。": "Overseas reporting translated, plus news from Japan — releases, industry, events, regulation.",
+
+    /* ---------- 基礎知識 ---------- */
+    "葉巻とは": "What a cigar is",
+    "葉巻の構造（アナトミー）": "Anatomy of a cigar",
+    "葉巻の吸い方（初心者向け 5ステップ）": "How to smoke one — five steps for beginners",
+    "よくある失敗：紙巻き感覚で肺に吸い込んでむせる／早いペースで吸って火が高温になり苦く・辛くなる／深く切りすぎて巻きがほどける。ゆっくり、少しずつが基本です。":
+      "Common mistakes: inhaling into the lungs as with a cigarette and coughing; puffing too fast so the burn runs hot, bitter and harsh; cutting too deep so the wrapper unravels. Slowly, a little at a time, is the rule.",
+    "味わいの表現・テイスティング": "The vocabulary of flavour",
+    "ラッパーの色（シェード）による分類": "Wrapper shades",
+    "葉巻の一番外側の葉「ラッパー」の色は、味わいの傾向を映す目安になります（※色の濃さ＝強さ ではなく、強さは主にフィラーが決めます）。":
+      "The colour of the outermost leaf — the wrapper — is a rough guide to how a cigar will taste. (Darker does not mean stronger: strength comes mainly from the filler.)",
+    "葉巻の歴史": "A short history",
+    "マナー・楽しみ方とペアリング": "Etiquette, enjoyment and pairing",
+    "用語集": "Glossary",
+
+    /* ---------- 国・産地別 ---------- */
+    "風味の特徴": "Flavour",
+    "気候・土壌": "Climate & soil",
+    "主な栽培地域": "Growing regions",
+    "代表的な銘柄": "Notable marcas",
+    "歴史": "History",
+    "豆知識": "Worth knowing",
+    "主な出典": "Main sources",
+    "現存する主要ブランド": "Principal brands today",
+    "その他・新興の葉巻生産国": "Other and emerging origins",
+    "主要国のほかにも、高品質なラッパー葉や個性的な葉を支える産地があります（インドネシア／スマトラ、コスタリカ、パナマ、ペルー、コロンビア、エルサルバドル、パラグアイ 等）。":
+      "Beyond the major countries, other origins supply fine wrapper leaf and distinctive tobaccos — Indonesia (Sumatra), Costa Rica, Panama, Peru, Colombia, El Salvador and Paraguay among them.",
+
+    /* ---------- 太さ・サイズ別 ---------- */
+    "長さ": "Length",
+    "リングゲージ": "Ring gauge",
+    "喫煙時間": "Smoking time",
+    "葉巻の太さの種類（ゲージサイズ）一覧": "Cigar thicknesses — the ring gauges",
+    "葉巻の太さは「ゲージ（直径）」で表され、数値が大きいほど太くなります。":
+      "A cigar's thickness is given as its ring gauge (diameter); the higher the number, the thicker the cigar.",
+    "味わい<br>（目安）": "Flavour<br>(roughly)",
+    "喫煙時間<br>（目安）": "Time<br>(roughly)",
+    "軽やか・ライト": "Light & delicate",
+    "濃厚・フルボディ": "Rich & full-bodied",
+    "短い（20〜30分）": "Short (20–30 min)",
+    "長い（60〜120分）": "Long (60–120 min)",
+    "ゲージ（Ring Gauge）とは？": "What is ring gauge?",
+    "葉巻の直径を1/64インチ単位で表したもの。ゲージが大きいほど太く、煙の量や味わいの濃さ、喫煙時間に影響します。":
+      "The diameter of a cigar in 64ths of an inch. The bigger the gauge, the thicker the cigar — and the more smoke, the richer the flavour, the longer the smoke.",
+    "直径（ゲージ）<br>＝1/64インチ単位": "Diameter (gauge)<br>= 64ths of an inch",
+    "ゲージ": "Gauge",
+    "直径(mm)": "Diameter (mm)",
+    "太さのイメージ": "How thick",
+    "gauge::特徴": "Character",
+    "gauge::とても細い": "Very slim",
+    "gauge::細め〜中細": "Slim to medium",
+    "gauge::中太": "Medium",
+    "gauge::太め〜極太": "Thick to very thick",
+    "gauge::軽やかで上品、短時間向き": "Light and elegant; for a short smoke",
+    "gauge::バランスが良く、スタンダード": "Well balanced; the standard",
+    "gauge::味わいと煙量のバランスが良い": "A good balance of flavour and smoke",
+    "gauge::濃厚で煙量も多く、長時間向き": "Rich, generous smoke; for a long sitting",
+    "vitola::パナテラ": "Panetela",
+    "vitola::コロナ": "Corona",
+    "vitola::ペティコロナ": "Petit Corona",
+    "vitola::コロナゴルダ": "Corona Gorda",
+    "vitola::ロブスト": "Robusto",
+    "vitola::トロ": "Toro",
+    "vitola::トロゴルダ": "Toro Gordo",
+    "vitola::グランロブスト": "Gran Robusto",
+    "vitola::ダブルトロ": "Double Toro",
+    "※葉巻の長さ（リングゲージ以外）や形状（パレホ、トーピード、チャーチル等）によっても、喫煙体験は異なります。":
+      "Length and shape (parejo, torpedo, Churchill and so on) change the experience too — ring gauge is only part of it.",
+    "リングゲージとは": "About ring gauge",
+    "主要なビトラ（サイズ規格）一覧": "The principal vitolas",
+    "太さ別ガイド（細い vs 太い）": "Thin versus thick",
+    "初心者の最初の一本には <b>ロブスト（約5インチ × RG50）</b> がおすすめ。まろやかで扱いやすく、30〜45分で楽しめます。":
+      "For a first cigar, a <b>Robusto (about 5 inches × RG50)</b> is the usual advice: mellow, forgiving, and done in 30–45 minutes.",
+    "形状の分類（パラホ / フィギュラード）": "Shapes — parejo and figurado",
+    /* 実寸表示 */
+    "実物大で見る（画面ものさし）": "See it life-size (your screen as a ruler)",
+    "選んだビトラを<b>実物大</b>で画面に表示します。正確に表示するには、最初に一度だけ「ものさし合わせ」をしてください。":
+      "Shows the chosen vitola at <b>actual size</b> on your screen. For accuracy, calibrate once first.",
+    "ものさし合わせ（最初に一度だけ）": "Calibrate (once only)",
+    "クレジットカード（またはICカード）を下の枠に<b>横向きに重ね</b>、スライダーで枠の幅をカードのサイズにピッタリ合わせてください。":
+      "Hold a credit card (or any IC card) <b>sideways against the frame below</b>, and move the slider until the frame matches the card exactly.",
+    "クレジットカード（横 85.6mm）": "Credit card (85.6mm wide)",
+    "現在の設定：": "Current setting: ",
+    "（この端末に記憶されます）": " (remembered on this device)",
+    "<b>{ja}</b>（{en}）実物大 — 長さ約{len}mm × 直径約{dia}mm（RG {rg}）":
+      "<b>{ja}</b> ({en}) at life size — about {len}mm long × {dia}mm across (RG {rg})",
+    "画面が小さい場合は横にスクロールできます。手持ちの葉巻と重ねて比べてみてください。":
+      "On a small screen you can scroll sideways. Try holding a real cigar against it.",
+
+    /* ---------- 価格帯別 ---------- */
+    "特徴": "What it is",
+    "こんな人に": "Who it suits",
+    "アドバイス": "Advice",
+    "価格を深く読み解く": "Reading the price tag",
+    "価格を左右する要因": "What drives the price",
+    "ドライシガーとプレミアムシガーの違い": "Dry cigars versus premium cigars",
+
+    /* ---------- 喫煙具 ---------- */
+    "役割": "What it is for",
+    "選び方": "How to choose",
+    "種類・バリエーション": "Types and variations",
+    "使い方": "How to use it",
+    "手入れ・トラブル対処": "Care and troubleshooting",
+    "歴史・文化・豆知識": "History, culture, trivia",
+    "価格の目安": "What it costs",
+    "おすすめブランド": "Recommended makers",
+    "保管の基礎知識": "The basics of storage",
+
     /* ---------- ページのデータ読み込み ---------- */
     "データを読み込めませんでした。通信環境をご確認のうえ、もう一度お試しください。":
       "This page's data could not be loaded. Please check your connection and try again.",
@@ -392,7 +539,12 @@ var I18N = (function () {
   }
   function strength(s) {
     if (LANG !== "en" || !s) return s || "";
-    return STRENGTH[s] || s;
+    if (STRENGTH[s]) return STRENGTH[s];
+    /* 「ミディアム〜フル」のような範囲表記は、両端をそれぞれ訳してつなぐ */
+    var WORD = { "マイルド": "Mild", "ライト": "Light", "ミディアム": "Medium", "フル": "Full" };
+    return String(s).split(/[〜~–]/).map(function (w) {
+      return WORD[w.trim()] || STRENGTH[w.trim()] || w;
+    }).join("–");
   }
   /* 検索用：日本語と英語のどちらで打っても当たるように、両方を並べた文字列 */
   function both(c) {

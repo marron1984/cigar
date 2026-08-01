@@ -1,0 +1,62 @@
+/* ============================================================
+   Cigar Cafe — サイズ・ビトラ解説の英語本文
+   英語版でだけ読み込まれ、CIGAR_DATA の該当項目を英語文に置き換える。
+   日本語版はこのファイルを読まない。元データ: data/data.js
+   ============================================================ */
+(function () {
+  if (typeof CIGAR_DATA === "undefined") return;
+  var D = CIGAR_DATA;
+
+  D.ringGaugeIntro = "Ring gauge (RG) is the industry-standard unit for the girth — the diameter — of a cigar. One ring gauge is defined as one sixty-fourth of an inch (1/64 inch, about 0.397mm), so RG64 corresponds to a diameter of exactly one inch (25.4mm). Definitive sources on how this seemingly odd base of sixty-fourths came to be adopted are scarce: one theory holds that it followed the ring-size notation used in the jewellery trade, another that it stems from measuring practices established through experience among Cuba's cigar rollers (the tabaqueros). As a guide, RG38 and below counts as 'slim', RG42–48 as 'standard', around RG50 — the most favoured in recent years — as 'medium-thick', and RG54 and above as 'extra-thick'.\nThe difference in thickness affects more than looks: it governs the very physics of the cigar's combustion. In a cylindrical object, the larger the diameter, the smaller the ratio of surface area to volume (the volume being the quantity of filler that serves as fuel) — the surface-to-volume ratio. The smaller this ratio, the less readily the heat generated at the burning zone (the coal) escapes to the surroundings and the relatively more gradual the supply of oxygen, so the burn advances more slowly and its temperature is more easily kept low. A slim cigar, conversely, has a large surface-to-volume ratio, so heat dissipates rapidly while oxygen is supplied readily, and combustion quickens and the temperature rises more easily. In general, the lower the combustion temperature, the more the release of volatile irritants is suppressed, and the 'cooler' and mellower the smoke is said to feel. In addition, a change in diameter changes the proportions of wrapper (the outer leaf), binder and filler. The slimmer the cigar, the higher the wrapper's share of the circumference relative to the whole, so its flavour comes more readily to the fore; the thicker the cigar, the greater the absolute quantity of filler and the freer the blending, making it easier to design complex layers of taste from several kinds of leaf.";
+
+  D.thicknessGuide = "The influence of a cigar's thickness (ring gauge) on its flavour is more than a rule of thumb: it can also be explained by the basic principles of thermodynamics and diffusion common to any burning cylinder. The larger a cylinder's diameter, the smaller the ratio of its surface area to the internal volume that serves as fuel (the surface-to-volume ratio). A smaller ratio means the heat generated at the burning zone (the coal) escapes less readily and is retained inside, while the rate at which the oxygen that sustains combustion diffuses inwards from the cross-section at the foot becomes relatively gradual. As a result a thick cigar, while taking longer in absolute terms to burn through, is thought to keep the temperature of the burning zone itself comparatively low and stable, and this is held to be the main reason its smoke is felt as 'cool and mellow'. A slow, low-temperature burn suppresses the volatile irritants (the combustion-derived harshness and astringency) and makes it easier to draw out, undiminished, the complex flavours of the varied blend of leaves in the filler.\nA slim cigar (roughly RG38 or below), by contrast, has a large surface-to-volume ratio: with a wide surface in contact with the outside air, oxygen arrives quickly and combustion tends to quicken. In addition, the wrapper (the outer leaf) takes a relatively larger share of the circumference for the diameter, so its contribution to the overall flavour grows, tending towards a sharply drawn, concentrated and powerful impression. But because the burn advances quickly, the draw and the fire at the tip need more delicate management; slim cigars are more sensitive to smoking pace and storage humidity, and take a degree of practice to handle.\nA thick cigar (roughly RG50 or above) holds a large absolute quantity of filler and offers great freedom to layer several kinds of leaf, giving the blender more options in designing the taste. With its gentle, low-temperature burn it is less harsh, generous in smoke, and easy on the palate. For beginners, the robusto (about 5 inches long by around RG50) is the classic first cigar: mellow and gentle on the throat, it can be finished comfortably in around 30–45 min, and the low-temperature burn of the thick format also means the fire is less prone to going out and easier to relight — easy to manage where keeping it lit is concerned, too.";
+
+  D.shapeClassification = "The outward shapes of cigars divide broadly into two families: the parejo and the figurado. The distinction is not merely one of looks; it reflects a difference in burning behaviour itself.\nA parejo is a cylinder of constant diameter along its whole length, and most of today's standard vitolas — the corona, robusto, Churchill, toro and so on — belong to it. Because the diameter never changes, the cross-section of the burning zone and the surface-to-volume ratio stay constant from the start of the smoke to the end, so the burn rate and the temperature and density of the smoke progress stably and evenly. Lighting and cutting demand little technique and the taste varies little, making it a rational shape well suited to standardisation and volume production; most of the standard formats established in Havana from the 19th century onwards belong to this family.\nFigurado is the general term for non-cylindrical shapes whose diameter changes along the length, including the piramide (tapering), the torpedo (pointed only near the tip) and the perfecto (a spindle shape, narrow at both ends and swelling in the middle). These are said to have originated in the decorative shapes created by 19th-century Cuban artisans as they vied in manual virtuosity. As the diameter changes, the burning zone's surface-to-volume ratio changes continuously with it, so the further you smoke, the more the combustion temperature, the density of the smoke and the concentration of the flavour shift by stages — a dynamic smoking experience the parejo cannot give. On the other hand, where the diameter changes the burn easily becomes uneven (it can also cause the lopsided burn in which one side runs ahead), and keeping a well-balanced burn demands a degree of skill and experience from smoker and maker alike; the figurado has therefore traditionally been the shape favoured by experienced smokers and devotees.";
+
+  var VIT = {
+    "Corona": {
+      time: "30–45 min",
+      feat: "Spanish for 'crown', the reference vitola that in 19th-century Havana was a byword for the cigar itself. Many other vitola names — the petit corona (smaller), the corona gorda (thicker), the double corona (twice the length) — are said to derive from their size relative to the corona. Its proportions of wrapper, binder and filler are said to come close to a well-balanced golden ratio, and even today blenders use it as the benchmark size when trialling new blends."
+    },
+    "Robusto": {
+      time: "30–45 min",
+      feat: "The name comes from the Spanish 'robusto' — sturdy, powerful. Its origin is traced to the late 1980s, when Cohiba, in a new series marking the 30th anniversary of the Cuban Revolution, formally adopted as a brand name one of the informal workshop designations (the vitolas de galera) that rollers had until then used for convenience. Shorter and thicker than a corona, its proportions are a rational design yielding generous smoke in a short time, and after the 'robusto boom' of the 1990s it became the most widely produced and consumed standard size in the world."
+    },
+    "Churchill": {
+      time: "60–75 min",
+      feat: "Said to have begun in 1947, when Romeo y Julieta renamed its existing 'Julieta No.2' after the British prime minister Winston Churchill. Churchill first encountered cigar culture in 1895, when he visited Cuba as a young army officer in the role of military observer, and was known as a devoted smoker for the rest of his life — reportedly enjoying around 10 a day. The stately 7-inch-class format is designed for savouring at leisure the staged evolution of flavour across the first, second and final thirds: a size that stands for prestige."
+    },
+    "Toro": {
+      time: "45–75 min",
+      feat: "Spanish for 'bull'. The size traditionally called the 'corona gorda' (thick corona) is said to have gained a name of its own in the US market in the latter half of the 20th century. Its proportions, combining the robusto's generous smoke with the Churchill's sustained flavour development, matched American tastes, and in recent industry surveys around 70% of retailers name the toro their best-selling size — it has grown into the flagship vitola of the modern era."
+    },
+    "Double Corona": {
+      time: "90–120 min",
+      feat: "A large vitola that bears the corona's name yet is in practice a format of its own. Cuban grand houses such as Hoyo de Monterrey have traditionally made it, but because rolling one demands advanced skill and long hours, fewer brands carry it these days and its rarity has grown. A size for devotees, made for taking one's time over the complex layers of flavour that the filler blend yields across its long burn."
+    },
+    "Panetela / Lancero": {
+      time: "45–60 min",
+      feat: "The panetela — its name said to derive from a Spanish word meaning 'small loaf of bread' — is a slim traditional vitola in use since early times. The especially long variant called the lancero (meaning 'lancer') was devised in the 1960s at Cuba's El Laguito workshop alongside the founding of Cohiba, and the story is told that at first it was made, not for sale, as Fidel Castro's personal smoke. With its narrow diameter the wrapper takes a high share of the circumference, so that leaf's character comes through directly in the flavour — a size held to be for connoisseurs."
+    },
+    "Petit Corona": {
+      time: "20–30 min",
+      feat: "A small size that shortens the corona format: the ring gauge stays at much the same 40–42 as the corona while only the length is reduced. Because it delivers the filler's flavour in concentrated form in a short time, it has long been cherished in Cuba as a practical vitola for the after-dinner smoke or the everyday cigar."
+    },
+    "Torpedo / Piramide": {
+      time: "60–75 min",
+      feat: "Strictly, the two are distinguished: the piramide (Spanish for 'pyramid') tapers smoothly along its whole length from foot to head, while the torpedo keeps its diameter part-way up the body and comes to a point only near the tip (in modern commercial usage the names are often used interchangeably). The taper means the diameter of the burning zone changes as you smoke on, and the nearer the head, the more the smoke concentrates and the denser the flavour and body feel — a dynamic smoking experience the parejo cannot give."
+    },
+    "Gordo / Gorda": {
+      time: "60–90 min",
+      feat: "A popular name derived from the Spanish for 'fat', denoting the extra-thick formats of RG60 and above. With a very small surface-to-volume ratio the burning zone's temperature is easily kept low, and in theory it is said to offer the 'coolest' smoking experience of all; on the other hand, if the filler is packed unevenly the burn easily grows patchy (with one side running ahead), so it demands advanced manufacturing skill. It took hold rapidly against the background of the swing towards thicker formats in the US market from the 2000s onwards."
+    },
+    "Perfecto": {
+      time: "45–90 min",
+      feat: "A figurado in a spindle shape, narrow at both ends and swelling in the middle, regarded as one of the summits of the decorative, virtuoso rolling technique of 19th-century Cuban artisans. With the diameter changing through three or more stages, the behaviour of heat and smoke shifts constantly as it burns, and its flavour development is held to be the most dramatic; keeping an even burn, however, asks a degree of experience of the smoker too. A classic vitola for the experienced."
+    }
+  };
+  D.vitolas.forEach(function (v) {
+    var t = VIT[v.en];
+    if (t) { v.feat = t.feat; v.time = t.time; }
+  });
+})();
