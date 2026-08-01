@@ -7,6 +7,12 @@
 
    ・path … サイト直下からの道筋。ホームだけ空（＝ "/" と "/en/"）
    ・ja / en … 各言語の題と説明文
+   ・enReady … 英語版の「中身」ができているか。
+       true のページだけ、英語版を sitemap に載せて検索対象にする。
+       まだ本文が日本語のままのページは、英語ページ自体は残す
+       （言語切替から開ける）が、noindex を付けて検索結果に出さない。
+       英語のタイトルで検索から来た人に日本語本文を読ませないため。
+       本文を英語化できたページから true に変えていく。
    使うのは3か所：
      - js/app.js        画面を切り替えたときに題とURLを書き換える
      - tools/build_pages.js  /brands/index.html などの実体を作る
@@ -14,6 +20,7 @@
    ============================================================ */
 var PAGE_META = {
   home: {
+    enReady: true,
     path: "",
     ja: {
       title: "Cigar Cafe｜はじめての葉巻を、やさしく",
@@ -25,6 +32,7 @@ var PAGE_META = {
     }
   },
   basics: {
+    enReady: false,
     path: "basics",
     ja: {
       title: "葉巻の基礎知識 — 構造・吸い方・味わい・歴史｜Cigar Cafe",
@@ -36,6 +44,7 @@ var PAGE_META = {
     }
   },
   countries: {
+    enReady: false,
     path: "countries",
     ja: {
       title: "国・産地別の葉巻 — キューバ／ドミニカ／ニカラグアほか｜Cigar Cafe",
@@ -47,6 +56,7 @@ var PAGE_META = {
     }
   },
   sizes: {
+    enReady: false,
     path: "sizes",
     ja: {
       title: "葉巻の太さとサイズ — リングゲージとビトラ早見表｜Cigar Cafe",
@@ -58,6 +68,7 @@ var PAGE_META = {
     }
   },
   prices: {
+    enReady: false,
     path: "prices",
     ja: {
       title: "葉巻の価格帯別ガイド — 入門からハイエンドまで｜Cigar Cafe",
@@ -69,6 +80,7 @@ var PAGE_META = {
     }
   },
   tools: {
+    enReady: false,
     /* URLは accessories（喫煙具＝アクセサリー）。
        tools/ はビルド用スクリプトの置き場なので、そこと重ならないようにしている。 */
     path: "accessories",
@@ -82,6 +94,7 @@ var PAGE_META = {
     }
   },
   humidor: {
+    enReady: false,
     path: "humidor",
     ja: {
       title: "ヒュミドール大全 — 歴史・メーカー・使い方・種類・価格｜Cigar Cafe",
@@ -93,6 +106,7 @@ var PAGE_META = {
     }
   },
   advanced: {
+    enReady: false,
     path: "advanced",
     ja: {
       title: "葉巻の上級編 — 品種・発酵・キューバ学・ペアリング・熟成｜Cigar Cafe",
@@ -104,6 +118,7 @@ var PAGE_META = {
     }
   },
   phd: {
+    enReady: false,
     path: "phd",
     ja: {
       title: "葉巻の学術 — 化学・植物学・官能評価・産業経済・健康科学｜Cigar Cafe",
@@ -115,6 +130,7 @@ var PAGE_META = {
     }
   },
   japan: {
+    enReady: true,
     path: "japan",
     ja: {
       title: "日本の葉巻ガイド — 全国47都道府県の販売店・シガーバー一覧｜Cigar Cafe",
@@ -126,6 +142,7 @@ var PAGE_META = {
     }
   },
   world: {
+    enReady: false,
     path: "world",
     ja: {
       title: "世界の葉巻 — 年表・文化・名店・投資・用語大全・トラベル｜Cigar Cafe",
@@ -137,6 +154,7 @@ var PAGE_META = {
     }
   },
   brands: {
+    enReady: false,
     path: "brands",
     ja: {
       title: "葉巻ブランド大全 — 世界の銘柄（マルカ）を創業から現在まで｜Cigar Cafe",
@@ -148,6 +166,7 @@ var PAGE_META = {
     }
   },
   news: {
+    enReady: false,
     path: "news",
     ja: {
       title: "葉巻ニュース — 新製品・業界・イベント・規制｜Cigar Cafe",
@@ -159,6 +178,7 @@ var PAGE_META = {
     }
   },
   note: {
+    enReady: true,
     path: "note",
     ja: {
       title: "葉巻の記録ノート — 吸った一本を残す｜Cigar Cafe",

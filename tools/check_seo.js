@@ -26,49 +26,68 @@ const problems = [];
 const bad = (m) => problems.push(m);
 const pick = (html, re) => { const m = re.exec(html); return m ? m[1] : null; };
 
-/* ---------- sitemap.xml ---------- */
+/* ---------- sitemap.xml ----------
+   日本語版は全ページ。英語版は中身が英語になっているページ（enReady）だけ。 */
 const sitemap = fs.readFileSync(path.join(ROOT, "sitemap.xml"), "utf8");
 const locs = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map(m => m[1]);
 const want = [];
 for (const view of Object.keys(META)) {
   const p = META[view].path;
   want.push(SITE + "/" + (p ? p + "/" : ""));
-  want.push(SITE + "/en/" + (p ? p + "/" : ""));
+  if (META[view].enReady) want.push(SITE + "/en/" + (p ? p + "/" : ""));
 }
 want.forEach(u => { if (!locs.includes(u)) bad(`sitemap.xml に ${u} がありません`); });
 locs.forEach(u => { if (!want.includes(u)) bad(`sitemap.xml に見覚えのないURL: ${u}`); });
 
-/* ---------- 各ページの実体と head ---------- */
+/* ---------- 各ページの実体と head ----------
+   sitemap 掲載分だけでなく、noindex の英語ページも含めて全ページを見る。 */
 const titles = new Map(), descs = new Map();
-for (const u of locs) {
-  const rel = u.replace(SITE + "/", "");
-  const file = path.join(ROOT, rel, "index.html");
-  if (!fs.existsSync(file)) { bad(`${u} の実体がありません（${path.relative(ROOT, file)}）`); continue; }
-  const html = fs.readFileSync(file, "utf8");
+for (const view of Object.keys(META)) {
+  const p = META[view].path;
+  const ready = !!META[view].enReady;
+  for (const lang of ["ja", "en"]) {
+    const u = SITE + (lang === "en" ? "/en/" : "/") + (p ? p + "/" : "");
+    const rel = u.replace(SITE + "/", "");
+    const file = path.join(ROOT, rel, "index.html");
+    if (!fs.existsSync(file)) { bad(`${u} の実体がありません（${path.relative(ROOT, file)}）`); continue; }
+    const html = fs.readFileSync(file, "utf8");
 
-  const title = pick(html, /<title>([^<]*)<\/title>/);
-  const desc = pick(html, /<meta name="description" content="([^"]*)"/);
-  const canon = pick(html, /<link rel="canonical" href="([^"]*)"/);
-  const hrefJa = pick(html, /<link rel="alternate" hreflang="ja" href="([^"]*)"/);
-  const hrefEn = pick(html, /<link rel="alternate" hreflang="en" href="([^"]*)"/);
-  const ogUrl = pick(html, /<meta property="og:url" content="([^"]*)"/);
-  const ogImg = pick(html, /<meta property="og:image" content="([^"]*)"/);
+    const title = pick(html, /<title>([^<]*)<\/title>/);
+    const desc = pick(html, /<meta name="description" content="([^"]*)"/);
+    const canon = pick(html, /<link rel="canonical" href="([^"]*)"/);
+    const hrefJa = pick(html, /<link rel="alternate" hreflang="ja" href="([^"]*)"/);
+    const hrefEn = pick(html, /<link rel="alternate" hreflang="en" href="([^"]*)"/);
+    const noindex = /<meta name="robots" content="noindex">/.test(html);
+    const ogUrl = pick(html, /<meta property="og:url" content="([^"]*)"/);
+    const ogImg = pick(html, /<meta property="og:image" content="([^"]*)"/);
 
-  if (!title) bad(`${u}: <title> がありません`);
-  if (!desc) bad(`${u}: description がありません`);
-  if (canon !== u) bad(`${u}: canonical が ${canon}`);
-  if (ogUrl !== u) bad(`${u}: og:url が ${ogUrl}`);
-  const isEn = rel.startsWith("en/");
-  const pairJa = isEn ? u.replace("/en/", "/") : u;
-  const pairEn = isEn ? u : u.replace(SITE + "/", SITE + "/en/");
-  if (hrefJa !== pairJa) bad(`${u}: hreflang=ja が ${hrefJa}（期待 ${pairJa}）`);
-  if (hrefEn !== pairEn) bad(`${u}: hreflang=en が ${hrefEn}（期待 ${pairEn}）`);
-  const wantImg = SITE + (isEn ? "/assets/og-en.jpg" : "/assets/og.jpg");
-  if (ogImg !== wantImg) bad(`${u}: og:image が ${ogImg}`);
-  if (!fs.existsSync(path.join(ROOT, wantImg.replace(SITE + "/", "")))) bad(`共有画像がありません: ${wantImg}`);
+    if (!title) bad(`${u}: <title> がありません`);
+    if (!desc) bad(`${u}: description がありません`);
+    if (canon !== u) bad(`${u}: canonical が ${canon}`);
+    if (ogUrl !== u) bad(`${u}: og:url が ${ogUrl}`);
+    if (ready) {
+      // 翻訳済み：日英が hreflang で対になり、noindex は無い
+      const pairJa = SITE + "/" + (p ? p + "/" : "");
+      const pairEn = SITE + "/en/" + (p ? p + "/" : "");
+      if (hrefJa !== pairJa) bad(`${u}: hreflang=ja が ${hrefJa}（期待 ${pairJa}）`);
+      if (hrefEn !== pairEn) bad(`${u}: hreflang=en が ${hrefEn}（期待 ${pairEn}）`);
+      if (noindex) bad(`${u}: 翻訳済みなのに noindex が付いています`);
+    } else {
+      // 未翻訳：hreflang を出さない。英語版には noindex。
+      if (hrefJa || hrefEn) bad(`${u}: 未翻訳ページに hreflang が残っています`);
+      if (lang === "en" && !noindex) bad(`${u}: 中身が日本語のままなのに noindex がありません`);
+      if (lang === "ja" && noindex) bad(`${u}: 日本語版に noindex が付いています`);
+    }
+    const wantImg = SITE + (lang === "en" ? "/assets/og-en.jpg" : "/assets/og.jpg");
+    if (ogImg !== wantImg) bad(`${u}: og:image が ${ogImg}`);
+    if (!fs.existsSync(path.join(ROOT, wantImg.replace(SITE + "/", "")))) bad(`共有画像がありません: ${wantImg}`);
 
-  if (title) { if (titles.has(title)) bad(`題が重複: ${u} と ${titles.get(title)}`); else titles.set(title, u); }
-  if (desc) { if (descs.has(desc)) bad(`説明文が重複: ${u} と ${descs.get(desc)}`); else descs.set(desc, u); }
+    // 題・説明文の重複は、検索対象のページ（noindex でないもの）だけで見る
+    if (!noindex) {
+      if (title) { if (titles.has(title)) bad(`題が重複: ${u} と ${titles.get(title)}`); else titles.set(title, u); }
+      if (desc) { if (descs.has(desc)) bad(`説明文が重複: ${u} と ${descs.get(desc)}`); else descs.set(desc, u); }
+    }
+  }
 }
 
 /* ---------- index.html のメニューのリンク先 ----------

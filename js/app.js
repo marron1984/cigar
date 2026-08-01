@@ -152,9 +152,26 @@ function applyPageMeta(name) {
   const other = I18N.isEn ? "/" : "/en/";
   const p = META[name] && META[name].path;
   set("#langSwitch", "href", other + (p ? p + "/" : ""));
-  set('link[rel="alternate"][hreflang="ja"]', "href", location.origin + "/" + (p ? p + "/" : ""));
-  set('link[rel="alternate"][hreflang="en"]', "href", location.origin + "/en/" + (p ? p + "/" : ""));
-  set('link[rel="alternate"][hreflang="x-default"]', "href", location.origin + "/" + (p ? p + "/" : ""));
+  /* hreflang は「英語版の中身ができているページ」だけに出す（data/pages.js の enReady）。
+     まだのページで出すと、noindex の英語ページを検索エンジンに案内してしまう。
+     画面切替で行き来するので、その場で足したり外したりする。 */
+  const ensure = (hreflang, href) => {
+    let el = document.querySelector(`link[rel="alternate"][hreflang="${hreflang}"]`);
+    if (!el) {
+      el = document.createElement("link");
+      el.setAttribute("rel", "alternate");
+      el.setAttribute("hreflang", hreflang);
+      document.head.appendChild(el);
+    }
+    el.setAttribute("href", href);
+  };
+  if (META[name] && META[name].enReady) {
+    ensure("ja", location.origin + "/" + (p ? p + "/" : ""));
+    ensure("en", location.origin + "/en/" + (p ? p + "/" : ""));
+    ensure("x-default", location.origin + "/" + (p ? p + "/" : ""));
+  } else {
+    document.querySelectorAll('link[rel="alternate"][hreflang]').forEach(el => el.remove());
+  }
 }
 /* ---------- ページごとの遅延描画 ----------
    以前は起動時に全ページを描画していたため、そのために全データを

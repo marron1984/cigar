@@ -64,9 +64,21 @@ function buildPage(srcHtml, lang, view) {
   h = h.replace(/<title>[^<]*<\/title>/, `<title>${esc(m.title)}</title>`);
   h = setAttr(h, /<meta name="description"[^>]*>/, "content", m.desc);
   h = setAttr(h, /<link rel="canonical"[^>]*>/, "href", url);
-  h = setAttr(h, /<link rel="alternate" hreflang="ja"[^>]*>/, "href", jaUrl);
-  h = setAttr(h, /<link rel="alternate" hreflang="en"[^>]*>/, "href", enUrl);
-  h = setAttr(h, /<link rel="alternate" hreflang="x-default"[^>]*>/, "href", jaUrl);
+  if (META[view].enReady) {
+    h = setAttr(h, /<link rel="alternate" hreflang="ja"[^>]*>/, "href", jaUrl);
+    h = setAttr(h, /<link rel="alternate" hreflang="en"[^>]*>/, "href", enUrl);
+    h = setAttr(h, /<link rel="alternate" hreflang="x-default"[^>]*>/, "href", jaUrl);
+  } else {
+    /* 英語版の中身がまだ日本語のままのページ。
+       ・日英どちらの版でも hreflang を出さない（対になる英語版を検索に案内しないため）
+       ・英語版には noindex を付け、検索結果に出さない
+       言語切替のリンクは残すので、人は今までどおり行き来できる。 */
+    h = h.replace(/[ \t]*<link rel="alternate" hreflang="[^"]*"[^>]*>\n?/g, "");
+    if (lang === "en") {
+      h = h.replace(/<link rel="canonical"[^>]*>/,
+        (t) => t + `\n  <meta name="robots" content="noindex">`);
+    }
+  }
   h = setAttr(h, /<meta property="og:url"[^>]*>/, "content", url);
   h = setAttr(h, /<meta property="og:title"[^>]*>/, "content", m.title);
   h = setAttr(h, /<meta property="og:description"[^>]*>/, "content", m.desc);
@@ -136,13 +148,18 @@ for (const view of views) {
   const p = META[view].path;
   const jaUrl = SITE + "/" + (p ? p + "/" : "");
   const enUrl = SITE + "/en/" + (p ? p + "/" : "");
-  for (const url of [jaUrl, enUrl]) {
-    entries.push(
-`  <url>
-    <loc>${url}</loc>
+  /* 英語版は、中身が英語になっているページ（enReady）だけ載せる。
+     まだのページは noindex を付けてあり、sitemap に載せると矛盾するため。 */
+  const urls = META[view].enReady ? [jaUrl, enUrl] : [jaUrl];
+  const alt = META[view].enReady
+    ? `
     <xhtml:link rel="alternate" hreflang="ja" href="${jaUrl}"/>
     <xhtml:link rel="alternate" hreflang="en" href="${enUrl}"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="${jaUrl}"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="${jaUrl}"/>` : "";
+  for (const url of urls) {
+    entries.push(
+`  <url>
+    <loc>${url}</loc>${alt}
     <lastmod>${today}</lastmod>
     <changefreq>${view === "news" ? "weekly" : "monthly"}</changefreq>
     <priority>${PRIORITY[view] || "0.7"}</priority>
