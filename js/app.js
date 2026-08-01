@@ -3,6 +3,10 @@
    ============================================================ */
 
 const D = CIGAR_DATA;
+/* JSが後から作る画像の当て先。/brands/ のような下層ページでも、
+   画面切替でアドレスが変わったあとでも迷子にならないよう、
+   サイトの根っこから絶対で指す（根っこは js/dataload.js が割り出す）。 */
+const ASSET = (window.SITE_ROOT || "") + "assets/";
 const $ = (s, el = document) => el.querySelector(s);
 const $$ = (s, el = document) => [...el.querySelectorAll(s)];
 const esc = (s) => String(s == null ? "" : s)
@@ -85,6 +89,73 @@ const views = {
   admin: "view-admin",        /* 管理画面。ナビには出さず #admin で開く */
   note: "view-note"
 };
+
+/* ============================================================
+   URL（アドレス）とページの対応
+   ------------------------------------------------------------
+   以前は #brands のようにハッシュだけで切り替えていたため、
+   検索エンジンから見るとサイト全体が1ページしかなかった。
+   いまは /brands/ という本物のURLを持たせ、各ページに
+   別々の題と説明文を付けている（対応表は data/pages.js）。
+
+   ・古い #brands 形式のリンクも今までどおり開ける（開いたあと /brands/ に直す）
+   ・file:// で開いたときはURLを書き換えられないので、ハッシュのまま動く
+   ・管理画面（#admin）だけはURLを持たせない（検索対象にしないため）
+   ============================================================ */
+const META = (typeof PAGE_META !== "undefined") ? PAGE_META : {};
+/* サイトの土台。日本語版は "/"、英語版は "/en/"。 */
+const SITE_BASE = I18N.isEn ? "/en/" : "/";
+const canPushPath = /^https?:$/.test(location.protocol);
+/* 道筋 → ビュー名 */
+const PATH_VIEW = (() => {
+  const m = {};
+  Object.keys(META).forEach(v => { m[META[v].path || ""] = v; });
+  return m;
+})();
+function viewUrl(name) {
+  if (!canPushPath) return "#" + name;
+  const p = META[name] && META[name].path;
+  if (p == null) return SITE_BASE + "#" + name;   // 管理画面など、URLを持たないページ
+  return SITE_BASE + (p ? p + "/" : "");
+}
+/* いま開くべきページを、アドレスから読み取る */
+function routeFromLocation() {
+  const h = (location.hash || "").replace(/^#/, "");
+  if (views[h]) return h;                         // 古い #brands 形式のリンク
+  if (canPushPath) {
+    let rest = location.pathname;
+    if (rest.indexOf(SITE_BASE) === 0) rest = rest.slice(SITE_BASE.length);
+    rest = rest.replace(/index\.html$/, "").replace(/^\/+|\/+$/g, "");
+    try { rest = decodeURIComponent(rest); } catch (e) {}
+    if (PATH_VIEW[rest]) return PATH_VIEW[rest];
+  }
+  if (views[window.SITE_ROUTE]) return window.SITE_ROUTE;
+  return "home";
+}
+/* 題・正規URL・SNSカードを、いま開いているページのものに書き換える。
+   最初の表示では生成ずみのHTMLと同じ値になるので、実質は画面切替のときに効く。 */
+function applyPageMeta(name) {
+  const m = META[name] && META[name][I18N.isEn ? "en" : "ja"];
+  if (!m) return;
+  document.title = m.title;
+  const set = (sel, attr, val) => { const el = document.querySelector(sel); if (el) el.setAttribute(attr, val); };
+  set('meta[name="description"]', "content", m.desc);
+  set('meta[property="og:title"]', "content", m.title);
+  set('meta[property="og:description"]', "content", m.desc);
+  set('meta[name="twitter:title"]', "content", m.title);
+  set('meta[name="twitter:description"]', "content", m.desc);
+  if (!canPushPath) return;
+  const abs = location.origin + viewUrl(name);
+  set('link[rel="canonical"]', "href", abs);
+  set('meta[property="og:url"]', "content", abs);
+  // 言語切替の行き先も、同じページの相手言語に合わせる
+  const other = I18N.isEn ? "/" : "/en/";
+  const p = META[name] && META[name].path;
+  set("#langSwitch", "href", other + (p ? p + "/" : ""));
+  set('link[rel="alternate"][hreflang="ja"]', "href", location.origin + "/" + (p ? p + "/" : ""));
+  set('link[rel="alternate"][hreflang="en"]', "href", location.origin + "/en/" + (p ? p + "/" : ""));
+  set('link[rel="alternate"][hreflang="x-default"]', "href", location.origin + "/" + (p ? p + "/" : ""));
+}
 /* ---------- ページごとの遅延描画 ----------
    以前は起動時に全ページを描画していたため、そのために全データを
    先に読み込む必要があった。いまは「開いたページだけ」データを読み、
@@ -133,14 +204,19 @@ function showView(name, opts = {}) {
   ensureView(name).catch(() => {});
   $$(".view").forEach(v => v.classList.remove("active"));
   $("#" + views[name]).classList.add("active");
-  $$("#navTabs button, .bottom-nav button").forEach(b =>
+  $$("#navTabs [data-view], .bottom-nav [data-view]").forEach(b =>
     b.classList.toggle("active", b.dataset.view === name));
   window.scrollTo({ top: 0, behavior: "smooth" });
+  applyPageMeta(name);
   // 履歴に積む（pushState）ことで、ブラウザの「戻る」やスワイプバックで
   // 直前のページに戻れるようにする。戻る操作由来（fromPop）のときは積まない。
-  if (location.hash !== "#" + name) {
-    if (opts.replace) history.replaceState(null, "", "#" + name);
-    else if (!opts.fromPop) history.pushState(null, "", "#" + name);
+  // opts.keepUrl は #share=… のような、ページ名以外の用途で使われている
+  // ハッシュを消さないための逃げ道。
+  const url = viewUrl(name);
+  const here = canPushPath ? (location.pathname + location.hash) : location.hash;
+  if (!opts.keepUrl && here !== url) {
+    if (opts.replace) history.replaceState(null, "", url);
+    else if (!opts.fromPop) history.pushState(null, "", url);
   }
   if (name === "note") NOTE.render();
   closeNav();
@@ -163,14 +239,14 @@ function trackPageView(name) {
   const label = T(VIEW_TITLES[name] || name);
   gtag("event", "page_view", {
     page_title: label + "｜Cigar Cafe",
-    page_location: location.origin + location.pathname + "#" + name,
-    page_path: "/#" + name
+    page_location: location.origin + viewUrl(name),
+    page_path: viewUrl(name)
   });
 }
 
 /* 戻る／進む（スワイプバック含む）でビューを同期 */
 window.addEventListener("popstate", () => {
-  showView((location.hash || "#home").slice(1), { fromPop: true });
+  showView(routeFromLocation(), { fromPop: true });
 });
 
 /* ---------- モバイル・ハンバーガーメニュー ---------- */
@@ -199,7 +275,14 @@ document.addEventListener("click", (e) => {
   }
   if (e.target.closest("#navScrim")) { closeNav(); return; }
   const t = e.target.closest("[data-view]");
-  if (t) { e.preventDefault(); showView(t.dataset.view); return; }
+  if (t) {
+    // 新しいタブで開く操作（⌘/Ctrl＋クリック、中クリック等）はブラウザに任せる。
+    // メニューは本物のリンクなので、そのまま別タブで開けるようにしておく。
+    if (t.tagName === "A" && (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button !== 0)) return;
+    e.preventDefault();
+    showView(t.dataset.view);
+    return;
+  }
   // メニュー外クリックで閉じる（シート内・ヘッダー内のタップでは閉じない）
   if ($("#navTabs").classList.contains("open") && !e.target.closest(".site-header") && !e.target.closest("#navTabs")) closeNav();
 });
@@ -365,12 +448,15 @@ function renderHome() {
 
   /* --- 索引 --- */
   /* 通し番号は .home-card 側の CSS カウンタが自動で振る */
+  /* 索引は本物のリンク（<a href>）にしてある。
+     クリックは共通のハンドラが受けて画面を切り替えるが、
+     リンクにしておくことで検索エンジンが各ページを辿れる。 */
   $("#homeGrid").innerHTML = HOME_CARDS.map(c => `
-    <div class="home-card" data-view="${c.view}">
+    <a class="home-card" href="${esc(viewUrl(c.view))}" data-view="${c.view}">
       <h3>${c.h}</h3>
       <p>${c.p}</p>
       <div class="go">開く →</div>
-    </div>`).join("");
+    </a>`).join("");
 }
 
 /* ============================================================
@@ -409,7 +495,7 @@ function renderBasics() {
     </div>
 
     <div class="kb-block">
-      <img class="guide-photo" src="assets/anatomy-guide.png"
+      <img class="guide-photo" src="${ASSET}anatomy-guide.png"
            alt="葉巻の構造（アナトミー）と吸い方 ビジュアルガイド"
            onerror="this.closest('.kb-block').remove()">
     </div>
@@ -605,7 +691,7 @@ function renderSizes() {
   const gaugeFigure = `
     <div class="kb-block">
       <h3>葉巻の太さの種類（ゲージサイズ）一覧</h3>
-      <img class="gauge-photo" src="assets/gauge-size-chart.png"
+      <img class="gauge-photo" src="${ASSET}gauge-size-chart.png"
            alt="葉巻の太さの種類（ゲージサイズ）一覧"
            style="display:none"
            onload="this.style.display='block';var f=document.getElementById('gaugeFallback');if(f)f.style.display='none';"
@@ -756,8 +842,11 @@ function renderTools() {
 function init() {
   renderHome();
   NOTE.init();
-  const start = (location.hash || "#home").slice(1);
-  showView(start, { replace: true });
+  const start = routeFromLocation();
+  /* #share=… のように、ページ名以外の意味を持つハッシュで開かれたときは
+     アドレスをそのままにする（再読み込みしても共有リンクが生きるように）。 */
+  const foreignHash = !!location.hash && !views[location.hash.slice(1)];
+  showView(start, { replace: true, keepUrl: foreignHash });
   /* 最初の表示が済んだら、軽いページのデータだけ裏でそっと取っておく。
      世界編・日本ガイド・ブランド大全は大きいので自動では取りに行かず、
      メニューに触れた時点（下の「触れたら先読み」）で読み始める。

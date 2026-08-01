@@ -53,7 +53,12 @@ function findChrome() {
     process.exit(1);
   }
 
-  const result = await page.evaluate(([dict, SITE]) => {
+  /* ホームの題と説明文は data/pages.js を唯一の出どころにする
+     （画面を切り替えたときにJSが入れるものと食い違わないようにするため）。 */
+  const HOME_EN = new Function(
+    fs.readFileSync(path.join(ROOT, "data/pages.js"), "utf8") + "\n;return PAGE_META.home.en;")();
+
+  const result = await page.evaluate(([dict, SITE, HOME_EN]) => {
     const JP = /[぀-ヿ㐀-鿿]/;
     const ATTRS = ["placeholder", "title", "alt", "aria-label", "content", "label"];
     const missing = [];
@@ -117,6 +122,31 @@ function findChrome() {
     setLink(null, "en", SITE + "en/");
     setLink(null, "x-default", SITE);
 
+    // 題と説明文は data/pages.js のものを使う
+    const setMeta = (sel, attr, v) => { const el = document.querySelector(sel); if (el) el.setAttribute(attr, v); };
+    document.title = HOME_EN.title;
+    setMeta('meta[name="description"]', "content", HOME_EN.desc);
+    setMeta('meta[property="og:title"]', "content", HOME_EN.title);
+    setMeta('meta[property="og:description"]', "content", HOME_EN.desc);
+    setMeta('meta[name="twitter:title"]', "content", HOME_EN.title);
+    setMeta('meta[name="twitter:description"]', "content", HOME_EN.desc);
+
+    // SNSカードも英語版のもの（英語の共有画像・英語ロケール）に差し替える
+    setMeta('meta[property="og:locale"]', "content", "en_US");
+    setMeta('meta[property="og:url"]', "content", SITE + "en/");
+    setMeta('meta[property="og:image"]', "content", SITE + "assets/og-en.jpg");
+    setMeta('meta[name="twitter:image"]', "content", SITE + "assets/og-en.jpg");
+
+    // 構造化データ（サイト情報）も英語版のものに
+    const ld = document.querySelector('script[type="application/ld+json"]');
+    if (ld) {
+      ld.textContent = JSON.stringify({
+        "@context": "https://schema.org", "@type": "WebSite", name: "Cigar Cafe",
+        url: SITE + "en/", inLanguage: "en",
+        description: (document.querySelector('meta[name="description"]') || {}).content || ""
+      });
+    }
+
     // 表示言語をJSに伝える（最初のスクリプトより前に置く）
     const s = document.createElement("script");
     s.textContent = 'window.SITE_LANG = "en";';
@@ -125,7 +155,7 @@ function findChrome() {
     else document.head.appendChild(s);
 
     return { html: document.documentElement.outerHTML, missing };
-  }, [dict, SITE]);
+  }, [dict, SITE, HOME_EN]);
 
   await browser.close();
 

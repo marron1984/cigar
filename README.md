@@ -70,8 +70,11 @@
 
 ```
 .
-├── index.html          # ページ本体（日本語版）
-├── en/index.html       # 英語版シェル（tools/build_en.js が自動生成）
+├── index.html          # ページ本体（日本語版・唯一の手書きHTML）
+├── brands/ japan/ …    # ページごとの入口（自動生成。中身は index.html と同じ）
+├── en/                 # 英語版一式（自動生成）
+├── sitemap.xml         # 検索エンジン向けのURL一覧（自動生成）
+├── robots.txt          # 同上（自動生成）
 ├── css/style.css       # スタイル（シガーラウンジ風テーマ）
 ├── js/
 │   ├── app.js          # ナビゲーション & 事典レンダリング
@@ -81,11 +84,16 @@
 ├── data/
 │   ├── data.js         # 事典の基本データ（最初に読む）
 │   ├── summary.js      # 銘柄名・用語の要約（自動生成／最初に読む）
+│   ├── pages.js        # ページごとのURL・題・説明文（手書き）
 │   ├── brands.js …     # 各ページの本体データ（そのページを開いたときに読む）
 │   └── en/             # 英語版でだけ読み込む差し替えデータ
 └── tools/
+    ├── build.js          # 下の4つをまとめて走らせる
     ├── build_summary.js  # data/summary.js を作る
-    └── build_en.js       # en/index.html を作る
+    ├── build_en.js       # en/index.html を作る
+    ├── build_pages.js    # 各ページ・sitemap.xml・robots.txt を作る
+    ├── check_seo.js      # 題の重複・canonical・hreflang の抜けを確かめる
+    └── build_og.js       # SNS共有カード画像を作る（写真や煽り文を変えたときだけ）
 ```
 
 ### データの読み込みについて
@@ -95,11 +103,28 @@
 ホーム・横断検索・記録ノートのブランド選択肢などが必要とする「銘柄の名前」だけは、
 軽い要約ファイル `data/summary.js` にまとめて先に読んでいます。
 
-`data/*.js` を編集したら、要約と英語版シェルを作り直してください：
+### URLについて
+
+画面は1枚のHTMLで切り替えていますが、ページごとに `/brands/` `/japan/` のような
+**本物のURL**を持たせています（対応表は `data/pages.js`）。それぞれに固有の題・説明文・
+正規URL・SNSカードが付くので、検索エンジンからはページ単位で拾われます。
+古い `#brands` 形式のリンクも今までどおり開けます（開いたあと `/brands/` に直ります）。
+
+### ビルド
+
+`index.html` `css/` `js/` `data/` のいずれかを直したら、まとめてビルドしてください。
+`en/` と各ページのディレクトリ、`sitemap.xml`、`robots.txt` はすべて自動生成物なので、
+手で編集しても次のビルドで消えます。
 
 ```bash
-NODE_PATH=/opt/node22/lib/node_modules node tools/build_summary.js
-NODE_PATH=/opt/node22/lib/node_modules node tools/build_en.js
+NODE_PATH=/opt/node22/lib/node_modules node tools/build.js
+```
+
+仕上げに実ブラウザでの確認（JSエラー0・はみ出し0・空ページ0が合格）：
+
+```bash
+NODE_PATH=/opt/node22/lib/node_modules node .claude/skills/add-brand/scripts/render_check.js
+NODE_PATH=/opt/node22/lib/node_modules node .claude/skills/add-brand/scripts/render_check.js en/index.html
 ```
 
 ## 情報の収集について

@@ -1,36 +1,37 @@
+<!-- このファイルは tools/build_pages.js が index.html から作っています。手で編集しないでください。 -->
 <!DOCTYPE html>
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#f7f1e7">
-  <title>Cigar Cafe｜はじめての葉巻を、やさしく</title>
-  <meta name="description" content="はじめての人でも入りやすい葉巻（シガー）の入門サイト。基礎知識・国や産地・太さ・価格・道具をやさしく解説。吸った一本を記録できるノート付き。">
-  <link rel="canonical" href="https://cigar.cafe/">
-  <link rel="alternate" hreflang="ja" href="https://cigar.cafe/">
-  <link rel="alternate" hreflang="en" href="https://cigar.cafe/en/">
-  <link rel="alternate" hreflang="x-default" href="https://cigar.cafe/">
+  <title>葉巻の記録ノート — 吸った一本を残す｜Cigar Cafe</title>
+  <meta name="description" content="銘柄・産地・サイズ・価格・場所・評価・感想・写真を残せる記録ノート。統計グラフ、喫煙タイマー、吸いたいリスト付き。記録はお使いの端末に保存されます。">
+  <link rel="canonical" href="https://cigar.cafe/note/">
+  <link rel="alternate" hreflang="ja" href="https://cigar.cafe/note/">
+  <link rel="alternate" hreflang="en" href="https://cigar.cafe/en/note/">
+  <link rel="alternate" hreflang="x-default" href="https://cigar.cafe/note/">
 
   <!-- SNSでリンクを貼ったときのカード表示（X・LINE・Slack・Facebook 等） -->
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Cigar Cafe">
   <meta property="og:locale" content="ja_JP">
-  <meta property="og:url" content="https://cigar.cafe/">
-  <meta property="og:title" content="Cigar Cafe｜はじめての葉巻を、やさしく">
-  <meta property="og:description" content="はじめての人でも入りやすい葉巻（シガー）の入門サイト。基礎知識・国や産地・太さ・価格・道具をやさしく解説。吸った一本を記録できるノート付き。">
+  <meta property="og:url" content="https://cigar.cafe/note/">
+  <meta property="og:title" content="葉巻の記録ノート — 吸った一本を残す｜Cigar Cafe">
+  <meta property="og:description" content="銘柄・産地・サイズ・価格・場所・評価・感想・写真を残せる記録ノート。統計グラフ、喫煙タイマー、吸いたいリスト付き。記録はお使いの端末に保存されます。">
   <meta property="og:image" content="https://cigar.cafe/assets/og.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Cigar Cafe｜はじめての葉巻を、やさしく">
-  <meta name="twitter:description" content="はじめての人でも入りやすい葉巻（シガー）の入門サイト。基礎知識・国や産地・太さ・価格・道具をやさしく解説。吸った一本を記録できるノート付き。">
+  <meta name="twitter:title" content="葉巻の記録ノート — 吸った一本を残す｜Cigar Cafe">
+  <meta name="twitter:description" content="銘柄・産地・サイズ・価格・場所・評価・感想・写真を残せる記録ノート。統計グラフ、喫煙タイマー、吸いたいリスト付き。記録はお使いの端末に保存されます。">
   <meta name="twitter:image" content="https://cigar.cafe/assets/og.jpg">
 
   <!-- 検索結果でのサイト名表示のための構造化データ。
        下層ページでは tools/build_pages.js がパンくずに差し替える。 -->
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Cigar Cafe","alternateName":"葉巻大辞典","url":"https://cigar.cafe/","inLanguage":"ja","description":"はじめての人でも入りやすい葉巻（シガー）の入門サイト。基礎知識・国や産地・太さ・価格・道具をやさしく解説。吸った一本を記録できるノート付き。"}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Cigar Cafe","item":"https://cigar.cafe/"},{"@type":"ListItem","position":2,"name":"葉巻の記録ノート","item":"https://cigar.cafe/note/"}]}</script>
 
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="../css/style.css">
   <!-- ファビコンだけは絶対パスにしておく。相対のままだと、画面切替でアドレスが
        /basics/ などに変わったときにブラウザが取り直しに行って404になるため。 -->
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
@@ -45,38 +46,39 @@
     gtag('js', new Date());
     gtag('config', 'G-LPS4JQV3WJ');
   </script>
+  <script>window.SITE_ROUTE = "note";</script>
 </head>
 <body>
 
   <!-- ===== Header / Nav ===== -->
   <header class="site-header">
     <div class="nav-inner">
-      <a class="brand" href="./" data-view="home">
-        <img class="brand-logo" src="assets/logo.png" alt="Cigar Cafe">
+      <a class="brand" href="../" data-view="home">
+        <img class="brand-logo" src="../assets/logo.png" alt="Cigar Cafe">
         <div>
           <div class="title">Cigar Cafe</div>
           <div class="sub">葉巻をたのしむ</div>
         </div>
       </a>
-      <a class="lang-switch" id="langSwitch" href="en/" hreflang="en" lang="en" title="English version">EN</a>
+      <a class="lang-switch" id="langSwitch" href="/en/note/" hreflang="en" lang="en" title="English version">EN</a>
       <button class="nav-toggle" id="navToggle" data-nav-toggle aria-label="メニューを開閉" aria-expanded="false" aria-controls="navTabs">
         <span class="nav-toggle-bars"></span>
       </button>
       <nav class="nav-tabs" id="navTabs">
-        <a href="./" data-view="home"><span class="ic"></span><span class="lbl">ホーム</span></a>
-        <a href="note/" class="nav-journal" data-view="note"><span class="ic"></span><span class="lbl">記録ノート</span></a>
-        <a href="basics/" data-view="basics"><span class="ic"></span><span class="lbl">基礎知識</span></a>
-        <a href="countries/" data-view="countries"><span class="ic"></span><span class="lbl">国・産地別</span></a>
-        <a href="sizes/" data-view="sizes"><span class="ic"></span><span class="lbl">太さ別</span></a>
-        <a href="prices/" data-view="prices"><span class="ic"></span><span class="lbl">価格別</span></a>
-        <a href="accessories/" data-view="tools"><span class="ic"></span><span class="lbl">喫煙具</span></a>
-        <a href="humidor/" data-view="humidor"><span class="ic"></span><span class="lbl">ヒュミドール</span></a>
-        <a href="advanced/" data-view="advanced"><span class="ic"></span><span class="lbl">上級編</span></a>
-        <a href="phd/" data-view="phd"><span class="ic"></span><span class="lbl">博士編</span></a>
-        <a href="japan/" data-view="japan"><span class="ic"></span><span class="lbl">日本ガイド</span></a>
-        <a href="world/" data-view="world"><span class="ic"></span><span class="lbl">世界編</span></a>
-        <a href="brands/" data-view="brands"><span class="ic"></span><span class="lbl">ブランド大全</span></a>
-        <a href="news/" data-view="news"><span class="ic"></span><span class="lbl">ニュース</span></a>
+        <a href="../" data-view="home"><span class="ic"></span><span class="lbl">ホーム</span></a>
+        <a href="../note/" class="nav-journal" data-view="note"><span class="ic"></span><span class="lbl">記録ノート</span></a>
+        <a href="../basics/" data-view="basics"><span class="ic"></span><span class="lbl">基礎知識</span></a>
+        <a href="../countries/" data-view="countries"><span class="ic"></span><span class="lbl">国・産地別</span></a>
+        <a href="../sizes/" data-view="sizes"><span class="ic"></span><span class="lbl">太さ別</span></a>
+        <a href="../prices/" data-view="prices"><span class="ic"></span><span class="lbl">価格別</span></a>
+        <a href="../accessories/" data-view="tools"><span class="ic"></span><span class="lbl">喫煙具</span></a>
+        <a href="../humidor/" data-view="humidor"><span class="ic"></span><span class="lbl">ヒュミドール</span></a>
+        <a href="../advanced/" data-view="advanced"><span class="ic"></span><span class="lbl">上級編</span></a>
+        <a href="../phd/" data-view="phd"><span class="ic"></span><span class="lbl">博士編</span></a>
+        <a href="../japan/" data-view="japan"><span class="ic"></span><span class="lbl">日本ガイド</span></a>
+        <a href="../world/" data-view="world"><span class="ic"></span><span class="lbl">世界編</span></a>
+        <a href="../brands/" data-view="brands"><span class="ic"></span><span class="lbl">ブランド大全</span></a>
+        <a href="../news/" data-view="news"><span class="ic"></span><span class="lbl">ニュース</span></a>
       </nav>
     </div>
   </header>
@@ -87,7 +89,7 @@
     <section class="view" id="view-home">
       <!-- ===== 全画面のヒーロー ===== -->
       <div class="hero-cine">
-        <img class="hc-media" src="assets/hero-welcome.png" alt="" aria-hidden="true">
+        <img class="hc-media" src="../assets/hero-welcome.png" alt="" aria-hidden="true">
         <div class="hc-veil" aria-hidden="true"></div>
         <p class="hc-tate" aria-hidden="true"><span>急がない人の、</span><span>ための時間。</span></p>
         <div class="hc-inner">
@@ -146,7 +148,7 @@
         <h2>基礎知識</h2>
         <p>葉巻とは何か、構造、吸い方、味わいの表現、ラッパーの色、歴史とマナー。初めての一本の前に読んでおきたい基本を網羅。</p>
       </div>
-      <img class="section-photo basics-hero" src="assets/basics-hero.png" alt="焚き火のそばで葉巻をくゆらせ、くつろぐひととき"
+      <img class="section-photo basics-hero" src="../assets/basics-hero.png" alt="焚き火のそばで葉巻をくゆらせ、くつろぐひととき"
            onerror="this.style.display='none'">
       <div id="basicsContent"></div>
     </section>
@@ -158,7 +160,7 @@
         <h2>国・産地別</h2>
         <p>葉巻の個性は生まれた土地の気候と土壌が決める。主要10の産地から選び、地理・歴史・栽培・味わいまで、出典付きで詳しく読めます。</p>
       </div>
-      <img class="section-photo" src="assets/Earth.png" alt="世界に広がる葉巻の産地 — 地球と一本の葉巻"
+      <img class="section-photo" src="../assets/Earth.png" alt="世界に広がる葉巻の産地 — 地球と一本の葉巻"
            onerror="this.style.display='none'">
       <div id="countryOverview"></div>
       <div class="subnav" id="countryNav"></div>
@@ -173,7 +175,7 @@
         <h2>太さ・サイズ別</h2>
         <p>リングゲージ（太さ）とビトラ（規格）で、味わいも喫煙時間も大きく変わる。定番サイズを一覧で比較。</p>
       </div>
-      <img class="section-photo" src="assets/Futosa.png" alt="サイズ別に並ぶ葉巻 — ダブルコロナからパナテラまで"
+      <img class="section-photo" src="../assets/Futosa.png" alt="サイズ別に並ぶ葉巻 — ダブルコロナからパナテラまで"
            onerror="this.style.display='none'">
       <div id="sizesContent"></div>
     </section>
@@ -185,7 +187,7 @@
         <h2>価格帯別</h2>
         <p>コンビニのドライシガーから数万円のハイエンドまで。価格帯ごとの特徴・代表銘柄・選び方のアドバイス。</p>
       </div>
-      <img class="section-photo" src="assets/hero-portrait.jpg" alt="上質な一本を燻らせる大人の一服 — 価格が映す価値"
+      <img class="section-photo" src="../assets/hero-portrait.jpg" alt="上質な一本を燻らせる大人の一服 — 価格が映す価値"
            onerror="this.style.display='none'">
       <div id="pricesContent"></div>
     </section>
@@ -197,7 +199,7 @@
         <h2>喫煙具・保管</h2>
         <p>カッター、ライター、ヒュミドール、灰皿……葉巻を美味しく味わい、良い状態で保つための道具の選び方と使い方。</p>
       </div>
-      <img class="section-photo" src="assets/Cutter.png" alt="シガーカッター — 葉巻を切るための道具"
+      <img class="section-photo" src="../assets/Cutter.png" alt="シガーカッター — 葉巻を切るための道具"
            onerror="this.style.display='none'">
       <div id="toolsContent"></div>
     </section>
@@ -209,7 +211,7 @@
         <h2>ヒュミドール大全</h2>
         <p>葉巻を美味しく味わうための要、ヒュミドール（加湿保存庫）だけに焦点を当てた専門ページ。歴史、世界のメーカー・ブランド、使い方とメンテナンス、種類・分類、価格帯を、5つの観点から徹底調査してまとめました。</p>
       </div>
-      <img class="section-photo humidor-hero" src="assets/Fumi.png" alt="ヒュミドールに整然と並ぶ葉巻と湿度計"
+      <img class="section-photo humidor-hero" src="../assets/Fumi.png" alt="ヒュミドールに整然と並ぶ葉巻と湿度計"
            onerror="this.style.display='none'">
       <div class="subnav" id="humidorSubnav">
         <button data-hsub="history" class="active">歴史</button>
@@ -232,7 +234,7 @@
         <h2>上級編 — 葉巻オタクの世界</h2>
         <p>葉の品種と葉位、発酵と巻きの技、キューバ通の見分け方、名門ブランド、喫煙の極意、ペアリング学、そして保管・熟成の科学まで。ここから先は、一本を深く味わうための知識の沼です。</p>
       </div>
-      <img class="section-photo" src="assets/Factory.png" alt="トルセドールが葉巻を巻く手巻き工場の作業風景"
+      <img class="section-photo" src="../assets/Factory.png" alt="トルセドールが葉巻を巻く手巻き工場の作業風景"
            onerror="this.style.display='none'">
       <div class="subnav" id="advSubnav">
         <button data-sub="leaf" class="active">葉と品種</button>
@@ -259,7 +261,7 @@
         <h2>博士編 — 葉巻の学術</h2>
         <p>化学・燃焼・植物学・農学・官能評価・産業経済・地政学・健康科学まで。英語圏を中心とした世界中の学術・専門資料を横断解析し、日本語に編纂した最上級リファレンス。ここは知識の最深部です。冒頭の<b>論文精読</b>では、各分野の査読論文・公的モノグラフを読み込んだ長編の文献レビューを収録しています。</p>
       </div>
-      <img class="section-photo" src="assets/Master.png" alt="ルーペで葉巻を検分する葉巻研究家（シガー・スカラー）"
+      <img class="section-photo" src="../assets/Master.png" alt="ルーペで葉巻を検分する葉巻研究家（シガー・スカラー）"
            onerror="this.style.display='none'">
       <div class="subnav" id="phdSubnav">
         <button data-psub="litreview" class="active">論文精読</button>
@@ -292,7 +294,7 @@
 
     <!-- ===== WORLD (世界編) ===== -->
     <section class="view" id="view-world">
-      <img class="section-photo" src="assets/Town.png" alt="世界の葉巻文化 — ラ・カサ・デル・ハバノの店先で葉巻を楽しむ人々"
+      <img class="section-photo" src="../assets/Town.png" alt="世界の葉巻文化 — ラ・カサ・デル・ハバノの店先で葉巻を楽しむ人々"
            onerror="this.onerror=null;this.src='assets/photo-pub.jpg'">
       <div class="section-head">
         <div class="eyebrow">The World of Cigars · 世界の葉巻を知り尽くす</div>
@@ -328,7 +330,7 @@
         <h2>ブランド大全</h2>
         <p>世界の葉巻ブランド（マルカ）を、創業からの歴史・名前の由来・代表ヴィトラとともに収録する銘柄事典。まずはキューバ（ハバノス）の全マルカから。</p>
       </div>
-      <img class="section-photo" src="assets/Cigar.png" alt="名門ブランドの葉巻 — コイーバ、ロメオ、パルタガス、オヨ、パドロン"
+      <img class="section-photo" src="../assets/Cigar.png" alt="名門ブランドの葉巻 — コイーバ、ロメオ、パルタガス、オヨ、パドロン"
            onerror="this.style.display='none'">
       <div id="wishlistPanel"></div>
       <div class="subnav" id="brandsSubnav">
@@ -392,7 +394,7 @@
 
     <!-- ===== NOTE ===== -->
     <section class="view" id="view-note">
-      <img class="section-photo" src="assets/Wakamono.png" alt="シガーラウンジで葉巻を楽しむ若者たち — LIFE IS BETTER WITH A CIGAR"
+      <img class="section-photo" src="../assets/Wakamono.png" alt="シガーラウンジで葉巻を楽しむ若者たち — LIFE IS BETTER WITH A CIGAR"
            onerror="this.onerror=null;this.src='assets/photo-ashtray.jpg'">
       <div class="section-head">
         <div class="eyebrow">My Cigar Journal</div>
@@ -621,7 +623,7 @@
   <footer class="site-footer">
     <div class="footer-inner">
       <div class="footer-brand">
-        <img class="footer-logo" src="assets/logo.png" alt="Cigar Cafe">
+        <img class="footer-logo" src="../assets/logo.png" alt="Cigar Cafe">
         <div class="footer-brand-name">Cigar Cafe</div>
         <div class="footer-brand-en">ようこそ、葉巻の世界へ</div>
       </div>
@@ -629,26 +631,26 @@
       <nav class="footer-nav" aria-label="フッターメニュー">
         <div class="footer-nav-col">
           <div class="footer-nav-h">事典</div>
-          <a href="basics/" data-view="basics">基礎知識</a>
-          <a href="countries/" data-view="countries">国・産地別</a>
-          <a href="sizes/" data-view="sizes">太さ別</a>
-          <a href="prices/" data-view="prices">価格別</a>
-          <a href="accessories/" data-view="tools">喫煙具</a>
+          <a href="../basics/" data-view="basics">基礎知識</a>
+          <a href="../countries/" data-view="countries">国・産地別</a>
+          <a href="../sizes/" data-view="sizes">太さ別</a>
+          <a href="../prices/" data-view="prices">価格別</a>
+          <a href="../accessories/" data-view="tools">喫煙具</a>
         </div>
         <div class="footer-nav-col">
           <div class="footer-nav-h">専門編</div>
-          <a href="humidor/" data-view="humidor">ヒュミドール</a>
-          <a href="advanced/" data-view="advanced">上級編</a>
-          <a href="phd/" data-view="phd">博士編</a>
-          <a href="japan/" data-view="japan">日本ガイド</a>
-          <a href="world/" data-view="world">世界編</a>
-          <a href="brands/" data-view="brands">ブランド大全</a>
-          <a href="news/" data-view="news">ニュース</a>
+          <a href="../humidor/" data-view="humidor">ヒュミドール</a>
+          <a href="../advanced/" data-view="advanced">上級編</a>
+          <a href="../phd/" data-view="phd">博士編</a>
+          <a href="../japan/" data-view="japan">日本ガイド</a>
+          <a href="../world/" data-view="world">世界編</a>
+          <a href="../brands/" data-view="brands">ブランド大全</a>
+          <a href="../news/" data-view="news">ニュース</a>
         </div>
         <div class="footer-nav-col">
           <div class="footer-nav-h">記録</div>
-          <a href="./" data-view="home">ホーム</a>
-          <a href="note/" class="footer-nav-note" data-view="note">記録ノート</a>
+          <a href="../" data-view="home">ホーム</a>
+          <a href="../note/" class="footer-nav-note" data-view="note">記録ノート</a>
         </div>
       </nav>
     </div>
@@ -676,29 +678,29 @@
   <!-- 各ページの本体データ（合計6.7MB）は、そのページを開いたときに読み込む。
        ここで読むのは、どのページでも要る基本データと、銘柄名・用語だけの要約。
        読み込みの段取りは js/dataload.js に、どのページで何を読むかもそこに。 -->
-  <script src="data/data.js"></script>
-  <script src="data/summary.js"></script>
-  <script src="data/pages.js"></script>
-  <script src="js/dataload.js"></script>
-  <script src="js/i18n.js"></script>
-  <script src="js/format.js"></script>
-  <script src="js/config.js"></script>
-  <script src="js/cloud.js"></script>
-  <script src="js/vision.js"></script>
-  <script src="js/note.js"></script>
-  <script src="js/advanced.js"></script>
-  <script src="js/phd.js"></script>
-  <script src="js/world.js"></script>
-  <script src="js/japan.js"></script>
-  <script src="js/humidor.js"></script>
-  <script src="js/brands.js"></script>
-  <script src="js/app.js"></script>
-  <script src="js/news.js"></script>
-  <script src="js/admin.js"></script>
-  <script src="js/search.js"></script>
-  <script src="js/quiz.js"></script>
-  <script src="js/realsize.js"></script>
-  <script src="js/stock.js"></script>
-  <script src="js/motion.js"></script>
+  <script src="../data/data.js"></script>
+  <script src="../data/summary.js"></script>
+  <script src="../data/pages.js"></script>
+  <script src="../js/dataload.js"></script>
+  <script src="../js/i18n.js"></script>
+  <script src="../js/format.js"></script>
+  <script src="../js/config.js"></script>
+  <script src="../js/cloud.js"></script>
+  <script src="../js/vision.js"></script>
+  <script src="../js/note.js"></script>
+  <script src="../js/advanced.js"></script>
+  <script src="../js/phd.js"></script>
+  <script src="../js/world.js"></script>
+  <script src="../js/japan.js"></script>
+  <script src="../js/humidor.js"></script>
+  <script src="../js/brands.js"></script>
+  <script src="../js/app.js"></script>
+  <script src="../js/news.js"></script>
+  <script src="../js/admin.js"></script>
+  <script src="../js/search.js"></script>
+  <script src="../js/quiz.js"></script>
+  <script src="../js/realsize.js"></script>
+  <script src="../js/stock.js"></script>
+  <script src="../js/motion.js"></script>
 </body>
 </html>

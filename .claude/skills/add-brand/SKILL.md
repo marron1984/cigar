@@ -129,19 +129,20 @@ CRITICAL — WebFetch は使用禁止（この環境では失敗する）。調�
 
 ---
 
-## 4. 要約データを作り直す
+## 4. ビルドし直す
 
 `data/brands.js` は重い（約4.8MB）ので、サイトはブランド大全を開いたときにだけ読み込む。
 ホーム（今日の一本・銘柄ショーケース・収録数）・横断検索・記録ノートのブランド選択肢・
 在庫のAI手がかりは、名前だけを抜き出した **`data/summary.js`** を見ている。
-ブランドを足したら、これを作り直さないと新しい銘柄がそれらに出てこない：
+ブランドを足したら、これを作り直さないと新しい銘柄がそれらに出てこない。
+英語版シェルと各ページの入口（`/brands/` など）もまとめて作り直すので、これ1本でよい：
 
 ```bash
-NODE_PATH=/opt/node22/lib/node_modules /opt/node22/bin/node tools/build_summary.js
+NODE_PATH=/opt/node22/lib/node_modules /opt/node22/bin/node tools/build.js
 ```
 
-（`data/data.js` `data/phd.js` `data/advanced*.js` `data/world*.js` `data/news.js` を
-変えたときも同じく作り直す。要約はこれらからも作っている。）
+（`data/summary.js` → `en/index.html` → 各ページ・`sitemap.xml`・`robots.txt` →
+公開まわりの確認、の順に走る。詳しくは README の「ビルド」を参照。）
 
 ---
 
@@ -164,10 +165,9 @@ TOTAL JS ERRORS: 0 | routes with overflow: 0 | empty routes: 0
 うまくいかず中身が出なかったページの数。エラー・はみ出し・空ページが出たら、その行に出る
 ページ名を手がかりに原因を直してから再実行する。
 
-英語版のシェル（`en/index.html`）を作り直したときは、そちらも確認する：
+英語版も同じく確認する：
 
 ```bash
-NODE_PATH=/opt/node22/lib/node_modules /opt/node22/bin/node tools/build_en.js
 NODE_PATH=/opt/node22/lib/node_modules /opt/node22/bin/node .claude/skills/add-brand/scripts/render_check.js en/index.html
 ```
 
@@ -176,11 +176,11 @@ NODE_PATH=/opt/node22/lib/node_modules /opt/node22/bin/node .claude/skills/add-b
 ## 6. コミット＆プッシュ
 
 作業ブランチ（このプロジェクトの指定ブランチ）へコミットしてプッシュする。
-断片ファイル（`data/fragments/`）は .gitignore 済みなので、コミット対象は
-`data/brands.js` と作り直した `data/summary.js`：
+断片ファイル（`data/fragments/`）は .gitignore 済み。ビルドで書き換わった生成物
+（`data/summary.js`・`en/`・各ページのディレクトリ・`sitemap.xml`）も一緒に入れる：
 
 ```bash
-git add data/brands.js data/summary.js
+git add -A
 git commit -m "ブランド大全に〈ブランド名〉を追加（海外一次ソース基づく深掘り・出典N件）"
 git push -u origin <作業ブランチ>
 ```

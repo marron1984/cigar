@@ -1,0 +1,5 @@
+# Cigar Cafe — tools/build_pages.js が生成しています
+User-agent: *
+Allow: /
+
+Sitemap: https://cigar.cafe/sitemap.xml

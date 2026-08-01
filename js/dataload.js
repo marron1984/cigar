@@ -12,15 +12,18 @@
    ・英語版（/en/）では data/en/*.js の差し替えも同じ組に入れて読む
    ============================================================ */
 const DATA = (() => {
-  /* このファイル自身の場所から、data/ までの道のりを割り出す。
-     日本語版は "js/dataload.js"、英語版は "../js/dataload.js" なので
-     前者は ""、後者は "../" が土台になる。 */
+  /* このファイル自身の在り処から、サイトの根っこ（data/ や assets/ がある場所）を
+     割り出す。currentScript.src は絶対URLに解決済みなので、
+     /brands/ のような下層ページでも、pushState でアドレスが変わったあとでも、
+     同じ場所を指し続ける（相対パスのままだと下層で迷子になる）。 */
   const BASE = (() => {
     const el = document.currentScript;
-    const src = el ? (el.getAttribute("src") || "") : "";
+    const src = el ? el.src : "";
     const i = src.lastIndexOf("js/dataload.js");
     return i >= 0 ? src.slice(0, i) : "";
   })();
+  /* JSが後から作る <img> などの当て先。ほかのファイルからも使う。 */
+  window.SITE_ROOT = BASE;
 
   const isEn = (typeof window !== "undefined" && window.SITE_LANG === "en");
 

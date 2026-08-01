@@ -7,6 +7,8 @@ const BRANDS = (() => {
      読み込みが済んでから init() が呼ばれるので、そこで受け取る。 */
   let B = null;
   const useData = () => { if (!B) B = BRANDS_DATA; };
+  /* ロゴ画像の当て先。下層ページ（/brands/）でも迷子にならないよう根っこから指す */
+  const ASSET = (window.SITE_ROOT || "") + "assets/";
   const q = (s, el = document) => el.querySelector(s);
   const qa = (s, el = document) => [...el.querySelectorAll(s)];
   const e = (s) => String(s == null ? "" : s)
@@ -80,7 +82,7 @@ const BRANDS = (() => {
   }
   // b.logo に画像ファイル名（assets内）があればロゴ画像、無ければ頭文字エンブレム
   function brandEmblem(b) {
-    if (b.logo) return `<span class="brand-emblem has-img"><img src="assets/${e(b.logo)}" alt="" loading="lazy"></span>`;
+    if (b.logo) return `<span class="brand-emblem has-img"><img src="${ASSET}${e(b.logo)}" alt="" loading="lazy"></span>`;
     return `<span class="brand-emblem" style="--bg:${brandColor(b)}" aria-hidden="true">${e(brandInitials(b))}</span>`;
   }
 

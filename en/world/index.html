@@ -1,35 +1,36 @@
+<!-- このファイルは tools/build_pages.js が index.html から作っています。手で編集しないでください。 -->
 <!DOCTYPE html>
 <html lang="en"><head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#f7f1e7">
-  <title>Cigar Cafe — cigars, explained gently</title>
-  <meta name="description" content="A friendly introduction to cigars. Basics, countries and origins, sizes, prices and accessories — explained plainly, with a journal for the cigars you smoke.">
-  <link rel="canonical" href="https://cigar.cafe/en/">
-  <link rel="alternate" hreflang="ja" href="https://cigar.cafe/">
-  <link rel="alternate" hreflang="en" href="https://cigar.cafe/en/">
-  <link rel="alternate" hreflang="x-default" href="https://cigar.cafe/">
+  <title>The cigar world — timeline, culture, lounges, investment, glossary | Cigar Cafe</title>
+  <meta name="description" content="The long history and a detailed timeline, the great lounges and their culture, famous devotees, tasting in practice, investment and auctions, a full glossary, travel, and myths examined.">
+  <link rel="canonical" href="https://cigar.cafe/en/world/">
+  <link rel="alternate" hreflang="ja" href="https://cigar.cafe/world/">
+  <link rel="alternate" hreflang="en" href="https://cigar.cafe/en/world/">
+  <link rel="alternate" hreflang="x-default" href="https://cigar.cafe/world/">
 
   <!-- SNSでリンクを貼ったときのカード表示（X・LINE・Slack・Facebook 等） -->
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Cigar Cafe">
   <meta property="og:locale" content="en_US">
-  <meta property="og:url" content="https://cigar.cafe/en/">
-  <meta property="og:title" content="Cigar Cafe — cigars, explained gently">
-  <meta property="og:description" content="A friendly introduction to cigars. Basics, countries and origins, sizes, prices and accessories — explained plainly, with a journal for the cigars you smoke.">
+  <meta property="og:url" content="https://cigar.cafe/en/world/">
+  <meta property="og:title" content="The cigar world — timeline, culture, lounges, investment, glossary | Cigar Cafe">
+  <meta property="og:description" content="The long history and a detailed timeline, the great lounges and their culture, famous devotees, tasting in practice, investment and auctions, a full glossary, travel, and myths examined.">
   <meta property="og:image" content="https://cigar.cafe/assets/og-en.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Cigar Cafe — cigars, explained gently">
-  <meta name="twitter:description" content="A friendly introduction to cigars. Basics, countries and origins, sizes, prices and accessories — explained plainly, with a journal for the cigars you smoke.">
+  <meta name="twitter:title" content="The cigar world — timeline, culture, lounges, investment, glossary | Cigar Cafe">
+  <meta name="twitter:description" content="The long history and a detailed timeline, the great lounges and their culture, famous devotees, tasting in practice, investment and auctions, a full glossary, travel, and myths examined.">
   <meta name="twitter:image" content="https://cigar.cafe/assets/og-en.jpg">
 
   <!-- 検索結果でのサイト名表示のための構造化データ。
        下層ページでは tools/build_pages.js がパンくずに差し替える。 -->
-  <script>window.SITE_LANG = "en";</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Cigar Cafe","url":"https://cigar.cafe/en/","inLanguage":"en","description":"A friendly introduction to cigars. Basics, countries and origins, sizes, prices and accessories — explained plainly, with a journal for the cigars you smoke."}</script>
+  <script>window.SITE_LANG = "en";</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Cigar Cafe","item":"https://cigar.cafe/en/"},{"@type":"ListItem","position":2,"name":"The cigar world","item":"https://cigar.cafe/en/world/"}]}</script>
 
-  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../../css/style.css">
   <!-- ファビコンだけは絶対パスにしておく。相対のままだと、画面切替でアドレスが
        /basics/ などに変わったときにブラウザが取り直しに行って404になるため。 -->
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
@@ -44,38 +45,39 @@
     gtag('js', new Date());
     gtag('config', 'G-LPS4JQV3WJ');
   </script>
+  <script>window.SITE_ROUTE = "world";</script>
 </head>
 <body>
 
   <!-- ===== Header / Nav ===== -->
   <header class="site-header">
     <div class="nav-inner">
-      <a class="brand" href=".././" data-view="home">
-        <img class="brand-logo" src="../assets/logo.png" alt="Cigar Cafe">
+      <a class="brand" href="../.././" data-view="home">
+        <img class="brand-logo" src="../../assets/logo.png" alt="Cigar Cafe">
         <div>
           <div class="title">Cigar Cafe</div>
           <div class="sub">Enjoy the cigar</div>
         </div>
       </a>
-      <a class="lang-switch" id="langSwitch" href="../" hreflang="ja" lang="ja" title="日本語版">日本語</a>
+      <a class="lang-switch" id="langSwitch" href="/world/" hreflang="ja" lang="ja" title="日本語版">日本語</a>
       <button class="nav-toggle" id="navToggle" data-nav-toggle="" aria-label="Open or close the menu" aria-expanded="false" aria-controls="navTabs">
         <span class="nav-toggle-bars"></span>
       </button>
       <nav class="nav-tabs" id="navTabs">
-        <a href=".././" data-view="home"><span class="ic"></span><span class="lbl">Home</span></a>
-        <a href="../note/" class="nav-journal" data-view="note"><span class="ic"></span><span class="lbl">Journal</span></a>
-        <a href="../basics/" data-view="basics"><span class="ic"></span><span class="lbl">Basics</span></a>
-        <a href="../countries/" data-view="countries"><span class="ic"></span><span class="lbl">Origins</span></a>
-        <a href="../sizes/" data-view="sizes"><span class="ic"></span><span class="lbl">Sizes</span></a>
-        <a href="../prices/" data-view="prices"><span class="ic"></span><span class="lbl">Prices</span></a>
-        <a href="../accessories/" data-view="tools"><span class="ic"></span><span class="lbl">Tools</span></a>
-        <a href="../humidor/" data-view="humidor"><span class="ic"></span><span class="lbl">Humidors</span></a>
-        <a href="../advanced/" data-view="advanced"><span class="ic"></span><span class="lbl">Advanced</span></a>
-        <a href="../phd/" data-view="phd"><span class="ic"></span><span class="lbl">Doctorate</span></a>
-        <a href="../japan/" data-view="japan"><span class="ic"></span><span class="lbl">Japan Guide</span></a>
-        <a href="../world/" data-view="world"><span class="ic"></span><span class="lbl">The World</span></a>
-        <a href="../brands/" data-view="brands"><span class="ic"></span><span class="lbl">Brands</span></a>
-        <a href="../news/" data-view="news"><span class="ic"></span><span class="lbl">News</span></a>
+        <a href="../.././" data-view="home"><span class="ic"></span><span class="lbl">Home</span></a>
+        <a href="../../note/" class="nav-journal" data-view="note"><span class="ic"></span><span class="lbl">Journal</span></a>
+        <a href="../../basics/" data-view="basics"><span class="ic"></span><span class="lbl">Basics</span></a>
+        <a href="../../countries/" data-view="countries"><span class="ic"></span><span class="lbl">Origins</span></a>
+        <a href="../../sizes/" data-view="sizes"><span class="ic"></span><span class="lbl">Sizes</span></a>
+        <a href="../../prices/" data-view="prices"><span class="ic"></span><span class="lbl">Prices</span></a>
+        <a href="../../accessories/" data-view="tools"><span class="ic"></span><span class="lbl">Tools</span></a>
+        <a href="../../humidor/" data-view="humidor"><span class="ic"></span><span class="lbl">Humidors</span></a>
+        <a href="../../advanced/" data-view="advanced"><span class="ic"></span><span class="lbl">Advanced</span></a>
+        <a href="../../phd/" data-view="phd"><span class="ic"></span><span class="lbl">Doctorate</span></a>
+        <a href="../../japan/" data-view="japan"><span class="ic"></span><span class="lbl">Japan Guide</span></a>
+        <a href="../../world/" data-view="world"><span class="ic"></span><span class="lbl">The World</span></a>
+        <a href="../../brands/" data-view="brands"><span class="ic"></span><span class="lbl">Brands</span></a>
+        <a href="../../news/" data-view="news"><span class="ic"></span><span class="lbl">News</span></a>
       </nav>
     </div>
   </header>
@@ -86,7 +88,7 @@
     <section class="view" id="view-home">
       <!-- ===== 全画面のヒーロー ===== -->
       <div class="hero-cine">
-        <img class="hc-media" src="../assets/hero-welcome.png" alt="" aria-hidden="true">
+        <img class="hc-media" src="../../assets/hero-welcome.png" alt="" aria-hidden="true">
         <div class="hc-veil" aria-hidden="true"></div>
         <p class="hc-tate" aria-hidden="true"><span>Time for those</span><span>in no hurry.</span></p>
         <div class="hc-inner">
@@ -145,7 +147,7 @@
         <h2>Basics</h2>
         <p>What a cigar is, how it is built, how to smoke one, the vocabulary of flavour, wrapper shades, history and etiquette — everything worth reading before your first cigar.</p>
       </div>
-      <img class="section-photo basics-hero" src="../assets/basics-hero.png" alt="Unwinding with a cigar beside a fire" onerror="this.style.display='none'">
+      <img class="section-photo basics-hero" src="../../assets/basics-hero.png" alt="Unwinding with a cigar beside a fire" onerror="this.style.display='none'">
       <div id="basicsContent"></div>
     </section>
 
@@ -156,7 +158,7 @@
         <h2>Origins</h2>
         <p>A cigar's character is decided by the climate and soil where it was grown. Ten major origins, covered in depth — geography, history, cultivation and flavour, with sources.</p>
       </div>
-      <img class="section-photo" src="../assets/Earth.png" alt="Cigar origins around the world — the globe and a single cigar" onerror="this.style.display='none'">
+      <img class="section-photo" src="../../assets/Earth.png" alt="Cigar origins around the world — the globe and a single cigar" onerror="this.style.display='none'">
       <div id="countryOverview"></div>
       <div class="subnav" id="countryNav"></div>
       <div id="countryDetail"></div>
@@ -170,7 +172,7 @@
         <h2>By size</h2>
         <p>Ring gauge and vitola change both the flavour and how long a cigar lasts. Compare the standard sizes side by side.</p>
       </div>
-      <img class="section-photo" src="../assets/Futosa.png" alt="Cigars arranged by size — from double corona to panetela" onerror="this.style.display='none'">
+      <img class="section-photo" src="../../assets/Futosa.png" alt="Cigars arranged by size — from double corona to panetela" onerror="this.style.display='none'">
       <div id="sizesContent"></div>
     </section>
 
@@ -181,7 +183,7 @@
         <h2>By price</h2>
         <p>From dry cigars at the convenience store to bottles-of-wine money. What each price band gives you, which brands define it, and how to choose.</p>
       </div>
-      <img class="section-photo" src="../assets/hero-portrait.jpg" alt="A fine cigar, slowly burning — what price really buys" onerror="this.style.display='none'">
+      <img class="section-photo" src="../../assets/hero-portrait.jpg" alt="A fine cigar, slowly burning — what price really buys" onerror="this.style.display='none'">
       <div id="pricesContent"></div>
     </section>
 
@@ -192,7 +194,7 @@
         <h2>Tools &amp; storage</h2>
         <p>Cutters, lighters, humidors, ashtrays — how to choose and use the tools that keep a cigar at its best.</p>
       </div>
-      <img class="section-photo" src="../assets/Cutter.png" alt="A cigar cutter — the tool for opening a cigar" onerror="this.style.display='none'">
+      <img class="section-photo" src="../../assets/Cutter.png" alt="A cigar cutter — the tool for opening a cigar" onerror="this.style.display='none'">
       <div id="toolsContent"></div>
     </section>
 
@@ -203,7 +205,7 @@
         <h2>The Complete Humidor</h2>
         <p>A dedicated study of the humidor — the one piece of equipment that decides whether a cigar is worth smoking. Its history, the makers and brands worldwide, use and maintenance, types, and price bands, researched from five angles.</p>
       </div>
-      <img class="section-photo humidor-hero" src="../assets/Fumi.png" alt="Cigars laid out in a humidor beside a hygrometer" onerror="this.style.display='none'">
+      <img class="section-photo humidor-hero" src="../../assets/Fumi.png" alt="Cigars laid out in a humidor beside a hygrometer" onerror="this.style.display='none'">
       <div class="subnav" id="humidorSubnav">
         <button data-hsub="history" class="active">History</button>
         <button data-hsub="brands">Makers</button>
@@ -225,7 +227,7 @@
         <h2>Advanced — for the obsessed</h2>
         <p>Leaf varieties and priming, fermentation and the roller's craft, how to read a Cuban, the great houses, the finer points of smoking, pairing, and the science of storage and ageing. Past this point lies the deep end.</p>
       </div>
-      <img class="section-photo" src="../assets/Factory.png" alt="A torcedor rolling cigars by hand on the factory floor" onerror="this.style.display='none'">
+      <img class="section-photo" src="../../assets/Factory.png" alt="A torcedor rolling cigars by hand on the factory floor" onerror="this.style.display='none'">
       <div class="subnav" id="advSubnav">
         <button data-sub="leaf" class="active">Leaf &amp; varieties</button>
         <button data-sub="craft">Craft</button>
@@ -251,7 +253,7 @@
         <h2>Doctorate — the scholarship of cigars</h2>
         <p>Chemistry, combustion, botany, agronomy, sensory science, industrial economics, geopolitics and health science. A top-tier reference compiled from academic and specialist sources worldwide. This is the deepest part of the site. The opening<b>literature review</b>works through the peer-reviewed papers and official monographs in each field at length.</p>
       </div>
-      <img class="section-photo" src="../assets/Master.png" alt="A cigar scholar examining a cigar under a loupe" onerror="this.style.display='none'">
+      <img class="section-photo" src="../../assets/Master.png" alt="A cigar scholar examining a cigar under a loupe" onerror="this.style.display='none'">
       <div class="subnav" id="phdSubnav">
         <button data-psub="litreview" class="active">literature review</button>
         <button data-psub="chem">Chemistry &amp; combustion</button>
@@ -283,7 +285,7 @@
 
     <!-- ===== WORLD (世界編) ===== -->
     <section class="view" id="view-world">
-      <img class="section-photo" src="../assets/Town.png" alt="Cigar culture worldwide — outside a La Casa del Habano" onerror="this.onerror=null;this.src='assets/photo-pub.jpg'">
+      <img class="section-photo" src="../../assets/Town.png" alt="Cigar culture worldwide — outside a La Casa del Habano" onerror="this.onerror=null;this.src='assets/photo-pub.jpg'">
       <div class="section-head">
         <div class="eyebrow">The World of Cigars</div>
         <h2>The World — everything cigar</h2>
@@ -318,7 +320,7 @@
         <h2>Brands</h2>
         <p>An encyclopedia of the world's cigar brands (marcas), each with its history from founding, the origin of its name, and its signature vitolas — beginning with every Cuban marca.</p>
       </div>
-      <img class="section-photo" src="../assets/Cigar.png" alt="Cigars from the great houses — Cohiba, Romeo, Partagás, Hoyo, Padrón" onerror="this.style.display='none'">
+      <img class="section-photo" src="../../assets/Cigar.png" alt="Cigars from the great houses — Cohiba, Romeo, Partagás, Hoyo, Padrón" onerror="this.style.display='none'">
       <div id="wishlistPanel"></div>
       <div class="subnav" id="brandsSubnav">
         <button data-bsub="cuba" class="active">Cuba (Habanos)</button>
@@ -381,7 +383,7 @@
 
     <!-- ===== NOTE ===== -->
     <section class="view" id="view-note">
-      <img class="section-photo" src="../assets/Wakamono.png" alt="Friends enjoying cigars in a lounge — LIFE IS BETTER WITH A CIGAR" onerror="this.onerror=null;this.src='assets/photo-ashtray.jpg'">
+      <img class="section-photo" src="../../assets/Wakamono.png" alt="Friends enjoying cigars in a lounge — LIFE IS BETTER WITH A CIGAR" onerror="this.onerror=null;this.src='assets/photo-ashtray.jpg'">
       <div class="section-head">
         <div class="eyebrow">My Cigar Journal</div>
         <h2>Journal</h2>
@@ -609,7 +611,7 @@
   <footer class="site-footer">
     <div class="footer-inner">
       <div class="footer-brand">
-        <img class="footer-logo" src="../assets/logo.png" alt="Cigar Cafe">
+        <img class="footer-logo" src="../../assets/logo.png" alt="Cigar Cafe">
         <div class="footer-brand-name">Cigar Cafe</div>
         <div class="footer-brand-en">Welcome to the world of cigars</div>
       </div>
@@ -617,26 +619,26 @@
       <nav class="footer-nav" aria-label="Footer menu">
         <div class="footer-nav-col">
           <div class="footer-nav-h">Guide</div>
-          <a href="../basics/" data-view="basics">Basics</a>
-          <a href="../countries/" data-view="countries">Origins</a>
-          <a href="../sizes/" data-view="sizes">Sizes</a>
-          <a href="../prices/" data-view="prices">Prices</a>
-          <a href="../accessories/" data-view="tools">Tools</a>
+          <a href="../../basics/" data-view="basics">Basics</a>
+          <a href="../../countries/" data-view="countries">Origins</a>
+          <a href="../../sizes/" data-view="sizes">Sizes</a>
+          <a href="../../prices/" data-view="prices">Prices</a>
+          <a href="../../accessories/" data-view="tools">Tools</a>
         </div>
         <div class="footer-nav-col">
           <div class="footer-nav-h">In depth</div>
-          <a href="../humidor/" data-view="humidor">Humidors</a>
-          <a href="../advanced/" data-view="advanced">Advanced</a>
-          <a href="../phd/" data-view="phd">Doctorate</a>
-          <a href="../japan/" data-view="japan">Japan Guide</a>
-          <a href="../world/" data-view="world">The World</a>
-          <a href="../brands/" data-view="brands">Brands</a>
-          <a href="../news/" data-view="news">News</a>
+          <a href="../../humidor/" data-view="humidor">Humidors</a>
+          <a href="../../advanced/" data-view="advanced">Advanced</a>
+          <a href="../../phd/" data-view="phd">Doctorate</a>
+          <a href="../../japan/" data-view="japan">Japan Guide</a>
+          <a href="../../world/" data-view="world">The World</a>
+          <a href="../../brands/" data-view="brands">Brands</a>
+          <a href="../../news/" data-view="news">News</a>
         </div>
         <div class="footer-nav-col">
           <div class="footer-nav-h">Journal</div>
-          <a href=".././" data-view="home">Home</a>
-          <a href="../note/" class="footer-nav-note" data-view="note">Journal</a>
+          <a href="../.././" data-view="home">Home</a>
+          <a href="../../note/" class="footer-nav-note" data-view="note">Journal</a>
         </div>
       </nav>
     </div>
@@ -664,30 +666,30 @@
   <!-- 各ページの本体データ（合計6.7MB）は、そのページを開いたときに読み込む。
        ここで読むのは、どのページでも要る基本データと、銘柄名・用語だけの要約。
        読み込みの段取りは js/dataload.js に、どのページで何を読むかもそこに。 -->
-  <script src="../data/data.js"></script>
-  <script src="../data/summary.js"></script>
-  <script src="../data/pages.js"></script>
-  <script src="../js/dataload.js"></script>
-  <script src="../js/i18n.js"></script>
-  <script src="../js/format.js"></script>
-  <script src="../js/config.js"></script>
-  <script src="../js/cloud.js"></script>
-  <script src="../js/vision.js"></script>
-  <script src="../js/note.js"></script>
-  <script src="../js/advanced.js"></script>
-  <script src="../js/phd.js"></script>
-  <script src="../js/world.js"></script>
-  <script src="../js/japan.js"></script>
-  <script src="../js/humidor.js"></script>
-  <script src="../js/brands.js"></script>
-  <script src="../js/app.js"></script>
-  <script src="../js/news.js"></script>
-  <script src="../js/admin.js"></script>
-  <script src="../js/search.js"></script>
-  <script src="../js/quiz.js"></script>
-  <script src="../js/realsize.js"></script>
-  <script src="../js/stock.js"></script>
-  <script src="../js/motion.js"></script>
+  <script src="../../data/data.js"></script>
+  <script src="../../data/summary.js"></script>
+  <script src="../../data/pages.js"></script>
+  <script src="../../js/dataload.js"></script>
+  <script src="../../js/i18n.js"></script>
+  <script src="../../js/format.js"></script>
+  <script src="../../js/config.js"></script>
+  <script src="../../js/cloud.js"></script>
+  <script src="../../js/vision.js"></script>
+  <script src="../../js/note.js"></script>
+  <script src="../../js/advanced.js"></script>
+  <script src="../../js/phd.js"></script>
+  <script src="../../js/world.js"></script>
+  <script src="../../js/japan.js"></script>
+  <script src="../../js/humidor.js"></script>
+  <script src="../../js/brands.js"></script>
+  <script src="../../js/app.js"></script>
+  <script src="../../js/news.js"></script>
+  <script src="../../js/admin.js"></script>
+  <script src="../../js/search.js"></script>
+  <script src="../../js/quiz.js"></script>
+  <script src="../../js/realsize.js"></script>
+  <script src="../../js/stock.js"></script>
+  <script src="../../js/motion.js"></script>
 
 
 </body></html>

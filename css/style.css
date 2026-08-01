@@ -107,6 +107,7 @@ button, .chip, .strength-badge, .go, .eyebrow, .kicker,
 }
 .brand {
   display: flex;
+  text-decoration: none;
   align-items: center;
   gap: 11px;
   font-family: var(--serif);
@@ -140,8 +141,13 @@ button, .chip, .strength-badge, .go, .eyebrow, .kicker,
   scrollbar-width: none;
 }
 .nav-tabs::-webkit-scrollbar { display: none; }
+/* ヘッダーのタブは検索エンジンに辿ってもらえるよう <a>（本物のリンク）にしている。
+   見た目は変えないので、button 向けだった指定をそのまま a にも効かせる。 */
+.nav-tabs a,
 .nav-tabs button {
   font-family: var(--sans);
+  text-decoration: none;
+  line-height: normal;
   font-size: .81rem;
   color: var(--text-soft);
   background: transparent;
@@ -156,9 +162,10 @@ button, .chip, .strength-badge, .go, .eyebrow, .kicker,
   align-items: center;
   gap: 7px;
 }
-.nav-tabs button .ic { display: none; }
-.nav-tabs button:hover { color: var(--cream); }
-.nav-tabs button.is-pressed { color: var(--gold-bright); }
+.nav-tabs a .ic, .nav-tabs button .ic { display: none; }
+.nav-tabs a:hover, .nav-tabs button:hover { color: var(--cream); }
+.nav-tabs a.is-pressed, .nav-tabs button.is-pressed { color: var(--gold-bright); }
+.nav-tabs a.active,
 .nav-tabs button.active {
   color: var(--cream);
   font-weight: 600;
@@ -256,6 +263,7 @@ button, .chip, .strength-badge, .go, .eyebrow, .kicker,
     background: var(--line); margin: 2px auto 6px;
   }
   .nav-tabs.open { transform: none; visibility: visible; }
+  .nav-tabs a,
   .nav-tabs button {
     width: 100%;
     justify-content: flex-start;
@@ -265,10 +273,12 @@ button, .chip, .strength-badge, .go, .eyebrow, .kicker,
     box-shadow: none;
     background: var(--panel-2);
   }
+  .nav-tabs a.active,
   .nav-tabs button.active { background: var(--gold); color: var(--on-accent); box-shadow: none; font-weight: 700; }
+  .nav-tabs a.is-pressed:not(.active),
   .nav-tabs button.is-pressed:not(.active) { background: var(--line-soft); }
   /* ホーム・記録ノートは全幅で見出し的に。以下のカテゴリは2列 */
-  .nav-tabs button[data-view="home"] { grid-column: 1 / -1; }
+  .nav-tabs [data-view="home"] { grid-column: 1 / -1; }
   .nav-tabs .nav-journal { grid-column: 1 / -1; margin: 0; padding: 14px 16px; border: none; border-radius: 12px; color: var(--gold-bright); font-weight: 700; }
 }
 
@@ -608,6 +618,7 @@ html[lang="en"] .hc-tate span { width: auto; word-break: normal; line-height: 1.
 }
 .home-card {
   display: grid;
+  text-decoration: none;
   grid-template-columns: 38px 1fr auto;
   grid-template-rows: auto auto;
   align-items: center;
@@ -1301,14 +1312,16 @@ td .ve { font-size: .74rem; color: var(--muted); letter-spacing: .04em; }
   font-family: var(--sans); font-size: .64rem; font-weight: 700; letter-spacing: .12em;
   text-transform: uppercase; color: rgba(255,255,255,.4); margin-bottom: 2px;
 }
+.footer-nav-col a,
 .footer-nav-col button {
   background: none; border: none; padding: 0; margin: 0; text-align: left; cursor: pointer;
+  text-decoration: none; line-height: normal;
   font-family: var(--sans); font-size: .85rem; color: rgba(255,255,255,.8);
   transition: color var(--dur-fast) var(--ease);
 }
-.footer-nav-col button:hover { color: var(--gold); }
-button.footer-nav-note { color: #fff; font-weight: 600; }
-button.footer-nav-note:hover { color: var(--gold); }
+.footer-nav-col a:hover, .footer-nav-col button:hover { color: var(--gold); }
+.footer-nav-note { color: #fff; font-weight: 600; }
+.footer-nav-note:hover { color: var(--gold); }
 
 /* 製作者 */
 .footer-author {
