@@ -94,7 +94,7 @@ var PAGE_META = {
     }
   },
   humidor: {
-    enReady: false,
+    enReady: true,
     path: "humidor",
     ja: {
       title: "ヒュミドール大全 — 歴史・メーカー・使い方・種類・価格｜Cigar Cafe",
