@@ -8,7 +8,8 @@
      1. build_summary.js  data/*.js  → data/summary.js（軽い要約）
      2. build_en.js       index.html → en/index.html（英語版シェル）
      3. build_pages.js    上の2つ    → /brands/ などの各ページ・sitemap・robots
-     4. check_seo.js      取りこぼしの確認
+     4. build_404.js      404.html（見つからなかったときの案内）
+     5. check_seo.js      取りこぼしの確認
 
    共有カード画像（assets/og.jpg）は写真や煽り文を変えたときだけ
    tools/build_og.js を別途走らせる（毎回作り直す必要はない）。
@@ -27,6 +28,7 @@ const steps = [
   ["要約データ", "tools/build_summary.js"],
   ["英語版シェル", "tools/build_en.js"],
   ["各ページ・sitemap・robots", "tools/build_pages.js"],
+  ["見つからないときの案内", "tools/build_404.js"],
   ["公開まわりの確認", "tools/check_seo.js"]
 ];
 
