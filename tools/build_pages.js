@@ -43,6 +43,76 @@ function setAttr(html, selectorRe, attr, value) {
   });
 }
 
+/* ---------- ページごとの構造化データ ----------
+   「何がいくつ載っているか」を検索エンジンにも読める形で添える。
+   本文に無いことは書かない（数も名前も、実データから作る）。 */
+function loadGlobal(files, name) {
+  try {
+    const src = files.map(f => fs.readFileSync(path.join(ROOT, f), "utf8")).join("\n;\n");
+    return new Function(src + "\n;return " + name + ";")();
+  } catch (e) { return null; }
+}
+const SUMMARY = {
+  ja: loadGlobal(["data/summary.js"], "BRANDS_SUMMARY"),
+  en: loadGlobal(["data/en/summary.js"], "BRANDS_SUMMARY")
+};
+const NEWS = loadGlobal(["data/news.js"], "NEWS_DATA");
+
+/* 用語の説明は長いので、最初のひと区切りだけ添える */
+const firstSentence = (s, max) => {
+  const t = String(s || "").split(/(?<=[。.])\s*/)[0].trim();
+  return t.length > max ? t.slice(0, max) + "…" : t;
+};
+
+function pageLd(view, lang, url, name) {
+  const S = SUMMARY[lang];
+  if (view === "brands" && S && S.brands) {
+    const items = [];
+    Object.keys(S.brands).forEach(k => (S.brands[k] || []).forEach(b => {
+      const n = (lang === "en" ? b.en : b.ja) || b.en;
+      if (n) items.push({ "@type": "ListItem", position: items.length + 1, name: n });
+    }));
+    if (!items.length) return null;
+    return {
+      "@context": "https://schema.org", "@type": "CollectionPage", url, name,
+      inLanguage: lang,
+      mainEntity: { "@type": "ItemList", numberOfItems: items.length, itemListElement: items }
+    };
+  }
+  if (view === "news" && NEWS && NEWS.items) {
+    const items = NEWS.items.map((x, i) => {
+      const t = (lang === "en" ? x.title_en : x.title_ja) || x.title_ja;
+      const o = { "@type": "ListItem", position: i + 1, name: t };
+      if (x.url) o.url = x.url;                 // 出どころは元記事
+      return o;
+    }).filter(x => x.name);
+    if (!items.length) return null;
+    return {
+      "@context": "https://schema.org", "@type": "CollectionPage", url, name,
+      inLanguage: lang,
+      mainEntity: { "@type": "ItemList", numberOfItems: items.length, itemListElement: items }
+    };
+  }
+  if (view === "world" && S && S.lexicon) {
+    const terms = S.lexicon.map(t => {
+      const n = (lang === "en" ? (t.en || t.ja) : t.ja);
+      if (!n) return null;
+      const o = { "@type": "DefinedTerm", name: n };
+      const d = firstSentence(t.desc, 160);
+      if (d) o.description = d;
+      return o;
+    }).filter(Boolean);
+    if (!terms.length) return null;
+    return {
+      "@context": "https://schema.org", "@type": "DefinedTermSet",
+      "@id": url + "#lexicon", url,
+      name: lang === "en" ? "The cigar lexicon" : "葉巻用語大全",
+      inLanguage: lang, hasDefinedTerm: terms
+    };
+  }
+  return null;
+}
+
 function buildPage(srcHtml, lang, view) {
   const m = META[view][lang];
   const p = META[view].path;
@@ -91,17 +161,20 @@ function buildPage(srcHtml, lang, view) {
 
   /* 検索結果に「Cigar Cafe › ブランド大全」のような道筋を出してもらうための構造化データ。
      ホーム（index.html）にはサイト自体の情報が直接書いてあるので、
-     下層ページではそれをパンくずに差し替える。 */
-  const ld = {
+     下層ページではそれをパンくずに差し替える。
+     収録の中身が数えられるページには、その一覧も添える（pageLd）。 */
+  const ld = [{
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
       { "@type": "ListItem", position: 1, name: "Cigar Cafe", item: SITE + base },
       { "@type": "ListItem", position: 2, name: pageName(m.title), item: url }
     ]
-  };
+  }];
+  const extra = pageLd(view, lang, url, pageName(m.title));
+  if (extra) ld.push(extra);
   h = h.replace(/<script type="application\/ld\+json">[\s\S]*?<\/script>/,
-    `<script type="application/ld+json">${JSON.stringify(ld)}</script>`);
+    `<script type="application/ld+json">${JSON.stringify(ld.length === 1 ? ld[0] : ld)}</script>`);
 
   // 最初に開くページをJSへ伝える（アドレスからも読めるが、念のため明示する）
   if (view !== "home") {

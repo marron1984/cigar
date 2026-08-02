@@ -145,11 +145,19 @@ function findChrome() {
     // 構造化データ（サイト情報）も英語版のものに
     const ld = document.querySelector('script[type="application/ld+json"]');
     if (ld) {
-      ld.textContent = JSON.stringify({
-        "@context": "https://schema.org", "@type": "WebSite", name: "Cigar Cafe",
-        url: SITE + "en/", inLanguage: "en",
-        description: (document.querySelector('meta[name="description"]') || {}).content || ""
-      });
+      ld.textContent = JSON.stringify([
+        {
+          "@context": "https://schema.org", "@type": "WebSite", name: "Cigar Cafe",
+          url: SITE + "en/", inLanguage: "en",
+          description: (document.querySelector('meta[name="description"]') || {}).content || "",
+          publisher: { "@id": SITE + "#site" }
+        },
+        {
+          "@context": "https://schema.org", "@type": "Organization", "@id": SITE + "#site",
+          name: "Cigar Cafe", url: SITE,
+          logo: { "@type": "ImageObject", url: SITE + "assets/logo.png" }
+        }
+      ]);
     }
 
     // 表示言語をJSに伝える（最初のスクリプトより前に置く）
