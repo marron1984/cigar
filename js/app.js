@@ -41,6 +41,29 @@ const COUNTRY_BRAND_KEY = {
   "Philippines": "philippines"
 };
 
+/* ブランド大全 → 国・産地別 の対応（上の逆引き）。
+   ペルー・コロンビア・インドネシア・アルゼンチンは産地ページに独立の章が無いので、
+   ここには載せない（案内を出さない） */
+const BRAND_COUNTRY_TAB = {
+  cuba: 0, dominican: 1, nicaragua: 2, honduras: 3, mexico: 4,
+  ecuador: 5, usa: 6, brazil: 7, cameroon: 8, philippines: "ph"
+};
+
+/* ブランド大全の国タブから、その産地の解説を開く（openBrandInBrands の逆向き） */
+function openCountryFromBrands(brandKey) {
+  const tab = BRAND_COUNTRY_TAB[brandKey];
+  if (tab === undefined) return;
+  showView("countries");
+  ensureView("countries").then(() => {
+    setTimeout(() => {
+      const btn = document.querySelector(`#countryNav [data-country="${tab}"]`);
+      if (btn) btn.click();
+      const d = document.getElementById("countryDetail");
+      if (d) d.scrollIntoView({ behavior: "smooth", block: "start" });
+    }, 60);
+  }).catch(() => {});
+}
+
 /* ブランドチップから「ブランド大全」の該当国タブを開き、一致する銘柄があれば展開する */
 function openBrandInBrands(key, en, ja) {
   showView("brands");

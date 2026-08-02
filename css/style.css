@@ -598,6 +598,16 @@ a.stat-box.fig:hover .sgo, a.stat-box.fig:focus-visible .sgo { opacity: 1; trans
 }
 .sc-more { font-family: var(--sans); font-size: .8rem; font-weight: 700; color: var(--gold-bright); background: none; border: none; cursor: pointer; padding: 4px; }
 .sc-more:hover { text-decoration: underline; }
+/* ブランド大全から、その産地の解説へ渡す入口 */
+.origin-go {
+  display: inline-block; margin: 0 0 16px;
+  font-family: var(--sans); font-size: .82rem; font-weight: 700;
+  color: var(--gold-bright); background: var(--panel);
+  border: 1px solid var(--line-soft); border-radius: 999px;
+  padding: 9px 17px; cursor: pointer;
+  transition: border-color .2s var(--ease), background .2s var(--ease);
+}
+.origin-go:hover { border-color: var(--gold); background: var(--panel-2); }
 .showcase-rail {
   display: grid; grid-auto-flow: column; grid-auto-columns: minmax(210px, 232px);
   gap: 14px; overflow-x: auto; overscroll-behavior-x: contain;

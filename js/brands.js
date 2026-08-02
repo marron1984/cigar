@@ -169,10 +169,17 @@ const BRANDS = (() => {
     }
     const searchId = `brandSearch-${cfg.key}`;
     const listId = `brandList-${cfg.key}`;
+    /* 産地ページに解説の章がある国は、そちらへの入口も置く
+       （気候・土壌・作り手の話は「国・産地別」に集めてあるため） */
+    const hasOrigin = typeof BRAND_COUNTRY_TAB !== "undefined" && BRAND_COUNTRY_TAB[cfg.key] !== undefined;
     el.innerHTML = `
       <p class="prose" style="margin-bottom:14px">${e(cfg.intro(list.length))}</p>
+      ${hasOrigin ? `<button type="button" class="origin-go" data-origin="${e(cfg.key)}">${e(T("この産地の気候・土壌・歴史を読む"))} →</button>` : ""}
       <input type="text" class="note-search lex-search" id="${searchId}" placeholder="${e(T("銘柄名で検索（例：コイーバ、Fuente…）"))}">
       <div id="${listId}">${list.map(b => brandAcc(b, cfg.key)).join("")}</div>`;
+
+    const go = el.querySelector("[data-origin]");
+    if (go) go.addEventListener("click", () => openCountryFromBrands(go.dataset.origin));
 
     q("#" + searchId).addEventListener("input", (ev) => {
       const term = ev.target.value.trim().toLowerCase();

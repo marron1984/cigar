@@ -786,6 +786,7 @@ var I18N = (function () {
     "葉・産地": "Leaf & origin",
     "代表的なヴィトラ・ライン": "Key vitolas & lines",
     "ブランド情報を準備中です。": "Brand entries are being prepared.",
+    "この産地の気候・土壌・歴史を読む": "Read about this origin — climate, soil and history",
     "銘柄名で検索（例：コイーバ、Fuente…）": "Search by name (e.g. Cohiba, Fuente…)",
 
     /* ---------- ページのデータ読み込み ---------- */
