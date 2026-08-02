@@ -44,11 +44,11 @@ function findChrome() {
   /* data/en/ に置いた差し替えデータは、英語版だけで読み込む。
      読み込む段取りは js/dataload.js が持っているので（ページを開いたときに
      本体データと一緒に読む）、ここでは「書き忘れ」がないかだけ確かめる。
-     lexicon.js だけは例外で、要約データ（data/summary.js）の直後にこのファイルが
-     直接スクリプトを足して読ませる。用語は横断検索も使い、どのページからでも
-     引けなければならないので、ページ単位の読み込みには載せていない。 */
+     summary.js だけは例外で、ページ単位ではなくシェルが直接読む（要約は
+     ホーム・横断検索・用語クイズがどのページからでも引くため）。このファイルが
+     data/summary.js の読み込みを英語版のものに差し替える。 */
   const enDir = path.join(ROOT, "data/en");
-  const SHELL_LOADED = ["lexicon.js"];
+  const SHELL_LOADED = ["summary.js"];
   const overlays = fs.existsSync(enDir)
     ? fs.readdirSync(enDir).filter(f => f.endsWith(".js") && !SHELL_LOADED.includes(f)).sort() : [];
   const loaderSrc = fs.readFileSync(path.join(ROOT, "js/dataload.js"), "utf8");
@@ -159,14 +159,10 @@ function findChrome() {
     if (first && first.parentNode) first.parentNode.insertBefore(s, first);
     else document.head.appendChild(s);
 
-    /* 用語の説明の英訳。要約データ（data/summary.js）は日本語で作るので、
-       その直後に読ませて、用語クイズ・横断検索が使う説明だけ英語にする。 */
+    /* 要約データは英語版のものに差し替える（同じ形で丸ごと用意してあるので、
+       日本語版と両方読ませない）。ホームの今日の一本・横断検索・用語クイズが使う。 */
     const sum = document.querySelector('script[src$="data/summary.js"]');
-    if (sum && sum.parentNode) {
-      const lex = document.createElement("script");
-      lex.src = sum.getAttribute("src").replace("data/summary.js", "data/en/lexicon.js");
-      sum.parentNode.insertBefore(lex, sum.nextSibling);
-    }
+    if (sum) sum.setAttribute("src", sum.getAttribute("src").replace("data/summary.js", "data/en/summary.js"));
 
     return { html: document.documentElement.outerHTML, missing };
   }, [dict, SITE, HOME_EN]);

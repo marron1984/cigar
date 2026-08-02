@@ -127,31 +127,62 @@ var BRANDS_SUMMARY = ${JSON.stringify(summary)};
 
 fs.writeFileSync(path.join(ROOT, "data/summary.js"), out);
 
-/* ---------- 英語版の用語の説明 ----------
-   要約データは日本語で作る。用語クイズと横断検索は、そこから説明文を取るので、
-   英語版ではそこだけ日本語が残ってしまう。世界編の差し替え（data/en/world_*.js）を
-   当てた説明を別ファイルに出し、英語版でだけ上書きする。 */
-const enWorld = fs.existsSync(path.join(ROOT, "data/en"))
-  ? fs.readdirSync(path.join(ROOT, "data/en")).filter(f => /^world_\d+\.js$/.test(f)).sort().map(f => "data/en/" + f)
-  : [];
-if (enWorld.length) {
+/* ---------- 英語版の要約データ ----------
+   要約は日本語で作る。英語版でも、ホームの「今日の一本」とショーケース、
+   横断検索、用語クイズはここから文章を取るので、そのままでは日本語が出る。
+   差し替え（data/en/*.js）を当てた分だけを別ファイルに出し、英語版で上書きする。
+
+   英語の創業表記は、括弧の注記を落として短く整える
+   （日本語は18字で切っているが、英語は同じ内容に字数がいるため長めに取る）。 */
+function shortFoundedEn(s) {
+  const head = String(s || "").split(/[（(]/)[0].trim() || String(s || "");
+  if (head.length <= 40) return head;
+  const cut = head.slice(0, 40);
+  const sp = cut.lastIndexOf(" ");
+  return sp > 12 ? cut.slice(0, sp) : cut;
+}
+const enDir2 = path.join(ROOT, "data/en");
+const enPick = (re) => fs.existsSync(enDir2)
+  ? fs.readdirSync(enDir2).filter(f => re.test(f)).sort().map(f => "data/en/" + f) : [];
+const enWorld = enPick(/^world_\d+\.js$/);
+const enBrands = enPick(/^brands_[a-z]+_\d+\.js$/);
+
+if (enWorld.length && enBrands.length) {
+  /* 差し替えを当てたうえで、日本語版とまったく同じ形の要約をもう一組作る。
+     英語版は data/summary.js の代わりにこちらを読む（二重に読ませない）。 */
+  const summaryEn = JSON.parse(JSON.stringify(summary));
+
   const W_EN = loadGlobal(["data/world.js", "data/world_deep.js", ...enWorld], "WORLD_DATA");
-  const pairs = (W_EN.lexicon || []).map(t => [t.ja, t.desc]);
+  const lexEn = new Map((W_EN.lexicon || []).map(t => [t.ja, t.desc]));
+  summaryEn.lexicon.forEach(t => { if (lexEn.has(t.ja)) t.desc = lexEn.get(t.ja); });
+
+  const B_EN = loadGlobal(["data/brands.js", ...enBrands], "BRANDS_DATA");
+  let nBr = 0;
+  Object.keys(summaryEn.brands).forEach(key => {
+    const src = new Map((B_EN[key] || []).map(b => [b.en, b]));
+    summaryEn.brands[key].forEach(b => {
+      const e = src.get(b.en);
+      if (!e) return;
+      if (e.founded) b.f = shortFoundedEn(e.founded);
+      const lead = String(e.history || "").replace(/【[^】]*】/g, "").trim().slice(0, LEAD);
+      if (lead) b.d = lead;
+      nBr++;
+    });
+  });
+
   const outEn =
 `/* ============================================================
-   Cigar Cafe — 用語の説明（英語・自動生成・手で編集しない）
-   tools/build_summary.js が data/en/world_*.js から作る。
-   英語版でだけ読み、BRANDS_SUMMARY.lexicon の説明を英語に差し替える。
+   Cigar Cafe — 要約データ・英語版（自動生成・手で編集しない）
+   tools/build_summary.js が data/en/*.js を当てて作る。
+   英語版のシェルは data/summary.js の代わりにこれを読む。
+   中身の形は日本語版とまったく同じ（銘柄名の ja は併記に使うので残す）。
    ============================================================ */
-(function () {
-  if (typeof BRANDS_SUMMARY === "undefined" || !BRANDS_SUMMARY.lexicon) return;
-  var EN = ${JSON.stringify(Object.fromEntries(pairs))};
-  BRANDS_SUMMARY.lexicon.forEach(function (t) { if (EN[t.ja]) t.desc = EN[t.ja]; });
-})();
+var BRANDS_SUMMARY = ${JSON.stringify(summaryEn)};
 `;
-  fs.writeFileSync(path.join(ROOT, "data/en/lexicon.js"), outEn);
+  fs.writeFileSync(path.join(ROOT, "data/en/summary.js"), outEn);
   const gzEn = zlib.gzipSync(Buffer.from(outEn), { level: 9 }).length;
-  console.log(`data/en/lexicon.js を生成しました。 用語 ${pairs.length}語 / ${(outEn.length / 1024).toFixed(0)}KB（gzip ${(gzEn / 1024).toFixed(0)}KB）`);
+  console.log(`data/en/summary.js を生成しました。 用語 ${summaryEn.lexicon.length}語 / 銘柄 ${nBr}件`);
+  console.log(`  サイズ ${(outEn.length / 1024).toFixed(0)}KB（gzip ${(gzEn / 1024).toFixed(0)}KB）`);
 }
 
 const gz = zlib.gzipSync(Buffer.from(out), { level: 9 }).length;

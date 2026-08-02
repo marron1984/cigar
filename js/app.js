@@ -440,7 +440,7 @@ function renderHome() {
       <div class="fb-kicker">${T("今日の一本")} — ${esc(I18N.country(pick.cja))}</div>
       <h2 class="fb-title">${esc(namePair(pick.b.ja, pick.b.en)[0])}</h2>
       <div class="fb-en">${esc(namePair(pick.b.ja, pick.b.en)[1])}</div>
-      ${I18N.isEn ? "" : `<p class="fb-lead">${esc(bLead(pick.b))}…</p>`}
+      <p class="fb-lead">${esc(bLead(pick.b))}…</p>
       <div class="fb-go">${T("ブランド大全で読む")} →</div>
     </article>` : "";
   const dc = $("#homeFeature .feature-brand");
