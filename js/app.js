@@ -371,25 +371,26 @@ function dailyBrandPick() {
 }
 
 /* 収録内容から「数字」を集計する。データを足せば自動で増えるので、
-   手で書いた数字が古くなることがない。 */
+   手で書いた数字が古くなることがない。
+   view はその数字が指している中身のページ（カードごと押せるようにする）。 */
 function homeFigures() {
   const out = [];
   try {
     const IDX = brandsIndex();
     const keys = Object.keys(IDX);
     const brands = keys.reduce((n, k) => n + (IDX[k] || []).length, 0);
-    if (brands) out.push({ v: brands, u: "", l: T("収録ブランド"), s: T("世界の銘柄（マルカ）を創業から現在まで") });
-    if (keys.length) out.push({ v: keys.length, u: "", l: T("産地・国"), s: T("キューバから東南アジアまで") });
+    if (brands) out.push({ v: brands, u: "", view: "brands", l: T("収録ブランド"), s: T("世界の銘柄（マルカ）を創業から現在まで") });
+    if (keys.length) out.push({ v: keys.length, u: "", view: "countries", l: T("産地・国"), s: T("キューバから東南アジアまで") });
   } catch (e) { /* データ未読込でも他は出す */ }
   try {
     const v = (CIGAR_DATA && CIGAR_DATA.vitolas || []).length;
-    if (v) out.push({ v, u: "", l: T("サイズ（ビトラ）"), s: T("寸法と味わいの目安つき") });
+    if (v) out.push({ v, u: "", view: "sizes", l: T("サイズ（ビトラ）"), s: T("寸法と味わいの目安つき") });
   } catch (e) {}
   try {
     // ニュース本体はニュースページを開くまで読まないので、件数は要約データから
     const n = (typeof BRANDS_SUMMARY !== "undefined" && BRANDS_SUMMARY.newsCount)
       || ((window.NEWS_DATA && window.NEWS_DATA.items) || []).length;
-    if (n) out.push({ v: n, u: "", l: T("翻訳ニュース"), s: T("海外一次ソース＋国内の動き") });
+    if (n) out.push({ v: n, u: "", view: "news", l: T("翻訳ニュース"), s: T("海外一次ソース＋国内の動き") });
   } catch (e) {}
   return out;
 }
@@ -426,12 +427,15 @@ function showcaseBrands(n) {
 function renderHome() {
   /* --- 数字 --- */
   const figs = homeFigures();
+  /* 数字はそれぞれの中身のページへの入口にする（ナビと同じ書き方で、
+     押せばそのページへ。アドレスも持たせるので新しいタブで開ける）。 */
   $("#homeFigures").innerHTML = figs.length ? figs.map(f => `
-    <div class="stat-box fig">
+    <a class="stat-box fig" href="${esc(viewUrl(f.view))}" data-view="${esc(f.view)}">
       <div class="sv">${f.v}${f.u}</div>
       <div class="sl">${esc(f.l)}</div>
       <div class="sn">${esc(f.s)}</div>
-    </div>`).join("") : "";
+      <span class="sgo" aria-hidden="true">→</span>
+    </a>`).join("") : "";
 
   /* --- 今日の一本 --- */
   const pick = dailyBrandPick();

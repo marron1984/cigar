@@ -556,6 +556,19 @@ html[lang="en"] .hc-tate span { width: auto; word-break: normal; line-height: 1.
 }
 .stat-box.fig .sl { font-family: var(--sans); font-size: .84rem; font-weight: 700; color: var(--cream); margin-top: 12px; }
 .stat-box.fig .sn { font-family: var(--serif); font-size: .78rem; color: var(--muted); margin-top: 6px; line-height: 1.7; }
+/* 数字はそれぞれの中身のページへの入口。押せることが分かる程度に控えめに。 */
+a.stat-box.fig { display: block; text-decoration: none; position: relative; transition: background .25s var(--ease); }
+a.stat-box.fig .sgo {
+  position: absolute; right: 16px; bottom: 16px;
+  color: var(--gold); opacity: 0; transform: translateX(-4px);
+  transition: opacity .25s var(--ease), transform .25s var(--ease);
+}
+a.stat-box.fig:hover, a.stat-box.fig:focus-visible { background: var(--panel-2); }
+a.stat-box.fig:hover .sgo, a.stat-box.fig:focus-visible .sgo { opacity: 1; transform: translateX(0); }
+/* 指で触る画面はホバーが無いので、行き先の印を最初から薄く出しておく */
+@media (hover: none) {
+  a.stat-box.fig .sgo { opacity: .5; transform: none; }
+}
 
 /* ---------- 今日の一本（特集） ---------- */
 .feature-brand {
