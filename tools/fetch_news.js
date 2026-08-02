@@ -146,7 +146,13 @@ const SYSTEM = `あなたは葉巻専門メディアの日本語版デスクで�
 【英語版】このサイトには英語版もある。各記事に英語の見出し title_en と
 英語の要約 summary_en も書くこと。英語ソースの記事は原文見出し・本文に忠実に、
 日本語ソースの記事は日本語の見出し・要約を自然な英語に。summary_en は
-summary_ja と同じ情報量（イギリス英語・報道文体・60〜120語）。`;
+summary_ja と同じ情報量（イギリス英語・報道文体・60〜120語）。
+
+出典も英語版の表示に要る。source_en には媒体名の英語表記を入れる。
+媒体が自ら名乗っている英語表記があればそれに従い（例：日本シガー協会 →
+Japan Cigar Association、マイナビニュース → Mynavi News）、無ければ
+ヘボン式のローマ字にする。英語媒体なら source と同じでよい。
+source_title_en には元記事タイトルの英訳を入れる（英語媒体なら原題のまま）。`;
 
 const SCHEMA = {
   type: "object",
@@ -163,9 +169,11 @@ const SCHEMA = {
           summary_ja: { type: "string", description: "日本語の要約（80〜200字）" },
           source: { type: "string", description: "媒体名" },
           title_en: { type: "string", description: "英語の見出し（英語ソースは原文見出しを基に、媒体名は除く。日本語ソースは英訳）" },
-          summary_en: { type: "string", description: "英語の要約（summary_ja と同じ情報量、60〜120語）" }
+          summary_en: { type: "string", description: "英語の要約（summary_ja と同じ情報量、60〜120語）" },
+          source_en: { type: "string", description: "媒体名の英語表記（英語媒体なら source と同じ）" },
+          source_title_en: { type: "string", description: "元記事タイトルの英訳（英語媒体なら原題のまま）" }
         },
-        required: ["i", "category", "title_ja", "summary_ja", "source", "title_en", "summary_en"],
+        required: ["i", "category", "title_ja", "summary_ja", "source", "title_en", "summary_en", "source_en", "source_title_en"],
         additionalProperties: false
       }
     }
@@ -303,7 +311,11 @@ var NEWS_DATA = `;
       title_en: p.title_en || c.title,
       summary_en: p.summary_en || "",
       source: p.source || c.source,
-      source_title: p.title_en || c.title,
+      /* 出典は原語のまま持ち、英語版の表示ぶんを別に添える（js/news.js が使い分ける）。
+         元記事の題は原題そのまま。英訳が取れなければ英語の見出しで代用する。 */
+      source_title: c.title || p.title_en,
+      source_en: p.source_en || p.source || c.source,
+      source_title_en: p.source_title_en || p.title_en || c.title,
       url: c.url
     });
     console.log(`  + [${p.category}] ${p.title_ja}`);

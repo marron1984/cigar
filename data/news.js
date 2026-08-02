@@ -82,6 +82,8 @@ var NEWS_DATA = {
       "summary_ja": "日本シガー協会は2026年6月25日にキューバシガーの定価を追加し、7月15日にも定価表を更新した。同協会はハバノスの日本定価表を公式サイトで公開しており、財務省未登録の葉巻の販売や定価以上での販売はたばこ事業法により禁止されている。世界的にはハバノスS.A.の値上げとシガー葉の不作による供給不足も報告されている。",
       "source": "日本シガー協会",
       "source_title": "日本シガー協会 | ハバノス日本定価表",
+      "source_en": "Japan Cigar Association",
+      "source_title_en": "Japan Cigar Association | Habanos Japanese price list",
       "url": "https://cigar.or.jp/",
       "title_en": "Japan Cigar Association Updates Official Habanos Price List",
       "summary_en": "The Japan Cigar Association added new Cuban cigar prices on 25 June 2026 and updated its price list again on 15 July. The association publishes the official Japanese price list for Habanos on its website; under the Tobacco Business Act, selling cigars not registered with the Ministry of Finance, or selling above the official price, is prohibited. Globally, price rises by Habanos S.A. and supply shortages caused by poor cigar-leaf harvests have also been reported."
@@ -126,6 +128,8 @@ var NEWS_DATA = {
       "summary_ja": "日本たばこアイメックスが取り扱う手巻き用シャグ、パイプ葉、葉巻などの輸入・専門たばこが2026年7月1日より一斉に定価改定された。コイーバ、モンテクリスト、ロメオ・Y・ジュリエッタ、パルタガスなどのシガリロ・ミニシガーも対象で、クラブサイズ（20本入）は1箱あたり700〜900円、トスカネロは1箱（5本入）あたり100円の値上げとなった。",
       "source": "ブリケオンライン",
       "source_title": "【2026年7月】シャグ・パイプ葉・葉巻値上がり情報！チョイスやトスカネロの新価格とまとめ買い期限",
+      "source_en": "Briquet Online",
+      "source_title_en": "July 2026: price rises for shag, pipe tobacco and cigars — new prices for Choice and Toscanello, and the deadline for buying at the old price",
       "url": "https://www.briquetonline.com/news/choicetoscanelloneage2026-7",
       "title_en": "Japan Tobacco Imex Raises Prices on Imported Cigars from 1 July",
       "summary_en": "Imported and speciality tobacco handled by Japan Tobacco Imex — including hand-rolling shag, pipe tobacco and cigars — underwent an across-the-board price revision from 1 July 2026. Cigarillos and mini cigars from Cohiba, Montecristo, Romeo y Julieta and Partagás are among the products affected, with club sizes (packs of 20) rising by 700 to 900 yen per pack and Toscanello by 100 yen per pack of five."
@@ -137,6 +141,8 @@ var NEWS_DATA = {
       "summary_ja": "JTは2026年7月1日より「キャメル・クラフト」全18銘柄と「ナチュラル アメリカン スピリット」全7銘柄の計25銘柄を値上げした。キャメル・クラフトは450円から470円、アメリカン スピリット（14本入）は420円から440円への改定で、あわせて販売終了品の情報もまとめられている。",
       "source": "ブリケオンライン",
       "source_title": "【2026年7月】紙巻きたばこ値上がり情報！キャメル・アメスピ新価格と販売終了品まとめ",
+      "source_en": "Briquet Online",
+      "source_title_en": "July 2026: cigarette price rises — new prices for Camel and American Spirit, and the lines being discontinued",
       "url": "https://www.briquetonline.com/news/camelamespineage2026-7",
       "title_en": "JT Revises Prices on 25 Camel Craft and American Spirit Brands",
       "summary_en": "From 1 July 2026, JT raised prices on a total of 25 products: all 18 Camel Craft variants and all seven Natural American Spirit variants. Camel Craft moves from 450 yen to 470 yen, while American Spirit (packs of 14) rises from 420 yen to 440 yen. Information on discontinued products has also been compiled alongside the changes."
@@ -269,6 +275,8 @@ var NEWS_DATA = {
       "summary_ja": "JTは4月8日付で紙巻たばこ2銘柄の廃止を発表し、2026年5月下旬より順次、在庫売り尽くしをもって販売を終了するとした。JTは過去にも「わかば」「エコー」を紙巻から葉巻（リトルシガー）へ移行させるなど、税制動向に応じた製品ラインの再編を続けている。",
       "source": "JT公式",
       "source_title": "紙巻たばこ2銘柄の廃止について",
+      "source_en": "Japan Tobacco (official)",
+      "source_title_en": "Discontinuation of two cigarette brands",
       "url": "https://www.jti.co.jp/news/20260408_01.html",
       "title_en": "JT Announces Discontinuation of Two Cigarette Brands",
       "summary_en": "JT announced on 8 April that it will discontinue two cigarette brands, with sales ending progressively from late May 2026 as remaining stock sells out. JT has previously continued to reorganise its product lines in response to tax developments, including moving Wakaba and Echo from cigarettes to little cigars."
@@ -346,6 +354,8 @@ var NEWS_DATA = {
       "summary_ja": "ダブルハピネスなどのリトルシガーは2026年4月の加熱式たばこ増税の対象外で、価格は2021年10月以来据え置きが続いている。ただし紙巻たばことリトルシガーは2027年4月・2028年4月・2029年4月の3段階で1本あたり0.5円ずつ増税される計画で、1回あたり10円前後の値上げが3年続く見通しとされる。",
       "source": "プライシー",
       "source_title": "【2026年最新】ダブルハピネスの値上げ後の値段と銘柄一覧",
+      "source_en": "Pricey",
+      "source_title_en": "2026 update: Double Happiness prices after the increase, with the full line-up",
       "url": "https://www.pricey.jp/web/articles/4782",
       "title_en": "Little Cigars Exempt from 2026 Tax Rise; Three-Stage Increases from April 2027",
       "summary_en": "Little cigars such as Double Happiness are not covered by the April 2026 tax increase on heated tobacco products, and their prices have remained unchanged since October 2021. However, cigarettes and little cigars are due to be taxed an additional 0.5 yen per stick in three stages — April 2027, April 2028 and April 2029 — with price rises of around 10 yen expected each time over three consecutive years."
@@ -379,6 +389,8 @@ var NEWS_DATA = {
       "summary_ja": "たばこ税は2026年4月と10月に加熱式たばこを対象に引き上げられ、その後は加熱式・紙巻きともに1本あたり0.5円ずつ3回に分けて段階的に増税される予定。JTもこれを受け、4月1日からプルーム用たばこスティック「エボ」「メビウス」「キャメル」などを1箱あたり20〜30円値上げした。",
       "source": "SOMPOインスティチュート・プラス",
       "source_title": "たばこ税が2026年4月に引上げへ",
+      "source_en": "Sompo Institute Plus",
+      "source_title_en": "Tobacco duty to rise in April 2026",
       "url": "https://www.sompo-ri.co.jp/topics_plus/20260303-22123/",
       "title_en": "Japan's Tobacco Tax to Rise on Heated Products in April and October 2026",
       "summary_en": "Japan's tobacco tax will be raised on heated tobacco products in April and October 2026, after which taxes on both heated tobacco and cigarettes are set to rise in three stages of 0.5 yen per stick. In response, JT raised prices of its Ploom tobacco sticks, including Evo, Mevius and Camel, by 20 to 30 yen per pack from 1 April."
@@ -456,6 +468,8 @@ var NEWS_DATA = {
       "summary_ja": "インターコンチネンタル商事が輸入するアメリカ定番シガー「スウィッシャースイート」のフォイルパウチから、新フレーバー「グリーン」と「ハニーバナナ」の2銘柄が2月2日より全国発売された。すっきりした甘さのグリーンと、ハニー＆バナナの甘い香りのハニーバナナで、2本入り290円と気軽に試せる価格設定となっている。",
       "source": "マイナビニュース",
       "source_title": "気軽に試せる2本290円。アメリカ定番シガー「スウィッシャースイート」に2つの新フレーバー",
+      "source_en": "Mynavi News",
+      "source_title_en": "Two for 290 yen and easy to try: two new flavours for Swisher Sweets, the American cigar staple",
       "url": "https://news.mynavi.jp/article/20260204-4074054/",
       "title_en": "Swisher Sweets Foil Pouches Add Two New Flavours Nationwide in Japan",
       "summary_en": "Two new flavours, Green and Honey Banana, went on sale nationwide from 2 February in the foil-pouch range of Swisher Sweets, the classic American cigar imported by Intercontinental Shoji. Green offers a clean sweetness, while Honey Banana carries the sweet aroma of honey and banana; at 290 yen for a pack of two, they are priced for easy trial."

@@ -16,6 +16,12 @@ const NEWS = (() => {
     if (!m) return d || "";
     return m[3] ? `${m[1]}.${Number(m[2])}.${Number(m[3])}` : `${m[1]}.${Number(m[2])}`;
   }
+  /* 出典の媒体名・記事名。国内ソースは日本語しか持たないことがあるので、
+     英語版では媒体自身が名乗っている英語表記（source_en / source_title_en）を優先し、
+     無ければ日本語のまま出す（出典としての正確さを損なわないため）。 */
+  function srcName(n) { return (I18N.isEn && n.source_en) || n.source || ""; }
+  function srcTitle(n) { return (I18N.isEn && n.source_title_en) || n.source_title || ""; }
+
   // 並べ替え用（月のみの日付は月末扱いで安定ソート）
   function sortKey(d) {
     const m = /^(\d{4})-(\d{2})(?:-(\d{2}))?$/.exec(d || "");
@@ -54,7 +60,7 @@ const NEWS = (() => {
           </div>
           <h3 class="news-title">${esc(I18N.isEn && n.title_en ? n.title_en : n.title_ja)}</h3>
           <p class="news-sum">${esc(I18N.isEn && n.summary_en ? n.summary_en : n.summary_ja)}</p>
-          <div class="news-src">${T("出典：")}${esc(n.source || "")}${n.source_title ? `「${esc(n.source_title)}」` : ""}
+          <div class="news-src">${T("出典：")}${esc(srcName(n))}${srcTitle(n) ? (I18N.isEn ? ` “${esc(srcTitle(n))}”` : `「${esc(srcTitle(n))}」`) : ""}
             ${n.url ? `<a href="${esc(n.url)}" target="_blank" rel="noopener">${T(n.category === "日本国内" ? "元記事を読む →" : "原文を読む（英語）→")}</a>` : ""}
           </div>
         </article>`).join("")}
