@@ -154,7 +154,7 @@ var PAGE_META = {
     }
   },
   brands: {
-    enReady: false,
+    enReady: true,
     path: "brands",
     ja: {
       title: "葉巻ブランド大全 — 世界の銘柄（マルカ）を創業から現在まで｜Cigar Cafe",
