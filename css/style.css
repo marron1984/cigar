@@ -429,6 +429,14 @@ main { max-width: 1180px; margin: 0 auto; padding: 0 20px 80px; }
   animation: hcZoom 26s var(--ease) forwards;
 }
 @keyframes hcZoom { from { transform: scale(1.14); } to { transform: scale(1.0); } }
+/* 写真を入れ替えるときは重ね置きして透明度で移す（js/hero.js）。
+   1枚しか無い（＝入れ替えをしない）ときは今までどおり出したままにする。 */
+.hc-media.hc-next { opacity: 0; }
+.hero-cine:has(.hc-next) .hc-media { opacity: 0; transition: opacity 1.6s var(--ease); }
+.hero-cine .hc-media.on { opacity: 1; }
+@media (prefers-reduced-motion: reduce) {
+  .hc-media { animation: none; transform: none; }
+}
 .hc-veil {
   position: absolute; inset: 0;
   background:
