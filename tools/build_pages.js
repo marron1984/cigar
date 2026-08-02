@@ -149,6 +149,13 @@ function buildPage(srcHtml, lang, view) {
         (t) => t + `\n  <meta name="robots" content="noindex">`);
     }
   }
+  /* SNSカードの画像は、そのページ専用のもの（tools/build_og.py が作る）。
+     まだ作っていないページは、サイト共通の1枚のままにしておく。 */
+  const ogFile = `assets/og/${view}${lang === "en" ? "-en" : ""}.jpg`;
+  if (fs.existsSync(path.join(ROOT, ogFile))) {
+    h = setAttr(h, /<meta property="og:image"[^>]*>/, "content", `${SITE}/${ogFile}`);
+    h = setAttr(h, /<meta name="twitter:image"[^>]*>/, "content", `${SITE}/${ogFile}`);
+  }
   h = setAttr(h, /<meta property="og:url"[^>]*>/, "content", url);
   h = setAttr(h, /<meta property="og:title"[^>]*>/, "content", m.title);
   h = setAttr(h, /<meta property="og:description"[^>]*>/, "content", m.desc);

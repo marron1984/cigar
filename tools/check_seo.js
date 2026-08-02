@@ -78,8 +78,15 @@ for (const view of Object.keys(META)) {
       if (lang === "en" && !noindex) bad(`${u}: 中身が日本語のままなのに noindex がありません`);
       if (lang === "ja" && noindex) bad(`${u}: 日本語版に noindex が付いています`);
     }
-    const wantImg = SITE + (lang === "en" ? "/assets/og-en.jpg" : "/assets/og.jpg");
-    if (ogImg !== wantImg) bad(`${u}: og:image が ${ogImg}`);
+    /* SNSカードの画像。ページ専用のもの（tools/build_og.py が作る）があればそれ、
+       無ければサイト共通の1枚。どちらにせよ実物が置いてあることまで確かめる。 */
+    const own = `/assets/og/${view}${lang === "en" ? "-en" : ""}.jpg`;
+    const shared = lang === "en" ? "/assets/og-en.jpg" : "/assets/og.jpg";
+    const wantImg = SITE + (fs.existsSync(path.join(ROOT, own.slice(1))) ? own : shared);
+    if (ogImg !== wantImg) bad(`${u}: og:image が ${ogImg}（期待 ${wantImg}）`);
+    if (!fs.existsSync(path.join(ROOT, String(ogImg).replace(SITE + "/", "")))) {
+      bad(`${u}: og:image の実物がありません（${ogImg}）`);
+    }
     if (!fs.existsSync(path.join(ROOT, wantImg.replace(SITE + "/", "")))) bad(`共有画像がありません: ${wantImg}`);
 
     // 題・説明文の重複は、検索対象のページ（noindex でないもの）だけで見る

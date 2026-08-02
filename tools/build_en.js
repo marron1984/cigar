@@ -139,8 +139,8 @@ function findChrome() {
     // SNSカードも英語版のもの（英語の共有画像・英語ロケール）に差し替える
     setMeta('meta[property="og:locale"]', "content", "en_US");
     setMeta('meta[property="og:url"]', "content", SITE + "en/");
-    setMeta('meta[property="og:image"]', "content", SITE + "assets/og-en.jpg");
-    setMeta('meta[name="twitter:image"]', "content", SITE + "assets/og-en.jpg");
+    setMeta('meta[property="og:image"]', "content", SITE + "assets/og/home-en.jpg");
+    setMeta('meta[name="twitter:image"]', "content", SITE + "assets/og/home-en.jpg");
 
     // 構造化データ（サイト情報）も英語版のものに
     const ld = document.querySelector('script[type="application/ld+json"]');
