@@ -843,6 +843,9 @@ var I18N = (function () {
   function strength(s) {
     if (LANG !== "en" || !s) return s || "";
     if (STRENGTH[s]) return STRENGTH[s];
+    /* すでに英語で書かれているもの（ブランド大全の注釈つき表記など）はそのまま出す。
+       下の範囲分割にかけると "Medium–Full (…)" を刻んでしまうため、先に返す */
+    if (!/[ぁ-んァ-ヶ一-龠]/.test(s)) return s;
     /* 「ミディアム〜フル」のような範囲表記は、両端をそれぞれ訳してつなぐ */
     var WORD = { "マイルド": "Mild", "ライト": "Light", "ミディアム": "Medium", "フル": "Full" };
     return String(s).split(/[〜~–]/).map(function (w) {

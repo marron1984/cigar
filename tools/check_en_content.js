@@ -90,7 +90,13 @@ const SCOPES = {
      （国ごとに波を分けて翻訳するため。全国そろえば全量が対象になる） */
   brands: () => {
     const covered = [...new Set(OVERLAYS.map(f => (f.match(/brands_([a-z]+)_/) || [])[1]).filter(Boolean))];
-    return covered.flatMap(c => deepScan(BRD[c], "BRANDS." + c, []));
+    /* strength は SKIP_KEYS で全体からは外してある（産地ページの「ミディアム〜フル」など、
+       定型の短い表記は I18N.strength が表示時に訳すため）。
+       ただしブランド大全の強さは注釈つきの地の文なので、ここだけは訳文が要る。 */
+    return covered.flatMap(c => [
+      ...deepScan(BRD[c], "BRANDS." + c, []),
+      ...BRD[c].filter(b => b.strength).map(b => [`BRANDS.${c}[${b.en}].strength`, b.strength])
+    ]);
   },
   advanced: () => deepScan(ADV, "ADV", []),
   phd: () => deepScan(PHD, "PHD", []),
