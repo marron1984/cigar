@@ -710,6 +710,19 @@ var I18N = (function () {
     "コレクションの始め方": "Starting a collection",
     "多言語・葉巻用語大全（西 / 英 / 日）": "The cigar lexicon — Spanish / English / Japanese",
     "用語を検索（日本語・スペイン語・英語）…": "Search terms (Japanese, Spanish, English)…",
+
+    /* 用語クイズ（博士編の下部） */
+    "🎓 用語クイズに挑戦": "🎓 Take the lexicon quiz",
+    "用語大全（{n}語）から自動出題。説明文に合う用語を選んでください。":
+      "Questions are drawn from the lexicon ({n} terms). Choose the term that fits the description.",
+    "クイズを始める": "Start the quiz",
+    "この説明にあてはまる用語は？": "Which term fits this description?",
+    "{s} / {t} 問正解": "{s} / {t} correct",
+    "🎉 正解！ {n}問連続！": "🎉 Correct — {n} in a row!",
+    "⭕ 正解！": "⭕ Correct!",
+    "❌ 正解は「{t}」": "❌ The answer is “{t}”",
+    "次の問題 →": "Next question →",
+
     "{n}語": "{n} terms",
     "国・地域": "Country / territory",
     "葉巻の免税持込み（目安）": "Duty-free allowance (guide)",

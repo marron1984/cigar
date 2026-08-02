@@ -11,6 +11,10 @@ const QUIZ = (() => {
   let current = null;
   let score = 0, total = 0, streak = 0;
 
+  /* 選択肢に出す語。英語版では英語の用語（無ければ日本語のまま）。
+     西語の添え字は両方の版で出す（用語大全と同じ流儀）。 */
+  const term = (t) => (I18N.isEn && t.en) || t.ja;
+
   function pick(n, exclude) {
     // pool からランダムに n 件（exclude 以外）
     const cand = pool.filter(t => t !== exclude);
@@ -31,10 +35,10 @@ const QUIZ = (() => {
     const box = q("#quizBody");
     if (!box) return;
     box.innerHTML = `
-      <div class="qz-q">この説明にあてはまる用語は？</div>
+      <div class="qz-q">${T("この説明にあてはまる用語は？")}</div>
       <div class="qz-desc">${esc(answer.desc)}</div>
       <div class="qz-choices">${choices.map((c, i) => `
-        <button type="button" class="qz-c" data-qz="${i}">${esc(c.ja)}${c.es ? `<span class="qz-es">${esc(c.es)}</span>` : ""}</button>`).join("")}
+        <button type="button" class="qz-c" data-qz="${i}">${esc(term(c))}${c.es ? `<span class="qz-es">${esc(c.es)}</span>` : ""}</button>`).join("")}
       </div>
       <div class="qz-fb" id="quizFb"></div>`;
     box.querySelectorAll("[data-qz]").forEach(btn => {
@@ -56,15 +60,17 @@ const QUIZ = (() => {
     });
     const fb = q("#quizFb");
     fb.innerHTML = `
-      <div class="${ok ? "qz-ok" : "qz-ng"}">${ok ? (streak >= 3 ? `🎉 正解！ ${streak}問連続！` : "⭕ 正解！") : `❌ 正解は「${esc(current.answer.ja)}」`}</div>
-      <button type="button" class="btn btn-sm btn-primary" id="quizNext">次の問題 →</button>`;
+      <div class="${ok ? "qz-ok" : "qz-ng"}">${ok
+        ? (streak >= 3 ? T("🎉 正解！ {n}問連続！", { n: streak }) : T("⭕ 正解！"))
+        : T("❌ 正解は「{t}」", { t: esc(term(current.answer)) })}</div>
+      <button type="button" class="btn btn-sm btn-primary" id="quizNext">${T("次の問題 →")}</button>`;
     updateScore();
     q("#quizNext").addEventListener("click", nextQuestion);
   }
 
   function updateScore() {
     const el = q("#quizScore");
-    if (el) el.textContent = total ? `${score} / ${total} 問正解` : "";
+    if (el) el.textContent = total ? T("{s} / {t} 問正解", { s: score, t: total }) : "";
   }
 
   function init() {
@@ -81,11 +87,11 @@ const QUIZ = (() => {
     root.innerHTML = `
       <div class="quiz-card">
         <div class="qz-head">
-          <h3>🎓 用語クイズに挑戦</h3>
+          <h3>${T("🎓 用語クイズに挑戦")}</h3>
           <span class="qz-score" id="quizScore"></span>
         </div>
-        <p class="photo-hint">用語大全（${pool.length}語）から自動出題。説明文に合う用語を選んでください。</p>
-        <div id="quizBody"><button type="button" class="btn btn-primary" id="quizStart">クイズを始める</button></div>
+        <p class="photo-hint">${T("用語大全（{n}語）から自動出題。説明文に合う用語を選んでください。", { n: pool.length })}</p>
+        <div id="quizBody"><button type="button" class="btn btn-primary" id="quizStart">${T("クイズを始める")}</button></div>
       </div>`;
     q("#quizStart").addEventListener("click", nextQuestion);
   }

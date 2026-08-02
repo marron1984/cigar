@@ -127,6 +127,33 @@ var BRANDS_SUMMARY = ${JSON.stringify(summary)};
 
 fs.writeFileSync(path.join(ROOT, "data/summary.js"), out);
 
+/* ---------- 英語版の用語の説明 ----------
+   要約データは日本語で作る。用語クイズと横断検索は、そこから説明文を取るので、
+   英語版ではそこだけ日本語が残ってしまう。世界編の差し替え（data/en/world_*.js）を
+   当てた説明を別ファイルに出し、英語版でだけ上書きする。 */
+const enWorld = fs.existsSync(path.join(ROOT, "data/en"))
+  ? fs.readdirSync(path.join(ROOT, "data/en")).filter(f => /^world_\d+\.js$/.test(f)).sort().map(f => "data/en/" + f)
+  : [];
+if (enWorld.length) {
+  const W_EN = loadGlobal(["data/world.js", "data/world_deep.js", ...enWorld], "WORLD_DATA");
+  const pairs = (W_EN.lexicon || []).map(t => [t.ja, t.desc]);
+  const outEn =
+`/* ============================================================
+   Cigar Cafe — 用語の説明（英語・自動生成・手で編集しない）
+   tools/build_summary.js が data/en/world_*.js から作る。
+   英語版でだけ読み、BRANDS_SUMMARY.lexicon の説明を英語に差し替える。
+   ============================================================ */
+(function () {
+  if (typeof BRANDS_SUMMARY === "undefined" || !BRANDS_SUMMARY.lexicon) return;
+  var EN = ${JSON.stringify(Object.fromEntries(pairs))};
+  BRANDS_SUMMARY.lexicon.forEach(function (t) { if (EN[t.ja]) t.desc = EN[t.ja]; });
+})();
+`;
+  fs.writeFileSync(path.join(ROOT, "data/en/lexicon.js"), outEn);
+  const gzEn = zlib.gzipSync(Buffer.from(outEn), { level: 9 }).length;
+  console.log(`data/en/lexicon.js を生成しました。 用語 ${pairs.length}語 / ${(outEn.length / 1024).toFixed(0)}KB（gzip ${(gzEn / 1024).toFixed(0)}KB）`);
+}
+
 const gz = zlib.gzipSync(Buffer.from(out), { level: 9 }).length;
 const nBrands = Object.keys(brands).reduce((n, k) => n + brands[k].length, 0);
 console.log(`data/summary.js を生成しました。`);
