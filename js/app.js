@@ -110,7 +110,7 @@ document.addEventListener("click", (e) => {
    ナビゲーション
    ============================================================ */
 const views = {
-  home: "view-home", basics: "view-basics", countries: "view-countries",
+  home: "view-home", finder: "view-finder", basics: "view-basics", countries: "view-countries",
   sizes: "view-sizes", prices: "view-prices", tools: "view-tools", humidor: "view-humidor",
   advanced: "view-advanced", phd: "view-phd", japan: "view-japan", world: "view-world", brands: "view-brands",
   news: "view-news",
@@ -206,6 +206,7 @@ function applyPageMeta(name) {
    先に読み込む必要があった。いまは「開いたページだけ」データを読み、
    そのとき初めて描画する。二度目からは何もしない。 */
 const RENDER = {
+  finder: () => FINDER.init(),
   basics: () => renderBasics(),
   countries: () => renderCountries(),
   /* 実寸表示の置き場（#realSizeBox）は renderSizes が作るので、その後に */
@@ -349,6 +350,7 @@ document.addEventListener("click", (e) => {
    ホーム
    ============================================================ */
 const HOME_CARDS = [
+  { view: "finder", h: "はじめの一本さがし", p: "4つの質問に答えると、254銘柄からあなたに合いそうな3本を選びます。" },
   { view: "basics", h: "基礎知識", p: "葉巻とは？構造・吸い方・味わいの表現・歴史・マナーまで。" },
   { view: "countries", h: "国・産地別", p: "キューバ、ドミニカ、ニカラグア…主要10産地の個性を比較。" },
   { view: "sizes", h: "太さ・サイズ別", p: "リングゲージとビトラ。定番サイズを一覧で。" },

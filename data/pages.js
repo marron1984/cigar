@@ -31,6 +31,18 @@ var PAGE_META = {
       desc: "A friendly introduction to cigars. Basics, countries and origins, sizes, prices and accessories — explained plainly, with a journal for the cigars you smoke."
     }
   },
+  finder: {
+    enReady: true,
+    path: "finder",
+    ja: {
+      title: "はじめの一本さがし — 4つの質問で選ぶ｜Cigar Cafe",
+      desc: "葉巻は種類が多すぎて選べない、という方へ。経験・時間・好みの強さ・産地の4問に答えると、収録254銘柄からあなたに合いそうな3本と、ちょうどよい太さを提案します。"
+    },
+    en: {
+      title: "Find your first cigar — four questions | Cigar Cafe",
+      desc: "Too many cigars to choose from? Answer four questions about your experience, the time you have, the body you like and the origin you fancy, and we will suggest three cigars from our 254 and the size to try them in."
+    }
+  },
   basics: {
     enReady: true,
     path: "basics",

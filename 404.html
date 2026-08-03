@@ -65,6 +65,7 @@
     </div>
 
     <nav class="nf-links ja">
+        <a href="/finder/">はじめの一本さがし</a>
         <a href="/basics/">葉巻の基礎知識</a>
         <a href="/countries/">国・産地別の葉巻</a>
         <a href="/sizes/">葉巻の太さとサイズ</a>
@@ -80,6 +81,7 @@
         <a href="/note/">葉巻の記録ノート</a>
     </nav>
     <nav class="nf-links en">
+        <a href="/en/finder/">Find your first cigar</a>
         <a href="/en/basics/">Cigar basics</a>
         <a href="/en/countries/">Cigars by country</a>
         <a href="/en/sizes/">Cigar sizes</a>
@@ -113,7 +115,7 @@
   var hits = document.getElementById("nfHits");
   q.placeholder = q.getAttribute(EN ? "data-ph-en" : "data-ph-ja");
 
-  var PAGES = [{"ja":"葉巻の基礎知識","en":"Cigar basics","p":"basics"},{"ja":"国・産地別の葉巻","en":"Cigars by country","p":"countries"},{"ja":"葉巻の太さとサイズ","en":"Cigar sizes","p":"sizes"},{"ja":"葉巻の価格帯別ガイド","en":"Cigars by price","p":"prices"},{"ja":"葉巻の喫煙具と保管","en":"Cigar accessories and storage","p":"accessories"},{"ja":"ヒュミドール大全","en":"The humidor in full","p":"humidor"},{"ja":"葉巻の上級編","en":"Going deeper","p":"advanced"},{"ja":"葉巻の学術","en":"The scholarship","p":"phd"},{"ja":"日本の葉巻ガイド","en":"Cigars in Japan","p":"japan"},{"ja":"世界の葉巻","en":"The cigar world","p":"world"},{"ja":"葉巻ブランド大全","en":"Cigar brands in full","p":"brands"},{"ja":"葉巻ニュース","en":"Cigar news","p":"news"},{"ja":"葉巻の記録ノート","en":"Cigar journal","p":"note"}];
+  var PAGES = [{"ja":"はじめの一本さがし","en":"Find your first cigar","p":"finder"},{"ja":"葉巻の基礎知識","en":"Cigar basics","p":"basics"},{"ja":"国・産地別の葉巻","en":"Cigars by country","p":"countries"},{"ja":"葉巻の太さとサイズ","en":"Cigar sizes","p":"sizes"},{"ja":"葉巻の価格帯別ガイド","en":"Cigars by price","p":"prices"},{"ja":"葉巻の喫煙具と保管","en":"Cigar accessories and storage","p":"accessories"},{"ja":"ヒュミドール大全","en":"The humidor in full","p":"humidor"},{"ja":"葉巻の上級編","en":"Going deeper","p":"advanced"},{"ja":"葉巻の学術","en":"The scholarship","p":"phd"},{"ja":"日本の葉巻ガイド","en":"Cigars in Japan","p":"japan"},{"ja":"世界の葉巻","en":"The cigar world","p":"world"},{"ja":"葉巻ブランド大全","en":"Cigar brands in full","p":"brands"},{"ja":"葉巻ニュース","en":"Cigar news","p":"news"},{"ja":"葉巻の記録ノート","en":"Cigar journal","p":"note"}];
   var index = null, loading = false;
 
   /* 要約データ（銘柄名と用語）は、打ち始めてから読む */

@@ -32,6 +32,8 @@ const DATA = (() => {
   const PACKS = {
     basics:    { files: [], en: ["data/en/basics.js"] },
     sizes:     { files: [], en: ["data/en/sizes.js"] },
+    /* はじめの一本さがしは、すすめる太さの寸法・時間をサイズのデータから引く */
+    finder:    { files: [], en: ["data/en/sizes.js"] },
     countries: { files: ["data/countries_deep.js", "data/philippines_deep.js"],
                  en: ["data/en/countries_a.js", "data/en/countries_b.js"] },
     prices:    { files: ["data/prices_deep.js"], en: ["data/en/prices.js"] },

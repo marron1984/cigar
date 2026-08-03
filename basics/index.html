@@ -68,6 +68,7 @@
       </button>
       <nav class="nav-tabs" id="navTabs">
         <a href="../" data-view="home"><span class="ic"></span><span class="lbl">ホーム</span></a>
+        <a href="../finder/" data-view="finder"><span class="ic"></span><span class="lbl">一本さがし</span></a>
         <a href="../note/" class="nav-journal" data-view="note"><span class="ic"></span><span class="lbl">記録ノート</span></a>
         <a href="../basics/" data-view="basics"><span class="ic"></span><span class="lbl">基礎知識</span></a>
         <a href="../countries/" data-view="countries"><span class="ic"></span><span class="lbl">国・産地別</span></a>
@@ -123,6 +124,14 @@
       <!-- ===== 銘柄をのぞく（横スクロール） ===== -->
       <div id="homeShowcase"></div>
 
+      <button class="note-cta finder-cta" data-view="finder">
+        <div class="note-cta-text">
+          <h3>どれを選べばいいか分からないときは</h3>
+          <p>4つの質問に答えるだけ。経験・時間・好みの強さ・産地から、収録254銘柄のなかであなたに合いそうな3本をお出しします。</p>
+        </div>
+        <div class="note-cta-go">えらんでもらう →</div>
+      </button>
+
       <button class="note-cta" data-view="note">
         <div class="note-cta-text">
           <h3>まずは一本、記録してみる</h3>
@@ -141,6 +150,17 @@
       <div class="callout" style="margin-top:34px">
         本サイトは葉巻文化・製品知識を紹介する情報・記録用の事典です。喫煙は20歳以上（成人）のみ。健康への影響に十分ご留意ください。
       </div>
+    </section>
+
+
+    <!-- ===== FINDER（はじめの一本さがし） ===== -->
+    <section class="view" id="view-finder">
+      <div class="section-head">
+        <div class="eyebrow">Find your first</div>
+        <h2>はじめの一本さがし</h2>
+        <p>種類が多すぎて選べない、という方へ。4つの質問に答えると、収録254銘柄からあなたに合いそうな3本と、ちょうどよい太さをお出しします。</p>
+      </div>
+      <div id="finderBox"></div>
     </section>
 
     <!-- ===== BASICS ===== -->
@@ -633,6 +653,7 @@
       <nav class="footer-nav" aria-label="フッターメニュー">
         <div class="footer-nav-col">
           <div class="footer-nav-h">事典</div>
+          <a href="../finder/" data-view="finder">一本さがし</a>
           <a href="../basics/" data-view="basics">基礎知識</a>
           <a href="../countries/" data-view="countries">国・産地別</a>
           <a href="../sizes/" data-view="sizes">太さ別</a>
@@ -704,6 +725,7 @@
   <script src="../js/realsize.js"></script>
   <script src="../js/stock.js"></script>
   <script src="../js/motion.js"></script>
+  <script src="../js/finder.js"></script>
   <script src="../js/hero.js"></script>
 </body>
 </html>

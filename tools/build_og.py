@@ -32,6 +32,7 @@ FONT_KICKER = "/usr/share/fonts/truetype/liberation/LiberationSans-Regular.ttf"
 # ページ → 下敷きにする写真。本文で使っているものに合わせてある。
 PHOTO = {
     "home":        "hero-welcome.webp",
+    "finder":      "Wakamono.webp",
     "basics":      "basics-hero.webp",
     "countries":   "Earth.webp",
     "sizes":       "Futosa.webp",
@@ -42,7 +43,7 @@ PHOTO = {
     "phd":         "Master.webp",
     "world":       "Town.webp",
     "brands":      "Cigar.webp",
-    "note":        "Wakamono.webp",
+    "note":        "basics-hero.webp",
     # 本文に写真を置いていないページ。雰囲気の近いものを当てる
     # （解説図は文字だらけでカードに向かないので使わない）。
     "japan":       "hero-lounge.webp",

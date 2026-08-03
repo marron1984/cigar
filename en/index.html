@@ -65,6 +65,7 @@
       </button>
       <nav class="nav-tabs" id="navTabs">
         <a href=".././" data-view="home"><span class="ic"></span><span class="lbl">Home</span></a>
+        <a href="../finder/" data-view="finder"><span class="ic"></span><span class="lbl">Find one</span></a>
         <a href="../note/" class="nav-journal" data-view="note"><span class="ic"></span><span class="lbl">Journal</span></a>
         <a href="../basics/" data-view="basics"><span class="ic"></span><span class="lbl">Basics</span></a>
         <a href="../countries/" data-view="countries"><span class="ic"></span><span class="lbl">Origins</span></a>
@@ -120,6 +121,14 @@
       <!-- ===== 銘柄をのぞく（横スクロール） ===== -->
       <div id="homeShowcase"></div>
 
+      <button class="note-cta finder-cta" data-view="finder">
+        <div class="note-cta-text">
+          <h3>Not sure which one to pick?</h3>
+          <p>Just four questions — your experience, the time you have, the body you like and the origin. We will pick three from our 254.</p>
+        </div>
+        <div class="note-cta-go">Pick for me →</div>
+      </button>
+
       <button class="note-cta" data-view="note">
         <div class="note-cta-text">
           <h3>Start by logging one cigar</h3>
@@ -138,6 +147,17 @@
       <div class="callout" style="margin-top:34px">
         This site is a reference and journal covering cigar culture and product knowledge. Smoking is for adults only (20+ in Japan). Please be mindful of the health effects.
       </div>
+    </section>
+
+
+    <!-- ===== FINDER（はじめの一本さがし） ===== -->
+    <section class="view" id="view-finder">
+      <div class="section-head">
+        <div class="eyebrow">Find your first</div>
+        <h2>Find your first cigar</h2>
+        <p>Too many to choose from? Answer four questions and we will suggest three cigars from our 254, and the size to try them in.</p>
+      </div>
+      <div id="finderBox"></div>
     </section>
 
     <!-- ===== BASICS ===== -->
@@ -619,6 +639,7 @@
       <nav class="footer-nav" aria-label="Footer menu">
         <div class="footer-nav-col">
           <div class="footer-nav-h">Guide</div>
+          <a href="../finder/" data-view="finder">Find one</a>
           <a href="../basics/" data-view="basics">Basics</a>
           <a href="../countries/" data-view="countries">Origins</a>
           <a href="../sizes/" data-view="sizes">Sizes</a>
@@ -690,6 +711,7 @@
   <script src="../js/realsize.js"></script>
   <script src="../js/stock.js"></script>
   <script src="../js/motion.js"></script>
+  <script src="../js/finder.js"></script>
   <script src="../js/hero.js"></script>
 
 

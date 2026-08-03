@@ -43,17 +43,47 @@ const COUNTRY_JA = {
 
 /* ---------- 1. 銘柄の名前一覧（ホーム・横断検索・在庫） ---------- */
 const LEAD = 150;     // 「今日の一本」に出す導入文の長さ（js/app.js の表示と揃える）
+
+/* 強さの記述から、目安の幅［下限, 上限］を取り出す（1=マイルド 〜 4.5=フル）。
+   「ミディアム〜フル（…）」のような日本語のほか、本文に混じる英語（mild/medium/
+   full）も拾う。ラインごとに幅のある銘柄は、その幅をそのまま持たせる。
+   工場・商社・業界団体など、銘柄として強さを持たないものは null を返す。 */
+const STRENGTH_WORD = {
+  "マイルド": 1, "ライト": 1.5, "中庸": 2.5, "中程度": 2.5,
+  "ミディアムフル": 3.5, "ミディアム": 2.5, "フル": 4.5,
+  "mild": 1, "light": 1.5, "medium-full": 3.5, "medium": 2.5, "full": 4.5
+};
+function strengthSpan(s) {
+  const t = String(s || "");
+  if (!t || /^該当せず|^該当なし/.test(t)) return null;
+  const re = /ミディアムフル|マイルド|ライト|ミディアム|中庸|中程度|フル|medium-full|mild|light|medium|full/gi;
+  const v = [];
+  let m;
+  while ((m = re.exec(t))) {
+    const k = STRENGTH_WORD[m[0]] || STRENGTH_WORD[m[0].toLowerCase()];
+    if (k) v.push(k);
+  }
+  return v.length ? [Math.min(...v), Math.max(...v)] : null;
+}
 const brands = {};
 Object.keys(BRANDS_DATA).forEach(key => {
   brands[key] = (BRANDS_DATA[key] || []).map(b => {
     const o = { ja: b.ja, en: b.en };
     if (b.founded) o.f = String(b.founded).slice(0, 18);
     if (b.kind) o.k = b.kind;
+    if (b.order) o.o = b.order;                    // 国ごとの並び順＝知名度の目安
+    const sp = strengthSpan(b.strength);
+    if (sp) o.s = sp;                              // 強さの幅［下限, 上限］
     const lead = String(b.history || "").replace(/【[^】]*】/g, "").trim().slice(0, LEAD);
     if (lead) o.d = lead;
     return o;
   });
 });
+{
+  /* 数えるのは銘柄だけ（葉・産地の項目は「はじめの一本さがし」の対象外） */
+  const marca = Object.values(brands).flat().filter(b => b.k !== "leaf");
+  console.log(`  強さの目安を付けた銘柄 ${marca.filter(b => b.s).length} / ${marca.length}`);
+}
 
 /* ---------- 2. 記録ノートのブランド選択肢 ----------
    js/note.js の brandGroups() と同じ手順で組み立てる。
