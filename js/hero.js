@@ -15,6 +15,7 @@
 const HERO = (() => {
   const PHOTOS = [
     { src: "hero-welcome.webp" },
+    { src: "hero-cafe.webp", pos: "center 38%" },    // 談笑する3人の顔がやや上
     { src: "hero-lounge.webp", pos: "center 64%" }   // 灰皿の一本が下寄り
   ];
   const HOLD = 9000;        // 1枚を見せている長さ
@@ -36,6 +37,7 @@ const HERO = (() => {
     /* 1枚目は既に出ている。2枚目以降を同じ場所に重ねて作る。 */
     const layers = [first];
     if (PHOTOS[0].pos) first.style.objectPosition = PHOTOS[0].pos;
+    let ref = first;                    // 並びを PHOTOS と同じにするための挿し込み位置
     PHOTOS.slice(1).forEach(ph => {
       const img = new Image();
       img.className = "hc-media hc-next";
@@ -44,7 +46,8 @@ const HERO = (() => {
       img.decoding = "async";
       if (ph.pos) img.style.objectPosition = ph.pos;
       img.src = base + ph.src;
-      first.parentNode.insertBefore(img, first.nextSibling);
+      ref.parentNode.insertBefore(img, ref.nextSibling);
+      ref = img;
       layers.push(img);
     });
 
