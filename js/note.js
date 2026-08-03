@@ -997,8 +997,14 @@ const NOTE = (() => {
       const canvas = await drawShareCard(en);
       const blob = await new Promise(r => canvas.toBlob(r, "image/png"));
       const file = new File([blob], "cigar-note.png", { type: "image/png" });
-      if (navigator.canShare && navigator.canShare({ files: [file] })) {
-        await navigator.share({ files: [file], title: en.name || T("葉巻の記録") });
+      /* 画像に文章を添えられる相手（Instagram等）にはハッシュタグも渡す。
+         受け取れない相手には画像だけにする（canShare が false を返す）。 */
+      const tags = hashTags(en);
+      const withTags = { files: [file], title: en.name || T("葉巻の記録"), text: tags };
+      const only = { files: [file], title: withTags.title };
+      const data = tags && navigator.canShare && navigator.canShare(withTags) ? withTags : only;
+      if (navigator.canShare && navigator.canShare(only)) {
+        await navigator.share(data);
       } else {
         const a = document.createElement("a");
         a.href = URL.createObjectURL(blob); a.download = file.name; a.click();
@@ -1041,6 +1047,50 @@ const NOTE = (() => {
       } catch (e2) { return false; }
     }
   }
+  /* ---------- ハッシュタグの自動生成 ----------
+     SNSに貼ったときに見つけてもらえるよう、記録の中身からタグを組み立てる。
+     ・銘柄・産地・ビトラは英語の綴りを使う。世界共通で、探す人がいちばん多いため
+       （日本語版でも #Cohiba のほうが届く。日本語の入口として #葉巻 #シガー を添える）
+     ・記号や空白はそこでタグが切れてしまうので、かな漢字と英数字だけを残す
+     ・多すぎると宣伝くさいので、重複を除いて最大6つ */
+  const TAG_MAX = 6;
+  function tagWord(s) {
+    /* 「Avanti / Parodi」「ラ・アウロラ（別名）」のような併記は、先頭のひとつだけ使う */
+    let w = String(s || "").split(/[\/(（]/)[0];
+    w = w.replace(/[^0-9A-Za-zぁ-んァ-ヴー一-龠]/g, "");
+    return w.length >= 2 ? w : "";
+  }
+  let brandEnCache = null;
+  /* 銘柄の英語表記。要約データに無い銘柄は日本語名のままタグにする */
+  function brandEnName(ja) {
+    if (!ja) return "";
+    if (!brandEnCache) {
+      brandEnCache = new Map();
+      try {
+        Object.keys(BRANDS_SUMMARY.brands || {}).forEach(k =>
+          (BRANDS_SUMMARY.brands[k] || []).forEach(b => { if (b.ja && b.en) brandEnCache.set(b.ja, b.en); }));
+      } catch (e) { /* 要約が読めない環境では日本語名を使う */ }
+    }
+    return brandEnCache.get(ja) || ja;
+  }
+  /* 中身の無い産地はタグにしない（#Other を付けても誰も探さない） */
+  const VAGUE_COUNTRY = new Set(["その他", "産地未設定", "不明"]);
+  function hashTags(en) {
+    const words = [
+      ...(I18N.isEn ? ["cigar", "cigars"] : ["葉巻", "シガー"]),
+      tagWord(brandEnName(en.brand)),
+      VAGUE_COUNTRY.has(en.country) ? "" : tagWord(I18N.countryEn(en.country)),
+      tagWord(I18N.vitolaEn(en.vitola)),
+      "CigarCafe",
+    ];
+    const seen = new Set(), out = [];
+    words.forEach(w => {
+      const k = w.toLowerCase();
+      if (!w || seen.has(k)) return;
+      seen.add(k); out.push("#" + w);
+    });
+    return out.slice(0, TAG_MAX).join(" ");
+  }
   function entryText(en) {
     const rt = Math.max(0, Math.min(5, Number(en.rating) || 0));
     const full = Math.floor(rt);
@@ -1068,9 +1118,10 @@ const NOTE = (() => {
       if (btn) { btn.disabled = false; btn.textContent = old; }
     }
     if (enText) out = jp + "\n\n" + enText;
-    // サイトのアドレスは、日英を結ねた最後に一度だけ添える。
-    // 本文に含めると翻訳文にもURLが入って二重になるため、この順番にしている。
-    out = out + "\n" + siteUrl();
+    // ハッシュタグとサイトのアドレスは、日英を結ねた最後に一度だけ添える。
+    // 本文に含めると翻訳文にも入って二重になるため、この順番にしている。
+    const tags = hashTags(en);
+    out = out + (tags ? "\n\n" + tags : "") + "\n" + siteUrl();
     if (navigator.share) {
       try { await navigator.share({ text: out }); return; }
       catch (err) { if (err && err.name === "AbortError") return; }
@@ -1126,6 +1177,7 @@ const NOTE = (() => {
       <button type="button" class="sm-item" data-sm="img">${escN(T("🖼 画像で共有"))}<span class="sm-sub">${escN(T("写真つきのカード画像を作成して共有・保存"))}</span></button>
       <button type="button" class="sm-item" data-sm="link">${escN(T("🔗 リンクで共有"))}<span class="sm-sub">${escN(T("URLを送るだけで、相手のブラウザで記録が見られる"))}</span></button>
       <button type="button" class="sm-item" data-sm="text">${escN(T("📝 テキストで共有"))}<span class="sm-sub">${escN(visionOn && !I18N.isEn ? T("日本語＋英語（AI自動翻訳）をコピー・共有") : T("LINEやメールに貼れる文章をコピー"))}</span></button>
+      ${hashTags(en) ? `<div class="sm-tags"><b>${escN(T("自動で付くタグ"))}</b>${escN(hashTags(en))}</div>` : ""}
       <button type="button" class="btn btn-ghost btn-sm sm-cancel">${escN(T("キャンセル"))}</button>
     </div>`;
     ov.classList.add("open");

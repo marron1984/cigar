@@ -277,6 +277,7 @@ var I18N = (function () {
     "📝 テキストで共有": "📝 Share as text",
     "日本語＋英語（AI自動翻訳）をコピー・共有": "Copy Japanese + English (translated by AI)",
     "LINEやメールに貼れる文章をコピー": "Copy text you can paste into a message or email",
+    "自動で付くタグ": "Tags added automatically",
     "記録を読み込んでいます…": "Loading the entry…",
     "共有された記録が見つかりませんでした。": "That shared entry could not be found.",
     "リンクが削除されたか、期限切れの可能性があります。": "The link may have been deleted or expired.",
@@ -892,8 +893,10 @@ var I18N = (function () {
   }
   /* ビトラ（サイズ）名。データ側に英語名があるのでそれを使う */
   var VITOLA = null;
-  function vitola(v) {
-    if (LANG !== "en" || !v) return v || "";
+  /* 表示する言語に関わらず英語名を返す。日本語版でも英語が要る場面
+     （SNSのハッシュタグなど、世界共通の綴りのほうが探してもらえる）で使う。 */
+  function vitolaEn(v) {
+    if (!v) return "";
     if (!VITOLA) {
       VITOLA = {};
       try { (CIGAR_DATA.vitolas || []).forEach(function (x) { if (x.ja && x.en) VITOLA[x.ja] = x.en; }); }
@@ -901,10 +904,15 @@ var I18N = (function () {
     }
     return VITOLA[v] || v;
   }
+  function vitola(v) {
+    if (LANG !== "en" || !v) return v || "";
+    return vitolaEn(v);
+  }
   /* 産地名。保存される値は日本語のまま、表示だけ英語にする */
+  function countryEn(c) { return c ? (COUNTRY[c] || c) : ""; }
   function country(c) {
     if (LANG !== "en" || !c) return c || "";
-    return COUNTRY[c] || c;
+    return countryEn(c);
   }
   function strength(s) {
     if (LANG !== "en" || !s) return s || "";
@@ -924,7 +932,8 @@ var I18N = (function () {
     return c + " " + (COUNTRY[c] || "");
   }
 
-  return { lang: LANG, isEn: LANG === "en", t: t, country: country, strength: strength, vitola: vitola, both: both };
+  return { lang: LANG, isEn: LANG === "en", t: t, country: country, countryEn: countryEn,
+           strength: strength, vitola: vitola, vitolaEn: vitolaEn, both: both };
 })();
 
 /* 呼び出しを短くするための別名。
