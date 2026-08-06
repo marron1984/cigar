@@ -44,6 +44,10 @@
       trivia: "【The Name Does Not Denote the Product's Birth Year】The figure “1881” is not the cigar's year of birth but the company's. The brand itself appeared in 1981, exactly one hundred years after the founding. The Manila cigar that had swept the world at the end of the nineteenth century had lost many factories to twentieth-century war damage and structural change; it was in the midst of that contraction that the decision was taken to erect a commemorative brand bearing the founding year. By taking a number as its name, the company sought to return to its own origin.【A Leaf from the Louisiana Swamplands】What made 1881 internationally known was its incorporation of Perique, a leaf grown only in St James Parish, Louisiana. Perique is fermented in barrels under anaerobic pressure by a wholly distinctive method, is normally used as pipe tobacco, and, being too strong on its own, is always blended with other leaf. The combination of a Philippine cigar with this rare leaf of the American Deep South became possible because Daughters & Ryan of North Carolina, owner of the Perique business, was at the same time Tabacalera's US distributor. Mark Ryan's purchase of the L.A. Poche Perique Tobacco company in 2005 was the premise of the encounter. One reviewer, having prefaced that “the combination of Philippine leaf and Perique might invite wariness”, wrote that it in fact makes a genuinely delicious cigar."
     },
     "Alhambra": {
+      band: {
+        look: "Beneath a red and gold label, the black band is said to have read \"Choicest Philippine Tobacco Sumatra Wrapper\".",
+        note: "It is counted among the cigars smoked by President John F. Kennedy; a Corona Alhambra inscribed in gold \"Specially Made For President Kennedy\" and wearing this band survives among his effects."
+      },
       founded: "Circa 1898 / 1912 (incorporation of the company)",
       founder: "The Alhambra Cigar & Cigarette Manufacturing Co.; the brand is now carried on by Tabacalera Incorporada",
       meaning: "Said to derive from the Alhambra, the Moorish palace-fortress of Granada, Spain.",

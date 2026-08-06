@@ -21,6 +21,9 @@
       trivia: "【The Patron Saint's Name】The brand name derives from \"San Cristóbal de la Habana\", the formal name of the city of Havana, founded in 1514. San Cristóbal (Saint Christopher) is the city's patron saint; a cigar marque of the same name existed in early twentieth-century Cuba but died out after the revolution, and its trademark is said to have been secured in the 1980s by the publishing Levin family, who revived it.\n【Publisher and Maker】San Cristobal is a collaborative brand planned and sold by Ashton Distributors and manufactured in Estelí by My Father Cigars of the family of José Pepín García. The marque's history therefore stands at the crossing of two family histories: a venerable Philadelphia publisher and Cuban-exile makers."
     },
     "Rocky Patel": {
+      band: {
+        note: "The Edge of 2004 came to market on the idea of selling a hundred unbanded cigars packed in a rough wooden box. Stripping off the band and the ornament, and letting the cigar stand on its own, was a fresh notion in a market then given to ornate packaging."
+      },
       founded: "1995 (established as the Indian Tabac Cigar Co.; market debut at the 1996 RTDA. Renamed Rocky Patel Premium Cigars in 2003)",
       founder: "Rakesh \"Rocky\" Patel (born 1961 in Bombay, now Mumbai, India; emigrated to the United States at fourteen, settling in Green Bay, Wisconsin). A former Hollywood entertainment lawyer",
       meaning: "Bears the name of founder Rocky Patel. The former name Indian Tabac was licensed from the Indian Motorcycle company and is said to have no direct connection with Patel's own Indian origins",

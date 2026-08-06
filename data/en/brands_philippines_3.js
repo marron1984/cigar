@@ -2,6 +2,9 @@
   if (typeof BRANDS_DATA === "undefined") return;
   var EN = {
     "La Flor de la Isabela": {
+      band: {
+        note: "What Tabacalera had registered was a trademark composed of the words \"La Flor de la Isabela\" together with a shield device; the later dispute turned not on the whole name but on the use of the single word \"Isabela\"."
+      },
       founded: "As a factory and brand, sources give both 1885 and 1887 (the parent Compañía General de Tabacos de Filipinas was founded in Barcelona on 26 November 1881). One account states that it was established in 1887 as 'the largest and most sophisticated tobacco and cigar factory in the world at the time', while another has it opening in 1885 at 851 Calle Isaac Peral; the two accounts coexist",
       founder: "Compañía General de Tabacos de Filipinas (commonly known as Tabacalera). The company itself was founded in Barcelona in 1881 by Antonio López y López (1817–1883), first Marquis of Comillas",
       meaning: "'The Flower of Isabela'. The name derives from Isabela Province in the Cagayan Valley of northern Luzon, and from the 'Isabela' leaf variety grown there; the province itself is named after Queen Isabella II of Spain. The factory's name became the brand name, and in time the corporate name as well",
@@ -59,6 +62,9 @@
       trivia: "【A House Variety Named 'Sarah'】The binder and part of the filler at Tabaqueria come from a tobacco variety the company bred itself, called 'Sarah'. It began with seed a friend brought back from Cuba. This was crossed with the native Philippine Isabela strain and improved under the advice of the company's agronomists, and the result was Sarah. Importing only the wrapper from Java, growing everything else at home, with the core from its own breeding — for a cigar from an emerging producer that would ordinarily lean on imported material, this is an unusually deep vertical integration. In a history of the Philippine cigar said to have begun with Cuban seed carried by galleon in 1592, Cuban seed was brought in once more four hundred years later, and a new line was born. 【The Grade Called TBN】The 'TBN' of the Java wrapper leaf is short for the Indonesian Tembakau Bawah Naungan, meaning 'tobacco under cover' — that is, shade-grown leaf. Shielded from direct sun, the leaf grows thinner, lighter in colour and finer-veined. That the appearance of Philippine cigars so often wears a light 'claro' shade is not unrelated to this long dependence on Indonesian shade-grown leaf of this kind."
     },
     "La Insular": {
+      band: {
+        note: "The factory is gone. What remains is a mass of picture postcards taken in the early twentieth century, the cigar bands kept by collectors, and the memory that a cigar factory known to the world once stood here."
+      },
       founded: "Most sources give 1883 (one of the private cigar companies that arose after the abolition of the Spanish royal tobacco monopoly in 1880). The factory building in Binondo, Manila, was completed in 1888",
       founder: "Joaquín Santamarina Pérez (died 23 August 1908). He is said to have founded the company in partnership with Luis Elizalde and Manuel Clemente, with the advice of Enrique Domínguez. Santamarina served as a senator of the Kingdom of Spain, mayor of Manila and adviser to the Philippine colonial government",
       meaning: "'Insular' is Spanish for 'of the islands'. Under Spanish rule the word was in everyday use to denote the Philippine archipelago (las Islas Filipinas) and was often attached to administrative and corporate names (such as Manila's old Insular Ice Plant). The name thus styles the firm 'the company of the islands' — that is, the cigar company of the Philippines",

@@ -2,6 +2,11 @@
   if (typeof BRANDS_DATA === "undefined") return;
   var EN = {
     "Tatuaje": {
+      band: {
+        look: "The first product, Selección de Cazador, came in a plain brown band and a Cuban-style box, and came to be known as the \"Brown Label\". The line with a red band is called the \"Red Label\".",
+        check: "The colour of the band has become the nickname of the line, so the family can be told at a glance by colour.",
+        note: "In the Monster Series, begun around 2008, each release is worked up with a design and a story after that year's monster, and following the series has become an annual fixture for enthusiasts."
+      },
       founded: "2003 (release of the brown-label 'Selección de Cazador' at the El Rey de los Habanos factory in Miami)",
       founder: "Pete Johnson (raised in Maine; moved to Los Angeles at eighteen in 1993; founded the brand in 2003 after working at the Grand Havana Room, a members' club in Beverly Hills). Blending and manufacture are handled by the García family (Don Pepín García and Jaime García)",
       meaning: "Spanish for 'tattoo'. The name derives from Johnson — tattooed over much of his body, and notably with a tattoo modelled on OpusX — being known in the trade as 'Tattoo Pete'",
@@ -50,6 +55,10 @@
       trivia: "【Rolling the Calendar】The Cosecha series names each release by the count of consecutive harvests since 1865: 146 denotes the leaf of 2011–12, 149 that of 2014 and 151 that of 2016, so that the number reveals which of the family's plantings the leaf came from. Translating the growers' own history into products is a conceit unique to a brand of farming stock.\n【The Only Organic Certification】The house is said to be the only tobacco company in the world to hold OCIA certification, and Reserva Original, rolled from that leaf, claims to be the world's only certified organic cigar — a symbolic release showing that the master growers walk their own path in farming method as well as in flavour."
     },
     "Ozgener Family Cigars": {
+      band: {
+        look: "Turkish motifs and the paintings of the founder's father sit at the heart of the design.",
+        note: "The name CAO that his father left behind passed into other hands; through this design Tim Ozgener is establishing an independent voice of his own as the second generation."
+      },
       founded: "2022. The return to the industry was reported in June of that year; Bosphorus and Pi Synesthesia were unveiled at the PCA Convention in July and reached the market in August. Based in Nashville, Tennessee. In recent years the abbreviated form 'OZ Family Cigars' has become common in both official use and the trade press",
       founder: "Tim Ozgener, son of CAO founder Cano A. Ozgener (born Istanbul, 1937; died of pancreatic cancer in Nashville on 9 June 2018, aged 81). Tim remained with the company after CAO was sold to Scandinavian Tobacco Group (STG) in 2007, but left the industry when General Cigar absorbed CAO at the end of 2010, spending the following eleven years and more outside cigars",
       meaning: "Literally 'the cigars of the Ozgener family'. Each line, too, is tied to the family's history: 'Bosphorus' is the strait that runs through Istanbul, the parents' native city, dividing Europe from Asia; 'Aramas' evokes Mount Ararat, standing on the Armenian–Turkish borderlands; 'Fırsat' is Turkish for 'opportunity'; and 'Pi Synesthesia' derives from the art series of the same name that his father Cano produced after the sale of CAO",

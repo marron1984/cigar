@@ -44,6 +44,9 @@
       trivia: "A rare case among American mass-market cigars of a brand name that derives not from “a name the maker gave” but from “a nickname the customers shortened it to”. Phillies was moreover bought by the Havatampa company of Tampa in 1982, and has thus been a sibling brand under the same roof as Hav-A-Tampa — which has its own entry in this encyclopaedia — ever since. The trajectory of a Philadelphia brand bought by a Tampa firm and passed on to Spanish, French and then British capital is the consolidation history of the American mass-market cigar industry in miniature."
     },
     "Consolidated Cigar Corporation": {
+      band: {
+        look: "The box art using Rembrandt's group portrait \"The Syndics of the Drapers' Guild\" is deeply engraved in American popular culture."
+      },
       founded: "1919 (incorporation, with D. Emil Klein as first president) / 1921 (the Consolidated Cigar Corporation formed by the merger of seven companies including the G.H. Johnson Cigar Co.). Sources give both 1919 and 1921",
       founder: "D. Emil Klein (first president). The G.H. Johnson Cigar Co., holder of Dutch Masters, was the core of the merger",
       meaning: "“Consolidated” denotes precisely the circumstance of the company's birth — the amalgamation of several cigar firms. It derives from neither a personal nor a place name",

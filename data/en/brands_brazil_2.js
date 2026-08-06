@@ -45,6 +45,10 @@
       trivia: "【The Joker and the Museum】Owner Renato Madeiro is known locally as 'Brincalhão' (the joker). In a Recôncavo devoted to Mata Fina, his experimental streak — rolling with Arapiraca from neighbouring Alagoas, Brazilian-grown Criollo, even Besuki leaf from Java, Indonesia — earned him the name. Yet in one corner of the factory he keeps his own cigar museum, quietly displaying two centuries of the Brazilian cigar through old documents, photographs and tools. The breaker of rules and the keeper of them are the same man — a duality that also explains how a nineteenth-century trade name survived into the twenty-first. The house's 'Robusto Rústico', incidentally, was issued as a limited edition commemorating 450 years of commercial tobacco cultivation in Brazil."
     },
     "Monte Pascoal (Tabacos Mata Fina)": {
+      band: {
+        look: "The box art depicts the scene of Brazil's discovery in the age of exploration.",
+        note: "A national primal landscape set directly on the signboard. The Diplomata — leaf of 2005 rolled in 2008, rested ten years in the company humidor and released in just 400 boxes as a double figurado tapered at both ends — makes time itself a second kind of design."
+      },
       founded: "2007 (corporate registration on 9 July 2007; the brand was born with the founding of its parent company, Tabacos Mata Fina)",
       founder: "Lorenzo Orsi, said to be a member of the Orsi family group, whose interests span Italian wine and Brazilian steel and property",
       meaning: "Named after Monte Pascoal, a 586-metre hill south of Porto Seguro in Bahia, held to be the first land sighted by Pedro Álvares Cabral's fleet on 22 April 1500; the name means 'Easter Mount'. The box artwork likewise depicts the scene of Brazil's discovery",
@@ -107,6 +111,10 @@
       trivia: "Bearing the signboard of a house claiming foundation in 1854 while sitting on the cheapest shelf in the shop — such is the station of the Talvis marque. The Cachoeira factory that makes it employs around 17 people, working by hand from leaf sorting to boxing, the rollers almost all women. Under the same roof the top-flight Le Cigar and the cheapest Talvis are made side by side, with a cigar museum (Museu do Charuto) attached in one corner of the factory."
     },
     "Bucanero's": {
+      band: {
+        look: "Unusually for a Brazilian marque, it flies a Caribbean design — pirates above all.",
+        note: "The brand defines itself as \"Brasileiro com DNA cubano\", a Brazilian with Cuban DNA. When a Brazilian cigar borrows this imagery, the gesture moves away from the pastoral fields of Bahia and reaches for a wider Caribbean imagination."
+      },
       founded: "The founding year is unpublished and could not be confirmed. Wide distribution through Brazil's domestic cigar retail network is verifiable from the 2010s onwards",
       founder: "No founder's name has been published. The company explains only that it was 'born as a homage to pioneers of adventurous spirit', naming no individual",
       meaning: "Bucanero is Spanish for 'buccaneer', the pirates of the seventeenth-century Caribbean. Unusually for a Brazilian cigar marque it flies Caribbean colours, styling itself 'a Brazilian with Cuban DNA' (Brasileiro com DNA cubano). A name drawn neither from a growing district nor a founding family's surname declares that this brand connects itself not to Bahian tradition but to Cuba",

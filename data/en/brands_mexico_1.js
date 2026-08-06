@@ -2,6 +2,9 @@
   if (typeof BRANDS_DATA === "undefined") return;
   var EN = {
     "Casa Turrent": {
+      band: {
+        check: "When the core line was renamed Serie 1901, the wording \"Serie 1901\" was added on a second band."
+      },
       founded: "2013 (unveiled at Mexico's cigar festival, with the flagship line marketed as Serie 1901; by family tradition, tobacco cultivation began in 1880)",
       founder: "The Turrent family. Alberto Turrent (b. 1942) and his son Alejandro Turrent (b. 1973) lead A. Turrent / Nueva Matacapan de Tabacos. The family counts five generations; tradition holds that great-great-grandfather Alberto Turrent planted tobacco at San Andrés in 1880 (another genealogy has an Antonio arriving from Barcelona in 1790)",
       meaning: "\"House of Turrent\". The numbers of the principal lines (1901, 1942, 1973) mark the birth years of the current head's grandfather, father and the head himself, while \"1880\" commemorates the year the family began growing tobacco",

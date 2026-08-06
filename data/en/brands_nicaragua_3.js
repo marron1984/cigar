@@ -25,6 +25,9 @@
       trivia: "【The Shadow Blender】Long before making his name with his own brands, AJ Fernandez was known as the 'shadow blender' behind many other houses' cigars, including Man O' War, Diesel and Rocky Patel's seasonal lines. His workshop still manufactures part of great marques such as Montecristo and Romeo y Julieta, remaining a pillar of the industry behind the scenes.\n【His Father's Beloved Ramón Allones】Ramón Allones by AJ Fernandez, made for Altadis, honours the brand his father Ismael is said to have loved most in Cuba, making it a project of deep personal feeling far beyond a mere commission. The memory of a tobacco family spanning grandfather, father and son breathes in every one of these cigars."
     },
     "Warped": {
+      band: {
+        look: "A pigtail cap and a covered foot — the design typical of Cuban custom rolls."
+      },
       founded: "2009 (Kyle Gellis is held to have begun producing his own brand at the El Titan de Bronze factory in Miami, though some sources date the venture's beginnings to 2007–2008)",
       founder: "Kyle Gellis. Born in upstate New York, he grew close to cigars from childhood through his father's influence, and founded the brand after moving to South Florida",
       meaning: "The brand name Warped — meaning bent or unconventional — is said to be carried over from Warped Customs, a paintball company Gellis founded at the age of fourteen. It also chimes with the brand's contrarian stance: turning its back on the prevailing fashion for large ring gauges and holding to classic Cuban style",
@@ -49,6 +52,10 @@
       trivia: "【Knocking on Doors Alone】In August 2008, having studied marketing at university, Gellis drove on impulse the ninety miles to Little Havana in Miami and went from one small factory to the next asking to learn the trade. Among the doors he knocked on was El Titan de Bronze, the legendary factory founded in 1995, where exiled Cuban master craftsmen had gathered.\n【Earning the Right to His Birth Year】The flagship Serie Gran Reserva 1988 bears the founder's birth year, but Gellis is said to have laboured through years of development before judging the flavour worthy of carrying it — a fastidiousness that speaks of the unconventional boutique's pride."
     },
     "Espinosa": {
+      band: {
+        look: "Murciélago, one of the flagship lines, wears a striking design of a bat — fitting for a name that is Spanish for \"bat\".",
+        note: "Playful design married to an uncompromising cigar has run consistently through every Espinosa release since."
+      },
       founded: "2012 (establishment of Espinosa Premium Cigars and opening of the La Zona factory; the predecessor EO Brands was founded in 2004)",
       founder: "Erik 'Orestes' Espinosa (born in Havana, Cuba; taken to Miami at three months old). The predecessor EO Brands was co-founded with Eddie Ortega",
       meaning: "Derived from the founder's surname, Espinosa. The flagship 601 is said to commemorate 1 June (6/01), the date Espinosa first visited Nicaragua. Murciélago is Spanish for 'bat'",
@@ -72,6 +79,9 @@
       trivia: "【The Number 601】Said to derive from 1 June (6/01), the day Espinosa first set foot in Nicaragua; the popular notion that it is a regional telephone code is mistaken. The 601 blends are distinguished by label colour: Red, Green, Blue and Black.\n【A Bat, a Bomb and a Celebrity Chef】Murciélago is Spanish for 'bat'. The 601 La Bomba carries a pigtail twisted to resemble a bomb's fuse at its head. The La Zona factory occupies a Victorian building converted from a colonial-era inn, and the signature Knuckle Sandwich is a collaboration with the celebrity chef Guy Fieri."
     },
     "Black Label Trading Co. / Oveja Negra Brands": {
+      band: {
+        look: "A design drawing thoroughly on Catholic liturgical vocabulary and Gothic imagery — conspicuous even among the Nicaraguan boutiques."
+      },
       founded: "The Black Label Trading brand dates from 2013. The company's own factory, Fabrica Oveja Negra, began production on 9 February 2015 and moved in the autumn of 2017 to a large facility at the southern entrance to Estelí. The distributor Boutiques Unified was renamed Oveja Negra Brands in June 2019, bringing the four marques together under one roof",
       founder: "James Brown and his wife Angela Brown, who moved to Estelí to run the factory",
       meaning: "'Oveja Negra' is Spanish for 'black sheep' — as in English, the misfit or troublemaker of a family or group. James Brown has said he built the factory to hold every stage of production in his own hands and to create as freely as possible, and the name 'black sheep' is that declaration itself. It also echoes the 'black' of the Black Label brand name",

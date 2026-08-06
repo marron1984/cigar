@@ -2,6 +2,10 @@
   if (typeof BRANDS_DATA === "undefined") return;
   var EN = {
     "J.C. Newman": {
+      band: {
+        look: "Diamond Crown, the top line launched in 1995 for the company's centenary, was given what was called the finest dress of the 1990s: a sumptuous band with gold leaf and bronze struck in the Netherlands, and each box enclosed in an outer carton of the kind used for bottles of fine spirits.",
+        note: "The American is billed as the first wholly American premium cigar in history: not only the tobacco but the moulds used for rolling, the wooden cabinet boxes and the printing of the bands are all American-grown and American-made."
+      },
       founded: "1895 (established in a barn behind the founder's home in Cleveland, Ohio); the move to the El Reloj factory in Tampa took place in 1954",
       founder: "Julius Caeser Newman (c. 1875 - d. 1958). A Jewish immigrant from Austria-Hungary (present-day Hungary). The family's emigration to the United States is dated variously to 1888 (when the young J.C. was about thirteen) or to around 1890",
       meaning: "The company and brand name joins the initials 'J.C.' of founder Julius Caeser Newman to his surname. The spelling of his middle name as 'Caeser', rather than the customary 'Caesar', is part of company lore, said to derive from a clerical error in the immigration-era records that simply became fixed",

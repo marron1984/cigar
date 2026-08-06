@@ -2,6 +2,9 @@
   if (typeof BRANDS_DATA === "undefined") return;
   var EN = {
     "Drew Estate": {
+      band: {
+        note: "Inside the factory sits Subculture Studios, a laboratory for creative work where artists out of street graffiti such as Jessi Flores produce the distinctive designs that embody the brand's urban sensibility."
+      },
       founded: "1996 (the year a kiosk was opened in the World Trade Center, New York; some sources date the venture's conception to 1995 in Brooklyn)",
       founder: "Jonathan Drew (known as JD; born Jonathan Drew Sann) and Marvin Samel",
       meaning: "Derived from the surname of co-founder Jonathan Drew. The company adopted the motto “Rebirth of Cigars”, proclaiming its challenge to conventional notions of the cigar through infused smokes and audacious blends",
@@ -24,6 +27,10 @@
       trivia: "【A Masterpiece Born of the Rollers】Undercrown is said to have originated when the factory's rollers smoked so much Liga Privada that stocks ran dry, and, forbidden to continue, rolled a cigar of their own for themselves. The tale of a great cigar born of the pride of the artisans working behind it speaks eloquently of the storytelling of a company that prizes urban culture.\n【The Flying Pig and the 1930s】The Flying Pig, Liga Privada's stout eccentric vitola, is said to have been inspired by a shape unproduced since the 1930s, which Steve Saka picked out from a photograph of an 1895 salesman's sample case. Reviving a forgotten old form for the modern day is playfulness in the truest Drew Estate manner."
     },
     "RoMa Craft Tobac": {
+      band: {
+        look: "The band is explained as drawing on the imagery of the temperance movement of the 1850s.",
+        note: "The individual sizes are given the names of virtues and vices — Brotherly Kindness, Breach of the Peace, Contempt, Treachery, Fidelity."
+      },
       founded: "24 January 2012 (formed by merging Michael Rosales's Costa Rican Imports and Skip Martin's Galveston Bay Tobacco). Its prehistory includes prototype work in Estelí from 2010 and the construction of the company's own Nica Sueño factory in 2011",
       founder: "Michael (Mike) Rosales and Skip Martin. On the manufacturing side, the Nicaraguan blender Esteban Disla joined in 2011 as co-owner and factory manager of the Nica Sueño factory",
       meaning: "“RoMa” is a coinage combining the spellings of co-founders Rosales and Martin. “Craft” is a declaration of small-scale, high-quality intent modelled on craft beer, and the factory name Nica Sueño is Spanish for “Nicaraguan dream”",

@@ -51,6 +51,9 @@
       trivia: "【A Famed Workshop That Began as a Liquor Store】Founder Sandra Cobas, unable to obtain enough cigars for the customers of her fine-spirits shop, resolved to make them herself and opened a factory in 1995. From this unlikely beginning, the small workshop grew into the “connoisseurs' factory” entrusted with production for La Palina, Warped and Padilla.\n【The Bronze Titan】The brand name derives from Antonio Maceo, hero of Cuban independence, who fought through more than 500 engagements and over 25 wounds and was called “the Bronze Titan” for his indomitability.\n【One Roller, One Cigar, a Name Inscribed】There is no division of labour here: in the Cuban manner, a single roller finishes each cigar from start to finish and writes his or her name on the bottom of the box. Only artisans of the highest grade, “Level 9”, are employed, most of them veterans of Havana's great factories such as Partagás and H. Upmann."
     },
     "Backwoods": {
+      band: {
+        look: "Being natural leaf, colour, vein and thickness vary from cigar to cigar — treated not as a defect but as part of the brand's look."
+      },
       founded: "1973 (launched in Fort Lauderdale, Florida) / rolled out nationally in 1981",
       founder: "A business of the Consolidated Cigar lineage. Currently manufactured and sold by ITG Brands (ITG Brands LLC, a subsidiary of Imperial Brands of the United Kingdom)",
       meaning: "The English word “backwoods” means remote, uncleared forest country — a brand name proclaiming a rusticity that is the very opposite of the urbane, polished cigar. ITG Brands' official brand page describes the construction — hand-rolled appearance, frayed foot, tapered body and unfinished head — as “WILD & MILD”.",
@@ -75,6 +78,9 @@
       trivia: "While the Public Health Cigarette Smoking Act of 1970 banned cigarette broadcast advertising from January 1971, cigars fell outside the ban, so cigar advertising remained on American airwaves through the 1970s and 1980s. It was in this environment that Backwoods is reported to have run television advertising in 1981–82 asking, in effect, “How can anything that looks so wild taste so mild?”. The Congar International factory in Cayey, Puerto Rico, which manufactures the brand, marked its 70th anniversary in 2024 and, employing more than 450 people, ranks among the largest employers in the area."
     },
     "La Palina": {
+      band: {
+        note: "By the 1920s it was a major marque with a wide range of vitolas, and its boxes and bands from that period are still collected today."
+      },
       founded: "1896 (born in Chicago as the first brand of the Congress Cigar Company, founded by Sam Paley). It left the founding family's hands in 1926 and entered a long dormancy, until Bill Paley, the founder's grandson, revived it in 2010 as the present La Palina Cigars",
       founder: "Samuel “Sam” Paley, an immigrant who became a tobacco merchant in Chicago. The founder of the present company is his grandson William C. “Bill” Paley, whose father was William S. Paley, builder of CBS",
       meaning: "“La Palina” was dedicated to Sam Paley's wife, Goldie Drell Paley — the surname Paley recast in a Spanish-style feminine form. The definite article La follows the naming custom of the clear-Havana brands of the day",
@@ -94,6 +100,10 @@
       trivia: "【Fifty Dollars of Advertising That Became CBS】The first advertising outlay William S. Paley made on the radio programme “The La Palina Hour” is said to have been fifty dollars. Convinced by its effect, three years later, in 1928, he invested US$417,000 in a controlling stake in a broadcasting network and built CBS. One of America's three great networks, it is fair to say, was born from a cigar sales chart.\n【Named for a Wife, Made by Women】The brand name La Palina derives from the founder's wife, Goldie. The top-of-the-line cigar bearing her name, the “Goldie”, was rolled single-handedly by Maria Sierra, a woman roller from Cuba's El Laguito factory, in a factory whose manager was also a woman — a line in which women take the leading role from the name's origin through to manufacture, a rarity in the industry.\n【A Century-Old Cigar Still Smokeable】halfwheel obtained a “La Palina Excellentes” manufactured in the 1920s and published an account of actually lighting it. A product made before the founding family departed in 1926 had survived, still smokeable, after a full century."
     },
     "Ferio Tego": {
+      band: {
+        look: "The crest is said to draw on the image of Hercules striking down the Hydra.",
+        note: "The sense of the name — \"I strike, and I shield\" — states exactly the company's position: carrying on old brands while launching new ones."
+      },
       founded: "January 2021 (announcement of the company's formation and of the acquisition of the former Nat Sherman brands). Some sources place the legal formation at the end of 2020",
       founder: "Michael Herklots (formerly vice-president of Nat Sherman International) and Brendon Scott (formerly the same company's vice-president and chief financial officer)",
       meaning: "Latin, from the Herklots family motto. The words appear beneath the shield of the family's coat of arms, which dates back to 1641; the company glosses them broadly as “Strike and Defend”. The design of the arms is said to have been inspired by the image of Hercules slaying the Hydra",

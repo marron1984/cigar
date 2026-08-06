@@ -45,6 +45,10 @@
       trivia: "Founder Jaime Partagás is said to have been murdered on his own plantation in 1868; the motives suggested — an affair with his killer’s wife, revenge for trademark theft, grudges over land dealings — are all unproven. After his death the factory saw sighting after sighting of his ghost, and the story survives that only prayers from a priest and a santería priestess brought the artisans back to their benches. The celebrated “8-9-8” takes its name from the packing itself — three tiers of eight, nine and eight in a cabinet box. The red former factory behind the Capitolio has become one of Havana’s foremost sights, and with its rooftop sign “Real Fábrica de Tabacos Partagás” it remains the emblem of the brand."
     },
     "H. Upmann": {
+      band: {
+        look: "The date \"1844\" is displayed on band and box alike. The gold medals, struck into the design alongside the founder's signature, have been the marque's visual signboard for more than 160 years.",
+        note: "The refusal of showy redesign, holding to a classic dress, chimes with the house character of the smoke itself — gentle and well-composed."
+      },
       founded: "1844 (the founder’s voyage to Havana is put at 1839, and the establishment of his business base at 1843, by tradition)",
       founder: "Hermann Dietrich Upmann (a banker and merchant from Bielefeld, Germany)",
       meaning: "The founder’s surname, Upmann, crowned with the initial “H.” of his first name, Hermann",
@@ -68,6 +72,10 @@
       trivia: "H. Upmann is the brand said to have devised the cedar-boxed cigar as a gift for the bank’s customers, placing it at the origin of what became the world-standard format of cigars in wooden boxes. In February 1962, just before signing the embargo against Cuba, President Kennedy ordered his press secretary Salinger to secure his favoured Petit Upmanns, and the tale of the 1,200 cigars gathered in a single night is famous indeed (accounts differ on number and date). The seven gold medals adorning the box are said to derive from nineteenth-century exhibition awards, and in 1922 the house weathered the upheaval of a bank failure and the arrest of the founding family’s brothers. The version circulating in the United States is the non-Cuban, Dominican-made line."
     },
     "Rafael González": {
+      band: {
+        look: "Current bands and boxes carry the wording \"Rafael González Márquez\", said to have become the official name from around 1954.",
+        note: "Boxes of the old design proudly stated that the cigars were made from pure Vuelta Abajo leaf selected \"by the Marqués Rafael González, Grande of Spain\" — a marquis whose existence cannot be confirmed. More recently, in adapting to the EU Tobacco Products Directive (EUTPD2), a new printing technology improving the legibility of the lettering is reported to have been introduced on the band."
+      },
       founded: "Around 1928 (Habanos S.A. records the brand as created in the 1930s)",
       founder: "Bears the name of “the Marqués Rafael González, Grandee of Spain”, but this person’s existence is said never to have been confirmed. By 1936 the brand was owned by the Rey del Mundo Cigar Company",
       meaning: "From the personal name of its supposed founder, the Marqués Rafael González — though no historical record confirming his existence is said to have been found",

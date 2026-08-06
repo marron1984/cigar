@@ -43,6 +43,9 @@
       trivia: "Both the flagship Leyenda and Maduro lines use a Habana 2000 wrapper and a binder of Cubita, the native Colombian black tobacco. The small Puritos, by contrast, are sold as 100% Colombian leaf with neither chemical additives nor wrapping paper, making them the closest thing to a purely Colombian smoke in the company's range."
     },
     "Colpuros (Don José Correa)": {
+      band: {
+        check: "The Don José Correa line is distinguished by the colour of the band: a white ring (anillo blanco) and a red ring (anillo rojo) run side by side."
+      },
       founded: "The family line begins in 1870 (Zapatoca, Agustín Correa); the forerunner of the present brand dates from 1940 (Piedecuesta, José Correa); the company Colpuros gives its own founding date as 5 August 2009",
       founder: "Agustín Correa (1870, Zapatoca) → José Correa and his wife Mercedes (1940, Piedecuesta) → Yorgan Correa Rodríguez (present head and founder of Colpuros)",
       meaning: "COLPUROS is a contraction of the company name Compañía Colombiana de Puros (‘Colombian Cigar Company’). The premium marque Don José Correa was dedicated by the founder Yorgan to his father José Correa. The name of the everyday line, MOSQUETEROS, means ‘musketeers’; no primary source explaining the choice could be confirmed, and it remains unknown.",

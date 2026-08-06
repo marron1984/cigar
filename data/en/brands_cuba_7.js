@@ -3,6 +3,11 @@
   if (typeof BRANDS_DATA === "undefined" || !BRANDS_DATA.cuba) return;
   var EN = {
     "Montecristo": {
+      band: {
+        look: "A fleur-de-lis at the centre, ringed by six rapiers arranged in a triangle. Gold swords floating on a red-brown box: one of the most widely recognised devices in the cigar world.",
+        check: "The 90th-anniversary \"Elba\" of 2025 used a band with embedded NFC technology for authentication and information.",
+        note: "The swords are said to nod to the duelling blades of the novel \"The Count of Monte Cristo\", and the design is credited to the British sole agents John Hunter Morris & Elkan. The attribution to the British agent is, however, thinly supported by contemporary primary records."
+      },
       founded: "1935",
       founder: "Alonso Menéndez; from 1936, the jointly run firm of Menéndez, García y Cía",
       meaning: "From Alexandre Dumas's novel “The Count of Monte Cristo”. The story was read aloud by the factory lector and was especially beloved of the rollers, and in its honour the two-word title is said to have been spelt as one to give the brand its name, “Montecristo”",
@@ -28,6 +33,11 @@
       trivia: "The “six swords and fleur-de-lis” that adorn Montecristo's box and band are said to allude to the duelling swords of Dumas's novel, and the design is said to have been devised by the brand's British sole agent. The brand name is held to originate in “The Count of Monte Cristo”, a favourite of the rollers as read aloud by the factory lector — making this a rare cigar with literature for a godparent. The No.4 is said to be the best-selling Cuban cigar in the world, and the story of the split — “Montecruz”, the substitute brand the exiled founders launched in the Canary Islands, and the Dominican-made Montecristo of the American market — is famous in its own right. The 90th-anniversary limited edition “Elba” of 2025 adopted a band with built-in NFC."
     },
     "Punch": {
+      band: {
+        look: "The name \"Manuel López\" is still struck on the band and box of today's Cuban version.",
+        check: "A textbook case of the split trademark: a Cuban and a Honduran version, sharing a name and a similar design, stand side by side on separate continents.",
+        note: "Recent years have brought the Línea Retro, reviving period designs in 1970s-style aluminium tubes — part of the wider Habanos current of calling old designs back into the present."
+      },
       founded: "c. 1840",
       founder: "Said to have been registered by a German named Stockmann. From 1884 Manuel López Fernández became its foster father",
       meaning: "From Mr Punch, the hero of the British puppet show “Punch and Judy”. The registration predates the founding of the satirical magazine Punch (1841) by a year, so the puppet show, not the magazine, is held to be the source",
@@ -51,6 +61,9 @@
       trivia: "【A year ahead of the magazine】The brand name comes not from the satirical magazine Punch but from Mr Punch of the puppet show. The brand's registration (1840) predates the magazine's founding (1841) by a year — in order of seniority, the cigar came first.\n【The two Punches】The “Punch” of the American market is a separate Honduran brand under General Cigar, a regular of Cigar Aficionado's Top 25 (the After Dinner placed 12th in 2019, among others). The Cuban version has its own entry too, the Short de Punch chosen for the Top 25 of 2020 — old and new Punch alike are fixtures of the magazine.\n【A tribute to Ireland】The 2022 ER “Nectares No.50” revived the name of Nectares, a discontinued brand once made exclusively for J.J. Fox, the venerable house of Dublin — the first Edición Regional ever made for Ireland."
     },
     "La Flor de Cano": {
+      band: {
+        note: "The Cuban Cigar Website records several versions, showing how band and box specifications shifted from era to era. For the 2010 Short Robusto for the United Kingdom the box carried the brand's traditional green-ink brand mark, and the bands were specially commissioned from the distinguished Dutch printers Vrijdag Premium Printing, embossed more sharply than usual."
+      },
       founded: "1884",
       founder: "The brothers Tomás Cano and José Cano",
       meaning: "Spanish for “the flower of (the house of) Cano”. The name is said to combine the founding brothers' surname with the traditional Cuban naming formula “La Flor de …” — the flower, or finest essence, of something",

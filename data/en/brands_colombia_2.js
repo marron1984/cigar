@@ -58,6 +58,10 @@
       trivia: "The relationship with the existing entry 'Chicamocha Cigars' is the greatest question surrounding this brand. Corona Real's own company history states that it 'began in 2000 as Cigarros Chicamocha, with Corona Real born in 2006', and several makers in Piedecuesta have used the same canyon's name over the years. During the transition of trade names materials nearly ran out; the Ecuadorian leaf of the 2005–2006 harvests, ordered and laid down at that time, is said still to serve as the signature wrapper today."
     },
     "Puros de Aburrá 1541": {
+      band: {
+        look: "The band carries the Antioquia Railway. To put a railway on a cigar band is to place the marque within \"the industrial lineage of Antioquia\".",
+        note: "Local history is folded into the design at several points. The account of the railway as a \"proof of authenticity\" comes from the company's own site, however, and the details of the actual artwork on band and box have not been verified."
+      },
       founded: "The brand was born in 2019. Its maker and seller, Colombia Cigars S.A.S., was founded in 2015",
       founder: "Don Rodolfo and Doña Daisy, Cubans who settled in Colombia, founded Colombia Cigars, and the Puros de Aburrá brand is said to have been created by Don Rodolfo as an homage to Paisa culture. At the centre of the business is their son, Orlando Limonta Juantorena",
       meaning: "'Cigars of the Aburrá (valley), 1541'. The Aburrá Valley is the valley in which Medellín lies, and the number marks the year in which, on 24 August 1541, Jerónimo Luis Tejelo became the first European to reach it. The valley's name derives from the indigenous Aburráes",

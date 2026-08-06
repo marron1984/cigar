@@ -2,6 +2,9 @@
   if (typeof BRANDS_DATA === "undefined") return;
   var EN = {
     "Puros Indios / Cuba Aliados": {
+      band: {
+        look: "The label carries a valiant indigenous figure. The brand name means \"pure Indians\" — pure indigenous people."
+      },
       strength: "Medium–Full. Spicy and rich, with cocoa, leather and wood commonly described. The Cuba Aliados Original Blend relaunched in 2022 (all-Honduran leaf) leans medium, while the E.P. Carrillo version is somewhat more complex and fuller in build.",
       founded: "The roots of Cuba Aliados go back to the factory 'Los Aliados' that Reyes established in Cuba (1945, Placetas, Las Villas province; later moved to Havana). The American incarnation of Cuba Aliados was revived in Union City, New Jersey, in the 1970s. The factory in Danlí, Honduras, opened in 1990, when all production was consolidated in Honduras. Puros Indios was founded there in 1995, and the Danlí factory is said to have been expanded in 2002.",
       founder: "Rolando Reyes Sr. (b. 1924, Zulueta, Cuba – d. 2012). He began making cigars at the age of nine and is said to have trained at Partagás, H. Upmann and other Havana houses. After his death, his grandson Carlos E. Diez led Reyes Family Cigars, while day-to-day operation of the factory was handled by Reyes's daughter Oneida Reyes Diez. The trademarks were sold to Oliva Cigar Co. in August 2021.",
@@ -23,6 +26,10 @@
       trivia: "'The Chief', eighteen inches long, was so vast that it had to be rolled with two wrapper leaves, and the same dimensions first appeared as Cuba Aliados' 'The General'. According to grandson Carlos Diez, big vitolas were not usually strong sellers, but the Piramide, the Chief and the General sold exceptionally well on sheer novelty. Reyes is also remembered as the pioneer who seriously introduced the intricate diadema (large figurado) to the American market. Beginning cigar making at nine and dying at eighty-nine, he lived a full eighty years with the cigar. Note too that what was sold to Oliva in 2021 was the trademarks alone: the Tabacalera Puros Aliados factory in Danlí remains with the Reyes family and rolls cigars under contract for other houses — a rare state of affairs in the industry, in which a brand's name and the factory that gave birth to it rest in different hands."
     },
     "Padilla (Padilla Cigar Co.)": {
+      band: {
+        check: "You have to infer where a cigar was made from the generation of its band and its size — the practical caution when picking this brand up in a shop.",
+        note: "Padilla holds that AGANORSA was the company supplying leaf when the García family started out in the United States, and has reissued the original band accordingly."
+      },
       strength: "Medium–Full. The early Signature 1932, made by Pepín García, made the brand's name as a spice-led full body. The Corojo 99 and Criollo 98 rolled at Raíces Cubanas in the 2010s are Medium–Full; the 88 Aniversario of 2020 is medium; and the Barcelona of 2022 is described as \"a complex medium body for those seeking an alternative to Cuban cigars\". The differences between lines are wide, and the brand as a whole is not easily reduced to a single strength.",
       founded: "2003, Miami, Florida, USA. The official company history records that it was 'created at the end of 2003 in memory of his father'. Headquarters and distribution moved to Texas in 2020.",
       founder: "Ernesto Padilla (b. 1972, Havana). His father was the Cuban poet Heberto Padilla (b. 20 January 1932, Puerta de Golpe, Pinar del Río province – d. 2000), the central figure of the 1971 'Padilla affair'.",

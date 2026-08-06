@@ -58,6 +58,10 @@
       trivia: "The subject of this entry is Menendez Amerino as a manufacturer. The company carries two flagships: Alonso Menendez of 1980 (which has its own entry in this encyclopaedia) and Dona Flor of 1982. The name Dona Flor comes from 'Dona Flor and Her Two Husbands', the novel by Jorge Amado, the great writer who loved Bahia, and was also a dedication from the company's president to the author, his friend. The Menendez family, creators of Cuba's famous Montecristo, first crossed to the Canary Islands after the revolution and there became buyers of Bahian leaf — the two families thus met first as 'seller and buyer', and became business partners seventeen years later. In 2024 the company released the Dona Flor Black, dressed in 'Itaporã', its first wrapper of its own development since foundation, limited to 1,000 boxes."
     },
     "Alonso Menendez": {
+      band: {
+        look: "The box carries a triangular device of swords modelled on those of Alexandre Dumas — the prototype of the design still in use today.",
+        note: "It pairs with the brand name, which compresses into a single word a name drawn from \"The Count of Monte Cristo\"."
+      },
       founded: "1980 (creation of the brand; the manufacturer, Menendez Amerino, was established in November 1977 in São Gonçalo dos Campos, Bahia)",
       founder: "Said to have been created by Félix Menendez Toraño (born in Cuba in 1944 — died in Brazil on 14 December 2018) in honour of his father Alonso. Some sources hold instead that his brother Benjamin ('Benji') Menendez launched it. The manufacturer, Menendez Amerino, was a joint venture between Mário Amerino da Silva Portugal and the Menendez family",
       meaning: "The brand bears, unchanged, the name of Alonso Menéndez, the Spanish-born cigar man who created Montecristo in pre-revolutionary Cuba (trade mark registered 1935) and acquired H. Upmann in 1937. The next generation of sons raised his name anew as a brand in their Brazilian exile",

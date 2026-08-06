@@ -2,6 +2,9 @@
   if (typeof BRANDS_DATA === "undefined") return;
   var EN = {
     "Meerapfel": {
+      band: {
+        note: "The Meerapfel name was for a long time never printed on a cigar box or band. The family stood as leaf merchants rather than as a brand — the hidden protagonists of the cigar industry."
+      },
       strength: "The house's own cigars are Medium–Medium-Full. Built chiefly on aged Dominican leaf, they are said to draw cedar, leather, espresso, dark chocolate and a faint spice.",
       founded: "1876 (the year the family's cigar factory was founded at Untergrombach, Germany; the family's tobacco cultivation and trading, however, is said to reach back much further, to the 1600s, or to 1610. The house's own cigar brand, Meerapfel Cigars, was launched in 2021–2022)",
       founder: "Meir (Maier) Meerapfel (said to have lived 1847–1927), who founded the factory in 1876. The present heads of the house are the eleventh-generation brothers Joshua and Jeremiah Meerapfel, sons of Richard \"Rick\" Meerapfel, the man who established Cameroon wrapper leaf",

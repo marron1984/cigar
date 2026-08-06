@@ -29,6 +29,10 @@
       trivia: "【The world’s smallest cigar】Bolívar once made the “Delgado”, held to be the world’s smallest cigar at about 4.8 cm long with a ring gauge of 20, and a miniature box of them is said to have been placed in the royal dolls’ house at Windsor Castle.\n【The summit of 2006】The Royal Corona was Cigar Aficionado’s No. 1 “Cigar of the Year” for 2006, and returned in 2013 with 93 points in 21st place — a proven performer at a friendly price.\n【An ER with a Japanese name】The 2025 Regional Edition for Japan, “Hamaki”, took its name from the Japanese word for cigar and introduced the dobles format (50 × 155 mm) to the brand for the first time. The encounter between the strongman marque bearing the Liberator’s name and the Japanese language caused quite a stir."
     },
     "Por Larrañaga": {
+      band: {
+        look: "A golden band, worked in gold.",
+        note: "Through the nineteenth century and into the early twentieth the marque was a byword for the highest quality, loved among royalty, the rich and the notable. Its golden band was taken as a token of that quality, and is said to have satisfied its owner before the wrapping was even undone."
+      },
       founded: "1834 (registered, it is said, by Ignacio Larrañaga; some accounts name the brothers Ignacio and Ambrosio Larrañaga as joint founders)",
       founder: "Ignacio Larrañaga, said to be a Spanish immigrant bearing a Basque surname. Some sources record a joint founding with his brother Ambrosio",
       meaning: "From the founder’s surname Larrañaga, common in the Basque Country; together with the prefixed “Por” (“by” / “made by”), the name is said to mean “made by Larrañaga”",

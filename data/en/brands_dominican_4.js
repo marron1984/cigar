@@ -79,6 +79,10 @@
       trivia: "“Red Dot” is not an official line name but a nickname devotees began to use for the red dot set inside the “O” when the band was redesigned after the GDM suit of 1997. According to the litigation records, the first commercial use in the United States claimed by the General Cigar side was 13 February 1978, and the earliest sales went to Rubovits Cigars of Chicago and Cigars Santa Clara of New York. And 2021’s “Serie M”, rolled at the El Titan de Bronze factory in Miami, was the first American-made Cohiba in history — the sole exception to the rule of Dominican origin."
     },
     "Fonseca (Dominican)": {
+      band: {
+        look: "Its best-known feature is that each cigar is wrapped individually in white tissue paper. The Cuban version keeps the practice to this day, and it carried over to the Dominican years of the non-Cuban version.",
+        check: "The tissue wrap is common to both versions and so settles nothing on its own. (1) The Cuban band carries the word \"Habana\" and a Habanos seal. (2) The names KDT Cadetes and Cosacos exist on both sides, so the vitola name will not separate them either. (3) Since 2020 the non-Cuban band has read \"Fonseca by My Father\"."
+      },
       founded: "As the non-Cuban version, 1974 (production begun as one of the first two brands at the founding of MATASA). The trademark’s starting point is the mark Francisco E. Fonseca established in Havana in 1892 and registered in 1907",
       founder: "The Quesada family — Manuel Quesada Sr, Manuel “Manolo” Quesada and Alvaro Quesada — who founded MATASA (Manufactura de Tabacos S.A.) in Santiago in 1974. The US rights passed to My Father Cigars (the García family) in December 2019",
       meaning: "From the surname of Francisco E. Fonseca, who established a cigar factory and brand in Havana in 1892",

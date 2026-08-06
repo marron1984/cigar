@@ -2,6 +2,10 @@
   if (typeof BRANDS_DATA === "undefined") return;
   var EN = {
     "Dutch Masters": {
+      band: {
+        look: "The design takes in the paintings of Rembrandt and the other \"Dutch masters\".",
+        note: "From the outset it held up the paintings, claiming the \"quality of the masters\" for a machine-made cigar. Setting a half-obscure seventeenth-century painting at the head of a mass-market product, and borrowing artistic authority thereby, was a singularly adroit strategy of naming and design. The design has been carried on for more than a century since."
+      },
       founded: "1912 (year sales began; some sources give 1911)",
       founder: "G.H. Johnson Cigar Company; absorbed into the Consolidated Cigar Corporation a few years later",
       meaning: "“The Dutch Masters”, after the painters of the seventeenth-century Dutch Golden Age — Rembrandt above all; the box carries Rembrandt’s 1662 painting “The Syndics of the Drapers’ Guild”",
@@ -58,6 +62,9 @@
       trivia: "The word “stogie” derives from the long, thin, cheap cigars favoured by the drivers of the Conestoga covered wagons. In 1840 Mifflin Marsh, aged 22, stood at the wharf with a single basket and sold them at “four for a penny”. His creed was to keep to “the workingman’s cigar” rather than compete with the fine houses, and Wheeling in time came to be called “Stogie Town”. Daniel Webster, Annie Oakley and P. T. Barnum are said to have smoked them, and as a period-correct, affordable cigar the stogie was prized in Civil War re-enactments and period films. The Wheeling factory, after 161 years, sent out its last cigar on 21 December 2001 and closed, production passing to the National Cigar Corporation of Frankfort, Indiana; but that company too ceased operating in 2015, and the brand disappeared from the market for a time. In 2018 the Topper Cigar Company, founded in 1894, acquired the rights to make and sell it and revived it with machine production in the Dominican Republic. Ownership of the brand name is said to remain with the National Cigar side, and the current product is a “revived name” severed from founding family and founding town alike."
     },
     "King Edward": {
+      band: {
+        note: "The company is said to have been the first to wrap cigars individually in cellophane, and also to have devised the simple opening method by which pulling the band tears the cellophane away. These claims to be \"first in the world\" rest on the company's own history."
+      },
       founded: "1918 (brand launch); the Swisher firm’s origins date to 1861",
       founder: "Jno. H. Swisher & Son (John H. Swisher and his son Carl Swisher). The firm traces back to a cigar workshop David Swisher acquired in Newark, Ohio, in 1861",
       meaning: "Named after King Edward VII of Britain, the cigar-loving monarch said to have lifted the smoking ban at court with the words “Gentlemen, you may smoke”; in early twentieth-century America, names invoking royalty to suggest quality were widely used.",

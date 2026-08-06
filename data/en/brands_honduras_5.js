@@ -2,6 +2,9 @@
   if (typeof BRANDS_DATA === "undefined") return;
   var EN = {
     "Sancho Panza (Honduran)": {
+      band: {
+        note: "In the wholesale overhaul of July 2022, led by Matt Booth and Justin Andrews, the design was renewed along with the blend. The new look is explained as drawing on the Latin culture of West Los Angeles. At the same time the Original changed from box-pressed to round."
+      },
       strength: "Medium–Full. Since the renewal of 2022 the range has comprised three lines: the Original at medium, the Double Maduro at medium-plus, and the Extra Fuerte the strongest of them. The first version of 2001 was likewise designed for a \"rich and full flavour\", a direction quite unlike the milder Cuban version. Less extreme than the Honduran El Rey del Mundo, it is nonetheless a typical case of a non-Cuban version pitched to the richer side of the original.",
       founded: "The Cuban original is said to have been founded in 1848 by the German businessman Don Emilio Ohmstedt. For the non-Cuban version, Villazon & Co. registered the US trademark in 1981 without bringing out a product; Honduran-made cigars finally reached the market in 2001 under General Cigar Company",
       founder: "The US trademark was secured by Villazon & Co. under Frank Llaneza. It passed to General Cigar through the 1997 acquisition of Villazon (reported at about USD 81.4 million), and the blend at the 2001 launch is attributed to Estelo Padrón, head of production at HATSA. The complete 2022 overhaul was led by brand manager Justin Andrews and Room101 founder Matt Booth, working with the blending team at the STG (HATSA) factory in Danlí",
@@ -55,6 +58,9 @@
       trivia: "【A Factory Without Its Own Name for Over Twenty Years】In its 2025 awards feature, halfwheel described Raíces Cubanas as one of the largest cigar factories to have operated purely as a contract manufacturer. When the Alec Bradley Prensado took Cigar Aficionado's No. 1 Cigar of the Year in 2011 (96 points), the honours went to the client brand, not the factory. Having borne that anonymity for more than twenty years, it at last launched its own brands in November 2024.\n【The Meaning of the Number 1941】Both 'Raices Cubanas 1941', released by Alec Bradley in 2013, and the '1941 Nuevo Comienzo', released by the factory's own house in 2025, take their number from the same source: the birth year of founder Romay Endemaño and his wife María. The same figure migrated, over twelve years, from a client brand's product name to the house's own.\n【The Origin of 'Kill Bill'】La Palina's KB is said to owe its name to a joke: brand owner Bill Paley could not finish a prototype so strong that it threatened to 'Kill Bill'. It appeared in 2012 as part of El Diario and was promoted to a stand-alone brand on the strength of its popularity."
     },
     "Punch (Honduran)": {
+      band: {
+        look: "The band shows a gentleman with a dog on his knee, drawing on a cigar — an image descended from Mr Punch, the hero of the English puppet play from which the brand takes its name."
+      },
       strength: "Medium–Full (core lines such as the Deluxe are medium, while the Gran Puro and the Signature lean full; the spread between lines is wide).",
       founded: "The Cuban origin dates to 1840 (the registrant is variously given as the German Stockmann or as Manuel López of J. Valle y Cía.). As a non-Cuban brand, Villazon & Co. registered the trademark in the United States in 1965, and Honduran-made cigars reached the market in 1968–69",
       founder: "The non-Cuban version was created by Frank Llaneza and Daniel Blumenthal of Villazon & Co. The Cuban trademark is said to have been acquired from Fernando Palicio, and the early blends were the work of Estelo Padrón (elder brother of Orlando Padrón)",

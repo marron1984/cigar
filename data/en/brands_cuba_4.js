@@ -20,6 +20,10 @@
       trivia: "Saint Luis Rey is one of the few Cuban cigars to bear the English spelling “Saint”, a spelling that itself tells of its origins as a cigar born for Britain. From 1960 until around 1992 it was in effect a British exclusive through the Silverstone firm, and to aficionados on the Continent it long remained a phantom. As to the name, the theory of San Luis — the leaf-growing town of the Vuelta Abajo — and the theory of the Pulitzer Prize-winning novel “The Bridge of San Luis Rey” still stand side by side, unresolved. There is, moreover, an identically named Honduran-made brand (of the Altadis line) with which it is frequently confused. Rarely does a marca of such modest fame carry so intricate a story behind it."
     },
     "Quai d'Orsay": {
+      band: {
+        look: "The band has always been understated.",
+        note: "A later overhaul renewed both band and box, while the blend was revisited to keep its accustomed lightness but add body and character."
+      },
       founded: "1973 (brand established) / commercial sales from 1974 (sources cite both years)",
       founder: "Cubatabaco, the Cuban state tobacco corporation (a joint venture at the request of SEITA, the French state tobacco monopoly; the idea is attributed to Valéry Giscard d'Estaing, then Minister of Economy and Finance)",
       meaning: "Named after the Quai d'Orsay, the embankment street on the Left Bank of the Seine in Paris. The street of that name is also a byword for the French Ministry of Foreign Affairs, and there is likewise a theory that the name honours the SEITA headquarters on the same street — several explanations coexist as to what it denotes",

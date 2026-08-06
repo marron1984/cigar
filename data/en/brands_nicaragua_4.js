@@ -2,6 +2,10 @@
   if (typeof BRANDS_DATA === "undefined") return;
   var EN = {
     "Joya de Nicaragua": {
+      band: {
+        look: "The \"phantom cigar\" — originating in a private, unsold cigar made up for ambassadors to use on diplomatic occasions — wears a band bearing the national coat of arms. It was raised to the regular range in 2018–19.",
+        note: "A well-known anecdote has the then ruler Anastasio Somoza Debayle visiting the White House around 1970 and being struck to find that the box of cigars offered him by President Nixon was filled with bands of his own country's Nicaragua Cigar Company. Alongside these the company has also grown gentler brands and lines in a modern dress, such as Joya Red and Joya Black."
+      },
       founded: "1968",
       founder: "Juan Francisco Bermejo and Simón Camacho, who are said to have founded the enterprise as the Nicaragua Cigar Co.",
       meaning: "Spanish for “the jewel of Nicaragua”. The name is said to proclaim its pride as the country's first true premium cigar made entirely from home-grown leaf, and it became a flagship marque worthy of bearing the nation's name",
@@ -24,6 +28,10 @@
       trivia: "【The Diplomat's Cigar】“Número Uno”, one of the top lines, is said to originate as an unsold commission made for Nicaragua's ambassadors to use in diplomatic settings, and long remained a “phantom cigar” never offered at retail. Banded with the national crest, it won high acclaim when general sale began in the late 2010s.\n【The Dictator Who Bombed His Own Factory】The tradition that “Somoza bombed his own factory” amid the revolutionary destruction of the works is the centrepiece of the history the company hands down, and is often cited as an episode illuminating the turmoil of modern Nicaragua from the side of the cigar industry.\n【Nixon's Box】The anecdote of Nixon offering Somoza his own country's cigars at the White House, though its truth is hard to verify, continues to be told as circumstantial evidence that the marque had penetrated American political circles by the early 1970s."
     },
     "Crowned Heads": {
+      band: {
+        look: "The packaging takes its cue from José Guadalupe Posada's zinc etching \"La Calavera Catrina\".",
+        note: "The design carries the purpose of commemorating those who died in the year in question."
+      },
       founded: "2011 (the debut brand Four Kicks shipped to 66 American shops that November)",
       founder: "Founded by former executives of CAO International — principally Jon Huber and Mike Conder, with Michael Trebing, Nancy Heathman and others. Based in Nashville, Tennessee",
       meaning: "Crowned Heads — the crowned monarchs of Europe. The name is said to derive from the sign painted on Professor Marvel's wagon in the film The Wizard of Oz, “Crowned Heads of Europe … Past, Present, and Future”; it is also an established idiom for European royalty",

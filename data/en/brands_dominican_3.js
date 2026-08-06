@@ -29,6 +29,9 @@
       trivia: "Today’s La Gloria Cubana keeps a dedicated rolling room called “El Crédito” inside the great General Cigar Dominicana factory — the Miami-era factory name transplanted whole, a “small factory within the factory”, as it were. In recent years, moreover, a collaboration has come about in which Ernesto Perez-Carrillo Jr., the founder who parted with the brand in 1999, makes the Colección Reserva (2017) and Los Gloriosos (2025) at his own Casa Carrillo factory. The twisted configuration — the trademark another’s, the maker the originator himself — is often cited as emblematic of the separation of “name” and “hand” in the premium cigar trade."
     },
     "Henry Clay": {
+      band: {
+        look: "The 6 × 52 toro carries a pigtail cap. The box bore an image of the old Cuban factory, taking the brand's own provenance into the design."
+      },
       founded: "Founded in Havana in the 1840s (some sources say circa 1850). Non-Cuban production began with the move to Trenton, New Jersey in 1932; the present Dominican production dates from Consolidated Cigar’s purchase of the American Cigar Company in 1986",
       founder: "Julián Álvarez Granda (a Spanish emigrant to Cuba). Sold in 1888 to the British-backed Henry Clay and Bock & Co., and by 1904 in the ownership of the American Cigar Company",
       meaning: "Named after the nineteenth-century American statesman Henry Clay (1777–1852; Speaker of the House and Secretary of State, styled “the Great Compromiser” and a “War Hawk”). Chosen as a selling name for the American market; the man himself had no direct connection with the cigar trade",

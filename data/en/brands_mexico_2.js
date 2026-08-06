@@ -2,6 +2,10 @@
   if (typeof BRANDS_DATA === "undefined") return;
   var EN = {
     "Te-Amo": {
+      band: {
+        look: "In the 2024 revival the old hyphen and the matador-and-bull device disappeared, replaced by a new design of graded greens and a golden sun that calls up the scenery of the San Andrés valley.",
+        check: "Because the hyphen and the matador vanished with the revival, the design itself indicates the generation."
+      },
       founded: "1960s (established by the fourth-generation head of the family, Alberto Turrent; the founding year is variously given as 1960, 1963 or 1966 depending on the source)",
       founder: "The Turrent family. According to tradition, the Spanish-born Alberto Turrent settled in San Andrés, Mexico, in the 1880s carrying Cuban tobacco seed and began cultivation. The Te-Amo brand itself is said to have been established by the fourth-generation head of the family, also named Alberto Turrent",
       meaning: "Spanish for 'I love you'. The logo is a bull (toro), and the classic boxes bore a design of a matador confronting a bull",

@@ -73,6 +73,9 @@
       trivia: "The original three shapes — Niña, Santa María and Pinta — take their names from the three ships with which Columbus crossed to the New World. The brand name itself is said to have been taken from a newspaper headline Mamoru Hiromi saw in Nicaragua — “Aroma de puros nica cruza el Pacífico” (the aroma of Nicaraguan cigars crosses the Pacific) — so that ships and voyages form a consistent theme. Its origin as a brand “created in Japan, exclusively for the Japanese market”, unlike the great overseas marcas, is this cigar's greatest distinction. Note that a confusingly similar brand, “Aroma de Nicaragua”, which Hernán López Rizo debuted at PCA 2021, genuinely exists on the American market; the two are entirely separate things and must not be confused."
     },
     "Micallef Cigars": {
+      band: {
+        note: "That the brand's storytelling holds Texan cowboy culture (Reata, the lasso; the CF Ranch) and Cuban craft culture (Migdalia, Partagás, 1934) side by side is the two-layered founding showing through directly in the design."
+      },
       founded: "First cigars released in 2016 (some accounts date the company's founding to 2017). Headquartered in Weatherford, Texas, USA",
       founder: "Al Micallef (a Texan businessman) and the Cuban Gomez Sanchez family (the brothers Joel and Edel, and their mother Migdalia Sánchez)",
       meaning: "The founder's family name. Many of the lines are likewise named after people or associations: Migdalia is the name of Joel's mother, the legendary Cuban roller Migdalia Sánchez; Leyenda is Spanish for “legend”; Reata is a Texan word for the cowboy's lasso; and Experiencia means “experience”",

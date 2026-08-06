@@ -2,6 +2,10 @@
   if (typeof BRANDS_DATA === "undefined") return;
   var EN = {
     "CAO": {
+      band: {
+        look: "Richly coloured bands and boxes give each cigar a scene of its own. Brazilia, under its Brazilian wrapper, won its following with a vivid band in the colours of the Brazilian flag.",
+        note: "Painting a scene rather than merely stating the origin of the leaf was strikingly original among the cigar marketing of its day, and became a model for later brands seeking to catch the customer's eye. The founder's feeling for the white, smooth surface of meerschaum carried through into the design of the humidors and then of the cigar bands."
+      },
       founded: "1968 (the year generally given for the founding of the pipe business in Nashville, Tennessee; halfwheel, however, records that he began selling modified pipes in the late 1960s and founded the pipe company C.A.O. in 1977, so accounts differ). The move into humidors came in the early 1990s, the entry into cigars in the mid-1990s (dated variously to 1993 or 1995), and CAO Gold was launched in 1996",
       founder: "Cano Aret Ozgener (born Istanbul 1937, died Nashville 2018). A Turk of Armenian descent raised in a family of jewellers, he emigrated to the United States in the early 1960s, studied mechanical engineering at postgraduate level at Columbia University, and spent about a decade as an engineer with DuPont. His son Tim (Murat) served as the company's second president",
       meaning: "Derived from the founder's initials: C for Cano, A for Aret, O for Ozgener. The brand name is said to have originated with the initials he stamped on the meerschaum pipes he made himself",

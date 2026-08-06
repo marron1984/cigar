@@ -2,6 +2,9 @@
   if (typeof BRANDS_DATA === "undefined") return;
   var EN = {
     "My Father": {
+      band: {
+        look: "The nickname \"Blue Label\" comes from the blue band, which recalls the Cuban years."
+      },
       founded: "2008 (brand announced; the following year, 2009, the family opened its own factory, My Father Cigars S.A., in Estelí, Nicaragua)",
       founder: "José “Pepín” García (born 1950 in Villa Clara Province, Cuba; a third-generation master blender) and his son Jaime García",
       meaning: "English for “my father”. The name derives from a cigar that the son, Jaime García, blended in secret out of respect for his father Pepín and named “My Father”; the deeply moved Pepín is said to have renamed the company itself after it",
@@ -23,6 +26,9 @@
       trivia: "【A dedication from father to father】The brand name My Father began with a cigar the son, Jaime, dedicated to his father Pepín. In its supreme expression, Le Bijou 1922, the 1922 is the birth year of Pepín's own father — this time the father's dedication to his father. Respect for one's father across three generations is inscribed in the very names of brand and cigar.\n【The eleven-year-old roller】Pepín, a third-generation craftsman said to have rolled his first cigar at eleven, is reported to have been involved in his Cuban years in the manufacture of such great marques as Montecristo and Cohiba. So surpassing was his skill that after going independent he took on the contract manufacture of one celebrated brand after another — Tatuaje, San Cristobal — and was hailed as the industry's next big thing."
     },
     "Foundation Cigar Co.": {
+      band: {
+        look: "Folkloric devices on band and box reinforce the brand's storytelling. The line named after Menelik II — the emperor who founded an Ethiopian order of knighthood in 1889 — carries the Star of Ethiopia on band and box."
+      },
       founded: "2015 (the debut brand, El Güegüense, was released in the middle of the year)",
       founder: "Nicholas “Nick” Melillo, a native of Connecticut. From around 2003 to 2014 he served at Drew Estate as Executive Vice President of International Operations and master blender, overseeing production at the Nicaraguan factory La Gran Fabrica and having a hand in Liga Privada No. 9, T52 and Nica Rustica, before striking out on his own. His nicknames are “Nick R. Agua” and “Chief of the Broadleaf”",
       meaning: "The brand name Foundation is said to express Melillo's conviction that a fine cigar is built first upon the “foundation” of superior leaf tobacco. Note that “El Galan”, mentioned in the source assignment, is a separate brand by Felix Mesa, unconnected with Melillo or Foundation",

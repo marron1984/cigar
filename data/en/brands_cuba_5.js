@@ -44,6 +44,9 @@
       trivia: "Alejandro Robaina is the only Cuban farmer in history to have had a Havana brand carry his own name in his lifetime. His fields' wrapper yield is said to have been around 80%, dwarfing the 10–20% of other farms. At home his byname was 'the Godfather', and for his 83rd birthday a commemorative humidor was even made. His grandson Hirochi, while carrying on his grandfather's farm, unveiled the non-Cuban brand 'HR' in the United States in 2014 and revived it at Intertabac 2024 together with 'HR Black'. Hurricane Ian in 2022 also struck the legendary farm, Cuchillas de Barbacoa."
     },
     "Hoyo de Monterrey": {
+      band: {
+        note: "At the 2014 Festival del Habano the first of the modern releases, Le Hoyo de San Juan, appeared under a new band reading \"Série Le Hoyo\". The lettering pushes to the front the founding story — that the leaf comes from San Juan y Martínez, the district where the brand was born in 1865."
+      },
       founded: "1865",
       founder: "Don José Gener y Batet — born in 1818, a Spanish immigrant who crossed to Cuba in 1831 at the age of 13",
       meaning: "Spanish for 'the hollow of Monterrey'; from the name of the family's own plantation — one of the top-grade Vegas de Primera — on low-lying ground beside the river at San Juan y Martínez",
