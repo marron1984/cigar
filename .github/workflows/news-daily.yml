@@ -65,23 +65,32 @@ jobs:
       - name: 要約データを作り直す
         if: ${{ !inputs.dry_run }}
         # ホームの「翻訳ニュース ○件」は data/summary.js を見ているので合わせる。
+        # build_summary.js は英語版の要約（data/en/summary.js）も一緒に書き出すので、
+        # 下のコミットでは3つとも必ず入れること。取りこぼすと作業ツリーに
+        # 未ステージの変更が残り、git pull --rebase が拒否してプッシュできなくなる。
         # 英語版シェルと各ページの入口はニュースでは変わらないため、ここでは作らない。
         run: node tools/build_summary.js
 
       - name: 変わっていたらコミットして反映
         if: ${{ !inputs.dry_run }}
         run: |
-          if git diff --quiet -- data/news.js data/summary.js; then
+          FILES="data/news.js data/summary.js data/en/summary.js"
+          if git diff --quiet -- $FILES; then
             echo "今日は足すものがありませんでした。コミットしません。"
             exit 0
           fi
           COUNT=$(node -e 'const fs=require("fs");const N=new Function(fs.readFileSync("data/news.js","utf8")+"\n;return NEWS_DATA;")();console.log(N.items.length)')
           git config user.name  "cigar-cafe-bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/news.js data/summary.js
+          git add $FILES
           git commit -m "葉巻ニュースを更新（合計${COUNT}件・自動取り込み）"
+          # 作り直しで他の生成物が動いていても、rebase を止めないよう片付けておく
+          git checkout -- . && git clean -fd -- data
+          PUSHED=""
           for i in 1 2 3 4; do
-            git pull --rebase origin "${GITHUB_REF_NAME}" && git push origin "HEAD:${GITHUB_REF_NAME}" && exit 0
+            git pull --rebase origin "${GITHUB_REF_NAME}" && git push origin "HEAD:${GITHUB_REF_NAME}" && { PUSHED=1; break; }
             sleep $((2 ** i))
           done
-          echo "プッシュに失敗しました"; exit 1
+          if [ -z "$PUSHED" ]; then echo "プッシュに失敗しました"; exit 1; fi
+          # 本番用のブランチにも同じ内容を送る（早送りできるときだけ。失敗しても止めない）
+          git push origin "HEAD:main" || echo "main への反映は見送りました（分岐しています）"
