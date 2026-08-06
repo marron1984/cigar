@@ -3,6 +3,10 @@
   if (typeof BRANDS_DATA === "undefined" || !BRANDS_DATA.cuba) return;
   var EN = {
     "Trinidad": {
+      band: {
+        look: "Brown and gold, with lustrous gold picking out the detail — a restrained palette suggesting the dignity of the old city, in deliberate contrast to Cohiba's finery.",
+        note: "From its beginnings in 1969 the cigar long went without a band at all, used as a gift of state to foreign dignitaries. That very staging — an unbanded cigar passing into the hands of the eminent — laid the ground for the mystique of later years."
+      },
       founded: "1969 (prototyped for diplomatic gifts — the legendary era); 1998 (general release as a commercial brand)",
       founder: "The El Laguito factory (Habanos S.A. / Cuba's state tobacco industry); said to have been initiated under the direction of Fidel Castro",
       meaning: "Named after Trinidad, the old city in Sancti Spíritus province on Cuba's southern coast; said to be a tribute to the colonial town founded in the sixteenth century and now inscribed as a UNESCO World Heritage Site",
@@ -77,6 +81,11 @@
       trivia: "Under this name meaning “the glory of Cuba” exist two separate brands, one Cuban-made and one American. The Cuban version is the old house founded in 1885, now produced in small quantities by Habanos around slimmer vitolas crowned with the Medaille d'Or name (French for “gold medal”). The non-Cuban version was founded around 1972 by Ernesto Perez-Carrillo, father and son, at the El Credito factory in Miami's Little Havana, and became a driving force of the 1990s cigar boom. Alike in name but different in substance and lineage, the two La Gloria Cubanas are the exemplary case of a “split brand” created by the Cuban Revolution and the trade embargo."
     },
     "San Cristóbal de La Habana": {
+      band: {
+        look: "The principal band is white with gold and blue, carrying the arms of Havana and the name of the city.",
+        check: "The street-name line sold exclusively through La Casa del Habano (LCDH) carries an additional maroon-and-gold secondary band denoting the shop, marking it at a glance as an exclusive.",
+        note: "The device of the city's arms is itself the concentrated expression of the marque's concept — a dedication to the city."
+      },
       founded: "1999 (unveiled in Havana on 20 November)",
       founder: "Habanos S.A.",
       meaning: "From “San Cristóbal de La Habana”, the formal name given to the city of Havana by the Spanish in 1519. It bears the name of St Christopher (San Cristóbal), patron saint of travellers, and a nod to Columbus (Cristóbal Colón) has also been noted",

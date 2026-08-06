@@ -3,6 +3,9 @@
   if (typeof BRANDS_DATA === "undefined" || !BRANDS_DATA.cuba) return;
   var EN = {
     "Ramón Allones": {
+      band: {
+        note: "It is held to be among the earliest brands to wrap every cigar in a band bearing the marque's name. The trio of the chromolithographed box, the band and the 8-9-8 packing is judged to form the prototype of the Habano's dress as we know it — though the precise order of these \"firsts\" varies between sources."
+      },
       founded: "1837 (the official Habanos S.A. position; the entry in the trademark register dates from 1845, and some sources regard that as the more certain date)",
       founder: "The brothers Ramón Allones and Antonio Allones, emigrants from Galicia in Spain; Ramón is said to have crossed to Cuba in 1830",
       meaning: "From the name of the founder, Ramón Allones. A classic nineteenth-century naming that put the maker's own name over the door, rather than a place name or a work of literature",
@@ -26,6 +29,10 @@
       trivia: "【Inventor of the 8-9-8】The “8-9-8” format — cigars stacked in staggered rows of eight, nine and eight — is held to be a Ramón Allones invention, and the marque is also said to have been the first brand to decorate its boxes with multicoloured lithographs and among the earliest to use bands. 【King of the limiteds】With more than 30 Edición Regional releases it leads all marques, and a 1924 catalogue listed 62 sizes. The 1980-born staple Specially Selected is affectionately known as the “RASS”, while the Small Club Coronas is a regular in the 90–92 range in Cigar Aficionado. A non-Cuban version made by AJ Fernandez also exists in the United States."
     },
     "Romeo y Julieta": {
+      band: {
+        check: "Limited editions sometimes add a second band covering the foot. The Maravillas No. 3 wore a foot band depicting the rat of 2020, and the 150th-anniversary release carried a special band with \"150\" at its centre together with a second band.",
+        note: "The brand pioneered the personalised band, offering wealthy customers cigars banded in their own name; at the height of Pepín Rodríguez's era some 2,000 different personalised bands are said to have been made. Winston Churchill's name too was struck on a commemorative band, and the size he favoured took the name \"Churchill\"."
+      },
       founded: "1875 (the formal registration of the trademark is said to date from 1873, and some sources trace the origins to the 1850s; anniversaries are counted from 1875)",
       founder: "Inocencio Álvarez and Manín García, both emigrants from the Asturias region of Spain",
       meaning: "The Spanish name of Shakespeare's tragedy “Romeo and Juliet”. Tradition has it that the name derives from a story the factory's lector (reader) read aloud, which endeared it to the rollers",

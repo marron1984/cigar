@@ -786,6 +786,10 @@ var I18N = (function () {
       "The cigars you starred. Tap \"✎ Log\" to write one up the moment you smoke it.",
     "葉・産地": "Leaf & origin",
     "代表的なヴィトラ・ライン": "Key vitolas & lines",
+    "バンドの意匠": "The band",
+    "band::見た目": "Appearance",
+    "band::見分けどころ": "What to look for",
+    "band::由来・変遷": "Origin & changes",
     "ブランド情報を準備中です。": "Brand entries are being prepared.",
     "この産地の気候・土壌・歴史を読む": "Read about this origin — climate, soil and history",
 

@@ -3,6 +3,10 @@
   if (typeof BRANDS_DATA === "undefined" || !BRANDS_DATA.cuba) return;
   var EN = {
     "Bolívar": {
+      band: {
+        look: "The portrait of Simón Bolívar occupies the centre of a predominantly gold band.",
+        note: "It is the likeness of the hero who won independence for much of South America and was called El Libertador, \"the Liberator\" — and it has been displayed there for 120 years."
+      },
       founded: "1902 (the Havana trademark registration is said to date from 1921)",
       founder: "José Fernández Rocha",
       meaning: "Named after Simón Bolívar, the nineteenth-century hero who liberated the nations of South America from Spanish rule; the Liberator’s portrait graces the band",

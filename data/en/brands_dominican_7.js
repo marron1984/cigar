@@ -26,6 +26,10 @@
       trivia: "【A Birthday Debut】The debut date of 18 November 1995 is the same date as the birthday of founder Arturo Fuente (18 November). At the New York launch shops the queues circled the block, and a cult renown was born in a single night.\n【The Name Opus】Carlito himself tells that, hunting for “opulent” in a thesaurus, he came upon “opus” and exulted: “OpusX. It sounds like sex!”\n【A Year’s Patience】Halfwheel has observed repeatedly that OpusX comes into its own after about a year’s rest from purchase, and “don’t smoke it straight away” has become the received wisdom among devotees."
     },
     "Davidoff": {
+      band: {
+        look: "The core of the current range is the White Band Collection. The cursive \"Davidoff\" is said to derive from Zino Davidoff's own signature. The Black Band (Discovery) family, the line that opened up new origins, wears a band of silver and black.",
+        note: "The White Band is built in three layers: the classics inherited from the Cuban years (Signature, Grand Cru), commemorative releases made permanent (Aniversario, Millennium), and dedications to individuals (Winston Churchill). The white band is today a universally recognised sign of the summit of non-Cuban cigars."
+      },
       founded: "1968",
       founder: "Zino Davidoff (as a marque, created in partnership with Cubatabaco, Cuba’s state monopoly; from 1970 the business was carried on by the Oettinger firm of Basel, Switzerland)",
       meaning: "From the surname of the founder, Zino Davidoff. The family were Jewish tobacco merchants from Ukraine, and the name over a fine Geneva tobacco shop became, unchanged, a worldwide marque",

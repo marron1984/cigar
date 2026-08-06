@@ -3,6 +3,10 @@
   if (typeof BRANDS_DATA === "undefined" || !BRANDS_DATA.dominican) return;
   var EN = {
     "Juan Clemente": {
+      band: {
+        look: "No band at the head; instead the band is wrapped around the foot — the lighting end — with the foot further covered by a piece of foil. An inversion shared with no other marque.",
+        note: "It was not eccentricity for its own sake: the arrangement also served the practical end of preventing cracks in the foot, the most fragile part of a cigar. This \"band at the foot\" became Juan Clemente's calling card."
+      },
       founded: "1982 (launched in France and Switzerland in April; the factory is in Santiago, Dominican Republic)",
       founder: "Jean Clément. A cigar devotee from the Champagne region of France and a distributor of fine wines and spirits. The company is named Tabaquisa S.A.",
       meaning: "A Hispanicised, Latinised rendering of the founder’s name (Jean Clément → Juan Clemente)",

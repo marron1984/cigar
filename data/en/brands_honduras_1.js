@@ -2,6 +2,10 @@
   if (typeof BRANDS_DATA === "undefined") return;
   var EN = {
     "Room101": {
+      band: {
+        look: "Japanese tattoo motifs such as oni demons and severed heads, Japanese typography, and Los Angeles street culture fused into a provocative design unlike any other brand's. It reflects the eye of Matt Booth, a jewellery designer by training.",
+        note: "The flagship line \"Namakubi\" is Japanese for \"severed head\" and carries an oni logo — a motif originating in Edo-period ukiyo-e and carried on in traditional Japanese tattooing, held to symbolise impermanence, respect for one's enemy, and fearless resolve."
+      },
       strength: "Wide-ranging according to the line. The Namakubi Ecuador and The Big Payback Extra Fuerte are full-bodied, while the San Andres and the Serie HN 305 sit at medium to medium-plus.",
       founded: "Founded in Los Angeles in 2003 as a jewellery and boutique brand. The cigar arm followed from a 2008 visit to the Camacho factory, launching in 2009 with production at Agroindustrias LAEPE (Camacho) in Danli, Honduras.",
       founder: "Matt Booth. A former US Marine turned jewellery designer, he fused the Eastern motifs absorbed during deployments to Asia with Los Angeles street luxury. He has remained involved as creative director since the STG acquisition of 2022.",

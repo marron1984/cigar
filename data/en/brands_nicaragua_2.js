@@ -2,6 +2,10 @@
   if (typeof BRANDS_DATA === "undefined") return;
   var EN = {
     "Padrón": {
+      band: {
+        check: "Every cigar in the Anniversary families carries a double band, the second bearing a unique serial number. The number can be checked to confirm authenticity, and an Anniversary without a second band is taken to be either pre-February 2001 or a fake.",
+        note: "Counterfeit Anniversaries proliferated between 1999 and 2000; more than 3,000 fakes and some 5,000 counterfeit bands are reported to have been seized from a Los Angeles warehouse. The double band was introduced in February 2001 in response, and is regarded as a pioneering anti-counterfeiting measure for premium cigars."
+      },
       founded: "1964 (established on 8 September 1964 in Miami, Florida, USA)",
       founder: "José Orlando Padrón (1926–2017; an exile from the province of Pinar del Río, Cuba, who founded the company in Miami)",
       meaning: "The brand carries the founding family's surname, Padrón. The family forebear Dámaso Padrón was a tobacco farmer who crossed from the Canary Islands to Cuba in the nineteenth century, and the brand name derives from that family name. Among the line names, “1926” refers to the founder's year of birth and “1964” to the year of the company's founding",

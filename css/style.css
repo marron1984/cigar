@@ -1478,6 +1478,26 @@ td .ve { font-size: .74rem; color: var(--muted); letter-spacing: .04em; }
 }
 .lit-refs li::marker { color: var(--gold); font-variant-numeric: tabular-nums; }
 
+/* ブランド大全：バンド（帯紙）の意匠 */
+.band-box {
+  margin: 18px 0 4px; padding: 14px 16px;
+  background: var(--panel-2); border: 1px solid var(--line);
+  border-left: 3px solid var(--gold); border-radius: 8px;
+}
+.band-h {
+  font-family: var(--sans); font-size: .72rem; font-weight: 700; letter-spacing: .1em;
+  text-transform: uppercase; color: var(--gold-bright); margin-bottom: 10px;
+}
+.band-row { display: grid; grid-template-columns: 7.5em 1fr; gap: 4px 14px; margin-top: 10px; }
+.band-row:first-of-type { margin-top: 0; }
+.band-l { font-size: .78rem; font-weight: 600; color: var(--text-soft); padding-top: 2px; }
+.band-v p { margin: 0 0 6px; }
+.band-v p:last-child { margin-bottom: 0; }
+@media (max-width: 560px) {
+  .band-row { grid-template-columns: 1fr; gap: 2px; }
+  .band-l { font-size: .72rem; letter-spacing: .04em; }
+}
+
 /* ブランド大全：各銘柄の主要出典 */
 .brand-refs { margin-top: 20px; padding-top: 14px; border-top: 1px solid var(--line); }
 .brand-refs-h {

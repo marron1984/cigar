@@ -44,6 +44,11 @@
       trivia: "The name comes from the folk song \"Guajira Guantanamera\" (meaning \"peasant girl from Guantánamo\"). The head is pre-cut and already open, so a beginner without a cutter can smoke one on the spot. The leaf is said to come not from the majority choice, the Vuelta Abajo, but from the Vuelta Arriba, and it ranks among the very cheapest of Cuban cigars. Even so it has its commemorative projects — the limited metal tin of 2021 and the 20th-anniversary Cristales of 2022. Dropped from the Habanos portfolio around 2005, it lives on through ICT's licensed production: the entry-level Havana that carries the name of a song."
     },
     "Cohiba": {
+      band: {
+        look: "A hologram of a Taíno head sits at the centre of the band.",
+        check: "The head hologram conceals a second, minute head within it — one of the recognised marks of authenticity. Habanos S.A. has layered further measures on top of it: a guarantee seal incorporating a watermark and a barcode, and authentication lookup on the official website.",
+        note: "Most of the \"Cohibas\" sold to tourists on the streets of Havana are held to be counterfeit, and these measures were a response to that trade."
+      },
       founded: "1966 (the prototype private cigar dates from around 1963; general sale from 1982)",
       founder: "The Cuban revolutionary government (established under the patronage of Fidel Castro, on the basis of a blend by the artisan Eduardo Rivera, who became his personal roller)",
       meaning: "From a word in the language of the indigenous Taíno for the \"rolled tobacco leaves\" smoked in ritual — tobacco itself. The name is said to reach back to the island's smoking culture before the arrival of Columbus",

@@ -132,6 +132,24 @@ const BRANDS = (() => {
       </div>`;
   }
 
+  /* バンド（帯紙）の意匠。写真は載せられないので、言葉で置き換えている。
+     見た目・見分けどころ・由来の3つを、書けるものだけ出す。
+     本文に根拠のあるものにしか付けないため、無い銘柄では何も描かない。 */
+  function bandBlock(b) {
+    const bd = b.band;
+    if (!bd) return "";
+    const rows = [["見た目", bd.look], ["見分けどころ", bd.check], ["由来・変遷", bd.note]]
+      .filter(r => r[1]);
+    if (!rows.length) return "";
+    return `<div class="band-box">
+      <div class="band-h">${T("バンドの意匠")}</div>
+      ${rows.map(([l, v]) => `<div class="band-row">
+        <div class="band-l">${T(l, null, "band")}</div>
+        <div class="band-v">${FMT.prose(v)}</div>
+      </div>`).join("")}
+    </div>`;
+  }
+
   function brandAcc(b, countryKey) {
     const vitolas = (b.vitolas || []).map(v => `<span class="chip brand">${e(v)}</span>`).join("");
     // 葉・産地の項目（kind:"leaf"）は銘柄ではないので、「吸いたいリスト」には入れられない。
@@ -153,6 +171,7 @@ const BRANDS = (() => {
           ${specRow("現在の位置づけ", "Status", b.status)}
           <div class="brand-history">${FMT.prose(b.history)}</div>
           ${vitolas ? `<div class="field"><div class="lbl">${T("代表的なヴィトラ・ライン")}</div><div class="chips">${vitolas}</div></div>` : ""}
+          ${bandBlock(b)}
           ${b.trivia ? `<div class="field"><div class="lbl">${T("豆知識")}</div><div class="val">${FMT.prose(b.trivia)}</div></div>` : ""}
           ${b.sources && b.sources.length ? `<div class="brand-refs"><div class="brand-refs-h">${T("主要出典")} <span class="brand-refs-n">${T("{n}件", { n: b.sources.length })}</span></div><ol>${b.sources.map(s => `<li>${e(s)}</li>`).join("")}</ol></div>` : ""}
         </div>

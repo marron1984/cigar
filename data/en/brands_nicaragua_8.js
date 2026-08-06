@@ -46,6 +46,10 @@
       trivia: "【Plant First, Find Buyers Later】In 1997 Fernández defied the conventions of the trade by planting no fewer than 168 acres of leaf without securing a single buyer. The owner a newcomer, the workers all Cubans, and no one knowing who would buy the leaf — this opacity came to be called 'the Aganorsa Enigma' and sent ripples through the industry.\n【The Leaf Is the Brand】The renaming of 2018 was a declaration of conviction that the Fernández family's greatest asset was the 'Aganorsa leaf' itself. It marked the turning point at which the backstage supplier to many famous brands stepped onto the front of the stage bearing the name of its own leaf."
     },
     "Illusione": {
+      band: {
+        look: "In contrast to the usual cigar, which displays the brand name large across the band, the early releases bore only cryptic marks on an understated ring. Later bands worked in symbolic imagery — the Eye of Providence, the scarab amulet of ancient Egypt — and the design has grown more intricate with each passing year.",
+        check: "Codes such as 88, 888, 68, 2, f9, cg:4 and mj12 are struck on the band as size names. The five blends — Corojo, Maduro, Candela, Ultra and Habano — are distinguished by colour within a shared basic design."
+      },
       founded: "2006 (launched as a shop-exclusive blend of Fumare, a tobacconist in Reno, Nevada)",
       founder: "Dion Giolito, a tobacconist of Reno, Nevada. Production initially at Raíces Cubanas in Honduras, later at the TABSA factory in Estelí, Nicaragua.",
       meaning: "An Italianate word for 'illusion' or 'phantasm'. Said to reflect Giolito's interest in conspiracy theories concerning the Illuminati and government cover-ups; he himself has also said he chose it because it 'sounded good and was very European'.",
