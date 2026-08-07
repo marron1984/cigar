@@ -7,8 +7,47 @@
    手で足すこともできますが、items の並び・キーは崩さないでください。
    ============================================================ */
 var NEWS_DATA = {
-  "updated": "2026-08-07",
+  "updated": "2026-08-08",
   "items": [
+    {
+      "date": "2026-08-08",
+      "category": "新製品",
+      "title_ja": "ダビドフ、旗艦店限定「ブティック・セレクション」",
+      "summary_ja": "ダビドフ（Davidoff）が、ジュネーブ・香港・ニューヨーク（マディソン）の旗艦店限定となる新しい常設ラインナップ「ブティック・セレクション（Boutique Selection）」を発表した。各店の顧客の嗜好を反映した3種の異なるブレンドで構成され、旗艦店コンサルタントと共同開発。いずれもトロ・サイズで、繰り返し生産される限定バッチとして提供される。ジュネーブ版はドミニカ産フィラー4種とドミニカ産バインダーを使用する。",
+      "title_en": "Davidoff Introduces the Boutique Selection for Flagship Stores",
+      "summary_en": "Davidoff Cigars has announced the Boutique Selection, a new permanent range sold exclusively at its Geneva, Hong Kong and New York Madison flagship stores. It comprises three individual blends, each composed to reflect the taste preferences of its location and developed with the stores' consultants. All three are presented in the toro format and produced in recurring limited batches. The Genève selection uses four Dominican filler tobaccos and a Dominican binder. SVP Javier González said the range expresses place, expertise and the relationships shared with flagship clientele.",
+      "source": "Cigar Journal",
+      "source_title": "Davidoff Cigars Introduces the Boutique Selection",
+      "source_en": "Cigar Journal",
+      "source_title_en": "Davidoff Cigars Introduces the Boutique Selection",
+      "url": "https://www.cigarjournal.com/davidoff-cigars-introduces-the-boutique-selection/?utm_source=rss&utm_medium=rss&utm_campaign=davidoff-cigars-introduces-the-boutique-selection"
+    },
+    {
+      "date": "2026-08-08",
+      "category": "新製品",
+      "title_ja": "トレードクラフト「グラディウス」ボックスプレス 8月22日発売",
+      "summary_ja": "トレードクラフト・シガーズ（Tradecraft Cigars）が、新作「グラディウス（Gladius）ボックスプレス」を発表した。5.5×52のボックスプレス・ベリコソで、伝統的なベリコソより楕円形の109型キャップで仕上げる。ラウンド版に比べブレンド本来の風味が増し、ボディ・スパイス・チョコレート感がより強く出るという。8月22日にウッデン・インディアンなどの店舗と自社サイトで発売される。",
+      "title_en": "Tradecraft's Gladius Box Press Coming Aug. 22",
+      "summary_en": "Tradecraft Cigars has announced the Gladius Box Press, a 5.5 x 52 box-pressed belicoso finished with a 109-style cap that is more ovalised than a traditional belicoso. The company says the box-pressed shape amplifies the blend's core flavours compared with the round vitolas, delivering more body, more spice and more chocolate. It officially launches on 22 August at the Wooden Indian, Tinder Box Haverford and the Tradecraft Cigars websites before rolling out further.",
+      "source": "halfwheel",
+      "source_title": "Tradecraft’s Gladius Box Press Coming Aug. 22",
+      "source_en": "halfwheel",
+      "source_title_en": "Tradecraft's Gladius Box Press Coming Aug. 22",
+      "url": "https://halfwheel.com/tradecrafts-gladius-box-press-coming-aug-22/476350/"
+    },
+    {
+      "date": "2026-08-07",
+      "category": "新製品",
+      "title_ja": "ルーム101、17周年記念の限定シガーを発表",
+      "summary_ja": "ルーム101・シガーズ（Room101 Cigars）が、年次アニバーサリー・シリーズ最新作「ルーム101 17周年」を発表した。AJフェルナンデス（AJ Fernandez）との共同制作による限定版で、毎年同じ葉巻を再発するのではなく、節目ごとに全く新しいブレンドを投入する同社の伝統を継続する。",
+      "title_en": "Room101 Unveils Limited Edition 17th Anniversary Cigar",
+      "summary_en": "Room101 Cigars is marking another milestone with the release of the Room101 17th Anniversary, the latest instalment in the brand's evolving annual Anniversary series. Crafted in collaboration with AJ Fernandez, the limited edition continues Room101's tradition of marking each milestone with an entirely new blend rather than revisiting the same cigar year after year.",
+      "source": "StogiePress",
+      "source_title": "Cigar News: Room101 Cigars Unveils Limited Edition 17th Anniversary Cigar",
+      "source_en": "StogiePress",
+      "source_title_en": "Room101 Cigars Unveils Limited Edition 17th Anniversary Cigar",
+      "url": "https://stogiepress.com/cigar-news-room101-cigars-unveils-limited-edition-17th-anniversary-cigar/"
+    },
     {
       "date": "2026-08-07",
       "category": "新製品",
@@ -63,6 +102,32 @@ var NEWS_DATA = {
     },
     {
       "date": "2026-08-06",
+      "category": "日本国内",
+      "title_ja": "スイスの「EGMシガーズ」、日本向けを拡充",
+      "summary_ja": "スイス発のプレミアムシガーブランド「EGMシガーズ（EGM Cigars）」が、日本市場向けラインナップを拡充すると発表した。ブランドの世界観を体現する新コレクションを日本で展開する。",
+      "title_en": "Swiss Brand EGM Cigars Expands Its Japan Line-up",
+      "summary_en": "EGM Cigars, a premium cigar brand from Switzerland, has announced an expansion of its line-up for the Japanese market. The company will roll out a new collection in Japan intended to embody the brand's world and identity.",
+      "source": "Infoseek",
+      "source_title": "スイス発プレミアムシガーブランド「EGM Cigars」、日本市場向けラインナップを拡充 ブランドの世界観を体現する新コレクションを展開｜Infoseekニュース - Infoseek",
+      "source_en": "Infoseek",
+      "source_title_en": "Swiss Premium Cigar Brand EGM Cigars Expands Its Japan-market Line-up with a New Collection",
+      "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE9GWFA4RDgzM2VDcHhnakFlNXlXRUk3emRhdHdReWVwRkNiMk5pc3J5b05BdjJXU2ttZWZPeU9fRmFURkxubTVQWXM2V2w4aGVRUDI4MGV2djFaRzBhYUZlbExtS2pHNk1KRzAxYTB2MjZKZw?oc=5"
+    },
+    {
+      "date": "2026-08-06",
+      "category": "新製品",
+      "title_ja": "ルアー、PCA限定「ザ・ワフー・ザ・キングフィッシュ」",
+      "summary_ja": "ルアー（Lure）が新ライン「ザ・ワフー・ザ・キングフィッシュ（The Wahoo The Kingfish）」を発表した。ニューオーリンズで開催されたPCA 2026の出展業者のみが購入できる同展限定品。メキシコ産サンアンドレス・ラッパー、ニカラグア・エステリ産バインダー、エステリとハラパ産のフィラーで構成される。",
+      "title_en": "Lure The Wahoo The Kingfish",
+      "summary_en": "Lure has released The Wahoo The Kingfish, a PCA 2026 exclusive available only to retailers who attended the trade show in New Orleans. The blend features a Mexican San Andrés wrapper over a binder from Estelí, Nicaragua, with filler tobaccos from Estelí and Jalapa in Nicaragua.",
+      "source": "halfwheel",
+      "source_title": "Lure The Wahoo The Kingfish",
+      "source_en": "halfwheel",
+      "source_title_en": "Lure The Wahoo The Kingfish",
+      "url": "https://halfwheel.com/lure-the-wahoo-the-kingfish/476173/"
+    },
+    {
+      "date": "2026-08-06",
       "category": "新製品",
       "title_ja": "ディーゼル、新ブレンド「アンケージド」を発売",
       "summary_ja": "ディーゼル・シガーズ（Diesel Cigars）が新レギュラー・ブレンド「アンケージド（Uncaged）」を発表。ニカラグア産フィラーとバインダー、ハバノ・クリオロ・ラッパーを使用。AJフェルナンデス製で価格は約7ドル、ミディアム〜フルとされる。",
@@ -86,6 +151,19 @@ var NEWS_DATA = {
       "source_en": "StogiePress",
       "source_title_en": "Cigar News: More La Historia Silk Arrives as Casa Carrillo Launches Initiative to Support Women Pursuing Economic Independence",
       "url": "https://stogiepress.com/cigar-news-more-la-historia-silk-arrives-as-casa-carrillo-launches-initiative-to-support-women-pursuing-economic-independence/"
+    },
+    {
+      "date": "2026-08-05",
+      "category": "規制・市場",
+      "title_ja": "スペイン政府、私的空間の喫煙禁止を目指す",
+      "summary_ja": "スペイン政府が、飲食店テラスや屋外イベント、スタジアム、闘牛場、ビーチ、バス停、公園など屋外公共空間での全面禁煙を承認した。病院・学校・遊び場周辺には15メートルの緩衝地帯も設ける。さらに保健相モニカ・ガルシア（Mónica García）は喫煙者クラブの適用除外撤廃を表明しており、実現すれば私的施設内の喫煙を禁じる世界初の政府となる。法案は議会審議が残り、2027年7月の政権任期終了前の成立を目指すが、連立与党は過半数を欠き成立は難航が予想される。",
+      "title_en": "Spanish Government Aims to Ban Smoking in Private Spaces",
+      "summary_en": "Spain's government has approved a total ban on smoking in outdoor public spaces, including hospitality terraces, open-air events, stadiums, bullrings, beaches, bus shelters and parks, with a fifteen-metre buffer zone around hospitals, schools and playgrounds. Health Minister Mónica García has said the government intends to eliminate the current exemption for smokers' clubs, which would make Spain the first country to ban smoking in strictly private facilities. The measure still requires parliamentary processing, with the government aiming to finalise it before the administration ends in July 2027, though the coalition lacks a majority and faces an uphill battle.",
+      "source": "Cigar Journal",
+      "source_title": "The Spanish Government Aims to Ban Smoking in Private Spaces",
+      "source_en": "Cigar Journal",
+      "source_title_en": "The Spanish Government Aims to Ban Smoking in Private Spaces",
+      "url": "https://www.cigarjournal.com/the-spanish-government-aims-to-ban-smoking-in-private-spaces/?utm_source=rss&utm_medium=rss&utm_campaign=the-spanish-government-aims-to-ban-smoking-in-private-spaces"
     },
     {
       "date": "2026-08-02",
