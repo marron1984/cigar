@@ -7,8 +7,86 @@
    手で足すこともできますが、items の並び・キーは崩さないでください。
    ============================================================ */
 var NEWS_DATA = {
-  "updated": "2026-08-02",
+  "updated": "2026-08-07",
   "items": [
+    {
+      "date": "2026-08-07",
+      "category": "新製品",
+      "title_ja": "ロッキー・パテル「アメリカ250」9月出荷へ",
+      "summary_ja": "ロッキー・パテル（Rocky Patel）が、米国建国を祝う記念葉巻「アメリカ250（America 250）」を来月9月に出荷すると発表した。",
+      "title_en": "Rocky Patel America 250 Coming in September",
+      "summary_en": "Rocky Patel has announced that it will ship its celebratory cigar, America 250, next month in September. The release marks America's birthday, following the July 4th festivities.",
+      "source": "halfwheel",
+      "source_title": "Rocky Patel America 250 Coming in September",
+      "source_en": "halfwheel",
+      "source_title_en": "Rocky Patel America 250 Coming in September",
+      "url": "https://halfwheel.com/rocky-patel-america-250-coming-in-september/476310/"
+    },
+    {
+      "date": "2026-08-07",
+      "category": "新製品",
+      "title_ja": "ルーム101「17周年」限定葉巻が入荷",
+      "summary_ja": "ルーム101（Room101）が「17周年（17th Anniversary）」を発売、店頭に到着した。AJフェルナンデス（AJ Fernandez）による製造でオール・ニカラグア産。同ブランドは毎年の記念作を新たなブレンドで手がける伝統を続けている。",
+      "title_en": "Room101 17th Anniversary Arrives at Stores",
+      "summary_en": "Room101's 17th Anniversary cigar has arrived at stores. Made by AJ Fernandez, the limited edition is an all-Nicaraguan blend. Continuing the brand's tradition, each anniversary release features an entirely new blend rather than revisiting a previous cigar.",
+      "source": "halfwheel",
+      "source_title": "Room101 17th Anniversary Arrives at Stores",
+      "source_en": "halfwheel",
+      "source_title_en": "Room101 17th Anniversary Arrives at Stores",
+      "url": "https://halfwheel.com/room101-17th-anniversary-arrives-at-stores/476297/"
+    },
+    {
+      "date": "2026-08-07",
+      "category": "業界・企業",
+      "title_ja": "米クリークサイド、新ブランド「クイーン・オブ・ザ・ウエスト」立ち上げ",
+      "summary_ja": "シンシナティを拠点とする小売業者クリークサイド（Creekside）が葉巻会社としても事業を開始。第1弾はタバカレラ・ラ・イスラ（Tabacalera La Isla）製のコネチカット・ラッパーを用いたブレンド。",
+      "title_en": "Creekside Launching Queen of the West, A New Cigar Brand",
+      "summary_en": "Creekside, a Cincinnati-based retailer, has become a cigar company. Its first release is a Connecticut-wrapped blend made at Tabacalera La Isla.",
+      "source": "halfwheel",
+      "source_title": "Creekside Launching Queen of the West, A New Cigar Brand",
+      "source_en": "halfwheel",
+      "source_title_en": "Creekside Launching Queen of the West, A New Cigar Brand",
+      "url": "https://halfwheel.com/creekside-launching-queen-of-the-west-a-new-cigar-brand/476286/"
+    },
+    {
+      "date": "2026-08-07",
+      "category": "新製品",
+      "title_ja": "ハイラム&ソロモン「ミスティック・タイ」発売",
+      "summary_ja": "ハイラム&ソロモン（Hiram & Solomon）が「ミスティック・タイ（Mystic Tie）」を発表。ニュージャージー州フリーメイソンのグランドマスター、オマー・S・モリス氏のために作られ、特徴的なカバード・フットを備える。",
+      "title_en": "Hiram & Solomon Mystic Tie",
+      "summary_en": "Hiram & Solomon has released Mystic Tie, created for Omar S. Morris, the Grand Master of Masons of the state of New Jersey. The cigar features a distinctive covered foot.",
+      "source": "halfwheel",
+      "source_title": "Hiram & Solomon Mystic Tie",
+      "source_en": "halfwheel",
+      "source_title_en": "Hiram & Solomon Mystic Tie",
+      "url": "https://halfwheel.com/hiram-solomon-mystic-tie/475943/"
+    },
+    {
+      "date": "2026-08-06",
+      "category": "新製品",
+      "title_ja": "ディーゼル、新ブレンド「アンケージド」を発売",
+      "summary_ja": "ディーゼル・シガーズ（Diesel Cigars）が新レギュラー・ブレンド「アンケージド（Uncaged）」を発表。ニカラグア産フィラーとバインダー、ハバノ・クリオロ・ラッパーを使用。AJフェルナンデス製で価格は約7ドル、ミディアム〜フルとされる。",
+      "title_en": "Diesel Releases New Knockout Blend, Uncaged",
+      "summary_en": "Diesel Cigars has unveiled Uncaged, its newest full-time blend. Rolled with premium Nicaraguan filler and binder tobaccos and a Habano Criollo wrapper, the medium-full cigar is made by AJ Fernandez and priced around $7.",
+      "source": "StogiePress",
+      "source_title": "Cigar News: Diesel Releases New Knockout Blend, Uncaged",
+      "source_en": "StogiePress",
+      "source_title_en": "Cigar News: Diesel Releases New Knockout Blend, Uncaged",
+      "url": "https://stogiepress.com/cigar-news-diesel-releases-new-knockout-blend-uncaged/"
+    },
+    {
+      "date": "2026-08-06",
+      "category": "業界・企業",
+      "title_ja": "カサ・カリーヨ、「ラ・イストリア・シルク」で女性支援",
+      "summary_ja": "カサ・カリーヨ（Casa Carrillo）が慈善部門カリーヨ・ケアズ（Carrillo Cares）を通じ、限定生産の「ラ・イストリア・シルク（La Historia Silk）」の売上の一部をドレス・フォー・サクセス・マイアミに寄付する取り組みを発表した。",
+      "title_en": "Casa Carrillo Launches Initiative to Support Women Pursuing Economic Independence",
+      "summary_en": "Casa Carrillo has announced a new initiative through Carrillo Cares, its charitable arm, supporting Dress for Success Miami via the limited-production La Historia Silk cigar. As more shipments arrive from the factory, a portion of proceeds from cigars sold to retailers will benefit the charity, which helps women pursue economic independence.",
+      "source": "StogiePress",
+      "source_title": "Cigar News: More La Historia Silk Arrives as Casa Carrillo Launches Initiative to Support Women Pursuing Economic Independence",
+      "source_en": "StogiePress",
+      "source_title_en": "Cigar News: More La Historia Silk Arrives as Casa Carrillo Launches Initiative to Support Women Pursuing Economic Independence",
+      "url": "https://stogiepress.com/cigar-news-more-la-historia-silk-arrives-as-casa-carrillo-launches-initiative-to-support-women-pursuing-economic-independence/"
+    },
     {
       "date": "2026-08-02",
       "category": "新製品",
