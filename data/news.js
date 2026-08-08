@@ -7,8 +7,47 @@
    手で足すこともできますが、items の並び・キーは崩さないでください。
    ============================================================ */
 var NEWS_DATA = {
-  "updated": "2026-08-08",
+  "updated": "2026-08-09",
   "items": [
+    {
+      "date": "2026-08-09",
+      "category": "新製品",
+      "title_ja": "エル・マゴ、缶入りシリーズ第4弾「キャバルリー」",
+      "summary_ja": "エル・マゴ（El Mago）が今年展開する5本入り缶シリーズの第4弾として「キャバルリー（Cavalry）」を発売した。既存の3種と同様、ボックスプレスの5×50ロブストという仕様。",
+      "title_en": "El Mago Collectible Tin Series Cavalry",
+      "summary_en": "El Mago has released Cavalry, the fourth entry in its collectible tin series launched this year, sold in five-packs. Like the first three releases in the line, Cavalry is a box-pressed robusto measuring 5 x 50.",
+      "source": "halfwheel",
+      "source_title": "El Mago Collectible Tin Series Cavalry",
+      "source_en": "halfwheel",
+      "source_title_en": "El Mago Collectible Tin Series Cavalry",
+      "url": "https://halfwheel.com/el-mago-collectible-tin-series-cavalry/476242/"
+    },
+    {
+      "date": "2026-08-08",
+      "category": "新製品",
+      "title_ja": "ダビドフ、旗艦店3店に限定シガーを追加",
+      "summary_ja": "ダビドフ（Davidoff）がジュネーブ、香港、マンハッタンのマディソン街にある各旗艦店向けに、それぞれ専用の限定シガーを追加する。いずれも6×54のトロだが、ブレンドは店舗ごとに異なるという。",
+      "title_en": "Davidoff Adding Boutique Selection for Select Flagships",
+      "summary_en": "Davidoff is adding an exclusive cigar to each of its flagship stores in Geneva, Hong Kong and the Madison Avenue location in Manhattan. While all three are 6 x 54 toros, the blends are said to differ from one location to another.",
+      "source": "halfwheel",
+      "source_title": "Davidoff Adding Boutique Selection for Select Flagships",
+      "source_en": "halfwheel",
+      "source_title_en": "Davidoff Adding Boutique Selection for Select Flagships",
+      "url": "https://halfwheel.com/davidoff-adding-boutique-selection-for-select-flagships/476320/"
+    },
+    {
+      "date": "2026-08-08",
+      "category": "新製品",
+      "title_ja": "トレードクラフト、「グラディウス・ボックスプレス」発表",
+      "summary_ja": "トレードクラフト・シガーズ（Tradecraft Cigars）が「グラディウス・ボックスプレス（Gladius Box Press）」を発表した。5.5×52のボックスプレスで、通常のベリコソより楕円形に仕上げた109×ベリコソのキャップを持つ。8月22日にウッデン・インディアン、ティンダーボックス・ハバフォードおよび同社サイトで正式発売する。",
+      "title_en": "Tradecraft Cigars Announces the Gladius Box Press",
+      "summary_en": "Tradecraft Cigars has announced the Gladius Box Press, a 5.5 x 52 box-pressed vitola finished with a 109x belicoso cap that is more ovalised than a traditional belicoso. The cigar officially launches on 22 August at the Wooden Indian, Tinder Box Haverford and Tradecraft Cigars' websites before a wider rollout.",
+      "source": "StogiePress",
+      "source_title": "Cigar News: Tradecraft Cigars Announces the Gladius Box Press",
+      "source_en": "StogiePress",
+      "source_title_en": "Cigar News: Tradecraft Cigars Announces the Gladius Box Press",
+      "url": "https://stogiepress.com/cigar-news-tradecraft-cigars-announces-the-gladius-box-press/"
+    },
     {
       "date": "2026-08-08",
       "category": "新製品",
@@ -102,6 +141,32 @@ var NEWS_DATA = {
     },
     {
       "date": "2026-08-06",
+      "category": "新製品",
+      "title_ja": "ミカレフ、カラーシリーズに「オレンジ」追加",
+      "summary_ja": "ミカレフ・シガーズ（Micallef Cigars）が、カラーシリーズの新作「ミカレフ・オレンジ（Micallef Orange）」を発売した。ブラック、ブルー、レッド、パープル、グリーン、ホワイトに続く展開で、実店舗小売店向けに手頃な価格で提供する。",
+      "title_en": "Micallef Cigars Announces Release of Micallef Orange",
+      "summary_en": "Micallef Cigars has released Micallef Orange, the newest addition to its Color Series. Following Black, Blue, Red, Purple, Green and White, Orange continues the line's aim of delivering premium quality and flavour at a strong value for brick-and-mortar retailers and their customers.",
+      "source": "StogiePress",
+      "source_title": "Cigar News: Micallef Cigars Announces Release of Micallef Orange",
+      "source_en": "StogiePress",
+      "source_title_en": "Cigar News: Micallef Cigars Announces Release of Micallef Orange",
+      "url": "https://stogiepress.com/cigar-news-micallef-cigars-announces-release-of-micallef-orange/"
+    },
+    {
+      "date": "2026-08-06",
+      "category": "新製品",
+      "title_ja": "エル・マゴ、対の限定「オフェンダー＆ディフェンダー」",
+      "summary_ja": "エル・マゴ・シガーズ（El Mago Cigars）が、これまでで最も限定的なリリースとして「オフェンダー＆ディフェンダー（The Offender & The Defender）」を発表した。剣と盾をコンセプトに、2箱・2ブレンドを一組のペアリングとしてのみ販売する。金をまとうオフェンダーはより大胆で力強いプロファイルを持つ。",
+      "title_en": "El Mago Cigars Releases The Offender & The Defender",
+      "summary_en": "El Mago Cigars has announced its most exclusive release to date, The Offender & The Defender, a two-blend companion set sold only as a pairing of two boxes and two blends. Built on a sword-and-shield concept, The Offender, dressed in gold, carries the blade with a bolder, more aggressive profile.",
+      "source": "StogiePress",
+      "source_title": "Cigar News: El Mago Cigars Releases The Offender & The Defender",
+      "source_en": "StogiePress",
+      "source_title_en": "Cigar News: El Mago Cigars Releases The Offender & The Defender",
+      "url": "https://stogiepress.com/cigar-news-el-mago-cigars-releases-the-offender-the-defender/"
+    },
+    {
+      "date": "2026-08-06",
       "category": "日本国内",
       "title_ja": "スイスの「EGMシガーズ」、日本向けを拡充",
       "summary_ja": "スイス発のプレミアムシガーブランド「EGMシガーズ（EGM Cigars）」が、日本市場向けラインナップを拡充すると発表した。ブランドの世界観を体現する新コレクションを日本で展開する。",
@@ -151,6 +216,19 @@ var NEWS_DATA = {
       "source_en": "StogiePress",
       "source_title_en": "Cigar News: More La Historia Silk Arrives as Casa Carrillo Launches Initiative to Support Women Pursuing Economic Independence",
       "url": "https://stogiepress.com/cigar-news-more-la-historia-silk-arrives-as-casa-carrillo-launches-initiative-to-support-women-pursuing-economic-independence/"
+    },
+    {
+      "date": "2026-08-05",
+      "category": "日本国内",
+      "title_ja": "キャメル、超スリムなリトルシガー2銘柄発売",
+      "summary_ja": "見た目も価格も“スーパースリム”という、キャメル（Camel）のリトルシガー2銘柄が新たに発売された。",
+      "title_en": "Two 'super-slim' Camel little cigars go on sale in Japan",
+      "summary_en": "Two new Camel little cigars, described as 'super-slim' in both appearance and price, have gone on sale in Japan.",
+      "source": "ウォーカープラス",
+      "source_title": "見た目も価格も“スーパースリム”なキャメルのリトルシガー2銘柄が新発売 - ウォーカープラス",
+      "source_en": "Walkerplus",
+      "source_title_en": "Two 'super-slim' Camel little cigars newly released",
+      "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE8xdUJzZlE2blpqMHZYRVFwUXdoRUZEMWIwVjRtZ3hzd3lEWkxXXzBaQ2RTYXVGNUMycDlBNnZoRkdDci1TSXlHNmZlT0RYeVNSZUlvdNIBWkFVX3lxTFA4MUJPSjY0b20yY2hJX1h5RWhkYWVJY0ZMYWtqTTFZTFk2SExIa002ZzRhRWo1OW1zeGRrMGpXX0tFSHptYnAxd0ZfOFI1V1ZNcE8zMnZaS25jQQ?oc=5"
     },
     {
       "date": "2026-08-05",
