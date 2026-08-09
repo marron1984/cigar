@@ -7,8 +7,34 @@
    手で足すこともできますが、items の並び・キーは崩さないでください。
    ============================================================ */
 var NEWS_DATA = {
-  "updated": "2026-08-09",
+  "updated": "2026-08-10",
   "items": [
+    {
+      "date": "2026-08-10",
+      "category": "新製品",
+      "title_ja": "ドメイン、エクアドル産コネチカット葉巻を初投入",
+      "summary_ja": "ドメイン（Domain）が新ブレンド「アテニュエーション・トロエクストラ（Attenuation Toro Extra）」を発表した。同社として初めて、エクアドル栽培のコネチカット種ラッパーを使用する。フィラーにはコロホとクリオージョ98を交配して同社が開発したハイブリッド種「バンガード・イージス（Vanguard Aegis）」も含まれる。",
+      "title_en": "Domain Debuts First Cigar With Ecuadorian-Grown Connecticut Wrapper",
+      "summary_en": "Domain has unveiled its new blend, the Attenuation Toro Extra. It marks the first time the company has released a cigar using a Connecticut-seed wrapper grown in Ecuador. The filler also includes Vanguard Aegis, a hybrid tobacco developed by Domain by crossing corojo and criollo 98. The release expands the maker's line-up with a distinctive tobacco combination.",
+      "source": "halfwheel",
+      "source_title": "Domain Attenuation Toro Extra",
+      "source_en": "halfwheel",
+      "source_title_en": "Domain Attenuation Toro Extra",
+      "url": "https://halfwheel.com/domain-attenuation-toro-extra/476411/"
+    },
+    {
+      "date": "2026-08-09",
+      "category": "日本国内",
+      "title_ja": "キャメルからスーパースリムなリトルシガー2銘柄",
+      "summary_ja": "見た目も価格も「スーパースリム」なキャメル（Camel）のリトルシガー2銘柄が新発売された。",
+      "title_en": "Two 'Super Slim' Camel Little Cigars Launched in Japan",
+      "summary_en": "Two new Camel little cigar varieties, described as 'super slim' in both appearance and price, have gone on sale in Japan.",
+      "source": "ウォーカープラス",
+      "source_title": "＜画像1 / 2＞見た目も価格も“スーパースリム”なキャメルのリトルシガー2銘柄が新発売 - ウォーカープラス",
+      "source_en": "Walkerplus",
+      "source_title_en": "Two 'Super Slim' Camel Little Cigars Newly Launched",
+      "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE81bVBUek9TOU94UlpHcVNHN2NrTlE4dzdoRlNuZFJWZFVycGU2dy1SNG9vZTd5UlMtZnpud0w1MEJRajBzSFpMSmVsdFlVUkxwdHFIOHhhRjhERERHaUhpWTR6NnpIOVNVbzRV?oc=5"
+    },
     {
       "date": "2026-08-09",
       "category": "新製品",
@@ -219,6 +245,32 @@ var NEWS_DATA = {
     },
     {
       "date": "2026-08-05",
+      "category": "新製品",
+      "title_ja": "OZファミリー、W杯2026記念の限定葉巻",
+      "summary_ja": "OZファミリー・シガーズ（OZ Family Cigars）が、FIFAワールドカップ2026を記念した限定版葉巻を発売した。",
+      "title_en": "OZ Family Cigars Releases Limited Edition World Cup 2026",
+      "summary_en": "OZ Family Cigars has released a limited edition cigar to mark the FIFA World Cup 2026, joining a number of new cigars inspired by the tournament.",
+      "source": "halfwheel",
+      "source_title": "OZ Family Cigars Limited Edition World Cup 2026",
+      "source_en": "halfwheel",
+      "source_title_en": "OZ Family Cigars Limited Edition World Cup 2026",
+      "url": "https://halfwheel.com/oz-family-cigars-limited-edition-world-cup-2026/475916/"
+    },
+    {
+      "date": "2026-08-05",
+      "category": "イベント・アワード",
+      "title_ja": "英国の葉巻祭「サマータイム・スモーク」2回目開催",
+      "summary_ja": "英国の葉巻カレンダーに定着しつつある祭典「サマータイム・スモーク（Summertime Smoke）」の第2回が、ハイウィカム郊外バッキンガムシャーのEJチャーチル射撃場で開催された。会場は屋外の芝生に葉巻愛好家や生産者らが集い、庭園パーティーのような雰囲気となった。",
+      "title_en": "Summertime Smoke Returns for Second Edition in England",
+      "summary_en": "The second edition of Summertime Smoke, a festival now firmly established in the British cigar calendar, took place at EJ Churchill Shooting Ground in the Buckinghamshire countryside outside High Wycombe. A working shooting ground rather than a hotel ballroom, the venue lent the day an outdoor, sporting character. Enthusiasts drifted between exhibitor stands and open grass alongside producers, giving the event the feel of a garden party rather than a trade fair.",
+      "source": "Cigar Journal",
+      "source_title": "The Summertime Smoke: A Festival of Cigars",
+      "source_en": "Cigar Journal",
+      "source_title_en": "The Summertime Smoke: A Festival of Cigars",
+      "url": "https://www.cigarjournal.com/the-summertime-smoke-a-festival-of-cigars/?utm_source=rss&utm_medium=rss&utm_campaign=the-summertime-smoke-a-festival-of-cigars"
+    },
+    {
+      "date": "2026-08-05",
       "category": "日本国内",
       "title_ja": "キャメル、超スリムなリトルシガー2銘柄発売",
       "summary_ja": "見た目も価格も“スーパースリム”という、キャメル（Camel）のリトルシガー2銘柄が新たに発売された。",
@@ -244,6 +296,19 @@ var NEWS_DATA = {
       "url": "https://www.cigarjournal.com/the-spanish-government-aims-to-ban-smoking-in-private-spaces/?utm_source=rss&utm_medium=rss&utm_campaign=the-spanish-government-aims-to-ban-smoking-in-private-spaces"
     },
     {
+      "date": "2026-08-03",
+      "category": "新製品",
+      "title_ja": "カサ・カリージョ、アンコール限定2種を発売",
+      "summary_ja": "カサ・カリージョ（Casa Carrillo）が「アンコール・ノワールII（Encore Noir II）」と「アンコール・エディシオン・ウニカII（Encore Edición Única II）」を発表した。ノワールIIは全ニカラグア葉のブレンドをセレスティアルNo.2（6 1/8×50）で仕立て、番号入り1,500箱・各10本の限定生産。エディシオン・ウニカIIは国際限定シリーズ第2弾で、No.109（6½×54）を採用し「アミーゴス」と名付けた。",
+      "title_en": "Casa Carrillo Releases Encore Noir II and Encore Edición Única II",
+      "summary_en": "Casa Carrillo has announced the release of Encore Noir II and Encore Edición Única II. Noir II is a new, all-Nicaraguan expression of the Encore line, presented in the Celestial No. 2 vitola (6 1/8 x 50) and handcrafted at Casa Carrillo in Santiago, Dominican Republic, in a limited run of 1,500 individually numbered boxes of 10. Edición Única II, the second in the brand's annual international-exclusive series, uses the No. 109 shape (6½ x 54) and is named Amigos.",
+      "source": "Cigar Journal",
+      "source_title": "Casa Carrillo Releases Encore Noir II and Encore Edición Única II",
+      "source_en": "Cigar Journal",
+      "source_title_en": "Casa Carrillo Releases Encore Noir II and Encore Edición Única II",
+      "url": "https://www.cigarjournal.com/casa-carrillo-releases-encore-noir-ii-and-encore-edicion-unica-ii/?utm_source=rss&utm_medium=rss&utm_campaign=casa-carrillo-releases-encore-noir-ii-and-encore-edicion-unica-ii"
+    },
+    {
       "date": "2026-08-02",
       "category": "新製品",
       "title_ja": "ランパート、限定「Limitada 2026」を予告",
@@ -264,6 +329,19 @@ var NEWS_DATA = {
       "source": "halfwheel",
       "source_title": "Angelenos Toro",
       "url": "https://halfwheel.com/angelenos-toro/475622/"
+    },
+    {
+      "date": "2026-08-01",
+      "category": "業界・企業",
+      "title_ja": "スイス発EGMシガーズ、日本向け拡充",
+      "summary_ja": "スイス発のプレミアムシガーブランド「EGM Cigars」が、日本市場向けのラインナップを拡充すると発表した。ブランドの世界観を体現する新コレクションを展開する。",
+      "title_en": "Swiss Brand EGM Cigars Expands Japan Line-up",
+      "summary_en": "EGM Cigars, a premium cigar brand from Switzerland, has announced it is expanding its line-up for the Japanese market, introducing a new collection that embodies the brand's world view.",
+      "source": "Excite エキサイト",
+      "source_title": "スイス発プレミアムシガーブランド「EGM Cigars」、日本市場向けラインナップを拡充 ブランドの世界観を体現する新コレクションを展開 - Excite エキサイト",
+      "source_en": "Excite",
+      "source_title_en": "Swiss Premium Cigar Brand EGM Cigars Expands Japan Line-up With New Collection",
+      "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE5QdnJfLTFYNzcwaFdTMzFxd18xNWpTN3NLenpTSjVURlpES09xSTZWM1U0UnhUR0FmLTBIVVdpXzR6VzFtS3RMekQ2cTRIMHprV1ZjaGNRRUZpLTJGRW1kLXdjaXFVNWNLa0xFd3NGWVQ2MWtxallCeGdCUlZYTWc?oc=5"
     },
     {
       "date": "2026-08-01",
