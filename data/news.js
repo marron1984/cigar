@@ -7,8 +7,86 @@
    手で足すこともできますが、items の並び・キーは崩さないでください。
    ============================================================ */
 var NEWS_DATA = {
-  "updated": "2026-08-10",
+  "updated": "2026-08-11",
   "items": [
+    {
+      "date": "2026-08-11",
+      "category": "業界・企業",
+      "title_ja": "エル・ティタン・デ・ブロンセ、STGとの販売契約終了",
+      "summary_ja": "エル・ティタン・デ・ブロンセ（El Titán de Bronze）が、STGとの販売契約を終了し、再び自社ブランドの流通を自ら手がけると発表した。同社はPCA 2027での新製品リリースに向けた大きな計画も予告している。",
+      "title_en": "El Titán de Bronze & STG End Distribution Agreement",
+      "summary_en": "El Titán de Bronze has ended its distribution agreement with STG and is once again handling distribution of its own brands. The company is also teasing significant plans for new releases at PCA 2027.",
+      "source": "halfwheel",
+      "source_title": "El Titán de Bronze & STG End Distribution Agreement",
+      "source_en": "halfwheel",
+      "source_title_en": "El Titán de Bronze & STG End Distribution Agreement",
+      "url": "https://halfwheel.com/el-titan-de-bronze-stg-end-distribution-agreement/476499/"
+    },
+    {
+      "date": "2026-08-11",
+      "category": "新製品",
+      "title_ja": "ラ・ガレラ、90周年記念の新ライン発売",
+      "summary_ja": "ラ・ガレラ（La Galera）が90周年を記念した新ラインを発売した。創業は101年前だが、書類上は90年目にあたるという。今回のラインは、同社が自社で栽培したタバコのみで製造される初の製品となる。",
+      "title_en": "La Galera 90th Anniversary Heads to Stores",
+      "summary_en": "La Galera is releasing a new line to mark its 90th anniversary. Although the company was founded 101 years ago, paperwork puts it at only 90 years. The new line is the first to be made entirely from tobaccos grown by the company itself, and it is now heading to stores.",
+      "source": "halfwheel",
+      "source_title": "La Galera 90th Anniversary Heads to Stores",
+      "source_en": "halfwheel",
+      "source_title_en": "La Galera 90th Anniversary Heads to Stores",
+      "url": "https://halfwheel.com/la-galera-90th-anniversary-heads-to-stores/476491/"
+    },
+    {
+      "date": "2026-08-11",
+      "category": "新製品",
+      "title_ja": "エラディオ・ディアス、母を讃える新ライン「ミ・ビエハ」",
+      "summary_ja": "エラディオ・ディアス（Eladio Díaz）が母に捧げる新ライン「ミ・ビエハ（Mi Vieja）」を発表した。ドミニカ南部産タバコ、ペルー産ペロ・デ・オロ、エクアドル産のコネチカットシード・ラッパーを使用。米国では11月発売予定。",
+      "title_en": "Eladio Díaz Honours His Mother with New Mi Vieja Line",
+      "summary_en": "Eladio Díaz has unveiled a new line, Mi Vieja, in honour of his mother. The blend incorporates tobacco from the southern part of the Dominican Republic, Peruvian pelo de oro and an Ecuadorian-grown, Connecticut-seed wrapper. The line is due to arrive in the U.S. in November.",
+      "source": "halfwheel",
+      "source_title": "Eladio Díaz Honors His Mother with New Mi Vieja Line",
+      "source_en": "halfwheel",
+      "source_title_en": "Eladio Díaz Honours His Mother with New Mi Vieja Line",
+      "url": "https://halfwheel.com/eladio-diaz-honors-his-mother-with-new-mi-vieja-line/476476/"
+    },
+    {
+      "date": "2026-08-11",
+      "category": "新製品",
+      "title_ja": "改良版ダイヤモンド・クラウン・マキシマス出荷開始",
+      "summary_ja": "ダイヤモンド・クラウン・マキシマス（Diamond Crown Maximus）の改良版が出荷を開始した。ドリュー・ニューマンによれば新しいマキシマスは「やや力強い」味わいで、バンドを増やした現代的なパッケージも採用したという。",
+      "title_en": "Updated Diamond Crown Maximus Begins Shipping",
+      "summary_en": "An updated version of the Diamond Crown Maximus has begun shipping. Drew Newman describes the new Maximus as \"a bit bolder\", and it also features updated packaging for the modern era, meaning more bands.",
+      "source": "halfwheel",
+      "source_title": "Updated Diamond Crown Maximus Begins Shipping",
+      "source_en": "halfwheel",
+      "source_title_en": "Updated Diamond Crown Maximus Begins Shipping",
+      "url": "https://halfwheel.com/updated-diamond-crown-maximus-begins-shipping/476464/"
+    },
+    {
+      "date": "2026-08-10",
+      "category": "新製品",
+      "title_ja": "S.T.デュポン×コイーバ、60周年記念限定コレクション",
+      "summary_ja": "S.T.デュポン（S.T. DUPONT）が、プレミアムシガーを代表する「コイーバ（COHIBA）」の誕生60周年を記念した限定コレクションを発表した。",
+      "title_en": "S.T. Dupont x Cohiba: Limited Collection Marking Cohiba's 60th Anniversary",
+      "summary_en": "S.T. Dupont has announced a limited collection to celebrate the 60th anniversary of Cohiba, one of the most iconic names in premium cigars.",
+      "source": "PR TIMES",
+      "source_title": "S.T. DUPONT X COHIBA プレミアムシガーを代表する「コイーバ」の誕生60周年を記念し限定コレクションを発表 - PR TIMES",
+      "source_en": "PR TIMES",
+      "source_title_en": "S.T. Dupont x Cohiba: Limited Collection Announced to Mark the 60th Anniversary of Cohiba, an Icon of Premium Cigars",
+      "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE1DUVhxLU4wRFZGdnlEVnN3S1ROQTJXRm9qcTZsNVVaLWZlU1pVY0p0SW1rR2pUaVh3WVo2U2NRUnNiYlVrNUlCeEEyaUUzM0REOEVPQ3RIMlpBal9ZcENrb2FXc2REYkxya2c?oc=5"
+    },
+    {
+      "date": "2026-08-10",
+      "category": "日本国内",
+      "title_ja": "神戸ピアザ神戸に顔認証の無料喫煙所オープン",
+      "summary_ja": "神戸市のピアザ神戸に、顔認証で入場する無料喫煙所が7月31日にオープンした。加熱式・紙巻き・葉巻・パイプまで利用可能で、Wi-Fiも完備している。",
+      "title_en": "Free Facial-Recognition Smoking Room Opens at Piazza Kobe",
+      "summary_en": "A free smoking room with facial-recognition entry opened at Piazza Kobe in Kobe on 31 July. It accommodates heated tobacco, cigarettes, cigars and pipes, and is equipped with Wi-Fi.",
+      "source": "地域ニュースサイト号外NET",
+      "source_title": "【神戸市】7月31日オープン！ ピアザ神戸に顔認証で入場する無料喫煙所が誕生。加熱式・紙巻き・葉巻・パイプまで利用可能。Wi-Fi完備 - 地域ニュースサイト号外NET",
+      "source_en": "Gogai NET",
+      "source_title_en": "[Kobe] Opened 31 July! A Free Smoking Room with Facial-Recognition Entry Debuts at Piazza Kobe, Usable for Heated Tobacco, Cigarettes, Cigars and Pipes, with Wi-Fi",
+      "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE1TSmdoY1lyOTVvUWR0MGxnTjFvd2hNc2p4UXZFY21vSjNaZE5ZQnNwRnZSTFAxbXAxTkdsSzM1RW45LVVKUTY0cENsUk52ZGdiQnB0TU1uSHRmYWRNd0VQb005U3dGZw?oc=5"
+    },
     {
       "date": "2026-08-10",
       "category": "新製品",
