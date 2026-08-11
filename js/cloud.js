@@ -31,8 +31,35 @@ const CLOUD = (() => {
     return client;
   }
 
+  /* ---------- 構成バージョン ----------
+     v1: 認証なし・anonキーで読み書き（従来）
+     v2: AUTH_SETUP.md 適用後。RLSが本人のみになり、同期にログインが要る。
+     判別は app_meta テーブル（v2で新設）を読めるかどうか。結果はページ内で
+     使い回す（1回の軽い読み取りだけ）。 */
+  let schemaV = null;
+  async function schemaVersion() {
+    if (schemaV != null) return schemaV;
+    try {
+      const c = await getClient();
+      const { data, error } = await c.from("app_meta").select("value").eq("key", "schema_version");
+      if (error) throw error;
+      schemaV = data && data[0] ? (Number(data[0].value) || 1) : 1;
+    } catch (e) { schemaV = 1; }   // テーブルが無い＝v1
+    return schemaV;
+  }
+  /* v2でログイン中なら user_id。行に付けてRLSを通す */
+  const authUid = () => {
+    try { return (typeof AUTH !== "undefined" && AUTH.userId && AUTH.userId()) || null; }
+    catch (e) { return null; }
+  };
+
   const rowToEntry = (row) => Object.assign({}, row.data, { id: row.id, created: row.created, owner: row.owner });
-  const entryToRow = (e) => ({ id: e.id, created: e.created || Date.now(), owner: e.owner || e.author || "", data: e });
+  const entryToRow = (e) => {
+    const row = { id: e.id, created: e.created || Date.now(), owner: e.owner || e.author || "", data: e };
+    // v1のテーブルには user_id 列が無いので、v2と確認できたときだけ付ける
+    if (schemaV >= 2 && authUid()) row.user_id = authUid();
+    return row;
+  };
 
   // owner（記録者名）で絞り込み、その人の記録だけを取得
   async function list(owner) {
@@ -102,7 +129,29 @@ const CLOUD = (() => {
     }
     return out;
   }
+  /* v2専用：自分の記録を全部取る。絞り込みはRLS（user_id = auth.uid()）が行う。
+     v1のポリシーでは全員の記録が返ってしまうので、v2確認前に呼んではいけない */
+  async function listMine() {
+    const c = await getClient();
+    const { data, error } = await c.from(TABLE).select("*").order("created", { ascending: false });
+    if (error) throw error;
+    return (data || []).map(rowToEntry);
+  }
+  /* v2専用：まだアカウントに紐づいていない昔の記録者名の一覧と、その引き取り */
+  async function unclaimedOwners() {
+    const c = await getClient();
+    const { data, error } = await c.rpc("unclaimed_owners");
+    if (error) throw error;
+    return data || [];
+  }
+  async function claimNotes(owner) {
+    const c = await getClient();
+    const { data, error } = await c.rpc("claim_notes", { p_owner: owner });
+    if (error) throw error;
+    return Number(data) || 0;
+  }
   async function upsert(entry) {
+    await schemaVersion();          // entryToRow が user_id を付けるかの判断に要る
     const c = await getClient();
     const { error } = await c.from(TABLE).upsert(entryToRow(entry), { onConflict: "id" });
     if (error) throw error;
@@ -114,9 +163,32 @@ const CLOUD = (() => {
   }
   async function replaceAll(entries) {
     // インポート用：全件upsert
+    await schemaVersion();
     const c = await getClient();
     const rows = entries.map(entryToRow);
     const { error } = await c.from(TABLE).upsert(rows, { onConflict: "id" });
+    if (error) throw error;
+  }
+
+  /* ---------- 管理画面（v2） ----------
+     RLSで自分の行しか見えなくなるため、全件の一覧は is_admin 限定の
+     RPC（security definer）で取る。写真は含まれない（枚数のみ）。 */
+  async function adminListMeta(onProgress) {
+    const c = await getClient();
+    const out = [];
+    for (let from = 0; ; from += PAGE) {
+      const { data, error } = await c.rpc("admin_list_meta", { p_offset: from, p_limit: PAGE });
+      if (error) throw error;
+      const rows = data || [];
+      rows.forEach(r => out.push(metaToEntry(r)));
+      if (onProgress) onProgress(out.length);
+      if (rows.length < PAGE) break;
+    }
+    return out;
+  }
+  async function adminRemove(id) {
+    const c = await getClient();
+    const { error } = await c.rpc("admin_delete_note", { p_id: id });
     if (error) throw error;
   }
 
@@ -141,5 +213,8 @@ const CLOUD = (() => {
     if (error) throw error;
   }
 
-  return { enabled, list, listAll, listAllMeta, upsert, remove, replaceAll, shareUpsert, shareGet, shareRemove };
+  return { enabled, client: getClient, schemaVersion,
+           list, listMine, listAll, listAllMeta, unclaimedOwners, claimNotes,
+           adminListMeta, adminRemove,
+           upsert, remove, replaceAll, shareUpsert, shareGet, shareRemove };
 })();

@@ -1011,6 +1011,15 @@ td .ve { font-size: .74rem; color: var(--muted); letter-spacing: .04em; }
 }
 .note-author input:focus { outline: none; border-color: var(--gold); }
 .note-mode { margin-left: auto; font-size: .76rem; padding: 5px 12px; border-radius: var(--radius-sm); border: 1px solid var(--line-soft); color: var(--muted); }
+/* アカウント欄（ログイン）。v2構成のときだけ note.js が中身を出す */
+.note-account { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 14px; margin: 10px 0 4px; padding: 12px 14px; background: var(--panel-2); border: 1px solid var(--line); border-radius: var(--radius-sm); }
+.note-account[hidden] { display: none; }
+.acc-hint { font-size: .8rem; color: var(--text-soft); }
+.acc-mail { font-size: .85rem; font-weight: 600; color: var(--cream); }
+.acc-form { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.acc-form input[type="email"] { flex: 1 1 200px; min-width: 0; padding: 9px 12px; border-radius: 8px; border: 1px solid var(--line); background: var(--panel); color: var(--cream); font-size: .9rem; }
+.acc-msg { flex-basis: 100%; font-size: .78rem; color: var(--text-soft); }
+.acc-msg:empty { display: none; }
 .note-mode.cloud { color: var(--leaf); border-color: var(--leaf); background: rgba(95,107,73,.08); }
 
 .btn-lg { padding: 13px 26px; font-size: 1rem; }

@@ -160,7 +160,7 @@ const ADMIN = (() => {
     if (!e) return;
     if (!confirm(`「${e.name || "この記録"}」を共有データベースから削除します。\nこの操作は取り消せません。よろしいですか？`)) return;
     try {
-      await CLOUD.remove(id);
+      await (schemaV >= 2 ? CLOUD.adminRemove(id) : CLOUD.remove(id));
       rows = rows.filter(x => x.id !== id);
       renderStats(); render();
     } catch (err) {
@@ -168,6 +168,9 @@ const ADMIN = (() => {
     }
   }
 
+  /* 構成バージョン（v1: anonで直接読む / v2: is_admin 限定のRPCで読む）。
+     load() の最初に一度だけ調べて覚える。 */
+  let schemaV = 0;
   async function load() {
     const btn = q("#adminLoad");
     const root = q("#adminRoot");
@@ -178,16 +181,37 @@ const ADMIN = (() => {
     const old = btn.textContent;
     btn.disabled = true; btn.textContent = "読み込み中…";
     try {
+      if (!schemaV) {
+        if (typeof AUTH !== "undefined" && AUTH.enabled) await AUTH.init();
+        schemaV = await CLOUD.schemaVersion();
+        /* v2では冒頭の注意書き（「制限されていません」）が事実と変わるので差し替える */
+        if (schemaV >= 2) {
+          const warn = q("#adminWarn");
+          if (warn) warn.innerHTML = `<b>この画面は管理者専用です。</b>
+            認証構成（AUTH_SETUP.md 適用後）では、is_admin が有効なアカウントで
+            ログインしているときだけ全記録を読み込めます。各利用者の記録は
+            行レベルセキュリティで本人以外から読めなくなっています。`;
+        }
+      }
+      if (schemaV >= 2 && !(typeof AUTH !== "undefined" && AUTH.signedIn())) {
+        root.innerHTML = `<div class="callout">この画面にはログインが必要です。記録ノートのアカウント欄からログインしてください。</div>`;
+        btn.disabled = false; btn.textContent = old;
+        return;
+      }
       /* 写真は持ち帰らない（枚数しか使わないのに、全件ぶんは重すぎるため）。
          小分けに読むので、途中経過をボタンに出す。 */
-      rows = await CLOUD.listAllMeta(n => { btn.textContent = `読み込み中… ${n}件`; });
+      const fetcher = schemaV >= 2 ? CLOUD.adminListMeta : CLOUD.listAllMeta;
+      rows = await fetcher(n => { btn.textContent = `読み込み中… ${n}件`; });
       openOwner = null;
       renderStats(); render();
       q("#adminExport").hidden = !rows.length;
       if (!rows.length) q("#adminStats").innerHTML = "";
       if (!rows.length) root.innerHTML = `<div class="callout">共有データベースに記録がありません。</div>`;
     } catch (err) {
-      root.innerHTML = `<div class="callout">読み込みに失敗しました：${esc(String(err && err.message || err))}</div>`;
+      const msg = String(err && err.message || err);
+      root.innerHTML = /admin only/.test(msg)
+        ? `<div class="callout">このアカウントには管理者権限がありません。AUTH_SETUP.md の手順4（profiles の is_admin）を確認してください。</div>`
+        : `<div class="callout">読み込みに失敗しました：${esc(msg)}</div>`;
     }
     btn.disabled = false; btn.textContent = old;
   }

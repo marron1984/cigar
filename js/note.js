@@ -18,6 +18,12 @@ const NOTE = (() => {
   let currentPhotos = [];       // モーダル編集中の写真（dataURL配列）
   const MAX_PHOTOS = 10;
   const cloudOn = typeof CLOUD !== "undefined" && CLOUD.enabled;
+  /* データベースの構成バージョン（cloud.js が判別）。
+     v1: 従来どおり記録者名で同期。v2: ログインした本人だけが同期できる。 */
+  let schemaV = 1;
+  const authOn = () => typeof AUTH !== "undefined" && AUTH.enabled;
+  /* いま共有DBへ読み書きしてよいか。v2ではログインが条件になる */
+  const syncOn = () => cloudOn && (schemaV < 2 || (authOn() && AUTH.signedIn()));
   const visionOn = typeof VISION !== "undefined" && VISION.enabled;   // 写真AI自動入力
   let visionBusy = false;       // 認識中の二重起動を防ぐ
   let usingIDB = false;         // IndexedDBが使えるか（localStorageの約5MB制限を回避）
@@ -155,10 +161,12 @@ const NOTE = (() => {
     return done;
   }
 
-  // クラウド有効時：共有DBから「自分（記録者名）の記録」を読み込む。
-  // 初回だけ、この端末にしか無い既存記録をクラウドへ引き上げて保全する（消失防止）。
+  // クラウド有効時：共有DBから自分の記録を読み込む。
+  // v1は記録者名で絞り、v2はログイン中の本人の分がRLSで返る。
+  // どちらも、この端末にしか無い記録をクラウドへ引き上げて保全する（消失防止）。
   async function loadCloud() {
-    if (!cloudOn) return false;
+    if (!syncOn()) return false;
+    if (schemaV >= 2) return loadCloudV2();
     const owner = authorName();
     if (!owner) { return true; }   // 名前未入力：手元の記録をそのまま表示（消さない）
     try {
@@ -189,6 +197,29 @@ const NOTE = (() => {
     } catch (err) {
       // クラウドに繋がらない・テーブル未作成などのときは、手元の記録を表示して
       // 「消えたように見える」状態を防ぐ（記録は端末内に残っている）。
+      console.warn("クラウド読み込み失敗、ローカルを使用します:", err);
+      try {
+        const localList = await localDeviceEntries();
+        if (localList.length) entries = localList.sort((a, b) => (b.created || 0) - (a.created || 0));
+      } catch (e) {}
+      return true;
+    }
+  }
+  /* v2：RLSが自分の行だけを返す。手元にしか無い記録は毎回差分だけ引き上げる
+     （idで冪等なので、引き上げ済みフラグに頼らない——v1時代のフラグが立っていても
+     取りこぼさない）。クラウドが空でも手元の記録は必ず表示する。 */
+  async function loadCloudV2() {
+    try {
+      const remote = await CLOUD.listMine();
+      const remoteIds = new Set(remote.map(e => e.id));
+      const localList = await localDeviceEntries();
+      const localOnly = localList.filter(e => e && e.id && e.name && !remoteIds.has(e.id))
+        .map(e => ({ ...e, owner: e.owner || authorName(), author: e.author || authorName() }));
+      entries = [...remote, ...localOnly].sort((a, b) => (b.created || 0) - (a.created || 0));
+      render();
+      if (localOnly.length) await cloudUploadSeq(localOnly);
+      return true;
+    } catch (err) {
       console.warn("クラウド読み込み失敗、ローカルを使用します:", err);
       try {
         const localList = await localDeviceEntries();
@@ -596,7 +627,7 @@ const NOTE = (() => {
     }
     data.duration = Number(q("#fDuration").value) || null;
     if (!data.name) return;
-    if (cloudOn && !authorName()) {
+    if (syncOn() && !authorName()) {
       alert(T("共有モードでは、先に「記録者」にお名前を入力してください（その名前があなたの記録の目印になります）。"));
       closeModal(); const ai = q("#authorName"); if (ai) ai.focus();
       return;
@@ -618,7 +649,7 @@ const NOTE = (() => {
     closeModal();
     render();
     // 共有DBへ書き込み（失敗しても手元の記録は残る）
-    if (cloudOn && saved) {
+    if (syncOn() && saved) {
       CLOUD.upsert(saved).catch(err => {
         console.warn(err); alert(T("共有データベースへの保存に失敗しました。手元には保存されています。時間をおいて再度お試しください。"));
       });
@@ -631,7 +662,7 @@ const NOTE = (() => {
     entries = entries.filter(x => x.id !== id);
     persistDelete(id);
     render();
-    if (cloudOn) {
+    if (syncOn()) {
       CLOUD.remove(id).catch(err => { console.warn(err); alert(T("共有データベースからの削除に失敗しました。時間をおいて再度お試しください。")); });
       // 共有リンクを発行していた場合は、そのコピーも削除（リンクを無効化）
       if (en && en.shareId) CLOUD.shareRemove(en.shareId).catch(() => {});
@@ -914,7 +945,7 @@ const NOTE = (() => {
       });
       en.aiComment = c;
       await persistPut(en);
-      if (cloudOn) CLOUD.upsert(en).catch(() => {});
+      if (syncOn()) CLOUD.upsert(en).catch(() => {});
       render();
     } catch (err) {
       btn.disabled = false; btn.textContent = old;
@@ -1145,7 +1176,7 @@ const NOTE = (() => {
       };
       await CLOUD.shareUpsert(en.shareId, pub);
       await persistPut(en);
-      if (cloudOn) CLOUD.upsert(en).catch(() => {});
+      if (syncOn()) CLOUD.upsert(en).catch(() => {});
       const url = shareUrlFor(en.shareId);
       if (navigator.share) {
         try { await navigator.share({ url, title: en.name || T("葉巻の記録") }); btn.disabled = false; btn.textContent = old; return; }
@@ -1408,7 +1439,7 @@ const NOTE = (() => {
         entries = entries.filter(e => (seen.has(e.id) ? (e.id = uid(), true) : (seen.add(e.id), true)));
         persistReplaceAll(entries);
         render();
-        if (cloudOn) CLOUD.replaceAll(entries).catch(err => { console.warn(err); alert(T("共有DBへの反映に一部失敗しました。")); });
+        if (syncOn()) CLOUD.replaceAll(entries).catch(err => { console.warn(err); alert(T("共有DBへの反映に一部失敗しました。")); });
         alert(T("{n} 件の記録を読み込みました。", { n: cleaned.length }));
       } catch (err) {
         alert(T("読み込みに失敗しました：{msg}", { msg: err.message }));
@@ -1421,8 +1452,98 @@ const NOTE = (() => {
   function renderMode() {
     const el = q("#noteMode");
     if (!el) return;
-    if (cloudOn) { el.textContent = T("共有DB（自分の記録だけ表示）"); el.classList.add("cloud"); }
-    else { el.textContent = usingIDB ? T("この端末に保存（大容量）") : T("この端末に保存"); el.classList.remove("cloud"); }
+    if (cloudOn && schemaV >= 2) {
+      if (syncOn()) { el.textContent = T("同期中（ログイン済み）"); el.classList.add("cloud"); }
+      else { el.textContent = T("この端末に保存（ログインで同期）"); el.classList.remove("cloud"); }
+    } else if (cloudOn) {
+      el.textContent = T("共有DB（自分の記録だけ表示）"); el.classList.add("cloud");
+    } else {
+      el.textContent = usingIDB ? T("この端末に保存（大容量）") : T("この端末に保存");
+      el.classList.remove("cloud");
+    }
+  }
+
+  /* ---------- アカウント欄（v2のみ表示） ----------
+     ログインしなくても記録は付けられる。ここは「端末をまたいで同期したい人」の
+     ための入口で、メールのリンクを基本にする（パスワードを作らせない）。 */
+  function renderAccount() {
+    const box = q("#noteAccount");
+    if (!box) return;
+    if (!cloudOn || schemaV < 2 || !authOn()) { box.hidden = true; box.innerHTML = ""; return; }
+    box.hidden = false;
+    if (AUTH.signedIn()) {
+      box.innerHTML = `
+        <span class="acc-mail">${escN(AUTH.email())}</span>
+        <button type="button" class="btn btn-ghost btn-sm" id="accOut">${escN(T("ログアウト"))}</button>`;
+      q("#accOut").addEventListener("click", async () => { await AUTH.signOut(); });
+      return;
+    }
+    box.innerHTML = `
+      <span class="acc-hint">${escN(T("ログインすると、端末が変わっても記録が同期されます"))}</span>
+      <form class="acc-form" id="accForm">
+        <input type="email" id="accEmail" required placeholder="${escN(T("メールアドレス"))}" autocomplete="email">
+        <button type="submit" class="btn btn-primary btn-sm" id="accSend">${escN(T("ログインリンクを送る"))}</button>
+      </form>
+      <div class="acc-msg" id="accMsg"></div>`;
+    q("#accForm").addEventListener("submit", async (ev) => {
+      ev.preventDefault();
+      const btn = q("#accSend"), msg = q("#accMsg");
+      btn.disabled = true;
+      try {
+        await AUTH.signInEmail(q("#accEmail").value.trim());
+        msg.textContent = T("確認メールを送りました。メール内のリンクを開くと、この端末でログインされます。");
+      } catch (err) {
+        msg.textContent = T("送信に失敗しました：{msg}", { msg: (err && err.message) || T("エラー") });
+      }
+      btn.disabled = false;
+    });
+  }
+
+  /* ---------- 以前の記録の引き取り（v2・初回ログイン時） ----------
+     昔の「記録者名」だけで保存されていた記録を、自分のアカウントに紐づける。
+     自分の記録がまだ1件も無く、未引き取りの名前が残っているときにだけ尋ねる。 */
+  const CLAIM_DONE_KEY = "cigar_claim_prompt_done";
+  async function maybeClaim() {
+    if (schemaV < 2 || !syncOn()) return;
+    try { if (localStorage.getItem(CLAIM_DONE_KEY)) return; } catch (e) {}
+    let mine = [], names = [];
+    try {
+      mine = await CLOUD.listMine();
+      if (mine.length) { try { localStorage.setItem(CLAIM_DONE_KEY, "1"); } catch (e) {} return; }
+      names = await CLOUD.unclaimedOwners();
+    } catch (e) { return; }
+    if (!names.length) { try { localStorage.setItem(CLAIM_DONE_KEY, "1"); } catch (e) {} return; }
+    let ov = q("#claimOv");
+    if (!ov) {
+      ov = document.createElement("div");
+      ov.id = "claimOv"; ov.className = "wrapped-ov";
+      document.body.appendChild(ov);
+    }
+    ov.innerHTML = `<div class="share-menu">
+      <div class="sm-title">${escN(T("以前の記録を引き取る"))}</div>
+      <div class="sm-sub" style="margin-bottom:6px">${escN(T("あなたの記録者名を選ぶと、その記録がこのアカウントに紐づきます。"))}</div>
+      ${names.map(n => `<button type="button" class="sm-item" data-claim="${escN(n.owner)}">${escN(n.owner)}<span class="sm-sub">${escN(T("{n}件", { n: n.cnt }))}</span></button>`).join("")}
+      <button type="button" class="btn btn-ghost btn-sm sm-cancel">${escN(T("自分の記録はありません"))}</button>
+    </div>`;
+    ov.classList.add("open");
+    ov.querySelector(".sm-cancel").addEventListener("click", () => {
+      ov.classList.remove("open");
+      try { localStorage.setItem(CLAIM_DONE_KEY, "1"); } catch (e) {}
+    });
+    ov.querySelectorAll("[data-claim]").forEach(b => b.addEventListener("click", async () => {
+      b.disabled = true;
+      try {
+        const n = await CLOUD.claimNotes(b.dataset.claim);
+        try { localStorage.setItem(CLAIM_DONE_KEY, "1"); } catch (e) {}
+        ov.classList.remove("open");
+        alert(T("{n}件の記録を引き取りました", { n }));
+        if (!authorName()) { setAuthorName(b.dataset.claim); const ai = q("#authorName"); if (ai) ai.value = b.dataset.claim; }
+        await loadCloud(); render();
+      } catch (err) {
+        alert(T("引き取りに失敗しました：{msg}", { msg: (err && err.message) || T("エラー") }));
+        b.disabled = false;
+      }
+    }));
   }
 
   /* ---------- 初期化 ---------- */
@@ -1431,12 +1552,29 @@ const NOTE = (() => {
     maybeShowShared();
 
     // 旧localStorage → IndexedDB の移行と読み込み（完了後に再描画）。
-    // 手元の記録を読み込んでから、クラウド同期（有効時）を行うことで既存記録を確実に引き上げる。
-    loadStore().then(() => {
+    // 手元の記録を読み込んでから、認証状態と構成バージョンを確かめ、
+    // 同期できるならクラウドから読む。既存記録の引き上げはその中で行う。
+    loadStore().then(async () => {
       load.done = true;
-      renderMode();
+      try {
+        if (cloudOn && authOn()) {
+          await AUTH.init();
+          schemaV = await CLOUD.schemaVersion();
+          // ログイン・ログアウトのたびに、表示と同期をやり直す
+          AUTH.onChange(() => {
+            renderMode(); renderAccount();
+            if (syncOn()) loadCloud().then(ok => { if (ok) { render(); maybeClaim(); } });
+          });
+        } else if (cloudOn) {
+          schemaV = await CLOUD.schemaVersion();
+        }
+      } catch (e) {
+        // 回線が無い等で確かめられない：v1（従来動作）として進め、記録の表示は止めない
+        console.warn("認証状態を確認できませんでした:", e);
+      }
+      renderMode(); renderAccount();
       render();
-      if (cloudOn) loadCloud().then(ok => { if (ok) render(); });
+      if (syncOn()) loadCloud().then(ok => { if (ok) { render(); maybeClaim(); } });
     });
     renderMode();
 
@@ -1449,12 +1587,13 @@ const NOTE = (() => {
         setAuthorName(e.target.value.trim());
         render();
       });
-      // 共有モードでは「入力が確定したとき（フォーカスを外す/Enter）」に読み込み直す。
-      // 途中の文字で誤って記録が別名に引き上げられるのを防ぐため input ではなく change を使う。
+      // v1の共有モードでは、名前が「どの記録を読むか」を決めるので、
+      // 入力が確定したとき（フォーカスを外す/Enter）に読み込み直す。
+      // v2では名前はただの表示名なので、読み込み直しはしない。
       if (cloudOn) {
         authorInput.addEventListener("change", () => {
           setAuthorName(authorInput.value.trim());
-          loadCloud().then(() => render());
+          if (schemaV < 2) loadCloud().then(() => render());
         });
       }
     }
