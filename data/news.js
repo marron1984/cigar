@@ -7,8 +7,73 @@
    手で足すこともできますが、items の並び・キーは崩さないでください。
    ============================================================ */
 var NEWS_DATA = {
-  "updated": "2026-08-11",
+  "updated": "2026-08-12",
   "items": [
+    {
+      "date": "2026-08-12",
+      "category": "新製品",
+      "title_ja": "キー・ドルセー、26年EL第1弾「コンコルディア」",
+      "summary_ja": "ハバノス社が2026年エディション・リミターダの第1弾として、キー・ドルセー（Quai d'Orsay）「コンコルディア」を発表した。マドリードのイベントで披露される。発売時期や価格は明らかにされていない。",
+      "title_en": "Quai d’Orsay Concordia Announced as First Edición Limitada 2026",
+      "summary_en": "Habanos has announced Quai d'Orsay Concordia as the first Edición Limitada 2026 release. The new cigar will be shown off at an event in Madrid. It remains unclear when the cigars will arrive on shelves or how much they will cost.",
+      "source": "halfwheel",
+      "source_title": "Quai d’Orsay Concordia Announced as First Edición Limitada 2026",
+      "source_en": "halfwheel",
+      "source_title_en": "Quai d’Orsay Concordia Announced as First Edición Limitada 2026",
+      "url": "https://halfwheel.com/quai-dorsay-concordia-announced-as-first-edicion-limitada-2026/476568/"
+    },
+    {
+      "date": "2026-08-12",
+      "category": "新製品",
+      "title_ja": "ケサダ「ススピロ」小売店に入荷",
+      "summary_ja": "ケサダ（Quesada）の新ライン「ススピロ（Suspiro）」が小売店に入荷した。2種類の新ブレンドはいずれも甘味付けのキャップを備える。ラインの名は、繊細なメレンゲ菓子のデザートにちなむ。",
+      "title_en": "Quesada Suspiro Arriving at Retailers",
+      "summary_en": "Quesada's new Suspiro line is arriving at retailers. The two new blends both feature sweetened caps. The line is named after a delicate meringue confection dessert.",
+      "source": "halfwheel",
+      "source_title": "Quesada Suspiro Arriving at Retailers",
+      "source_en": "halfwheel",
+      "source_title_en": "Quesada Suspiro Arriving at Retailers",
+      "url": "https://halfwheel.com/quesada-suspiro-arriving-at-retailers/476537/"
+    },
+    {
+      "date": "2026-08-12",
+      "category": "新製品",
+      "title_ja": "ワイルドファイア「ザ・リバイバリスト」が復活",
+      "summary_ja": "ワイルドファイア（Wildfire）の「ザ・リバイバリスト（The Revivalist）」が再登場した。据え置きの要素もある一方で多くが変更され、フィラーには熟成したイタリア産タバコが加わっている。",
+      "title_en": "Wildfire’s The Revivalist Returns",
+      "summary_en": "Wildfire's The Revivalist is back. While some things are staying the same, a lot has changed, including some aged Italian tobacco in the filler.",
+      "source": "halfwheel",
+      "source_title": "Wildfire’s The Revivalist Returns",
+      "source_en": "halfwheel",
+      "source_title_en": "Wildfire’s The Revivalist Returns",
+      "url": "https://halfwheel.com/wildfires-the-revivalist-returns/476536/"
+    },
+    {
+      "date": "2026-08-12",
+      "category": "新製品",
+      "title_ja": "プラセンシア、有機タバコの「トリウンファル」",
+      "summary_ja": "プラセンシア（Plasencia）が「トリウンファル（Triunfal）」を発表した。同社によれば、ホンジュラスとニカラグア双方の認証済み有機タバコを用いた初の葉巻だという。5万本すべてを、1組の職人が巻き上げた。",
+      "title_en": "Plasencia Triunfal",
+      "summary_en": "Plasencia says Triunfal is the first time it has released a cigar using certified organic tobacco from both Honduras and Nicaragua. Notably, just one pair of workers rolled all 50,000 cigars.",
+      "source": "halfwheel",
+      "source_title": "Plasencia Triunfal",
+      "source_en": "halfwheel",
+      "source_title_en": "Plasencia Triunfal",
+      "url": "https://halfwheel.com/plasencia-triunfal/476327/"
+    },
+    {
+      "date": "2026-08-11",
+      "category": "新製品",
+      "title_ja": "S.T.デュポン×コイーバ、誕生60周年記念コレクション",
+      "summary_ja": "S.T.デュポン（S.T. DUPONT）が、プレミアムシガーを代表する「コイーバ（COHIBA）」の誕生60周年を記念し、限定コレクションを発表した。",
+      "title_en": "S.T. Dupont x Cohiba Unveils Limited Collection for Cohiba's 60th Anniversary",
+      "summary_en": "S.T. Dupont has announced a limited collection marking the 60th anniversary of Cohiba, one of the most iconic names in premium cigars.",
+      "source": "storyweb.jp",
+      "source_title": "S.T. DUPONT X COHIBA プレミアムシガーを代表する「コイーバ」の誕生60周年を記念し限定コレクションを発表 - storyweb.jp",
+      "source_en": "storyweb.jp",
+      "source_title_en": "S.T. Dupont x Cohiba Unveils a Limited Collection Commemorating the 60th Anniversary of Cohiba, an Icon of Premium Cigars",
+      "url": "https://news.google.com/rss/articles/CBMiS0FVX3lxTE9VS3RFbDBmbWw3aXFlSlZPYW9GUDhWWUNnX1dDVGl2cEMzTDV6UW40MTNsOTFObmthZGNrRDVaOEExam9sQkNERG9ESQ?oc=5"
+    },
     {
       "date": "2026-08-11",
       "category": "業界・企業",
@@ -242,6 +307,19 @@ var NEWS_DATA = {
       "source_en": "halfwheel",
       "source_title_en": "Hiram & Solomon Mystic Tie",
       "url": "https://halfwheel.com/hiram-solomon-mystic-tie/475943/"
+    },
+    {
+      "date": "2026-08-06",
+      "category": "新製品",
+      "title_ja": "「ピース・アロマ・ヴィンテージ」数量限定で復活",
+      "summary_ja": "「ピース・アロマ・ヴィンテージ」が数量限定で復活した。5年熟成による濃厚な香りと、重層感のある味わいが特長とされる。",
+      "title_en": "Peace Aroma Vintage Revived in Limited Quantities",
+      "summary_en": "Peace Aroma Vintage has made a long-awaited comeback in limited quantities. It is characterised by a rich aroma from five years of ageing and a layered, multi-dimensional flavour.",
+      "source": "ウォーカープラス",
+      "source_title": "「ピース・アロマ・ヴィンテージ」が、数量限定で待望の復活！5年熟成の濃厚な香りと重層感のある味わいが魅力 - ウォーカープラス",
+      "source_en": "Walkerplus",
+      "source_title_en": "Peace Aroma Vintage Makes a Long-Awaited Comeback in Limited Quantities: Rich Aroma from Five Years of Ageing and a Layered Flavour",
+      "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE9jREYwN3ZyeEQxUDRnaWFHNmJpdk9YZXlneko1VGxZVmRBd3pKVmw2YjA5T3FxcmJrdnhSNzVwWVJIUEl5ZXJZZXgyUm5zMkd0Xzd0WFZB0gFbQVVfeXFMUDlGT2dBOHhlMUdCZTdpalFkYVJUa0FNNUtlMWVFWVptRi1XbjRaY2p1VjZoZGhBU1M2bE1nejk2bFhWclJ6QTZ0cWF4dUJneVNVZkh4S0d2cUhqQQ?oc=5"
     },
     {
       "date": "2026-08-06",
