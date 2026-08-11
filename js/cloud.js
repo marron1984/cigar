@@ -55,6 +55,53 @@ const CLOUD = (() => {
     if (error) throw error;
     return (data || []).map(rowToEntry);
   }
+
+  /* 管理画面用：写真を持ち帰らずに全件取る。
+     ------------------------------------------------------------
+     写真（data.photos）は1400pxのJPEGをデータURLにしたもので、1枚あたり
+     数百KBある。上の listAll のように select("*") で全件を取ると転送量が
+     一気に膨らみ、Supabase 側の statement timeout に掛かって
+     「canceling statement due to statement timeout」で失敗する。
+     管理画面は写真そのものを出さず枚数しか使わないので、ここでは
+     必要な項目だけを名前を付けて取り出し、さらに小分けにして読む。
+     写真の枚数は、DATABASE_SETUP.md の任意の生成列 photo_count があれば出す
+     （無いデータベースでも動くよう、一度だけ付けずにやり直す）。 */
+  const META_COLS = ["id", "created", "owner",
+    "name:data->>name", "brand:data->>brand", "country:data->>country",
+    "vitola:data->>vitola", "strength:data->>strength", "date:data->>date",
+    "rating:data->>rating", "price:data->>price", "location:data->>location",
+    "note:data->>note", "author:data->>author"].join(",");
+  const PAGE = 500;
+  const metaToEntry = (r) => ({
+    id: r.id, created: r.created, owner: r.owner, author: r.author,
+    name: r.name, brand: r.brand, country: r.country, vitola: r.vitola,
+    strength: r.strength, date: r.date, location: r.location, note: r.note,
+    rating: r.rating == null || r.rating === "" ? "" : Number(r.rating),
+    price: r.price == null || r.price === "" ? "" : Number(r.price),
+    /* null は「数えていない」。0 は「写真なし」。区別して扱う */
+    photoCount: r.photo_count == null ? null : Number(r.photo_count)
+  });
+  async function listAllMeta(onProgress) {
+    const c = await getClient();
+    let cols = META_COLS + ",photo_count";
+    let triedPlain = false;
+    const out = [];
+    for (let from = 0; ; from += PAGE) {
+      const ask = () => c.from(TABLE).select(cols)
+        .order("created", { ascending: false }).range(from, from + PAGE - 1);
+      let { data, error } = await ask();
+      if (error && !triedPlain) {          // photo_count が無いデータベース
+        triedPlain = true; cols = META_COLS;
+        ({ data, error } = await ask());
+      }
+      if (error) throw error;
+      const rows = data || [];
+      rows.forEach(r => out.push(metaToEntry(r)));
+      if (onProgress) onProgress(out.length);
+      if (rows.length < PAGE) break;
+    }
+    return out;
+  }
   async function upsert(entry) {
     const c = await getClient();
     const { error } = await c.from(TABLE).upsert(entryToRow(entry), { onConflict: "id" });
@@ -94,5 +141,5 @@ const CLOUD = (() => {
     if (error) throw error;
   }
 
-  return { enabled, list, listAll, upsert, remove, replaceAll, shareUpsert, shareGet, shareRemove };
+  return { enabled, list, listAll, listAllMeta, upsert, remove, replaceAll, shareUpsert, shareGet, shareRemove };
 })();

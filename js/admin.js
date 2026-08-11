@@ -62,7 +62,8 @@ const ADMIN = (() => {
         first: times.length ? Math.min(...times) : 0,
         avg: rated.length ? (rated.reduce((n, e) => n + Number(e.rating), 0) / rated.length) : 0,
         topCountry: top ? `${top[0]}（${top[1]}）` : "",
-        photos: g.list.reduce((n, e) => n + ((e.photos || []).length), 0),
+        photos: g.list.some(e => e.photoCount != null)
+          ? g.list.reduce((n, e) => n + (e.photoCount || 0), 0) : null,
         list: g.list.slice().sort((a, b) => timeOf(b) - timeOf(a))
       };
     });
@@ -134,7 +135,7 @@ const ADMIN = (() => {
                     <td>${esc(e.country || "")}</td>
                     <td>${esc(fmtDate(e.date) || (e.created ? fmtDate(new Date(e.created).toISOString().slice(0, 10)) : ""))}</td>
                     <td>${Number(e.rating) ? Number(e.rating).toFixed(1) : ""}</td>
-                    <td>${(e.photos || []).length || ""}</td>
+                    <td>${e.photoCount == null ? "—" : (e.photoCount || "")}</td>
                     <td><button class="at-del" data-del="${esc(e.id)}" title="この記録を共有データベースから削除">削除</button></td>
                   </tr>`).join("")}
               </tbody>
@@ -177,7 +178,9 @@ const ADMIN = (() => {
     const old = btn.textContent;
     btn.disabled = true; btn.textContent = "読み込み中…";
     try {
-      rows = await CLOUD.listAll();
+      /* 写真は持ち帰らない（枚数しか使わないのに、全件ぶんは重すぎるため）。
+         小分けに読むので、途中経過をボタンに出す。 */
+      rows = await CLOUD.listAllMeta(n => { btn.textContent = `読み込み中… ${n}件`; });
       openOwner = null;
       renderStats(); render();
       q("#adminExport").hidden = !rows.length;
@@ -197,7 +200,7 @@ const ADMIN = (() => {
     const body = rows.map(e => [
       ownerOf(e), e.name, e.brand, e.country, e.vitola, e.strength,
       e.date || (e.created ? new Date(e.created).toISOString().slice(0, 10) : ""),
-      e.rating || "", e.price || "", e.location, (e.photos || []).length, e.note
+      e.rating || "", e.price || "", e.location, e.photoCount == null ? "" : e.photoCount, e.note
     ].map(cell).join(","));
     const csv = "﻿" + [head.map(cell).join(","), ...body].join("\r\n");   // BOM付きでExcel対応
     const a = document.createElement("a");

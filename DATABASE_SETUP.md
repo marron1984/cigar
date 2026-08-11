@@ -44,6 +44,21 @@ create policy "allow delete for anon" on cigar_notes for delete using (true);
 > 他人に一切読ませない厳密な非公開が必要な場合は、Supabase の **認証（Auth）＋
 > `owner = auth.uid()` の RLS** に切り替えてください（ログインが必要になります）。ご希望あれば対応します。
 
+### 管理画面の「写真」欄を出したいとき（任意）
+
+管理画面（`#admin`）は、写真そのものを持ち帰らずに一覧を作ります。写真は1枚あたり
+数百KBあり、全件ぶんを読むと Supabase の実行時間の上限に掛かって
+`canceling statement due to statement timeout` で失敗するためです。
+
+そのぶん、既定では枚数が分からず「写真」欄は `—` になります。枚数も出したい場合は、
+**SQL Editor** で次を実行して、枚数だけを持つ列を足してください（無くても動きます）：
+
+```sql
+alter table cigar_notes
+  add column if not exists photo_count int
+  generated always as (jsonb_array_length(coalesce(data->'photos', '[]'::jsonb))) stored;
+```
+
 ## 3. `js/config.js` に設定を書く
 
 `js/config.js` を開き、次のように編集：
