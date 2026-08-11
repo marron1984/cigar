@@ -20,6 +20,14 @@
 var I18N = (function () {
   var LANG = (typeof window !== "undefined" && window.SITE_LANG) || "ja";
 
+  /* 英語以外の言語の辞書は、js/i18n.<言語>.js が window.I18N_EXTRA に
+     載せてから、このファイルを読む（読み込み順は build_lang.js が組む）。
+     形： { lang: "zh", dict: {…}, country: {…}, strength: {…}, vitola: {…} }
+     dict のキーは英語辞書と同じ「日本語の原文」。country などは
+     日本語の正準値 → その言語の表示、の対応表（無い項目は英語で出す）。 */
+  var EXTRA = (typeof window !== "undefined" && window.I18N_EXTRA &&
+               window.I18N_EXTRA.lang === LANG) ? window.I18N_EXTRA : null;
+
   /* 産地名：保存される値は日本語、表示だけ英語 */
   var COUNTRY = {
     "キューバ": "Cuba",
@@ -898,15 +906,17 @@ var I18N = (function () {
     });
   }
 
-  /* 文言。英語版で辞書に無いものは日本語のまま返す（表示が消えるより良い）。
-     ctx は「同じ日本語でも置き場所によって英語が変わる」場合の目印。
-     例：「産地」はフォームの項目名なら Origin、統計の見出しなら origins。 */
+  /* 文言。翻訳版で辞書に無いものは日本語のまま返す（表示が消えるより良い）。
+     ctx は「同じ日本語でも置き場所によって訳が変わる」場合の目印。
+     例：「産地」はフォームの項目名なら Origin、統計の見出しなら origins。
+     辞書は言語ごとに1つ：英語はこのファイルの EN、他言語は EXTRA.dict。 */
+  var DICT = LANG === "en" ? EN : (EXTRA && EXTRA.dict) || null;
   function t(s, vars, ctx) {
-    if (LANG !== "en") return fill(s, vars);
+    if (!DICT) return fill(s, vars);
     var key = ctx ? ctx + "::" + s : null;
-    var en = key && Object.prototype.hasOwnProperty.call(EN, key) ? EN[key]
-           : (Object.prototype.hasOwnProperty.call(EN, s) ? EN[s] : s);
-    return fill(en, vars);
+    var out = key && Object.prototype.hasOwnProperty.call(DICT, key) ? DICT[key]
+            : (Object.prototype.hasOwnProperty.call(DICT, s) ? DICT[s] : s);
+    return fill(out, vars);
   }
   /* ビトラ（サイズ）名。データ側に英語名があるのでそれを使う */
   var VITOLA = null;
@@ -922,17 +932,19 @@ var I18N = (function () {
     return VITOLA[v] || v;
   }
   function vitola(v) {
-    if (LANG !== "en" || !v) return v || "";
-    return vitolaEn(v);
+    if (LANG === "ja" || !v) return v || "";
+    return (EXTRA && EXTRA.vitola && EXTRA.vitola[v]) || vitolaEn(v);
   }
-  /* 産地名。保存される値は日本語のまま、表示だけ英語にする */
+  /* 産地名。保存される値は日本語のまま、表示だけその言語にする
+     （表示の対応表が無い言語・項目は、世界共通で通じる英語名で出す） */
   function countryEn(c) { return c ? (COUNTRY[c] || c) : ""; }
   function country(c) {
-    if (LANG !== "en" || !c) return c || "";
-    return countryEn(c);
+    if (LANG === "ja" || !c) return c || "";
+    return (EXTRA && EXTRA.country && EXTRA.country[c]) || countryEn(c);
   }
   function strength(s) {
-    if (LANG !== "en" || !s) return s || "";
+    if (LANG === "ja" || !s) return s || "";
+    if (EXTRA && EXTRA.strength && EXTRA.strength[s]) return EXTRA.strength[s];
     if (STRENGTH[s]) return STRENGTH[s];
     /* すでに英語で書かれているもの（ブランド大全の注釈つき表記など）はそのまま出す。
        下の範囲分割にかけると "Medium–Full (…)" を刻んでしまうため、先に返す */

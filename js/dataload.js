@@ -9,7 +9,7 @@
    ・一度読んだファイルは覚えておき、二度は読まない
    ・script.async = false で挿し込むので、入れた順に実行される
      （world_deep.js は world.js の後、という前提が守られる）
-   ・英語版（/en/）では data/en/*.js の差し替えも同じ組に入れて読む
+   ・翻訳版（/en/ など）では data/<言語>/*.js の差し替えも同じ組に入れて読む
    ============================================================ */
 const DATA = (() => {
   /* このファイル自身の在り処から、サイトの根っこ（data/ や assets/ がある場所）を
@@ -25,7 +25,12 @@ const DATA = (() => {
   /* JSが後から作る <img> などの当て先。ほかのファイルからも使う。 */
   window.SITE_ROOT = BASE;
 
-  const isEn = (typeof window !== "undefined" && window.SITE_LANG === "en");
+  const LANG = (typeof window !== "undefined" && window.SITE_LANG) || "ja";
+  const isForeign = LANG !== "ja";
+  /* 差し替えデータの置き場。PACKS の en: には data/en/ の道筋を正準として
+     書いてあり、英語以外の言語では同じファイル名を data/<言語>/ から読む。
+     （翻訳の単位＝ファイルの割り方を全言語で揃えるための決まり） */
+  const overlayPath = (f) => LANG === "en" ? f : f.replace(/^data\/en\//, "data/" + LANG + "/");
 
   /* ビュー名 → 読み込むファイル。en は英語版でだけ足す差し替えデータ
      （元データの後に読み、該当項目を英語文に置き換える）。 */
@@ -98,16 +103,16 @@ const DATA = (() => {
     const out = [];
     (p.needs || []).forEach(n => out.push(...filesOf(n)));
     out.push(...(p.files || []));
-    if (isEn) out.push(...(p.en || []));
+    if (isForeign) out.push(...(p.en || []).map(overlayPath));
     return out;
   }
   /* 英語の差し替えファイルだけを列挙（読み込み失敗の扱いを分けるため） */
   function enFilesOf(name) {
     const p = PACKS[name];
-    if (!p || !isEn) return [];
+    if (!p || !isForeign) return [];
     const out = [];
     (p.needs || []).forEach(n => out.push(...enFilesOf(n)));
-    out.push(...(p.en || []));
+    out.push(...(p.en || []).map(overlayPath));
     return out;
   }
 

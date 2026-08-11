@@ -131,8 +131,8 @@ const views = {
    ・管理画面（#admin）だけはURLを持たせない（検索対象にしないため）
    ============================================================ */
 const META = (typeof PAGE_META !== "undefined") ? PAGE_META : {};
-/* サイトの土台。日本語版は "/"、英語版は "/en/"。 */
-const SITE_BASE = I18N.isEn ? "/en/" : "/";
+/* サイトの土台。日本語版は "/"、翻訳版は "/en/" "/zh/" のように言語コード。 */
+const SITE_BASE = I18N.lang === "ja" ? "/" : "/" + I18N.lang + "/";
 const canPushPath = /^https?:$/.test(location.protocol);
 /* 道筋 → ビュー名 */
 const PATH_VIEW = (() => {
@@ -163,7 +163,7 @@ function routeFromLocation() {
 /* 題・正規URL・SNSカードを、いま開いているページのものに書き換える。
    最初の表示では生成ずみのHTMLと同じ値になるので、実質は画面切替のときに効く。 */
 function applyPageMeta(name) {
-  const m = META[name] && META[name][I18N.isEn ? "en" : "ja"];
+  const m = META[name] && (META[name][I18N.lang] || META[name].ja);
   if (!m) return;
   document.title = m.title;
   const set = (sel, attr, val) => { const el = document.querySelector(sel); if (el) el.setAttribute(attr, val); };

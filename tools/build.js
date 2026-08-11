@@ -6,7 +6,7 @@
    順番に意味があるので、個別に走らせるときも下の順を守ること。
 
      1. build_summary.js  data/*.js  → data/summary.js（軽い要約）
-     2. build_en.js       index.html → en/index.html（英語版シェル）
+     2. build_lang.js     index.html → en/index.html など（各言語のシェル）
      3. build_pages.js    上の2つ    → /brands/ などの各ページ・sitemap・robots
      4. build_404.js      404.html（見つからなかったときの案内）
      5. check_seo.js      取りこぼしの確認
@@ -26,7 +26,7 @@ const env = Object.assign({}, process.env, { NODE_PATH: "/opt/node22/lib/node_mo
 
 const steps = [
   ["要約データ", "tools/build_summary.js"],
-  ["英語版シェル", "tools/build_en.js"],
+  ["各言語のシェル", "tools/build_lang.js"],
   ["各ページ・sitemap・robots", "tools/build_pages.js"],
   ["見つからないときの案内", "tools/build_404.js"],
   ["公開まわりの確認", "tools/check_seo.js"]

@@ -8,9 +8,13 @@
 
    使い方： node tools/check_en_content.js basics sizes prices tools countries
      引数は確かめたい範囲（省略すると全部）。
+     --lang=zh のように言語も選べる（省略時は en）。
+     未翻訳の判定は言語ごとに違う（tools/languages.js の untranslated）：
+       en … 日本語の文字（かな・漢字）が残っていれば未翻訳
+       zh … 漢字は中国語と共有なので、かなが残っていれば未翻訳
    合格： 「未翻訳: 0項目」
 
-   ・訳語の補足として日本語を括弧書きで残すのは可（1項目15字まで）
+   ・訳語の補足として日本語を括弧書きで残すのは可（字数は言語ごとの上限まで）
    ・name_ja / ja / brands / sources / strength / flag は対象外
      （固有名・出典・強さ表示は別の仕組みで扱う）
    ============================================================ */
@@ -18,13 +22,17 @@ const fs = require("fs");
 const path = require("path");
 const ROOT = path.resolve(__dirname, "..");
 
+const langArg = (process.argv.find(a => a.startsWith("--lang=")) || "--lang=en").slice(7);
+const LANGCFG = require("./languages").find(l => l.code === langArg);
+if (!LANGCFG) { console.error(`tools/languages.js に無い言語です: ${langArg}`); process.exit(1); }
+
 const BASE = ["data/data.js", "data/countries_deep.js", "data/philippines_deep.js",
   "data/prices_deep.js", "data/tools.js", "data/humidor.js",
   "data/advanced.js", "data/advanced_deep.js", "data/phd.js", "data/phd_lit.js",
   "data/world.js", "data/world_deep.js", "data/brands.js"];
-const enDir = path.join(ROOT, "data/en");
-const OVERLAYS = fs.existsSync(enDir)
-  ? fs.readdirSync(enDir).filter(f => /^(basics|sizes|prices|tools_[ab]|countries_[ab]|humidor|advanced_\d|phd_\d|world_\d|brands_[a-z]+_\d+)\.js$/.test(f)).map(f => "data/en/" + f)
+const ovrDir = path.join(ROOT, "data", LANGCFG.code);
+const OVERLAYS = fs.existsSync(ovrDir)
+  ? fs.readdirSync(ovrDir).filter(f => /^(basics|sizes|prices|tools_[ab]|countries_[ab]|humidor|advanced_\d|phd_\d|world_\d|brands_[a-z]+_\d+)\.js$/.test(f)).map(f => "data/" + LANGCFG.code + "/" + f)
   : [];
 
 const src = [...BASE, ...OVERLAYS].map(f => fs.readFileSync(path.join(ROOT, f), "utf8")).join("\n;\n");
@@ -48,8 +56,9 @@ function deepScan(obj, prefix, out) {
   return out;
 }
 
-const ja = (s) => (String(s == null ? "" : s).match(/[ぁ-んァ-ヶ一-龠]/g) || []).length;
-const LIMIT = 15;   // 補足の括弧書きとして許す日本語の字数
+const jaRe = new RegExp(LANGCFG.untranslated.re, "g");
+const ja = (s) => (String(s == null ? "" : s).match(jaRe) || []).length;
+const LIMIT = LANGCFG.untranslated.limit;   // 補足として許す残存文字数（言語ごと）
 
 /* 範囲 → 確かめる項目。fn は [ラベル, 値] の一覧を返す */
 const SCOPES = {

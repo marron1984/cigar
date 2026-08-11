@@ -24,6 +24,13 @@ const ROOT = path.resolve(__dirname, "..");
 const SITE = "https://cigar.cafe";
 const META = new Function(fs.readFileSync(path.join(ROOT, "data/pages.js"), "utf8") + "\n;return PAGE_META;")();
 
+/* 日本語以外の対応言語（tools/languages.js）。enabled のものだけページを作る。
+   ページごとの「その言語の中身ができているか」は data/pages.js の
+   <code>Ready（enReady / zhReady …）で判定する。 */
+const FOREIGN = require("./languages").filter(l => l.enabled);
+const ready = (view, code) => code === "ja" ? true : !!META[view][code + "Ready"];
+const HREFLANG = Object.fromEntries([["ja", "ja"], ...FOREIGN.map(l => [l.code, l.hreflang])]);
+
 /* 生成物の見分けがつくよう、先頭に断りを入れておく（手で直さないため） */
 const BANNER = "<!-- このファイルは tools/build_pages.js が index.html から作っています。手で編集しないでください。 -->\n";
 
@@ -52,10 +59,10 @@ function loadGlobal(files, name) {
     return new Function(src + "\n;return " + name + ";")();
   } catch (e) { return null; }
 }
-const SUMMARY = {
-  ja: loadGlobal(["data/summary.js"], "BRANDS_SUMMARY"),
-  en: loadGlobal(["data/en/summary.js"], "BRANDS_SUMMARY")
-};
+const SUMMARY = Object.fromEntries([
+  ["ja", loadGlobal(["data/summary.js"], "BRANDS_SUMMARY")],
+  ...FOREIGN.map(l => [l.code, loadGlobal([`data/${l.code}/summary.js`], "BRANDS_SUMMARY")])
+]);
 const NEWS = loadGlobal(["data/news.js"], "NEWS_DATA");
 
 /* 用語の説明は長いので、最初のひと区切りだけ添える */
@@ -69,19 +76,19 @@ function pageLd(view, lang, url, name) {
   if (view === "brands" && S && S.brands) {
     const items = [];
     Object.keys(S.brands).forEach(k => (S.brands[k] || []).forEach(b => {
-      const n = (lang === "en" ? b.en : b.ja) || b.en;
+      const n = (lang !== "ja" ? b.en : b.ja) || b.en;
       if (n) items.push({ "@type": "ListItem", position: items.length + 1, name: n });
     }));
     if (!items.length) return null;
     return {
       "@context": "https://schema.org", "@type": "CollectionPage", url, name,
-      inLanguage: lang,
+      inLanguage: HREFLANG[lang] || lang,
       mainEntity: { "@type": "ItemList", numberOfItems: items.length, itemListElement: items }
     };
   }
   if (view === "news" && NEWS && NEWS.items) {
     const items = NEWS.items.map((x, i) => {
-      const t = (lang === "en" ? x.title_en : x.title_ja) || x.title_ja;
+      const t = (lang !== "ja" ? x.title_en : x.title_ja) || x.title_ja;
       const o = { "@type": "ListItem", position: i + 1, name: t };
       if (x.url) o.url = x.url;                 // 出どころは元記事
       return o;
@@ -89,13 +96,13 @@ function pageLd(view, lang, url, name) {
     if (!items.length) return null;
     return {
       "@context": "https://schema.org", "@type": "CollectionPage", url, name,
-      inLanguage: lang,
+      inLanguage: HREFLANG[lang] || lang,
       mainEntity: { "@type": "ItemList", numberOfItems: items.length, itemListElement: items }
     };
   }
   if (view === "world" && S && S.lexicon) {
     const terms = S.lexicon.map(t => {
-      const n = (lang === "en" ? (t.en || t.ja) : t.ja);
+      const n = (lang !== "ja" ? (t.en || t.ja) : t.ja);
       if (!n) return null;
       const o = { "@type": "DefinedTerm", name: n };
       const d = firstSentence(t.desc, 160);
@@ -106,8 +113,8 @@ function pageLd(view, lang, url, name) {
     return {
       "@context": "https://schema.org", "@type": "DefinedTermSet",
       "@id": url + "#lexicon", url,
-      name: lang === "en" ? "The cigar lexicon" : "葉巻用語大全",
-      inLanguage: lang, hasDefinedTerm: terms
+      name: lang !== "ja" ? "The cigar lexicon" : "葉巻用語大全",
+      inLanguage: HREFLANG[lang] || lang, hasDefinedTerm: terms
     };
   }
   return null;
@@ -116,10 +123,10 @@ function pageLd(view, lang, url, name) {
 function buildPage(srcHtml, lang, view) {
   const m = META[view][lang];
   const p = META[view].path;
-  const base = lang === "en" ? "/en/" : "/";
+  const base = lang === "ja" ? "/" : `/${lang}/`;
   const url = SITE + base + (p ? p + "/" : "");
   const jaUrl = SITE + "/" + (p ? p + "/" : "");
-  const enUrl = SITE + "/en/" + (p ? p + "/" : "");
+  const langUrl = (code) => SITE + "/" + code + "/" + (p ? p + "/" : "");
   const depth = p ? 1 : 0;                   // /brands/ は1階層深い
   let h = srcHtml;
 
@@ -134,24 +141,35 @@ function buildPage(srcHtml, lang, view) {
   h = h.replace(/<title>[^<]*<\/title>/, `<title>${esc(m.title)}</title>`);
   h = setAttr(h, /<meta name="description"[^>]*>/, "content", m.desc);
   h = setAttr(h, /<link rel="canonical"[^>]*>/, "href", url);
-  if (META[view].enReady) {
+  /* この画面の翻訳ができている言語。1つも無ければ hreflang 自体を出さない */
+  const readyF = FOREIGN.filter(f => ready(view, f.code));
+  if (readyF.length) {
     h = setAttr(h, /<link rel="alternate" hreflang="ja"[^>]*>/, "href", jaUrl);
-    h = setAttr(h, /<link rel="alternate" hreflang="en"[^>]*>/, "href", enUrl);
+    for (const f of readyF) {
+      const re = new RegExp(`<link rel="alternate" hreflang="${f.hreflang}"[^>]*>`);
+      if (re.test(h)) h = setAttr(h, re, "href", langUrl(f.code));
+      else h = h.replace(/([ \t]*)(<link rel="alternate" hreflang="x-default")/,
+        `$1<link rel="alternate" hreflang="${f.hreflang}" href="${esc(langUrl(f.code))}">\n$1$2`);
+    }
+    // 翻訳がまだの言語のタグが雛形に残っていたら消す（enはテンプレートに常在）
+    for (const f of FOREIGN.filter(f => !ready(view, f.code))) {
+      h = h.replace(new RegExp(`[ \\t]*<link rel="alternate" hreflang="${f.hreflang}"[^>]*>\\n?`), "");
+    }
     h = setAttr(h, /<link rel="alternate" hreflang="x-default"[^>]*>/, "href", jaUrl);
   } else {
-    /* 英語版の中身がまだ日本語のままのページ。
-       ・日英どちらの版でも hreflang を出さない（対になる英語版を検索に案内しないため）
-       ・英語版には noindex を付け、検索結果に出さない
+    /* 翻訳版の中身がまだ日本語のままのページ。
+       ・どの版でも hreflang を出さない（対になる翻訳版を検索に案内しないため）
+       ・翻訳版には noindex を付け、検索結果に出さない
        言語切替のリンクは残すので、人は今までどおり行き来できる。 */
     h = h.replace(/[ \t]*<link rel="alternate" hreflang="[^"]*"[^>]*>\n?/g, "");
-    if (lang === "en") {
+    if (lang !== "ja") {
       h = h.replace(/<link rel="canonical"[^>]*>/,
         (t) => t + `\n  <meta name="robots" content="noindex">`);
     }
   }
   /* SNSカードの画像は、そのページ専用のもの（tools/build_og.py が作る）。
      まだ作っていないページは、サイト共通の1枚のままにしておく。 */
-  const ogFile = `assets/og/${view}${lang === "en" ? "-en" : ""}.jpg`;
+  const ogFile = `assets/og/${view}${lang === "ja" ? "" : "-" + lang}.jpg`;
   if (fs.existsSync(path.join(ROOT, ogFile))) {
     h = setAttr(h, /<meta property="og:image"[^>]*>/, "content", `${SITE}/${ogFile}`);
     h = setAttr(h, /<meta name="twitter:image"[^>]*>/, "content", `${SITE}/${ogFile}`);
@@ -162,9 +180,10 @@ function buildPage(srcHtml, lang, view) {
   h = setAttr(h, /<meta name="twitter:title"[^>]*>/, "content", m.title);
   h = setAttr(h, /<meta name="twitter:description"[^>]*>/, "content", m.desc);
 
-  // 言語切替は、相手言語の同じページへ
+  // 言語切替は、相手言語の同じページへ（翻訳版→日本語版、日本語版→英語版。
+  //  3言語以上の切替UIは、言語を有効化するときに作り直す）
   h = setAttr(h, /<a class="lang-switch"[^>]*>/, "href",
-    lang === "en" ? "/" + (p ? p + "/" : "") : "/en/" + (p ? p + "/" : ""));
+    lang !== "ja" ? "/" + (p ? p + "/" : "") : "/en/" + (p ? p + "/" : ""));
 
   /* 検索結果に「Cigar Cafe › ブランド大全」のような道筋を出してもらうための構造化データ。
      ホーム（index.html）にはサイト自体の情報が直接書いてあるので、
@@ -193,7 +212,8 @@ function buildPage(srcHtml, lang, view) {
 /* ---------- 書き出す前に、既存のディレクトリと重ならないか確かめる ----------
    ページのURLと、ソースの置き場（js/ や tools/ など）が同じ名前になると、
    生成した index.html がそこへ紛れ込んでしまう。先に止める。 */
-const RESERVED = ["assets", "css", "js", "data", "i18n", "tools", "supabase", "en", "node_modules"];
+const RESERVED = ["assets", "css", "js", "data", "i18n", "tools", "supabase", "node_modules",
+  "en", ...FOREIGN.map(l => l.code)];
 const clash = Object.keys(META).map(v => META[v].path).filter(p => p && RESERVED.includes(p));
 if (clash.length) {
   console.error(`data/pages.js の path が既存のディレクトリと重なっています: ${clash.join(", ")}`);
@@ -202,19 +222,23 @@ if (clash.length) {
 }
 
 /* ---------- ページを書き出す ---------- */
-const jaSrc = fs.readFileSync(path.join(ROOT, "index.html"), "utf8");
-const enSrc = fs.readFileSync(path.join(ROOT, "en/index.html"), "utf8");
+const SRC = { ja: fs.readFileSync(path.join(ROOT, "index.html"), "utf8") };
+FOREIGN.forEach(l => { SRC[l.code] = fs.readFileSync(path.join(ROOT, l.code, "index.html"), "utf8"); });
 const views = Object.keys(META);
+const perLang = {};
 let made = 0;
-for (const lang of ["ja", "en"]) {
-  const src = lang === "ja" ? jaSrc : enSrc;
+for (const lang of ["ja", ...FOREIGN.map(l => l.code)]) {
   for (const view of views) {
     const p = META[view].path;
-    if (!p) continue;                        // ホームは index.html / en/index.html そのもの
-    const dir = path.join(ROOT, lang === "en" ? "en" : ".", p);
+    if (!p) continue;                        // ホームは index.html / <言語>/index.html そのもの
+    if (!META[view][lang]) {                 // その言語の題・説明文がまだ無いページは作らない
+      console.error(`data/pages.js: ${view} に ${lang} の題・説明文がありません`);
+      process.exit(1);
+    }
+    const dir = path.join(ROOT, lang === "ja" ? "." : lang, p);
     fs.mkdirSync(dir, { recursive: true });
-    fs.writeFileSync(path.join(dir, "index.html"), buildPage(src, lang, view));
-    made++;
+    fs.writeFileSync(path.join(dir, "index.html"), buildPage(SRC[lang], lang, view));
+    made++; perLang[lang] = (perLang[lang] || 0) + 1;
   }
 }
 
@@ -227,14 +251,16 @@ const entries = [];
 for (const view of views) {
   const p = META[view].path;
   const jaUrl = SITE + "/" + (p ? p + "/" : "");
-  const enUrl = SITE + "/en/" + (p ? p + "/" : "");
-  /* 英語版は、中身が英語になっているページ（enReady）だけ載せる。
+  const langUrl = (code) => SITE + "/" + code + "/" + (p ? p + "/" : "");
+  /* 翻訳版は、中身がその言語になっているページ（enReady / zhReady …）だけ載せる。
      まだのページは noindex を付けてあり、sitemap に載せると矛盾するため。 */
-  const urls = META[view].enReady ? [jaUrl, enUrl] : [jaUrl];
-  const alt = META[view].enReady
+  const readyF = FOREIGN.filter(f => ready(view, f.code));
+  const urls = [jaUrl, ...readyF.map(f => langUrl(f.code))];
+  const alt = readyF.length
     ? `
-    <xhtml:link rel="alternate" hreflang="ja" href="${jaUrl}"/>
-    <xhtml:link rel="alternate" hreflang="en" href="${enUrl}"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="${jaUrl}"/>` +
+      readyF.map(f => `
+    <xhtml:link rel="alternate" hreflang="${f.hreflang}" href="${langUrl(f.code)}"/>`).join("") + `
     <xhtml:link rel="alternate" hreflang="x-default" href="${jaUrl}"/>` : "";
   for (const url of urls) {
     entries.push(
@@ -263,5 +289,6 @@ Allow: /
 Sitemap: ${SITE}/sitemap.xml
 `);
 
-console.log(`ページを ${made}件 生成しました（日本語${views.length - 1} / 英語${views.length - 1}）。`);
+console.log(`ページを ${made}件 生成しました（` +
+  ["ja", ...FOREIGN.map(l => l.code)].map(c => `${c}:${perLang[c] || 0}`).join(" / ") + `）。`);
 console.log(`sitemap.xml: ${entries.length}件のURL / robots.txt を更新しました。`);
