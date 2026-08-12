@@ -7,8 +7,86 @@
    手で足すこともできますが、items の並び・キーは崩さないでください。
    ============================================================ */
 var NEWS_DATA = {
-  "updated": "2026-08-12",
+  "updated": "2026-08-13",
   "items": [
+    {
+      "date": "2026-08-13",
+      "category": "新製品",
+      "title_ja": "HVC パン・カリエンテ10周年、店頭へ",
+      "summary_ja": "HVCは限定版「パン・カリエンテ（Pan Caliente）10th Anniversary」を木曜に出荷すると発表した。HVCがペルー産タバコを使用した葉巻をリリースするのは初めて。",
+      "title_en": "HVC Pan Caliente 10th Anniversary Shipping to Stores",
+      "summary_en": "HVC has announced that its limited-edition Pan Caliente 10th Anniversary will head to stores on Thursday. It marks the first time HVC has released a cigar that uses Peruvian tobacco.",
+      "source": "halfwheel",
+      "source_title": "HVC Pan Caliente 10th Anniversary Shipping to Stores",
+      "source_en": "halfwheel",
+      "source_title_en": "HVC Pan Caliente 10th Anniversary Shipping to Stores",
+      "url": "https://halfwheel.com/hvc-pan-caliente-10th-anniversary-shipping-to-stores/476637/"
+    },
+    {
+      "date": "2026-08-13",
+      "category": "新製品",
+      "title_ja": "ダビドフ、AVOエクスプレシーボ・ロブスト",
+      "summary_ja": "ダビドフは、AVOブランドの新章を象徴するという「AVOエクスプレシーボ・ロブスト（AVO Expresivo Robusto）」を発表した。AVOブランドとして初めてホンジュラスで製造される点が新しい。",
+      "title_en": "AVO Expresivo Robusto",
+      "summary_en": "Davidoff says the AVO Expresivo Robusto represents a new chapter for the AVO brand. Notably, it is being made in Honduras, something new for the AVO brand.",
+      "source": "halfwheel",
+      "source_title": "AVO Expresivo Robusto",
+      "source_en": "halfwheel",
+      "source_title_en": "AVO Expresivo Robusto",
+      "url": "https://halfwheel.com/avo-expresivo-robusto/476596/"
+    },
+    {
+      "date": "2026-08-13",
+      "category": "新製品",
+      "title_ja": "ランパート・リミターダ2026が店頭へ",
+      "summary_ja": "ランパート（Lampert）は今年のリミターダに、コネチカット・シード・ラッパーとボックスプレスのトロを採用した。年内にはもう1つのリミターダも登場する予定。",
+      "title_en": "Lampert Limitada 2026 Heads to Stores",
+      "summary_en": "For this year's Limitada, Lampert has chosen a Connecticut-seed wrapper and a box-pressed toro. There is one more Limitada still to come later this year.",
+      "source": "halfwheel",
+      "source_title": "Lampert Limitada 2026 Heads to Stores",
+      "source_en": "halfwheel",
+      "source_title_en": "Lampert Limitada 2026 Heads to Stores",
+      "url": "https://halfwheel.com/lampert-limitada-2026-heads-to-stores/476613/"
+    },
+    {
+      "date": "2026-08-13",
+      "category": "新製品",
+      "title_ja": "ネストール・ミランダ・ランセロ再出荷",
+      "summary_ja": "マイアミ・シガー（Miami Cigar & Co.）は、限定版「ネストール・ミランダ・プライベート・リザーブ・ランセロ」の第2弾を出荷する。ブレンド、パッケージ、価格すべて第1弾から変更なしとした。",
+      "title_en": "Nestor Miranda Private Reserve Lancero Shipping",
+      "summary_en": "For the second batch of Nestor Miranda Private Reserve Lancero, Miami Cigar & Co. has run things back with no changes: same blend, same packaging, same price as the first release.",
+      "source": "halfwheel",
+      "source_title": "Nestor Miranda Private Reserve Lancero Shipping",
+      "source_en": "halfwheel",
+      "source_title_en": "Nestor Miranda Private Reserve Lancero Shipping",
+      "url": "https://halfwheel.com/nestor-miranda-private-reserve-lancero-shipping/476643/"
+    },
+    {
+      "date": "2026-08-12",
+      "category": "規制・市場",
+      "title_ja": "スペイン政府、私的空間の喫煙禁止を検討",
+      "summary_ja": "スペイン政府は、飲食店テラスや屋外イベント、スタジアム、ビーチ、公園など屋外公共空間での全面喫煙禁止を承認した。病院・学校・遊び場周辺15メートルも禁煙区域とする。さらに喫煙者クラブの適用除外撤廃も目指し、実現すればEU最厳格の規制となる。施行には議会審議が必要で、政権は2027年7月までの成立を狙う。",
+      "title_en": "The Spanish Government Aims to Ban Smoking in Private Spaces",
+      "summary_en": "The Spanish government has approved a total ban on smoking in outdoor public spaces, including hospitality terraces, open-air events, stadiums, beaches and parks, plus a fifteen-metre buffer around hospitals, schools and playgrounds. It also intends to eliminate the exemption for smokers' clubs, which would make Spain the first country to ban smoking in strictly private facilities. The measure still requires parliamentary processing; the coalition government aims to finalise it before the current administration ends in July 2027, though it lacks a majority.",
+      "source": "Cigar Journal",
+      "source_title": "The Spanish Government Aims to Ban Smoking in Private Spaces",
+      "source_en": "Cigar Journal",
+      "source_title_en": "The Spanish Government Aims to Ban Smoking in Private Spaces",
+      "url": "https://www.cigarjournal.com/the-spanish-government-aims-to-ban-smoking-in-private-spaces-2/?utm_source=rss&utm_medium=rss&utm_campaign=the-spanish-government-aims-to-ban-smoking-in-private-spaces-2"
+    },
+    {
+      "date": "2026-08-12",
+      "category": "新製品",
+      "title_ja": "J.C.ニューマン、新ダイヤモンドクラウン出荷",
+      "summary_ja": "J.C.ニューマン（J.C. Newman Cigar Co.）は、刷新した「ダイヤモンドクラウン・マキシマス（Diamond Crown MAXIMUS）」の出荷を開始した。新パッケージと、より力強く洗練されたブレンドを採用。20本入り箱で希望小売価格は据え置き。同銘柄はタンパのフエンテ、ニューマン、オリバ3家が2002年に共同で生み出した葉巻。",
+      "title_en": "J.C. Newman Ships New Diamond Crown MAXIMUS",
+      "summary_en": "J.C. Newman Cigar Co. has begun shipping the reimagined Diamond Crown MAXIMUS, featuring new packaging and a bolder yet refined blend of hearty tobaccos. It remains in boxes of 20 with an unchanged suggested retail price. Originally created in 2002 as a collaboration between the Fuente, Newman and Oliva families of Tampa, it uses an exclusive El Bajo Sungrown wrapper grown in Ecuador. Owner Drew Newman noted it was the final cigar created by his grandfather Stanford J. Newman.",
+      "source": "Cigar Journal",
+      "source_title": "J.C. Newman Ships New Diamond Crown MAXIMUS",
+      "source_en": "Cigar Journal",
+      "source_title_en": "J.C. Newman Ships New Diamond Crown MAXIMUS",
+      "url": "https://www.cigarjournal.com/j-c-newman-ships-new-diamond-crown-maximus/?utm_source=rss&utm_medium=rss&utm_campaign=j-c-newman-ships-new-diamond-crown-maximus"
+    },
     {
       "date": "2026-08-12",
       "category": "新製品",
