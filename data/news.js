@@ -7,8 +7,47 @@
    手で足すこともできますが、items の並び・キーは崩さないでください。
    ============================================================ */
 var NEWS_DATA = {
-  "updated": "2026-08-13",
+  "updated": "2026-08-14",
   "items": [
+    {
+      "date": "2026-08-14",
+      "category": "業界・企業",
+      "title_ja": "チモリー・シガーがカナダで販売開始",
+      "summary_ja": "チモリー・シガー（ChiMolly Cigars）がカナダのカナディアン・クラフト・シガーズ（Canadian Craft Cigars）と流通契約を締結した。初回出荷分はすでにカナダに到着し、小売店への配送を開始している。",
+      "title_en": "ChiMolly Cigars Now Available in Canada",
+      "summary_en": "ChiMolly Cigars has signed a distribution agreement with Canadian Craft Cigars, bringing its products to the Canadian market. The company said the first shipment has already arrived in the country and is beginning to ship to retailers.",
+      "source": "halfwheel",
+      "source_title": "ChiMolly Cigars Now Available in Canada",
+      "source_en": "halfwheel",
+      "source_title_en": "ChiMolly Cigars Now Available in Canada",
+      "url": "https://halfwheel.com/chimolly-cigars-now-available-in-canada/476742/"
+    },
+    {
+      "date": "2026-08-14",
+      "category": "新製品",
+      "title_ja": "ブラックバード、10周年記念第1弾を発表",
+      "summary_ja": "ブラックバード・シガー（Blackbird Cigar Co.）が創業10周年を記念する3本のリリースのうち第1弾「プーラ・ラサ・デ・キスケヤ（Pura Raza de Quisqueya）」を発表した。同社のマスターブレンダー、通称パポ“エル・カバージョ”に敬意を表して作られた1本。",
+      "title_en": "Blackbird Pura Raza de Quisqueya",
+      "summary_en": "Blackbird Cigar Co. has unveiled the Pura Raza de Quisqueya, the first of three planned releases marking the company's 10th anniversary. The cigar was created to honour Blackbird's master blender, who is known as Papo \"El Caballo.\"",
+      "source": "halfwheel",
+      "source_title": "Blackbird Pura Raza de Quisqueya",
+      "source_en": "halfwheel",
+      "source_title_en": "Blackbird Pura Raza de Quisqueya",
+      "url": "https://halfwheel.com/blackbird-pura-raza-de-quisqueya/476651/"
+    },
+    {
+      "date": "2026-08-14",
+      "category": "新製品",
+      "title_ja": "ルアー「ザ・ファット・マット」出荷開始へ",
+      "summary_ja": "ルアー（Lure）が新作「ザ・ファット・マット（The Fat Matt）」を明日出荷する。5×54のロブスト・グランデで、創業者ルー・クロスの息子の義父となる人物にちなんで作られた。彼はピーコックバス釣りを好むという。",
+      "title_en": "Lure's The Fat Matt Shipping Tomorrow",
+      "summary_en": "Lure will begin shipping its new The Fat Matt tomorrow. The 5 x 54 robusto grande is inspired by the future father-in-law of company founder Lou Cross' son, who enjoys catching peacock bass.",
+      "source": "halfwheel",
+      "source_title": "Lure’s The Fat Matt Shipping Tomorrow",
+      "source_en": "halfwheel",
+      "source_title_en": "Lure's The Fat Matt Shipping Tomorrow",
+      "url": "https://halfwheel.com/lures-the-fat-matt-shipping-tomorrow/476701/"
+    },
     {
       "date": "2026-08-13",
       "category": "新製品",
@@ -60,6 +99,19 @@ var NEWS_DATA = {
       "source_en": "halfwheel",
       "source_title_en": "Nestor Miranda Private Reserve Lancero Shipping",
       "url": "https://halfwheel.com/nestor-miranda-private-reserve-lancero-shipping/476643/"
+    },
+    {
+      "date": "2026-08-12",
+      "category": "規制・市場",
+      "title_ja": "アルテサノ、2026年に一部銘柄を値上げ",
+      "summary_ja": "アルテサノ・デル・タバコ（Artesano Del Tobacco）が創業7年で2度目となる値上げを実施する。オリジナルの「ビバ・ラ・ビダ（Viva La Vida）」ラインが対象となるが、その他の大半の製品は現行価格を維持する。",
+      "title_en": "Viva La Vida Classic, El Pulpo Culebra Get Price Increase for 2026",
+      "summary_en": "For only the second time in its seven-year history, Artesano Del Tobacco is raising prices. The original Viva La Vida line will see an increase, while most of the rest of its portfolio will remain at current prices.",
+      "source": "halfwheel",
+      "source_title": "Viva La Vida Classic, El Pulpo Culebra Get Price Increase for 2026",
+      "source_en": "halfwheel",
+      "source_title_en": "Viva La Vida Classic, El Pulpo Culebra Get Price Increase for 2026",
+      "url": "https://halfwheel.com/viva-la-vida-classic-el-pulpo-culebra-get-price-increase-for-2026/476603/"
     },
     {
       "date": "2026-08-12",
@@ -388,6 +440,19 @@ var NEWS_DATA = {
     },
     {
       "date": "2026-08-06",
+      "category": "日本国内",
+      "title_ja": "ウイスキーと葉巻のイベントを8月22日開催",
+      "summary_ja": "BAR新宿ウイスキーサロンでのチャリティー持ち寄り会と、新店舗BAR LASTWORDでのシガー初心者歓迎ペアリング会を8月22日に開催すると発表した。",
+      "title_en": "Whisky and Cigar Events Set for 22 August in Tokyo",
+      "summary_en": "A special day of whisky and cigars has been announced for 22 August. BAR Shinjuku Whisky Salon will host a charity bring-your-own gathering, while the newly opened BAR LASTWORD will hold a cigar-and-whisky pairing event welcoming newcomers to cigars.",
+      "source": "PR TIMES",
+      "source_title": "【ウイスキーと葉巻の特別な1日】BAR 新宿ウイスキーサロンでのチャリティー持ち寄り会＆新店舗 BAR LASTWORD でのシガー初心者歓迎ペアリング会を8月22日に開催 - PR TIMES",
+      "source_en": "PR TIMES",
+      "source_title_en": "A Special Day of Whisky and Cigars: Charity Gathering at BAR Shinjuku Whisky Salon and Beginner-Friendly Pairing Event at New BAR LASTWORD on 22 August",
+      "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE5DN0NTVmkwOEZGMmVNT09ueXMxc2pYdmFiQTh1NVh4R3BRZWFZM29CdzhTNkpOQUhxcHBEV1h0YjBOcWxSSEZLaXM4Y3FxeHRkb2YxaDQ1eHhUdExWbFJMdDd4RUN4clVmU2c?oc=5"
+    },
+    {
+      "date": "2026-08-06",
       "category": "新製品",
       "title_ja": "「ピース・アロマ・ヴィンテージ」数量限定で復活",
       "summary_ja": "「ピース・アロマ・ヴィンテージ」が数量限定で復活した。5年熟成による濃厚な香りと、重層感のある味わいが特長とされる。",
@@ -476,6 +541,19 @@ var NEWS_DATA = {
       "source_en": "StogiePress",
       "source_title_en": "Cigar News: More La Historia Silk Arrives as Casa Carrillo Launches Initiative to Support Women Pursuing Economic Independence",
       "url": "https://stogiepress.com/cigar-news-more-la-historia-silk-arrives-as-casa-carrillo-launches-initiative-to-support-women-pursuing-economic-independence/"
+    },
+    {
+      "date": "2026-08-05",
+      "category": "規制・市場",
+      "title_ja": "葉巻・シガリロ世界市場予測 2026〜2032年",
+      "summary_ja": "製品タイプ、製造形態、フレーバー、価格帯、販売チャネル、エンドユーザーの年齢層別に分析した葉巻・シガリロの世界市場予測レポート（2026年〜2032年）が公表された。",
+      "title_en": "Global Cigar & Cigarillo Market Forecast 2026-2032",
+      "summary_en": "A market forecast report on the global cigar and cigarillo market for 2026 to 2032 has been published. It analyses the market by product type, manufacturing format, flavour, price range, sales channel and end-user age group.",
+      "source": "Newscast.jp",
+      "source_title": "葉巻・シガリロ市場：製品タイプ、製造形態、フレーバー、価格帯、販売チャネル、エンドユーザーの年齢層別―2026年～2032年の世界市場予測 - Newscast.jp",
+      "source_en": "Newscast.jp",
+      "source_title_en": "Cigar & Cigarillo Market: By Product Type, Manufacturing Format, Flavour, Price Range, Sales Channel and End-User Age Group - Global Market Forecast 2026-2032",
+      "url": "https://news.google.com/rss/articles/CBMiR0FVX3lxTE9JQXRkNUVldTBVVkcxRG9JT3dNRlIyOS1KbE4yaE1OU3JhTmpIT2RYa1hON2IyVE9nRjRhUFFpOWppSjNYX09J?oc=5"
     },
     {
       "date": "2026-08-05",
