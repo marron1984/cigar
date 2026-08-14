@@ -7,8 +7,34 @@
    手で足すこともできますが、items の並び・キーは崩さないでください。
    ============================================================ */
 var NEWS_DATA = {
-  "updated": "2026-08-14",
+  "updated": "2026-08-15",
   "items": [
+    {
+      "date": "2026-08-15",
+      "category": "新製品",
+      "title_ja": "ペルドモ、レガシー親子ラインを全国出荷",
+      "summary_ja": "ペルドモ（Perdomo）が5月にTwo Guys Cigarsで先行発売した「レガシー・ファーザー＆サン（Legacy Father & Son）」を、予定より数カ月早く全国の販売店へ出荷開始した。ハバノとカメルーンのハイブリッド葉を使用し、ニック・ペルドモ・ジュニアが1種、ニコラス・ペルドモ3世が1種、2人で残る1種をブレンドした3種構成。",
+      "title_en": "Perdomo Ships Legacy Father & Son to Stores Nationwide",
+      "summary_en": "Perdomo has begun shipping its Legacy Father & Son line to stores across the United States, several months ahead of schedule, after debuting the cigars at Two Guys Cigars in May. The blends use a habano-Cameroon hybrid tobacco. Nick Perdomo Jr. blended one, Nicholas Perdomo III blended another, and the pair blended the third.",
+      "source": "halfwheel",
+      "source_title": "Perdomo Ships Legacy Father & Son to Stores Nationwide",
+      "source_en": "halfwheel",
+      "source_title_en": "Perdomo Ships Legacy Father & Son to Stores Nationwide",
+      "url": "https://halfwheel.com/perdomo-ships-legacy-father-son-to-stores-nationwide/476779/"
+    },
+    {
+      "date": "2026-08-15",
+      "category": "業界・企業",
+      "title_ja": "シティ・オブ・パームズ、カバレロス流通を終了",
+      "summary_ja": "ドミニカの比較的新しいブランド、カバレロス（Caballeros）の流通をシティ・オブ・パームズ（City of Palms）が終了した。カバレロスは新たな米国内流通計画をまだ発表していない。",
+      "title_en": "City of Palms Ends Caballeros Cigars Distribution",
+      "summary_en": "City of Palms has ended its distribution of Caballeros, a relatively new Dominican cigar brand. Caballeros has not yet announced its new plans for distribution in the United States.",
+      "source": "halfwheel",
+      "source_title": "City of Palms Ends Caballeros Cigars Distribution",
+      "source_en": "halfwheel",
+      "source_title_en": "City of Palms Ends Caballeros Cigars Distribution",
+      "url": "https://halfwheel.com/city-of-palms-ends-caballeros-cigars-distribution/476761/"
+    },
     {
       "date": "2026-08-14",
       "category": "業界・企業",
