@@ -7,8 +7,21 @@
    手で足すこともできますが、items の並び・キーは崩さないでください。
    ============================================================ */
 var NEWS_DATA = {
-  "updated": "2026-08-15",
+  "updated": "2026-08-16",
   "items": [
+    {
+      "date": "2026-08-15",
+      "category": "新製品",
+      "title_ja": "プリンシプル、マルティニーク・コロナを限定発売",
+      "summary_ja": "プリンシプル・シガーズ（Principle Cigars）がマルティニーク・コロナ（Martinique Corona）を発売した。当初は店舗限定を意図していなかったが、スモール・バッチ・シガー（Small Batch Cigar）が最初の生産分をすべて買い取ったため、現時点では同店の専売となっている。",
+      "title_en": "Principle Releases Martinique Corona as Shop Exclusive",
+      "summary_en": "Principle Cigars has released the Martinique Corona. The company did not originally intend for it to be a shop exclusive, but Small Batch Cigar purchased the entire first production run, so for now the cigar is available exclusively through that single retailer.",
+      "source": "halfwheel",
+      "source_title": "Principle Martinique Corona",
+      "source_en": "halfwheel",
+      "source_title_en": "Principle Martinique Corona",
+      "url": "https://halfwheel.com/principle-martinique-corona/476786/"
+    },
     {
       "date": "2026-08-15",
       "category": "新製品",
@@ -34,6 +47,32 @@ var NEWS_DATA = {
       "source_en": "halfwheel",
       "source_title_en": "City of Palms Ends Caballeros Cigars Distribution",
       "url": "https://halfwheel.com/city-of-palms-ends-caballeros-cigars-distribution/476761/"
+    },
+    {
+      "date": "2026-08-14",
+      "category": "新製品",
+      "title_ja": "ネストール・ミランダ、ラ・レゼルバ・ランセロ出荷開始",
+      "summary_ja": "マイアミ・シガー社（Miami Cigar & Co.）が、ネストール・ミランダ・プライベート・リザーブ・ランセロ（Nestor Miranda Private Reserve Lancero）を全米のプレミアム小売店へ出荷開始した。2026年PCAトレードショーで再導入された限定品で、ドミニカ産コロホ・ラッパー、ニカラグア産クリオージョ'98バインダーを使用。ラ・アウロラ製、500箱限定。",
+      "title_en": "Nestor Miranda Private Reserve Lancero Now Shipping",
+      "summary_en": "Miami Cigar & Co. has begun shipping the Nestor Miranda Private Reserve Lancero to premium retailers nationwide. Reintroduced at the 2026 PCA Trade Show in New Orleans, the limited release features a Dominican Corojo wrapper, Nicaraguan Criollo '98 binder and a blend of Dominican, Nicaraguan and Brazilian fillers, produced at La Aurora in the Dominican Republic. Only 500 boxes have been made.",
+      "source": "Cigar Journal",
+      "source_title": "Nestor Miranda Private Reserve Lancero Now Shipping to Retailers",
+      "source_en": "Cigar Journal",
+      "source_title_en": "Nestor Miranda Private Reserve Lancero Now Shipping to Retailers",
+      "url": "https://www.cigarjournal.com/nestor-miranda-private-reserve-lancero-now-shipping-to-retailers/?utm_source=rss&utm_medium=rss&utm_campaign=nestor-miranda-private-reserve-lancero-now-shipping-to-retailers"
+    },
+    {
+      "date": "2026-08-14",
+      "category": "新製品",
+      "title_ja": "ダビドフ、プリメーロス・ボイジャーズ発表",
+      "summary_ja": "ダビドフ（Davidoff）がボイジャーズ・セレクション（Voyager's Selection）を拡充し、プリメーロス・バイ・ダビドフ・ボイジャーズ・セレクションを発表した。2026年9月3日よりグローバル・トラベル・リテール限定で発売。プティ・パネテラ6本入りで、長さ10.5cm・リングゲージ34、喫煙時間は約15〜25分。ドミニカ、ドミニカ・マドゥロ、ニカラグアの各ラインから2本ずつ収録。",
+      "title_en": "Davidoff Launches Primeros Voyager's Selection",
+      "summary_en": "Davidoff is expanding its Voyager's Selection with the Primeros by Davidoff Voyager's Selection, available exclusively in Global Travel Retail from 3 September 2026. The assortment comprises six handmade petit panetela cigars—two each from the Dominican, Dominican Maduro and Nicaragua lines—measuring 10.5cm with a ring gauge of 34 and offering around 15 to 25 minutes of enjoyment. They come in a compact metal tin designed for travel.",
+      "source": "Cigar Journal",
+      "source_title": "Davidoff Launches New Primeros Voyager’s Selection",
+      "source_en": "Cigar Journal",
+      "source_title_en": "Davidoff Launches New Primeros Voyager's Selection",
+      "url": "https://www.cigarjournal.com/davidoff-launches-new-primeros-voyagers-selection/?utm_source=rss&utm_medium=rss&utm_campaign=davidoff-launches-new-primeros-voyagers-selection"
     },
     {
       "date": "2026-08-14",
@@ -125,6 +164,45 @@ var NEWS_DATA = {
       "source_en": "halfwheel",
       "source_title_en": "Nestor Miranda Private Reserve Lancero Shipping",
       "url": "https://halfwheel.com/nestor-miranda-private-reserve-lancero-shipping/476643/"
+    },
+    {
+      "date": "2026-08-12",
+      "category": "新製品",
+      "title_ja": "ルーム101、17周年記念シガーを限定発売",
+      "summary_ja": "ルーム101（Room101 Cigars）がAJフェルナンデス（AJ Fernandez）との協業による限定品「ルーム101 17th Anniversary」を発表した。毎年新たなブレンドで節目を祝う同シリーズの最新作。6×52のトーロ1種で、20本入りボックス、1本あたり希望小売価格15.89ドル。2026年8月より小売店への出荷を開始する。",
+      "title_en": "Room101 Unveils Limited-Edition 17th Anniversary Cigar",
+      "summary_en": "Room101 Cigars has announced the Room101 17th Anniversary, the latest in its evolving annual Anniversary series, crafted in collaboration with AJ Fernandez. Each anniversary release features an entirely new blend rather than repeating past cigars. Offered in a single 6 x 52 Toro, the limited edition comes in 20-count boxes with an SRP of $15.89 per cigar and begins shipping to retailers in August 2026.",
+      "source": "Cigar Journal",
+      "source_title": "Room101 Cigars Unveils Limited-Edition 17th Anniversary Cigar",
+      "source_en": "Cigar Journal",
+      "source_title_en": "Room101 Cigars Unveils Limited-Edition 17th Anniversary Cigar",
+      "url": "https://www.cigarjournal.com/room101-cigars-unveils-limited-edition-17th-anniversary-cigar/?utm_source=rss&utm_medium=rss&utm_campaign=room101-cigars-unveils-limited-edition-17th-anniversary-cigar"
+    },
+    {
+      "date": "2026-08-12",
+      "category": "新製品",
+      "title_ja": "フェリオ・テゴ、マイルス・デイヴィス生誕100年記念葉巻",
+      "summary_ja": "フェリオ・テゴ（Ferio Tego）が、マイルス・デイヴィス財団および音楽会社リザーバー（Reservoir）と協業し、限定ハンドメイド・プレミアムシガー「フェリオ・テゴ・マイルストーンズ（Milestones）」を発表した。2026年を通じて行われるマイルス・デイヴィス生誕100周年公式企画の一環。ブレンダーのマイケル・ハークロッツはバークリー音楽大学出身で、同校でマイルス・デイヴィス・アンサンブルに参加していた。",
+      "title_en": "Ferio Tego Releases Milestones for Miles Davis Centennial",
+      "summary_en": "Ferio Tego has announced Ferio Tego Milestones, a limited-edition handmade premium cigar created in collaboration with the Miles Davis Estate and independent music company Reservoir as part of the official Miles Davis Centennial celebrated throughout 2026. Co-owner and blender Michael Herklots, a Berklee College of Music graduate who performed in the Miles Davis Ensemble, said the cigar reflects qualities he admires in Davis's work: approachability, sophistication, structure, nuance and depth.",
+      "source": "Cigar Journal",
+      "source_title": "Ferio Tego Releases Ferio Tego Milestones",
+      "source_en": "Cigar Journal",
+      "source_title_en": "Ferio Tego Releases Ferio Tego Milestones",
+      "url": "https://www.cigarjournal.com/ferio-tego-releases-ferio-tego-milestones/?utm_source=rss&utm_medium=rss&utm_campaign=ferio-tego-releases-ferio-tego-milestones"
+    },
+    {
+      "date": "2026-08-12",
+      "category": "規制・市場",
+      "title_ja": "欧州の葉巻規制、独英西で新たな動き",
+      "summary_ja": "欧州シガー製造者協会（ECMA）のポール・ヴァラカス事務局長が、欧州各国の規制動向を報告した。ドイツは小売価格に基づく新課税で最大1,300%の増税を提案し、高価格帯シガーへの影響が懸念される。英国は葉巻へのプレーンパッケージ拡大を協議中。スペインはテラスや私的クラブでの喫煙禁止法案を9月に議会提出予定。",
+      "title_en": "Cigar Regulations Update: Germany, UK and Spain",
+      "summary_en": "Paul Varakas, Director General of the European Cigar Manufacturers Association (ECMA), has outlined the latest regulatory developments in Europe. In Germany, a proposed retail-price-based tax could raise duties by up to 1,300%, mainly hitting premium cigars. The UK is consulting on extending plain packaging to cigars. Spain intends to ban smoking on terraces and in private clubs, with a bill expected to reach Parliament in September. Varakas urges consumers and retailers to engage with policymakers.",
+      "source": "Cigar Journal",
+      "source_title": "Cigar Regulations Update: Germany, UK and Spain",
+      "source_en": "Cigar Journal",
+      "source_title_en": "Cigar Regulations Update: Germany, UK and Spain",
+      "url": "https://www.cigarjournal.com/cigar-regulations-update-germany-uk-and-spain/?utm_source=rss&utm_medium=rss&utm_campaign=cigar-regulations-update-germany-uk-and-spain"
     },
     {
       "date": "2026-08-12",
