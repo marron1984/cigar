@@ -7,8 +7,34 @@
    手で足すこともできますが、items の並び・キーは崩さないでください。
    ============================================================ */
 var NEWS_DATA = {
-  "updated": "2026-08-16",
+  "updated": "2026-08-17",
   "items": [
+    {
+      "date": "2026-08-17",
+      "category": "新製品",
+      "title_ja": "ナックルサンドイッチにマイルドな新作",
+      "summary_ja": "著名シェフのガイ・フィエリがエリック・エスピノーサと組んで2022年初頭に立ち上げたナックルサンドイッチ・シガーズ（Knuckle Sandwich Cigars）が、より穏やかで親しみやすいブレンドの新作「アヴァンギャルド（Avant-Garde）」を投入する。ブランド開始から4年、より幅広い層への浸透を狙う。",
+      "title_en": "Knuckle Sandwich Debuts Milder Avant-Garde",
+      "summary_en": "Knuckle Sandwich Cigars, the brand created by celebrity chef Guy Fieri in partnership with Erik Espinosa and launched in early 2022, is introducing a mellower, more approachable blend called Avant-Garde. Four years after its debut, the brand aims to reach a wider audience of consumers with the new release.",
+      "source": "halfwheel",
+      "source_title": "Knuckle Sandwich Avant-Garde",
+      "source_en": "halfwheel",
+      "source_title_en": "Knuckle Sandwich Avant-Garde",
+      "url": "https://halfwheel.com/knuckle-sandwich-avant-garde/476806/"
+    },
+    {
+      "date": "2026-08-16",
+      "category": "新製品",
+      "title_ja": "ミカレフ、カラーシリーズに「オレンジ」追加",
+      "summary_ja": "ミカレフ・シガーズ（Micallef Cigars）が、カラーシリーズの新作「ミカレフ・オレンジ（Micallef Orange）」を発表した。ニカラグア・エステリの自社工場製で、コネチカット・ラッパー、サンアンドレス・ハバノ・バインダー、ニカラグア産とドミニカ産のフィラーを用いたミディアムボディ。8月27日にトゥーガイズ・シガーズで先行発売し、全国発売は9月5日から。",
+      "title_en": "Micallef Adds Orange to Colour Series",
+      "summary_en": "Micallef Cigars has announced Micallef Orange, the newest addition to its Color Series, following Black, Blue, Red, Purple, Green and White. Crafted at the company's factory in Estelí, Nicaragua, it is a medium-bodied cigar featuring a Connecticut wrapper over a San Andrés Habano binder with Nicaraguan and Dominican fillers. Orange premieres on 27 August at Two Guys Cigars, both online and in-store, with nationwide availability beginning 5 September.",
+      "source": "Cigar Journal",
+      "source_title": "Micallef Orange Warms Up the Color Series",
+      "source_en": "Cigar Journal",
+      "source_title_en": "Micallef Orange Warms Up the Color Series",
+      "url": "https://www.cigarjournal.com/micallef-orange-warms-up-the-color-series/?utm_source=rss&utm_medium=rss&utm_campaign=micallef-orange-warms-up-the-color-series"
+    },
     {
       "date": "2026-08-15",
       "category": "新製品",
@@ -164,6 +190,32 @@ var NEWS_DATA = {
       "source_en": "halfwheel",
       "source_title_en": "Nestor Miranda Private Reserve Lancero Shipping",
       "url": "https://halfwheel.com/nestor-miranda-private-reserve-lancero-shipping/476643/"
+    },
+    {
+      "date": "2026-08-12",
+      "category": "業界・企業",
+      "title_ja": "カサ・カリーロ、慈善企画で女性支援団体を支援",
+      "summary_ja": "カサ・カリーロ（Casa Carrillo）が、慈善部門カリーロ・ケアズ（Carrillo Cares）を通じ、限定生産の「ラ・イストリア・シルク（La Historia Silk）」の売上の一部を女性支援団体ドレス・フォー・サクセス・マイアミに寄付する新たな取り組みを発表した。同団体は1994年以降、4万人超の女性の経済的自立を支援してきた。",
+      "title_en": "Casa Carrillo Launches Carrillo Cares Partnership",
+      "summary_en": "Casa Carrillo has announced a new initiative through Carrillo Cares, its charitable arm, supporting Dress for Success Miami via the limited-production La Historia Silk cigar. A portion of proceeds from the latest shipment sold to retailers will benefit the organisation, which empowers women through professional attire, career development and workforce support. Since 1994, Dress for Success Miami has helped more than 40,000 women move towards economic independence.",
+      "source": "Cigar Journal",
+      "source_title": "Casa Carrillo Announces Carrillo Cares Partnership",
+      "source_en": "Cigar Journal",
+      "source_title_en": "Casa Carrillo Announces Carrillo Cares Partnership",
+      "url": "https://www.cigarjournal.com/casa-carrillo-announces-carrillo-cares-partnership/?utm_source=rss&utm_medium=rss&utm_campaign=casa-carrillo-announces-carrillo-cares-partnership"
+    },
+    {
+      "date": "2026-08-12",
+      "category": "業界・企業",
+      "title_ja": "レバノン山岳部に葉巻ラウンジ開業",
+      "summary_ja": "グランドホテル・ボワ・ド・ブローニュ内に、新しい葉巻ブティック兼ラウンジ「ル・クラブ・フュモワール（Le Club Fumoir）」が開業した。レバノンの山々を背景にした「アルパイン・シガー・ブティック＆ラウンジ」を掲げ、同ホテルを所有するゴスティーヌ家の伝統に着想を得た。施設はシガーサロンなど2つの空間で構成される。",
+      "title_en": "Le Club Fumoir Opens in Lebanese Mountains",
+      "summary_en": "Le Club Fumoir, a newly launched Alpine Cigar Boutique & Lounge, has opened within the Grand Hotel Bois de Boulogne against the backdrop of Lebanon's mountains. Owned by the Ghostine Family, the venue was conceived as a contemporary destination honouring the traditions of cigar culture in the Lebanese mountains. Designed for cigar enthusiasts, it is divided into two distinctive experiences, including a Cigar Salon offering an elegant setting for guests.",
+      "source": "Cigar Journal",
+      "source_title": "Le Club Fumoir: Alpine Elegance Meeting with The Cigar Culture",
+      "source_en": "Cigar Journal",
+      "source_title_en": "Le Club Fumoir: Alpine Elegance Meeting with The Cigar Culture",
+      "url": "https://www.cigarjournal.com/le-club-fumoir-alpine-elegance-meeting-with-the-cigar-culture/?utm_source=rss&utm_medium=rss&utm_campaign=le-club-fumoir-alpine-elegance-meeting-with-the-cigar-culture"
     },
     {
       "date": "2026-08-12",
@@ -359,6 +411,19 @@ var NEWS_DATA = {
       "source_en": "halfwheel",
       "source_title_en": "Updated Diamond Crown Maximus Begins Shipping",
       "url": "https://halfwheel.com/updated-diamond-crown-maximus-begins-shipping/476464/"
+    },
+    {
+      "date": "2026-08-10",
+      "category": "日本国内",
+      "title_ja": "S.T.デュポン、コイーバ60周年で限定コレクション",
+      "summary_ja": "S.T.デュポン（S.T. DUPONT）が、プレミアムシガーを代表する「コイーバ（COHIBA）」の誕生60周年を記念した限定コレクションを発表した。",
+      "title_en": "S.T. Dupont Unveils Cohiba 60th Anniversary Collection",
+      "summary_en": "S.T. Dupont has announced a limited collection commemorating the 60th anniversary of Cohiba, one of the most iconic names in premium cigars.",
+      "source": "MANTANWEB",
+      "source_title": "S.T. DUPONT X COHIBA プレミアムシガーを代表する「コイーバ」の誕生60周年を記念し限定コレクションを発表 - mantan-web.jp",
+      "source_en": "MANTANWEB",
+      "source_title_en": "S.T. Dupont X Cohiba: Limited Collection Marking the 60th Anniversary of Premium Cigar Icon Cohiba",
+      "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNSzdKTGppZG9EOG4yZFhDdDVWZk1HTi1yX3dBeTFWQ2wtb2U4c0hwbHMtSVY4QXNMbnhLbDQ3bEZyNXROcWo1N1dsLUFRakhXbHZPTk05MDluU2tJZzc1MW1LbXJnNlFwTzhMRnY0VmhnMWFzLVR3Y3JreXU5aWQ3dFZQcExnaDVT?oc=5"
     },
     {
       "date": "2026-08-10",
