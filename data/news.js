@@ -7,8 +7,34 @@
    手で足すこともできますが、items の並び・キーは崩さないでください。
    ============================================================ */
 var NEWS_DATA = {
-  "updated": "2026-08-17",
+  "updated": "2026-08-18",
   "items": [
+    {
+      "date": "2026-08-18",
+      "category": "新製品",
+      "title_ja": "バンドレロ・ファイアクラッカー2026出荷",
+      "summary_ja": "バンドレロ（Bandolero）のファイアクラッカーが出荷を開始した。ラッパーとバインダーはバンドレロ・セリエA、フィラーはセリエCラインを使用する。同銘柄としては3度目のリリースで、2023年以来となる。",
+      "title_en": "Bandolero Firecracker 2026 Shipping",
+      "summary_en": "The Bandolero Firecracker has begun shipping. It uses the wrapper and binder from the Bandolero Serie A and the filler from the Serie C line. This marks the third release of the cigar, and the first since 2023.",
+      "source": "halfwheel",
+      "source_title": "Bandolero Firecracker 2026 Shipping",
+      "source_en": "halfwheel",
+      "source_title_en": "Bandolero Firecracker 2026 Shipping",
+      "url": "https://halfwheel.com/bandolero-firecracker-2026-shipping-2/476886/"
+    },
+    {
+      "date": "2026-08-18",
+      "category": "業界・企業",
+      "title_ja": "リーフ・シガー、NJ州2店舗目へ拡大",
+      "summary_ja": "独立系プレミアム葉巻小売店のリーフ・シガー・エンポリアム（Leaf Cigar Emporium）が、ニュージャージー州モンマス郡からミドルセックス郡へと2店舗目を出店し事業を拡大する。オンライン販売との激しい競争のなか、創業者ジョン・ガロファロ氏が6年間の成長を背景に実店舗重視の路線で展開する。",
+      "title_en": "Leaf Cigar Emporium Expands into Second New Jersey Market",
+      "summary_en": "Independent premium cigar retailer Leaf Cigar Emporium is expanding into a second location, moving from Monmouth to Middlesex County in New Jersey. Amid fierce competition from online sellers, founder John Garofalo is betting on brick-and-mortar retail, giving enthusiasts more reasons to get off their screens. The move follows six years of sustained growth for the independent retailer.",
+      "source": "StogiePress",
+      "source_title": "Cigar News: Leaf Cigar Emporium Expands into Second New Jersey Market—Betting on the Future of Independent Cigar Retail",
+      "source_en": "StogiePress",
+      "source_title_en": "Leaf Cigar Emporium Expands into Second New Jersey Market—Betting on the Future of Independent Cigar Retail",
+      "url": "https://stogiepress.com/cigar-news-leaf-cigar-emporium-expands-into-second-new-jersey-market-betting-on-the-future-of-independent-cigar-retail/"
+    },
     {
       "date": "2026-08-17",
       "category": "新製品",
@@ -606,6 +632,19 @@ var NEWS_DATA = {
       "source_en": "halfwheel",
       "source_title_en": "Hiram & Solomon Mystic Tie",
       "url": "https://halfwheel.com/hiram-solomon-mystic-tie/475943/"
+    },
+    {
+      "date": "2026-08-06",
+      "category": "日本国内",
+      "title_ja": "すすきのにシガーバー「ひいじいCafe」",
+      "summary_ja": "札幌・すすきのにシガーバー「札幌煙管ひいじいCafe」が紹介された。探偵気分が味わえる雰囲気の店として取り上げられた。",
+      "title_en": "Cigar Bar 'Sapporo Kiseru Hiijii Cafe' in Susukino",
+      "summary_en": "A cigar bar called 'Sapporo Kiseru Hiijii Cafe' in the Susukino district of Sapporo was featured, described as a venue offering a detective-like atmosphere.",
+      "source": "ウォーカープラス",
+      "source_title": "探偵気分が味わえる!? すすきののシガーバー「札幌煙管ひいじいCafe」 - ウォーカープラス",
+      "source_en": "Walkerplus",
+      "source_title_en": "Feel Like a Detective? Susukino's Cigar Bar 'Sapporo Kiseru Hiijii Cafe'",
+      "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE9WUnNhTm1IeXhmbHlnN1JGRmE3SG1aZEJLa1hLNlN3Vnl0T3BTTHZpaUg2NkVxMEZZRFZYZllMUmVEZGRtdVZnZnFZXzlORFVuQXp5eNIBWkFVX3lxTFBFY29FZ21nLURTUWRvLW5obXhHWVBNLUdLTEpKWjlzVjRFOXJOcGlDc1RfdkxPOEZyeHJVLVgzN3NwNHQyVl82RUFsQ2wzSE9ZQ01jY2JXYllTUQ?oc=5"
     },
     {
       "date": "2026-08-06",
