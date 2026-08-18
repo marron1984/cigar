@@ -7,8 +7,34 @@
    手で足すこともできますが、items の並び・キーは崩さないでください。
    ============================================================ */
 var NEWS_DATA = {
-  "updated": "2026-08-18",
+  "updated": "2026-08-19",
   "items": [
+    {
+      "date": "2026-08-19",
+      "category": "新製品",
+      "title_ja": "ルーム101、ジョニー・トバコノート マドゥーロを発表",
+      "summary_ja": "ルーム101（Room101）は、11年目を迎える人気シリーズ「ジョニー・トバコノート（Johnny Tobacconaut）」の最新作として、ニカラグア産マドゥーロラッパーを用いたニカラグア・プーロを発表した。製造はAJフェルナンデス（AJ Fernandez）が手掛ける。今回はロブストサイズでの展開となる。",
+      "title_en": "Room101 Unveils Johnny Tobacconaut Maduro Robusto",
+      "summary_en": "Room101 has introduced the latest addition to its Johnny Tobacconaut line, now in its 11th year, this time featuring Nicaraguan maduro wrappers. The new release is a Nicaraguan puro produced by AJ Fernandez, offered in a robusto size. The intergalactic tobacco farmer theme continues with this maduro edition.",
+      "source": "halfwheel",
+      "source_title": "Room101 Johnny Tobacconaut Maduro Robusto",
+      "source_en": "halfwheel",
+      "source_title_en": "Room101 Johnny Tobacconaut Maduro Robusto",
+      "url": "https://halfwheel.com/room101-johnny-tobacconaut-maduro-robusto/476893/"
+    },
+    {
+      "date": "2026-08-18",
+      "category": "新製品",
+      "title_ja": "カマチョ、リバティ2020を限定リリース",
+      "summary_ja": "カマチョ（Camacho）は、2021年以来休止していた「リバティ・シリーズ（Liberty Series）」を今夏の限定リリースで復活させた。2020年版として加わった同ラインは、同シリーズで初めてボックスプレス仕上げのゴルドサイズで登場する。",
+      "title_en": "Camacho Releases Liberty 2020",
+      "summary_en": "Camacho has revived its Liberty Series with a limited release this summer, following a hiatus since 2021. The 2020 edition marks the first time the line has been offered in a box-pressed gordo size.",
+      "source": "halfwheel",
+      "source_title": "Camacho Liberty 2020",
+      "source_en": "halfwheel",
+      "source_title_en": "Camacho Liberty 2020",
+      "url": "https://halfwheel.com/camacho-liberty-2020-2/476820/"
+    },
     {
       "date": "2026-08-18",
       "category": "新製品",
@@ -437,6 +463,19 @@ var NEWS_DATA = {
       "source_en": "halfwheel",
       "source_title_en": "Updated Diamond Crown Maximus Begins Shipping",
       "url": "https://halfwheel.com/updated-diamond-crown-maximus-begins-shipping/476464/"
+    },
+    {
+      "date": "2026-08-10",
+      "category": "新製品",
+      "title_ja": "S.T.デュポン×コイーバ、誕生60周年記念の限定コレクション",
+      "summary_ja": "S.T.デュポン（S.T. DUPONT）が、プレミアムシガーを代表する「コイーバ（COHIBA）」の誕生60周年を記念した限定コレクションを発表した。",
+      "title_en": "S.T. Dupont x Cohiba Launch Limited Collection for 60th Anniversary",
+      "summary_en": "S.T. Dupont has unveiled a limited collection created in collaboration with Cohiba to mark the 60th anniversary of the iconic premium cigar brand.",
+      "source": "Infoseek",
+      "source_title": "S.T. DUPONT X COHIBA プレミアムシガーを代表する「コイーバ」の誕生60周年を記念し限定コレクションを発表 - Infoseek",
+      "source_en": "Infoseek",
+      "source_title_en": "S.T. DUPONT X COHIBA Announces Limited Collection Marking 60th Anniversary of Cohiba, an Icon of Premium Cigars",
+      "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE9CQ1RZaWZaNmdlZ3ppenJjb2RNQW9vZjNFdmhmanEtcllQM1BlMDNrSGp5OVdnZ3lhdE11Q1pXTmlKRE5tU0hCV3lfYjFtMU5BWDFBS05ReG85eWc1U0NYblNHbjltU3E4bktiLUlZMHVzQQ?oc=5"
     },
     {
       "date": "2026-08-10",
