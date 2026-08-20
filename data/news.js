@@ -7,8 +7,73 @@
    手で足すこともできますが、items の並び・キーは崩さないでください。
    ============================================================ */
 var NEWS_DATA = {
-  "updated": "2026-08-20",
+  "updated": "2026-08-21",
   "items": [
+    {
+      "date": "2026-08-21",
+      "category": "新製品",
+      "title_ja": "タトゥアージュ「クリーチャー」を正式発売",
+      "summary_ja": "タトゥアージュ（Tatuaje）が、サンプラーに2度収録されてきたブレンド「クリーチャー（Creature）」をフルサイズで正式発売した。2007年に始まった「モンスター・シリーズ（Monster Series）」の101作目にあたる。",
+      "title_en": "Creature from Tatuaje",
+      "summary_en": "After two appearances in samplers, Tatuaje has given its Creature blend a full-size release. It is the 101st installment of the Monster Series, which launched in 2007.",
+      "source": "halfwheel",
+      "source_title": "Creature from Tatuaje",
+      "source_en": "halfwheel",
+      "source_title_en": "Creature from Tatuaje",
+      "url": "https://halfwheel.com/creature-from-tatuaje/477077/"
+    },
+    {
+      "date": "2026-08-21",
+      "category": "新製品",
+      "title_ja": "カマチョ限定版2026、9月初旬に登場",
+      "summary_ja": "カマチョ（Camacho）のリミテッド・エディション・シリーズが2作目として復活する。今回はブランドを象徴する11/18ペルフェクト形状に回帰した。9月初旬の発売を予定している。",
+      "title_en": "Camacho Limited Edition 2026 Coming in Early September",
+      "summary_en": "The Camacho Limited Edition series returns for its second release, this time reverting to the brand's signature 11/18 perfecto shape. It is due to arrive in early September.",
+      "source": "halfwheel",
+      "source_title": "Camacho Limited Edition 2026 Coming in Early September",
+      "source_en": "halfwheel",
+      "source_title_en": "Camacho Limited Edition 2026 Coming in Early September",
+      "url": "https://halfwheel.com/camacho-limited-edition-2026-coming-in-early-september/477115/"
+    },
+    {
+      "date": "2026-08-20",
+      "category": "規制・市場",
+      "title_ja": "トランプ氏、FDA長官にオーバートン氏指名へ",
+      "summary_ja": "トランプ大統領が、ハイジ・オーバートン（Heidi Overton）氏をFDA長官に指名する。同氏は5月にマカリー氏が退任して以来の有力候補とされてきた。葉巻規制に関する見解は明らかになっていない。",
+      "title_en": "Trump to Nominate Heidi Overton as FDA Commissioner",
+      "summary_en": "President Trump is to nominate Heidi Overton as FDA Commissioner. Called the White House \"traffic cop\" on health policy, she has been a frontrunner since Martin Makary was forced out in May. Her views on cigar regulation are unknown.",
+      "source": "halfwheel",
+      "source_title": "Trump to Nominate Heidi Overton as FDA Commissioner",
+      "source_en": "halfwheel",
+      "source_title_en": "Trump to Nominate Heidi Overton as FDA Commissioner",
+      "url": "https://halfwheel.com/trump-to-nominate-heidi-overton-as-fda-commissioner/477019/"
+    },
+    {
+      "date": "2026-08-20",
+      "category": "新製品",
+      "title_ja": "CRAFTマケット「スカットルバット」出荷",
+      "summary_ja": "CRAFTのマケット（Maquette）「スカットルバット（Scuttlebutt）」が出荷された。インテンパランス（Intemperance）のウイスキー・レベリオン1794ラインをベースとする。当初は1,000バンドル限定だったが、スキップ・マーティン氏がブレンドを気に入り、生産量をほぼ倍増させた。",
+      "title_en": "CRAFT Maquette Scuttlebutt Ships",
+      "summary_en": "CRAFT's Maquette Scuttlebutt has shipped. Based on the Intemperance Whiskey Rebellion 1794 line, production was originally limited to 1,000 bundles, but Skip Martin liked the blend enough to nearly double the planned run.",
+      "source": "halfwheel",
+      "source_title": "CRAFT Maquette Scuttlebutt Ships",
+      "source_en": "halfwheel",
+      "source_title_en": "CRAFT Maquette Scuttlebutt Ships",
+      "url": "https://halfwheel.com/craft-maquette-scuttlebutt-ships/476962/"
+    },
+    {
+      "date": "2026-08-20",
+      "category": "イベント・アワード",
+      "title_ja": "CSWC各国王者、ドブロブニク決勝へ続々確定",
+      "summary_ja": "シガー・スモーキング・ワールド・チャンピオンシップ（CSWC）で、ドブロブニクの決勝進出者が続々と確定している。米国はドリュー・エムチが再び優勝、ベラルーシのセルゲイ・ガレフスキーは今季初めて3時間の壁を突破。日本はハヤト・ムカイガワが1時間56分30秒で王者となった。",
+      "title_en": "More CSWC Winners",
+      "summary_en": "With about a week to go, the line-up for the CSWC grand finale in Dubrovnik is filling out. Drew Emch claimed another US title, Belarus's Sergey Galevskii became the first this year to break the three-hour barrier, and in Japan Hayato Mukaigawa won with 1:56:30. Fresh national champions were also crowned in Finland, Ireland, Hungary, Italy, Chile and elsewhere.",
+      "source": "Cigar Journal",
+      "source_title": "More CSWC Winners",
+      "source_en": "Cigar Journal",
+      "source_title_en": "More CSWC Winners",
+      "url": "https://www.cigarjournal.com/more-cswc-winners-2/?utm_source=rss&utm_medium=rss&utm_campaign=more-cswc-winners-2"
+    },
     {
       "date": "2026-08-20",
       "category": "業界・企業",
@@ -86,6 +151,19 @@ var NEWS_DATA = {
       "source_en": "halfwheel",
       "source_title_en": "U.K. Threatens Plain Packaging for Cigars",
       "url": "https://halfwheel.com/u-k-threatens-plain-packaging-for-cigars/476988/"
+    },
+    {
+      "date": "2026-08-19",
+      "category": "業界・企業",
+      "title_ja": "ティオレオ、ドミニカ葉巻をカナダへ",
+      "summary_ja": "ティオレオ・シガーズ（TioLeo Cigars）が、ディストリビューターのTabac Arsenalを通じ8月からカナダ市場へ出荷を開始する。同ブランドは1916年創業のフロル・デ・ロス・レイエスを源流とするレイエス家が手掛け、ファビオラ・サバル・レイエスが叔父レオナルド・レイエスに捧げて設立。オリジナルほか2コレクションで参入する。",
+      "title_en": "TioLeo Cigars Brings Dominican Tobacco Tradition to Canada",
+      "summary_en": "TioLeo Cigars will begin shipping to Canadian retailers this August via distributor Tabac Arsenal. The brand comes from the Reyes family, whose Dominican tobacco roots trace to Flor de Los Reyes, founded in Navarrete in 1916. Founded by Fabiola Saval Reyes as a tribute to her uncle Leonardo Reyes, TioLeo launches in Canada with two collections.",
+      "source": "Cigar Journal",
+      "source_title": "TioLeo Cigars Brings Dominican Tobacco Tradition to Canada",
+      "source_en": "Cigar Journal",
+      "source_title_en": "TioLeo Cigars Brings Dominican Tobacco Tradition to Canada",
+      "url": "https://www.cigarjournal.com/tioleo-cigars-brings-dominican-tobacco-tradition-to-canada/?utm_source=rss&utm_medium=rss&utm_campaign=tioleo-cigars-brings-dominican-tobacco-tradition-to-canada"
     },
     {
       "date": "2026-08-19",
