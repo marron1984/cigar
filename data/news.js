@@ -7,8 +7,60 @@
    手で足すこともできますが、items の並び・キーは崩さないでください。
    ============================================================ */
 var NEWS_DATA = {
-  "updated": "2026-08-21",
+  "updated": "2026-08-22",
   "items": [
+    {
+      "date": "2026-08-22",
+      "category": "イベント・アワード",
+      "title_ja": "ホンジュラス、27年1月に葉巻祭り開催へ",
+      "summary_ja": "ホンジュラスのナスリ・アスフラ大統領が木曜、国内葉巻業界の関係者と会談した。主要議題の一つが2027年新設のホンジュラス葉巻フェスティバルで、2027年1月の開催が予定されていると発表された。",
+      "title_en": "Honduran President Asfura Announces Cigar Festival for January 2027",
+      "summary_en": "On Thursday, Honduran President Nasry Asfura met with members of the country's cigar industry. One of the main topics was a new-for-2027 Honduran cigar festival, scheduled to take place in January 2027. The announcement signals growing official support for Honduras's cigar sector.",
+      "source": "halfwheel",
+      "source_title": "Honduran President Asfura Announces Cigar Festival, Scheduled for January 2027",
+      "source_en": "halfwheel",
+      "source_title_en": "Honduran President Asfura Announces Cigar Festival, Scheduled for January 2027",
+      "url": "https://halfwheel.com/honduran-president-asfura-announces-cigar-festival-scheduled-for-january-2027/477483/"
+    },
+    {
+      "date": "2026-08-22",
+      "category": "新製品",
+      "title_ja": "ラベガ、主力ラインにボックスプレス版を追加",
+      "summary_ja": "ラベガ・シガー（LaVega Cigar Co.）のオーナー、アーロン・パオレッタが、ファンに新しさを提供しつつ単なる限定品にはしたくないとの考えから、主力ラインのボックスプレス版をリリースすると発表した。",
+      "title_en": "LaVega Adding Box-Pressed Versions of Core Lines",
+      "summary_en": "Aaron Paoletta, owner of LaVega Cigar Co., wanted to offer his fans something new but did not want to simply release a limited edition. Instead, he is releasing box-pressed versions of his core line cigars, giving existing blends a fresh presentation.",
+      "source": "halfwheel",
+      "source_title": "LaVega Adding Box-Pressed Versions of Core Lines",
+      "source_en": "halfwheel",
+      "source_title_en": "LaVega Adding Box-Pressed Versions of Core Lines",
+      "url": "https://halfwheel.com/lavega-adding-box-pressed-versions-of-core-lines/477441/"
+    },
+    {
+      "date": "2026-08-22",
+      "category": "新製品",
+      "title_ja": "AGシガーズ、ジェイミー・フォックス向け新銘柄",
+      "summary_ja": "かつてキューバのホテル・コモドロで専属ローラーを務めたアレハンドロ（アレックス）・ゴンサレスは、ニカラグアに移り自身の葉巻ブランドを立ち上げた。この夏、同社はレイ・ルイスとジェイミー・フォックス向けの葉巻を追加した。",
+      "title_en": "AG Cigars Legendary Moment Jamie Foxx",
+      "summary_en": "Alejandro \"Alex\" González, who once served as the custom roller at the Hotel Comodoro in Cuba, left for Nicaragua and launched his own cigar brand. This summer, the company added cigars honouring Ray Lewis and Jamie Foxx to its Legendary Moment line.",
+      "source": "halfwheel",
+      "source_title": "AG Cigars Legendary Moment Jamie Foxx",
+      "source_en": "halfwheel",
+      "source_title_en": "AG Cigars Legendary Moment Jamie Foxx",
+      "url": "https://halfwheel.com/ag-cigars-legendary-moment-jamie-foxx/476898/"
+    },
+    {
+      "date": "2026-08-21",
+      "category": "新製品",
+      "title_ja": "アンダークラウン10ゴルドが店頭へ",
+      "summary_ja": "今年はアンダークラウン（Undercrown）発売15周年にあたる。まもなく新たな限定版の6×60サイズ「アンダークラウン10ゴルド」が店頭に登場する。",
+      "title_en": "Undercrown 10 Gordo Heads to Stores",
+      "summary_en": "This year marks the 15th anniversary of the launch of Undercrown. Soon, a new limited edition 6 x 60 version, the Undercrown 10 Gordo, will arrive at stores.",
+      "source": "halfwheel",
+      "source_title": "Undercrown 10 Gordo Heads to Stores",
+      "source_en": "halfwheel",
+      "source_title_en": "Undercrown 10 Gordo Heads to Stores",
+      "url": "https://halfwheel.com/undercrown-10-gordo-heads-to-stores/477433/"
+    },
     {
       "date": "2026-08-21",
       "category": "新製品",
@@ -151,6 +203,19 @@ var NEWS_DATA = {
       "source_en": "halfwheel",
       "source_title_en": "U.K. Threatens Plain Packaging for Cigars",
       "url": "https://halfwheel.com/u-k-threatens-plain-packaging-for-cigars/476988/"
+    },
+    {
+      "date": "2026-08-19",
+      "category": "新製品",
+      "title_ja": "ルシガール、フラミンゴ10周年記念限定版",
+      "summary_ja": "ルシガール（Lecigare.ch）が、フラミンゴ・レンジ10周年を記念した限定版「フラミンゴ10thアニバーサリー」を発表した。長期熟成させたニカラグア産タバコを用いた新ブレンドで、ロブスト・エクストラ（リング55、12.8cm）。2026年8月18日よりLecigare.chとニヨンの店舗で販売。",
+      "title_en": "Lecigare.ch Launches the Flamingo 10th Anniversary",
+      "summary_en": "Lecigare.ch has unveiled the Flamingo 10th Anniversary, a limited edition marking a decade of its Flamingo range, launched in 2016. The new blend uses carefully selected Nicaraguan tobaccos with extended ageing, presented in a Robusto Extra format (Ring 55, 12.8 cm) designed for a long, evolving smoke with a slow, even burn. It is available from 18 August 2026 on Lecigare.ch and at the Lecigare.ch shop in Nyon.",
+      "source": "Cigar Journal",
+      "source_title": "Lecigare.ch Launches the Flamingo 10th Anniversary",
+      "source_en": "Cigar Journal",
+      "source_title_en": "Lecigare.ch Launches the Flamingo 10th Anniversary",
+      "url": "https://www.cigarjournal.com/lecigare-ch-launches-the-flamingo-10th-anniversary/?utm_source=rss&utm_medium=rss&utm_campaign=lecigare-ch-launches-the-flamingo-10th-anniversary"
     },
     {
       "date": "2026-08-19",
@@ -398,6 +463,19 @@ var NEWS_DATA = {
       "source_en": "halfwheel",
       "source_title_en": "Nestor Miranda Private Reserve Lancero Shipping",
       "url": "https://halfwheel.com/nestor-miranda-private-reserve-lancero-shipping/476643/"
+    },
+    {
+      "date": "2026-08-12",
+      "category": "日本国内",
+      "title_ja": "新宿でウイスキーと葉巻の催し、8月22日開催",
+      "summary_ja": "8月22日、BAR新宿ウイスキーサロンでのチャリティー持ち寄り会と、新店舗BAR LASTWORDでのシガー初心者歓迎ペアリング会が開催される。ウイスキーと葉巻を楽しむ特別な1日として企画された。",
+      "title_en": "Whisky and Cigar Events in Shinjuku on 22 August",
+      "summary_en": "On 22 August, a charity bring-your-own gathering will be held at BAR Shinjuku Whisky Salon, alongside a beginner-friendly cigar pairing session at the new venue BAR LASTWORD. The events are billed as a special day dedicated to enjoying whisky and cigars together.",
+      "source": "CREA WEB",
+      "source_title": "【ウイスキーと葉巻の特別な1日】BAR 新宿ウイスキーサロンでのチャリティー持ち寄り会＆新店舗 BAR LASTWORD でのシガー初心者歓迎ペアリング会を8月22日に開催 - CREA WEB",
+      "source_en": "CREA WEB",
+      "source_title_en": "A Special Day of Whisky and Cigars: Charity Gathering at BAR Shinjuku Whisky Salon and Beginner-Friendly Cigar Pairing at New BAR LASTWORD on 22 August",
+      "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE0tdktGaGRRZW1Tb210VElYUWlyZjBmYXJlRU10T3BFNkFtWU1VaXFFSlRjSXFJNVowY0dkRV95WUpDcHQ5SVdmRnd5S0FvLXc1WHAyVFhYajdEUTYzWGFTdEw5RnJjcEtOekhDMmU4Tm5tUQ?oc=5"
     },
     {
       "date": "2026-08-12",
