@@ -7,8 +7,21 @@
    手で足すこともできますが、items の並び・キーは崩さないでください。
    ============================================================ */
 var NEWS_DATA = {
-  "updated": "2026-08-22",
+  "updated": "2026-08-23",
   "items": [
+    {
+      "date": "2026-08-23",
+      "category": "新製品",
+      "title_ja": "クラックス、マーブルヘッド・マデューロ・トロを発売",
+      "summary_ja": "クラックス・シガーズ（Crux Cigars）が、マーブルヘッド・シリーズの第2弾となる「マーブルヘッド・マデューロ・トロ」を発表した。オリジナルブレンドが昨年発売されて以来の新作。クラックスは109スタイルのキャップを「マーブルヘッド」と呼んでいる。",
+      "title_en": "Crux Marblehead Maduro Toro",
+      "summary_en": "Crux Cigars has released the Marblehead Maduro Toro, the second Marblehead cigar from the company after the original blend debuted last year. Crux uses the name Marblehead to describe its 109-style caps. The launch expands the Marblehead line with a maduro-wrapped toro offering.",
+      "source": "halfwheel",
+      "source_title": "Crux Marblehead Maduro Toro",
+      "source_en": "halfwheel",
+      "source_title_en": "Crux Marblehead Maduro Toro",
+      "url": "https://halfwheel.com/crux-marblehead-maduro-toro/477485/"
+    },
     {
       "date": "2026-08-22",
       "category": "イベント・アワード",
