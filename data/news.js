@@ -7,8 +7,60 @@
    手で足すこともできますが、items の並び・キーは崩さないでください。
    ============================================================ */
 var NEWS_DATA = {
-  "updated": "2026-08-23",
+  "updated": "2026-08-24",
   "items": [
+    {
+      "date": "2026-08-24",
+      "category": "新製品",
+      "title_ja": "エイロア・ダーク30周年版が再登場",
+      "summary_ja": "クリスチャン・エイロアが、過去に求めた味を追求した「エイロア・ダーク（Eiroa Dark）」を再ブレンドして市場に投入した。1年以上の調整を経て、ブレンドを刷新しバンドを追加した「エイロア・ダーク30th 50×5」として復活した。",
+      "title_en": "Eiroa Dark 30th 50×5 Returns",
+      "summary_en": "Christian Eiroa has returned the Eiroa Dark to the market after more than a year of reblending. He describes the line as an exercise in chasing a taste from his past. The revived cigar, released as the Eiroa Dark 30th 50×5, features an updated blend and an added band.",
+      "source": "halfwheel",
+      "source_title": "Eiroa Dark 30th 50×5",
+      "source_en": "halfwheel",
+      "source_title_en": "Eiroa Dark 30th 50×5",
+      "url": "https://halfwheel.com/eiroa-dark-30th-50x5/477605/"
+    },
+    {
+      "date": "2026-08-23",
+      "category": "新製品",
+      "title_ja": "カマチョ、限定版2026を発表",
+      "summary_ja": "カマチョ・シガー（Camacho Cigars）が「Boldly Built by Masters」シリーズ第2弾となる「カマチョ・リミテッド・エディション2026」を発表した。ホンジュラス製で、難度の高いペルフェクト形状（56×6インチ）を採用。エクアドル産ラッパー、ホンジュラス産バインダーに、ホンジュラス・ニカラグア・ドミニカ共和国産のフィラーを使用し、喫煙時間は60〜80分。強度は5段階中3.5。",
+      "title_en": "Camacho Cigars Launches the Limited Edition 2026",
+      "summary_en": "Camacho Cigars has introduced the Camacho Limited Edition 2026, the second release in its Boldly Built by Masters series, honouring its Master Blending Competence Center. Handcrafted in Honduras in a demanding perfecto format (56 x 6″), it uses an Ecuadorian wrapper over a Honduran binder with filler from Honduras, Nicaragua and the Dominican Republic. The multi-origin cigar evolves across a 60 to 80 minute smoke and carries an intensity rating of 3.5 out of 5.",
+      "source": "Cigar Journal",
+      "source_title": "Camacho Cigars Launches the Limited Edition 2026",
+      "source_en": "Cigar Journal",
+      "source_title_en": "Camacho Cigars Launches the Limited Edition 2026",
+      "url": "https://www.cigarjournal.com/camacho-cigars-launches-the-limited-edition-2026/?utm_source=rss&utm_medium=rss&utm_campaign=camacho-cigars-launches-the-limited-edition-2026"
+    },
+    {
+      "date": "2026-08-23",
+      "category": "業界・企業",
+      "title_ja": "リーフ・シガー、NJに2号店を開業",
+      "summary_ja": "ニュージャージー州の小売業者リーフ・シガー・エンポリアム（Leaf Cigar Emporium）が8月24日、オールドブリッジに2号店を開業した。創業者ジョン・ガロファロは、オンライン販売への対抗として対面のもてなしを重視すると語った。新店舗は約900平方フィートの全面加湿ショールームを中心とした体験型の店づくりを採用した。",
+      "title_en": "Leaf Cigar Emporium Opens Second New Jersey Location",
+      "summary_en": "New Jersey retailer Leaf Cigar Emporium opened its second location in Old Bridge on Monday 24th August. Founder John Garofalo said the biggest competition today is online shopping, and that his shops offer genuine hospitality and advice that cannot be ordered online. Rather than replicating its Shrewsbury store, the Old Bridge outlet centres on an expansive, nearly 900-square-foot fully humidified showroom combining premium cigars, accessories and customer service in one environment.",
+      "source": "Cigar Journal",
+      "source_title": "Leaf Cigar Emporium Opens Second New Jersey Location",
+      "source_en": "Cigar Journal",
+      "source_title_en": "Leaf Cigar Emporium Opens Second New Jersey Location",
+      "url": "https://www.cigarjournal.com/leaf-cigar-emporium-opens-second-new-jersey-location/?utm_source=rss&utm_medium=rss&utm_campaign=leaf-cigar-emporium-opens-second-new-jersey-location"
+    },
+    {
+      "date": "2026-08-23",
+      "category": "業界・企業",
+      "title_ja": "コイーバ・アトモスフィア、テルアビブに開業",
+      "summary_ja": "イスラエル初となるプレミアム・キューバ葉巻ラウンジ「コイーバ・アトモスフィアTLV」が、ザ・デビッド・ケンピンスキー・テルアビブ内に開業した。コイーバ・ブランドの公式代理店であり、コルポラシオン・アビノス社の認定パートナーとして、コイーバをはじめとするアビノス各銘柄の正規キューバ葉巻を専用ヒュミドールで管理・提供する。所在地はハヤルコン通り51番地、営業は日〜木の13:00〜23:00。",
+      "title_en": "Cohiba Atmosphere Tel Aviv Opens",
+      "summary_en": "Cohiba Atmosphere TLV, located at The David Kempinski Tel Aviv, is Israel's first destination dedicated to premium Cuban cigar culture. As the official representative of the COHIBA brand and a licensed partner of Corporación Habanos S.A., the lounge offers an extensive selection of authentic Cuban cigars, including COHIBA vitolas and other Habanos marques, kept in dedicated humidors. It also features premium spirits and a curated culinary menu. Situated at 51 Hayarkon Street, it currently opens Sunday to Thursday from 13:00 to 23:00, with underground parking available.",
+      "source": "Cigar Journal",
+      "source_title": "Cohiba Atmosphere Tel Aviv",
+      "source_en": "Cigar Journal",
+      "source_title_en": "Cohiba Atmosphere Tel Aviv",
+      "url": "https://www.cigarjournal.com/cohiba-atmosphere-tel-aviv/?utm_source=rss&utm_medium=rss&utm_campaign=cohiba-atmosphere-tel-aviv"
+    },
     {
       "date": "2026-08-23",
       "category": "新製品",
@@ -294,6 +346,19 @@ var NEWS_DATA = {
       "source_en": "StogiePress",
       "source_title_en": "Leaf Cigar Emporium Expands into Second New Jersey Market—Betting on the Future of Independent Cigar Retail",
       "url": "https://stogiepress.com/cigar-news-leaf-cigar-emporium-expands-into-second-new-jersey-market-betting-on-the-future-of-independent-cigar-retail/"
+    },
+    {
+      "date": "2026-08-17",
+      "category": "業界・企業",
+      "title_ja": "グリーンリーフ社、新高級葉巻ブランド立ち上げ",
+      "summary_ja": "グリーンリーフ・イノベーションズ（Green Leaf Innovations, Inc.）が株主向けに戦略的拡大の最新情報を発表した。新たな高級シガーブランド、包括的なアクセサリーライン、EコマースのVIP会員クラブの立ち上げを明らかにした。これはDURTEQ社との意向書締結に続くもの。",
+      "title_en": "Green Leaf Innovations Launches New Premium Cigar Brand",
+      "summary_en": "Green Leaf Innovations, Inc. has provided shareholders with an update on its strategic expansion, announcing the launch of a new premium cigar brand, a comprehensive accessories line and a new e-commerce VIP membership club. The move follows the company's recent signing of a letter of intent with DURTEQ.",
+      "source": "Moomoo",
+      "source_title": "Green Leaf Innovations, Inc.は株主に対し戦略的拡大に関する最新情報を提供しました。新たな高級シガーブランド、包括的なアクセサリーライン、および新しいEコマースVIP会員クラブの立ち上げを発表しています。これは最近のDURTEQ社との意向書締結に続くものです。 - Moomoo",
+      "source_en": "Moomoo",
+      "source_title_en": "Green Leaf Innovations, Inc. Provides Shareholders With Strategic Expansion Update, Announcing New Premium Cigar Brand, Accessories Line and E-commerce VIP Club",
+      "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxPZHBYVW5WTkFibHk5SC1fcEJLT0x3eG5pc3JadHpOWWVXcWNveDRFMTh4UVhsRGV3dDhvTTVGZW4zMDU0NUlwN2NPMnZvNnNQUk5lWXM4U1lNNnpPdWUyYzNORms4Y0U3dmhuOGdBTXlkeXBtdzBLRW1rc3FQdnYtNWVkVTBiVGZWc2ZGMVI0Zy1KSmkyYTlMcEdaN1BsRzR2Y2Q5Q21aMzg3T3NpazZDVnNHbjFvZi0yRHVyc2oycFpjS2c?oc=5"
     },
     {
       "date": "2026-08-17",
