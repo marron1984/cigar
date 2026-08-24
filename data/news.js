@@ -7,8 +7,86 @@
    手で足すこともできますが、items の並び・キーは崩さないでください。
    ============================================================ */
 var NEWS_DATA = {
-  "updated": "2026-08-24",
+  "updated": "2026-08-25",
   "items": [
+    {
+      "date": "2026-08-25",
+      "category": "規制・市場",
+      "title_ja": "FDA意見募集にたばこ業界の反対大量投稿と研究",
+      "summary_ja": "2022年に米食品医薬品局（FDA）がメンソールたばことフレーバー葉巻の販売禁止案について実施した意見募集をめぐり、研究者が寄せられた24万6080件のコメントを分析した。その大半が禁止に反対する内容だったが、コメントの中身に多様性はほとんど見られなかったと報告した。",
+      "title_en": "Study: Tobacco Companies Flooded FDA’s Flavored Cigar, Menthol Cigarette Ban Comment Periods",
+      "summary_en": "Researchers analysed the 246,080 comments submitted during the US Food & Drug Administration's 2022 public comment periods on proposed bans of menthol cigarettes and flavoured cigars. They found that almost all of the comments opposed the bans, but there was little diversity within the content of the submissions, suggesting a coordinated flood of responses from tobacco interests.",
+      "source": "halfwheel",
+      "source_title": "Study: Tobacco Companies Flooded FDA’s Flavored Cigar, Menthol Cigarette Ban Comment Periods",
+      "source_en": "halfwheel",
+      "source_title_en": "Study: Tobacco Companies Flooded FDA’s Flavored Cigar, Menthol Cigarette Ban Comment Periods",
+      "url": "https://halfwheel.com/study-tobacco-companies-flooded-fdas-flavored-cigar-menthol-cigarette-ban-comment-periods/477763/"
+    },
+    {
+      "date": "2026-08-25",
+      "category": "新製品",
+      "title_ja": "スティルウェル・スター、刷新し小売へ",
+      "summary_ja": "スティルウェル・スター（StillWell Star）ラインが刷新され、小売店へ出荷される。現在は3種のブレンドがあり、それぞれ同じ2つのビトラを含む。すべての葉巻に甘みを付けたキャップが採用されている。",
+      "title_en": "Revamped StillWell Star Line On the Way to Retailers",
+      "summary_en": "The revamped StillWell Star line is heading to retailers. There are now three different blends, each offered in the same two vitolas. All of the cigars feature a sweetened cap.",
+      "source": "halfwheel",
+      "source_title": "Revamped StillWell Star Line On the Way to Retailers",
+      "source_en": "halfwheel",
+      "source_title_en": "Revamped StillWell Star Line On the Way to Retailers",
+      "url": "https://halfwheel.com/revamped-stillwell-star-line-on-the-way-to-retailers/477748/"
+    },
+    {
+      "date": "2026-08-25",
+      "category": "新製品",
+      "title_ja": "クラウンド・ヘッズ、限定デシモ復活",
+      "summary_ja": "クラウンド・ヘッズ（Crowned Heads）が、人気の限定品「デシモ・アニベルサリオ（Décimo Aniversario）」の復活を発表した。ラス・カラベラス（Las Calaveras）シリーズ10周年を記念して2024年に発売されたもので、今回は新たな3つのビトラで登場する。",
+      "title_en": "Crowned Heads Announces Return of Highly Sought-After Décimo Aniversario Limited Edition",
+      "summary_en": "Crowned Heads has announced the return of its highly sought-after Décimo Aniversario limited edition. Originally released in 2024 to commemorate the 10th anniversary of the Las Calaveras series, Décimo makes its comeback in three new vitolas to meet demand.",
+      "source": "StogiePress",
+      "source_title": "Cigar News: Crowned Heads Announces Return of Highly Sought-After Décimo Aniversario Limited Edition",
+      "source_en": "StogiePress",
+      "source_title_en": "Cigar News: Crowned Heads Announces Return of Highly Sought-After Décimo Aniversario Limited Edition",
+      "url": "https://stogiepress.com/cigar-news-crowned-heads-announces-return-of-highly-sought-after-decimo-aniversario-limited-edition/"
+    },
+    {
+      "date": "2026-08-25",
+      "category": "新製品",
+      "title_ja": "タチアナのカプチーノとアマレットに新サイズ",
+      "summary_ja": "タチアナ（Tatiana）のカプチーノとアマレットに新サイズが加わり、店頭へ。長めの葉巻を好む向けに6×44のコロナ「クラシック」を追加。手早く一服したい時向けには3 1/2×26のビトラ「ミニ・ティンズ」を用意した。",
+      "title_en": "New Sizes for Tatiana Cappuccino and Amaretto Head to Stores",
+      "summary_en": "New sizes for the Tatiana Cappuccino and Amaretto lines are heading to stores. Fans of longer cigars are getting a 6 x 44 corona called Classic, while the Mini Tins offer a 3 1/2 x 26 vitola for a quick smoke when time is tight.",
+      "source": "halfwheel",
+      "source_title": "New Sizes for Tatiana Cappuccino and Amaretto Head to Stores",
+      "source_en": "halfwheel",
+      "source_title_en": "New Sizes for Tatiana Cappuccino and Amaretto Head to Stores",
+      "url": "https://halfwheel.com/new-sizes-for-tatiana-cappuccino-and-amaretto-head-to-stores/476675/"
+    },
+    {
+      "date": "2026-08-24",
+      "category": "新製品",
+      "title_ja": "アンダークラウン10に6×60ゴルド追加",
+      "summary_ja": "ドリュー・エステート（Drew Estate）が「アンダークラウン10 ゴルド（Undercrown 10 Gordo）」を発表した。6×60のビトラで同ファミリー5本目。10本入り限定箱で168.00ドル。メキシカン・サンアンドレス・マドゥーロのラッパー、コネチカット・ブロードリーフのバインダー、ホンジュラスとニカラグアのロングフィラーを使用する。",
+      "title_en": "New Undercrown Gordo Size Introduced",
+      "summary_en": "Drew Estate has announced the Undercrown 10 Gordo, a 6 x 60 vitola and the fifth in the Undercrown 10 family. Offered in limited boxes of 10 for $168.00, it uses the same recipe as the existing UC10 line, featuring a Mexican San Andrés maduro wrapper over a Connecticut Broadleaf binder with hand-selected long-filler leaves from Honduras and Nicaragua.",
+      "source": "Cigar Journal",
+      "source_title": "New Undercrown Gordo Size Introduced",
+      "source_en": "Cigar Journal",
+      "source_title_en": "New Undercrown Gordo Size Introduced",
+      "url": "https://www.cigarjournal.com/new-undercrown-gordo-size-introduced/?utm_source=rss&utm_medium=rss&utm_campaign=new-undercrown-gordo-size-introduced"
+    },
+    {
+      "date": "2026-08-24",
+      "category": "新製品",
+      "title_ja": "ブラック・ワークス・スタジオのタイガーサウルス",
+      "summary_ja": "ブラック・ワークス・スタジオ（Black Works Studio）の限定品「タイガーサウルス」。昨年発売分は5 1/2×48のパレホで、コネチカットとペンシルベニアのブロードリーフ、キャンデラの3種のラッパーを使用。生産は15本入り850箱、計1万2750本のみだった。",
+      "title_en": "Black Works Studio Tigersaurus",
+      "summary_en": "Black Works Studio's limited edition Tigersaurus. Last year's release was a 5 1/2 x 48 parejo made with three different wrappers: broadleaf from both Connecticut and Pennsylvania, plus candela. Production was limited to 850 boxes of 15, for a total of 12,750 cigars.",
+      "source": "halfwheel",
+      "source_title": "Black Works Studio Tigersaurus",
+      "source_en": "halfwheel",
+      "source_title_en": "Black Works Studio Tigersaurus",
+      "url": "https://halfwheel.com/black-works-studio-tigersaurus-2/477711/"
+    },
     {
       "date": "2026-08-24",
       "category": "新製品",
