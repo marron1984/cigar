@@ -7,8 +7,86 @@
    手で足すこともできますが、items の並び・キーは崩さないでください。
    ============================================================ */
 var NEWS_DATA = {
-  "updated": "2026-08-25",
+  "updated": "2026-08-26",
   "items": [
+    {
+      "date": "2026-08-26",
+      "category": "新製品",
+      "title_ja": "アサイラム13、トム・ラズカ署名モデル発売",
+      "summary_ja": "アサイラム（Asylum）が、トム・ラズカが自身向けに手掛けてきた葉巻を製品化した「アサイラム13 シグネチャーシリーズ・バイ・トム・ラズカ」を発表した。サイズは46×6。",
+      "title_en": "Asylum 13 Signature Series by Tom Lazuka 46×6",
+      "summary_en": "Asylum has decided to release the Asylum 13 Signature Series by Tom Lazuka, a cigar Lazuka had originally made for himself beyond the company's consumer offerings. The new release comes in a 46 × 6 size. Like many cigar makers, Lazuka produces cigars for personal use, and in this case has chosen to bring one to market.",
+      "source": "halfwheel",
+      "source_title": "Asylum 13 Signature Series by Tom Lazuka 46×6",
+      "source_en": "halfwheel",
+      "source_title_en": "Asylum 13 Signature Series by Tom Lazuka 46×6",
+      "url": "https://halfwheel.com/asylum-13-signature-series-by-tom-lazuka-46x6/477650/"
+    },
+    {
+      "date": "2026-08-26",
+      "category": "新製品",
+      "title_ja": "エミリオ・スアベ・スマトラが店頭へ",
+      "summary_ja": "2026年4月のPCA 2026で披露された限定品「エミリオ・スアベ・スマトラ（Emilio Suave Sumatra）」が店頭に登場する。2ビトラ構成で、多くのスマトラ系葉巻と異なり、ラッパーはインドネシア産を使用する。",
+      "title_en": "Emilio Suave Sumatra Heads to Stores",
+      "summary_en": "The new, two-vitola limited edition Emilio Suave Sumatra, first shown at PCA 2026 in April, is heading to stores. Unlike most Sumatra-branded cigars, its wrapper is sourced from Indonesia. The release expands Emilio's line-up with a limited offering that had been previewed earlier in the year at the New Orleans trade show.",
+      "source": "halfwheel",
+      "source_title": "Emilio Suave Sumatra Heads to Stores",
+      "source_en": "halfwheel",
+      "source_title_en": "Emilio Suave Sumatra Heads to Stores",
+      "url": "https://halfwheel.com/emilio-suave-sumatra-heads-to-stores/477849/"
+    },
+    {
+      "date": "2026-08-26",
+      "category": "業界・企業",
+      "title_ja": "ダビドフ米国トップが10月に退任",
+      "summary_ja": "ダビドフ・オブ・ジュネーブUSAのトップ、エマヌエーレ・ウチェッリーニ（Emanuele Uccellini）が10月に退任する。同氏の入社は昨年3月で、葉巻とは別の業界へ移るという。",
+      "title_en": "Davidoff of Geneva USA Head Emanuele Uccellini Leaving in October",
+      "summary_en": "Emanuele Uccellini, head of Davidoff of Geneva USA, is leaving the company in October. He joined only last March and is departing for a different industry, marking a short tenure at the helm of Davidoff's US operation.",
+      "source": "halfwheel",
+      "source_title": "Emanuele Uccellini, Head of Davidoff of Geneva USA, Leaving in October",
+      "source_en": "halfwheel",
+      "source_title_en": "Emanuele Uccellini, Head of Davidoff of Geneva USA, Leaving in October",
+      "url": "https://halfwheel.com/emanuele-uccellini-head-of-davidoff-of-geneva-usa-leaving-in-october/477839/"
+    },
+    {
+      "date": "2026-08-25",
+      "category": "新製品",
+      "title_ja": "オーパスX、9/11追悼の限定品を出荷",
+      "summary_ja": "アルトゥーロ・フエンテが9/11追悼記念の「オーパスX リゼリエント（OpusX ReXilient）」を今週出荷する。各箱にはツインタワーを表す4本のボックスプレス・フラットキャップ葉巻が入る。同社は1箱につき11ドルを、退役軍人や消防・救急隊員の住宅支援を行うTunnels for Towersに寄付する。",
+      "title_en": "OpusX ReXilient, A 9/11 Commemorative Release, Shipping This Week",
+      "summary_en": "Arturo Fuente's OpusX ReXilient, a 9/11 commemorative release, is shipping this week. Each box holds four box-pressed, flat-capped cigars representing the Twin Towers. Fuente is donating $11 per box to Tunnels for Towers, a charity providing housing assistance to disabled and fallen veterans and first responders.",
+      "source": "halfwheel",
+      "source_title": "OpusX ReXilient, A 9/11 Commemorative Release, Shipping This Week",
+      "source_en": "halfwheel",
+      "source_title_en": "OpusX ReXilient, A 9/11 Commemorative Release, Shipping This Week",
+      "url": "https://halfwheel.com/opusx-rexilient-a-9-11-commemorative-release-shipping-this-week/477777/"
+    },
+    {
+      "date": "2026-08-25",
+      "category": "新製品",
+      "title_ja": "S.T.デュポン、コイーバ60周年記念モデル",
+      "summary_ja": "エス・テー・デュポン（S.T. Dupont）が、プレミアムシガー「コイーバ（Cohiba）」の誕生60周年を記念した新製品を発表した。",
+      "title_en": "S.T. Dupont Unveils Cohiba 60th Anniversary Products",
+      "summary_en": "S.T. Dupont has unveiled a new product line commemorating the 60th anniversary of the premium cigar brand Cohiba, marking the milestone with a dedicated release.",
+      "source": "octane.jp",
+      "source_title": "エス・テー・デュポンのニュープロダクト｜プレミアムシガー「コイーバ」の誕生60周年記念 - octane.jp",
+      "source_en": "octane.jp",
+      "source_title_en": "S.T. Dupont New Products: Commemorating the 60th Anniversary of Premium Cigar Cohiba",
+      "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE1ncHhGaXhHSVlFcjFrLXhaZWw4a05fNzdqend0dHZieXh2UXQ3RURwUEVrV2lVaUZDRjdmRklhREpLa2txNkF4SDBNLWM4WmxCTUY1cQ?oc=5"
+    },
+    {
+      "date": "2026-08-25",
+      "category": "日本国内",
+      "title_ja": "横浜みなとみらいでシガー×ウイスキー限定イベント",
+      "summary_ja": "横浜・みなとみらいで、海外のシガーブランドオーナーが来日し、プレミアムシガーとシングルモルトのマリアージュを楽しむ限定イベントが初開催される。",
+      "title_en": "Limited Cigar and Whisky Event Debuts in Yokohama Minatomirai",
+      "summary_en": "A limited-edition event pairing premium cigars with single malt whisky is being held for the first time in Yokohama's Minatomirai district. An overseas cigar brand owner is visiting Japan for the occasion, offering guests a chance to explore the depths of cigars and whisky through the marriage of the two.",
+      "source": "PR TIMES",
+      "source_title": "みなとみらいで知るシガーとウイスキーの奥深き世界。海外よりシガーブランドオーナー来⽇、プレミアムシガーとシングルモルトのマリアージュを嗜む限定イベントを初開催！ - PR TIMES",
+      "source_en": "PR TIMES",
+      "source_title_en": "Discover the Deep World of Cigars and Whisky in Minatomirai: First Limited Event Pairing Premium Cigars and Single Malt with a Visiting Overseas Cigar Brand Owner",
+      "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTFAzdlRVY2N4R1A5aThkb193Y0lqWHBHSmZoSmdncHhIQWZBenBtZjRCM2E4MjlHSmhfbDl2VjJzQ1JBZXNkSkVNLWNjdHRibDBIOEFaN1FEZ3ZyZkNDTnBsZFdwZ3BRLTN2V2c?oc=5"
+    },
     {
       "date": "2026-08-25",
       "category": "規制・市場",
