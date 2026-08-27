@@ -7,8 +7,73 @@
    手で足すこともできますが、items の並び・キーは崩さないでください。
    ============================================================ */
 var NEWS_DATA = {
-  "updated": "2026-08-26",
+  "updated": "2026-08-27",
   "items": [
+    {
+      "date": "2026-08-27",
+      "category": "業界・企業",
+      "title_ja": "ロス・アミーゴス、米国初上陸へ",
+      "summary_ja": "ロス・アミーゴス・シガーズ（Los Amigos Cigars）が、新設のドメイン・ディストリビューション（Domain Distribution）との流通契約を通じて米国市場に初上陸する。ドメイン・ディストリビューションは、ドメイン製品を製造する工場タバカレラ・ファミリア・ディスラ（Tabacalera Familia Disla S.A.）の顧客専用の流通事業。ロス・アミーゴスは2024年に発足したブランド。",
+      "title_en": "Los Amigos Cigars to Make U.S. Debut via New Domain Distribution",
+      "summary_en": "Los Amigos Cigars will make its U.S. debut through a distribution agreement with the newly launched Domain Distribution. The distributor operates exclusively for clients of Tabacalera Familia Disla S.A., the factory that produces Domain's cigars. Los Amigos, which launched in 2024, will now reach American retailers through the arrangement.",
+      "source": "halfwheel",
+      "source_title": "Los Amigos Cigars Making U.S. Debut Through Newly Launched Domain Distribution",
+      "source_en": "halfwheel",
+      "source_title_en": "Los Amigos Cigars Making U.S. Debut Through Newly Launched Domain Distribution",
+      "url": "https://halfwheel.com/los-amigos-cigars-making-u-s-debut-through-newly-launched-domain-distribution/477951/"
+    },
+    {
+      "date": "2026-08-27",
+      "category": "新製品",
+      "title_ja": "ハイラム＆ソロモン、10周年記念限定品",
+      "summary_ja": "ハイラム＆ソロモン（Hiram & Solomon）が創業10周年を記念する限定ブレンド「アシュラー（Ashlar）」を発表した。当初は昨年発売予定だったが、痛ましい事故により発売が延期されていた。",
+      "title_en": "Hiram & Solomon Ashlar",
+      "summary_en": "Hiram & Solomon has released Ashlar, a limited edition blend created to commemorate the company's 10th anniversary. The cigar had originally been scheduled to launch last year, but its release was delayed following a tragic accident.",
+      "source": "halfwheel",
+      "source_title": "Hiram & Solomon Ashlar",
+      "source_en": "halfwheel",
+      "source_title_en": "Hiram & Solomon Ashlar",
+      "url": "https://halfwheel.com/hiram-solomon-ashlar/477873/"
+    },
+    {
+      "date": "2026-08-27",
+      "category": "規制・市場",
+      "title_ja": "STG、2026年第2四半期は微減",
+      "summary_ja": "スカンジナビアン・タバコ・グループ（STG）の2026年第2四半期業績は全体で微減となった一方、手巻き葉巻の売上はわずかに増加した。同社は2025年上半期の6カ月間で約2億4000万ドル相当の葉巻を販売したとしている。",
+      "title_en": "STG Slightly Down in Q2 2026",
+      "summary_en": "Scandinavian Tobacco Group (STG) reported that its overall results were slightly down in the second quarter of 2026, while handmade cigar sales edged up. The company says it sold around $240 million worth of cigars during the first six months of 2025.",
+      "source": "halfwheel",
+      "source_title": "STG Slightly Down in Q2 2026",
+      "source_en": "halfwheel",
+      "source_title_en": "STG Slightly Down in Q2 2026",
+      "url": "https://halfwheel.com/stg-slightly-down-in-q2-2026/477956/"
+    },
+    {
+      "date": "2026-08-26",
+      "category": "新製品",
+      "title_ja": "タトゥアジェ新作、来週出荷開始",
+      "summary_ja": "タトゥアジェ（Tatuaje）が新作「オールド・マン・アンド・ザ・Cモンスター（Old Man and the C Monster）」を来週出荷すると発表した。フルサイズの「クリーチャー（Creature）」発売から数カ月後の投入で、各コフィンにはクレブラとロンズデールが1本ずつ収められる。",
+      "title_en": "Tatuaje's Old Man And The C Monster Shipping Next Week",
+      "summary_en": "Tatuaje will ship its new Old Man and the C Monster next week, just months after releasing the full-size Creature. Each coffin includes a culebra and a lonsdale, offering another variation on the company's Creature line.",
+      "source": "halfwheel",
+      "source_title": "Tatuaje’s Old Man And The C Monster Shipping Next Week",
+      "source_en": "halfwheel",
+      "source_title_en": "Tatuaje's Old Man And The C Monster Shipping Next Week",
+      "url": "https://halfwheel.com/tatuajes-old-man-and-the-c-monster-shipping-next-week/477893/"
+    },
+    {
+      "date": "2026-08-26",
+      "category": "規制・市場",
+      "title_ja": "FDA、一部シガーのPMTA施行延期へ",
+      "summary_ja": "FDAが一部の葉巻に対するPMTA（市販前タバコ製品申請）の施行を延期する計画であると報じられた。ベイプ製品には適用されない。",
+      "title_en": "FDA Plans to Delay PMTA Enforcement for Some Cigars",
+      "summary_en": "The FDA reportedly plans to delay enforcement of the Premarket Tobacco Product Application (PMTA) requirement for some cigars. The delay does not apply to vaping products.",
+      "source": "Vaping360",
+      "source_title": "FDAは一部のシガーに対するPMTAの施行を延期する計画; ベイプには適用されず - Vaping360",
+      "source_en": "Vaping360",
+      "source_title_en": "FDA Plans to Delay PMTA Enforcement for Some Cigars; Not Applied to Vapes",
+      "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPLTV5enZBbVVIQ3BXQnlrdVdQVC11cHBudmMzS1hpQVFWTGxMTlNFSGVXWmhvRi1Ja0xZNFZ5RlVfTFZHb3htaXplMGxOYVdTVURZTklxdFB0NG1FQjQ0aDRnbFFWX0gxM2kxeFpQNXBfTGExZlAzUGhKRWVYVVV6bi1jTlh4bnc3X05IeFFMMlloWXBrTTdIcHZ4aEREcGdnXzlBT1VvNjI5WmYy?oc=5"
+    },
     {
       "date": "2026-08-26",
       "category": "新製品",
@@ -47,6 +112,19 @@ var NEWS_DATA = {
       "source_en": "halfwheel",
       "source_title_en": "Emanuele Uccellini, Head of Davidoff of Geneva USA, Leaving in October",
       "url": "https://halfwheel.com/emanuele-uccellini-head-of-davidoff-of-geneva-usa-leaving-in-october/477839/"
+    },
+    {
+      "date": "2026-08-25",
+      "category": "日本国内",
+      "title_ja": "横浜みなとみらいでシガー×ウイスキー限定イベント",
+      "summary_ja": "横浜みなとみらいで、海外のシガーブランドオーナーが来日し、プレミアムシガーとシングルモルトウイスキーのマリアージュを楽しむ限定イベントが初開催される。",
+      "title_en": "Cigar × Whisky Limited Event to Debut in Yokohama Minato Mirai",
+      "summary_en": "A limited event pairing premium cigars with single malt whisky will be held for the first time in Yokohama's Minato Mirai district. An overseas cigar brand owner will visit Japan for the occasion, offering guests a chance to explore the marriage of premium cigars and single malt whisky.",
+      "source": "Excite エキサイト",
+      "source_title": "みなとみらいで知るシガーとウイスキーの奥深き世界。海外よりシガーブランドオーナー来日、プレミアムシガーとシングルモルトのマリアージュを嗜む限定イベントを初開催！ - Excite エキサイト",
+      "source_en": "Excite",
+      "source_title_en": "Discover the Deep World of Cigars and Whisky in Minato Mirai: First Limited Event Pairing Premium Cigars and Single Malt with a Visiting Overseas Brand Owner",
+      "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE5sbWk4djN5Tm1taVA2ZDBqNG53eWV5aE1EbG5Wb19SbVhpOHhxb2J0RHRlWk5iT3ZhN2JaX3Y4UlRUTzI5WU9QTTNLLW9ZOWk2ekhVRlhqQXRSQTc2ZnU3NnpOTUo1d2ZtNElXRmIzd0pnRXhN?oc=5"
     },
     {
       "date": "2026-08-25",
