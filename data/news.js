@@ -7,8 +7,86 @@
    手で足すこともできますが、items の並び・キーは崩さないでください。
    ============================================================ */
 var NEWS_DATA = {
-  "updated": "2026-08-27",
+  "updated": "2026-08-28",
   "items": [
+    {
+      "date": "2026-08-28",
+      "category": "新製品",
+      "title_ja": "エスコバー、「ナスティ・エスコ」を出荷開始",
+      "summary_ja": "エスコバー・シガーズ（Escobar Cigars）は今夏にソフトローンチした新ライン「ナスティ・エスコ（Nasty Esco）」を、全米の小売店向けに出荷を開始したと発表した。",
+      "title_en": "Escobar Cigars Ships Nasty Esco",
+      "summary_en": "Escobar Cigars has begun shipping its new Nasty Esco line to retailers across the United States, following a soft launch earlier this summer. The line is now available nationwide through the company's retail accounts.",
+      "source": "halfwheel",
+      "source_title": "Escobar Cigars Ships Nasty Esco",
+      "source_en": "halfwheel",
+      "source_title_en": "Escobar Cigars Ships Nasty Esco",
+      "url": "https://halfwheel.com/escobar-cigars-ships-nasty-esco/478048/"
+    },
+    {
+      "date": "2026-08-28",
+      "category": "新製品",
+      "title_ja": "インディペンデンスから新2銘柄、9月1日出荷",
+      "summary_ja": "ユナイテッド（United）は、インディペンデンス（Independence）のロブストとトロを9月1日に出荷すると発表した。同社は今夏、既にインディペンデンス・ファイアクラッカーをリリースしている。",
+      "title_en": "Two New Independence Cigars Shipping Next Week",
+      "summary_en": "The Independence Robusto and Toro are slated to ship to stores on Tuesday, 1 September, United has announced. The releases follow the Independence Firecracker, which the company released earlier this summer.",
+      "source": "halfwheel",
+      "source_title": "Two New Independence Cigars Shipping Next Week",
+      "source_en": "halfwheel",
+      "source_title_en": "Two New Independence Cigars Shipping Next Week",
+      "url": "https://halfwheel.com/two-new-independence-cigars-shipping-next-week/478035/"
+    },
+    {
+      "date": "2026-08-28",
+      "category": "新製品",
+      "title_ja": "オハナ、米建国250年記念でトースト・マシュマロ再登場",
+      "summary_ja": "オハナ・シガーズ（Ohana Cigars）は、アメリカ建国250周年を記念し、人気ブレンド「トースト・マシュマロ（Toasted Marshmallows）」の次回分を発売すると発表した。今回のリリースには新たな2026年スーパー・エクスクルーシブが含まれる。",
+      "title_en": "Ohana Cigars Celebrates America's 250th With New Toasted Marshmallow Cigars",
+      "summary_en": "Ohana Cigars has announced a new batch of its well-received Toasted Marshmallows blend to mark America's 250th anniversary. This year's release includes a new 2026 Super Exclusive, with the brand expecting the same strong reception as previous editions.",
+      "source": "StogiePress",
+      "source_title": "Cigar News: Ohana Cigars Celebrates America’s 250th With New Toasted Marshmallow Cigars",
+      "source_en": "StogiePress",
+      "source_title_en": "Cigar News: Ohana Cigars Celebrates America's 250th With New Toasted Marshmallow Cigars",
+      "url": "https://stogiepress.com/cigar-news-ohana-cigars-celebrates-americas-250th-with-new-toasted-marshmallow-cigars/"
+    },
+    {
+      "date": "2026-08-28",
+      "category": "新製品",
+      "title_ja": "カサ・カリージョ、「ダーク・リチュアルズ」を新ブレンドで再登場",
+      "summary_ja": "カサ・カリージョ（Casa Carrillo）は、限定品として「ダーク・リチュアルズ（Dark Rituals）」を2026年向けに全く新しいブレンドで復活させると発表した。ダークなペンシルベニア・ブロードリーフ・マドゥーロのラッパーに、コネチカット・バインダーとドミニカ産ロングフィラーを組み合わせたミディアムボディの一本。",
+      "title_en": "Casa Carrillo Brings Dark Rituals Back as an Exclusive",
+      "summary_en": "Casa Carrillo has announced the return of Dark Rituals, reimagined for 2026 with an entirely new blend. It features a dark Pennsylvania Broadleaf Maduro wrapper chosen for its depth and richness, paired with a Connecticut binder and premium Dominican long fillers to create a medium-bodied cigar offered as an exclusive.",
+      "source": "StogiePress",
+      "source_title": "Cigar News: Casa Carrillo Brings Dark Rituals Back as an Exclusive",
+      "source_en": "StogiePress",
+      "source_title_en": "Cigar News: Casa Carrillo Brings Dark Rituals Back as an Exclusive",
+      "url": "https://stogiepress.com/cigar-news-casa-carrillo-brings-dark-rituals-back-as-an-exclusive/"
+    },
+    {
+      "date": "2026-08-28",
+      "category": "新製品",
+      "title_ja": "アポステイト、「デス・マスク」を10月1日出荷開始",
+      "summary_ja": "アポステイト・シガーズ（Apostate Cigars）は、ニカラグア・エステリのタバカレラ・オベハ・ネグラのマスターブレンダー、ジェームズ・ブラウンとの限定コラボ「デス・マスク（Death Mask）」が、出荷前に全生産分250箱を完売したと発表した。PCA2026で確保した小売店などに10月1日から出荷を開始する。",
+      "title_en": "Apostate Cigars Teams Up With Tabacalera Oveja Negra for Death Mask",
+      "summary_en": "Apostate Cigars has confirmed that Death Mask, its strictly limited collaboration with master blender James Brown at Tabacalera Oveja Negra in Estelí, Nicaragua, has sold through its full run of 250 boxes ahead of shipping. Retailers who secured allocation at PCA 2026 in New Orleans, along with existing Apostate core-line accounts, will begin receiving the cigars from 1 October.",
+      "source": "StogiePress",
+      "source_title": "Cigar News: Apostate Cigars Teams Up With Tabacalera Oveja Negra For Death Mask – Cigars Begin Shipping to Retailers October 1st",
+      "source_en": "StogiePress",
+      "source_title_en": "Cigar News: Apostate Cigars Teams Up With Tabacalera Oveja Negra For Death Mask – Cigars Begin Shipping to Retailers October 1st",
+      "url": "https://stogiepress.com/cigar-news-apostate-cigars-teams-up-with-tabacalera-oveja-negra-for-death-mask-cigars-begin-shipping-to-retailers-october-1st/"
+    },
+    {
+      "date": "2026-08-27",
+      "category": "新製品",
+      "title_ja": "CAOブラジリア新作「マラカナ・ロブスト・エクストラ」",
+      "summary_ja": "ティム・オズゲナー（Tim Ozgener）への要望に応え誕生した新しいCAOブラジリア。マイ・ファーザー（My Father）製の葉巻でブラジル産タバコを使った初の一本となる「マラカナ・ロブスト・エクストラ（Maracana Robusto Extra）」。",
+      "title_en": "Maracana Robusto Extra",
+      "summary_en": "Responding to calls for a new CAO Brazilia, Tim Ozgener has delivered the Maracana Robusto Extra. It also marks the first time a My Father-made cigar has featured Brazilian tobacco.",
+      "source": "halfwheel",
+      "source_title": "Maracana Robusto Extra",
+      "source_en": "halfwheel",
+      "source_title_en": "Maracana Robusto Extra",
+      "url": "https://halfwheel.com/maracana-robusto-extra/477883/"
+    },
     {
       "date": "2026-08-27",
       "category": "業界・企業",
@@ -1934,39 +2012,6 @@ var NEWS_DATA = {
       "url": "https://www.cigarjournal.com/puro-sabor-2026-day-6-a-unifying-force/",
       "title_en": "Nicaragua's Puro Sabor 2026 Cigar Festival Takes Place",
       "summary_en": "The 13th Puro Sabor festival, organised by the Nicaraguan Chamber of Tobacco, was held from 18 to 24 January 2026. Centred on Estelí, the heartland of premium cigars, the programme included visits to factories such as Scandinavian Tobacco Group and Joya de Nicaragua, farm tours, cultural experiences in Granada and elsewhere, and a gala dinner."
-    },
-    {
-      "date": "2026-01",
-      "category": "規制・市場",
-      "title_ja": "キューバ産葉巻、2026年は控えめな値上げ　スペイン価格表で平均3.83%増",
-      "summary_ja": "スペインの2026年新価格表では、約350SKUのキューバ産葉巻が平均3.83%の値上げとなり、近年の大幅値上げから一転して穏やかな改定となった。多くのブランドは3〜5%の上昇にとどまる一方、LGCは約17%上昇するなど例外もある。コイーバは1本100ユーロ以上の銘柄が19本に達し、最高値のコイーバ・イデアレスは1本550ユーロとなった。",
-      "source": "halfwheel.com",
-      "source_title": "Cuban Cigars Get Modest Price Increases for 2026",
-      "url": "https://halfwheel.com/cuban-cigars-get-modest-price-increases-for-2026/460235/",
-      "title_en": "Cuban Cigars Receive Modest Price Increases for 2026",
-      "summary_en": "Spain's new 2026 price list shows an average rise of 3.83% across roughly 350 SKUs of Cuban cigars, a mild revision after the steep increases of recent years. Most brands rise by only 3-5%, though there are exceptions, with LGC up about 17%. Cohiba now has 19 cigars priced at €100 or more apiece, and the most expensive, the Cohiba Ideales, stands at €550 per cigar."
-    },
-    {
-      "date": "2026-01",
-      "category": "規制・市場",
-      "title_ja": "EUたばこ税制指令の改正案、葉巻の最低税率引き上げを協議",
-      "summary_ja": "欧州委員会が提案したたばこ税制指令（Tobacco Taxation Directive）の改正案では、シガーとシガリロに1kgあたり90ユーロ以上または小売価格の5%以上の最低物品税を課すことが盛り込まれ、EU理事会で協議が続いている。葉巻類には新税率到達まで4年間の移行期間が認められる。改正案は電子たばこや加熱式たばこ、ニコチンパウチにも課税対象を拡大する内容となっている。",
-      "source": "taxation-customs.ec.europa.eu",
-      "source_title": "Revision of the Tobacco Taxation Directive (proposal)",
-      "url": "https://taxation-customs.ec.europa.eu/taxation/excise-duties/excise-duties-tobacco/revision-tobacco-taxation-directive-proposal_en",
-      "title_en": "EU Debates Higher Minimum Cigar Taxes Under Revised Directive",
-      "summary_en": "The European Commission's proposed revision of the Tobacco Taxation Directive would impose a minimum excise duty on cigars and cigarillos of at least €90 per kilogram or 5% of the retail price, and discussions are continuing in the Council of the EU. Cigars would be granted a four-year transition period before the new rates are reached. The proposal also extends taxation to e-cigarettes, heated tobacco products and nicotine pouches."
-    },
-    {
-      "date": "2025-12",
-      "category": "イベント・アワード",
-      "title_ja": "Cigar Aficionado誌の2025年シガー・オブ・ザ・イヤーにパドロン60周年ペルフェクト",
-      "summary_ja": "Cigar Aficionado誌の「Top 25 Cigars of 2025」で、Padrón 60th Anniversary Perfectoが97点で第1位に選出された。ニカラグア産の熟成タバコのみで作られ、同ブランドが商業リリースした史上2本目のペルフェクト形状という。ダークココアやエスプレッソから始まる深い複雑さが評価された。",
-      "source": "cigaraficionado.com",
-      "source_title": "The Best Cigars of 2025 | Cigar Aficionado",
-      "url": "https://www.cigaraficionado.com/article/the-best-cigars-of-2025",
-      "title_en": "Padrón 60th Anniversary Perfecto Named Cigar Aficionado's 2025 Cigar of the Year",
-      "summary_en": "In Cigar Aficionado's Top 25 Cigars of 2025, the Padrón 60th Anniversary Perfecto was ranked first with a score of 97 points. Made solely from aged Nicaraguan tobacco, it is said to be only the second perfecto shape the brand has ever released commercially. It was praised for its deep complexity, opening with notes of dark cocoa and espresso."
     }
   ]
 };
