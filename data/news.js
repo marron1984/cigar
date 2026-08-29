@@ -7,8 +7,47 @@
    手で足すこともできますが、items の並び・キーは崩さないでください。
    ============================================================ */
 var NEWS_DATA = {
-  "updated": "2026-08-28",
+  "updated": "2026-08-29",
   "items": [
+    {
+      "date": "2026-08-29",
+      "category": "規制・市場",
+      "title_ja": "第9巡回区、加州UTL訴訟で葉巻業界の控訴棄却",
+      "summary_ja": "米連邦第9巡回区控訴裁判所は、カリフォルニア州の未燃焼タバコ（UTL）規制をめぐる訴訟で、葉巻業界側の控訴を退けた。4月に業界とカリフォルニア州司法長官事務所が3人の裁判官による審理で主張を交わし、審理後には楽観論もあったものの、業界側は仮差止命令の獲得に至らなかった。",
+      "title_en": "Ninth Circuit Denies Cigar Companies' Appeal in California UTL Lawsuit",
+      "summary_en": "The US Court of Appeals for the Ninth Circuit has denied the cigar industry's appeal in litigation over California's unburned-tobacco-listing (UTL) rules. In April, the industry and the California attorney general's office presented arguments before a three-judge federal appeals panel. Despite some optimism following the hearing, the industry failed in its bid to secure a preliminary injunction. The decision marks a setback for cigar companies challenging the state's regulatory approach.",
+      "source": "halfwheel",
+      "source_title": "Ninth Circuit Denies Cigar Companies Appeal in California UTL Lawsuit",
+      "source_en": "halfwheel",
+      "source_title_en": "Ninth Circuit Denies Cigar Companies' Appeal in California UTL Lawsuit",
+      "url": "https://halfwheel.com/ninth-circuit-denies-cigar-companies-appeal-in-california-utl-lawsuit/478107/"
+    },
+    {
+      "date": "2026-08-29",
+      "category": "新製品",
+      "title_ja": "ポウスタニエ、限定「SBC 26」出荷開始",
+      "summary_ja": "ポウスタニエ（Powstanie Cigars）は、限定品「SBC 26」の正規小売店向け出荷を開始したと発表した。同社スモール・バッチ・コレクションの最新作で、ブラザー・グレッグの情熱作と位置づけられる。エクアドル、メキシコ、ブラジル、ドミニカ共和国、ニカラグア産のタバコを組み合わせた複雑なブレンドが特徴。",
+      "title_en": "Powstanie Cigars Begins Shipping the Limited-Edition SBC 26",
+      "summary_en": "Powstanie Cigars has announced that the limited-edition SBC 26 is now shipping to authorised retailers. The latest release in Powstanie's Small Batch Collection, it is described as Brother Gregg's passion project—a carefully developed cigar featuring an intricate blend of tobaccos sourced from Ecuador, Mexico, Brazil, the Dominican Republic and Nicaragua. The first SBC was released in 2016, with each edition dedicated to those who have supported the Szczepankewicz brothers in their cigar-industry journey.",
+      "source": "StogiePress",
+      "source_title": "Cigar News: Powstanie Cigars Begins Shipping the Limited-Edition SBC 26",
+      "source_en": "StogiePress",
+      "source_title_en": "Cigar News: Powstanie Cigars Begins Shipping the Limited-Edition SBC 26",
+      "url": "https://stogiepress.com/cigar-news-powstanie-cigars-begins-shipping-the-limited-edition-sbc-26/"
+    },
+    {
+      "date": "2026-08-29",
+      "category": "新製品",
+      "title_ja": "ボコック・ブラザーズ、テキサス工科大の第2弾葉巻",
+      "summary_ja": "ボコック・ブラザーズ（Bocock Brothers）は、大学提携シリーズのテキサス工科大学（Texas Tech）向け第2弾となる葉巻を発売した。第1弾はハバノ・ラッパーを使用していたが、第2弾はホンジュラス産マデュロ・ラッパーを採用する。",
+      "title_en": "Texas Tech Gets Second Bocock Brothers Cigar",
+      "summary_en": "Bocock Brothers has released its second cigar for Texas Tech, part of its collegiate cigar partnership programme announced earlier this year. While the first Texas Tech cigar used a habano wrapper, the second edition features a Honduran maduro wrapper. The release continues Bocock Brothers' expansion of its line-up of university-branded cigars.",
+      "source": "halfwheel",
+      "source_title": "Texas Tech Gets Second Bocock Brothers Cigar",
+      "source_en": "halfwheel",
+      "source_title_en": "Texas Tech Gets Second Bocock Brothers Cigar",
+      "url": "https://halfwheel.com/texas-tech-gets-second-bocock-brothers-cigar/478078/"
+    },
     {
       "date": "2026-08-28",
       "category": "新製品",
@@ -128,6 +167,19 @@ var NEWS_DATA = {
     },
     {
       "date": "2026-08-26",
+      "category": "日本国内",
+      "title_ja": "みなとみらいでシガー×ウイスキーの限定イベント",
+      "summary_ja": "横浜みなとみらいで、海外シガーブランドのオーナーが来日し、プレミアムシガーとシングルモルトウイスキーのマリアージュを楽しむ限定イベントが初開催される。",
+      "title_en": "Limited Cigar-and-Whisky Event in Yokohama Minato Mirai",
+      "summary_en": "A limited-edition event pairing premium cigars with single malt whisky will be held for the first time in Yokohama's Minato Mirai district. An overseas cigar brand owner will visit Japan for the occasion, offering guests the chance to explore the marriage of premium cigars and single malt whisky.",
+      "source": "Koubo",
+      "source_title": "シガーとウイスキーのマリアージュ、海外ブランドオーナーが来日する限定イベント - Koubo",
+      "source_en": "Koubo",
+      "source_title_en": "Cigar and Whisky Marriage: Limited Event with Visiting Overseas Brand Owner",
+      "url": "https://news.google.com/rss/articles/CBMiRkFVX3lxTE1vbXdMRGgzMk9OYWREa0UwV1VEWXkyTGZXbm91MTFnckZGNkk4SEFWMlJmM2w1U216SkhzX0w4WGRZY2FuZ2c?oc=5"
+    },
+    {
+      "date": "2026-08-26",
       "category": "新製品",
       "title_ja": "タトゥアジェ新作、来週出荷開始",
       "summary_ja": "タトゥアジェ（Tatuaje）が新作「オールド・マン・アンド・ザ・Cモンスター（Old Man and the C Monster）」を来週出荷すると発表した。フルサイズの「クリーチャー（Creature）」発売から数カ月後の投入で、各コフィンにはクレブラとロンズデールが1本ずつ収められる。",
@@ -190,6 +242,32 @@ var NEWS_DATA = {
       "source_en": "halfwheel",
       "source_title_en": "Emanuele Uccellini, Head of Davidoff of Geneva USA, Leaving in October",
       "url": "https://halfwheel.com/emanuele-uccellini-head-of-davidoff-of-geneva-usa-leaving-in-october/477839/"
+    },
+    {
+      "date": "2026-08-25",
+      "category": "新製品",
+      "title_ja": "アンダークラウン、6×60の新ゴルド追加",
+      "summary_ja": "ドリュー・エステート（Drew Estate）のアンダークラウン（Undercrown）は、新サイズ「アンダークラウン10 ゴルド」を発表した。6×60のビトラで、大きなリングゲージを好む愛好家の要望に応える。アンダークラウン10の体験に一層の豊かさと奥行きを加えるという。",
+      "title_en": "Undercrown by Drew Estate Introduces a New 6 x 60 Gordo",
+      "summary_en": "Undercrown by Drew Estate has announced the Undercrown 10 Gordo, a new 6 x 60 vitola. The size adds a further layer of richness and depth to the Undercrown 10 experience and answers demand from cigar lovers who prefer big ring-gauge cigars. Undercrown was born of the unknown heroes on the brand's factory floor.",
+      "source": "StogiePress",
+      "source_title": "Cigar News: Undercrown by Drew Estate introduces a new 6 x 60 Gordo",
+      "source_en": "StogiePress",
+      "source_title_en": "Cigar News: Undercrown by Drew Estate Introduces a New 6 x 60 Gordo",
+      "url": "https://stogiepress.com/cigar-news-undercrown-by-drew-estate-introduces-a-new-6-x-60-gordo/"
+    },
+    {
+      "date": "2026-08-25",
+      "category": "新製品",
+      "title_ja": "タチアナ、カプチーノとアマレットに新形態",
+      "summary_ja": "タチアナ・シガーズ（Tatiana Cigars）は、人気のアロマティック銘柄「カプチーノ」「アマレット」の新サイズ6×44クラシックと10本入り缶を、マイアミ・シガー社（Miami Cigar & Co.）を通じて全米の小売店へ出荷開始した。2026年のPCAトレードショー（ニューオーリンズ）で初披露された。",
+      "title_en": "Tatiana Cappuccino and Amaretto Now Shipping in Classic and Tin Formats",
+      "summary_en": "Tatiana Cigars has announced that a new 6 x 44 Classic size and 10-count tins of two of its most recognisable aromatic profiles, Cappuccino and Amaretto, are now shipping to retailers nationwide through Miami Cigar & Co. First showcased at the 2026 Premium Cigar Association (PCA) Trade Show in New Orleans, the new formats expand the Tatiana portfolio and give consumers additional ways to enjoy the two blends.",
+      "source": "StogiePress",
+      "source_title": "Cigar News: Tatiana Cappuccino and Amaretto in Classic and Tin formats are now shipping to retailers nationwide through Miami Cigar & Co.",
+      "source_en": "StogiePress",
+      "source_title_en": "Cigar News: Tatiana Cappuccino and Amaretto in Classic and Tin Formats Now Shipping Nationwide via Miami Cigar & Co.",
+      "url": "https://stogiepress.com/cigar-news-tatiana-cappuccino-and-amaretto-in-classic-and-tin-formats-are-now-shipping-to-retailers-nationwide-through-miami-cigar-co/"
     },
     {
       "date": "2026-08-25",
@@ -1944,74 +2022,6 @@ var NEWS_DATA = {
       "url": "https://www.habanos.com/en/news/habano-festival-posponed/",
       "title_en": "Habanos S.A. Officially Announces Festival del Habano Postponement",
       "summary_en": "Habanos S.A. has announced the postponement of the Festival del Habano on its official website. The organising committee said the decision was taken 'to protect the highest standards of quality, excellence and experience that characterise this international event', explaining that the aim is to secure conditions in which all activities and presentations can be carried out in full. New dates are said to be under arrangement."
-    },
-    {
-      "date": "2026-02",
-      "category": "規制・市場",
-      "title_ja": "トランプ政権の新関税、15%発表から一転10%で発効　葉巻輸入に影響",
-      "summary_ja": "トランプ大統領は1974年通商法122条に基づく一律関税を表明し、当初15%とSNSで発表したが、実際には基本税率10%で発効した。ドミニカ共和国とホンジュラス産の葉巻は10%のままとなり、ニカラグアは18%から10%に低下。この3カ国は米国のプレミアム葉巻輸入の99%を占めるため、業界は価格改定や供給網の見直しを迫られている。",
-      "source": "halfwheel.com",
-      "source_title": "New Tariffs Go Into Effect at 10 Percent, Not 15 Percent",
-      "url": "https://halfwheel.com/new-tariffs-go-into-effect-at-10-percent-not-15-percent/462997/",
-      "title_en": "New Trump Tariffs Take Effect at 10%, Not the Announced 15%",
-      "summary_en": "President Trump announced across-the-board tariffs under Section 122 of the Trade Act of 1974, initially declaring 15% on social media, but they took effect at a base rate of 10%. Cigars from the Dominican Republic and Honduras remain at 10%, while Nicaragua's rate fell from 18% to 10%. As these three countries account for 99% of US premium cigar imports, the industry faces pressure to revise prices and rethink supply chains."
-    },
-    {
-      "date": "2026-02",
-      "category": "日本国内",
-      "title_ja": "米国シガー「スウィッシャースイート」フォイルパウチに新フレーバー2種が全国発売",
-      "summary_ja": "インターコンチネンタル商事が輸入するアメリカ定番シガー「スウィッシャースイート」のフォイルパウチから、新フレーバー「グリーン」と「ハニーバナナ」の2銘柄が2月2日より全国発売された。すっきりした甘さのグリーンと、ハニー＆バナナの甘い香りのハニーバナナで、2本入り290円と気軽に試せる価格設定となっている。",
-      "source": "マイナビニュース",
-      "source_title": "気軽に試せる2本290円。アメリカ定番シガー「スウィッシャースイート」に2つの新フレーバー",
-      "source_en": "Mynavi News",
-      "source_title_en": "Two for 290 yen and easy to try: two new flavours for Swisher Sweets, the American cigar staple",
-      "url": "https://news.mynavi.jp/article/20260204-4074054/",
-      "title_en": "Swisher Sweets Foil Pouches Add Two New Flavours Nationwide in Japan",
-      "summary_en": "Two new flavours, Green and Honey Banana, went on sale nationwide from 2 February in the foil-pouch range of Swisher Sweets, the classic American cigar imported by Intercontinental Shoji. Green offers a clean sweetness, while Honey Banana carries the sweet aroma of honey and banana; at 290 yen for a pack of two, they are priced for easy trial."
-    },
-    {
-      "date": "2026-01-07",
-      "category": "業界・企業",
-      "title_ja": "Habanos S.A.共同オーナーのチェン・ジー、カンボジアで逮捕され中国へ送還",
-      "summary_ja": "Habanos S.A.のキューバ政府以外で最大の株主（シェルカンパニー経由で28.55%を保有）とされるチェン・ジー（陳志）が、カンボジア当局に逮捕され2026年1月7日に中国へ引き渡された。同氏は2025年10月に米司法当局から「豚の屠殺（ピッグ・ブッチャリング）」詐欺の首謀者として起訴されており、カンボジア政府は同氏の市民権も剥奪した。キューバ葉巻の販売網を揺るがす前代未聞の事態となっている。",
-      "source": "halfwheel",
-      "source_title": "Chen Zhi, Habanos S.A. Co-Owner, Arrested & Deported to China",
-      "url": "https://halfwheel.com/chen-zhi-habanos-s-a-co-owner-arrested-deported-to-china/459784/",
-      "title_en": "Chen Zhi, Habanos S.A. Co-Owner, Arrested and Deported to China",
-      "summary_en": "Chen Zhi, said to be the largest shareholder in Habanos S.A. outside the Cuban government, holding 28.55% through shell companies, was arrested by Cambodian authorities and handed over to China on 7 January 2026. He had been indicted by US justice authorities in October 2025 as the alleged mastermind of a 'pig butchering' fraud scheme, and the Cambodian government has also stripped him of his citizenship. The unprecedented affair has shaken the sales network for Cuban cigars."
-    },
-    {
-      "date": "2026-01",
-      "category": "新製品",
-      "title_ja": "ダビドフ、2026年は11種の「エクスクルーシブ・エディション」を発売",
-      "summary_ja": "ダビドフが小売パートナーと各国市場に捧げる限定シリーズ「Exclusive Editions 2026」として11種の限定シガーを発表した。今年はベリコソ、ペルフェクト、グラン・トロの3フォーマットで、エクアドル、ドミニカ共和国、ニカラグア、米国産の熟成葉をブレンドしている。2026年1月29日から世界の選ばれたダビドフ小売店で限定数量で販売される。",
-      "source": "halfwheel",
-      "source_title": "Davidoff Releasing 11 Exclusive Editions for 2026",
-      "url": "https://halfwheel.com/davidoff-releasing-11-exclusive-editions-for-2026/460494/",
-      "title_en": "Davidoff Releasing 11 Exclusive Editions for 2026",
-      "summary_en": "Davidoff has announced 11 limited-edition cigars under its Exclusive Editions 2026 series, a limited range dedicated to retail partners and individual national markets. This year's releases come in three formats — Belicoso, Perfecto and Gran Toro — blending aged tobaccos from Ecuador, the Dominican Republic, Nicaragua and the United States. The cigars will go on sale in limited quantities at selected Davidoff retailers around the world from 29 January 2026."
-    },
-    {
-      "date": "2026-01",
-      "category": "イベント・アワード",
-      "title_ja": "halfwheelの「The Consensus 2025」はMy Father Blue - Hondurasが1位",
-      "summary_ja": "halfwheelが50の媒体・ブログ・YouTuberのトップ10/トップ25リストを集計する「The Consensus 2025」を発表し、My Father Blue - Hondurasが1位となった。同シガーは集計対象リストの約3分の1に登場した。なお同サイトの読者投票「Readers' Choice Awards 2025」ではSobremesa Solita Redが選ばれている。",
-      "source": "halfwheel.com",
-      "source_title": "The Consensus 2025 | halfwheel",
-      "url": "https://halfwheel.com/the-consensus-2025/460719/",
-      "title_en": "My Father Blue - Honduras Tops halfwheel's The Consensus 2025",
-      "summary_en": "halfwheel has published The Consensus 2025, which aggregates the top 10 and top 25 lists of 50 publications, blogs and YouTubers, with My Father Blue - Honduras taking first place. The cigar appeared on roughly a third of the lists surveyed. Separately, the Sobremesa Solita Red was chosen in the site's Readers' Choice Awards 2025."
-    },
-    {
-      "date": "2026-01",
-      "category": "イベント・アワード",
-      "title_ja": "ニカラグアのシガーフェスティバル「Puro Sabor 2026」開催",
-      "summary_ja": "ニカラグア煙草会議所主催の第13回Puro Saborフェスティバルが2026年1月18日から24日にかけて開催された。プレミアムシガーの中心地エステリを軸に、Scandinavian Tobacco GroupやJoya de Nicaraguaなどの工場見学、農園ツアー、グラナダなどでの文化体験、ガラディナーが行われた。",
-      "source": "cigarjournal.com",
-      "source_title": "Puro Sabor 2026 Day 6: A Unifying Force | Cigar Journal",
-      "url": "https://www.cigarjournal.com/puro-sabor-2026-day-6-a-unifying-force/",
-      "title_en": "Nicaragua's Puro Sabor 2026 Cigar Festival Takes Place",
-      "summary_en": "The 13th Puro Sabor festival, organised by the Nicaraguan Chamber of Tobacco, was held from 18 to 24 January 2026. Centred on Estelí, the heartland of premium cigars, the programme included visits to factories such as Scandinavian Tobacco Group and Joya de Nicaragua, farm tours, cultural experiences in Granada and elsewhere, and a gala dinner."
     }
   ]
 };
