@@ -7,8 +7,60 @@
    手で足すこともできますが、items の並び・キーは崩さないでください。
    ============================================================ */
 var NEWS_DATA = {
-  "updated": "2026-08-29",
+  "updated": "2026-08-30",
   "items": [
+    {
+      "date": "2026-08-30",
+      "category": "新製品",
+      "title_ja": "イースタン・スタンダード限定版、通販専売で復活",
+      "summary_ja": "ラウディシ傘下のコールドウェル（Caldwell）が「イースタン・スタンダード」のランセロを限定生産で再発売した。今回はsmokingpipes.comのみの専売品として展開される。",
+      "title_en": "Eastern Standard Silk Road Returns as Smokingpipes Exclusive",
+      "summary_en": "Laudisi is keeping it in the family. Caldwell's Eastern Standard Lancero returns for a limited run, offered exclusively at smokingpipes.com. The limited release marks the comeback of the line under the Laudisi umbrella.",
+      "source": "halfwheel",
+      "source_title": "Eastern Standard Silk Road Returns as Smokingpipes Exclusive",
+      "source_en": "halfwheel",
+      "source_title_en": "Eastern Standard Silk Road Returns as Smokingpipes Exclusive",
+      "url": "https://halfwheel.com/eastern-standard-silk-road-returns-as-smokingpipes-exclusive/478135/"
+    },
+    {
+      "date": "2026-08-30",
+      "category": "新製品",
+      "title_ja": "ヴィアヘ、新ライン「ハニー・ベイル」6月登場",
+      "summary_ja": "ヴィアヘ（Viaje）が新ライン「ハニー・ベイル（Honey Bale）」を6月に発表した。高品質な特徴を持つタバコの梱（ベイル）にちなんで命名された。",
+      "title_en": "Viaje Honey Bale",
+      "summary_en": "Honey Bale is a new line from Viaje, debuting in June. It is named for bales of tobacco that produce high-quality characteristics that set them apart from the others.",
+      "source": "halfwheel",
+      "source_title": "Viaje Honey Bale",
+      "source_en": "halfwheel",
+      "source_title_en": "Viaje Honey Bale",
+      "url": "https://halfwheel.com/viaje-honey-bale/478042/"
+    },
+    {
+      "date": "2026-08-29",
+      "category": "新製品",
+      "title_ja": "ポフスタニエ「SBC 26」が出荷開始",
+      "summary_ja": "ポフスタニエ（Powstanie）の「SBC 26」が出荷された。SBCは2016年に初リリースされ、シチェパンキェヴィチ兄弟の葉巻業界での歩みを支えてきた人々に捧げられるシリーズ。",
+      "title_en": "Powstanie SBC 26 Ships",
+      "summary_en": "Powstanie's SBC 26 has shipped. First released in 2016, each SBC edition is dedicated to those who have helped the Szczepankewicz brothers on their journey in the cigar industry.",
+      "source": "halfwheel",
+      "source_title": "Powstanie SBC 26 Ships",
+      "source_en": "halfwheel",
+      "source_title_en": "Powstanie SBC 26 Ships",
+      "url": "https://halfwheel.com/powstanie-sbc-26-ships/478138/"
+    },
+    {
+      "date": "2026-08-29",
+      "category": "イベント・アワード",
+      "title_ja": "シガー喫煙世界選手権、ドゥブロヴニクで決勝へ",
+      "summary_ja": "シガー喫煙世界選手権（CSWC）の予選シーズンが終了し、ドゥブロヴニクでの決勝が迫った。3度王者のハウケ・ヴァルター、米国のドリュー・エムチ、英国のエタン・パテルらが有力候補に挙げられている。",
+      "title_en": "Galevskii Favorite To Win the CSWC",
+      "summary_en": "The CSWC qualifying season has ended and the grand finale in Dubrovnik is near. Front-runners include three-time champion Hauke Walter, who finished third last year and won the German qualifier, along with Drew Emch of the US, Etan Patel of the UK and a strong Polish contingent. Numerous other competitors are also tipped to challenge for the title.",
+      "source": "Cigar Journal",
+      "source_title": "Galevskii Favorite To Win the CSWC",
+      "source_en": "Cigar Journal",
+      "source_title_en": "Galevskii Favorite To Win the CSWC",
+      "url": "https://www.cigarjournal.com/galevskii-favorite-to-win-the-cswc/?utm_source=rss&utm_medium=rss&utm_campaign=galevskii-favorite-to-win-the-cswc"
+    },
     {
       "date": "2026-08-29",
       "category": "規制・市場",
@@ -242,6 +294,32 @@ var NEWS_DATA = {
       "source_en": "halfwheel",
       "source_title_en": "Emanuele Uccellini, Head of Davidoff of Geneva USA, Leaving in October",
       "url": "https://halfwheel.com/emanuele-uccellini-head-of-davidoff-of-geneva-usa-leaving-in-october/477839/"
+    },
+    {
+      "date": "2026-08-25",
+      "category": "新製品",
+      "title_ja": "キャメルのスーパースリム・リトルシガー2銘柄発売",
+      "summary_ja": "見た目も価格も“スーパースリム”なキャメルのリトルシガー2銘柄が新発売された。",
+      "title_en": "Two New Camel Super-Slim Little Cigars Launched",
+      "summary_en": "Two new Camel little cigars have gone on sale, described as \"super-slim\" in both appearance and price.",
+      "source": "ウォーカープラス",
+      "source_title": "＜画像2 / 2＞見た目も価格も“スーパースリム”なキャメルのリトルシガー2銘柄が新発売 - ウォーカープラス",
+      "source_en": "Walkerplus",
+      "source_title_en": "Two 'Super-Slim' Camel Little Cigars Newly Released",
+      "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE1ZbUJ5b1prYW1laWlSb1NCbnA5R2c0Q05QeVZxUmpucmxMbzJsdk5xd2EwdEFpaEZrTVE5bFVaTjAzTms0cFZ0c0hsS25GbDlmT0ZwT2k1dU95WWNCeUZSTkNabkpmVEJYR3Zr?oc=5"
+    },
+    {
+      "date": "2026-08-25",
+      "category": "日本国内",
+      "title_ja": "横浜みなとみらいでシガー＆ウイスキー限定イベント",
+      "summary_ja": "横浜みなとみらいで、海外のシガーブランドオーナーが来日し、プレミアムシガーとシングルモルトのマリアージュを楽しむ限定イベントが初開催される。",
+      "title_en": "Cigar & Whisky Pairing Event Debuts in Yokohama Minato Mirai",
+      "summary_en": "A limited-run event is being held for the first time in Yokohama's Minato Mirai district, where an overseas cigar brand owner visits Japan to present pairings of premium cigars and single malt whisky.",
+      "source": "Excite エキサイト",
+      "source_title": "みなとみらいで知るシガーとウイスキーの奥深き世界。海外よりシガーブランドオーナー来日、プレミアムシガーとシングルモルトのマリアージュを嗜む限定イベントを初開催！ - Excite エキサイト",
+      "source_en": "Excite",
+      "source_title_en": "Discover the Deep World of Cigars and Whisky in Minato Mirai: First-Ever Limited Event with Visiting Overseas Cigar Brand Owner",
+      "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE5GR01FVDdQdlhWQ3JMWXlabzBULW93Yk9aOUlUN0dTZGM1QWZoLU10VnRTTnVDZ3hOQnc3NGZIblZhMkFtaHBvYTFJc3pwaThRdndTVExNbkRPVjYyX2VDSEhZbEN1Z2g5Y2ZodXcyZFV6Z3otWTZJZTJLaTdoSk0?oc=5"
     },
     {
       "date": "2026-08-25",
@@ -1954,74 +2032,6 @@ var NEWS_DATA = {
       "url": "https://uk.finance.yahoo.com/news/scandinavian-tobacco-group-reports-full-162800816.html",
       "title_en": "Scandinavian Tobacco Group Reports 2025 Results and 2026 Guidance",
       "summary_en": "STG's full-year 2025 net sales came to DKK 9.0 billion (roughly $1.4 billion), down 1.8% year on year, with organic growth of -3.1%. The company proposed a dividend of DKK 4.50 per share and, for 2026, expects net sales growth of -2% to 2% at constant currency and an EBIT margin before special items of 13.0-14.5%. As priorities for 2026, it cited stabilising earnings in the machine-rolled cigar and smoking tobacco businesses and returning the handmade cigar business to growth."
-    },
-    {
-      "date": "2026-03",
-      "category": "日本国内",
-      "title_ja": "たばこ税、2026年4月と10月に加熱式たばこを対象に引き上げへ",
-      "summary_ja": "たばこ税は2026年4月と10月に加熱式たばこを対象に引き上げられ、その後は加熱式・紙巻きともに1本あたり0.5円ずつ3回に分けて段階的に増税される予定。JTもこれを受け、4月1日からプルーム用たばこスティック「エボ」「メビウス」「キャメル」などを1箱あたり20〜30円値上げした。",
-      "source": "SOMPOインスティチュート・プラス",
-      "source_title": "たばこ税が2026年4月に引上げへ",
-      "source_en": "Sompo Institute Plus",
-      "source_title_en": "Tobacco duty to rise in April 2026",
-      "url": "https://www.sompo-ri.co.jp/topics_plus/20260303-22123/",
-      "title_en": "Japan's Tobacco Tax to Rise on Heated Products in April and October 2026",
-      "summary_en": "Japan's tobacco tax will be raised on heated tobacco products in April and October 2026, after which taxes on both heated tobacco and cigarettes are set to rise in three stages of 0.5 yen per stick. In response, JT raised prices of its Ploom tobacco sticks, including Evo, Mevius and Camel, by 20 to 30 yen per pack from 1 April."
-    },
-    {
-      "date": "2026-02",
-      "category": "新製品",
-      "title_ja": "ハバノスS.A.、中国旧正月記念の新ビトラ「トリニダッド・コルセル」を発表",
-      "summary_ja": "ハバノスS.A.が旧正月（午年）を記念したトリニダッド初のスペシャルリリース「コルセル」を発表した。リングゲージ55×長さ135mmでミディアムストレングスのプロファイルを持ち、1月29日に香港でグローバルローンチが行われた。18本入りの番号付きケースにはNFC技術が組み込まれ、真贋確認と製品情報の提供に対応する。",
-      "source": "Habanos S.A. (PR Newswire)",
-      "source_title": "HABANOS, S.A. PRESENTS TRINIDAD CORCEL: AN EXCLUSIVE VITOLA TO CELEBRATE THE CHINESE NEW YEAR",
-      "url": "http://www.prnewswire.com/news-releases/habanos-sa-presents-trinidad-corcel-an-exclusive-vitola-to-celebrate-the-chinese-new-year-302676763.html",
-      "title_en": "Habanos S.A. Unveils Trinidad Corcel to Mark Chinese New Year",
-      "summary_en": "Habanos S.A. has announced the Corcel, the first special release from Trinidad, created to celebrate the Chinese New Year of the Horse. The vitola measures 135mm in length with a 55 ring gauge and offers a medium-strength profile; its global launch took place in Hong Kong on 29 January. Each numbered case of 18 cigars incorporates NFC technology, enabling authentication and access to product information."
-    },
-    {
-      "date": "2026-02",
-      "category": "業界・企業",
-      "title_ja": "第26回フェスティバル・デル・ハバノ、コイーバ60周年で完売に",
-      "summary_ja": "2026年2月23〜27日にハバナで開催された第26回フェスティバル・デル・ハバノは、コイーバ・ブランド60周年が重なったことで異例の需要となり、チケットはHabanos S.A.の販売網を通じて完売した。同フェスティバルはHabanosが前年の業績発表や新製品披露を行う業界最大級のイベントである。",
-      "source": "Cigars-connect",
-      "source_title": "For Cohiba's 60th anniversary, the 2026 Festival del Habano is sold out",
-      "url": "https://www.cigars-connect.com/en/for-cohibas-60th-anniversary-the-2026-festival-del-habano-is-sold-out/",
-      "title_en": "Festival del Habano XXVI Sells Out for Cohiba's 60th Anniversary",
-      "summary_en": "The 26th Festival del Habano, held in Havana from 23 to 27 February 2026, saw exceptional demand as it coincided with the 60th anniversary of the Cohiba brand, and tickets sold out through the Habanos S.A. sales network. The festival is one of the industry's largest events, at which Habanos announces the previous year's results and presents new products."
-    },
-    {
-      "date": "2026-02",
-      "category": "イベント・アワード",
-      "title_ja": "第18回Procigarフェスティバル、ドミニカ共和国で開催",
-      "summary_ja": "「From Soil to Soul」をテーマとする第18回Procigarフェスティバルが2026年2月15日から20日、ラ・ロマーナとサンティアゴで開催された。40カ国以上から約1,000人が参加し、工場・農園ツアーやセミナー、テイスティングが行われた。締めくくりのガラディナーとチャリティーオークションでは61万8,000ドル超を集め、記録的な結果となった。",
-      "source": "premiumcigars.org",
-      "source_title": "PCA Joins Procigar Festival 2026 in Celebrating \"Our Soil and Soul\"",
-      "url": "https://premiumcigars.org/pca-joins-procigar-festival-2026-in-celebrating-our-soil-and-soul/",
-      "title_en": "18th Procigar Festival Held in the Dominican Republic",
-      "summary_en": "The 18th Procigar Festival, themed 'From Soil to Soul', took place from 15 to 20 February 2026 in La Romana and Santiago. Around 1,000 participants from more than 40 countries attended factory and farm tours, seminars and tastings. The closing gala dinner and charity auction raised more than $618,000, a record result."
-    },
-    {
-      "date": "2026-02",
-      "category": "イベント・アワード",
-      "title_ja": "ハバナの「Festival del Habano XXVI」が延期に",
-      "summary_ja": "2026年2月23日から27日に予定されていた第26回Festival del Habanoが延期された。1999年の開始以来、公式に「延期」となるのは初めて。キューバの深刻な燃料・電力不足など経済状況が背景にあり、主催側は品質と体験の水準を守るためと説明、新日程は公式チャンネルで告知するとしている。今回はコイーバ・ブランド60周年が目玉となる予定だった。",
-      "source": "halfwheel.com",
-      "source_title": "Cuba's Festival del Habano XXVI Will be \"Postponed\" (Update) | halfwheel",
-      "url": "https://halfwheel.com/cubas-festival-del-habano-xxvi-will-be-postponed/462367/",
-      "title_en": "Havana's Festival del Habano XXVI Postponed",
-      "summary_en": "The 26th Festival del Habano, scheduled for 23 to 27 February 2026, has been postponed — the first official postponement since the event began in 1999. Cuba's economic situation, including severe fuel and electricity shortages, lies behind the decision; the organisers explain it is intended to safeguard standards of quality and experience, with new dates to be announced through official channels. This edition was to have had the 60th anniversary of the Cohiba brand as its centrepiece."
-    },
-    {
-      "date": "2026-02",
-      "category": "イベント・アワード",
-      "title_ja": "Habanos S.A.がFestival del Habano延期を公式発表",
-      "summary_ja": "Habanos S.A.は公式サイトでFestival del Habanoの延期を発表した。組織委員会は「この国際イベントを特徴づける品質・卓越性・体験の最高水準を守るため」とし、すべての活動やプレゼンテーションを十全に実施できる環境を確保する狙いと説明している。新たな開催日は現在調整中とされる。",
-      "source": "habanos.com",
-      "source_title": "Habanos Festival Postponed – Habanos, S.A. – Official site",
-      "url": "https://www.habanos.com/en/news/habano-festival-posponed/",
-      "title_en": "Habanos S.A. Officially Announces Festival del Habano Postponement",
-      "summary_en": "Habanos S.A. has announced the postponement of the Festival del Habano on its official website. The organising committee said the decision was taken 'to protect the highest standards of quality, excellence and experience that characterise this international event', explaining that the aim is to secure conditions in which all activities and presentations can be carried out in full. New dates are said to be under arrangement."
     }
   ]
 };
