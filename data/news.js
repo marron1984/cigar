@@ -7,8 +7,34 @@
    手で足すこともできますが、items の並び・キーは崩さないでください。
    ============================================================ */
 var NEWS_DATA = {
-  "updated": "2026-08-30",
+  "updated": "2026-08-31",
   "items": [
+    {
+      "date": "2026-08-31",
+      "category": "新製品",
+      "title_ja": "ダビドフ、新ライン「ジノ・ホンジュラス」発表",
+      "summary_ja": "ダビドフ（Davidoff）が新ライン「ジノ・ホンジュラス・ロブスト（Zino Honduras Robusto）」を発表した。2021年に登場した「ジノ・ニカラグア」の後継的位置づけ。エクアドル産ラッパーに、コパン産とハマストラン渓谷産のホンジュラス葉をブレンドして使用している。",
+      "title_en": "Davidoff Unveils New Zino Honduras Robusto",
+      "summary_en": "Davidoff has introduced a new line, the Zino Honduras Robusto, positioned as a follow-up to the Zino Nicaragua that debuted in 2021. The cigar features an Ecuadorian wrapper covering a blend of Honduran tobaccos sourced from Copán and the Jamastrán Valley. It marks another addition to Davidoff's Zino range, expanding the origins used in the series with a Honduran-focused blend.",
+      "source": "halfwheel",
+      "source_title": "Zino Honduras Robusto",
+      "source_en": "halfwheel",
+      "source_title_en": "Zino Honduras Robusto",
+      "url": "https://halfwheel.com/zino-honduras-robusto/478174/"
+    },
+    {
+      "date": "2026-08-31",
+      "category": "業界・企業",
+      "title_ja": "ドン・エマヌエル、オマーンで販売開始",
+      "summary_ja": "ドミニカ共和国製の葉巻ブランド「ドン・エマヌエル（Don Emmanuel）」が国際展開を拡大している。今月、オマーンでの販売を開始した。",
+      "title_en": "Don Emmanuel Lands in Oman",
+      "summary_en": "Don Emmanuel, a cigar brand made in the Dominican Republic, is expanding its international distribution footprint. Earlier this month, the cigars went on sale in Oman, adding a new market to the brand's growing global presence.",
+      "source": "halfwheel",
+      "source_title": "Don Emmanuel Lands in Oman",
+      "source_en": "halfwheel",
+      "source_title_en": "Don Emmanuel Lands in Oman",
+      "url": "https://halfwheel.com/don-emmanuel-lands-in-oman/478196/"
+    },
     {
       "date": "2026-08-30",
       "category": "新製品",
@@ -2010,28 +2036,6 @@ var NEWS_DATA = {
       "url": "https://www.pricey.jp/web/articles/4782",
       "title_en": "Little Cigars Exempt from 2026 Tax Rise; Three-Stage Increases from April 2027",
       "summary_en": "Little cigars such as Double Happiness are not covered by the April 2026 tax increase on heated tobacco products, and their prices have remained unchanged since October 2021. However, cigarettes and little cigars are due to be taxed an additional 0.5 yen per stick in three stages — April 2027, April 2028 and April 2029 — with price rises of around 10 yen expected each time over three consecutive years."
-    },
-    {
-      "date": "2026-03",
-      "category": "新製品",
-      "title_ja": "コイーバ60周年記念のエディシオン・リミターダ「エクセレンテス」が登場へ",
-      "summary_ja": "コイーバのブランド誕生60周年を記念するエディシオン・リミターダ2026「エクセレンテス」が3月にローンチされると報じられた。長年噂されてきた「BHK59」とも呼ばれるファットピラミッド形状で、サイズは59×約140mmとなる。2026年2月23〜27日開催のフェスティバル・デル・ハバノXXVIはコイーバ60周年への需要でチケットが完売した。",
-      "source": "Friends of el Habano Forum",
-      "source_title": "\"Excelentes\": Cohiba's New 60 Aniversario Edición Limitada 2026 is Launching in March",
-      "url": "https://www.fohcigars.com/forum/topic/164666-excelentes-cohibas-new-60-aniversario-edici%C3%B3n-limitada-2026-is-launching-in-march/",
-      "title_en": "Cohiba 60th Anniversary Edición Limitada 'Excelentes' Launching in March",
-      "summary_en": "The Edición Limitada 2026 'Excelentes', marking the 60th anniversary of the Cohiba brand, is reported to be launching in March. Long rumoured under the name 'BHK59', the cigar takes a fat pyramid shape measuring 59 ring gauge by roughly 140mm. Tickets for the Festival del Habano XXVI, to be held from 23 to 27 February 2026, sold out on the strength of demand surrounding Cohiba's 60th anniversary."
-    },
-    {
-      "date": "2026-03",
-      "category": "業界・企業",
-      "title_ja": "Scandinavian Tobacco Group、2025年通期決算と2026年ガイダンスを発表",
-      "summary_ja": "STGの2025年通期純売上高はDKK 90億（約14億ドル）で前年比1.8%減、オーガニック成長率は-3.1%だった。1株あたりDKK 4.50の配当を提案し、2026年は恒常為替ベースで売上高成長率-2%〜2%、特別項目前EBITマージン13.0〜14.5%を見込む。2026年の優先課題として、マシンメイド葉巻・喫煙用たばこ事業の収益安定化とハンドメイド葉巻事業の再成長を掲げた。",
-      "source": "Yahoo Finance",
-      "source_title": "Scandinavian Tobacco Group A/S Reports Full-Year Results and Proposes a DKK 4.50 Dividend Per Share",
-      "url": "https://uk.finance.yahoo.com/news/scandinavian-tobacco-group-reports-full-162800816.html",
-      "title_en": "Scandinavian Tobacco Group Reports 2025 Results and 2026 Guidance",
-      "summary_en": "STG's full-year 2025 net sales came to DKK 9.0 billion (roughly $1.4 billion), down 1.8% year on year, with organic growth of -3.1%. The company proposed a dividend of DKK 4.50 per share and, for 2026, expects net sales growth of -2% to 2% at constant currency and an EBIT margin before special items of 13.0-14.5%. As priorities for 2026, it cited stabilising earnings in the machine-rolled cigar and smoking tobacco businesses and returning the handmade cigar business to growth."
     }
   ]
 };
