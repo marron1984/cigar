@@ -7,8 +7,86 @@
    手で足すこともできますが、items の並び・キーは崩さないでください。
    ============================================================ */
 var NEWS_DATA = {
-  "updated": "2026-08-31",
+  "updated": "2026-09-01",
   "items": [
+    {
+      "date": "2026-09-01",
+      "category": "新製品",
+      "title_ja": "HVC限定「ホットケーキ」ブロードリーフ登場",
+      "summary_ja": "アトランティック・シガー（Atlantic Cigar）が創業30周年を記念し、HVCとの限定コラボ「ホットケーキ フレッシュ・アウト・オブ・ジ・オーブン ブロードリーフ（Hot Cake Fresh Out of the Oven Broadleaf）」をリリースした。数週間前に全国出荷されたホットケーキ10周年記念シガーに続く、今月2本目の新作となる。",
+      "title_en": "Atlantic Marks 30th Anniversary with Exclusive HVC Hot Cake Broadleaf",
+      "summary_en": "Atlantic Cigar has released an exclusive collaboration with HVC to mark its 30th anniversary: the Hot Cake Fresh Out of the Oven Broadleaf. It arrives just weeks after the HVC Hot Cake 10th anniversary cigar shipped nationwide, making it the second new Hot Cake release this month. The retailer-exclusive edition celebrates three decades in business.",
+      "source": "halfwheel",
+      "source_title": "Atlantic Celebrates 30th Anniversary With Exclusive HVC Hot Cake Fresh Out of the Oven Broadleaf",
+      "source_en": "halfwheel",
+      "source_title_en": "Atlantic Celebrates 30th Anniversary With Exclusive HVC Hot Cake Fresh Out of the Oven Broadleaf",
+      "url": "https://halfwheel.com/atlantic-celebrates-30th-anniversary-with-exclusive-hvc-hot-cake-fresh-out-of-the-oven-broadleaf/478325/"
+    },
+    {
+      "date": "2026-09-01",
+      "category": "新製品",
+      "title_ja": "アレック・ブラッドリー「フィルシー・グーリガン」再登場",
+      "summary_ja": "アレック・ブラッドリー（Alec Bradley）の「フィルシー・グーリガン（Filthy Ghooligan）」が9月に店頭へ再登場する。STGは2025年版をほぼそのまま踏襲し、生産本数のみ小幅に調整した。",
+      "title_en": "Alec Bradley Filthy Ghooligan Returns for 2026",
+      "summary_en": "Alec Bradley's Filthy Ghooligan returns to stores in September. On paper, STG appears to be repeating the 2025 release, with only a small adjustment to production numbers. The seasonal cigar makes its comeback for 2026 largely unchanged from the prior year.",
+      "source": "halfwheel",
+      "source_title": "Alec Bradley Filthy Ghooligan Returns for 2026",
+      "source_en": "halfwheel",
+      "source_title_en": "Alec Bradley Filthy Ghooligan Returns for 2026",
+      "url": "https://halfwheel.com/alec-bradley-filthy-ghooligan-returns-for-2026/478305/"
+    },
+    {
+      "date": "2026-09-01",
+      "category": "新製品",
+      "title_ja": "アルタディス、限定「ゴールデン・フォー」サンプラー",
+      "summary_ja": "アルタディスU.S.A.（Altadis U.S.A.）が、イベント限定の4本入りサンプラー「ゴールデン・フォー（Golden Four）」を発表した。未発売のブレンドを収録するとされ、9月から一部イベントで提供される。",
+      "title_en": "Altadis U.S.A. Unveils Event-Only Golden Four Assortment",
+      "summary_en": "Altadis U.S.A. has announced the Golden Four, a four-cigar, event-only sampler said to contain previously unreleased blends. It will be available at select events beginning in September, with the company drawing from its vault of experimental blends for the limited assortment.",
+      "source": "halfwheel",
+      "source_title": "Altadis U.S.A. Goes to the Vault for Golden Four Event-Only Cigar Assortment",
+      "source_en": "halfwheel",
+      "source_title_en": "Altadis U.S.A. Goes to the Vault for Golden Four Event-Only Cigar Assortment",
+      "url": "https://halfwheel.com/altadis-u-s-a-goes-to-the-vault-for-golden-four-event-only-cigar-assortment/478284/"
+    },
+    {
+      "date": "2026-09-01",
+      "category": "新製品",
+      "title_ja": "ポル・ラーニャガ「35周年」独限定エディション",
+      "summary_ja": "ハバノス製品のドイツ流通元、5th Avenue Products Trading GmbHの創業35周年を記念した「ポル・ラーニャガ 35 アニベルサリオ（Por Larrañaga 35 Aniversario）」が発表された。ドイツのエディシオン・レヒオナルとして初めて、7 5/8×49のプロミネンテス（Prominentes）ビトラを採用した。",
+      "title_en": "Por Larrañaga 35 Aniversario Celebrates 5th Avenue Anniversary",
+      "summary_en": "The Por Larrañaga 35 Aniversario marks the 35th anniversary of 5th Avenue Products Trading GmbH, the German distributor of Habanos S.A. products. It is the first time a German Edición Regional has been produced in the 7 5/8 x 49 Prominentes vitola.",
+      "source": "halfwheel",
+      "source_title": "Por Larrañaga 35 Aniversario Celebrates 5th Avenue Anniversary",
+      "source_en": "halfwheel",
+      "source_title_en": "Por Larrañaga 35 Aniversario Celebrates 5th Avenue Anniversary",
+      "url": "https://halfwheel.com/por-larranaga-35-aniversario-celebrates-5th-avenue-anniversary/478261/"
+    },
+    {
+      "date": "2026-08-31",
+      "category": "イベント・アワード",
+      "title_ja": "CSWC、英国の新人が初優勝",
+      "summary_ja": "クロアチア・ドゥブロヴニクで開かれたシガー・スモーキング・ワールド・チャンピオンシップ（CSWC）の決勝で、英国のジョージ・スタンスフィールドが史上初の英国人世界王者に輝いた。彼が初めて葉巻を吸ったのは1年前。ワイルドカードで決勝に進み優勝した。日本の向川隼人らも出場した。",
+      "title_en": "British Newcomer Crowned CSWC World Champion",
+      "summary_en": "At the Cigar Smoking World Championship's grand finale in Dubrovnik, Britain's George Stansfield became the first British world champion, a major surprise. Having smoked his first cigar only a year ago, he earned a wild card to the final after finishing second nationally. Founder Marko Bilic hailed it as proof the event is not just for veterans. Hayato Mukaigawa of Japan was among the other finalists.",
+      "source": "Cigar Journal",
+      "source_title": "British Newcomer CSWC World Champion",
+      "source_en": "Cigar Journal",
+      "source_title_en": "British Newcomer CSWC World Champion",
+      "url": "https://www.cigarjournal.com/british-newcomer-cswc-world-champion/?utm_source=rss&utm_medium=rss&utm_campaign=british-newcomer-cswc-world-champion"
+    },
+    {
+      "date": "2026-08-31",
+      "category": "業界・企業",
+      "title_ja": "ドン・エマニュエル、オマーンへ進出",
+      "summary_ja": "ドン・エマニュエル・シガーズ（Don Emmanuel Cigars）がオマーンへの展開を発表した。現地代理はAshish Chaturvediが担い、Puro Cigar Loungeで取り扱う。主力の「アヌンナキ（Anunnaki）」はCigar Trophy Awardsで2026年最優秀ドミニカ産葉巻のファイナリストに選ばれている。",
+      "title_en": "Don Emmanuel Continues Global Expansion with Entry into Oman",
+      "summary_en": "Don Emmanuel Cigars has announced its expansion into Oman, where it will be represented by Ashish Chaturvedi with the brand available at Puro Cigar Lounge. The move follows Anunnaki's selection as a finalist for Best Dominican Cigar of 2026 at the Cigar Journal Cigar Trophy Awards. Its portfolio, co-blended with Master Blender Eladio Díaz, now reaches the Middle East market.",
+      "source": "Cigar Journal",
+      "source_title": "Don Emmanuel Continues Global Expansion with Entry into Oman",
+      "source_en": "Cigar Journal",
+      "source_title_en": "Don Emmanuel Continues Global Expansion with Entry into Oman",
+      "url": "https://www.cigarjournal.com/don-emmanuel-continues-global-expansion-with-entry-into-oman/?utm_source=rss&utm_medium=rss&utm_campaign=don-emmanuel-continues-global-expansion-with-entry-into-oman"
+    },
     {
       "date": "2026-08-31",
       "category": "新製品",
@@ -1968,74 +2046,6 @@ var NEWS_DATA = {
       "url": "https://halfwheel.com/my-father-announces-la-lealtad/465936/",
       "title_en": "My Father Announces La Lealtad, New Line from Honduran Factory",
       "summary_en": "My Father Cigars has announced La Lealtad ('Loyalty'), its second regular-production line made at the company's Honduran factory. The medium-to-full-bodied cigar pairs an Ecuadorian Habano Oscuro wrapper with a double binder from Honduras and Nicaragua. It will be offered in four sizes — Robusto, Toro, Toro Gordo and Torpedo — priced between $11 and $13.50, with release set for April 2026."
-    },
-    {
-      "date": "2026-04",
-      "category": "新製品",
-      "title_ja": "ロッキー・パテル、干支シリーズ第3弾「イヤー・オブ・ザ・ホース」を発売",
-      "summary_ja": "ロッキー・パテルが中国の干支シリーズ第3弾となる「Year of the Horse」を発表し、4月に小売店へ出荷された。メキシコ産サンアンドレスのラッパーにニカラグア産バインダー、ニカラグアとホンジュラスのフィラーを使い、7×48のチャーチル1サイズのみの展開だ。米国市場向けは4,000本限定で、1本25ドルとなる。",
-      "source": "halfwheel",
-      "source_title": "Rocky Patel Year of the Horse Announced",
-      "url": "https://halfwheel.com/rocky-patel-year-of-the-horse-announced/462485/",
-      "title_en": "Rocky Patel Releases Year of the Horse, Third Zodiac Instalment",
-      "summary_en": "Rocky Patel has announced Year of the Horse, the third instalment in its Chinese zodiac series, which shipped to retailers in April. The cigar uses a Mexican San Andrés wrapper over a Nicaraguan binder with fillers from Nicaragua and Honduras, and comes in a single 7 x 48 Churchill size. The release is limited to 4,000 cigars for the US market, priced at $25 per cigar."
-    },
-    {
-      "date": "2026-04",
-      "category": "新製品",
-      "title_ja": "オリバ、当たり年の葉を使った「セリエV メラニオ エディシオン・アニョ2026 ペルフェクト」を今秋発売へ",
-      "summary_ja": "オリバがPCA 2026で、特別なタバコ葉を使った5 3/8×54の独特な形状のペルフェクトを披露した。2023〜2024年のニカラグア・ハラパ産の葉は温暖で雨に恵まれた生育期の恩恵を受け、同社が「グラン・クリュ」に値すると評価するものだ。9,000箱が生産され、うち4,000箱が米国、5,000箱が国際市場向けで、出荷は秋の予定となる。",
-      "source": "halfwheel",
-      "source_title": "Oliva Serie V Melanio Edición Año 2026 Perfecto Coming This Fall",
-      "url": "https://halfwheel.com/oliva-serie-v-melanio-edicion-ano-2026-perfecto/466473/",
-      "title_en": "Oliva Serie V Melanio Edición Año 2026 Perfecto Coming This Autumn",
-      "summary_en": "At PCA 2026, Oliva showed a distinctively shaped 5 3/8 x 54 perfecto made with special tobacco. The leaf, grown in Jalapa, Nicaragua in 2023–2024, benefited from a warm growing season blessed with rain, and the company rates it as worthy of 'grand cru' status. Production totals 9,000 boxes, with 4,000 destined for the United States and 5,000 for international markets; shipping is planned for the autumn."
-    },
-    {
-      "date": "2026-04",
-      "category": "業界・企業",
-      "title_ja": "PCA 2026トレードショーがニューオーリンズで閉幕、2027年はラスベガスへ",
-      "summary_ja": "プレミアム・シガー・アソシエーション（PCA）の2026年トレードショーが4月17〜20日にニューオーリンズのアーネスト・N・モリアル・コンベンションセンターで開催された。出展262社、970超の小売アカウントから2,540人以上の小売業者が参加し、総来場者数は5,945人超だった。PCAは2027年のラスベガス開催復帰も発表した。",
-      "source": "Premium Cigar Association",
-      "source_title": "The Premium Cigar Association Concludes a Successful PCA26 Trade Show in New Orleans",
-      "url": "https://premiumcigars.org/the-premium-cigar-association-concludes-a-successful-pca26-trade-show-in-new-orleans/",
-      "title_en": "PCA 2026 Trade Show Closes in New Orleans; Las Vegas in 2027",
-      "summary_en": "The Premium Cigar Association's 2026 trade show was held from 17 to 20 April at the Ernest N. Morial Convention Center in New Orleans. The event drew 262 exhibitors and more than 2,540 retailers from over 970 retail accounts, with total attendance exceeding 5,945. The PCA also announced that the show will return to Las Vegas in 2027."
-    },
-    {
-      "date": "2026-04",
-      "category": "イベント・アワード",
-      "title_ja": "PCA 2026トレードショー、ニューオーリンズで開催",
-      "summary_ja": "業界最大の展示会PCA Convention & Trade Showが2026年4月17日から20日、ニューオーリンズ・コンベンションセンターで開催された。初日は会議・プレゼンテーション、土曜から月曜が展示会で、従来の半日形式は廃止され、ショーフロアでの喫煙も認められた。ブース賞では大型部門をAltadis U.S.A.、中型部門をEDM Cigars、小型部門をStoic Cigarsが受賞した。",
-      "source": "halfwheel.com",
-      "source_title": "PCA 2026: April 17-20 in New Orleans | halfwheel",
-      "url": "https://halfwheel.com/pca-2026-april-17-20-in-new-orleans/437476/",
-      "title_en": "PCA 2026 Trade Show Held in New Orleans",
-      "summary_en": "The industry's largest exhibition, the PCA Convention & Trade Show, was held from 17 to 20 April 2026 at the New Orleans convention centre. The first day was devoted to meetings and presentations, with the trade show running from Saturday to Monday; the traditional half-day format was scrapped and smoking was permitted on the show floor. In the booth awards, Altadis U.S.A. won the large category, EDM Cigars the medium category and Stoic Cigars the small category."
-    },
-    {
-      "date": "2026-04",
-      "category": "イベント・アワード",
-      "title_ja": "PCA 2026閉幕、2027年はラスベガスに回帰へ",
-      "summary_ja": "PCAはニューオーリンズでの2026年トレードショーを成功裏に終え、2027年の開催地がラスベガスに戻ることを発表した。会場では数百の新作シガーやアクセサリーが小売業者やメディアに披露され、J.C. Newmanによる「America250」公式シガーを記念したヒュミドールの展示なども話題となった。",
-      "source": "cigardojo.com",
-      "source_title": "PCA Wraps Up 2026 Trade Show in New Orleans, Announces 2027 Return to Las Vegas - Cigar Dojo",
-      "url": "https://cigardojo.com/2026/04/pca-wraps-up-2026-trade-show-in-new-orleans-announces-2027-return-to-las-vegas/",
-      "title_en": "PCA 2026 Closes; Trade Show Returns to Las Vegas in 2027",
-      "summary_en": "The PCA brought its 2026 trade show in New Orleans to a successful close and announced that the 2027 event will return to Las Vegas. Hundreds of new cigars and accessories were presented to retailers and the media at the venue, and a humidor exhibited by J.C. Newman commemorating its official 'America250' cigar was among the talking points."
-    },
-    {
-      "date": "2026-04",
-      "category": "日本国内",
-      "title_ja": "リトルシガーは2026年の増税対象外、2027年4月から3段階の増税へ",
-      "summary_ja": "ダブルハピネスなどのリトルシガーは2026年4月の加熱式たばこ増税の対象外で、価格は2021年10月以来据え置きが続いている。ただし紙巻たばことリトルシガーは2027年4月・2028年4月・2029年4月の3段階で1本あたり0.5円ずつ増税される計画で、1回あたり10円前後の値上げが3年続く見通しとされる。",
-      "source": "プライシー",
-      "source_title": "【2026年最新】ダブルハピネスの値上げ後の値段と銘柄一覧",
-      "source_en": "Pricey",
-      "source_title_en": "2026 update: Double Happiness prices after the increase, with the full line-up",
-      "url": "https://www.pricey.jp/web/articles/4782",
-      "title_en": "Little Cigars Exempt from 2026 Tax Rise; Three-Stage Increases from April 2027",
-      "summary_en": "Little cigars such as Double Happiness are not covered by the April 2026 tax increase on heated tobacco products, and their prices have remained unchanged since October 2021. However, cigarettes and little cigars are due to be taxed an additional 0.5 yen per stick in three stages — April 2027, April 2028 and April 2029 — with price rises of around 10 yen expected each time over three consecutive years."
     }
   ]
 };
