@@ -7,8 +7,86 @@
    手で足すこともできますが、items の並び・キーは崩さないでください。
    ============================================================ */
 var NEWS_DATA = {
-  "updated": "2026-09-01",
+  "updated": "2026-09-02",
   "items": [
+    {
+      "date": "2026-09-02",
+      "category": "新製品",
+      "title_ja": "オヨ・デ・モントレー、新「ル・オヨ」をサンプラーで先行",
+      "summary_ja": "STGが新ライン「ル・オヨ（Le Hoyo）」をサンプラーで初お披露目した。これでル・オヨ系のラインは2つ目となる。フルローンチは今後数カ月内に予定されている。",
+      "title_en": "Hoyo de Monterrey Le Hoyo Debuts in New Sampler",
+      "summary_en": "STG has introduced its new Le Hoyo line via a sampler, marking the debut of a second Le Hoyo line. The company says a full launch of the line will follow in the coming months.",
+      "source": "halfwheel",
+      "source_title": "Hoyo de Monterrey Le Hoyo Debuts in New Sampler",
+      "source_en": "halfwheel",
+      "source_title_en": "Hoyo de Monterrey Le Hoyo Debuts in New Sampler",
+      "url": "https://halfwheel.com/hoyo-de-monterrey-le-hoyo-debuts-in-new-sampler/478442/"
+    },
+    {
+      "date": "2026-09-02",
+      "category": "新製品",
+      "title_ja": "ヴィアヘのミステリーボックス、今週店頭へ",
+      "summary_ja": "ヴィアヘ（Viaje）が10本入りのミステリーボックスを今週発売する。一部は未発表銘柄、一部は既存ラインの新サイズ・新形状。希少度も「コモン」から同社が「ゴッドボックス」と呼ぶものまで複数段階が設定されている。",
+      "title_en": "Viaje Mystery Boxes Coming to Stores This Week",
+      "summary_en": "Viaje is releasing mystery boxes containing ten cigars this week. Some have never been released before, while others are new sizes and shapes for existing lines. The boxes also come in several rarity levels, ranging from Common up to what the company calls the God Box.",
+      "source": "halfwheel",
+      "source_title": "Viaje Mystery Boxes Coming to Stores This Week",
+      "source_en": "halfwheel",
+      "source_title_en": "Viaje Mystery Boxes Coming to Stores This Week",
+      "url": "https://halfwheel.com/viaje-mystery-boxes-coming-to-stores-this-week/478437/"
+    },
+    {
+      "date": "2026-09-02",
+      "category": "新製品",
+      "title_ja": "ラ・アウロラ、カサドレスにフレーバー3種追加",
+      "summary_ja": "ラ・アウロラ（La Aurora）が新たに3本のシガーを発表した。既存のカサドレス（Cazadores）ラインと同じブレンドを用いつつ、それぞれにプロファイルを引き立てるフレーバーを加えた。今月中に小売店への出荷を開始する予定。",
+      "title_en": "La Aurora Announces Cazadores Flavors",
+      "summary_en": "La Aurora has announced three new cigars using the same blends as its current Cazadores line, but each with an added flavour designed to accent its profile. The cigars are scheduled to begin shipping to retailers this month.",
+      "source": "halfwheel",
+      "source_title": "La Aurora Announces Cazadores Flavors",
+      "source_en": "halfwheel",
+      "source_title_en": "La Aurora Announces Cazadores Flavors",
+      "url": "https://halfwheel.com/la-aurora-announces-cazadores-flavors/478373/"
+    },
+    {
+      "date": "2026-09-02",
+      "category": "新製品",
+      "title_ja": "オスカル・バジャダレス、コラボ限定品を出荷開始",
+      "summary_ja": "オスカル・バジャダレス・タバコ（Oscar Valladares Tobacco & Co.）が、カサ・カリージョ（Casa Carrillo）およびオリバ（Oliva Cigar Co.）と組んだ新たな限定品「Colaboraciones」の出荷を開始した。各工場の個性を、同社お気に入りのホンジュラス産タバコと合わせて表現することを狙った。",
+      "title_en": "Oscar Valladares Begins Shipping Colaboraciones",
+      "summary_en": "Oscar Valladares Tobacco & Co. has begun shipping Colaboraciones, a new limited edition created in partnership with Casa Carrillo and Oliva Cigar Co. The goal was to showcase the distinctive style of each factory when paired with Oscar Valladares' favourite tobacco from Honduras.",
+      "source": "halfwheel",
+      "source_title": "Oscar Valladares Begins Shipping Colaboraciones",
+      "source_en": "halfwheel",
+      "source_title_en": "Oscar Valladares Begins Shipping Colaboraciones",
+      "url": "https://halfwheel.com/oscar-valladares-begins-shipping-colaboraciones/478342/"
+    },
+    {
+      "date": "2026-09-02",
+      "category": "新製品",
+      "title_ja": "エスピノサ、ラランハ・ハイブリッドを出荷開始",
+      "summary_ja": "エスピノサ・プレミアム・シガーズ（Espinosa Premium Cigars）が新ライン「ラランハ・ハイブリッド（Laranja Hybrid）」の出荷を開始した。エクアドル産ハバノ・オスクーロのラッパー、ニカラグア産バインダー、ブラジル産タバコを用いたブレンド。",
+      "title_en": "Espinosa Begins Shipping Laranja Hybrid",
+      "summary_en": "Espinosa Premium Cigars has begun shipping its new Laranja Hybrid line. The blend uses an Ecuadorian habano oscuro wrapper, a Nicaraguan binder and Brazilian tobacco.",
+      "source": "halfwheel",
+      "source_title": "Espinosa Begins Shipping Laranja Hybrid",
+      "source_en": "halfwheel",
+      "source_title_en": "Espinosa Begins Shipping Laranja Hybrid",
+      "url": "https://halfwheel.com/espinosa-begins-shipping-laranja-hybrid/478408/"
+    },
+    {
+      "date": "2026-09-01",
+      "category": "業界・企業",
+      "title_ja": "ミッチェル・オーチャント、ドミニク・ロンドン経営から退任",
+      "summary_ja": "自身のC.Gars Ltdをドミニク・ロンドン（Dominique London）に統合してから5年、ミッチェル・オーチャントが同社を事実上引退した。今後は小売グループのアンバサダーを務める。",
+      "title_en": "Mitchell Orchant Exits Dominique London Management",
+      "summary_en": "Five years after his C.Gars Ltd business was merged into Dominique London, Mitchell Orchant has effectively retired from the company. Going forward, he will serve as an ambassador for the retail group.",
+      "source": "halfwheel",
+      "source_title": "Mitchell Orchant Exits Dominique London Management",
+      "source_en": "halfwheel",
+      "source_title_en": "Mitchell Orchant Exits Dominique London Management",
+      "url": "https://halfwheel.com/mitchell-orchant-exits-dominique-london-management/478364/"
+    },
     {
       "date": "2026-09-01",
       "category": "新製品",
@@ -1978,74 +2056,6 @@ var NEWS_DATA = {
       "url": "https://halfwheel.com/stg-starts-off-2026-with-mixed-cigar-performance/471581/",
       "title_en": "STG Starts 2026 With Mixed Cigar Performance in First Quarter",
       "summary_en": "STG, whose portfolio includes Cigars International and General Cigar Co., reported first-quarter 2026 net sales of DKK 1,859 million (roughly $289 million), down about 6% year on year. Although reported revenue declined owing to currency effects, organic sales in the North American market grew, led by the handmade cigar category, with strong sales of CAO and the US version of Cohiba."
-    },
-    {
-      "date": "2026-05",
-      "category": "業界・企業",
-      "title_ja": "米国の2026年第1四半期プレミアムシガー輸入は3%減、ホンジュラスが初の2位に",
-      "summary_ja": "Cigar Association of Americaのデータによると、2026年第1四半期に米国が輸入したプレミアムシガーは9,090万本で前年同期比3%の微減となった。ニカラグアは5,680万本（シェア62.5%）で首位を維持した一方、ホンジュラスは前年比12%増の1,720万本を出荷し、史上初めてドミニカ共和国を上回って2位となった。",
-      "source": "Cigar Aficionado",
-      "source_title": "Premium Cigar Imports Down Slightly In First Quarter",
-      "url": "https://www.cigaraficionado.com/article/premium-cigar-imports-down-slightly-in-first-quarter",
-      "title_en": "US Premium Cigar Imports Dip 3%; Honduras Takes Second Place",
-      "summary_en": "According to Cigar Association of America data, the United States imported 90.9 million premium cigars in the first quarter of 2026, a slight decline of 3% year on year. Nicaragua retained first place with 56.8 million cigars and a 62.5% share, while Honduras shipped 17.2 million cigars, up 12% on the previous year, overtaking the Dominican Republic for the first time in history to take second place."
-    },
-    {
-      "date": "2026-04-30",
-      "category": "業界・企業",
-      "title_ja": "アルトゥーロ・フエンテ社長のシロ・カセージャ、Procigar会長に就任",
-      "summary_ja": "ドミニカ共和国の葉巻製造者団体Procigarは4月30日、アルトゥーロ・フエンテ社長のシロ・A・カセージャを2026〜2028年期の会長に選出した。カセージャは同団体の副会長を務めており、2024〜2026年に会長を務めたラ・フロール・ドミニカーナ共同創業者のリット・ゴメスの後任となる。",
-      "source": "halfwheel",
-      "source_title": "Ciro Cascella Appointed Procigar President",
-      "url": "https://halfwheel.com/ciro-cascella-appointed-procigar-president/470549/",
-      "title_en": "Arturo Fuente President Ciro Cascella Appointed Procigar President",
-      "summary_en": "Procigar, the association of cigar manufacturers in the Dominican Republic, elected Ciro A. Cascella, president of Arturo Fuente, as its president for the 2026-2028 term on 30 April. Cascella had been serving as the association's vice-president and succeeds Litto Gomez, co-founder of La Flor Dominicana, who held the presidency from 2024 to 2026."
-    },
-    {
-      "date": "2026-04-17",
-      "category": "イベント・アワード",
-      "title_ja": "PCAが2026年「Best of the Leaf」アワード受賞者を発表",
-      "summary_ja": "Premium Cigar Association（PCA）は4月17日、ニューオーリンズのThe Warehouseで開かれたアワードレセプションで2026年Best of the Leafアワードの受賞者を発表した。米国内外の優れたプレミアムシガー小売店、ラウンジ、バーを表彰するもので、Arango Cigar Co.がスポンサーを務めた。",
-      "source": "premiumcigars.org",
-      "source_title": "Premium Cigar Association (PCA) Announces 2026 Best of the Leaf Award Winners",
-      "url": "https://premiumcigars.org/premium-cigar-association-pca-announces-2026-best-of-the-leaf-award-winners/",
-      "title_en": "PCA Announces 2026 Best of the Leaf Award Winners",
-      "summary_en": "The Premium Cigar Association (PCA) announced the winners of the 2026 Best of the Leaf awards at an awards reception held on 17 April at The Warehouse in New Orleans. The awards recognise outstanding premium cigar retailers, lounges and bars in the United States and abroad, and were sponsored by Arango Cigar Co."
-    },
-    {
-      "date": "2026-04-15",
-      "category": "業界・企業",
-      "title_ja": "米連邦裁判所、「プレミアムシガー」の定義を維持しフレーバー葉巻の除外を確定",
-      "summary_ja": "米連邦地裁のアミット・メータ判事は、Cigar Association of America対FDA訴訟において2020年以来使われてきた「プレミアムシガー」の定義を維持する判断を下した。これにより、フレーバー無添加のハンドメイド葉巻の多くはFDAの規制（製品承認やユーザーフィーなど）の対象外のままとなる一方、フレーバー付き葉巻やマシンメイド葉巻を除外対象に含めるべきとするCAAの主張は退けられた。",
-      "source": "halfwheel",
-      "source_title": "Court Keeps \"Premium Cigar\" Definition, Flavored Cigars Not Exempt",
-      "url": "https://halfwheel.com/court-keeps-premium-cigar-definition-flavored-cigars-not-exempt/467465/",
-      "title_en": "US Court Upholds Premium Cigar Definition; Flavoured Cigars Not Exempt",
-      "summary_en": "In the Cigar Association of America v FDA case, US District Judge Amit Mehta ruled to uphold the definition of 'premium cigar' in use since 2020. As a result, most unflavoured handmade cigars remain outside the scope of FDA regulation, including product approvals and user fees, while the court rejected the CAA's argument that flavoured and machine-made cigars should also be included in the exemption."
-    },
-    {
-      "date": "2026-04-08",
-      "category": "日本国内",
-      "title_ja": "JT、紙巻たばこ2銘柄の廃止を発表",
-      "summary_ja": "JTは4月8日付で紙巻たばこ2銘柄の廃止を発表し、2026年5月下旬より順次、在庫売り尽くしをもって販売を終了するとした。JTは過去にも「わかば」「エコー」を紙巻から葉巻（リトルシガー）へ移行させるなど、税制動向に応じた製品ラインの再編を続けている。",
-      "source": "JT公式",
-      "source_title": "紙巻たばこ2銘柄の廃止について",
-      "source_en": "Japan Tobacco (official)",
-      "source_title_en": "Discontinuation of two cigarette brands",
-      "url": "https://www.jti.co.jp/news/20260408_01.html",
-      "title_en": "JT Announces Discontinuation of Two Cigarette Brands",
-      "summary_en": "JT announced on 8 April that it will discontinue two cigarette brands, with sales ending progressively from late May 2026 as remaining stock sells out. JT has previously continued to reorganise its product lines in response to tax developments, including moving Wakaba and Echo from cigarettes to little cigars."
-    },
-    {
-      "date": "2026-04",
-      "category": "新製品",
-      "title_ja": "マイ・ファーザー、ホンジュラス工場発の新ライン「ラ・レアルタッド」を発表",
-      "summary_ja": "マイ・ファーザー・シガーズがホンジュラス工場製の2作目となるレギュラーライン「La Lealtad（忠誠）」を発表した。エクアドル産ハバノ・オスクロのラッパーにホンジュラスとニカラグアのダブルバインダーを合わせたミディアム〜フルボディの一本だ。ロブスト、トロ、トロ・ゴルド、トルペードの4サイズで、価格は11〜13.5ドル、2026年4月リリースとなる。",
-      "source": "halfwheel",
-      "source_title": "My Father Announces La Lealtad",
-      "url": "https://halfwheel.com/my-father-announces-la-lealtad/465936/",
-      "title_en": "My Father Announces La Lealtad, New Line from Honduran Factory",
-      "summary_en": "My Father Cigars has announced La Lealtad ('Loyalty'), its second regular-production line made at the company's Honduran factory. The medium-to-full-bodied cigar pairs an Ecuadorian Habano Oscuro wrapper with a double binder from Honduras and Nicaragua. It will be offered in four sizes — Robusto, Toro, Toro Gordo and Torpedo — priced between $11 and $13.50, with release set for April 2026."
     }
   ]
 };
