@@ -7,8 +7,86 @@
    手で足すこともできますが、items の並び・キーは崩さないでください。
    ============================================================ */
 var NEWS_DATA = {
-  "updated": "2026-09-02",
+  "updated": "2026-09-03",
   "items": [
+    {
+      "date": "2026-09-03",
+      "category": "新製品",
+      "title_ja": "ドリューエステート、30周年で新製品と会員特典",
+      "summary_ja": "ドリューエステート（Drew Estate）は創業30周年を記念し、顧客が衣料・アクセサリー・アートを獲得できる新たなリワードプログラムを立ち上げた。あわせて、ボックスプレスの「フェラル・フライング・ピッグ」やスプレマス・サンプラー、リガ・プリバダ（Liga Privada）初のクレブラなど複数の新製品を発表した。",
+      "title_en": "Drew Estate Marks 30th With New Cigars and Rewards Programme",
+      "summary_en": "Drew Estate is celebrating its 30th anniversary with a new customer rewards programme through which buyers can earn apparel, accessories and art. The company also announced several new cigars, including box-pressed Feral Flying Pig and Supremas samplers, alongside the first-ever Liga Privada culebra. The launch spotlights the consumers, retailers and community that helped build the brand as it looks ahead to its next chapter.",
+      "source": "halfwheel",
+      "source_title": "Drew Estate Announces Box-Pressed Feral Flying Pig and Supremas Samplers; Launching Customer Rewards Program",
+      "source_en": "halfwheel",
+      "source_title_en": "Drew Estate Announces Box-Pressed Feral Flying Pig and Supremas Samplers; Launching Customer Rewards Program",
+      "url": "https://halfwheel.com/drew-estate-announces-box-pressed-feral-flying-pig-and-supremas-samplers-launching-customer-rewards-program/478474/"
+    },
+    {
+      "date": "2026-09-03",
+      "category": "新製品",
+      "title_ja": "ケサダ「オクトーバーフェスト2026」出荷開始",
+      "summary_ja": "ケサダ（Quesada）が限定葉巻「オクトーバーフェスト2026」を出荷した。同社が15年連続でリリースする限定品で、2026年版は2025年版とほぼ同じ5種のビトラ構成となる。なお2027年版ではパッケージが一新される予定。",
+      "title_en": "Quesada Oktoberfest 2026 Ships",
+      "summary_en": "Quesada has shipped its limited-edition Oktoberfest 2026, marking the 15th consecutive year the company has released the cigar. The 2026 edition largely repeats the 2025 release, offering the same five vitolas. However, the company says the 2027 release will bring all-new Oktoberfest packaging.",
+      "source": "halfwheel",
+      "source_title": "Quesada Oktoberfest 2026 Ships",
+      "source_en": "halfwheel",
+      "source_title_en": "Quesada Oktoberfest 2026 Ships",
+      "url": "https://halfwheel.com/quesada-oktoberfest-2026-ships/478579/"
+    },
+    {
+      "date": "2026-09-03",
+      "category": "新製品",
+      "title_ja": "JRE、米建国250周年記念「アラディーノ250th」",
+      "summary_ja": "JREタバコ（JRE Tobacco Co.）が、2026年の米国建国250周年に合わせた記念葉巻「アラディーノ（Aladino）250th」を発売した。ブレンドは非公開で、発表時から発売時にかけて名称が変更された。",
+      "title_en": "Aladino 250th",
+      "summary_en": "JRE Tobacco Co. has released the Aladino 250th, a cigar created to mark the United States' 250th anniversary in 2026. Numerous companies joined the celebration this year. The blend remains undisclosed, and the cigar's name changed between the time it was announced and when it was released.",
+      "source": "halfwheel",
+      "source_title": "Aladino 250th",
+      "source_en": "halfwheel",
+      "source_title_en": "Aladino 250th",
+      "url": "https://halfwheel.com/aladino-250th/478243/"
+    },
+    {
+      "date": "2026-09-03",
+      "category": "新製品",
+      "title_ja": "シニストロ、ハロウィン限定「GHOUL」再登場",
+      "summary_ja": "シニストロ（Sinistro）の人気ライン「ザ・ラスト・カウボーイ（The Last Cowboy）」のハロウィン仕様「GHOUL」が、第2弾として再登場した。バンドを刷新したほか、2本のキャンデラ・ストライプが特徴的な外観を与えている。",
+      "title_en": "Sinistro's The Last Cowboy GHOUL Returns",
+      "summary_en": "The Halloween-themed GHOUL version of one of Sinistro's most popular lines, The Last Cowboy, returns for a second instalment. Alongside an updated band, a pair of candela stripes gives the cigar its distinctive look.",
+      "source": "halfwheel",
+      "source_title": "Sinistro’s The Last Cowboy GHOUL Returns",
+      "source_en": "halfwheel",
+      "source_title_en": "Sinistro's The Last Cowboy GHOUL Returns",
+      "url": "https://halfwheel.com/sinistros-the-last-cowboy-ghoul-returns/478548/"
+    },
+    {
+      "date": "2026-09-03",
+      "category": "規制・市場",
+      "title_ja": "米コルテ・マデラ、たばこ全面販売禁止へ前進",
+      "summary_ja": "米カリフォルニア州コルテ・マデラ（Corte Madera）が、たばことニコチン製品の全面的な販売禁止に向けて動き出した。紙巻きたばこ、葉巻、ベイプのいずれも販売が禁止される見通し。",
+      "title_en": "Corte Madera, Calif. Moving Forward With Total Tobacco & Nicotine Sales Ban",
+      "summary_en": "Corte Madera, California is moving forward with a total ban on the sale of tobacco and nicotine products. No cigarette sales, no cigar sales and no vape sales would be permitted under the proposed measure.",
+      "source": "halfwheel",
+      "source_title": "Corte Madera, Calif. Moving Forward With Total Tobacco & Nicotine Sales Ban",
+      "source_en": "halfwheel",
+      "source_title_en": "Corte Madera, Calif. Moving Forward With Total Tobacco & Nicotine Sales Ban",
+      "url": "https://halfwheel.com/corte-madera-calif-moving-forward-with-total-tobacco-nicotine-sales-ban/478593/"
+    },
+    {
+      "date": "2026-09-02",
+      "category": "業界・企業",
+      "title_ja": "クオリティ・インポーターズ、XIKAR40製品を値下げ",
+      "summary_ja": "クオリティ・インポーターズ・トレーディング（Quality Importers Trading Co.）が、XIKAR製品40点を値下げした。値下げ幅は平均17％で、ライター、カッター、収納、加湿、アクセサリーなど幅広い製品群が対象。ただし人気のブタンガス系ラインは対象外。",
+      "title_en": "Quality Importers Lowering Prices on 40 XIKAR Products",
+      "summary_en": "Quality Importers Trading Co. has reduced prices on 40 XIKAR products, with cuts averaging 17 per cent across its portfolio of lighters, cutters, storage, humidification and accessories. The company cited stabilising global shipping rates and recent tariff reductions. Unfortunately for consumers, the firm's popular butane lines are not included in the reductions.",
+      "source": "halfwheel",
+      "source_title": "Quality Importers Trading Co. Lowering Prices on 40 XIKAR Products",
+      "source_en": "halfwheel",
+      "source_title_en": "Quality Importers Trading Co. Lowering Prices on 40 XIKAR Products",
+      "url": "https://halfwheel.com/quality-importers-trading-co-lowering-price-on-40-xikar-products/478450/"
+    },
     {
       "date": "2026-09-02",
       "category": "新製品",
@@ -1990,72 +2068,6 @@ var NEWS_DATA = {
       "url": "https://halfwheel.com/arturo-fuentes-father-and-son-2026-sampler-includes-two-new-cigars/472930/",
       "title_en": "Arturo Fuente Father & Son 2026 Sampler Includes Two New Cigars",
       "summary_en": "Arturo Fuente's Father & Son 2026 Collection shipped to retailers on 12 June. The sampler contains two new cigars: the OpusX 25, a double robusto version, and a new version of the Don Carlos The Man featuring a special cap. The release forms part of the celebrations marking the 25th anniversary of OpusX."
-    },
-    {
-      "date": "2026-06",
-      "category": "新製品",
-      "title_ja": "プラセンシア、W杯2026記念シガー「トリウンファル」が店頭に登場",
-      "summary_ja": "プラセンシアが2026年サッカー・ワールドカップを前に新作「Triunfal」をリリースし、店頭に並び始めた。サイズは6 1/4×54のトロ・エクストラで、ホンジュラス産のラッパーとバインダーを使用している。オリバもサッカーボール型ヒュミドール入りの「セリエV メラニオ グラン・レゼルバ・リミターダ W杯2026エディション」を用意するなど、W杯関連リリースが相次いでいる。",
-      "source": "halfwheel",
-      "source_title": "Plasencia Triunfal, a World Cup 2026 Cigar, Arrives at Stores",
-      "url": "https://halfwheel.com/plasencia-triunfal-a-world-cup-2026-cigar-arrives-at-stores/471086/",
-      "title_en": "Plasencia Triunfal, a World Cup 2026 Cigar, Arrives in Shops",
-      "summary_en": "Plasencia has released the Triunfal, a new cigar launched ahead of the 2026 football World Cup, which has begun appearing in shops. The cigar is a 6 1/4 x 54 Toro Extra using a Honduran wrapper and binder. It joins a wave of World Cup-related releases, with Oliva also preparing a Serie V Melanio Gran Reserva Limitada World Cup 2026 Edition presented in a football-shaped humidor."
-    },
-    {
-      "date": "2026-06",
-      "category": "規制・市場",
-      "title_ja": "FDA、外国たばこ製造施設の登録・製品リスト提出を義務付ける規則案を発表",
-      "summary_ja": "FDAは2026年6月26日、外国のたばこ製品製造業者に施設登録と製品リストの提出を義務付ける規則案を公表した。これまで国内製造業者のみに課されていた要件を海外にも拡大し、未承認製品の流入阻止を狙うもの。裁判所の定義に基づくプレミアムシガーのみを製造する施設は対象外とされる。パブリックコメントの締切は2026年9月14日。",
-      "source": "fda.gov",
-      "source_title": "FDA Proposes Rule That Would Help Hold Foreign Tobacco Product Manufacturers Accountable, Protect Public Health",
-      "url": "https://www.fda.gov/news-events/press-announcements/fda-proposes-rule-would-help-hold-foreign-tobacco-product-manufacturers-accountable-protect-public",
-      "title_en": "FDA Proposes Registration Rule for Foreign Tobacco Manufacturers",
-      "summary_en": "On 26 June 2026 the FDA published a proposed rule requiring foreign tobacco product manufacturers to register their facilities and submit product lists. The measure extends requirements previously imposed only on domestic manufacturers to overseas producers, with the aim of blocking the inflow of unauthorised products. Facilities manufacturing only premium cigars as defined by the courts would be exempt. The deadline for public comments is 14 September 2026."
-    },
-    {
-      "date": "2026-06",
-      "category": "規制・市場",
-      "title_ja": "イリノイ州、プレミアムシガーの州税に75セントの上限を導入",
-      "summary_ja": "イリノイ州議会はプレミアムシガーに対する物品税を1本あたり75セントに上限設定する法案を可決した。上限は1月1日から発効し、店頭販売と遠隔（通販）販売の双方に適用される。葉巻税の上限設定法案は少なくとも11州で提出されており、オンライン小売との競争条件を整える動きが各州に広がっている。",
-      "source": "cigarsnobmag.com",
-      "source_title": "Illinois Enacts Premium Cigar Tax Cap",
-      "url": "https://www.cigarsnobmag.com/news/2026/06/19/illinois-enacts-premium-cigar-tax-cap/",
-      "title_en": "Illinois Enacts 75-Cent Cap on Premium Cigar Tax",
-      "summary_en": "The Illinois legislature has passed a bill capping the excise tax on premium cigars at 75 cents per cigar. The cap takes effect from 1 January and applies to both in-store and remote (mail-order) sales. Bills to cap cigar taxes have been introduced in at least 11 states, as moves to level the competitive playing field with online retail spread from state to state."
-    },
-    {
-      "date": "2026-05",
-      "category": "新製品",
-      "title_ja": "ペレス=カリーヨ「ディープ・ブルー リミテッド・エディション2026」が全米出荷",
-      "summary_ja": "E.P.カリーヨの高級ブランド、ペレス=カリーヨから「Deep Blue Limited Edition 2026」がリリースされた。6×56のトロ・エクストラで、ニカラグア・ハラパ産ラッパーにホンジュラス産バインダー、ニカラグア産フィラーを合わせている。2026年版は20本入りナンバリング入り2,500箱が生産され、5月中旬に全米の店舗へ出荷された。",
-      "source": "halfwheel",
-      "source_title": "Perez-Carrillo Deep Blue Limited Edition 2026",
-      "url": "https://halfwheel.com/perez-carrillo-deep-blue-limited-edition-2026/474232/",
-      "title_en": "Perez-Carrillo Deep Blue Limited Edition 2026 Ships Across the US",
-      "summary_en": "The Deep Blue Limited Edition 2026 has been released under Perez-Carrillo, E.P. Carrillo's premium brand. The 6 x 56 Toro Extra combines a wrapper from Jalapa, Nicaragua with a Honduran binder and Nicaraguan fillers. For the 2026 edition, 2,500 numbered boxes of 20 cigars were produced, shipping to shops across the United States in mid-May."
-    },
-    {
-      "date": "2026-05",
-      "category": "業界・企業",
-      "title_ja": "タバカレラ・デ・ガルシアなどがAltadis U.S.A./JR Cigarへの出荷を再開",
-      "summary_ja": "チェン・ジー関連企業への米国の制裁により停止していた、世界最大級の葉巻工場タバカレラ・デ・ガルシア（ドミニカ共和国）とフロール・デ・コパン（ホンジュラス）からAltadis U.S.A.およびJR Cigarへの出荷が再開された。制裁は同氏に関連する100超の事業体に及び、米国側は一時ニカラグアなど別工場への生産移管を進めていた。",
-      "source": "halfwheel",
-      "source_title": "Tabacalera de García, Flor de Copán Resume Shipments to Altadis U.S.A./JR Cigar",
-      "url": "https://halfwheel.com/tabacalera-de-garcia-flor-de-copan-resume-shipments-to-altadis-u-s-a-jr-cigar/470794/",
-      "title_en": "Tabacalera de García, Flor de Copán Resume Altadis U.S.A. Shipments",
-      "summary_en": "Shipments to Altadis U.S.A. and JR Cigar have resumed from Tabacalera de García in the Dominican Republic — one of the world's largest cigar factories — and Flor de Copán in Honduras, after being halted by US sanctions on companies linked to Chen Zhi. The sanctions extended to more than 100 entities connected to him, and the US side had temporarily been moving production to other factories, including in Nicaragua."
-    },
-    {
-      "date": "2026-05",
-      "category": "業界・企業",
-      "title_ja": "STGの2026年第1四半期、葉巻事業はまだら模様のスタート",
-      "summary_ja": "Cigars InternationalやGeneral Cigar Co.を傘下に持つSTGの2026年第1四半期売上高はDKK 18.59億（約2億8,900万ドル）で、前年同期比約6%減となった。為替の影響で報告ベースは減収だったものの、北米市場ではハンドメイド葉巻カテゴリーを中心にオーガニック売上がプラス成長となり、CAOとコイーバ（米国版）の販売が好調だった。",
-      "source": "halfwheel",
-      "source_title": "STG Starts Off 2026 With Mixed Cigar Performance",
-      "url": "https://halfwheel.com/stg-starts-off-2026-with-mixed-cigar-performance/471581/",
-      "title_en": "STG Starts 2026 With Mixed Cigar Performance in First Quarter",
-      "summary_en": "STG, whose portfolio includes Cigars International and General Cigar Co., reported first-quarter 2026 net sales of DKK 1,859 million (roughly $289 million), down about 6% year on year. Although reported revenue declined owing to currency effects, organic sales in the North American market grew, led by the handmade cigar category, with strong sales of CAO and the US version of Cohiba."
     }
   ]
 };
