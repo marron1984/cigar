@@ -7,8 +7,60 @@
    手で足すこともできますが、items の並び・キーは崩さないでください。
    ============================================================ */
 var NEWS_DATA = {
-  "updated": "2026-09-03",
+  "updated": "2026-09-04",
   "items": [
+    {
+      "date": "2026-09-04",
+      "category": "新製品",
+      "title_ja": "エイロア「エクスペディション」限定店で発売",
+      "summary_ja": "エイロア（Eiroa）が「エクスペディション・コレクション（Expedition Collection）」を一部の販売店で発売した。昨年の「エイロア・アビエイター・シリーズ」の輸出版とみられるが、クリスチャン・エイロアは同一の葉巻かどうかを明言していない。",
+      "title_en": "Eiroa Expedition Collection Arrives at Select Stores",
+      "summary_en": "Eiroa has begun shipping its Expedition Collection to select retailers. The line appears to be the export version of last year's Eiroa Aviator Series, though Christian Eiroa has declined to confirm whether the cigars are identical. The release is limited to select stores.",
+      "source": "halfwheel",
+      "source_title": "Eiroa Expedition Collection Arrives at Select Stores",
+      "source_en": "halfwheel",
+      "source_title_en": "Eiroa Expedition Collection Arrives at Select Stores",
+      "url": "https://halfwheel.com/eiroa-expedition-collection-arrives-at-select-stores/478687/"
+    },
+    {
+      "date": "2026-09-04",
+      "category": "業界・企業",
+      "title_ja": "ペルドモ30周年、20本入り箱に変更",
+      "summary_ja": "ペルドモ（Perdomo）が「30th Anniversary」の梱包を30本入りから20本入りの箱に変更した。消費者が箱買いしやすくする狙いで、新形式では箱の価格が135ドルから155ドルへと下がる。",
+      "title_en": "Perdomo Shifts 30th Anniversary to 20-Count Boxes",
+      "summary_en": "Perdomo has changed the packaging of its 30th Anniversary line from 30-count boxes to 20-count boxes. The move is intended to make box purchases more affordable for consumers, with the new format dropping the box price to between $135 and $155.",
+      "source": "halfwheel",
+      "source_title": "Perdomo Shifts 30th Anniversary to 20-Count Boxes",
+      "source_en": "halfwheel",
+      "source_title_en": "Perdomo Shifts 30th Anniversary to 20-Count Boxes",
+      "url": "https://halfwheel.com/perdomo-shifts-30th-anniversary-to-20-count-boxes/478674/"
+    },
+    {
+      "date": "2026-09-03",
+      "category": "業界・企業",
+      "title_ja": "ダビドフ、プロシガーを脱退",
+      "summary_ja": "ダビドフ（Davidoff）のタバドム・ホールディングス（Tabadom Holdings）が、ドミニカの業界団体プロシガー（ProCigar）を脱退した。1992年の設立以来の活動会員だったが、スイスの同社は脱退が「グローバルなビジョンと優先事項」に関連したものだと説明した。",
+      "title_en": "Davidoff Quits ProCigar",
+      "summary_en": "Davidoff's Tabadom Holdings has left ProCigar, the Dominican cigar makers' association. The Swiss company had been an active member since the organisation was founded in 1992. Davidoff said its exit was related to its \"global vision and priorities.\"",
+      "source": "halfwheel",
+      "source_title": "Davidoff Quits ProCigar",
+      "source_en": "halfwheel",
+      "source_title_en": "Davidoff Quits ProCigar",
+      "url": "https://halfwheel.com/davidoff-quits-procigar/478621/"
+    },
+    {
+      "date": "2026-09-03",
+      "category": "業界・企業",
+      "title_ja": "ラース・テテンス氏が死去",
+      "summary_ja": "プレミアム葉巻業界の異色の人物、ラース・テテンス（Lars Tetens）氏が死去した。同氏は1980年代初頭から独自の加香葉巻を作り始め、2019年にはアレック・ブラッドリーのアラン・ルービンとの契約を通じて業界に復帰していた。",
+      "title_en": "Lars Tetens Passes Away",
+      "summary_en": "Lars Tetens, one of the more unique personalities in the premium cigar industry, has died. He began creating his conditioned cigars in the early 1980s and returned to the business in 2019 through an agreement with Alan Rubin of Alec Bradley.",
+      "source": "halfwheel",
+      "source_title": "Lars Tetens Passes Away",
+      "source_en": "halfwheel",
+      "source_title_en": "Lars Tetens Passes Away",
+      "url": "https://halfwheel.com/lars-tetens-passes-away/478605/"
+    },
     {
       "date": "2026-09-03",
       "category": "新製品",
@@ -73,6 +125,19 @@ var NEWS_DATA = {
       "source_en": "halfwheel",
       "source_title_en": "Corte Madera, Calif. Moving Forward With Total Tobacco & Nicotine Sales Ban",
       "url": "https://halfwheel.com/corte-madera-calif-moving-forward-with-total-tobacco-nicotine-sales-ban/478593/"
+    },
+    {
+      "date": "2026-09-02",
+      "category": "規制・市場",
+      "title_ja": "クオリティ・インポーターズ、シカーを値下げ",
+      "summary_ja": "クオリティ・インポーターズ・トレーディング（Quality Importers Trading Company）が、人気のシカー（XIKAR）アクセサリーの卸・小売価格を本日発注分から引き下げた。対象はライター・カッター24機種、全トラベルケース、加湿関連16製品で、値下げ幅は3〜28%、平均17%減。世界的な輸送費の安定と関税引き下げが後押ししたという。",
+      "title_en": "Quality Importers Announces Price Reductions on Xikar Accessories",
+      "summary_en": "Quality Importers Trading Company has reduced wholesale and retail pricing on most of its best-selling XIKAR accessories, effective today on new orders. The changes affect 24 lighter and cutter models, all travel cases and 16 humidification products, with reductions ranging from 3% to 28% and averaging 17%. President and COO Marilyn Florez-Giordano cited stabilising global shipping rates and recent tariff reductions as helping offset earlier cost pressures.",
+      "source": "Cigar Journal",
+      "source_title": "Quality Importers Announces Price Reductions On Xikar Accessories",
+      "source_en": "Cigar Journal",
+      "source_title_en": "Quality Importers Announces Price Reductions on Xikar Accessories",
+      "url": "https://www.cigarjournal.com/quality-importers-announces-price-reductions-on-xikar-accessories/?utm_source=rss&utm_medium=rss&utm_campaign=quality-importers-announces-price-reductions-on-xikar-accessories"
     },
     {
       "date": "2026-09-02",
@@ -216,6 +281,19 @@ var NEWS_DATA = {
       "source_en": "halfwheel",
       "source_title_en": "Por Larrañaga 35 Aniversario Celebrates 5th Avenue Anniversary",
       "url": "https://halfwheel.com/por-larranaga-35-aniversario-celebrates-5th-avenue-anniversary/478261/"
+    },
+    {
+      "date": "2026-08-31",
+      "category": "業界・企業",
+      "title_ja": "カヴァリエ・ジュネーブ、ヒューストンに新倉庫",
+      "summary_ja": "カヴァリエ・ジュネーブ・シガーズ（Cavalier Genève Cigars）が、米ヒューストン近郊に新倉庫を開設し今週から稼働すると発表した。米国市場・顧客向け専用で、新たな倉庫責任者と業務プロセスを導入。所在地はテキサス州スタッフォード。創業者セバスチャン・ドコペ氏はサービス向上を狙った投資だと述べた。",
+      "title_en": "Cavalier Genève Cigars Announces New Houston-Based Warehouse",
+      "summary_en": "Cavalier Genève Cigars has announced that its new warehouse near Houston, Texas is operational this week, exclusively servicing the US market and its clients. The company has added a new warehouse manager and new processes aimed at improving service standards. Founder Sebastien Decoppet said the move followed months of preparation begun late last year. The facility is located in Stafford, Texas.",
+      "source": "Cigar Journal",
+      "source_title": "Cavalier Genève Cigars Announces New Houston Based Warehouse",
+      "source_en": "Cigar Journal",
+      "source_title_en": "Cavalier Genève Cigars Announces New Houston-Based Warehouse",
+      "url": "https://www.cigarjournal.com/cavalier-geneve-cigars-announces-new-houston-based-warehouse/?utm_source=rss&utm_medium=rss&utm_campaign=cavalier-geneve-cigars-announces-new-houston-based-warehouse"
     },
     {
       "date": "2026-08-31",
@@ -1998,76 +2076,6 @@ var NEWS_DATA = {
       "url": "https://cigar.or.jp/",
       "title_en": "Japan Cigar Association Updates Official Habanos Price List",
       "summary_en": "The Japan Cigar Association added new Cuban cigar prices on 25 June 2026 and updated its price list again on 15 July. The association publishes the official Japanese price list for Habanos on its website; under the Tobacco Business Act, selling cigars not registered with the Ministry of Finance, or selling above the official price, is prohibited. Globally, price rises by Habanos S.A. and supply shortages caused by poor cigar-leaf harvests have also been reported."
-    },
-    {
-      "date": "2026-07",
-      "category": "イベント・アワード",
-      "title_ja": "Cigar Journal「Cigar Trophy 2026」、投票期間を経て9月に授賞式へ",
-      "summary_ja": "1998年に始まった業界で唯一の一般投票アワード「Cigar Trophy」の2026年版は、5月16日から6月7日にノミネート受付、6月29日から7月12日に最終投票が行われた。授賞式は2026年9月15日にInterTabac（ドルトムント）で開催され、Facebookでライブ配信される予定。編集部選定のジュリー賞（Best Art、Lifetime Achievementなど）も同時に発表される。",
-      "source": "cigarjournal.com",
-      "source_title": "CIGAR TROPHY 2026 – IT'S TIME TO VOTE! | Cigar Journal",
-      "url": "https://www.cigarjournal.com/cigar-trophy-2026-its-time-to-vote/",
-      "title_en": "Cigar Journal's Cigar Trophy 2026 Heads for September Ceremony",
-      "summary_en": "The 2026 edition of the Cigar Trophy, the industry's only public-vote award since its launch in 1998, accepted nominations from 16 May to 7 June, with final voting held from 29 June to 12 July. The awards ceremony is due to take place on 15 September 2026 at InterTabac in Dortmund and will be streamed live on Facebook. Jury awards chosen by the editorial team, including Best Art and Lifetime Achievement, will be announced at the same time."
-    },
-    {
-      "date": "2026-07",
-      "category": "規制・市場",
-      "title_ja": "PCA、FDAの登録規則案に対し意見提出へ　小売業者への影響を懸念",
-      "summary_ja": "プレミアムシガー協会（PCA）は、FDAのたばこ製品施設登録・製品リスト規則案について、9月14日の期限までに会員を代表して意見を提出すると表明した。プレミアムシガー製造業者は訴訟の勝利により対象外だが、定義を満たさない葉巻やパイプたばこなど、約3,500の小売会員が扱う多くの製品が新たな要件の影響を受けると警告している。",
-      "source": "premiumcigars.org",
-      "source_title": "Premium Cigar Association Responds to FDA's Proposed Tobacco Product Registration Rule",
-      "url": "https://premiumcigars.org/premium-cigar-association-responds-to-fdas-proposed-tobacco-product-registration-rule/",
-      "title_en": "PCA to Comment on FDA Registration Rule, Citing Retailer Impact",
-      "summary_en": "The Premium Cigar Association (PCA) has stated that it will submit comments on behalf of its members on the FDA's proposed tobacco product facility registration and product listing rule by the 14 September deadline. Although premium cigar manufacturers are exempt thanks to a court victory, the association warns that many products handled by its roughly 3,500 retail members — including cigars that do not meet the definition and pipe tobacco — will be affected by the new requirements."
-    },
-    {
-      "date": "2026-07",
-      "category": "規制・市場",
-      "title_ja": "コロラド州、プレミアムシガーの物品税率を20%に引き下げ",
-      "summary_ja": "コロラド州の法案SB26-086により、プレミアムシガーに対する州物品税率がメーカー表示価格（MLP）の20%に引き下げられ、2026年7月1日に発効する。一方で全米では、ニューハンプシャー州やインディアナ州、ウェストバージニア州など、財政圧力を背景にたばこ増税を目指す動きも並行して進んでおり、州レベルの税制は減税と増税の両方向に分かれている。",
-      "source": "leg.colorado.gov",
-      "source_title": "SB26-086 Reduce Premium Cigar Excise Tax Rate",
-      "url": "https://leg.colorado.gov/bills/SB26-086",
-      "title_en": "Colorado Cuts Premium Cigar Excise Tax Rate to 20%",
-      "summary_en": "Under Colorado bill SB26-086, the state excise tax rate on premium cigars is reduced to 20% of the manufacturer's list price (MLP), taking effect on 1 July 2026. Meanwhile, across the United States, moves towards tobacco tax increases driven by fiscal pressure are proceeding in parallel in states such as New Hampshire, Indiana and West Virginia, leaving state-level tax policy split between cuts and rises."
-    },
-    {
-      "date": "2026-07",
-      "category": "日本国内",
-      "title_ja": "日本たばこアイメックス、7月1日から葉巻・シガリロなど輸入専門たばこを一斉値上げ",
-      "summary_ja": "日本たばこアイメックスが取り扱う手巻き用シャグ、パイプ葉、葉巻などの輸入・専門たばこが2026年7月1日より一斉に定価改定された。コイーバ、モンテクリスト、ロメオ・Y・ジュリエッタ、パルタガスなどのシガリロ・ミニシガーも対象で、クラブサイズ（20本入）は1箱あたり700〜900円、トスカネロは1箱（5本入）あたり100円の値上げとなった。",
-      "source": "ブリケオンライン",
-      "source_title": "【2026年7月】シャグ・パイプ葉・葉巻値上がり情報！チョイスやトスカネロの新価格とまとめ買い期限",
-      "source_en": "Briquet Online",
-      "source_title_en": "July 2026: price rises for shag, pipe tobacco and cigars — new prices for Choice and Toscanello, and the deadline for buying at the old price",
-      "url": "https://www.briquetonline.com/news/choicetoscanelloneage2026-7",
-      "title_en": "Japan Tobacco Imex Raises Prices on Imported Cigars from 1 July",
-      "summary_en": "Imported and speciality tobacco handled by Japan Tobacco Imex — including hand-rolling shag, pipe tobacco and cigars — underwent an across-the-board price revision from 1 July 2026. Cigarillos and mini cigars from Cohiba, Montecristo, Romeo y Julieta and Partagás are among the products affected, with club sizes (packs of 20) rising by 700 to 900 yen per pack and Toscanello by 100 yen per pack of five."
-    },
-    {
-      "date": "2026-07",
-      "category": "日本国内",
-      "title_ja": "JT、7月1日から「キャメル・クラフト」「アメスピ」計25銘柄を定価改定",
-      "summary_ja": "JTは2026年7月1日より「キャメル・クラフト」全18銘柄と「ナチュラル アメリカン スピリット」全7銘柄の計25銘柄を値上げした。キャメル・クラフトは450円から470円、アメリカン スピリット（14本入）は420円から440円への改定で、あわせて販売終了品の情報もまとめられている。",
-      "source": "ブリケオンライン",
-      "source_title": "【2026年7月】紙巻きたばこ値上がり情報！キャメル・アメスピ新価格と販売終了品まとめ",
-      "source_en": "Briquet Online",
-      "source_title_en": "July 2026: cigarette price rises — new prices for Camel and American Spirit, and the lines being discontinued",
-      "url": "https://www.briquetonline.com/news/camelamespineage2026-7",
-      "title_en": "JT Revises Prices on 25 Camel Craft and American Spirit Brands",
-      "summary_en": "From 1 July 2026, JT raised prices on a total of 25 products: all 18 Camel Craft variants and all seven Natural American Spirit variants. Camel Craft moves from 450 yen to 470 yen, while American Spirit (packs of 14) rises from 420 yen to 440 yen. Information on discontinued products has also been compiled alongside the changes."
-    },
-    {
-      "date": "2026-06-12",
-      "category": "新製品",
-      "title_ja": "アルトゥーロ・フエンテ、新作2種入りの「ファーザー&サン 2026」サンプラーを出荷",
-      "summary_ja": "アルトゥーロ・フエンテの「Father & Son 2026 Collection」が6月12日に店舗へ出荷された。サンプラーには2つの新作が含まれ、ひとつはダブルロブスト版の「OpusX 25」、もうひとつは特別なキャップを備えた新バージョンの「ドン・カルロス The Man」だ。OpusX誕生25周年を記念する動きの一環となる。",
-      "source": "halfwheel",
-      "source_title": "Arturo Fuente's Father and Son 2026 Sampler Includes Two New Cigars",
-      "url": "https://halfwheel.com/arturo-fuentes-father-and-son-2026-sampler-includes-two-new-cigars/472930/",
-      "title_en": "Arturo Fuente Father & Son 2026 Sampler Includes Two New Cigars",
-      "summary_en": "Arturo Fuente's Father & Son 2026 Collection shipped to retailers on 12 June. The sampler contains two new cigars: the OpusX 25, a double robusto version, and a new version of the Don Carlos The Man featuring a special cap. The release forms part of the celebrations marking the 25th anniversary of OpusX."
     }
   ]
 };
