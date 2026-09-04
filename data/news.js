@@ -7,8 +7,73 @@
    手で足すこともできますが、items の並び・キーは崩さないでください。
    ============================================================ */
 var NEWS_DATA = {
-  "updated": "2026-09-04",
+  "updated": "2026-09-05",
   "items": [
+    {
+      "date": "2026-09-05",
+      "category": "新製品",
+      "title_ja": "ゲリス、新作ヘリテージNo.50を披露",
+      "summary_ja": "ゲリス・ファミリー・シガーズ（Gellis Family Cigars）が2026年PCA展示会で新ブレンド2種を披露した。うち「ヘリテージNo.50」は、メキシカン・サンアンドレス（San Andrés）ラッパーにニカラグア産タバコを組み合わせたNACSA製のロブストである。",
+      "title_en": "Gellis Family Cigars Heritage No. 50",
+      "summary_en": "Gellis Family Cigars showed off two new blends at the 2026 PCA Convention & Trade Show. Among them is the Heritage No. 50, a NACSA-made robusto featuring a Mexican San Andrés wrapper over Nicaraguan tobaccos. The company used the industry's main trade show to unveil the additions to its portfolio.",
+      "source": "halfwheel",
+      "source_title": "Gellis Family Cigars Heritage No. 50",
+      "source_en": "halfwheel",
+      "source_title_en": "Gellis Family Cigars Heritage No. 50",
+      "url": "https://halfwheel.com/gellis-family-cigars-heritage-no-50/478332/"
+    },
+    {
+      "date": "2026-09-05",
+      "category": "新製品",
+      "title_ja": "プロメテウス、オーパスX等のディアデマを出荷",
+      "summary_ja": "プロメテウス（Prometheus）が、オーパスX（OpusX）レア・ブラック、レア・パープル、ゴッド・オブ・ファイア（God of Fire）ネバー・バック・ダウン、スペシャル・リザーブの4ラインでディアデマを出荷開始した。4ラインとも同じ3ビトラで提供されるが、今週出荷されるのは2ビトラのみ。新たにレア・ブラックのサンプラーも登場する。",
+      "title_en": "Prometheus Ships Diademas for OpusX Rare Black, Rare Purple & God of Fire Never Back Down, Special Reserve",
+      "summary_en": "Prometheus has begun shipping diademas for four lines: OpusX Rare Black, Rare Purple, God of Fire Never Back Down and Special Reserve. All four are offered in the same three vitolas, though only two of the vitolas are shipping this week. In addition, a new Rare Black sampler is being released.",
+      "source": "halfwheel",
+      "source_title": "Prometheus Ships Diademas for OpusX Rare Black, Rare Purple & God of Fire Never Back Down, Special Reserve",
+      "source_en": "halfwheel",
+      "source_title_en": "Prometheus Ships Diademas for OpusX Rare Black, Rare Purple & God of Fire Never Back Down, Special Reserve",
+      "url": "https://halfwheel.com/prometheus-ships-diademas-for-opusx-rare-black-rare-purple-god-of-fire-never-back-down-special-reserve/478561/"
+    },
+    {
+      "date": "2026-09-05",
+      "category": "新製品",
+      "title_ja": "ミカレフ・オレンジ、全米出荷を開始",
+      "summary_ja": "ミカレフ（Micallef）の新作「オレンジ（Orange）」が先週発売され、月曜に全米の店舗へ出荷された。翌日には店頭に並ぶ見込み。カラー・シリーズ（Color Series）の他6ブレンドと同じ2ビトラ・同一希望小売価格で提供される。",
+      "title_en": "Micallef Orange Ships Nationwide",
+      "summary_en": "The Micallef Orange launched last week, shipped to stores nationwide on Monday and should be on shelves by the following day. It is offered in the same two vitolas, and at the same MSRPs, as the other six blends in the Color Series.",
+      "source": "halfwheel",
+      "source_title": "Micallef Orange Ships Nationwide",
+      "source_en": "halfwheel",
+      "source_title_en": "Micallef Orange Ships Nationwide",
+      "url": "https://halfwheel.com/micallef-orange-ships-nationwide/478765/"
+    },
+    {
+      "date": "2026-09-04",
+      "category": "新製品",
+      "title_ja": "ラモン・アロネス地域限定、アンドラで発売",
+      "summary_ja": "ラモン・アロネス（Ramón Allones）の新作「カルレマニー（Carlemany）」がアンドラで発売された。ローマ皇帝カール大帝にちなむ一本で、近年のエディシオン・レヒオナル（Edición Regional）としては珍しく、バンドを2本のみ備える。",
+      "title_en": "Ramón Allones Carlemany Goes on Sale in Andorra",
+      "summary_en": "A new Ramón Allones cigar, the Carlemany, has gone on sale in Andorra. It honours Charlemagne, the Roman emperor. Unlike seemingly every other Edición Regional release of late, it carries only two bands.",
+      "source": "halfwheel",
+      "source_title": "Ramón Allones Carlemany Gones on Sale in Andorra",
+      "source_en": "halfwheel",
+      "source_title_en": "Ramón Allones Carlemany Goes on Sale in Andorra",
+      "url": "https://halfwheel.com/ramon-allones-carlemany-gones-on-sale-in-andorra/478741/"
+    },
+    {
+      "date": "2026-09-04",
+      "category": "新製品",
+      "title_ja": "ソブレメサ・タパ・ネグラ新作を発表",
+      "summary_ja": "ダンバートン（Dunbarton）のソブレメサ（Sobremesa）派生ラインとして「タパ・ネグラ（Tapa Negra）コロナ・ゴルダ」が登場した。スペイン語で「黒い蓋」を意味する名の通り、ホヤ・デ・ニカラグア（Joya de Nicaragua）のカビネッタ（Cabinetta）と共通の独特なデザインを採用する。",
+      "title_en": "Sobremesa Tapa Negra Corona Gorda",
+      "summary_en": "This offshoot of Dunbarton's Sobremesa brand, the Tapa Negra Corona Gorda, features a very distinctive design that is also used by Joya de Nicaragua's Cabinetta line. Appropriately, the name Tapa Negra means \"black lid\" in Spanish.",
+      "source": "halfwheel",
+      "source_title": "Sobremesa Tapa Negra Corona Gorda",
+      "source_en": "halfwheel",
+      "source_title_en": "Sobremesa Tapa Negra Corona Gorda",
+      "url": "https://halfwheel.com/sobremesa-tapa-negra-corona-gorda/478643/"
+    },
     {
       "date": "2026-09-04",
       "category": "新製品",
@@ -34,6 +99,19 @@ var NEWS_DATA = {
       "source_en": "halfwheel",
       "source_title_en": "Perdomo Shifts 30th Anniversary to 20-Count Boxes",
       "url": "https://halfwheel.com/perdomo-shifts-30th-anniversary-to-20-count-boxes/478674/"
+    },
+    {
+      "date": "2026-09-03",
+      "category": "業界・企業",
+      "title_ja": "ドリュー・エステート創業30周年、還元策を開始",
+      "summary_ja": "ドリュー・エステート（Drew Estate）が創業30周年を迎え、会社を支えてきた消費者や小売店、コミュニティに焦点を当てた特典プログラム「DE30 REWARDS」を開始した。「シガーのリバース（The Rebirth of Cigars）」の次章を見据えた取り組みとしている。",
+      "title_en": "Drew Estate Turns 30 and Gives Back With DE30 REWARDS",
+      "summary_en": "Drew Estate is celebrating its 30th anniversary by turning the spotlight on the consumers, retailers and community that helped build The Rebirth of Cigars, with the launch of its DE30 REWARDS programme. The company says the initiative gives back to those who supported it while looking ahead to the next chapter of the brand.",
+      "source": "StogiePress",
+      "source_title": "Cigar News: Drew Estate Turns 30 and Gives Back With DE30 REWARDS",
+      "source_en": "StogiePress",
+      "source_title_en": "Cigar News: Drew Estate Turns 30 and Gives Back With DE30 REWARDS",
+      "url": "https://stogiepress.com/cigar-news-drew-estate-turns-30-and-gives-back-with-de30-rewards/"
     },
     {
       "date": "2026-09-03",
@@ -2006,76 +2084,6 @@ var NEWS_DATA = {
       "source": "halfwheel",
       "source_title": "Angelenos Toro",
       "url": "https://halfwheel.com/angelenos-toro/475622/"
-    },
-    {
-      "date": "2026-08-01",
-      "category": "業界・企業",
-      "title_ja": "スイス発EGMシガーズ、日本向け拡充",
-      "summary_ja": "スイス発のプレミアムシガーブランド「EGM Cigars」が、日本市場向けのラインナップを拡充すると発表した。ブランドの世界観を体現する新コレクションを展開する。",
-      "title_en": "Swiss Brand EGM Cigars Expands Japan Line-up",
-      "summary_en": "EGM Cigars, a premium cigar brand from Switzerland, has announced it is expanding its line-up for the Japanese market, introducing a new collection that embodies the brand's world view.",
-      "source": "Excite エキサイト",
-      "source_title": "スイス発プレミアムシガーブランド「EGM Cigars」、日本市場向けラインナップを拡充 ブランドの世界観を体現する新コレクションを展開 - Excite エキサイト",
-      "source_en": "Excite",
-      "source_title_en": "Swiss Premium Cigar Brand EGM Cigars Expands Japan Line-up With New Collection",
-      "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE5QdnJfLTFYNzcwaFdTMzFxd18xNWpTN3NLenpTSjVURlpES09xSTZWM1U0UnhUR0FmLTBIVVdpXzR6VzFtS3RMekQ2cTRIMHprV1ZjaGNRRUZpLTJGRW1kLXdjaXFVNWNLa0xFd3NGWVQ2MWtxallCeGdCUlZYTWc?oc=5"
-    },
-    {
-      "date": "2026-08-01",
-      "category": "規制・市場",
-      "title_ja": "STG、8月に全製品を値上げ",
-      "summary_ja": "スカンジナビアン・タバコ・グループ（STG）が8月3日（月）から全製品を値上げすると発表した。約20％は関税調整による小幅な引き上げだが、大半の葉巻は平均4％超の値上げとなる。",
-      "title_en": "STG Increasing Prices in August 2026",
-      "summary_en": "Scandinavian Tobacco Group (STG) will raise the prices of every product from Monday, 3 August. Around 20 per cent of items will see a modest bump owing to a tariff adjustment, however most cigars are getting an increase that averages out to more than 4 per cent.",
-      "source": "halfwheel",
-      "source_title": "STG Increasing Prices in August 2026",
-      "url": "https://halfwheel.com/stg-raising-prices-in-august-2026/475898/"
-    },
-    {
-      "date": "2026-08-01",
-      "category": "新製品",
-      "title_ja": "XIKAR、Allume 2・3ライターを出荷開始",
-      "summary_ja": "クオリティ・インポーターズがXIKARの新ライター「Allume 2」（ダブルジェット、99.99ドル）と「Allume 3」（トリプルジェット、69.99ドル）の出荷を開始した。2026年PCAショーで発表された再設計モデルで、シングルジェットの「Allume 1」も用意される。",
-      "title_en": "Now Shipping – XIKAR Allume 2 and Allume 3 Cigar Lighters",
-      "summary_en": "Quality Importers Trading Company has begun shipping the new XIKAR Allume 2 (double-jet) and Allume 3 (triple-jet) cigar lighters. Announced at the 2026 PCA Show, the redesigned and re-engineered series delivers performance at a lower cost. Suggested retail prices are $99.99 for the Allume 3 and $69.99 for the Allume 2, with a single-jet Allume 1 also offered.",
-      "source": "Cigar Journal",
-      "source_title": "Now Shipping – XIKAR Allume 2 and Allume 3 Cigar Lighters",
-      "url": "https://www.cigarjournal.com/now-shipping-xikar-allume-2-and-allume-3-cigar-lighters/?utm_source=rss&utm_medium=rss&utm_campaign=now-shipping-xikar-allume-2-and-allume-3-cigar-lighters"
-    },
-    {
-      "date": "2026-08-01",
-      "category": "新製品",
-      "title_ja": "アポステイト、初のシガリロ「Lost Pages」出荷",
-      "summary_ja": "アポステイト（Apostate）が初のマシンメイド製品となるシガリロ「The Lost Pages」を出荷開始した。既存8種のコアブレンドの端材を刻んで混ぜたフィラーを使用。MSRPは1本1.45ドルで、100本入りボックスで販売される。",
-      "title_en": "Apostate Ships The Lost Pages",
-      "summary_en": "Apostate has begun shipping The Lost Pages, its first-ever cigarillo and first machine-made production. The filler blend is composed of chopped-up remnants of all eight of the company's existing core blends. Each cigar carries an MSRP of $1.45 and is packaged in 100-count boxes.",
-      "source": "halfwheel",
-      "source_title": "Apostate Ships The Lost Pages",
-      "url": "https://halfwheel.com/apostate-ships-the-lost-pages/475840/"
-    },
-    {
-      "date": "2026-08-01",
-      "category": "日本国内",
-      "title_ja": "スイス発「EGM Cigars」、日本ラインナップ拡充",
-      "summary_ja": "スイス発のプレミアムシガーブランド「EGM Cigars」が日本市場向けラインナップを拡充し、ブランドの世界観を体現する新コレクションを展開すると発表した。",
-      "title_en": "Swiss Premium Brand EGM Cigars Expands Japan Line-up",
-      "summary_en": "Swiss premium cigar brand EGM Cigars has announced an expansion of its line-up for the Japanese market, rolling out a new collection that embodies the brand's world view.",
-      "source": "Mantan Web",
-      "source_title": "Swiss Premium Brand EGM Cigars Expands Japan Line-up",
-      "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE1UYWdEY0pDZ0lCOHJwcl9oNkpvdWc3MjVWZVFSSWFuZktPWGk0RkhYMERva1BkZ1NzMVV3c0UwcnRUTDJtZ29BQWtSMWUwbFprRHQyQ3gyRE5sOHExdUFlOF9iSXIyR29CMjF5S1RTTnBYSG82elE?oc=5"
-    },
-    {
-      "date": "2026-07-15",
-      "category": "日本国内",
-      "title_ja": "日本シガー協会、ハバノス（キューバシガー）の日本定価表を更新",
-      "summary_ja": "日本シガー協会は2026年6月25日にキューバシガーの定価を追加し、7月15日にも定価表を更新した。同協会はハバノスの日本定価表を公式サイトで公開しており、財務省未登録の葉巻の販売や定価以上での販売はたばこ事業法により禁止されている。世界的にはハバノスS.A.の値上げとシガー葉の不作による供給不足も報告されている。",
-      "source": "日本シガー協会",
-      "source_title": "日本シガー協会 | ハバノス日本定価表",
-      "source_en": "Japan Cigar Association",
-      "source_title_en": "Japan Cigar Association | Habanos Japanese price list",
-      "url": "https://cigar.or.jp/",
-      "title_en": "Japan Cigar Association Updates Official Habanos Price List",
-      "summary_en": "The Japan Cigar Association added new Cuban cigar prices on 25 June 2026 and updated its price list again on 15 July. The association publishes the official Japanese price list for Habanos on its website; under the Tobacco Business Act, selling cigars not registered with the Ministry of Finance, or selling above the official price, is prohibited. Globally, price rises by Habanos S.A. and supply shortages caused by poor cigar-leaf harvests have also been reported."
     }
   ]
 };
