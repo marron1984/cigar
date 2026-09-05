@@ -7,8 +7,34 @@
    手で足すこともできますが、items の並び・キーは崩さないでください。
    ============================================================ */
 var NEWS_DATA = {
-  "updated": "2026-09-05",
+  "updated": "2026-09-06",
   "items": [
+    {
+      "date": "2026-09-06",
+      "category": "新製品",
+      "title_ja": "キャバリエ・ジュネーブ10周年記念クラロ登場",
+      "summary_ja": "キャバリエ・ジュネーブ・プロジェクト（Cavalier Genève）が10周年記念シガー4種のうちの1本「Claro」を発表した。このモデルは10種類のタバコをブレンドしており、かつての一般的な標準の倍にあたる構成となっている。",
+      "title_en": "Cavalier Genève Project 10th Anniversary Claro Released",
+      "summary_en": "Cavalier Genève has unveiled the Claro, one of four cigars marking the brand's 10th anniversary under its Project line. The blend is notable for containing ten different types of tobacco, double what was once considered a common standard for a cigar's composition. The release forms part of a broader anniversary collection celebrating a decade of the Geneva-based cigar maker.",
+      "source": "halfwheel",
+      "source_title": "Cavalier Genève Project 10th Anniversary Claro",
+      "source_en": "halfwheel",
+      "source_title_en": "Cavalier Genève Project 10th Anniversary Claro",
+      "url": "https://halfwheel.com/cavalier-geneve-project-10th-anniversary-claro/478793/"
+    },
+    {
+      "date": "2026-09-05",
+      "category": "イベント・アワード",
+      "title_ja": "プロシガー・フェスティバル2027、登録開始",
+      "summary_ja": "ドミニカ葉巻製造業者協会（PROCIGAR）が、第19回プロシガー・フェスティバルの参加登録を開始したと発表した。開催は2027年2月16〜19日、ドミニカ共和国サンティアゴ。工場・タバコ畑の見学、テイスティング、文化イベントに加え、チャリティーオークションを伴うガラディナーで締めくくられる。",
+      "title_en": "PROCIGAR Festival 2027: Registration Now Open",
+      "summary_en": "The Association of Dominican Cigar Manufacturers (PROCIGAR) has announced that registration is open for the 19th edition of its festival, taking place 16–19 February 2027 in Santiago de los Caballeros, Dominican Republic. Guests can enjoy exclusive factory and tobacco field tours, educational sessions, tastings and cultural celebrations hosted by member companies. The event culminates in the Auction Gala Dinner, featuring PROCIGAR's renowned charity auction of exclusive humidors, collectible lots and limited-edition releases.",
+      "source": "Cigar Journal",
+      "source_title": "PROCIGAR FESTIVAL 2027: Registration Now Open",
+      "source_en": "Cigar Journal",
+      "source_title_en": "PROCIGAR Festival 2027: Registration Now Open",
+      "url": "https://www.cigarjournal.com/procigar-festival-2027-registration-now-open/?utm_source=rss&utm_medium=rss&utm_campaign=procigar-festival-2027-registration-now-open"
+    },
     {
       "date": "2026-09-05",
       "category": "新製品",
@@ -294,6 +320,19 @@ var NEWS_DATA = {
       "source_en": "halfwheel",
       "source_title_en": "Espinosa Begins Shipping Laranja Hybrid",
       "url": "https://halfwheel.com/espinosa-begins-shipping-laranja-hybrid/478408/"
+    },
+    {
+      "date": "2026-09-01",
+      "category": "業界・企業",
+      "title_ja": "衣類の葉巻臭を分解「サヴィル・ノワール」発売",
+      "summary_ja": "マレーシア生まれの豪州人シェーン・ウィー氏が、衣類に染みつく葉巻の煙の臭いを分解する製品「サヴィル・ノワール（Savile Noir）」を開発した。香りで覆い隠す香水ではなく、酵素が煙の分子に働きかけて分散させるという。6か月の試験を経て、西オーストラリアの初開催イベント「フェスティバル・オブ・ザ・リーフ」で発売した。",
+      "title_en": "Savile Noir: Eliminating Lingering Cigar Smoke From Garments",
+      "summary_en": "Malaysian-born Australian Shane Wee has developed Savile Noir, a product designed to eliminate rather than mask the smell of cigar smoke on clothing. Named in reference to Savile Row, the formulation uses specialised enzymes that break down the organic compounds and odour molecules left behind by dense cigar smoke, dispersing them rather than covering them with fragrance. After six months of trials, the product was launched at Western Australia's inaugural Festival of the Leaf, aimed at cigar lovers heading to family, business or social events.",
+      "source": "Cigar Journal",
+      "source_title": "Savile Noir: Eliminating Lingering Cigar Smoke From Garments",
+      "source_en": "Cigar Journal",
+      "source_title_en": "Savile Noir: Eliminating Lingering Cigar Smoke From Garments",
+      "url": "https://www.cigarjournal.com/savile-noir-eliminating-lingering-cigar-smoke-from-garments/?utm_source=rss&utm_medium=rss&utm_campaign=savile-noir-eliminating-lingering-cigar-smoke-from-garments"
     },
     {
       "date": "2026-09-01",
@@ -710,6 +749,19 @@ var NEWS_DATA = {
       "source_en": "halfwheel",
       "source_title_en": "Emanuele Uccellini, Head of Davidoff of Geneva USA, Leaving in October",
       "url": "https://halfwheel.com/emanuele-uccellini-head-of-davidoff-of-geneva-usa-leaving-in-october/477839/"
+    },
+    {
+      "date": "2026-08-25",
+      "category": "日本国内",
+      "title_ja": "横浜でシガー＆ウイスキー限定イベント初開催",
+      "summary_ja": "横浜みなとみらいで、プレミアムシガーとシングルモルトのマリアージュを愉しむ限定イベントが初開催される。海外からシガーブランドのオーナーが来日し、シガーとウイスキーの奥深い世界を体験できる内容となっている。",
+      "title_en": "Cigar & Whisky Pairing Event Debuts in Yokohama",
+      "summary_en": "A limited-run event pairing premium cigars with single malt whisky is being held for the first time in the Minato Mirai district of Yokohama. An overseas cigar brand owner is visiting Japan for the occasion, giving attendees the chance to explore the worlds of cigars and whisky through a curated marriage of the two.",
+      "source": "Excite エキサイト",
+      "source_title": "みなとみらいで知るシガーとウイスキーの奥深き世界。海外よりシガーブランドオーナー来日、プレミアムシガーとシングルモルトのマリアージュを嗜む限定イベントを初開催！ - Excite エキサイト",
+      "source_en": "Excite",
+      "source_title_en": "Explore the Deep World of Cigars and Whisky in Minato Mirai: First Limited Event with a Visiting Overseas Cigar Brand Owner",
+      "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxOWFhhRno4X2dkanJGWXBOOTdmNFpzNzZGaWNDZ3ZKYnVGd2VGVFVwOG0wOVNwSmJSRDhXQ2twX242YWl1dnpPTHB3RTltUFlmN0MxWDVMS0t1OWpwbmNzbTFKVGx1eEJ0NktLMEZqblM1OTlNdWpBYjhyc0NuTFZOdQ?oc=5"
     },
     {
       "date": "2026-08-25",
@@ -2036,54 +2088,6 @@ var NEWS_DATA = {
       "source_en": "Walkerplus",
       "source_title_en": "Two 'super-slim' Camel little cigars newly released",
       "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE8xdUJzZlE2blpqMHZYRVFwUXdoRUZEMWIwVjRtZ3hzd3lEWkxXXzBaQ2RTYXVGNUMycDlBNnZoRkdDci1TSXlHNmZlT0RYeVNSZUlvdNIBWkFVX3lxTFA4MUJPSjY0b20yY2hJX1h5RWhkYWVJY0ZMYWtqTTFZTFk2SExIa002ZzRhRWo1OW1zeGRrMGpXX0tFSHptYnAxd0ZfOFI1V1ZNcE8zMnZaS25jQQ?oc=5"
-    },
-    {
-      "date": "2026-08-05",
-      "category": "規制・市場",
-      "title_ja": "スペイン政府、私的空間の喫煙禁止を目指す",
-      "summary_ja": "スペイン政府が、飲食店テラスや屋外イベント、スタジアム、闘牛場、ビーチ、バス停、公園など屋外公共空間での全面禁煙を承認した。病院・学校・遊び場周辺には15メートルの緩衝地帯も設ける。さらに保健相モニカ・ガルシア（Mónica García）は喫煙者クラブの適用除外撤廃を表明しており、実現すれば私的施設内の喫煙を禁じる世界初の政府となる。法案は議会審議が残り、2027年7月の政権任期終了前の成立を目指すが、連立与党は過半数を欠き成立は難航が予想される。",
-      "title_en": "Spanish Government Aims to Ban Smoking in Private Spaces",
-      "summary_en": "Spain's government has approved a total ban on smoking in outdoor public spaces, including hospitality terraces, open-air events, stadiums, bullrings, beaches, bus shelters and parks, with a fifteen-metre buffer zone around hospitals, schools and playgrounds. Health Minister Mónica García has said the government intends to eliminate the current exemption for smokers' clubs, which would make Spain the first country to ban smoking in strictly private facilities. The measure still requires parliamentary processing, with the government aiming to finalise it before the administration ends in July 2027, though the coalition lacks a majority and faces an uphill battle.",
-      "source": "Cigar Journal",
-      "source_title": "The Spanish Government Aims to Ban Smoking in Private Spaces",
-      "source_en": "Cigar Journal",
-      "source_title_en": "The Spanish Government Aims to Ban Smoking in Private Spaces",
-      "url": "https://www.cigarjournal.com/the-spanish-government-aims-to-ban-smoking-in-private-spaces/?utm_source=rss&utm_medium=rss&utm_campaign=the-spanish-government-aims-to-ban-smoking-in-private-spaces"
-    },
-    {
-      "date": "2026-08-03",
-      "category": "新製品",
-      "title_ja": "カサ・カリージョ、アンコール限定2種を発売",
-      "summary_ja": "カサ・カリージョ（Casa Carrillo）が「アンコール・ノワールII（Encore Noir II）」と「アンコール・エディシオン・ウニカII（Encore Edición Única II）」を発表した。ノワールIIは全ニカラグア葉のブレンドをセレスティアルNo.2（6 1/8×50）で仕立て、番号入り1,500箱・各10本の限定生産。エディシオン・ウニカIIは国際限定シリーズ第2弾で、No.109（6½×54）を採用し「アミーゴス」と名付けた。",
-      "title_en": "Casa Carrillo Releases Encore Noir II and Encore Edición Única II",
-      "summary_en": "Casa Carrillo has announced the release of Encore Noir II and Encore Edición Única II. Noir II is a new, all-Nicaraguan expression of the Encore line, presented in the Celestial No. 2 vitola (6 1/8 x 50) and handcrafted at Casa Carrillo in Santiago, Dominican Republic, in a limited run of 1,500 individually numbered boxes of 10. Edición Única II, the second in the brand's annual international-exclusive series, uses the No. 109 shape (6½ x 54) and is named Amigos.",
-      "source": "Cigar Journal",
-      "source_title": "Casa Carrillo Releases Encore Noir II and Encore Edición Única II",
-      "source_en": "Cigar Journal",
-      "source_title_en": "Casa Carrillo Releases Encore Noir II and Encore Edición Única II",
-      "url": "https://www.cigarjournal.com/casa-carrillo-releases-encore-noir-ii-and-encore-edicion-unica-ii/?utm_source=rss&utm_medium=rss&utm_campaign=casa-carrillo-releases-encore-noir-ii-and-encore-edicion-unica-ii"
-    },
-    {
-      "date": "2026-08-02",
-      "category": "新製品",
-      "title_ja": "ランパート、限定「Limitada 2026」を予告",
-      "summary_ja": "ランパート（Lampert）が限定品「Limitada 2026」を予告した。あわせて「Limitada 2025」も再登場し、今回は109スタイルのキャップを採用、セラミックジャーで販売される。",
-      "title_en": "Lampert Limitada 2026 Teased",
-      "summary_en": "Lampert has teased its limited-edition Limitada 2026. In addition, the brand confirmed that the Limitada 2025 will return for a sophomore release, this time featuring a 109-style cap and packaged in ceramic jars.",
-      "source": "halfwheel",
-      "source_title": "Lampert Limitada 2026 Teased",
-      "url": "https://halfwheel.com/lampert-limitada-2026-teased/475922/"
-    },
-    {
-      "date": "2026-08-02",
-      "category": "新製品",
-      "title_ja": "プロメテウス、アンジェレノス トロを展開",
-      "summary_ja": "カルロス・フエンテ・シニアがブレンドし2009年に登場したアンジェレノス（Angelenos）のトロ。プロメテウス創業者キース・パークが暮らすロサンゼルスを称えて作られたラインである。",
-      "title_en": "Angelenos Toro",
-      "summary_en": "The Angelenos line was originally blended by Carlos Fuente Sr. and debuted in 2009. It was created to honour the city of Los Angeles, where Prometheus founder Keith Park lives. The line now includes a toro vitola.",
-      "source": "halfwheel",
-      "source_title": "Angelenos Toro",
-      "url": "https://halfwheel.com/angelenos-toro/475622/"
     }
   ]
 };
