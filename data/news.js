@@ -7,8 +7,21 @@
    手で足すこともできますが、items の並び・キーは崩さないでください。
    ============================================================ */
 var NEWS_DATA = {
-  "updated": "2026-09-06",
+  "updated": "2026-09-07",
   "items": [
+    {
+      "date": "2026-09-07",
+      "category": "新製品",
+      "title_ja": "ロッキー・パテル、サファイア新サイズ発売",
+      "summary_ja": "ロッキー・パテル（Rocky Patel）は「サファイア（Sapphire）」のコロナ・ゴルダを発表した。100を超えるブレンドを試し、2014年まで遡る葉を使用したという。クラシックなキューバ葉巻、特にその余韻に残る甘さに着想を得たプロファイルを目指してブレンドされた。",
+      "title_en": "Rocky Patel Sapphire Corona Gorda",
+      "summary_en": "Rocky Patel has released a Corona Gorda addition to its Sapphire line. According to the company, it evaluated more than 100 blends and used tobacco dating back to 2014 to craft the cigar. The blend was designed to create a profile inspired by classic Cuban cigars, specifically the lingering sweetness for which they were known.",
+      "source": "halfwheel",
+      "source_title": "Rocky Patel Sapphire Corona Gorda",
+      "source_en": "halfwheel",
+      "source_title_en": "Rocky Patel Sapphire Corona Gorda",
+      "url": "https://halfwheel.com/rocky-patel-sapphire-corona-gorda/478165/"
+    },
     {
       "date": "2026-09-06",
       "category": "新製品",
@@ -229,6 +242,19 @@ var NEWS_DATA = {
       "source_en": "halfwheel",
       "source_title_en": "Corte Madera, Calif. Moving Forward With Total Tobacco & Nicotine Sales Ban",
       "url": "https://halfwheel.com/corte-madera-calif-moving-forward-with-total-tobacco-nicotine-sales-ban/478593/"
+    },
+    {
+      "date": "2026-09-02",
+      "category": "日本国内",
+      "title_ja": "葉巻向けアイラモルト、日本限定240本発売",
+      "summary_ja": "シガーと愉しむために生まれたアイラモルト「スカラバス シガーモルト（Scarabus Cigar Malt）」が日本限定240本で発売された。葉巻との相性を意図して仕立てられた製品。",
+      "title_en": "Scarabus Cigar Malt released in Japan, limited to 240 bottles",
+      "summary_en": "An Islay single malt created to be enjoyed with cigars, \"Scarabus Cigar Malt\", has gone on sale in Japan as a limited release of 240 bottles. The whisky was crafted specifically to pair with cigars.",
+      "source": "PR TIMES",
+      "source_title": "日本限定240本。シガーと愉しむために生まれたアイラモルト「スカラバス シガーモルト」発売 - PR TIMES",
+      "source_en": "PR TIMES",
+      "source_title_en": "Scarabus Cigar Malt, an Islay malt born to be enjoyed with cigars, released limited to 240 bottles in Japan",
+      "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTFBkWTdwRzZUS1YtNlJFYlVMeng3N1FNbWszNFZuamJlZWFQbFBFZVBYTlVYQ0FBS3J5WmVzQmJZMEdWRGtsdllHVm9fLVVteGdmLXVqN0p3QTA1MXhFSHJ5ZE45YUs1RzhOaEE?oc=5"
     },
     {
       "date": "2026-09-02",
@@ -749,6 +775,19 @@ var NEWS_DATA = {
       "source_en": "halfwheel",
       "source_title_en": "Emanuele Uccellini, Head of Davidoff of Geneva USA, Leaving in October",
       "url": "https://halfwheel.com/emanuele-uccellini-head-of-davidoff-of-geneva-usa-leaving-in-october/477839/"
+    },
+    {
+      "date": "2026-08-25",
+      "category": "日本国内",
+      "title_ja": "横浜でシガー＆ウイスキー体験の限定イベント",
+      "summary_ja": "横浜みなとみらいで、シガーとウイスキーを楽しむ限定イベントが開催される。海外オーナーの来日にあわせた催し。",
+      "title_en": "Limited cigar & whisky experience event in Yokohama Minato Mirai",
+      "summary_en": "A limited event offering a cigar and whisky experience will be held in Yokohama's Minato Mirai district, timed to coincide with a visit to Japan by an overseas owner.",
+      "source": "Koubo",
+      "source_title": "横浜みなとみらいでシガー＆ウイスキー体験、海外オーナー来日の限定イベント - Koubo",
+      "source_en": "Koubo",
+      "source_title_en": "Cigar & whisky experience in Yokohama Minato Mirai, a limited event with a visiting overseas owner",
+      "url": "https://news.google.com/rss/articles/CBMiRkFVX3lxTE15dURPWHU2MmFlT0hBYnItOVRmWGt6VXlwX3A3S01OWlZSREp0YThGU1NaLThSSDVBNXJ6QmpyR3pDRndHa3c?oc=5"
     },
     {
       "date": "2026-08-25",
@@ -2049,45 +2088,6 @@ var NEWS_DATA = {
       "source_en": "Newscast.jp",
       "source_title_en": "Cigar & Cigarillo Market: By Product Type, Manufacturing Format, Flavour, Price Range, Sales Channel and End-User Age Group - Global Market Forecast 2026-2032",
       "url": "https://news.google.com/rss/articles/CBMiR0FVX3lxTE9JQXRkNUVldTBVVkcxRG9JT3dNRlIyOS1KbE4yaE1OU3JhTmpIT2RYa1hON2IyVE9nRjRhUFFpOWppSjNYX09J?oc=5"
-    },
-    {
-      "date": "2026-08-05",
-      "category": "新製品",
-      "title_ja": "OZファミリー、W杯2026記念の限定葉巻",
-      "summary_ja": "OZファミリー・シガーズ（OZ Family Cigars）が、FIFAワールドカップ2026を記念した限定版葉巻を発売した。",
-      "title_en": "OZ Family Cigars Releases Limited Edition World Cup 2026",
-      "summary_en": "OZ Family Cigars has released a limited edition cigar to mark the FIFA World Cup 2026, joining a number of new cigars inspired by the tournament.",
-      "source": "halfwheel",
-      "source_title": "OZ Family Cigars Limited Edition World Cup 2026",
-      "source_en": "halfwheel",
-      "source_title_en": "OZ Family Cigars Limited Edition World Cup 2026",
-      "url": "https://halfwheel.com/oz-family-cigars-limited-edition-world-cup-2026/475916/"
-    },
-    {
-      "date": "2026-08-05",
-      "category": "イベント・アワード",
-      "title_ja": "英国の葉巻祭「サマータイム・スモーク」2回目開催",
-      "summary_ja": "英国の葉巻カレンダーに定着しつつある祭典「サマータイム・スモーク（Summertime Smoke）」の第2回が、ハイウィカム郊外バッキンガムシャーのEJチャーチル射撃場で開催された。会場は屋外の芝生に葉巻愛好家や生産者らが集い、庭園パーティーのような雰囲気となった。",
-      "title_en": "Summertime Smoke Returns for Second Edition in England",
-      "summary_en": "The second edition of Summertime Smoke, a festival now firmly established in the British cigar calendar, took place at EJ Churchill Shooting Ground in the Buckinghamshire countryside outside High Wycombe. A working shooting ground rather than a hotel ballroom, the venue lent the day an outdoor, sporting character. Enthusiasts drifted between exhibitor stands and open grass alongside producers, giving the event the feel of a garden party rather than a trade fair.",
-      "source": "Cigar Journal",
-      "source_title": "The Summertime Smoke: A Festival of Cigars",
-      "source_en": "Cigar Journal",
-      "source_title_en": "The Summertime Smoke: A Festival of Cigars",
-      "url": "https://www.cigarjournal.com/the-summertime-smoke-a-festival-of-cigars/?utm_source=rss&utm_medium=rss&utm_campaign=the-summertime-smoke-a-festival-of-cigars"
-    },
-    {
-      "date": "2026-08-05",
-      "category": "日本国内",
-      "title_ja": "キャメル、超スリムなリトルシガー2銘柄発売",
-      "summary_ja": "見た目も価格も“スーパースリム”という、キャメル（Camel）のリトルシガー2銘柄が新たに発売された。",
-      "title_en": "Two 'super-slim' Camel little cigars go on sale in Japan",
-      "summary_en": "Two new Camel little cigars, described as 'super-slim' in both appearance and price, have gone on sale in Japan.",
-      "source": "ウォーカープラス",
-      "source_title": "見た目も価格も“スーパースリム”なキャメルのリトルシガー2銘柄が新発売 - ウォーカープラス",
-      "source_en": "Walkerplus",
-      "source_title_en": "Two 'super-slim' Camel little cigars newly released",
-      "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE8xdUJzZlE2blpqMHZYRVFwUXdoRUZEMWIwVjRtZ3hzd3lEWkxXXzBaQ2RTYXVGNUMycDlBNnZoRkdDci1TSXlHNmZlT0RYeVNSZUlvdNIBWkFVX3lxTFA4MUJPSjY0b20yY2hJX1h5RWhkYWVJY0ZMYWtqTTFZTFk2SExIa002ZzRhRWo1OW1zeGRrMGpXX0tFSHptYnAxd0ZfOFI1V1ZNcE8zMnZaS25jQQ?oc=5"
     }
   ]
 };
