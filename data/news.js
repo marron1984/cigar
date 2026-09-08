@@ -7,8 +7,60 @@
    手で足すこともできますが、items の並び・キーは崩さないでください。
    ============================================================ */
 var NEWS_DATA = {
-  "updated": "2026-09-08",
+  "updated": "2026-09-09",
   "items": [
+    {
+      "date": "2026-09-09",
+      "category": "業界・企業",
+      "title_ja": "レオ・ウェインベルト氏がCLEシガーに入社",
+      "summary_ja": "CLEシガー（CLE Cigar Co.）にレオ・ウェインベルト（Leo Wijnbelt）氏が入社した。ウェインベルト氏はゼネラル・シガー、スウィッシャー、ユニバーサル・リーフでの勤務歴を持ち、今後はCLEのタバコ事業全体を統括する。",
+      "title_en": "Leo Wijnbelt Joins CLE Cigar Co.",
+      "summary_en": "Leo Wijnbelt has joined CLE Cigar Co., where he will oversee the company's entire tobacco operation. Wijnbelt previously held positions at General Cigar Co., Swisher and Universal Leaf, bringing extensive industry experience to his new role.",
+      "source": "halfwheel",
+      "source_title": "Leo Wijnbelt Joins CLE Cigar Co.",
+      "source_en": "halfwheel",
+      "source_title_en": "Leo Wijnbelt Joins CLE Cigar Co.",
+      "url": "https://halfwheel.com/leo-wijnbelt-joins-cle-cigar-co/478970/"
+    },
+    {
+      "date": "2026-09-09",
+      "category": "新製品",
+      "title_ja": "マヤ・セルバ、干支限定「アニョ・デ・ラ・カブラ2027」",
+      "summary_ja": "マヤ・セルバ・シガーズ（Maya Selva Cigars）が、旧正月を祝う恒例の限定品「フロール・デ・セルバ アニョ・デ・ラ・カブラ2027（Flor de Selva Año de la Cabra 2027）」をインタータバック2026で発表する。太めのホンジュラス・プロで、11月に発売予定。同社は2018年から旧正月に合わせた限定品を毎年展開している。",
+      "title_en": "Flor de Selva Año de la Cabra 2027 Debuting at InterTabac 2026",
+      "summary_en": "Maya Selva Cigars will unveil its Flor de Selva Año de la Cabra 2027 at InterTabac 2026, continuing a Lunar New Year limited-edition tradition begun in 2018. The beefy Honduran puro is slated to arrive in November.",
+      "source": "halfwheel",
+      "source_title": "Flor de Selva Año de la Cabra 2027 Debuting at InterTabac 2026",
+      "source_en": "halfwheel",
+      "source_title_en": "Flor de Selva Año de la Cabra 2027 Debuting at InterTabac 2026",
+      "url": "https://halfwheel.com/flor-de-selva-ano-de-la-cabra-2027-debuting-at-intertabac-2026/478957/"
+    },
+    {
+      "date": "2026-09-09",
+      "category": "規制・市場",
+      "title_ja": "キューバ葉巻の逆説、収益最高でも供給は縮小",
+      "summary_ja": "シガー・ジャーナルが、キューバ葉巻産業の現状を分析した。ハバノス（Habanos S.A.）が主力銘柄を世界的な高級品として再定義し過去最高の収益を上げる一方、電力・燃料・農業資材の不足や老朽化した設備により物理的な供給は縮小していると指摘。中国の影響力や、同社の半分を誰が支配するのかという未解決の問題にも言及した。",
+      "title_en": "Cuba's Cigar Paradox",
+      "summary_en": "Cigar Journal examines the state of Cuba's cigar industry, noting that while Habanos S.A. has repositioned its most prestigious cigars as global luxury goods and posted record revenues, physical supply is shrinking amid shortages of electricity, fuel and agricultural inputs and ageing infrastructure. The piece also addresses China's growing influence and the unresolved question of who controls half of the famous cigar company.",
+      "source": "Cigar Journal",
+      "source_title": "Cuba’s Cigar Paradox",
+      "source_en": "Cigar Journal",
+      "source_title_en": "Cuba's Cigar Paradox",
+      "url": "https://www.cigarjournal.com/cubas-cigar-paradox/?utm_source=rss&utm_medium=rss&utm_campaign=cubas-cigar-paradox"
+    },
+    {
+      "date": "2026-09-08",
+      "category": "新製品",
+      "title_ja": "クラウンド・ヘッズ「ムーンフラワー・ロブスト」発表",
+      "summary_ja": "クラウンド・ヘッズ（Crowned Heads）が新レギュラー製品「ムーンフラワー・ロブスト（Moonflower Robusto）」を発表した。ニカラグア・エステリのマイ・ファーザー工場で製造される定番ラインは10年ぶり。ブレンドに使われるタバコはすべて、マイ・ファーザーが所有するニカラグアの農園で栽培されている。",
+      "title_en": "Moonflower Robusto",
+      "summary_en": "Crowned Heads has introduced the Moonflower Robusto, marking the first time in a decade the company has a new regular production line made at the My Father factory in Estelí, Nicaragua. All of the tobacco in the blend is grown on farms in Nicaragua owned by My Father.",
+      "source": "halfwheel",
+      "source_title": "Moonflower Robusto",
+      "source_en": "halfwheel",
+      "source_title_en": "Moonflower Robusto",
+      "url": "https://halfwheel.com/moonflower-robusto/478923/"
+    },
     {
       "date": "2026-09-08",
       "category": "業界・企業",
@@ -476,6 +528,19 @@ var NEWS_DATA = {
       "source_en": "halfwheel",
       "source_title_en": "Por Larrañaga 35 Aniversario Celebrates 5th Avenue Anniversary",
       "url": "https://halfwheel.com/por-larranaga-35-aniversario-celebrates-5th-avenue-anniversary/478261/"
+    },
+    {
+      "date": "2026-08-31",
+      "category": "規制・市場",
+      "title_ja": "ベトナム、葉巻・タバコ製造業者に基準開示義務",
+      "summary_ja": "ベトナムで、葉巻およびタバコの製造業者が自社の基準を開示しなければならないと報じられた。",
+      "title_en": "Cigar and Tobacco Manufacturers Must Disclose Their Standards",
+      "summary_en": "In Vietnam, cigar and tobacco manufacturers are required to disclose their own product standards, according to a report.",
+      "source": "Vietnam.vn",
+      "source_title": "葉巻およびタバコ製造業者は、自社の基準を開示しなければならない。 - Vietnam.vn",
+      "source_en": "Vietnam.vn",
+      "source_title_en": "Cigar and Tobacco Manufacturers Must Disclose Their Standards",
+      "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE9mOGVSeDVHZFBsNG00ZDlUemNGamhTVU95MFpOR1JvNklvMUxuLTE3eHpkWUR4Q1JqbEJibjh1bllkWDh4RzN5YTAxTmVjVm9Za0hwLVZGSndfVUQwMGl1ZlFHdVJhdHJSNklyVTBIT2Fqc0VyRExHZ0s2b0xfejQ?oc=5"
     },
     {
       "date": "2026-08-31",
@@ -2023,71 +2088,6 @@ var NEWS_DATA = {
       "source_en": "halfwheel",
       "source_title_en": "Creekside Launching Queen of the West, A New Cigar Brand",
       "url": "https://halfwheel.com/creekside-launching-queen-of-the-west-a-new-cigar-brand/476286/"
-    },
-    {
-      "date": "2026-08-07",
-      "category": "新製品",
-      "title_ja": "ハイラム&ソロモン「ミスティック・タイ」発売",
-      "summary_ja": "ハイラム&ソロモン（Hiram & Solomon）が「ミスティック・タイ（Mystic Tie）」を発表。ニュージャージー州フリーメイソンのグランドマスター、オマー・S・モリス氏のために作られ、特徴的なカバード・フットを備える。",
-      "title_en": "Hiram & Solomon Mystic Tie",
-      "summary_en": "Hiram & Solomon has released Mystic Tie, created for Omar S. Morris, the Grand Master of Masons of the state of New Jersey. The cigar features a distinctive covered foot.",
-      "source": "halfwheel",
-      "source_title": "Hiram & Solomon Mystic Tie",
-      "source_en": "halfwheel",
-      "source_title_en": "Hiram & Solomon Mystic Tie",
-      "url": "https://halfwheel.com/hiram-solomon-mystic-tie/475943/"
-    },
-    {
-      "date": "2026-08-06",
-      "category": "日本国内",
-      "title_ja": "すすきのにシガーバー「ひいじいCafe」",
-      "summary_ja": "札幌・すすきのにシガーバー「札幌煙管ひいじいCafe」が紹介された。探偵気分が味わえる雰囲気の店として取り上げられた。",
-      "title_en": "Cigar Bar 'Sapporo Kiseru Hiijii Cafe' in Susukino",
-      "summary_en": "A cigar bar called 'Sapporo Kiseru Hiijii Cafe' in the Susukino district of Sapporo was featured, described as a venue offering a detective-like atmosphere.",
-      "source": "ウォーカープラス",
-      "source_title": "探偵気分が味わえる!? すすきののシガーバー「札幌煙管ひいじいCafe」 - ウォーカープラス",
-      "source_en": "Walkerplus",
-      "source_title_en": "Feel Like a Detective? Susukino's Cigar Bar 'Sapporo Kiseru Hiijii Cafe'",
-      "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE9WUnNhTm1IeXhmbHlnN1JGRmE3SG1aZEJLa1hLNlN3Vnl0T3BTTHZpaUg2NkVxMEZZRFZYZllMUmVEZGRtdVZnZnFZXzlORFVuQXp5eNIBWkFVX3lxTFBFY29FZ21nLURTUWRvLW5obXhHWVBNLUdLTEpKWjlzVjRFOXJOcGlDc1RfdkxPOEZyeHJVLVgzN3NwNHQyVl82RUFsQ2wzSE9ZQ01jY2JXYllTUQ?oc=5"
-    },
-    {
-      "date": "2026-08-06",
-      "category": "日本国内",
-      "title_ja": "ウイスキーと葉巻のイベントを8月22日開催",
-      "summary_ja": "BAR新宿ウイスキーサロンでのチャリティー持ち寄り会と、新店舗BAR LASTWORDでのシガー初心者歓迎ペアリング会を8月22日に開催すると発表した。",
-      "title_en": "Whisky and Cigar Events Set for 22 August in Tokyo",
-      "summary_en": "A special day of whisky and cigars has been announced for 22 August. BAR Shinjuku Whisky Salon will host a charity bring-your-own gathering, while the newly opened BAR LASTWORD will hold a cigar-and-whisky pairing event welcoming newcomers to cigars.",
-      "source": "PR TIMES",
-      "source_title": "【ウイスキーと葉巻の特別な1日】BAR 新宿ウイスキーサロンでのチャリティー持ち寄り会＆新店舗 BAR LASTWORD でのシガー初心者歓迎ペアリング会を8月22日に開催 - PR TIMES",
-      "source_en": "PR TIMES",
-      "source_title_en": "A Special Day of Whisky and Cigars: Charity Gathering at BAR Shinjuku Whisky Salon and Beginner-Friendly Pairing Event at New BAR LASTWORD on 22 August",
-      "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE5DN0NTVmkwOEZGMmVNT09ueXMxc2pYdmFiQTh1NVh4R3BRZWFZM29CdzhTNkpOQUhxcHBEV1h0YjBOcWxSSEZLaXM4Y3FxeHRkb2YxaDQ1eHhUdExWbFJMdDd4RUN4clVmU2c?oc=5"
-    },
-    {
-      "date": "2026-08-06",
-      "category": "新製品",
-      "title_ja": "「ピース・アロマ・ヴィンテージ」数量限定で復活",
-      "summary_ja": "「ピース・アロマ・ヴィンテージ」が数量限定で復活した。5年熟成による濃厚な香りと、重層感のある味わいが特長とされる。",
-      "title_en": "Peace Aroma Vintage Revived in Limited Quantities",
-      "summary_en": "Peace Aroma Vintage has made a long-awaited comeback in limited quantities. It is characterised by a rich aroma from five years of ageing and a layered, multi-dimensional flavour.",
-      "source": "ウォーカープラス",
-      "source_title": "「ピース・アロマ・ヴィンテージ」が、数量限定で待望の復活！5年熟成の濃厚な香りと重層感のある味わいが魅力 - ウォーカープラス",
-      "source_en": "Walkerplus",
-      "source_title_en": "Peace Aroma Vintage Makes a Long-Awaited Comeback in Limited Quantities: Rich Aroma from Five Years of Ageing and a Layered Flavour",
-      "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE9jREYwN3ZyeEQxUDRnaWFHNmJpdk9YZXlneko1VGxZVmRBd3pKVmw2YjA5T3FxcmJrdnhSNzVwWVJIUEl5ZXJZZXgyUm5zMkd0Xzd0WFZB0gFbQVVfeXFMUDlGT2dBOHhlMUdCZTdpalFkYVJUa0FNNUtlMWVFWVptRi1XbjRaY2p1VjZoZGhBU1M2bE1nejk2bFhWclJ6QTZ0cWF4dUJneVNVZkh4S0d2cUhqQQ?oc=5"
-    },
-    {
-      "date": "2026-08-06",
-      "category": "新製品",
-      "title_ja": "ミカレフ、カラーシリーズに「オレンジ」追加",
-      "summary_ja": "ミカレフ・シガーズ（Micallef Cigars）が、カラーシリーズの新作「ミカレフ・オレンジ（Micallef Orange）」を発売した。ブラック、ブルー、レッド、パープル、グリーン、ホワイトに続く展開で、実店舗小売店向けに手頃な価格で提供する。",
-      "title_en": "Micallef Cigars Announces Release of Micallef Orange",
-      "summary_en": "Micallef Cigars has released Micallef Orange, the newest addition to its Color Series. Following Black, Blue, Red, Purple, Green and White, Orange continues the line's aim of delivering premium quality and flavour at a strong value for brick-and-mortar retailers and their customers.",
-      "source": "StogiePress",
-      "source_title": "Cigar News: Micallef Cigars Announces Release of Micallef Orange",
-      "source_en": "StogiePress",
-      "source_title_en": "Cigar News: Micallef Cigars Announces Release of Micallef Orange",
-      "url": "https://stogiepress.com/cigar-news-micallef-cigars-announces-release-of-micallef-orange/"
     }
   ]
 };
