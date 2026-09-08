@@ -7,8 +7,60 @@
    手で足すこともできますが、items の並び・キーは崩さないでください。
    ============================================================ */
 var NEWS_DATA = {
-  "updated": "2026-09-07",
+  "updated": "2026-09-08",
   "items": [
+    {
+      "date": "2026-09-08",
+      "category": "業界・企業",
+      "title_ja": "独キューバ葉巻卸5th Avenue、銀行問題で出荷停止",
+      "summary_ja": "キューバ葉巻のドイツ人ディストリビューター、フィフス・アベニュー（5th Avenue）が、一時的な銀行取引の制限により新規注文の受付・出荷ができなくなったと小売店に通知した。オーストリア、ドイツ、ポーランドに供給する同社は、出荷再開の時期については明らかにしていない。",
+      "title_en": "5th Avenue, German Distributor of Cuban Cigars, Pauses Deliveries Due to Banking Issues",
+      "summary_en": "Fifth Avenue (5th Avenue), the German distributor of Cuban cigars, has told retailers that temporary banking restrictions mean it cannot accept or deliver new orders. The company, which supplies Austria, Germany and Poland, has given no timeline for when shipments might resume.",
+      "source": "halfwheel",
+      "source_title": "5th Avenue, German Distributor of Cuban Cigars, Pauses Deliveries Due to Banking Issues",
+      "source_en": "halfwheel",
+      "source_title_en": "5th Avenue, German Distributor of Cuban Cigars, Pauses Deliveries Due to Banking Issues",
+      "url": "https://halfwheel.com/5th-avenue-german-austrian-distributor-of-cuban-cigars-pauses-deliveries-due-to-banking-issues/478900/"
+    },
+    {
+      "date": "2026-09-07",
+      "category": "イベント・アワード",
+      "title_ja": "プロシガー2027、参加登録を開始",
+      "summary_ja": "ドミニカ共和国の葉巻祭典「プロシガー（ProCigar）2027」の参加登録が始まり、一部のツアーはすでに完売した。来年のフェスティバルでは、サンティアゴのサプライヤー企業を訪問するオプションも設けられる。",
+      "title_en": "ProCigar 2027 Registration Opens",
+      "summary_en": "Registration for ProCigar 2027 has opened, with some tours already sold out. Next year's festival in the Dominican Republic will include the option to visit some of the supplier businesses in Santiago.",
+      "source": "halfwheel",
+      "source_title": "ProCigar 2027 Registration Opens",
+      "source_en": "halfwheel",
+      "source_title_en": "ProCigar 2027 Registration Opens",
+      "url": "https://halfwheel.com/procigar-2027-registration-opens/478839/"
+    },
+    {
+      "date": "2026-09-07",
+      "category": "新製品",
+      "title_ja": "エミリオ、限定「スアベ・スマトラ」を出荷",
+      "summary_ja": "エミリオ・シガー（Emilio Cigars）が限定版「スアベ・スマトラ（SUAVE SUMATRA）」を発売した。ニカラグア・エステリのファブリカ・オベハ・ネグラで製造され、マスターブレンダーのジェームズ・ブラウンが監修。スマトラ・ラッパー、エクアドル・ハバノのバインダー、ニカラグア産フィラーを使用。ロブスト（5×50、20本入、10.00ドル）とトロ（6×50、20本入、10.50ドル）の2サイズ。",
+      "title_en": "Emilio Cigars Ships the New Limited-Edition SUAVE SUMATRA",
+      "summary_en": "Emilio Cigars has released the Limited-Edition SUAVE SUMATRA, crafted at Fábrica Oveja Negra in Estelí, Nicaragua. Master blender James Brown lent his expertise to the blend and artwork. It features a Sumatra wrapper, Ecuador Habano binder and Nicaraguan filler, offered in Robusto (5×50, 20 count, MSRP $10.00) and Toro (6×50, 20 count, MSRP $10.50).",
+      "source": "Cigar Journal",
+      "source_title": "Emilio Cigars Ships the New Limited-Edition SUAVE SUMATRA",
+      "source_en": "Cigar Journal",
+      "source_title_en": "Emilio Cigars Ships the New Limited-Edition SUAVE SUMATRA",
+      "url": "https://www.cigarjournal.com/emilio-cigars-ships-the-new-limited-edition-suave-sumatra/?utm_source=rss&utm_medium=rss&utm_campaign=emilio-cigars-ships-the-new-limited-edition-suave-sumatra"
+    },
+    {
+      "date": "2026-09-07",
+      "category": "業界・企業",
+      "title_ja": "プラセンシア、創業160年でブランド刷新",
+      "summary_ja": "プラセンシア・シガー（Plasencia Cigars）が、タバコ栽培160年を記念する新キャンペーン「Born of This Land」を発表した。刷新したブランドアイデンティティ、新ロゴ、再デザインされたパッケージを土台に、五世代続く一族の哲学と農業遺産を表現する。1865年以来続く同社の歩みを、五世代目のネストール・アンドレス・プラセンシアが語った。",
+      "title_en": "Plasencia Cigars Unveils The Next Chapter Of Its Brand Evolution",
+      "summary_en": "Plasencia Cigars has unveiled Born of This Land, a new campaign marking 160 years of growing tobacco. Building on its recently evolved brand identity, new logo and redesigned packaging, it aims to express the philosophy and agricultural heritage of five generations of the family. Fifth-generation member Néstor Andrés Plasencia reflected on the milestone dating back to 1865.",
+      "source": "Cigar Journal",
+      "source_title": "Plasencia Cigars Unveils The Next Chapter Of Its Brand Evolution",
+      "source_en": "Cigar Journal",
+      "source_title_en": "Plasencia Cigars Unveils The Next Chapter Of Its Brand Evolution",
+      "url": "https://www.cigarjournal.com/plasencia-cigars-unveils-the-next-chapter-of-its-brand-evolution/?utm_source=rss&utm_medium=rss&utm_campaign=plasencia-cigars-unveils-the-next-chapter-of-its-brand-evolution"
+    },
     {
       "date": "2026-09-07",
       "category": "新製品",
@@ -583,6 +635,19 @@ var NEWS_DATA = {
     },
     {
       "date": "2026-08-28",
+      "category": "日本国内",
+      "title_ja": "キャメルのスーパースリム・リトルシガー2銘柄が新発売",
+      "summary_ja": "見た目も価格も「スーパースリム」なキャメル（CAMEL）のリトルシガー2銘柄が新発売された。",
+      "title_en": "Two 'super slim' Camel little cigars go on sale",
+      "summary_en": "Two new Camel little cigars, described as 'super slim' in both appearance and price, have gone on sale in Japan.",
+      "source": "walkerplus.com",
+      "source_title": "見た目も価格も“スーパースリム”なキャメルのリトルシガー2銘柄が新発売 - walkerplus.com",
+      "source_en": "walkerplus.com",
+      "source_title_en": "Two 'Super Slim' Camel Little Cigars Newly Released",
+      "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE8xdUJzZlE2blpqMHZYRVFwUXdoRUZEMWIwVjRtZ3hzd3lEWkxXXzBaQ2RTYXVGNUMycDlBNnZoRkdDci1TSXlHNmZlT0RYeVNSZUlvdNIBWkFVX3lxTFA4MUJPSjY0b20yY2hJX1h5RWhkYWVJY0ZMYWtqTTFZTFk2SExIa002ZzRhRWo1OW1zeGRrMGpXX0tFSHptYnAxd0ZfOFI1V1ZNcE8zMnZaS25jQQ?oc=5"
+    },
+    {
+      "date": "2026-08-28",
       "category": "新製品",
       "title_ja": "エスコバー、「ナスティ・エスコ」を出荷開始",
       "summary_ja": "エスコバー・シガーズ（Escobar Cigars）は今夏にソフトローンチした新ライン「ナスティ・エスコ（Nasty Esco）」を、全米の小売店向けに出荷を開始したと発表した。",
@@ -775,6 +840,19 @@ var NEWS_DATA = {
       "source_en": "halfwheel",
       "source_title_en": "Emanuele Uccellini, Head of Davidoff of Geneva USA, Leaving in October",
       "url": "https://halfwheel.com/emanuele-uccellini-head-of-davidoff-of-geneva-usa-leaving-in-october/477839/"
+    },
+    {
+      "date": "2026-08-25",
+      "category": "日本国内",
+      "title_ja": "みなとみらいでシガーとウイスキーの限定イベント初開催",
+      "summary_ja": "横浜・みなとみらいで、海外のシガーブランドオーナーを招き、プレミアムシガーとシングルモルトのマリアージュを楽しむ限定イベントが初めて開催される。",
+      "title_en": "First Cigar and Whisky Pairing Event Held in Minato Mirai",
+      "summary_en": "A limited event pairing premium cigars with single malt whisky is being held for the first time in Minato Mirai, Yokohama, welcoming an overseas cigar brand owner to Japan.",
+      "source": "オリコンニュース",
+      "source_title": "みなとみらいで知るシガーとウイスキーの奥深き世界。海外よりシガーブランドオーナー来日、プレミアムシガーとシングルモルトのマリアージュを嗜む限定イベントを初開催！ - オリコンニュース",
+      "source_en": "Oricon News",
+      "source_title_en": "Learn the Deep World of Cigars and Whisky in Minato Mirai: First Limited Event Pairing Premium Cigars and Single Malt",
+      "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE1GQmFRb0J3YWRrbGYxemgzazF6cW1WSTFxaTRfU1JpMTBDOUF2VURIZGFYa3luS2gyd01rMi1zTURfemI2LWE0TWFnaXZqZHpNWnVIOUxBZ2NTdw?oc=5"
     },
     {
       "date": "2026-08-25",
@@ -2010,84 +2088,6 @@ var NEWS_DATA = {
       "source_en": "StogiePress",
       "source_title_en": "Cigar News: Micallef Cigars Announces Release of Micallef Orange",
       "url": "https://stogiepress.com/cigar-news-micallef-cigars-announces-release-of-micallef-orange/"
-    },
-    {
-      "date": "2026-08-06",
-      "category": "新製品",
-      "title_ja": "エル・マゴ、対の限定「オフェンダー＆ディフェンダー」",
-      "summary_ja": "エル・マゴ・シガーズ（El Mago Cigars）が、これまでで最も限定的なリリースとして「オフェンダー＆ディフェンダー（The Offender & The Defender）」を発表した。剣と盾をコンセプトに、2箱・2ブレンドを一組のペアリングとしてのみ販売する。金をまとうオフェンダーはより大胆で力強いプロファイルを持つ。",
-      "title_en": "El Mago Cigars Releases The Offender & The Defender",
-      "summary_en": "El Mago Cigars has announced its most exclusive release to date, The Offender & The Defender, a two-blend companion set sold only as a pairing of two boxes and two blends. Built on a sword-and-shield concept, The Offender, dressed in gold, carries the blade with a bolder, more aggressive profile.",
-      "source": "StogiePress",
-      "source_title": "Cigar News: El Mago Cigars Releases The Offender & The Defender",
-      "source_en": "StogiePress",
-      "source_title_en": "Cigar News: El Mago Cigars Releases The Offender & The Defender",
-      "url": "https://stogiepress.com/cigar-news-el-mago-cigars-releases-the-offender-the-defender/"
-    },
-    {
-      "date": "2026-08-06",
-      "category": "日本国内",
-      "title_ja": "スイスの「EGMシガーズ」、日本向けを拡充",
-      "summary_ja": "スイス発のプレミアムシガーブランド「EGMシガーズ（EGM Cigars）」が、日本市場向けラインナップを拡充すると発表した。ブランドの世界観を体現する新コレクションを日本で展開する。",
-      "title_en": "Swiss Brand EGM Cigars Expands Its Japan Line-up",
-      "summary_en": "EGM Cigars, a premium cigar brand from Switzerland, has announced an expansion of its line-up for the Japanese market. The company will roll out a new collection in Japan intended to embody the brand's world and identity.",
-      "source": "Infoseek",
-      "source_title": "スイス発プレミアムシガーブランド「EGM Cigars」、日本市場向けラインナップを拡充 ブランドの世界観を体現する新コレクションを展開｜Infoseekニュース - Infoseek",
-      "source_en": "Infoseek",
-      "source_title_en": "Swiss Premium Cigar Brand EGM Cigars Expands Its Japan-market Line-up with a New Collection",
-      "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE9GWFA4RDgzM2VDcHhnakFlNXlXRUk3emRhdHdReWVwRkNiMk5pc3J5b05BdjJXU2ttZWZPeU9fRmFURkxubTVQWXM2V2w4aGVRUDI4MGV2djFaRzBhYUZlbExtS2pHNk1KRzAxYTB2MjZKZw?oc=5"
-    },
-    {
-      "date": "2026-08-06",
-      "category": "新製品",
-      "title_ja": "ルアー、PCA限定「ザ・ワフー・ザ・キングフィッシュ」",
-      "summary_ja": "ルアー（Lure）が新ライン「ザ・ワフー・ザ・キングフィッシュ（The Wahoo The Kingfish）」を発表した。ニューオーリンズで開催されたPCA 2026の出展業者のみが購入できる同展限定品。メキシコ産サンアンドレス・ラッパー、ニカラグア・エステリ産バインダー、エステリとハラパ産のフィラーで構成される。",
-      "title_en": "Lure The Wahoo The Kingfish",
-      "summary_en": "Lure has released The Wahoo The Kingfish, a PCA 2026 exclusive available only to retailers who attended the trade show in New Orleans. The blend features a Mexican San Andrés wrapper over a binder from Estelí, Nicaragua, with filler tobaccos from Estelí and Jalapa in Nicaragua.",
-      "source": "halfwheel",
-      "source_title": "Lure The Wahoo The Kingfish",
-      "source_en": "halfwheel",
-      "source_title_en": "Lure The Wahoo The Kingfish",
-      "url": "https://halfwheel.com/lure-the-wahoo-the-kingfish/476173/"
-    },
-    {
-      "date": "2026-08-06",
-      "category": "新製品",
-      "title_ja": "ディーゼル、新ブレンド「アンケージド」を発売",
-      "summary_ja": "ディーゼル・シガーズ（Diesel Cigars）が新レギュラー・ブレンド「アンケージド（Uncaged）」を発表。ニカラグア産フィラーとバインダー、ハバノ・クリオロ・ラッパーを使用。AJフェルナンデス製で価格は約7ドル、ミディアム〜フルとされる。",
-      "title_en": "Diesel Releases New Knockout Blend, Uncaged",
-      "summary_en": "Diesel Cigars has unveiled Uncaged, its newest full-time blend. Rolled with premium Nicaraguan filler and binder tobaccos and a Habano Criollo wrapper, the medium-full cigar is made by AJ Fernandez and priced around $7.",
-      "source": "StogiePress",
-      "source_title": "Cigar News: Diesel Releases New Knockout Blend, Uncaged",
-      "source_en": "StogiePress",
-      "source_title_en": "Cigar News: Diesel Releases New Knockout Blend, Uncaged",
-      "url": "https://stogiepress.com/cigar-news-diesel-releases-new-knockout-blend-uncaged/"
-    },
-    {
-      "date": "2026-08-06",
-      "category": "業界・企業",
-      "title_ja": "カサ・カリーヨ、「ラ・イストリア・シルク」で女性支援",
-      "summary_ja": "カサ・カリーヨ（Casa Carrillo）が慈善部門カリーヨ・ケアズ（Carrillo Cares）を通じ、限定生産の「ラ・イストリア・シルク（La Historia Silk）」の売上の一部をドレス・フォー・サクセス・マイアミに寄付する取り組みを発表した。",
-      "title_en": "Casa Carrillo Launches Initiative to Support Women Pursuing Economic Independence",
-      "summary_en": "Casa Carrillo has announced a new initiative through Carrillo Cares, its charitable arm, supporting Dress for Success Miami via the limited-production La Historia Silk cigar. As more shipments arrive from the factory, a portion of proceeds from cigars sold to retailers will benefit the charity, which helps women pursue economic independence.",
-      "source": "StogiePress",
-      "source_title": "Cigar News: More La Historia Silk Arrives as Casa Carrillo Launches Initiative to Support Women Pursuing Economic Independence",
-      "source_en": "StogiePress",
-      "source_title_en": "Cigar News: More La Historia Silk Arrives as Casa Carrillo Launches Initiative to Support Women Pursuing Economic Independence",
-      "url": "https://stogiepress.com/cigar-news-more-la-historia-silk-arrives-as-casa-carrillo-launches-initiative-to-support-women-pursuing-economic-independence/"
-    },
-    {
-      "date": "2026-08-05",
-      "category": "規制・市場",
-      "title_ja": "葉巻・シガリロ世界市場予測 2026〜2032年",
-      "summary_ja": "製品タイプ、製造形態、フレーバー、価格帯、販売チャネル、エンドユーザーの年齢層別に分析した葉巻・シガリロの世界市場予測レポート（2026年〜2032年）が公表された。",
-      "title_en": "Global Cigar & Cigarillo Market Forecast 2026-2032",
-      "summary_en": "A market forecast report on the global cigar and cigarillo market for 2026 to 2032 has been published. It analyses the market by product type, manufacturing format, flavour, price range, sales channel and end-user age group.",
-      "source": "Newscast.jp",
-      "source_title": "葉巻・シガリロ市場：製品タイプ、製造形態、フレーバー、価格帯、販売チャネル、エンドユーザーの年齢層別―2026年～2032年の世界市場予測 - Newscast.jp",
-      "source_en": "Newscast.jp",
-      "source_title_en": "Cigar & Cigarillo Market: By Product Type, Manufacturing Format, Flavour, Price Range, Sales Channel and End-User Age Group - Global Market Forecast 2026-2032",
-      "url": "https://news.google.com/rss/articles/CBMiR0FVX3lxTE9JQXRkNUVldTBVVkcxRG9JT3dNRlIyOS1KbE4yaE1OU3JhTmpIT2RYa1hON2IyVE9nRjRhUFFpOWppSjNYX09J?oc=5"
     }
   ]
 };
