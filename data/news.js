@@ -7,8 +7,86 @@
    手で足すこともできますが、items の並び・キーは崩さないでください。
    ============================================================ */
 var NEWS_DATA = {
-  "updated": "2026-09-09",
+  "updated": "2026-09-10",
   "items": [
+    {
+      "date": "2026-09-10",
+      "category": "業界・企業",
+      "title_ja": "Cigar.comがCigora.comへ移行",
+      "summary_ja": "スカンジナビアン・タバコ・グループ（STG）傘下の小売事業として、Cigar.comがCigora.comへ移行する。Cigoraは「次世代のオンライン葉巻販売」として立ち上げられ、小売と教育を組み合わせ、葉巻との新たな接し方を提供するとしている。",
+      "title_en": "Cigar.com Transitioning to Cigora.com",
+      "summary_en": "Cigar.com is transitioning to Cigora.com, with both entities part of Scandinavian Tobacco Group's retail group. Cigora was launched as \"the next generation of cigars online,\" combining retail with education as a new way for consumers to interact with cigars.",
+      "source": "halfwheel",
+      "source_title": "Cigar.com Transitioning to Cigora.com",
+      "source_en": "halfwheel",
+      "source_title_en": "Cigar.com Transitioning to Cigora.com",
+      "url": "https://halfwheel.com/cigar-com-transitioning-to-cigora-com/479138/"
+    },
+    {
+      "date": "2026-09-10",
+      "category": "規制・市場",
+      "title_ja": "FDAたばこ製品センター長にコプロー氏就任",
+      "summary_ja": "米食品医薬品局（FDA）のたばこ製品センター（CTP）のトップに、ブレット・コプロー（Bret Koplow）氏が正式就任した。同氏は2025年5月から所長代行を務めており、CTPを常勤で率いる3人目の人物となる。",
+      "title_en": "Bret Koplow Gets Top Job at FDA's Center for Tobacco Products",
+      "summary_en": "Bret Koplow has been named the permanent head of the FDA's Center for Tobacco Products (CTP). He had served as acting director since May 2025 and becomes just the third person to lead the CTP on a full-time basis.",
+      "source": "halfwheel",
+      "source_title": "Bret Koplow Gets Top Job at FDA’s Center for Tobacco Products",
+      "source_en": "halfwheel",
+      "source_title_en": "Bret Koplow Gets Top Job at FDA's Center for Tobacco Products",
+      "url": "https://halfwheel.com/bret-koplow-named-director-of-fdas-center-for-tobacco-products/479036/"
+    },
+    {
+      "date": "2026-09-10",
+      "category": "新製品",
+      "title_ja": "カスダーリ、新2銘柄をInterTabacで発表",
+      "summary_ja": "カスダーリ（Casdagli）が、ナポレオン時代の将軍にちなむ「ブラザーズ・オブ・ザ・サーブル」シリーズの5、6番目となる新ブレンド「Custodian」「Flamboyant」をInterTabac 2026で発表した。シリーズ最後の2銘柄は2028年に発売予定。",
+      "title_en": "Casdagli Adding Custodian & Flamboyant to Brothers of the Sabre Series at InterTabac 2026",
+      "summary_en": "Casdagli has unveiled Custodian and Flamboyant, the fifth and sixth blends in its Brothers of the Sabre Series, at InterTabac 2026. The series honours generals from the Napoleonic era, with the final two blends scheduled for release in 2028.",
+      "source": "halfwheel",
+      "source_title": "Casdagli Adding Custodian & Flamboyant to Brothers of the Sabre Series at InterTabac 2026",
+      "source_en": "halfwheel",
+      "source_title_en": "Casdagli Adding Custodian & Flamboyant to Brothers of the Sabre Series at InterTabac 2026",
+      "url": "https://halfwheel.com/casdagli-adding-custodian-flamboyant-to-brothers-of-the-sabre-series-at-intertabac-2026/479052/"
+    },
+    {
+      "date": "2026-09-10",
+      "category": "新製品",
+      "title_ja": "JFRクララなど2ラインInterTabacで初披露",
+      "summary_ja": "JFRクララ（JFR Clara）とスプリーム・リーフ・ワールドワイド（Supreme Leaf Worldwide）の新2ラインが、InterTabac 2026で初披露された。両ラインは11月に米国外の店舗で発売され、うち1銘柄は来年、米国の店舗にも出荷される。",
+      "title_en": "JFR Clara, Supreme Leaf Worldwide Debuting at InterTabac 2026",
+      "summary_en": "Two new lines, JFR Clara and Supreme Leaf Worldwide, are debuting at InterTabac 2026. Both will go on sale at non-U.S. stores in November, with one of the new releases shipping to American stores next year.",
+      "source": "halfwheel",
+      "source_title": "JFR Clara, Supreme Leaf Worldwide Debuting at InterTabac 2026",
+      "source_en": "halfwheel",
+      "source_title_en": "JFR Clara, Supreme Leaf Worldwide Debuting at InterTabac 2026",
+      "url": "https://halfwheel.com/jfr-clara-supreme-leaf-worldwide-debuting-at-intertabac-2026/479069/"
+    },
+    {
+      "date": "2026-09-10",
+      "category": "新製品",
+      "title_ja": "ドン・エマヌエル、アヌナキに新サイズ追加",
+      "summary_ja": "ドン・エマヌエル・シガー（Don Emmanuel Cigars）が、アヌナキ（Annunaki）ラインに6×54の新ビトラ「Enki」を追加した。ライン4番目のサイズで初のフィガラード。「カベサス・トゥンバダ」と呼ぶヘッド形状を採用し、9月中旬のInterTabac直後に出荷を開始する。",
+      "title_en": "Don Emmanuel Cigars Adding 6 x 54 Enki Vitola to Annunaki Line at InterTabac 2026",
+      "summary_en": "Don Emmanuel Cigars is adding a 6 x 54 Enki vitola to its Annunaki line. It is the fourth size in the line and its first figurado, using what the company calls a \"cabezas tumbada\" style head. The cigars will begin shipping immediately after InterTabac in mid-September.",
+      "source": "halfwheel",
+      "source_title": "Don Emmanuel Cigars Adding 6 x 54 Enki Vitola to Annunaki Line at InterTabac 2026",
+      "source_en": "halfwheel",
+      "source_title_en": "Don Emmanuel Cigars Adding 6 x 54 Enki Vitola to Annunaki Line at InterTabac 2026",
+      "url": "https://halfwheel.com/don-emmanuel-cigars-adding-6-x-54-enki-vitola-to-annunaki-line-at-intertabac-2026/479047/"
+    },
+    {
+      "date": "2026-09-10",
+      "category": "新製品",
+      "title_ja": "ビアッヘ、プラティノ・レゼルバを新形状で復活",
+      "summary_ja": "ビアッヘ（Viaje）が、2010年代前半に毎年登場していた「オロ・レゼルバ」「プラティノ・レゼルバ」のブレンドを復活させた。今年は5 1/2×52のボックスプレス・ペルフェクトという新形状で発売する。",
+      "title_en": "Viaje Platino Reserva Perfecto",
+      "summary_en": "Viaje has revived its Oro Reserva and Platino Reserva blends, which made annual appearances in the early 2010s. This year the blends return in a new 5 1/2 x 52 box-pressed perfecto format.",
+      "source": "halfwheel",
+      "source_title": "Viaje Platino Reserva Perfecto",
+      "source_en": "halfwheel",
+      "source_title_en": "Viaje Platino Reserva Perfecto",
+      "url": "https://halfwheel.com/viaje-platino-reserva-perfecto/478991/"
+    },
     {
       "date": "2026-09-09",
       "category": "業界・企業",
@@ -2010,84 +2088,6 @@ var NEWS_DATA = {
       "source_en": "StogiePress",
       "source_title_en": "Cigar News: Tradecraft Cigars Announces the Gladius Box Press",
       "url": "https://stogiepress.com/cigar-news-tradecraft-cigars-announces-the-gladius-box-press/"
-    },
-    {
-      "date": "2026-08-08",
-      "category": "新製品",
-      "title_ja": "ダビドフ、旗艦店限定「ブティック・セレクション」",
-      "summary_ja": "ダビドフ（Davidoff）が、ジュネーブ・香港・ニューヨーク（マディソン）の旗艦店限定となる新しい常設ラインナップ「ブティック・セレクション（Boutique Selection）」を発表した。各店の顧客の嗜好を反映した3種の異なるブレンドで構成され、旗艦店コンサルタントと共同開発。いずれもトロ・サイズで、繰り返し生産される限定バッチとして提供される。ジュネーブ版はドミニカ産フィラー4種とドミニカ産バインダーを使用する。",
-      "title_en": "Davidoff Introduces the Boutique Selection for Flagship Stores",
-      "summary_en": "Davidoff Cigars has announced the Boutique Selection, a new permanent range sold exclusively at its Geneva, Hong Kong and New York Madison flagship stores. It comprises three individual blends, each composed to reflect the taste preferences of its location and developed with the stores' consultants. All three are presented in the toro format and produced in recurring limited batches. The Genève selection uses four Dominican filler tobaccos and a Dominican binder. SVP Javier González said the range expresses place, expertise and the relationships shared with flagship clientele.",
-      "source": "Cigar Journal",
-      "source_title": "Davidoff Cigars Introduces the Boutique Selection",
-      "source_en": "Cigar Journal",
-      "source_title_en": "Davidoff Cigars Introduces the Boutique Selection",
-      "url": "https://www.cigarjournal.com/davidoff-cigars-introduces-the-boutique-selection/?utm_source=rss&utm_medium=rss&utm_campaign=davidoff-cigars-introduces-the-boutique-selection"
-    },
-    {
-      "date": "2026-08-08",
-      "category": "新製品",
-      "title_ja": "トレードクラフト「グラディウス」ボックスプレス 8月22日発売",
-      "summary_ja": "トレードクラフト・シガーズ（Tradecraft Cigars）が、新作「グラディウス（Gladius）ボックスプレス」を発表した。5.5×52のボックスプレス・ベリコソで、伝統的なベリコソより楕円形の109型キャップで仕上げる。ラウンド版に比べブレンド本来の風味が増し、ボディ・スパイス・チョコレート感がより強く出るという。8月22日にウッデン・インディアンなどの店舗と自社サイトで発売される。",
-      "title_en": "Tradecraft's Gladius Box Press Coming Aug. 22",
-      "summary_en": "Tradecraft Cigars has announced the Gladius Box Press, a 5.5 x 52 box-pressed belicoso finished with a 109-style cap that is more ovalised than a traditional belicoso. The company says the box-pressed shape amplifies the blend's core flavours compared with the round vitolas, delivering more body, more spice and more chocolate. It officially launches on 22 August at the Wooden Indian, Tinder Box Haverford and the Tradecraft Cigars websites before rolling out further.",
-      "source": "halfwheel",
-      "source_title": "Tradecraft’s Gladius Box Press Coming Aug. 22",
-      "source_en": "halfwheel",
-      "source_title_en": "Tradecraft's Gladius Box Press Coming Aug. 22",
-      "url": "https://halfwheel.com/tradecrafts-gladius-box-press-coming-aug-22/476350/"
-    },
-    {
-      "date": "2026-08-07",
-      "category": "新製品",
-      "title_ja": "ルーム101、17周年記念の限定シガーを発表",
-      "summary_ja": "ルーム101・シガーズ（Room101 Cigars）が、年次アニバーサリー・シリーズ最新作「ルーム101 17周年」を発表した。AJフェルナンデス（AJ Fernandez）との共同制作による限定版で、毎年同じ葉巻を再発するのではなく、節目ごとに全く新しいブレンドを投入する同社の伝統を継続する。",
-      "title_en": "Room101 Unveils Limited Edition 17th Anniversary Cigar",
-      "summary_en": "Room101 Cigars is marking another milestone with the release of the Room101 17th Anniversary, the latest instalment in the brand's evolving annual Anniversary series. Crafted in collaboration with AJ Fernandez, the limited edition continues Room101's tradition of marking each milestone with an entirely new blend rather than revisiting the same cigar year after year.",
-      "source": "StogiePress",
-      "source_title": "Cigar News: Room101 Cigars Unveils Limited Edition 17th Anniversary Cigar",
-      "source_en": "StogiePress",
-      "source_title_en": "Room101 Cigars Unveils Limited Edition 17th Anniversary Cigar",
-      "url": "https://stogiepress.com/cigar-news-room101-cigars-unveils-limited-edition-17th-anniversary-cigar/"
-    },
-    {
-      "date": "2026-08-07",
-      "category": "新製品",
-      "title_ja": "ロッキー・パテル「アメリカ250」9月出荷へ",
-      "summary_ja": "ロッキー・パテル（Rocky Patel）が、米国建国を祝う記念葉巻「アメリカ250（America 250）」を来月9月に出荷すると発表した。",
-      "title_en": "Rocky Patel America 250 Coming in September",
-      "summary_en": "Rocky Patel has announced that it will ship its celebratory cigar, America 250, next month in September. The release marks America's birthday, following the July 4th festivities.",
-      "source": "halfwheel",
-      "source_title": "Rocky Patel America 250 Coming in September",
-      "source_en": "halfwheel",
-      "source_title_en": "Rocky Patel America 250 Coming in September",
-      "url": "https://halfwheel.com/rocky-patel-america-250-coming-in-september/476310/"
-    },
-    {
-      "date": "2026-08-07",
-      "category": "新製品",
-      "title_ja": "ルーム101「17周年」限定葉巻が入荷",
-      "summary_ja": "ルーム101（Room101）が「17周年（17th Anniversary）」を発売、店頭に到着した。AJフェルナンデス（AJ Fernandez）による製造でオール・ニカラグア産。同ブランドは毎年の記念作を新たなブレンドで手がける伝統を続けている。",
-      "title_en": "Room101 17th Anniversary Arrives at Stores",
-      "summary_en": "Room101's 17th Anniversary cigar has arrived at stores. Made by AJ Fernandez, the limited edition is an all-Nicaraguan blend. Continuing the brand's tradition, each anniversary release features an entirely new blend rather than revisiting a previous cigar.",
-      "source": "halfwheel",
-      "source_title": "Room101 17th Anniversary Arrives at Stores",
-      "source_en": "halfwheel",
-      "source_title_en": "Room101 17th Anniversary Arrives at Stores",
-      "url": "https://halfwheel.com/room101-17th-anniversary-arrives-at-stores/476297/"
-    },
-    {
-      "date": "2026-08-07",
-      "category": "業界・企業",
-      "title_ja": "米クリークサイド、新ブランド「クイーン・オブ・ザ・ウエスト」立ち上げ",
-      "summary_ja": "シンシナティを拠点とする小売業者クリークサイド（Creekside）が葉巻会社としても事業を開始。第1弾はタバカレラ・ラ・イスラ（Tabacalera La Isla）製のコネチカット・ラッパーを用いたブレンド。",
-      "title_en": "Creekside Launching Queen of the West, A New Cigar Brand",
-      "summary_en": "Creekside, a Cincinnati-based retailer, has become a cigar company. Its first release is a Connecticut-wrapped blend made at Tabacalera La Isla.",
-      "source": "halfwheel",
-      "source_title": "Creekside Launching Queen of the West, A New Cigar Brand",
-      "source_en": "halfwheel",
-      "source_title_en": "Creekside Launching Queen of the West, A New Cigar Brand",
-      "url": "https://halfwheel.com/creekside-launching-queen-of-the-west-a-new-cigar-brand/476286/"
     }
   ]
 };
