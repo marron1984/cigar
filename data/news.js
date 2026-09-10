@@ -7,8 +7,60 @@
    手で足すこともできますが、items の並び・キーは崩さないでください。
    ============================================================ */
 var NEWS_DATA = {
-  "updated": "2026-09-10",
+  "updated": "2026-09-11",
   "items": [
+    {
+      "date": "2026-09-11",
+      "category": "新製品",
+      "title_ja": "ラ・フロール・ドミニカーナ「カーボン・フラワー」",
+      "summary_ja": "ラ・フロール・ドミニカーナ（La Flor Dominicana）が、カーボンファイバー製アクセサリーを手がけるプロジェクトカーボン（ProjectCarbon）と提携し、今年の新限定品「カーボン・フラワー」を発表した。フルボディの葉巻で、5本入りのカーボンファイバー製ケースに収められる。",
+      "title_en": "La Flor Dominicana Carbon Flower",
+      "summary_en": "La Flor Dominicana has teamed up with ProjectCarbon, an accessory maker specialising in carbon fibre, for a new limited edition this year called the Carbon Flower. The full-bodied cigars come packaged in five-count carbon fibre cases.",
+      "source": "halfwheel",
+      "source_title": "La Flor Dominicana Carbon Flower",
+      "source_en": "halfwheel",
+      "source_title_en": "La Flor Dominicana Carbon Flower",
+      "url": "https://halfwheel.com/la-flor-dominicana-carbon-flower/478845/"
+    },
+    {
+      "date": "2026-09-11",
+      "category": "新製品",
+      "title_ja": "レ・フィヌ・ラム、4製品ラインを拡充",
+      "summary_ja": "レ・フィヌ・ラム（Les Fines Lames）が、既存製品の拡充を発表した。既存3製品に新しい仕上げオプションを追加するほか、4つ目としてカッター用の新しいケースを投入する。",
+      "title_en": "Les Fines Lames Expands Four Product Lines",
+      "summary_en": "Les Fines Lames has announced expansions to its range. Three existing products are receiving new finish options, while the fourth addition is a new case for one of its cutters.",
+      "source": "halfwheel",
+      "source_title": "Les Fines Lames Expands Four Product Lines",
+      "source_en": "halfwheel",
+      "source_title_en": "Les Fines Lames Expands Four Product Lines",
+      "url": "https://halfwheel.com/les-fines-lames-expands-four-product-lines/479217/"
+    },
+    {
+      "date": "2026-09-11",
+      "category": "新製品",
+      "title_ja": "カサ・デ・スエーニョス「インセプション」出荷開始",
+      "summary_ja": "カサ・デ・スエーニョス（Casa de Sueños）が新ライン「インセプション（Inception）」を店舗向けに出荷開始した。ブレンドの詳細は多く語られていないが、ミディアムボディとされる。同社の他製品と同様、ドミニカ共和国のデ・ロス・レイエス（De Los Reyes）が製造する。",
+      "title_en": "Casa de Sueños Inception Ships to Stores",
+      "summary_en": "Casa de Sueños has begun shipping its new Inception line to stores. While the company has said little about the blend, it describes the new line as medium-bodied. Like the rest of the company's cigars, it is made by De Los Reyes in the Dominican Republic.",
+      "source": "halfwheel",
+      "source_title": "Casa de Sueños Inception Ships to Stores",
+      "source_en": "halfwheel",
+      "source_title_en": "Casa de Sueños Inception Ships to Stores",
+      "url": "https://halfwheel.com/casa-de-suenos-inception-ships-to-stores/479206/"
+    },
+    {
+      "date": "2026-09-11",
+      "category": "新製品",
+      "title_ja": "カスダーリ、新作2種をインタータバック2026で披露",
+      "summary_ja": "カスダーリ（Casdagli）が「ドーターズ・オブ・ザ・ウインド・ロサード」と「ドミニータ・コロホ2012」をインタータバック2026（InterTabac 2026）で発表する。前者には未発表だった5番目のビトラが含まれ、後者は同社の新ライン「ドミニータ」の2作目のブレンドとなる。",
+      "title_en": "Casdagli Daughters of the Wind Rosado, Dominita Corojo 2012 Debuting at InterTabac 2026",
+      "summary_en": "Casdagli will debut its Daughters of the Wind Rosado and Dominita Corojo 2012 at InterTabac 2026. The Daughters of the Wind Rosado line includes a surprise fifth vitola that was not previously announced, while the Corojo 2012 is the second blend in the company's upcoming Dominita line.",
+      "source": "halfwheel",
+      "source_title": "Casdagli Daughters of the Wind Rosado, Dominita Corojo 2012 Debuting at InterTabac 2026",
+      "source_en": "halfwheel",
+      "source_title_en": "Casdagli Daughters of the Wind Rosado, Dominita Corojo 2012 Debuting at InterTabac 2026",
+      "url": "https://halfwheel.com/casdagli-daughters-of-the-wind-rosado-dominita-corojo-2012-debuting-at-intertabac-2026/479110/"
+    },
     {
       "date": "2026-09-10",
       "category": "業界・企業",
@@ -86,6 +138,32 @@ var NEWS_DATA = {
       "source_en": "halfwheel",
       "source_title_en": "Viaje Platino Reserva Perfecto",
       "url": "https://halfwheel.com/viaje-platino-reserva-perfecto/478991/"
+    },
+    {
+      "date": "2026-09-09",
+      "category": "イベント・アワード",
+      "title_ja": "シガー・トロフィー・アワード2026、9月15日に発表",
+      "summary_ja": "シガー・ジャーナル主催の「シガー・トロフィー・アワード（Cigar Trophy Awards）2026」の授賞式が、2026年9月15日（火）に開催される。マイアミ時間12時45分、パリ時間18時45分から、FacebookおよびYouTubeでライブ配信される。",
+      "title_en": "And The Winner Is…? – Cigar Trophy Awards 2026",
+      "summary_en": "On Tuesday, 15 September 2026, Cigar Journal will present the Cigar Trophy Awards, among the most anticipated consumer awards in the industry. The ceremony begins at 12:45pm Miami time and 6:45pm Paris time, and can be followed live via Facebook and YouTube.",
+      "source": "Cigar Journal",
+      "source_title": "And The Winner Is…? – Cigar Trophy Awards 2026",
+      "source_en": "Cigar Journal",
+      "source_title_en": "And The Winner Is…? – Cigar Trophy Awards 2026",
+      "url": "https://www.cigarjournal.com/and-the-winner-is-cigar-trophy-awards-2026/?utm_source=rss&utm_medium=rss&utm_campaign=and-the-winner-is-cigar-trophy-awards-2026"
+    },
+    {
+      "date": "2026-09-09",
+      "category": "業界・企業",
+      "title_ja": "ホンジュラス、2027年から国際タバコ祭を開催へ",
+      "summary_ja": "CLEシガー・カンパニーCEOのクリスチャン・エイロア（Christian Eiroa）が、ホンジュラスが2027年1月から旗艦となる国際タバコ祭を立ち上げると明らかにした。当局の認可も得ており、ニカラグアのプロ・サボール、ドミニカ共和国のプロシガー、キューバのハバノ祭と並ぶ業界イベントを目指す。",
+      "title_en": "Honduras Will Have an International Tobacco Festival: Eiroa",
+      "summary_en": "Christian Eiroa, CEO of CLE Cigar Company, has confirmed that Honduras will launch a flagship international tobacco festival from January 2027, with commitment and authorisation from competent authorities already in place. The event would position the country alongside major industry gatherings such as Puro Sabor in Nicaragua, Procigar in the Dominican Republic and the Habano Festival in Cuba, building on the strength of Honduran tobacco and its growing US market presence.",
+      "source": "Cigar Journal",
+      "source_title": "Honduras Will Have an International Tobacco Festival: Eiroa",
+      "source_en": "Cigar Journal",
+      "source_title_en": "Honduras Will Have an International Tobacco Festival: Eiroa",
+      "url": "https://www.cigarjournal.com/honduras-will-have-an-international-tobacco-festival-eiroa/?utm_source=rss&utm_medium=rss&utm_campaign=honduras-will-have-an-international-tobacco-festival-eiroa"
     },
     {
       "date": "2026-09-09",
@@ -2010,84 +2088,6 @@ var NEWS_DATA = {
       "source_en": "PR TIMES",
       "source_title_en": "S.T. Dupont x Cohiba: Limited Collection Announced to Mark the 60th Anniversary of Cohiba, an Icon of Premium Cigars",
       "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE1DUVhxLU4wRFZGdnlEVnN3S1ROQTJXRm9qcTZsNVVaLWZlU1pVY0p0SW1rR2pUaVh3WVo2U2NRUnNiYlVrNUlCeEEyaUUzM0REOEVPQ3RIMlpBal9ZcENrb2FXc2REYkxya2c?oc=5"
-    },
-    {
-      "date": "2026-08-10",
-      "category": "日本国内",
-      "title_ja": "神戸ピアザ神戸に顔認証の無料喫煙所オープン",
-      "summary_ja": "神戸市のピアザ神戸に、顔認証で入場する無料喫煙所が7月31日にオープンした。加熱式・紙巻き・葉巻・パイプまで利用可能で、Wi-Fiも完備している。",
-      "title_en": "Free Facial-Recognition Smoking Room Opens at Piazza Kobe",
-      "summary_en": "A free smoking room with facial-recognition entry opened at Piazza Kobe in Kobe on 31 July. It accommodates heated tobacco, cigarettes, cigars and pipes, and is equipped with Wi-Fi.",
-      "source": "地域ニュースサイト号外NET",
-      "source_title": "【神戸市】7月31日オープン！ ピアザ神戸に顔認証で入場する無料喫煙所が誕生。加熱式・紙巻き・葉巻・パイプまで利用可能。Wi-Fi完備 - 地域ニュースサイト号外NET",
-      "source_en": "Gogai NET",
-      "source_title_en": "[Kobe] Opened 31 July! A Free Smoking Room with Facial-Recognition Entry Debuts at Piazza Kobe, Usable for Heated Tobacco, Cigarettes, Cigars and Pipes, with Wi-Fi",
-      "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE1TSmdoY1lyOTVvUWR0MGxnTjFvd2hNc2p4UXZFY21vSjNaZE5ZQnNwRnZSTFAxbXAxTkdsSzM1RW45LVVKUTY0cENsUk52ZGdiQnB0TU1uSHRmYWRNd0VQb005U3dGZw?oc=5"
-    },
-    {
-      "date": "2026-08-10",
-      "category": "新製品",
-      "title_ja": "ドメイン、エクアドル産コネチカット葉巻を初投入",
-      "summary_ja": "ドメイン（Domain）が新ブレンド「アテニュエーション・トロエクストラ（Attenuation Toro Extra）」を発表した。同社として初めて、エクアドル栽培のコネチカット種ラッパーを使用する。フィラーにはコロホとクリオージョ98を交配して同社が開発したハイブリッド種「バンガード・イージス（Vanguard Aegis）」も含まれる。",
-      "title_en": "Domain Debuts First Cigar With Ecuadorian-Grown Connecticut Wrapper",
-      "summary_en": "Domain has unveiled its new blend, the Attenuation Toro Extra. It marks the first time the company has released a cigar using a Connecticut-seed wrapper grown in Ecuador. The filler also includes Vanguard Aegis, a hybrid tobacco developed by Domain by crossing corojo and criollo 98. The release expands the maker's line-up with a distinctive tobacco combination.",
-      "source": "halfwheel",
-      "source_title": "Domain Attenuation Toro Extra",
-      "source_en": "halfwheel",
-      "source_title_en": "Domain Attenuation Toro Extra",
-      "url": "https://halfwheel.com/domain-attenuation-toro-extra/476411/"
-    },
-    {
-      "date": "2026-08-09",
-      "category": "日本国内",
-      "title_ja": "キャメルからスーパースリムなリトルシガー2銘柄",
-      "summary_ja": "見た目も価格も「スーパースリム」なキャメル（Camel）のリトルシガー2銘柄が新発売された。",
-      "title_en": "Two 'Super Slim' Camel Little Cigars Launched in Japan",
-      "summary_en": "Two new Camel little cigar varieties, described as 'super slim' in both appearance and price, have gone on sale in Japan.",
-      "source": "ウォーカープラス",
-      "source_title": "＜画像1 / 2＞見た目も価格も“スーパースリム”なキャメルのリトルシガー2銘柄が新発売 - ウォーカープラス",
-      "source_en": "Walkerplus",
-      "source_title_en": "Two 'Super Slim' Camel Little Cigars Newly Launched",
-      "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE81bVBUek9TOU94UlpHcVNHN2NrTlE4dzdoRlNuZFJWZFVycGU2dy1SNG9vZTd5UlMtZnpud0w1MEJRajBzSFpMSmVsdFlVUkxwdHFIOHhhRjhERERHaUhpWTR6NnpIOVNVbzRV?oc=5"
-    },
-    {
-      "date": "2026-08-09",
-      "category": "新製品",
-      "title_ja": "エル・マゴ、缶入りシリーズ第4弾「キャバルリー」",
-      "summary_ja": "エル・マゴ（El Mago）が今年展開する5本入り缶シリーズの第4弾として「キャバルリー（Cavalry）」を発売した。既存の3種と同様、ボックスプレスの5×50ロブストという仕様。",
-      "title_en": "El Mago Collectible Tin Series Cavalry",
-      "summary_en": "El Mago has released Cavalry, the fourth entry in its collectible tin series launched this year, sold in five-packs. Like the first three releases in the line, Cavalry is a box-pressed robusto measuring 5 x 50.",
-      "source": "halfwheel",
-      "source_title": "El Mago Collectible Tin Series Cavalry",
-      "source_en": "halfwheel",
-      "source_title_en": "El Mago Collectible Tin Series Cavalry",
-      "url": "https://halfwheel.com/el-mago-collectible-tin-series-cavalry/476242/"
-    },
-    {
-      "date": "2026-08-08",
-      "category": "新製品",
-      "title_ja": "ダビドフ、旗艦店3店に限定シガーを追加",
-      "summary_ja": "ダビドフ（Davidoff）がジュネーブ、香港、マンハッタンのマディソン街にある各旗艦店向けに、それぞれ専用の限定シガーを追加する。いずれも6×54のトロだが、ブレンドは店舗ごとに異なるという。",
-      "title_en": "Davidoff Adding Boutique Selection for Select Flagships",
-      "summary_en": "Davidoff is adding an exclusive cigar to each of its flagship stores in Geneva, Hong Kong and the Madison Avenue location in Manhattan. While all three are 6 x 54 toros, the blends are said to differ from one location to another.",
-      "source": "halfwheel",
-      "source_title": "Davidoff Adding Boutique Selection for Select Flagships",
-      "source_en": "halfwheel",
-      "source_title_en": "Davidoff Adding Boutique Selection for Select Flagships",
-      "url": "https://halfwheel.com/davidoff-adding-boutique-selection-for-select-flagships/476320/"
-    },
-    {
-      "date": "2026-08-08",
-      "category": "新製品",
-      "title_ja": "トレードクラフト、「グラディウス・ボックスプレス」発表",
-      "summary_ja": "トレードクラフト・シガーズ（Tradecraft Cigars）が「グラディウス・ボックスプレス（Gladius Box Press）」を発表した。5.5×52のボックスプレスで、通常のベリコソより楕円形に仕上げた109×ベリコソのキャップを持つ。8月22日にウッデン・インディアン、ティンダーボックス・ハバフォードおよび同社サイトで正式発売する。",
-      "title_en": "Tradecraft Cigars Announces the Gladius Box Press",
-      "summary_en": "Tradecraft Cigars has announced the Gladius Box Press, a 5.5 x 52 box-pressed vitola finished with a 109x belicoso cap that is more ovalised than a traditional belicoso. The cigar officially launches on 22 August at the Wooden Indian, Tinder Box Haverford and Tradecraft Cigars' websites before a wider rollout.",
-      "source": "StogiePress",
-      "source_title": "Cigar News: Tradecraft Cigars Announces the Gladius Box Press",
-      "source_en": "StogiePress",
-      "source_title_en": "Cigar News: Tradecraft Cigars Announces the Gladius Box Press",
-      "url": "https://stogiepress.com/cigar-news-tradecraft-cigars-announces-the-gladius-box-press/"
     }
   ]
 };
