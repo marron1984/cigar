@@ -7,8 +7,73 @@
    手で足すこともできますが、items の並び・キーは崩さないでください。
    ============================================================ */
 var NEWS_DATA = {
-  "updated": "2026-09-11",
+  "updated": "2026-09-12",
   "items": [
+    {
+      "date": "2026-09-11",
+      "category": "新製品",
+      "title_ja": "シガーキングス、COY 26エアロ・ランセロ出荷へ",
+      "summary_ja": "シガーキングス（CigarKings）は、カラー・オブ・ザ・イヤー・シリーズの新作「COY 26 Aero Lancero」を来週出荷すると発表した。パントンが選ぶ今年の色「クラウド・ダンサー（Cloud Dancer）」に着想を得た一本。",
+      "title_en": "CigarKings COY 26 Aero Lancero Ships Next Week",
+      "summary_en": "CigarKings has announced that its COY 26 Aero Lancero will ship to retailers next week. The cigar continues the brand's Color of the Year series and is inspired by Pantone's colour of the year, which for this year is Cloud Dancer.",
+      "source": "halfwheel",
+      "source_title": "CigarKings COY 26 Aero Lancero Ships Next Week",
+      "source_en": "halfwheel",
+      "source_title_en": "CigarKings COY 26 Aero Lancero Ships Next Week",
+      "url": "https://halfwheel.com/cigarkings-coy-26-aero-lancero-ships-next-week/479159/"
+    },
+    {
+      "date": "2026-09-11",
+      "category": "新製品",
+      "title_ja": "ドン・エマニュエル、新作エンキをインタータバコで公開",
+      "summary_ja": "ドン・エマニュエル・シガーズ（Don Emmanuel Cigars）は、アヌンナキ（Anunnaki）ラインの4番目のヴィトラとなる新フィガード「Enki」（6×54）を発表した。9月15〜17日にドイツ・ドルトムントのメッセ・ドルトムントで開催されるインタータバコ2026で披露する。",
+      "title_en": "Don Emmanuel to Showcase Anunnaki Enki Figurado at Intertabac",
+      "summary_en": "Don Emmanuel Cigars has announced Enki, a new 6 x 54 figurado and the fourth vitola in its Anunnaki line. The cigar will be showcased at InterTabac 2026, held from 15 to 17 September at Messe Dortmund in Dortmund, Germany.",
+      "source": "Cigar Journal",
+      "source_title": "Don Emmanuel to Showcase Anunnaki Enki Figurado at Intertabac",
+      "source_en": "Cigar Journal",
+      "source_title_en": "Don Emmanuel to Showcase Anunnaki Enki Figurado at Intertabac",
+      "url": "https://www.cigarjournal.com/don-emmanuel-to-showcase-anunnaki-enki-figurado-at-intertabac/"
+    },
+    {
+      "date": "2026-09-11",
+      "category": "新製品",
+      "title_ja": "J.C.ニューマン、ブリックトーバーフェスト26年版出荷",
+      "summary_ja": "J.C.ニューマン・シガー（J.C. Newman Cigar Co.）は今週、「ブリックハウス・ブリックトーバーフェスト（Brick House Bricktoberfest）」の2026年版を、米国とドイツの小売店向けに出荷を開始した。",
+      "title_en": "J.C. Newman Ships the 2026 Release of Brick House Bricktoberfest",
+      "summary_en": "J.C. Newman Cigar Co. has begun shipping the 2026 release of its Brick House Bricktoberfest cigars this week, sending them to retailers across the United States and Germany.",
+      "source": "halfwheel",
+      "source_title": "J.C. Newman Ships the 2026 Release of Brick House Bricktoberfest",
+      "source_en": "halfwheel",
+      "source_title_en": "J.C. Newman Ships the 2026 Release of Brick House Bricktoberfest",
+      "url": "https://www.cigarjournal.com/j-c-newman-ships-the-2026-release-of-brick-house-bricktoberfest/"
+    },
+    {
+      "date": "2026-09-11",
+      "category": "新製品",
+      "title_ja": "アレック・ブラッドリー、ヘヴンヒルとの新ペアリング",
+      "summary_ja": "アレック・ブラッドリー（Alec Bradley）は、ヘヴンヒル蒸溜所（Heaven Hill Distillery）と組んだアンカット・シリーズ第10弾を発売する。限定ペアリングは「Alec Bradley Thirty Years Perfecto」（6¾×54）2本と、7年熟成のヘヴンヒル・ボトルド・イン・ボンド・シングルバレル750mlを1本セット。価格は70ドル。",
+      "title_en": "Alec Bradley Releases New Uncut Pairing With Heaven Hill Distillery",
+      "summary_en": "Alec Bradley is partnering with Heaven Hill Distillery for the tenth instalment of its Uncut Series. The limited-edition retail pairing features two Alec Bradley Thirty Years Perfectos (6¾ x 54) and one 750ml bottle of Heaven Hill Bottled in Bond Single Barrel, aged seven years. The pairing retails for $70.",
+      "source": "StogiePress",
+      "source_title": "Cigar News: Alec Bradley Releases New Uncut Pairing With Heaven Hill Distillery",
+      "source_en": "StogiePress",
+      "source_title_en": "Alec Bradley Releases New Uncut Pairing With Heaven Hill Distillery",
+      "url": "https://stogiepress.com/cigar-news-alec-bradley-releases-new-uncut-pairing-with-heaven-hill-distillery/"
+    },
+    {
+      "date": "2026-09-11",
+      "category": "新製品",
+      "title_ja": "クラウンド・ヘッズ、イベント限定「スターウッド」発表",
+      "summary_ja": "ナッシュビル拠点のクラウンド・ヘッズ（Crowned Heads）は、イベント限定シガー「Starwood」（5×50ロブスト）を発表した。1986〜2006年にミドルテネシーのライブ音楽を象徴した野外会場スターウッド・アンフィシアターへのオマージュ。",
+      "title_en": "Crowned Heads Announces \"STARWOOD,\" an Event-Only Cigar",
+      "summary_en": "Crowned Heads, the premium cigar company based in Nashville, has announced Starwood, an event-only cigar crafted as a 5 x 50 robusto. The release pays tribute to the iconic Starwood Amphitheater, the beloved outdoor venue that defined live music in Middle Tennessee from 1986 to 2006.",
+      "source": "StogiePress",
+      "source_title": "Cigar News: Crowned Heads Announces “STARWOOD,” Event-Only Cigar – Paying Homage To Nashville’s Legendary Starwood Amphitheater",
+      "source_en": "StogiePress",
+      "source_title_en": "Crowned Heads Announces \"STARWOOD,\" Event-Only Cigar Paying Homage To Nashville's Legendary Starwood Amphitheater",
+      "url": "https://stogiepress.com/cigar-news-crowned-heads-announces-starwood-event-only-cigar-paying-homage-to-nashvilles-legendary-starwood-amphitheater/"
+    },
     {
       "date": "2026-09-11",
       "category": "新製品",
@@ -138,6 +203,19 @@ var NEWS_DATA = {
       "source_en": "halfwheel",
       "source_title_en": "Viaje Platino Reserva Perfecto",
       "url": "https://halfwheel.com/viaje-platino-reserva-perfecto/478991/"
+    },
+    {
+      "date": "2026-09-09",
+      "category": "日本国内",
+      "title_ja": "プレミアムシガーとウイスキーのマリアージュイベント開催",
+      "summary_ja": "プレミアムシガーとウイスキーのマリアージュを愉しむイベントが開催されると報じられた。",
+      "title_en": "Event to Pair Premium Cigars and Whisky Announced in Japan",
+      "summary_en": "An event offering guests the chance to enjoy the marriage of premium cigars and whisky is to be held, according to a Japanese report.",
+      "source": "The Rake Japan",
+      "source_title": "プレミアムシガーとウイスキーのマリアージュを愉しむイベントを開催へ - therakejapan.com",
+      "source_en": "The Rake Japan",
+      "source_title_en": "An Event to Enjoy the Marriage of Premium Cigars and Whisky to Be Held",
+      "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE9mVnJjZGtscGNTQldfY3BxWnNKMUQ0VURKWkJzMU0tWUpja0wyWXhZV0k1bXhrR1FWVDRsUWw2Ung3WlNfYkpJOHBuX3N1LTlK?oc=5"
     },
     {
       "date": "2026-09-09",
@@ -2010,84 +2088,6 @@ var NEWS_DATA = {
       "source_en": "halfwheel",
       "source_title_en": "El Titán de Bronze & STG End Distribution Agreement",
       "url": "https://halfwheel.com/el-titan-de-bronze-stg-end-distribution-agreement/476499/"
-    },
-    {
-      "date": "2026-08-11",
-      "category": "新製品",
-      "title_ja": "ラ・ガレラ、90周年記念の新ライン発売",
-      "summary_ja": "ラ・ガレラ（La Galera）が90周年を記念した新ラインを発売した。創業は101年前だが、書類上は90年目にあたるという。今回のラインは、同社が自社で栽培したタバコのみで製造される初の製品となる。",
-      "title_en": "La Galera 90th Anniversary Heads to Stores",
-      "summary_en": "La Galera is releasing a new line to mark its 90th anniversary. Although the company was founded 101 years ago, paperwork puts it at only 90 years. The new line is the first to be made entirely from tobaccos grown by the company itself, and it is now heading to stores.",
-      "source": "halfwheel",
-      "source_title": "La Galera 90th Anniversary Heads to Stores",
-      "source_en": "halfwheel",
-      "source_title_en": "La Galera 90th Anniversary Heads to Stores",
-      "url": "https://halfwheel.com/la-galera-90th-anniversary-heads-to-stores/476491/"
-    },
-    {
-      "date": "2026-08-11",
-      "category": "新製品",
-      "title_ja": "エラディオ・ディアス、母を讃える新ライン「ミ・ビエハ」",
-      "summary_ja": "エラディオ・ディアス（Eladio Díaz）が母に捧げる新ライン「ミ・ビエハ（Mi Vieja）」を発表した。ドミニカ南部産タバコ、ペルー産ペロ・デ・オロ、エクアドル産のコネチカットシード・ラッパーを使用。米国では11月発売予定。",
-      "title_en": "Eladio Díaz Honours His Mother with New Mi Vieja Line",
-      "summary_en": "Eladio Díaz has unveiled a new line, Mi Vieja, in honour of his mother. The blend incorporates tobacco from the southern part of the Dominican Republic, Peruvian pelo de oro and an Ecuadorian-grown, Connecticut-seed wrapper. The line is due to arrive in the U.S. in November.",
-      "source": "halfwheel",
-      "source_title": "Eladio Díaz Honors His Mother with New Mi Vieja Line",
-      "source_en": "halfwheel",
-      "source_title_en": "Eladio Díaz Honours His Mother with New Mi Vieja Line",
-      "url": "https://halfwheel.com/eladio-diaz-honors-his-mother-with-new-mi-vieja-line/476476/"
-    },
-    {
-      "date": "2026-08-11",
-      "category": "新製品",
-      "title_ja": "改良版ダイヤモンド・クラウン・マキシマス出荷開始",
-      "summary_ja": "ダイヤモンド・クラウン・マキシマス（Diamond Crown Maximus）の改良版が出荷を開始した。ドリュー・ニューマンによれば新しいマキシマスは「やや力強い」味わいで、バンドを増やした現代的なパッケージも採用したという。",
-      "title_en": "Updated Diamond Crown Maximus Begins Shipping",
-      "summary_en": "An updated version of the Diamond Crown Maximus has begun shipping. Drew Newman describes the new Maximus as \"a bit bolder\", and it also features updated packaging for the modern era, meaning more bands.",
-      "source": "halfwheel",
-      "source_title": "Updated Diamond Crown Maximus Begins Shipping",
-      "source_en": "halfwheel",
-      "source_title_en": "Updated Diamond Crown Maximus Begins Shipping",
-      "url": "https://halfwheel.com/updated-diamond-crown-maximus-begins-shipping/476464/"
-    },
-    {
-      "date": "2026-08-10",
-      "category": "新製品",
-      "title_ja": "S.T.デュポン×コイーバ、誕生60周年記念の限定コレクション",
-      "summary_ja": "S.T.デュポン（S.T. DUPONT）が、プレミアムシガーを代表する「コイーバ（COHIBA）」の誕生60周年を記念した限定コレクションを発表した。",
-      "title_en": "S.T. Dupont x Cohiba Launch Limited Collection for 60th Anniversary",
-      "summary_en": "S.T. Dupont has unveiled a limited collection created in collaboration with Cohiba to mark the 60th anniversary of the iconic premium cigar brand.",
-      "source": "Infoseek",
-      "source_title": "S.T. DUPONT X COHIBA プレミアムシガーを代表する「コイーバ」の誕生60周年を記念し限定コレクションを発表 - Infoseek",
-      "source_en": "Infoseek",
-      "source_title_en": "S.T. DUPONT X COHIBA Announces Limited Collection Marking 60th Anniversary of Cohiba, an Icon of Premium Cigars",
-      "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE9CQ1RZaWZaNmdlZ3ppenJjb2RNQW9vZjNFdmhmanEtcllQM1BlMDNrSGp5OVdnZ3lhdE11Q1pXTmlKRE5tU0hCV3lfYjFtMU5BWDFBS05ReG85eWc1U0NYblNHbjltU3E4bktiLUlZMHVzQQ?oc=5"
-    },
-    {
-      "date": "2026-08-10",
-      "category": "日本国内",
-      "title_ja": "S.T.デュポン、コイーバ60周年で限定コレクション",
-      "summary_ja": "S.T.デュポン（S.T. DUPONT）が、プレミアムシガーを代表する「コイーバ（COHIBA）」の誕生60周年を記念した限定コレクションを発表した。",
-      "title_en": "S.T. Dupont Unveils Cohiba 60th Anniversary Collection",
-      "summary_en": "S.T. Dupont has announced a limited collection commemorating the 60th anniversary of Cohiba, one of the most iconic names in premium cigars.",
-      "source": "MANTANWEB",
-      "source_title": "S.T. DUPONT X COHIBA プレミアムシガーを代表する「コイーバ」の誕生60周年を記念し限定コレクションを発表 - mantan-web.jp",
-      "source_en": "MANTANWEB",
-      "source_title_en": "S.T. Dupont X Cohiba: Limited Collection Marking the 60th Anniversary of Premium Cigar Icon Cohiba",
-      "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNSzdKTGppZG9EOG4yZFhDdDVWZk1HTi1yX3dBeTFWQ2wtb2U4c0hwbHMtSVY4QXNMbnhLbDQ3bEZyNXROcWo1N1dsLUFRakhXbHZPTk05MDluU2tJZzc1MW1LbXJnNlFwTzhMRnY0VmhnMWFzLVR3Y3JreXU5aWQ3dFZQcExnaDVT?oc=5"
-    },
-    {
-      "date": "2026-08-10",
-      "category": "新製品",
-      "title_ja": "S.T.デュポン×コイーバ、60周年記念限定コレクション",
-      "summary_ja": "S.T.デュポン（S.T. DUPONT）が、プレミアムシガーを代表する「コイーバ（COHIBA）」の誕生60周年を記念した限定コレクションを発表した。",
-      "title_en": "S.T. Dupont x Cohiba: Limited Collection Marking Cohiba's 60th Anniversary",
-      "summary_en": "S.T. Dupont has announced a limited collection to celebrate the 60th anniversary of Cohiba, one of the most iconic names in premium cigars.",
-      "source": "PR TIMES",
-      "source_title": "S.T. DUPONT X COHIBA プレミアムシガーを代表する「コイーバ」の誕生60周年を記念し限定コレクションを発表 - PR TIMES",
-      "source_en": "PR TIMES",
-      "source_title_en": "S.T. Dupont x Cohiba: Limited Collection Announced to Mark the 60th Anniversary of Cohiba, an Icon of Premium Cigars",
-      "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE1DUVhxLU4wRFZGdnlEVnN3S1ROQTJXRm9qcTZsNVVaLWZlU1pVY0p0SW1rR2pUaVh3WVo2U2NRUnNiYlVrNUlCeEEyaUUzM0REOEVPQ3RIMlpBal9ZcENrb2FXc2REYkxya2c?oc=5"
     }
   ]
 };
