@@ -7,8 +7,47 @@
    手で足すこともできますが、items の並び・キーは崩さないでください。
    ============================================================ */
 var NEWS_DATA = {
-  "updated": "2026-09-12",
+  "updated": "2026-09-13",
   "items": [
+    {
+      "date": "2026-09-13",
+      "category": "新製品",
+      "title_ja": "ブラックレーベル、ビショップスブレンド新作",
+      "summary_ja": "ブラックレーベル・トレーディング（Black Label Trading Co.）が「ビショップスブレンド2026 ランセロ（Bishops Blend 2026 Lancero）」を発表した。ビショップスブレンドの初リリースから10年目にあたる節目の製品だが、公式には10周年記念とは銘打っていない。",
+      "title_en": "Black Label Trading Co. Bishops Blend 2026 Lancero",
+      "summary_en": "Black Label Trading Co. has announced the Bishops Blend 2026 Lancero. The release marks 10 years since the company first put out Bishops Blend, making it effectively a 10th anniversary edition, though it is not officially being labelled as such. The new lancero continues the long-running Bishops Blend line.",
+      "source": "halfwheel",
+      "source_title": "Black Label Trading Co. Bishops Blend 2026 Lancero",
+      "source_en": "halfwheel",
+      "source_title_en": "Black Label Trading Co. Bishops Blend 2026 Lancero",
+      "url": "https://halfwheel.com/black-label-trading-co-bishops-blend-2026-lancero/479356/"
+    },
+    {
+      "date": "2026-09-12",
+      "category": "業界・企業",
+      "title_ja": "ハバノス、もう一人の株主に注目",
+      "summary_ja": "ハバノス（Habanos S.A.）の株式構成をめぐる分析。キューバ政府が50％、チェン・ジー（Chen Zhi）が28.55％、残る21.45％を別の株主が保有する。チェン氏に関する新たな問題が続くなか、この少数株主がチェン氏の持ち分を取得した場合に何が起きるか、その株主が誰なのかが焦点になる。",
+      "title_en": "It’s Time To Talk About the Other Habanos S.A. Shareholder",
+      "summary_en": "An analysis of Habanos S.A.'s ownership structure. The Cuban government holds 50 per cent, Chen Zhi owns 28.55 per cent, and an unidentified party holds the remaining 21.45 per cent. As the Cuban cigar world grapples with fresh Chen-related problems, attention turns to what might happen if this minority shareholder were to acquire Chen's stake, and to establishing who that shareholder actually is.",
+      "source": "halfwheel",
+      "source_title": "It’s Time To Talk About the Other Habanos S.A. Shareholder",
+      "source_en": "halfwheel",
+      "source_title_en": "It’s Time To Talk About the Other Habanos S.A. Shareholder",
+      "url": "https://halfwheel.com/its-time-to-talk-about-habanos-sa-other-owner/479295/"
+    },
+    {
+      "date": "2026-09-12",
+      "category": "業界・企業",
+      "title_ja": "独GRE、ラウラ・シャヴィン販売を継承",
+      "summary_ja": "GREトレード（GRE Trade）が2026年10月より、プレミアムシガーブランド「ラウラ・シャヴィン（Laura Chavin）」のドイツにおける独占販売を引き継ぐ。",
+      "title_en": "GRE Trade Takes Over Distribution of Laura Chavin in Germany",
+      "summary_en": "Starting in October 2026, GRE Trade will take over the exclusive distribution of the premium cigar brand Laura Chavin in Germany.",
+      "source": "Cigar Journal",
+      "source_title": "GRE Trade Takes Over Distribution of Laura Chavin in Germany",
+      "source_en": "Cigar Journal",
+      "source_title_en": "GRE Trade Takes Over Distribution of Laura Chavin in Germany",
+      "url": "https://www.cigarjournal.com/gre-trade-takes-over-distribution-of-laura-chavin-in-germany/"
+    },
     {
       "date": "2026-09-11",
       "category": "新製品",
@@ -128,6 +167,19 @@ var NEWS_DATA = {
     },
     {
       "date": "2026-09-10",
+      "category": "新製品",
+      "title_ja": "ドン・エマニュエル、新作をインタータバック出展",
+      "summary_ja": "ドン・エマニュエル・シガーズ（Don Emmanuel Cigars）が、アヌンナキ（Anunnaki）ラインの4番目のビトラとなる新作フィガラード「エンキ（Enki）」（6×54）を発表した。9月15〜17日にドイツ・ドルトムントのメッセで開催されるインタータバック2026（InterTabac 2026）で披露される。アヌンナキ・アヌ（Anunnaki Anu）はRobbReportの2026年ベスト・オブ・ザ・ベストに選出された。",
+      "title_en": "Don Emmanuel Cigars To Showcase Anunnaki Enki Figurado At InterTabac 2026",
+      "summary_en": "Don Emmanuel Cigars has announced Enki, a new 6 x 54 figurado and the fourth vitola in its Anunnaki line. The cigar will be showcased at InterTabac 2026, held 15–17 September at Messe Dortmund in Germany. The launch comes amid growing recognition for the Anunnaki line, with Anunnaki Anu recently named to Robb Report's 2026 Best of the Best.",
+      "source": "StogiePress",
+      "source_title": "Cigar News: Don Emmanuel Cigars To Showcase Anunnake Enki Figurado At Intertabac 2026",
+      "source_en": "StogiePress",
+      "source_title_en": "Don Emmanuel Cigars To Showcase Anunnaki Enki Figurado At InterTabac 2026",
+      "url": "https://stogiepress.com/cigar-news-don-emmanuel-cigars-to-showcase-anunnake-enki-figurado-at-intertabac-2026/"
+    },
+    {
+      "date": "2026-09-10",
       "category": "業界・企業",
       "title_ja": "Cigar.comがCigora.comへ移行",
       "summary_ja": "スカンジナビアン・タバコ・グループ（STG）傘下の小売事業として、Cigar.comがCigora.comへ移行する。Cigoraは「次世代のオンライン葉巻販売」として立ち上げられ、小売と教育を組み合わせ、葉巻との新たな接し方を提供するとしている。",
@@ -203,6 +255,32 @@ var NEWS_DATA = {
       "source_en": "halfwheel",
       "source_title_en": "Viaje Platino Reserva Perfecto",
       "url": "https://halfwheel.com/viaje-platino-reserva-perfecto/478991/"
+    },
+    {
+      "date": "2026-09-09",
+      "category": "新製品",
+      "title_ja": "シガーキングス、COY26エアロ・ランセロ",
+      "summary_ja": "シガーキングス（CigarKings）が「COY26 エアロ・ランセロ（COY 26 Aero Lancero）」を発表した。同社の「カラー・オブ・ザ・イヤー（Color of the Year）」シリーズを継続する製品となる。",
+      "title_en": "CigarKings Presents the COY 26 Aero Lancero",
+      "summary_en": "CigarKings has presented the COY 26 Aero Lancero, continuing its Color of the Year series.",
+      "source": "Cigar Journal",
+      "source_title": "CigarKings Presents the COY 26 Aero Lancero",
+      "source_en": "Cigar Journal",
+      "source_title_en": "CigarKings Presents the COY 26 Aero Lancero",
+      "url": "https://www.cigarjournal.com/cigarkings-presents-the-coy-26-aero-lancero/"
+    },
+    {
+      "date": "2026-09-09",
+      "category": "新製品",
+      "title_ja": "マヤ・セルバ、新ブランド「ティモン」発表",
+      "summary_ja": "マヤ・セルバ・シガーズ（Maya Selva Cigars）が新ブランド「ティモン（Timón）」を発表した。ホンジュラス産のハンドメイドシガーを手頃な価格で提供する。",
+      "title_en": "Maya Selva Cigars Introduces “Timón”",
+      "summary_en": "Maya Selva Cigars has introduced Timón, a new cigar brand offering handcrafted cigars from Honduras at an attractive price point.",
+      "source": "Cigar Journal",
+      "source_title": "Maya Selva Cigars Introduces “Timón”",
+      "source_en": "Cigar Journal",
+      "source_title_en": "Maya Selva Cigars Introduces “Timón”",
+      "url": "https://www.cigarjournal.com/maya-selva-cigars-introduces-timon/"
     },
     {
       "date": "2026-09-09",
@@ -2010,84 +2088,6 @@ var NEWS_DATA = {
       "source_en": "Cigar Journal",
       "source_title_en": "J.C. Newman Ships New Diamond Crown MAXIMUS",
       "url": "https://www.cigarjournal.com/j-c-newman-ships-new-diamond-crown-maximus/?utm_source=rss&utm_medium=rss&utm_campaign=j-c-newman-ships-new-diamond-crown-maximus"
-    },
-    {
-      "date": "2026-08-12",
-      "category": "新製品",
-      "title_ja": "キー・ドルセー、26年EL第1弾「コンコルディア」",
-      "summary_ja": "ハバノス社が2026年エディション・リミターダの第1弾として、キー・ドルセー（Quai d'Orsay）「コンコルディア」を発表した。マドリードのイベントで披露される。発売時期や価格は明らかにされていない。",
-      "title_en": "Quai d’Orsay Concordia Announced as First Edición Limitada 2026",
-      "summary_en": "Habanos has announced Quai d'Orsay Concordia as the first Edición Limitada 2026 release. The new cigar will be shown off at an event in Madrid. It remains unclear when the cigars will arrive on shelves or how much they will cost.",
-      "source": "halfwheel",
-      "source_title": "Quai d’Orsay Concordia Announced as First Edición Limitada 2026",
-      "source_en": "halfwheel",
-      "source_title_en": "Quai d’Orsay Concordia Announced as First Edición Limitada 2026",
-      "url": "https://halfwheel.com/quai-dorsay-concordia-announced-as-first-edicion-limitada-2026/476568/"
-    },
-    {
-      "date": "2026-08-12",
-      "category": "新製品",
-      "title_ja": "ケサダ「ススピロ」小売店に入荷",
-      "summary_ja": "ケサダ（Quesada）の新ライン「ススピロ（Suspiro）」が小売店に入荷した。2種類の新ブレンドはいずれも甘味付けのキャップを備える。ラインの名は、繊細なメレンゲ菓子のデザートにちなむ。",
-      "title_en": "Quesada Suspiro Arriving at Retailers",
-      "summary_en": "Quesada's new Suspiro line is arriving at retailers. The two new blends both feature sweetened caps. The line is named after a delicate meringue confection dessert.",
-      "source": "halfwheel",
-      "source_title": "Quesada Suspiro Arriving at Retailers",
-      "source_en": "halfwheel",
-      "source_title_en": "Quesada Suspiro Arriving at Retailers",
-      "url": "https://halfwheel.com/quesada-suspiro-arriving-at-retailers/476537/"
-    },
-    {
-      "date": "2026-08-12",
-      "category": "新製品",
-      "title_ja": "ワイルドファイア「ザ・リバイバリスト」が復活",
-      "summary_ja": "ワイルドファイア（Wildfire）の「ザ・リバイバリスト（The Revivalist）」が再登場した。据え置きの要素もある一方で多くが変更され、フィラーには熟成したイタリア産タバコが加わっている。",
-      "title_en": "Wildfire’s The Revivalist Returns",
-      "summary_en": "Wildfire's The Revivalist is back. While some things are staying the same, a lot has changed, including some aged Italian tobacco in the filler.",
-      "source": "halfwheel",
-      "source_title": "Wildfire’s The Revivalist Returns",
-      "source_en": "halfwheel",
-      "source_title_en": "Wildfire’s The Revivalist Returns",
-      "url": "https://halfwheel.com/wildfires-the-revivalist-returns/476536/"
-    },
-    {
-      "date": "2026-08-12",
-      "category": "新製品",
-      "title_ja": "プラセンシア、有機タバコの「トリウンファル」",
-      "summary_ja": "プラセンシア（Plasencia）が「トリウンファル（Triunfal）」を発表した。同社によれば、ホンジュラスとニカラグア双方の認証済み有機タバコを用いた初の葉巻だという。5万本すべてを、1組の職人が巻き上げた。",
-      "title_en": "Plasencia Triunfal",
-      "summary_en": "Plasencia says Triunfal is the first time it has released a cigar using certified organic tobacco from both Honduras and Nicaragua. Notably, just one pair of workers rolled all 50,000 cigars.",
-      "source": "halfwheel",
-      "source_title": "Plasencia Triunfal",
-      "source_en": "halfwheel",
-      "source_title_en": "Plasencia Triunfal",
-      "url": "https://halfwheel.com/plasencia-triunfal/476327/"
-    },
-    {
-      "date": "2026-08-11",
-      "category": "新製品",
-      "title_ja": "S.T.デュポン×コイーバ、誕生60周年記念コレクション",
-      "summary_ja": "S.T.デュポン（S.T. DUPONT）が、プレミアムシガーを代表する「コイーバ（COHIBA）」の誕生60周年を記念し、限定コレクションを発表した。",
-      "title_en": "S.T. Dupont x Cohiba Unveils Limited Collection for Cohiba's 60th Anniversary",
-      "summary_en": "S.T. Dupont has announced a limited collection marking the 60th anniversary of Cohiba, one of the most iconic names in premium cigars.",
-      "source": "storyweb.jp",
-      "source_title": "S.T. DUPONT X COHIBA プレミアムシガーを代表する「コイーバ」の誕生60周年を記念し限定コレクションを発表 - storyweb.jp",
-      "source_en": "storyweb.jp",
-      "source_title_en": "S.T. Dupont x Cohiba Unveils a Limited Collection Commemorating the 60th Anniversary of Cohiba, an Icon of Premium Cigars",
-      "url": "https://news.google.com/rss/articles/CBMiS0FVX3lxTE9VS3RFbDBmbWw3aXFlSlZPYW9GUDhWWUNnX1dDVGl2cEMzTDV6UW40MTNsOTFObmthZGNrRDVaOEExam9sQkNERG9ESQ?oc=5"
-    },
-    {
-      "date": "2026-08-11",
-      "category": "業界・企業",
-      "title_ja": "エル・ティタン・デ・ブロンセ、STGとの販売契約終了",
-      "summary_ja": "エル・ティタン・デ・ブロンセ（El Titán de Bronze）が、STGとの販売契約を終了し、再び自社ブランドの流通を自ら手がけると発表した。同社はPCA 2027での新製品リリースに向けた大きな計画も予告している。",
-      "title_en": "El Titán de Bronze & STG End Distribution Agreement",
-      "summary_en": "El Titán de Bronze has ended its distribution agreement with STG and is once again handling distribution of its own brands. The company is also teasing significant plans for new releases at PCA 2027.",
-      "source": "halfwheel",
-      "source_title": "El Titán de Bronze & STG End Distribution Agreement",
-      "source_en": "halfwheel",
-      "source_title_en": "El Titán de Bronze & STG End Distribution Agreement",
-      "url": "https://halfwheel.com/el-titan-de-bronze-stg-end-distribution-agreement/476499/"
     }
   ]
 };
