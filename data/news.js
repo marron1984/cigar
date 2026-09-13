@@ -7,8 +7,86 @@
    手で足すこともできますが、items の並び・キーは崩さないでください。
    ============================================================ */
 var NEWS_DATA = {
-  "updated": "2026-09-13",
+  "updated": "2026-09-14",
   "items": [
+    {
+      "date": "2026-09-14",
+      "category": "新製品",
+      "title_ja": "ペルドモ・レガシー、独市場へ投入",
+      "summary_ja": "コップ・タバコ（Kopp Tobaccos GmbH & Co. KG）が、シガーシリーズ「ペルドモ・レガシー（Perdomo Legacy）」をドイツ市場に導入すると発表した。",
+      "title_en": "Kopp Tobaccos Introduces Perdomo Legacy in Germany",
+      "summary_en": "Kopp Tobaccos GmbH & Co. KG is introducing the Perdomo Legacy cigar series to the German market.",
+      "source": "Cigar Journal",
+      "source_title": "Kopp Tobaccos Introduces Perdomo Legacy in Germany",
+      "source_en": "Cigar Journal",
+      "source_title_en": "Kopp Tobaccos Introduces Perdomo Legacy in Germany",
+      "url": "https://www.cigarjournal.com/kopp-tobaccos-introduces-perdomo-legacy-in-germany/"
+    },
+    {
+      "date": "2026-09-14",
+      "category": "新製品",
+      "title_ja": "ヴィリガー、ニカラグア限定版2026",
+      "summary_ja": "「ヴィリガー・デ・ニカラグア エディシオン・リミターダ（VILLIGER de Nicaragua Edición Limitada）」の2026年版が、今年で最後の発売となる。",
+      "title_en": "VILLIGER de Nicaragua Edición Limitada 2026",
+      "summary_en": "The VILLIGER de Nicaragua Edición Limitada is being released for the last time this year.",
+      "source": "Cigar Journal",
+      "source_title": "VILLIGER de Nicaragua Edición Limitada 2026",
+      "source_en": "Cigar Journal",
+      "source_title_en": "VILLIGER de Nicaragua Edición Limitada 2026",
+      "url": "https://www.cigarjournal.com/villiger-de-nicaragua-edicion-limitada-2026/"
+    },
+    {
+      "date": "2026-09-14",
+      "category": "イベント・アワード",
+      "title_ja": "マヤ・セルバ、インタータバック出展",
+      "summary_ja": "マヤ・セルバ・シガーズ（Maya Selva Cigars）が、インタータバック（InterTabac）2026で、看板シリーズへの新製品を披露する。",
+      "title_en": "Maya Selva Cigars at Intertabac 2026",
+      "summary_en": "Maya Selva Cigars presents new additions to its iconic cigar portfolio at InterTabac 2026.",
+      "source": "Cigar Journal",
+      "source_title": "Coming up – Maya Selva Cigars at Intertabac 2026",
+      "source_en": "Cigar Journal",
+      "source_title_en": "Coming up – Maya Selva Cigars at Intertabac 2026",
+      "url": "https://www.cigarjournal.com/coming-up-maya-selva-cigars-at-intertabac-2026/"
+    },
+    {
+      "date": "2026-09-14",
+      "category": "新製品",
+      "title_ja": "ニューイングランド展、限定ピザ葉巻",
+      "summary_ja": "2026年9月25〜26日に開催されるニューイングランド・シガー・エキスポ（New England Cigar Expo）が、今年も記念の限定葉巻を用意する。",
+      "title_en": "New England Cigar Expo Releases 2026 Limited Edition Pizza Cigar",
+      "summary_en": "The New England Cigar Expo, taking place on Friday and Saturday, 25–26 September 2026, will once again commemorate the event with its own limited-edition cigar.",
+      "source": "Cigar Journal",
+      "source_title": "New England Cigar Expo Releases 2026 Limited Edition Pizza Cigar",
+      "source_en": "Cigar Journal",
+      "source_title_en": "New England Cigar Expo Releases 2026 Limited Edition Pizza Cigar",
+      "url": "https://www.cigarjournal.com/new-england-cigar-expo-releases-2026-limited-edition-pizza-cigar/"
+    },
+    {
+      "date": "2026-09-14",
+      "category": "新製品",
+      "title_ja": "レ・フィヌ・ラム、年末に新作多数",
+      "summary_ja": "「ル・プティ（Le PETIT）」「ラ・ギロチン（La GUILLOTINE）」「ル・タグ（Le TAG）」「パンチ・ブレスレット（PUNCH BRACELET）」を手がける仏ブランド、レ・フィヌ・ラム（Les Fines Lames）が、これまでの1シーズンより多い新製品を年末に投入する。",
+      "title_en": "Les Fines Lames Closes the Year with a Bang",
+      "summary_en": "The French brand behind Le PETIT, La GUILLOTINE, Le TAG and the PUNCH BRACELET is closing out the year with a bang, offering more new pieces than in any single season before.",
+      "source": "Cigar Journal",
+      "source_title": "Les Fines Lames Closes the Year with a Bang",
+      "source_en": "Cigar Journal",
+      "source_title_en": "Les Fines Lames Closes the Year with a Bang",
+      "url": "https://www.cigarjournal.com/les-fines-lames-closes-the-year-with-a-bang/"
+    },
+    {
+      "date": "2026-09-13",
+      "category": "新製品",
+      "title_ja": "ルーム101、17周年ブレンド発表",
+      "summary_ja": "ルーム101（Room101）が、16周年を飛ばした後、17周年を記念するアニバーサリーシリーズの7作目を発表した。ブレンドは再びAJ・フェルナンデス（AJ Fernandez）が手がける。",
+      "title_en": "Room101 17th Anniversary",
+      "summary_en": "After skipping the 16th anniversary, Room101's Anniversary series gets its seventh blend for the brand's 17th anniversary. Once again, the brand has turned to AJ Fernandez for the blend.",
+      "source": "halfwheel",
+      "source_title": "Room101 17th Anniversary",
+      "source_en": "halfwheel",
+      "source_title_en": "Room101 17th Anniversary",
+      "url": "https://halfwheel.com/room101-17th-anniversary/479401/"
+    },
     {
       "date": "2026-09-13",
       "category": "新製品",
@@ -2010,84 +2088,6 @@ var NEWS_DATA = {
       "source_en": "Cigar Journal",
       "source_title_en": "Le Club Fumoir: Alpine Elegance Meeting with The Cigar Culture",
       "url": "https://www.cigarjournal.com/le-club-fumoir-alpine-elegance-meeting-with-the-cigar-culture/?utm_source=rss&utm_medium=rss&utm_campaign=le-club-fumoir-alpine-elegance-meeting-with-the-cigar-culture"
-    },
-    {
-      "date": "2026-08-12",
-      "category": "新製品",
-      "title_ja": "ルーム101、17周年記念シガーを限定発売",
-      "summary_ja": "ルーム101（Room101 Cigars）がAJフェルナンデス（AJ Fernandez）との協業による限定品「ルーム101 17th Anniversary」を発表した。毎年新たなブレンドで節目を祝う同シリーズの最新作。6×52のトーロ1種で、20本入りボックス、1本あたり希望小売価格15.89ドル。2026年8月より小売店への出荷を開始する。",
-      "title_en": "Room101 Unveils Limited-Edition 17th Anniversary Cigar",
-      "summary_en": "Room101 Cigars has announced the Room101 17th Anniversary, the latest in its evolving annual Anniversary series, crafted in collaboration with AJ Fernandez. Each anniversary release features an entirely new blend rather than repeating past cigars. Offered in a single 6 x 52 Toro, the limited edition comes in 20-count boxes with an SRP of $15.89 per cigar and begins shipping to retailers in August 2026.",
-      "source": "Cigar Journal",
-      "source_title": "Room101 Cigars Unveils Limited-Edition 17th Anniversary Cigar",
-      "source_en": "Cigar Journal",
-      "source_title_en": "Room101 Cigars Unveils Limited-Edition 17th Anniversary Cigar",
-      "url": "https://www.cigarjournal.com/room101-cigars-unveils-limited-edition-17th-anniversary-cigar/?utm_source=rss&utm_medium=rss&utm_campaign=room101-cigars-unveils-limited-edition-17th-anniversary-cigar"
-    },
-    {
-      "date": "2026-08-12",
-      "category": "新製品",
-      "title_ja": "フェリオ・テゴ、マイルス・デイヴィス生誕100年記念葉巻",
-      "summary_ja": "フェリオ・テゴ（Ferio Tego）が、マイルス・デイヴィス財団および音楽会社リザーバー（Reservoir）と協業し、限定ハンドメイド・プレミアムシガー「フェリオ・テゴ・マイルストーンズ（Milestones）」を発表した。2026年を通じて行われるマイルス・デイヴィス生誕100周年公式企画の一環。ブレンダーのマイケル・ハークロッツはバークリー音楽大学出身で、同校でマイルス・デイヴィス・アンサンブルに参加していた。",
-      "title_en": "Ferio Tego Releases Milestones for Miles Davis Centennial",
-      "summary_en": "Ferio Tego has announced Ferio Tego Milestones, a limited-edition handmade premium cigar created in collaboration with the Miles Davis Estate and independent music company Reservoir as part of the official Miles Davis Centennial celebrated throughout 2026. Co-owner and blender Michael Herklots, a Berklee College of Music graduate who performed in the Miles Davis Ensemble, said the cigar reflects qualities he admires in Davis's work: approachability, sophistication, structure, nuance and depth.",
-      "source": "Cigar Journal",
-      "source_title": "Ferio Tego Releases Ferio Tego Milestones",
-      "source_en": "Cigar Journal",
-      "source_title_en": "Ferio Tego Releases Ferio Tego Milestones",
-      "url": "https://www.cigarjournal.com/ferio-tego-releases-ferio-tego-milestones/?utm_source=rss&utm_medium=rss&utm_campaign=ferio-tego-releases-ferio-tego-milestones"
-    },
-    {
-      "date": "2026-08-12",
-      "category": "規制・市場",
-      "title_ja": "欧州の葉巻規制、独英西で新たな動き",
-      "summary_ja": "欧州シガー製造者協会（ECMA）のポール・ヴァラカス事務局長が、欧州各国の規制動向を報告した。ドイツは小売価格に基づく新課税で最大1,300%の増税を提案し、高価格帯シガーへの影響が懸念される。英国は葉巻へのプレーンパッケージ拡大を協議中。スペインはテラスや私的クラブでの喫煙禁止法案を9月に議会提出予定。",
-      "title_en": "Cigar Regulations Update: Germany, UK and Spain",
-      "summary_en": "Paul Varakas, Director General of the European Cigar Manufacturers Association (ECMA), has outlined the latest regulatory developments in Europe. In Germany, a proposed retail-price-based tax could raise duties by up to 1,300%, mainly hitting premium cigars. The UK is consulting on extending plain packaging to cigars. Spain intends to ban smoking on terraces and in private clubs, with a bill expected to reach Parliament in September. Varakas urges consumers and retailers to engage with policymakers.",
-      "source": "Cigar Journal",
-      "source_title": "Cigar Regulations Update: Germany, UK and Spain",
-      "source_en": "Cigar Journal",
-      "source_title_en": "Cigar Regulations Update: Germany, UK and Spain",
-      "url": "https://www.cigarjournal.com/cigar-regulations-update-germany-uk-and-spain/?utm_source=rss&utm_medium=rss&utm_campaign=cigar-regulations-update-germany-uk-and-spain"
-    },
-    {
-      "date": "2026-08-12",
-      "category": "規制・市場",
-      "title_ja": "アルテサノ、2026年に一部銘柄を値上げ",
-      "summary_ja": "アルテサノ・デル・タバコ（Artesano Del Tobacco）が創業7年で2度目となる値上げを実施する。オリジナルの「ビバ・ラ・ビダ（Viva La Vida）」ラインが対象となるが、その他の大半の製品は現行価格を維持する。",
-      "title_en": "Viva La Vida Classic, El Pulpo Culebra Get Price Increase for 2026",
-      "summary_en": "For only the second time in its seven-year history, Artesano Del Tobacco is raising prices. The original Viva La Vida line will see an increase, while most of the rest of its portfolio will remain at current prices.",
-      "source": "halfwheel",
-      "source_title": "Viva La Vida Classic, El Pulpo Culebra Get Price Increase for 2026",
-      "source_en": "halfwheel",
-      "source_title_en": "Viva La Vida Classic, El Pulpo Culebra Get Price Increase for 2026",
-      "url": "https://halfwheel.com/viva-la-vida-classic-el-pulpo-culebra-get-price-increase-for-2026/476603/"
-    },
-    {
-      "date": "2026-08-12",
-      "category": "規制・市場",
-      "title_ja": "スペイン政府、私的空間の喫煙禁止を検討",
-      "summary_ja": "スペイン政府は、飲食店テラスや屋外イベント、スタジアム、ビーチ、公園など屋外公共空間での全面喫煙禁止を承認した。病院・学校・遊び場周辺15メートルも禁煙区域とする。さらに喫煙者クラブの適用除外撤廃も目指し、実現すればEU最厳格の規制となる。施行には議会審議が必要で、政権は2027年7月までの成立を狙う。",
-      "title_en": "The Spanish Government Aims to Ban Smoking in Private Spaces",
-      "summary_en": "The Spanish government has approved a total ban on smoking in outdoor public spaces, including hospitality terraces, open-air events, stadiums, beaches and parks, plus a fifteen-metre buffer around hospitals, schools and playgrounds. It also intends to eliminate the exemption for smokers' clubs, which would make Spain the first country to ban smoking in strictly private facilities. The measure still requires parliamentary processing; the coalition government aims to finalise it before the current administration ends in July 2027, though it lacks a majority.",
-      "source": "Cigar Journal",
-      "source_title": "The Spanish Government Aims to Ban Smoking in Private Spaces",
-      "source_en": "Cigar Journal",
-      "source_title_en": "The Spanish Government Aims to Ban Smoking in Private Spaces",
-      "url": "https://www.cigarjournal.com/the-spanish-government-aims-to-ban-smoking-in-private-spaces-2/?utm_source=rss&utm_medium=rss&utm_campaign=the-spanish-government-aims-to-ban-smoking-in-private-spaces-2"
-    },
-    {
-      "date": "2026-08-12",
-      "category": "新製品",
-      "title_ja": "J.C.ニューマン、新ダイヤモンドクラウン出荷",
-      "summary_ja": "J.C.ニューマン（J.C. Newman Cigar Co.）は、刷新した「ダイヤモンドクラウン・マキシマス（Diamond Crown MAXIMUS）」の出荷を開始した。新パッケージと、より力強く洗練されたブレンドを採用。20本入り箱で希望小売価格は据え置き。同銘柄はタンパのフエンテ、ニューマン、オリバ3家が2002年に共同で生み出した葉巻。",
-      "title_en": "J.C. Newman Ships New Diamond Crown MAXIMUS",
-      "summary_en": "J.C. Newman Cigar Co. has begun shipping the reimagined Diamond Crown MAXIMUS, featuring new packaging and a bolder yet refined blend of hearty tobaccos. It remains in boxes of 20 with an unchanged suggested retail price. Originally created in 2002 as a collaboration between the Fuente, Newman and Oliva families of Tampa, it uses an exclusive El Bajo Sungrown wrapper grown in Ecuador. Owner Drew Newman noted it was the final cigar created by his grandfather Stanford J. Newman.",
-      "source": "Cigar Journal",
-      "source_title": "J.C. Newman Ships New Diamond Crown MAXIMUS",
-      "source_en": "Cigar Journal",
-      "source_title_en": "J.C. Newman Ships New Diamond Crown MAXIMUS",
-      "url": "https://www.cigarjournal.com/j-c-newman-ships-new-diamond-crown-maximus/?utm_source=rss&utm_medium=rss&utm_campaign=j-c-newman-ships-new-diamond-crown-maximus"
     }
   ]
 };
