@@ -7,8 +7,86 @@
    手で足すこともできますが、items の並び・キーは崩さないでください。
    ============================================================ */
 var NEWS_DATA = {
-  "updated": "2026-09-14",
+  "updated": "2026-09-15",
   "items": [
+    {
+      "date": "2026-09-15",
+      "category": "新製品",
+      "title_ja": "ナブ・メキシコ、インタータバックで発表",
+      "summary_ja": "ショートで太いサイズで知られるナブ（NUb）の最新版「ナブ・メキシコ」が、インタータバック2026で発表された。メキシコ産ラッパーにニカラグア産のバインダーとフィラーを組み合わせる。2サイズで登場し、うち1サイズは米国限定となる予定。米国では10月に発売される。",
+      "title_en": "NUb Mexico Debuts at InterTabac 2026, Coming to U.S. in October",
+      "summary_en": "The latest version of NUb, known for its short and thick sizes, was unveiled at InterTabac 2026. NUb Mexico features a Mexican-grown wrapper over a Nicaraguan binder and filler. It will debut in two sizes, one of which is slated to be a US exclusive. The line is scheduled to reach American retailers in October.",
+      "source": "halfwheel",
+      "source_title": "NUb Mexico Debuts at InterTabac 2026, Coming to U.S. in October",
+      "source_en": "halfwheel",
+      "source_title_en": "NUb Mexico Debuts at InterTabac 2026, Coming to U.S. in October",
+      "url": "https://halfwheel.com/nub-mexico-debuts-at-intertabac-2027-coming-to-u-s-in-october/479574/"
+    },
+    {
+      "date": "2026-09-15",
+      "category": "規制・市場",
+      "title_ja": "アルタディスUSA、価格改定を発表",
+      "summary_ja": "アルタディスUSA（Altadis U.S.A.）が価格改定を発表した。小売業者に対し輸入課徴金分のクレジットを発行し、現行の輸入課徴金を半減する。一方で数週間以内に値上げを予定している。",
+      "title_en": "Altadis U.S.A. Announces Price Changes",
+      "summary_en": "Altadis U.S.A. has announced price changes. The company will issue credits on import surcharges to retailers while cutting its current import surcharge in half. However, a price increase is set to take effect within just a few weeks.",
+      "source": "halfwheel",
+      "source_title": "Altadis U.S.A. Announces Price Changes",
+      "source_en": "halfwheel",
+      "source_title_en": "Altadis U.S.A. Announces Price Changes",
+      "url": "https://halfwheel.com/altadis-u-s-a-announces-price-changes/479553/"
+    },
+    {
+      "date": "2026-09-15",
+      "category": "新製品",
+      "title_ja": "シカー、新カッター「Xi1アメリカ250」出荷",
+      "summary_ja": "シカー（XIKAR）のカッター「パーフェクト Xi1 アメリカ 250」が店舗向けに出荷される。ブラック、ブルー、レッドの3色展開で、各モデルの希望小売価格は79.99ドル。",
+      "title_en": "XIKAR Perfect Xi1 America 250 on the Way to Stores",
+      "summary_en": "XIKAR's Perfect Xi1 America 250 cutter is heading to stores. It is available in three colour choices: black, blue and red. Each cutter carries an MSRP of $79.99.",
+      "source": "halfwheel",
+      "source_title": "XIKAR Perfect Xi1 America 250 on the Way to Stores",
+      "source_en": "halfwheel",
+      "source_title_en": "XIKAR Perfect Xi1 America 250 on the Way to Stores",
+      "url": "https://halfwheel.com/xikar-perfect-xi1-america-250-on-the-way-to-stores/479557/"
+    },
+    {
+      "date": "2026-09-15",
+      "category": "新製品",
+      "title_ja": "ヴィリガー限定版、欧州で明日発売",
+      "summary_ja": "ヴィリガー・デ・ニカラグア（Villiger de Nicaragua）エディション・リミターダ2026が、欧州で明日発売される。2022年に始まったシリーズの4作目にして最終作。6×60のゴルドで、エクアドル産スマトラ種ラッパー、メキシコ産サンアンドレスのバインダー、ニカラグア産と米国産たばこのフィラーを使用する。",
+      "title_en": "Villiger de Nicaragua Edición Limitada 2026 Releasing Tomorrow in Europe",
+      "summary_en": "Villiger de Nicaragua Edición Limitada 2026 releases tomorrow in Europe. It is the fourth and final release in the series that debuted in 2022. The 6 x 60 gordo is made with an Ecuadorian Sumatra-seed wrapper, a Mexican San Andrés binder and a filler blend of Nicaraguan and US tobacco.",
+      "source": "halfwheel",
+      "source_title": "Villiger de Nicaragua Edición Limitada 2026 Releasing Tomorrow in Europe",
+      "source_en": "halfwheel",
+      "source_title_en": "Villiger de Nicaragua Edición Limitada 2026 Releasing Tomorrow in Europe",
+      "url": "https://halfwheel.com/villiger-de-nicaragua-edicion-limitada-2026-releasing-tomorrow-in-europe/479520/"
+    },
+    {
+      "date": "2026-09-15",
+      "category": "新製品",
+      "title_ja": "EGM、限定ニンファのセラミックジャー追加",
+      "summary_ja": "EGMシガーズ（EGM Cigars）が、細身の葉巻「ニンファ（Ninfa）」の限定セラミックジャーを追加する。同銘柄は2月に登場し、通常は10本または25本入りの箱で販売される。新たに50本入りジャーが近く発売され、生産数はわずか500個。",
+      "title_en": "EGM Cigars Adding Limited Edition Ninfa Jars",
+      "summary_en": "EGM Cigars is adding a limited edition ceramic jar for its slender Ninfa cigars, which debuted in February and normally come in boxes of 10 or 25. A new 50-count ceramic jar option will be available soon, with just 500 units produced.",
+      "source": "halfwheel",
+      "source_title": "EGM Cigars Adding Limited Edition Ninfa Jars",
+      "source_en": "halfwheel",
+      "source_title_en": "EGM Cigars Adding Limited Edition Ninfa Jars",
+      "url": "https://halfwheel.com/egm-cigars-adding-limited-edition-ninfa-jars/479542/"
+    },
+    {
+      "date": "2026-09-14",
+      "category": "新製品",
+      "title_ja": "ベクター、複数ラインに新色 VToroは11月発売",
+      "summary_ja": "ベクター（Vector）が複数のラインに新色を追加し、VToroの発売日を11月1日に設定した。新オプションはインタータバック2027見本市で披露され、11月1日に出荷を開始する予定。",
+      "title_en": "Vector Adding New Colors to Several Lines, Sets Nov. 1 as VToro Launch Date",
+      "summary_en": "Vector is adding new colours to several of its lines and has set 1 November as the launch date for the VToro. The new options will be featured at the InterTabac 2027 trade fair and are scheduled to begin shipping on 1 November.",
+      "source": "halfwheel",
+      "source_title": "Vector Adding New Colors to Several Lines, Sets Nov. 1 as VToro Launch Date",
+      "source_en": "halfwheel",
+      "source_title_en": "Vector Adding New Colors to Several Lines, Sets Nov. 1 as VToro Launch Date",
+      "url": "https://halfwheel.com/vector-adding-new-colors-to-several-lines-sets-nov-1-as-vtoro-launch-date/479443/"
+    },
     {
       "date": "2026-09-14",
       "category": "新製品",
@@ -2010,84 +2088,6 @@ var NEWS_DATA = {
       "source_en": "halfwheel",
       "source_title_en": "HVC Pan Caliente 10th Anniversary Shipping to Stores",
       "url": "https://halfwheel.com/hvc-pan-caliente-10th-anniversary-shipping-to-stores/476637/"
-    },
-    {
-      "date": "2026-08-13",
-      "category": "新製品",
-      "title_ja": "ダビドフ、AVOエクスプレシーボ・ロブスト",
-      "summary_ja": "ダビドフは、AVOブランドの新章を象徴するという「AVOエクスプレシーボ・ロブスト（AVO Expresivo Robusto）」を発表した。AVOブランドとして初めてホンジュラスで製造される点が新しい。",
-      "title_en": "AVO Expresivo Robusto",
-      "summary_en": "Davidoff says the AVO Expresivo Robusto represents a new chapter for the AVO brand. Notably, it is being made in Honduras, something new for the AVO brand.",
-      "source": "halfwheel",
-      "source_title": "AVO Expresivo Robusto",
-      "source_en": "halfwheel",
-      "source_title_en": "AVO Expresivo Robusto",
-      "url": "https://halfwheel.com/avo-expresivo-robusto/476596/"
-    },
-    {
-      "date": "2026-08-13",
-      "category": "新製品",
-      "title_ja": "ランパート・リミターダ2026が店頭へ",
-      "summary_ja": "ランパート（Lampert）は今年のリミターダに、コネチカット・シード・ラッパーとボックスプレスのトロを採用した。年内にはもう1つのリミターダも登場する予定。",
-      "title_en": "Lampert Limitada 2026 Heads to Stores",
-      "summary_en": "For this year's Limitada, Lampert has chosen a Connecticut-seed wrapper and a box-pressed toro. There is one more Limitada still to come later this year.",
-      "source": "halfwheel",
-      "source_title": "Lampert Limitada 2026 Heads to Stores",
-      "source_en": "halfwheel",
-      "source_title_en": "Lampert Limitada 2026 Heads to Stores",
-      "url": "https://halfwheel.com/lampert-limitada-2026-heads-to-stores/476613/"
-    },
-    {
-      "date": "2026-08-13",
-      "category": "新製品",
-      "title_ja": "ネストール・ミランダ・ランセロ再出荷",
-      "summary_ja": "マイアミ・シガー（Miami Cigar & Co.）は、限定版「ネストール・ミランダ・プライベート・リザーブ・ランセロ」の第2弾を出荷する。ブレンド、パッケージ、価格すべて第1弾から変更なしとした。",
-      "title_en": "Nestor Miranda Private Reserve Lancero Shipping",
-      "summary_en": "For the second batch of Nestor Miranda Private Reserve Lancero, Miami Cigar & Co. has run things back with no changes: same blend, same packaging, same price as the first release.",
-      "source": "halfwheel",
-      "source_title": "Nestor Miranda Private Reserve Lancero Shipping",
-      "source_en": "halfwheel",
-      "source_title_en": "Nestor Miranda Private Reserve Lancero Shipping",
-      "url": "https://halfwheel.com/nestor-miranda-private-reserve-lancero-shipping/476643/"
-    },
-    {
-      "date": "2026-08-12",
-      "category": "日本国内",
-      "title_ja": "新宿でウイスキーと葉巻の催し、8月22日開催",
-      "summary_ja": "8月22日、BAR新宿ウイスキーサロンでのチャリティー持ち寄り会と、新店舗BAR LASTWORDでのシガー初心者歓迎ペアリング会が開催される。ウイスキーと葉巻を楽しむ特別な1日として企画された。",
-      "title_en": "Whisky and Cigar Events in Shinjuku on 22 August",
-      "summary_en": "On 22 August, a charity bring-your-own gathering will be held at BAR Shinjuku Whisky Salon, alongside a beginner-friendly cigar pairing session at the new venue BAR LASTWORD. The events are billed as a special day dedicated to enjoying whisky and cigars together.",
-      "source": "CREA WEB",
-      "source_title": "【ウイスキーと葉巻の特別な1日】BAR 新宿ウイスキーサロンでのチャリティー持ち寄り会＆新店舗 BAR LASTWORD でのシガー初心者歓迎ペアリング会を8月22日に開催 - CREA WEB",
-      "source_en": "CREA WEB",
-      "source_title_en": "A Special Day of Whisky and Cigars: Charity Gathering at BAR Shinjuku Whisky Salon and Beginner-Friendly Cigar Pairing at New BAR LASTWORD on 22 August",
-      "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE0tdktGaGRRZW1Tb210VElYUWlyZjBmYXJlRU10T3BFNkFtWU1VaXFFSlRjSXFJNVowY0dkRV95WUpDcHQ5SVdmRnd5S0FvLXc1WHAyVFhYajdEUTYzWGFTdEw5RnJjcEtOekhDMmU4Tm5tUQ?oc=5"
-    },
-    {
-      "date": "2026-08-12",
-      "category": "業界・企業",
-      "title_ja": "カサ・カリーロ、慈善企画で女性支援団体を支援",
-      "summary_ja": "カサ・カリーロ（Casa Carrillo）が、慈善部門カリーロ・ケアズ（Carrillo Cares）を通じ、限定生産の「ラ・イストリア・シルク（La Historia Silk）」の売上の一部を女性支援団体ドレス・フォー・サクセス・マイアミに寄付する新たな取り組みを発表した。同団体は1994年以降、4万人超の女性の経済的自立を支援してきた。",
-      "title_en": "Casa Carrillo Launches Carrillo Cares Partnership",
-      "summary_en": "Casa Carrillo has announced a new initiative through Carrillo Cares, its charitable arm, supporting Dress for Success Miami via the limited-production La Historia Silk cigar. A portion of proceeds from the latest shipment sold to retailers will benefit the organisation, which empowers women through professional attire, career development and workforce support. Since 1994, Dress for Success Miami has helped more than 40,000 women move towards economic independence.",
-      "source": "Cigar Journal",
-      "source_title": "Casa Carrillo Announces Carrillo Cares Partnership",
-      "source_en": "Cigar Journal",
-      "source_title_en": "Casa Carrillo Announces Carrillo Cares Partnership",
-      "url": "https://www.cigarjournal.com/casa-carrillo-announces-carrillo-cares-partnership/?utm_source=rss&utm_medium=rss&utm_campaign=casa-carrillo-announces-carrillo-cares-partnership"
-    },
-    {
-      "date": "2026-08-12",
-      "category": "業界・企業",
-      "title_ja": "レバノン山岳部に葉巻ラウンジ開業",
-      "summary_ja": "グランドホテル・ボワ・ド・ブローニュ内に、新しい葉巻ブティック兼ラウンジ「ル・クラブ・フュモワール（Le Club Fumoir）」が開業した。レバノンの山々を背景にした「アルパイン・シガー・ブティック＆ラウンジ」を掲げ、同ホテルを所有するゴスティーヌ家の伝統に着想を得た。施設はシガーサロンなど2つの空間で構成される。",
-      "title_en": "Le Club Fumoir Opens in Lebanese Mountains",
-      "summary_en": "Le Club Fumoir, a newly launched Alpine Cigar Boutique & Lounge, has opened within the Grand Hotel Bois de Boulogne against the backdrop of Lebanon's mountains. Owned by the Ghostine Family, the venue was conceived as a contemporary destination honouring the traditions of cigar culture in the Lebanese mountains. Designed for cigar enthusiasts, it is divided into two distinctive experiences, including a Cigar Salon offering an elegant setting for guests.",
-      "source": "Cigar Journal",
-      "source_title": "Le Club Fumoir: Alpine Elegance Meeting with The Cigar Culture",
-      "source_en": "Cigar Journal",
-      "source_title_en": "Le Club Fumoir: Alpine Elegance Meeting with The Cigar Culture",
-      "url": "https://www.cigarjournal.com/le-club-fumoir-alpine-elegance-meeting-with-the-cigar-culture/?utm_source=rss&utm_medium=rss&utm_campaign=le-club-fumoir-alpine-elegance-meeting-with-the-cigar-culture"
     }
   ]
 };
