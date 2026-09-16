@@ -7,8 +7,73 @@
    手で足すこともできますが、items の並び・キーは崩さないでください。
    ============================================================ */
 var NEWS_DATA = {
-  "updated": "2026-09-15",
+  "updated": "2026-09-16",
   "items": [
+    {
+      "date": "2026-09-16",
+      "category": "イベント・アワード",
+      "title_ja": "2026年シガー・トロフィー受賞発表",
+      "summary_ja": "シガー・ジャーナル（Cigar Journal）が「2026 Cigar Trophy Awards」の受賞結果を発表した。同賞は消費者の投票によって授与される数少ないアワードの一つ。",
+      "title_en": "Winners of the 2026 Cigar Trophy Awards Announced",
+      "summary_en": "Cigar Journal has announced the winners of the 2026 Cigar Trophy Awards. Unlike many industry accolades, the Cigar Trophy is one of the few honours conferred directly by consumers rather than expert panels, reflecting the choices of readers and enthusiasts.",
+      "source": "Cigar Journal",
+      "source_title": "Winners of the 2026 Cigar Trophy Awards Announced",
+      "source_en": "Cigar Journal",
+      "source_title_en": "Winners of the 2026 Cigar Trophy Awards Announced",
+      "url": "https://www.cigarjournal.com/winners-of-the-2026-cigar-trophy-awards-announced/"
+    },
+    {
+      "date": "2026-09-16",
+      "category": "新製品",
+      "title_ja": "ナブ、新ライン「NUB México」を発表",
+      "summary_ja": "ナブ・シガーズ（NUB Cigars）が、メソアメリカの古代文化に着想を得た新ライン「NUB México」を発表した。メキシコの伝統に敬意を表した銘柄で、同社の次章となる。",
+      "title_en": "NUB Cigars Celebrates Mexican Heritage With NUB México Launch",
+      "summary_en": "NUB Cigars has introduced NUB México, a new line inspired by the ancient cultures of Mesoamerica. Paying homage to one of the region's most powerful, versatile and sacred plants, the release marks the next chapter in the brand's ongoing mission, drawing on Mexican heritage and traditions.",
+      "source": "StogiePress",
+      "source_title": "Cigar News: NUB Cigars Celebrates Mexican Heritage With NUB México Launch",
+      "source_en": "StogiePress",
+      "source_title_en": "Cigar News: NUB Cigars Celebrates Mexican Heritage With NUB México Launch",
+      "url": "https://stogiepress.com/cigar-news-nub-cigars-celebrates-mexican-heritage-with-nub-mexico-launch/"
+    },
+    {
+      "date": "2026-09-16",
+      "category": "新製品",
+      "title_ja": "オリバ「干支ヤギ」国際市場向けに発売",
+      "summary_ja": "オリバ（Oliva）が干支シリーズ「Year of the Goat」を国際市場向けに発売する。6×60のダブルトロで、カメルーン産ラッパーにニカラグア産バインダー・フィラーを使用。生産数は2万本で、米国向けの割り当てはない。",
+      "title_en": "Oliva Year of the Goat Coming to International Markets",
+      "summary_en": "Oliva is releasing its Year of the Goat to international markets. The 6 x 60 double toro uses a Cameroon wrapper over a Nicaraguan binder and filler. A total of 20,000 cigars are being produced, though none of them are slated to reach the United States, with the line reserved for markets outside America.",
+      "source": "halfwheel",
+      "source_title": "Oliva Year of the Goat Coming to International Markets",
+      "source_en": "halfwheel",
+      "source_title_en": "Oliva Year of the Goat Coming to International Markets",
+      "url": "https://halfwheel.com/oliva-year-of-the-goat-coming-to-international-markets/479698/"
+    },
+    {
+      "date": "2026-09-16",
+      "category": "新製品",
+      "title_ja": "ブラックワークス「カルチャー・ヴァルチャー」発売",
+      "summary_ja": "ブラックワークス・スタジオ（Black Works Studio／BLK WKS）が限定品「Culture Vulture」を発表した。ニカラグア・エステリのFabrica Oveja Negraで製造され、来週から一部小売店に出荷を開始する。コネチカットとキャンデラのストリップでグリーンからイエローへのオンブレ調のグラデーションを施している。",
+      "title_en": "Black Works Studio (BLK WKS) Announces Release of Culture Vulture",
+      "summary_en": "Black Works Studio (BLK WKS) has announced the Culture Vulture, a new limited edition handcrafted at Fabrica Oveja Negra in Estelí, Nicaragua. Shipping to select retailers begins next week. Connecticut and candela strips give the cigars an Ombre-style fade that moves from green to yellow and back. Creator James Brown calls it a whole new level for the brand.",
+      "source": "StogiePress",
+      "source_title": "Cigar News: Black Works Studio (BLK WKS) Announces release of CULTURE VULTURE",
+      "source_en": "StogiePress",
+      "source_title_en": "Cigar News: Black Works Studio (BLK WKS) Announces release of CULTURE VULTURE",
+      "url": "https://stogiepress.com/cigar-news-black-works-studio-blk-wks-announces-release-of-culture-vulture/"
+    },
+    {
+      "date": "2026-09-15",
+      "category": "新製品",
+      "title_ja": "メーラプフェル、Project 18をインタータバックで披露",
+      "summary_ja": "メーラプフェル（Meerapfel）が独インタータバック2026で新ライン「Project 18」を発表した。「単一の特別なブレンド」と銘打たれ、99本入りチェスト180箱に限定。2026年終盤に店頭に並ぶ予定。",
+      "title_en": "Meerapfel Debuts Project 18 at InterTabac 2026",
+      "summary_en": "Meerapfel has unveiled a new line, Project 18, at InterTabac 2026 in Germany. Billed as a single extraordinary blend, it is limited to 180 chests of 99 cigars each. The company said the release is slated to arrive in stores during the final months of 2026.",
+      "source": "halfwheel",
+      "source_title": "Meerapfel Debuts Project 18 at InterTabac 2026",
+      "source_en": "halfwheel",
+      "source_title_en": "Meerapfel Debuts Project 18 at InterTabac 2026",
+      "url": "https://halfwheel.com/meerapfel-debuts-project-18-at-intertabac/479635/"
+    },
     {
       "date": "2026-09-15",
       "category": "新製品",
@@ -73,6 +138,19 @@ var NEWS_DATA = {
       "source_en": "halfwheel",
       "source_title_en": "EGM Cigars Adding Limited Edition Ninfa Jars",
       "url": "https://halfwheel.com/egm-cigars-adding-limited-edition-ninfa-jars/479542/"
+    },
+    {
+      "date": "2026-09-14",
+      "category": "業界・企業",
+      "title_ja": "5th Avenueが破産手続きを申請",
+      "summary_ja": "5th Avenue Products Trading-GmbHが破産手続きを申請した。数日前から申請が知られていたもので、シガー・ジャーナルは同社を巡る背景を記事「Cuba's Cigar Paradox」などで報じてきた。",
+      "title_en": "5th Avenue Has Filed for Insolvency Proceeding",
+      "summary_en": "5th Avenue Products Trading-GmbH has filed for insolvency proceedings. The move had been known for several days. Cigar Journal noted it had recently reported on the background to the situation, including in its article \"Cuba's Cigar Paradox,\" which examined the pressures facing the distributor.",
+      "source": "Cigar Journal",
+      "source_title": "5th Avenue has filed for insolvency proceeding",
+      "source_en": "Cigar Journal",
+      "source_title_en": "5th Avenue has filed for insolvency proceeding",
+      "url": "https://www.cigarjournal.com/5th-avenue-has-filed-for-insolvency-proceeding/"
     },
     {
       "date": "2026-09-14",
@@ -2010,84 +2088,6 @@ var NEWS_DATA = {
       "source_en": "halfwheel",
       "source_title_en": "City of Palms Ends Caballeros Cigars Distribution",
       "url": "https://halfwheel.com/city-of-palms-ends-caballeros-cigars-distribution/476761/"
-    },
-    {
-      "date": "2026-08-14",
-      "category": "新製品",
-      "title_ja": "ネストール・ミランダ、ラ・レゼルバ・ランセロ出荷開始",
-      "summary_ja": "マイアミ・シガー社（Miami Cigar & Co.）が、ネストール・ミランダ・プライベート・リザーブ・ランセロ（Nestor Miranda Private Reserve Lancero）を全米のプレミアム小売店へ出荷開始した。2026年PCAトレードショーで再導入された限定品で、ドミニカ産コロホ・ラッパー、ニカラグア産クリオージョ'98バインダーを使用。ラ・アウロラ製、500箱限定。",
-      "title_en": "Nestor Miranda Private Reserve Lancero Now Shipping",
-      "summary_en": "Miami Cigar & Co. has begun shipping the Nestor Miranda Private Reserve Lancero to premium retailers nationwide. Reintroduced at the 2026 PCA Trade Show in New Orleans, the limited release features a Dominican Corojo wrapper, Nicaraguan Criollo '98 binder and a blend of Dominican, Nicaraguan and Brazilian fillers, produced at La Aurora in the Dominican Republic. Only 500 boxes have been made.",
-      "source": "Cigar Journal",
-      "source_title": "Nestor Miranda Private Reserve Lancero Now Shipping to Retailers",
-      "source_en": "Cigar Journal",
-      "source_title_en": "Nestor Miranda Private Reserve Lancero Now Shipping to Retailers",
-      "url": "https://www.cigarjournal.com/nestor-miranda-private-reserve-lancero-now-shipping-to-retailers/?utm_source=rss&utm_medium=rss&utm_campaign=nestor-miranda-private-reserve-lancero-now-shipping-to-retailers"
-    },
-    {
-      "date": "2026-08-14",
-      "category": "新製品",
-      "title_ja": "ダビドフ、プリメーロス・ボイジャーズ発表",
-      "summary_ja": "ダビドフ（Davidoff）がボイジャーズ・セレクション（Voyager's Selection）を拡充し、プリメーロス・バイ・ダビドフ・ボイジャーズ・セレクションを発表した。2026年9月3日よりグローバル・トラベル・リテール限定で発売。プティ・パネテラ6本入りで、長さ10.5cm・リングゲージ34、喫煙時間は約15〜25分。ドミニカ、ドミニカ・マドゥロ、ニカラグアの各ラインから2本ずつ収録。",
-      "title_en": "Davidoff Launches Primeros Voyager's Selection",
-      "summary_en": "Davidoff is expanding its Voyager's Selection with the Primeros by Davidoff Voyager's Selection, available exclusively in Global Travel Retail from 3 September 2026. The assortment comprises six handmade petit panetela cigars—two each from the Dominican, Dominican Maduro and Nicaragua lines—measuring 10.5cm with a ring gauge of 34 and offering around 15 to 25 minutes of enjoyment. They come in a compact metal tin designed for travel.",
-      "source": "Cigar Journal",
-      "source_title": "Davidoff Launches New Primeros Voyager’s Selection",
-      "source_en": "Cigar Journal",
-      "source_title_en": "Davidoff Launches New Primeros Voyager's Selection",
-      "url": "https://www.cigarjournal.com/davidoff-launches-new-primeros-voyagers-selection/?utm_source=rss&utm_medium=rss&utm_campaign=davidoff-launches-new-primeros-voyagers-selection"
-    },
-    {
-      "date": "2026-08-14",
-      "category": "業界・企業",
-      "title_ja": "チモリー・シガーがカナダで販売開始",
-      "summary_ja": "チモリー・シガー（ChiMolly Cigars）がカナダのカナディアン・クラフト・シガーズ（Canadian Craft Cigars）と流通契約を締結した。初回出荷分はすでにカナダに到着し、小売店への配送を開始している。",
-      "title_en": "ChiMolly Cigars Now Available in Canada",
-      "summary_en": "ChiMolly Cigars has signed a distribution agreement with Canadian Craft Cigars, bringing its products to the Canadian market. The company said the first shipment has already arrived in the country and is beginning to ship to retailers.",
-      "source": "halfwheel",
-      "source_title": "ChiMolly Cigars Now Available in Canada",
-      "source_en": "halfwheel",
-      "source_title_en": "ChiMolly Cigars Now Available in Canada",
-      "url": "https://halfwheel.com/chimolly-cigars-now-available-in-canada/476742/"
-    },
-    {
-      "date": "2026-08-14",
-      "category": "新製品",
-      "title_ja": "ブラックバード、10周年記念第1弾を発表",
-      "summary_ja": "ブラックバード・シガー（Blackbird Cigar Co.）が創業10周年を記念する3本のリリースのうち第1弾「プーラ・ラサ・デ・キスケヤ（Pura Raza de Quisqueya）」を発表した。同社のマスターブレンダー、通称パポ“エル・カバージョ”に敬意を表して作られた1本。",
-      "title_en": "Blackbird Pura Raza de Quisqueya",
-      "summary_en": "Blackbird Cigar Co. has unveiled the Pura Raza de Quisqueya, the first of three planned releases marking the company's 10th anniversary. The cigar was created to honour Blackbird's master blender, who is known as Papo \"El Caballo.\"",
-      "source": "halfwheel",
-      "source_title": "Blackbird Pura Raza de Quisqueya",
-      "source_en": "halfwheel",
-      "source_title_en": "Blackbird Pura Raza de Quisqueya",
-      "url": "https://halfwheel.com/blackbird-pura-raza-de-quisqueya/476651/"
-    },
-    {
-      "date": "2026-08-14",
-      "category": "新製品",
-      "title_ja": "ルアー「ザ・ファット・マット」出荷開始へ",
-      "summary_ja": "ルアー（Lure）が新作「ザ・ファット・マット（The Fat Matt）」を明日出荷する。5×54のロブスト・グランデで、創業者ルー・クロスの息子の義父となる人物にちなんで作られた。彼はピーコックバス釣りを好むという。",
-      "title_en": "Lure's The Fat Matt Shipping Tomorrow",
-      "summary_en": "Lure will begin shipping its new The Fat Matt tomorrow. The 5 x 54 robusto grande is inspired by the future father-in-law of company founder Lou Cross' son, who enjoys catching peacock bass.",
-      "source": "halfwheel",
-      "source_title": "Lure’s The Fat Matt Shipping Tomorrow",
-      "source_en": "halfwheel",
-      "source_title_en": "Lure's The Fat Matt Shipping Tomorrow",
-      "url": "https://halfwheel.com/lures-the-fat-matt-shipping-tomorrow/476701/"
-    },
-    {
-      "date": "2026-08-13",
-      "category": "新製品",
-      "title_ja": "HVC パン・カリエンテ10周年、店頭へ",
-      "summary_ja": "HVCは限定版「パン・カリエンテ（Pan Caliente）10th Anniversary」を木曜に出荷すると発表した。HVCがペルー産タバコを使用した葉巻をリリースするのは初めて。",
-      "title_en": "HVC Pan Caliente 10th Anniversary Shipping to Stores",
-      "summary_en": "HVC has announced that its limited-edition Pan Caliente 10th Anniversary will head to stores on Thursday. It marks the first time HVC has released a cigar that uses Peruvian tobacco.",
-      "source": "halfwheel",
-      "source_title": "HVC Pan Caliente 10th Anniversary Shipping to Stores",
-      "source_en": "halfwheel",
-      "source_title_en": "HVC Pan Caliente 10th Anniversary Shipping to Stores",
-      "url": "https://halfwheel.com/hvc-pan-caliente-10th-anniversary-shipping-to-stores/476637/"
     }
   ]
 };
