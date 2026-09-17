@@ -7,8 +7,73 @@
    手で足すこともできますが、items の並び・キーは崩さないでください。
    ============================================================ */
 var NEWS_DATA = {
-  "updated": "2026-09-17",
+  "updated": "2026-09-18",
   "items": [
+    {
+      "date": "2026-09-17",
+      "category": "新製品",
+      "title_ja": "ジャム、新葉巻3種を欧州・ブラジルへ投入",
+      "summary_ja": "ジャム・シガーズ（Jamm Cigars）が欧州とブラジル市場向けに3つの新製品を追加した。ラインナップは「JP 50 マドゥーロ」、新ブランド「マジェスティ（Majesty）」、そして「ミニ JP 50」。",
+      "title_en": "Jamm Introduces Three New Cigars",
+      "summary_en": "Jamm Cigars is expanding its portfolio with three new releases for the European and Brazilian markets. The line-up comprises the JP 50 Maduro, an entirely new brand called Majesty, and the Mini JP 50. The additions broaden the company's offering across the two markets.",
+      "source": "Cigar Journal",
+      "source_title": "Jamm Introduces Three New Cigars",
+      "source_en": "Cigar Journal",
+      "source_title_en": "Jamm Introduces Three New Cigars",
+      "url": "https://www.cigarjournal.com/jamm-introduces-three-new-cigars/"
+    },
+    {
+      "date": "2026-09-17",
+      "category": "業界・企業",
+      "title_ja": "PCA、アジアで新イベント開き国際展開を強化",
+      "summary_ja": "プレミアム・シガー協会（PCA）がアジアでの新イベント開催を通じて国際活動を拡大する。世界のプレミアム葉巻業界における教育と協力への注力も強めるとしている。",
+      "title_en": "PCA Expands International Outreach with New Asia Event",
+      "summary_en": "The Premium Cigar Association (PCA) is expanding its international activities with a new event in Asia, while strengthening its focus on education and cooperation across the global premium cigar industry. The move signals a broader international push for the trade body.",
+      "source": "Cigar Journal",
+      "source_title": "PCA Expands International Outreach with New Asia Event",
+      "source_en": "Cigar Journal",
+      "source_title_en": "PCA Expands International Outreach with New Asia Event",
+      "url": "https://www.cigarjournal.com/pca-expands-international-outreach-with-new-asia-event/"
+    },
+    {
+      "date": "2026-09-17",
+      "category": "新製品",
+      "title_ja": "ノトーリアス、新ブレンド2種を欧州へ出荷",
+      "summary_ja": "ノトーリアス・シガーズ（Notorious Cigars）がインタータバックで複数の新製品を発表した。中心は7月に発売され欧州へ出荷が始まった2種のブレンド「クレーム・ド・ラ・クレーム」と「アナポロジェティック」。主力ラインには新たな缶入り形態も導入した。",
+      "title_en": "Notorious Cigars Brings New Blends to InterTabac 2026",
+      "summary_en": "Notorious Cigars presented several new products at InterTabac, led by two blends launched in July and now shipping to Europe: Crème de la Crème and Unapologetic. The company also introduced a new tin format for its core lines, expanding its packaging options for the European market.",
+      "source": "Cigar Journal",
+      "source_title": "Notorious Cigars Brings New Blends to InterTabac 2026",
+      "source_en": "Cigar Journal",
+      "source_title_en": "Notorious Cigars Brings New Blends to InterTabac 2026",
+      "url": "https://www.cigarjournal.com/notorious-cigars-brings-new-blends-to-intertabac-2026/"
+    },
+    {
+      "date": "2026-09-17",
+      "category": "新製品",
+      "title_ja": "ブラックレーベル、ビショップス・ブレンド10周年版",
+      "summary_ja": "ブラックレーベル・トレーディング（Black Label Trading Company）とブラックワークス・スタジオ（Black Works Studio）が2026年向けに新製品と復活製品を披露した。目玉は「ビショップス・ブレンド（Bishops Blend）」の10周年記念エディション。",
+      "title_en": "Black Label Presents a New Bishop (Blend)",
+      "summary_en": "Black Label Trading Company and Black Works Studio are showcasing several new and returning cigars for 2026, led by the 10th anniversary edition of Bishops Blend. The releases highlight the companies' line-up at InterTabac 2026.",
+      "source": "Cigar Journal",
+      "source_title": "Black Label Presents a New Bishop (Blend)",
+      "source_en": "Cigar Journal",
+      "source_title_en": "Black Label Presents a New Bishop (Blend)",
+      "url": "https://www.cigarjournal.com/black-label-presents-a-new-bishop-blend/"
+    },
+    {
+      "date": "2026-09-17",
+      "category": "新製品",
+      "title_ja": "オリバ、新ナブ・ラインなどを発表",
+      "summary_ja": "オリバ（Oliva）がインタータバックに複数の新製品を持ち込んだ。ヒュミドール・コレクションへの追加を皮切りに、新たなナブ（Nub）ラインなどを発表した。",
+      "title_en": "Oliva Introduces New Nub Line and More",
+      "summary_en": "Oliva came to InterTabac with several new offerings, beginning with an addition to its humidor collection and a new Nub line, among other releases. The announcements formed part of the brand's presence at the Dortmund trade show.",
+      "source": "Cigar Journal",
+      "source_title": "Oliva Introduces New Nub Line and More",
+      "source_en": "Cigar Journal",
+      "source_title_en": "Oliva Introduces New Nub Line and More",
+      "url": "https://www.cigarjournal.com/oliva-introduces-new-nub-line-and-more/"
+    },
     {
       "date": "2026-09-17",
       "category": "新製品",
@@ -34,6 +99,19 @@ var NEWS_DATA = {
       "source_en": "Cigar Journal",
       "source_title_en": "J.C. Newman Presents its Lineup for InterTabac 2026",
       "url": "https://www.cigarjournal.com/j-c-newman-presents-its-lineup-for-intertabac-2026/"
+    },
+    {
+      "date": "2026-09-16",
+      "category": "新製品",
+      "title_ja": "ラ・ガレラ、創業90周年記念葉巻を発表",
+      "summary_ja": "ラ・ガレラ・シガーズ（La Galera Cigars）とタバカレラ・パルマ（Tabacalera Palma）が、タバコ2026で創業90周年を記念する特別エディションを発表した。",
+      "title_en": "La Galera Celebrates 90 Years with Special Anniversary Cigar",
+      "summary_en": "La Galera Cigars and Tabacalera Palma are marking a major milestone at Tobacco 2026 with the introduction of a special 90th Anniversary edition, celebrating nine decades in the tobacco business.",
+      "source": "Cigar Journal",
+      "source_title": "La Galera Celebrates 90 Years with Special Anniversary Cigar",
+      "source_en": "Cigar Journal",
+      "source_title_en": "La Galera Celebrates 90 Years with Special Anniversary Cigar",
+      "url": "https://www.cigarjournal.com/la-galera-celebrates-90-years-with-special-anniversary-cigar/"
     },
     {
       "date": "2026-09-16",
@@ -2010,84 +2088,6 @@ var NEWS_DATA = {
       "source_en": "halfwheel",
       "source_title_en": "U.K. Threatens Plain Packaging for Cigars",
       "url": "https://halfwheel.com/u-k-threatens-plain-packaging-for-cigars/476988/"
-    },
-    {
-      "date": "2026-08-19",
-      "category": "新製品",
-      "title_ja": "ルシガール、フラミンゴ10周年記念限定版",
-      "summary_ja": "ルシガール（Lecigare.ch）が、フラミンゴ・レンジ10周年を記念した限定版「フラミンゴ10thアニバーサリー」を発表した。長期熟成させたニカラグア産タバコを用いた新ブレンドで、ロブスト・エクストラ（リング55、12.8cm）。2026年8月18日よりLecigare.chとニヨンの店舗で販売。",
-      "title_en": "Lecigare.ch Launches the Flamingo 10th Anniversary",
-      "summary_en": "Lecigare.ch has unveiled the Flamingo 10th Anniversary, a limited edition marking a decade of its Flamingo range, launched in 2016. The new blend uses carefully selected Nicaraguan tobaccos with extended ageing, presented in a Robusto Extra format (Ring 55, 12.8 cm) designed for a long, evolving smoke with a slow, even burn. It is available from 18 August 2026 on Lecigare.ch and at the Lecigare.ch shop in Nyon.",
-      "source": "Cigar Journal",
-      "source_title": "Lecigare.ch Launches the Flamingo 10th Anniversary",
-      "source_en": "Cigar Journal",
-      "source_title_en": "Lecigare.ch Launches the Flamingo 10th Anniversary",
-      "url": "https://www.cigarjournal.com/lecigare-ch-launches-the-flamingo-10th-anniversary/?utm_source=rss&utm_medium=rss&utm_campaign=lecigare-ch-launches-the-flamingo-10th-anniversary"
-    },
-    {
-      "date": "2026-08-19",
-      "category": "業界・企業",
-      "title_ja": "ティオレオ、ドミニカ葉巻をカナダへ",
-      "summary_ja": "ティオレオ・シガーズ（TioLeo Cigars）が、ディストリビューターのTabac Arsenalを通じ8月からカナダ市場へ出荷を開始する。同ブランドは1916年創業のフロル・デ・ロス・レイエスを源流とするレイエス家が手掛け、ファビオラ・サバル・レイエスが叔父レオナルド・レイエスに捧げて設立。オリジナルほか2コレクションで参入する。",
-      "title_en": "TioLeo Cigars Brings Dominican Tobacco Tradition to Canada",
-      "summary_en": "TioLeo Cigars will begin shipping to Canadian retailers this August via distributor Tabac Arsenal. The brand comes from the Reyes family, whose Dominican tobacco roots trace to Flor de Los Reyes, founded in Navarrete in 1916. Founded by Fabiola Saval Reyes as a tribute to her uncle Leonardo Reyes, TioLeo launches in Canada with two collections.",
-      "source": "Cigar Journal",
-      "source_title": "TioLeo Cigars Brings Dominican Tobacco Tradition to Canada",
-      "source_en": "Cigar Journal",
-      "source_title_en": "TioLeo Cigars Brings Dominican Tobacco Tradition to Canada",
-      "url": "https://www.cigarjournal.com/tioleo-cigars-brings-dominican-tobacco-tradition-to-canada/?utm_source=rss&utm_medium=rss&utm_campaign=tioleo-cigars-brings-dominican-tobacco-tradition-to-canada"
-    },
-    {
-      "date": "2026-08-19",
-      "category": "新製品",
-      "title_ja": "ルーム101、ジョニー・トバコノート マドゥーロを発表",
-      "summary_ja": "ルーム101（Room101）は、11年目を迎える人気シリーズ「ジョニー・トバコノート（Johnny Tobacconaut）」の最新作として、ニカラグア産マドゥーロラッパーを用いたニカラグア・プーロを発表した。製造はAJフェルナンデス（AJ Fernandez）が手掛ける。今回はロブストサイズでの展開となる。",
-      "title_en": "Room101 Unveils Johnny Tobacconaut Maduro Robusto",
-      "summary_en": "Room101 has introduced the latest addition to its Johnny Tobacconaut line, now in its 11th year, this time featuring Nicaraguan maduro wrappers. The new release is a Nicaraguan puro produced by AJ Fernandez, offered in a robusto size. The intergalactic tobacco farmer theme continues with this maduro edition.",
-      "source": "halfwheel",
-      "source_title": "Room101 Johnny Tobacconaut Maduro Robusto",
-      "source_en": "halfwheel",
-      "source_title_en": "Room101 Johnny Tobacconaut Maduro Robusto",
-      "url": "https://halfwheel.com/room101-johnny-tobacconaut-maduro-robusto/476893/"
-    },
-    {
-      "date": "2026-08-18",
-      "category": "新製品",
-      "title_ja": "カマチョ、リバティ2020を限定リリース",
-      "summary_ja": "カマチョ（Camacho）は、2021年以来休止していた「リバティ・シリーズ（Liberty Series）」を今夏の限定リリースで復活させた。2020年版として加わった同ラインは、同シリーズで初めてボックスプレス仕上げのゴルドサイズで登場する。",
-      "title_en": "Camacho Releases Liberty 2020",
-      "summary_en": "Camacho has revived its Liberty Series with a limited release this summer, following a hiatus since 2021. The 2020 edition marks the first time the line has been offered in a box-pressed gordo size.",
-      "source": "halfwheel",
-      "source_title": "Camacho Liberty 2020",
-      "source_en": "halfwheel",
-      "source_title_en": "Camacho Liberty 2020",
-      "url": "https://halfwheel.com/camacho-liberty-2020-2/476820/"
-    },
-    {
-      "date": "2026-08-18",
-      "category": "新製品",
-      "title_ja": "バンドレロ・ファイアクラッカー2026出荷",
-      "summary_ja": "バンドレロ（Bandolero）のファイアクラッカーが出荷を開始した。ラッパーとバインダーはバンドレロ・セリエA、フィラーはセリエCラインを使用する。同銘柄としては3度目のリリースで、2023年以来となる。",
-      "title_en": "Bandolero Firecracker 2026 Shipping",
-      "summary_en": "The Bandolero Firecracker has begun shipping. It uses the wrapper and binder from the Bandolero Serie A and the filler from the Serie C line. This marks the third release of the cigar, and the first since 2023.",
-      "source": "halfwheel",
-      "source_title": "Bandolero Firecracker 2026 Shipping",
-      "source_en": "halfwheel",
-      "source_title_en": "Bandolero Firecracker 2026 Shipping",
-      "url": "https://halfwheel.com/bandolero-firecracker-2026-shipping-2/476886/"
-    },
-    {
-      "date": "2026-08-18",
-      "category": "業界・企業",
-      "title_ja": "リーフ・シガー、NJ州2店舗目へ拡大",
-      "summary_ja": "独立系プレミアム葉巻小売店のリーフ・シガー・エンポリアム（Leaf Cigar Emporium）が、ニュージャージー州モンマス郡からミドルセックス郡へと2店舗目を出店し事業を拡大する。オンライン販売との激しい競争のなか、創業者ジョン・ガロファロ氏が6年間の成長を背景に実店舗重視の路線で展開する。",
-      "title_en": "Leaf Cigar Emporium Expands into Second New Jersey Market",
-      "summary_en": "Independent premium cigar retailer Leaf Cigar Emporium is expanding into a second location, moving from Monmouth to Middlesex County in New Jersey. Amid fierce competition from online sellers, founder John Garofalo is betting on brick-and-mortar retail, giving enthusiasts more reasons to get off their screens. The move follows six years of sustained growth for the independent retailer.",
-      "source": "StogiePress",
-      "source_title": "Cigar News: Leaf Cigar Emporium Expands into Second New Jersey Market—Betting on the Future of Independent Cigar Retail",
-      "source_en": "StogiePress",
-      "source_title_en": "Leaf Cigar Emporium Expands into Second New Jersey Market—Betting on the Future of Independent Cigar Retail",
-      "url": "https://stogiepress.com/cigar-news-leaf-cigar-emporium-expands-into-second-new-jersey-market-betting-on-the-future-of-independent-cigar-retail/"
     }
   ]
 };
