@@ -7,8 +7,86 @@
    手で足すこともできますが、items の並び・キーは崩さないでください。
    ============================================================ */
 var NEWS_DATA = {
-  "updated": "2026-09-16",
+  "updated": "2026-09-17",
   "items": [
+    {
+      "date": "2026-09-17",
+      "category": "新製品",
+      "title_ja": "ストールン・スローン新作、店頭に登場",
+      "summary_ja": "ストールン・スローン（Stolen Throne）が新作「ハイウェイ・ドリフター（Highway Drifter）」を出荷し、店頭に並び始めた。同社初となるシャギーフット仕様。6×52のトロで、エクアドル産ハバノ種のラッパーに、ニカラグア産のバインダーとフィラーを組み合わせている。",
+      "title_en": "Stolen Throne Highway Drifter Showing Up at Stores",
+      "summary_en": "Stolen Throne has begun shipping its new Highway Drifter, which is now appearing at stores. It is the first release from the company to feature a shaggy foot. The 6 x 52 toro uses an Ecuadorian habano-seed wrapper over a binder and filler blend grown in Nicaragua.",
+      "source": "halfwheel",
+      "source_title": "Stolen Throne Highway Drifter Showing Up at Stores",
+      "source_en": "halfwheel",
+      "source_title_en": "Stolen Throne Highway Drifter Showing Up at Stores",
+      "url": "https://halfwheel.com/stolen-throne-highway-drifter-showing-up-at-stores/479775/"
+    },
+    {
+      "date": "2026-09-17",
+      "category": "新製品",
+      "title_ja": "J.C.ニューマン、インタータバック新製品を披露",
+      "summary_ja": "J.C.ニューマン（J.C. Newman）が、インタータバック2026で複数の新製品やアップデートを発表した。「マキシマス（Maximus）」のデザイン刷新、「ブリックハウス（Brick House）」の新ヴィトラ、香り付きの新銘柄「サルゼダス（Sarzedas）」などが含まれる。",
+      "title_en": "J.C. Newman Presents its Lineup for InterTabac 2026",
+      "summary_en": "J.C. Newman presented several additions and updates to its portfolio at this year's InterTabac. The highlights included a refreshed look for Maximus, a new Brick House vitola and the new aromatic Sarzedas cigar.",
+      "source": "Cigar Journal",
+      "source_title": "J.C. Newman Presents its Lineup for InterTabac 2026",
+      "source_en": "Cigar Journal",
+      "source_title_en": "J.C. Newman Presents its Lineup for InterTabac 2026",
+      "url": "https://www.cigarjournal.com/j-c-newman-presents-its-lineup-for-intertabac-2026/"
+    },
+    {
+      "date": "2026-09-16",
+      "category": "新製品",
+      "title_ja": "パトロ、25周年記念の限定品を発売",
+      "summary_ja": "パトロ（Patoro）が、2001年のブランド創設を記念した限定品「キュヴェ・ロワイヤル XXV（Cuvée Royale XXV）」を発売した。20本入りで600箱のみの限定生産で、うち米国の小売店へ出荷されるのは300箱に限られる。",
+      "title_en": "Patoro Cuvée Royale XXV",
+      "summary_en": "Patoro has released the Cuvée Royale XXV, a limited edition created to commemorate the founding of the Patoro brand in 2001. Only 600 boxes of 20 were produced, and of those, just 300 boxes were shipped to retailers in the United States.",
+      "source": "halfwheel",
+      "source_title": "Patoro Cuvée Royale XXV",
+      "source_en": "halfwheel",
+      "source_title_en": "Patoro Cuvée Royale XXV",
+      "url": "https://halfwheel.com/patoro-cuvee-royale-xxv/479712/"
+    },
+    {
+      "date": "2026-09-16",
+      "category": "業界・企業",
+      "title_ja": "マチルデ、パイナップル葉巻工場を開設",
+      "summary_ja": "マチルデ・シガー（Matilde Cigars）のエンリケ・セイハスとリカルド・セイハスが、ドルトムントで既存の全ラインを披露した。ブースでの最大のニュースは、新たに開設した「パイナップル・シガー・ファクトリー（Pineapple Cigar Factory）」だった。",
+      "title_en": "Matilde Cigars Opens the Pineapple Cigar Factory",
+      "summary_en": "Enrique and Ricardo Seijas brought Matilde Cigars' full existing range to Dortmund, but the news on the stand was a factory. The company has opened the Pineapple Cigar Factory, which was the main announcement made at the InterTabac booth.",
+      "source": "Cigar Journal",
+      "source_title": "Matilde Cigars Opens the Pineapple Cigar Factory",
+      "source_en": "Cigar Journal",
+      "source_title_en": "Matilde Cigars Opens the Pineapple Cigar Factory",
+      "url": "https://www.cigarjournal.com/matilde-cigars-opens-the-pineapple-cigar-factory/"
+    },
+    {
+      "date": "2026-09-16",
+      "category": "新製品",
+      "title_ja": "ホヤ・デ・ニカラグア、限定2種を発表",
+      "summary_ja": "ホヤ・デ・ニカラグア（Joya de Nicaragua）のクリスチャン・ランサスが、インタータバックのブースで限定品2種を発表した。いずれも同社が寝かせてきたタバコを使って作られている。",
+      "title_en": "Joya de Nicaragua Unveils Two Limited Editions at InterTabac",
+      "summary_en": "Christian Lanzas presented two limited editions at the Joya de Nicaragua stand at InterTabac. Both are built on tobacco the Nicaraguan house has been holding back for the releases.",
+      "source": "Cigar Journal",
+      "source_title": "Joya de Nicaragua Unveils Two Limited Editions at InterTabac",
+      "source_en": "Cigar Journal",
+      "source_title_en": "Joya de Nicaragua Unveils Two Limited Editions at InterTabac",
+      "url": "https://www.cigarjournal.com/joya-de-nicaragua-unveils-two-limited-editions-at-intertabac/"
+    },
+    {
+      "date": "2026-09-16",
+      "category": "イベント・アワード",
+      "title_ja": "アルテサノ、2025年葉巻オブザイヤー受賞",
+      "summary_ja": "アルテサノ・デル・タバコ（Artesano del Tobacco）の「エル・プルポ・ランセロ（El Pulpo Lancero）」が、シガー・ジャーナルによる2025年「シガー・オブ・ザ・イヤー」に選ばれた。同社は快挙を祝っている。",
+      "title_en": "Artesano del Tobacco Celebrates Cigar of the Year 2025",
+      "summary_en": "Artesano del Tobacco is celebrating a major achievement after its El Pulpo Lancero was named Cigar of the Year 2025 by Cigar Journal.",
+      "source": "Cigar Journal",
+      "source_title": "Artesano del Tobacco Celebrates Cigar of the Year 2025",
+      "source_en": "Cigar Journal",
+      "source_title_en": "Artesano del Tobacco Celebrates Cigar of the Year 2025",
+      "url": "https://www.cigarjournal.com/artesano-del-tobacco-celebrates-cigar-of-the-year-2025/"
+    },
     {
       "date": "2026-09-16",
       "category": "イベント・アワード",
@@ -2010,84 +2088,6 @@ var NEWS_DATA = {
       "source_en": "StogiePress",
       "source_title_en": "Leaf Cigar Emporium Expands into Second New Jersey Market—Betting on the Future of Independent Cigar Retail",
       "url": "https://stogiepress.com/cigar-news-leaf-cigar-emporium-expands-into-second-new-jersey-market-betting-on-the-future-of-independent-cigar-retail/"
-    },
-    {
-      "date": "2026-08-17",
-      "category": "業界・企業",
-      "title_ja": "グリーンリーフ社、新高級葉巻ブランド立ち上げ",
-      "summary_ja": "グリーンリーフ・イノベーションズ（Green Leaf Innovations, Inc.）が株主向けに戦略的拡大の最新情報を発表した。新たな高級シガーブランド、包括的なアクセサリーライン、EコマースのVIP会員クラブの立ち上げを明らかにした。これはDURTEQ社との意向書締結に続くもの。",
-      "title_en": "Green Leaf Innovations Launches New Premium Cigar Brand",
-      "summary_en": "Green Leaf Innovations, Inc. has provided shareholders with an update on its strategic expansion, announcing the launch of a new premium cigar brand, a comprehensive accessories line and a new e-commerce VIP membership club. The move follows the company's recent signing of a letter of intent with DURTEQ.",
-      "source": "Moomoo",
-      "source_title": "Green Leaf Innovations, Inc.は株主に対し戦略的拡大に関する最新情報を提供しました。新たな高級シガーブランド、包括的なアクセサリーライン、および新しいEコマースVIP会員クラブの立ち上げを発表しています。これは最近のDURTEQ社との意向書締結に続くものです。 - Moomoo",
-      "source_en": "Moomoo",
-      "source_title_en": "Green Leaf Innovations, Inc. Provides Shareholders With Strategic Expansion Update, Announcing New Premium Cigar Brand, Accessories Line and E-commerce VIP Club",
-      "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxPZHBYVW5WTkFibHk5SC1fcEJLT0x3eG5pc3JadHpOWWVXcWNveDRFMTh4UVhsRGV3dDhvTTVGZW4zMDU0NUlwN2NPMnZvNnNQUk5lWXM4U1lNNnpPdWUyYzNORms4Y0U3dmhuOGdBTXlkeXBtdzBLRW1rc3FQdnYtNWVkVTBiVGZWc2ZGMVI0Zy1KSmkyYTlMcEdaN1BsRzR2Y2Q5Q21aMzg3T3NpazZDVnNHbjFvZi0yRHVyc2oycFpjS2c?oc=5"
-    },
-    {
-      "date": "2026-08-17",
-      "category": "新製品",
-      "title_ja": "ナックルサンドイッチにマイルドな新作",
-      "summary_ja": "著名シェフのガイ・フィエリがエリック・エスピノーサと組んで2022年初頭に立ち上げたナックルサンドイッチ・シガーズ（Knuckle Sandwich Cigars）が、より穏やかで親しみやすいブレンドの新作「アヴァンギャルド（Avant-Garde）」を投入する。ブランド開始から4年、より幅広い層への浸透を狙う。",
-      "title_en": "Knuckle Sandwich Debuts Milder Avant-Garde",
-      "summary_en": "Knuckle Sandwich Cigars, the brand created by celebrity chef Guy Fieri in partnership with Erik Espinosa and launched in early 2022, is introducing a mellower, more approachable blend called Avant-Garde. Four years after its debut, the brand aims to reach a wider audience of consumers with the new release.",
-      "source": "halfwheel",
-      "source_title": "Knuckle Sandwich Avant-Garde",
-      "source_en": "halfwheel",
-      "source_title_en": "Knuckle Sandwich Avant-Garde",
-      "url": "https://halfwheel.com/knuckle-sandwich-avant-garde/476806/"
-    },
-    {
-      "date": "2026-08-16",
-      "category": "新製品",
-      "title_ja": "ミカレフ、カラーシリーズに「オレンジ」追加",
-      "summary_ja": "ミカレフ・シガーズ（Micallef Cigars）が、カラーシリーズの新作「ミカレフ・オレンジ（Micallef Orange）」を発表した。ニカラグア・エステリの自社工場製で、コネチカット・ラッパー、サンアンドレス・ハバノ・バインダー、ニカラグア産とドミニカ産のフィラーを用いたミディアムボディ。8月27日にトゥーガイズ・シガーズで先行発売し、全国発売は9月5日から。",
-      "title_en": "Micallef Adds Orange to Colour Series",
-      "summary_en": "Micallef Cigars has announced Micallef Orange, the newest addition to its Color Series, following Black, Blue, Red, Purple, Green and White. Crafted at the company's factory in Estelí, Nicaragua, it is a medium-bodied cigar featuring a Connecticut wrapper over a San Andrés Habano binder with Nicaraguan and Dominican fillers. Orange premieres on 27 August at Two Guys Cigars, both online and in-store, with nationwide availability beginning 5 September.",
-      "source": "Cigar Journal",
-      "source_title": "Micallef Orange Warms Up the Color Series",
-      "source_en": "Cigar Journal",
-      "source_title_en": "Micallef Orange Warms Up the Color Series",
-      "url": "https://www.cigarjournal.com/micallef-orange-warms-up-the-color-series/?utm_source=rss&utm_medium=rss&utm_campaign=micallef-orange-warms-up-the-color-series"
-    },
-    {
-      "date": "2026-08-15",
-      "category": "新製品",
-      "title_ja": "プリンシプル、マルティニーク・コロナを限定発売",
-      "summary_ja": "プリンシプル・シガーズ（Principle Cigars）がマルティニーク・コロナ（Martinique Corona）を発売した。当初は店舗限定を意図していなかったが、スモール・バッチ・シガー（Small Batch Cigar）が最初の生産分をすべて買い取ったため、現時点では同店の専売となっている。",
-      "title_en": "Principle Releases Martinique Corona as Shop Exclusive",
-      "summary_en": "Principle Cigars has released the Martinique Corona. The company did not originally intend for it to be a shop exclusive, but Small Batch Cigar purchased the entire first production run, so for now the cigar is available exclusively through that single retailer.",
-      "source": "halfwheel",
-      "source_title": "Principle Martinique Corona",
-      "source_en": "halfwheel",
-      "source_title_en": "Principle Martinique Corona",
-      "url": "https://halfwheel.com/principle-martinique-corona/476786/"
-    },
-    {
-      "date": "2026-08-15",
-      "category": "新製品",
-      "title_ja": "ペルドモ、レガシー親子ラインを全国出荷",
-      "summary_ja": "ペルドモ（Perdomo）が5月にTwo Guys Cigarsで先行発売した「レガシー・ファーザー＆サン（Legacy Father & Son）」を、予定より数カ月早く全国の販売店へ出荷開始した。ハバノとカメルーンのハイブリッド葉を使用し、ニック・ペルドモ・ジュニアが1種、ニコラス・ペルドモ3世が1種、2人で残る1種をブレンドした3種構成。",
-      "title_en": "Perdomo Ships Legacy Father & Son to Stores Nationwide",
-      "summary_en": "Perdomo has begun shipping its Legacy Father & Son line to stores across the United States, several months ahead of schedule, after debuting the cigars at Two Guys Cigars in May. The blends use a habano-Cameroon hybrid tobacco. Nick Perdomo Jr. blended one, Nicholas Perdomo III blended another, and the pair blended the third.",
-      "source": "halfwheel",
-      "source_title": "Perdomo Ships Legacy Father & Son to Stores Nationwide",
-      "source_en": "halfwheel",
-      "source_title_en": "Perdomo Ships Legacy Father & Son to Stores Nationwide",
-      "url": "https://halfwheel.com/perdomo-ships-legacy-father-son-to-stores-nationwide/476779/"
-    },
-    {
-      "date": "2026-08-15",
-      "category": "業界・企業",
-      "title_ja": "シティ・オブ・パームズ、カバレロス流通を終了",
-      "summary_ja": "ドミニカの比較的新しいブランド、カバレロス（Caballeros）の流通をシティ・オブ・パームズ（City of Palms）が終了した。カバレロスは新たな米国内流通計画をまだ発表していない。",
-      "title_en": "City of Palms Ends Caballeros Cigars Distribution",
-      "summary_en": "City of Palms has ended its distribution of Caballeros, a relatively new Dominican cigar brand. Caballeros has not yet announced its new plans for distribution in the United States.",
-      "source": "halfwheel",
-      "source_title": "City of Palms Ends Caballeros Cigars Distribution",
-      "source_en": "halfwheel",
-      "source_title_en": "City of Palms Ends Caballeros Cigars Distribution",
-      "url": "https://halfwheel.com/city-of-palms-ends-caballeros-cigars-distribution/476761/"
     }
   ]
 };
