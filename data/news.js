@@ -7,8 +7,86 @@
    手で足すこともできますが、items の並び・キーは崩さないでください。
    ============================================================ */
 var NEWS_DATA = {
-  "updated": "2026-09-18",
+  "updated": "2026-09-19",
   "items": [
+    {
+      "date": "2026-09-19",
+      "category": "新製品",
+      "title_ja": "ドリューエステート、リガ・プリバダ4本パック発売",
+      "summary_ja": "ドリューエステート（Drew Estate）が、リガ・プリバダ（Liga Privada）H99コネチカット・コロホ、No.9、T52の3ラインについて、各2ビトラの4本パック「ペタカス」を出荷した。新パッケージは実店舗パートナーを支援する狙いから、ドリュー・ディプロマット加盟の小売店限定で提供する。",
+      "title_en": "Drew Estate Ships Four-Pack Petacas for Six Liga Privada Cigars",
+      "summary_en": "Drew Estate has shipped four-pack \"petacas\" covering two vitolas each in the Liga Privada H99 Connecticut Corojo, No. 9 and T52 lines. The new packaging is being limited to Drew Diplomat retailers, a move the company says is intended to support its brick-and-mortar partners rather than broadening availability across all outlets.",
+      "source": "halfwheel",
+      "source_title": "Drew Estate Ships Four-Pack Petacas for Six Liga Privada Cigars",
+      "source_en": "halfwheel",
+      "source_title_en": "Drew Estate Ships Four-Pack Petacas for Six Liga Privada Cigars",
+      "url": "https://halfwheel.com/drew-estate-ships-four-pack-petacas-for-six-liga-privada-cigars/479854/"
+    },
+    {
+      "date": "2026-09-19",
+      "category": "新製品",
+      "title_ja": "コスタリカに地域限定エル・レイ・デル・ムンド",
+      "summary_ja": "ハバノス製品のコスタリカ・ニカラグア向け販売元クルス・カネラ&トラストG.B.の15周年を記念し、地域限定（Edición Regional）「エル・レイ・デル・ムンド・ティコ（El Rey del Mundo Tico）」が今月コスタリカで発売される。パッケージはHumidifGroupが手がけ、卓上ヒュミドールとしても使える仕様。",
+      "title_en": "Costa Rica Getting New Edición Regional This Month with El Rey del Mundo Tico",
+      "summary_en": "Costa Rica will receive a new Edición Regional this month, El Rey del Mundo Tico, marking the 15th anniversary of Cruz Canela & Trust G.B., the distributor of Habanos S.A. products in Costa Rica and Nicaragua. The company worked with HumidifGroup on the packaging, which is designed to double as a desktop humidor.",
+      "source": "halfwheel",
+      "source_title": "Costa Rica Getting New Edición Regional This Month with El Rey del Mundo Tico",
+      "source_en": "halfwheel",
+      "source_title_en": "Costa Rica Getting New Edición Regional This Month with El Rey del Mundo Tico",
+      "url": "https://halfwheel.com/costa-rica-getting-new-edicion-regional-this-month-with-el-rey-del-mundo-tico/479852/"
+    },
+    {
+      "date": "2026-09-19",
+      "category": "新製品",
+      "title_ja": "ナブ、新ライン「NUB México」を発表",
+      "summary_ja": "ナブ・シガー（NUB Cigars）が新ライン「NUB México」を発表した。メソアメリカで最も神聖とされる植物への敬意を込め、古代文化に着想を得た製品ラインとしている。",
+      "title_en": "NUB Cigars Launches NUB México",
+      "summary_en": "NUB Cigars has unveiled a new product line, \"NUB México.\" The brand describes it as a tribute to one of Mesoamerica's most sacred plants, with the line inspired by the region's ancient culture.",
+      "source": "Cigar Journal",
+      "source_title": "NUB Cigars Launches NUB México",
+      "source_en": "Cigar Journal",
+      "source_title_en": "NUB Cigars Launches NUB México",
+      "url": "https://www.cigarjournal.com/nub-cigars-launches-nub-mexico/"
+    },
+    {
+      "date": "2026-09-19",
+      "category": "イベント・アワード",
+      "title_ja": "ライセス・クバナス、独市場に1941を投入",
+      "summary_ja": "ライセス・クバナス（Raices Cubanas）が、インタータバック2026（InterTabac 2026）で「1941 ヌエボ・コミエンソ（Nuevo Comienzo）」をドイツ市場に紹介した。新興ブランドの国際展開を継続する動きの一環。",
+      "title_en": "Raices Cubanas Presents 1941 Nuevo Comienzo at InterTabac 2026",
+      "summary_en": "Raices Cubanas used InterTabac 2026 to present its 1941 Nuevo Comienzo to the German market, continuing the young brand's ongoing international expansion at the Dortmund trade show.",
+      "source": "Cigar Journal",
+      "source_title": "Raices Cubanas Presents 1941 Nuevo Comienzo at InterTabac 2026",
+      "source_en": "Cigar Journal",
+      "source_title_en": "Raices Cubanas Presents 1941 Nuevo Comienzo at InterTabac 2026",
+      "url": "https://www.cigarjournal.com/raices-cubanas-presents-1941-nuevo-comienzo-at-intertabac-2026/"
+    },
+    {
+      "date": "2026-09-18",
+      "category": "新製品",
+      "title_ja": "アガノルサ、欧州向け「スプリーム・リーフ・ワールドワイド」",
+      "summary_ja": "ニカラグアのアガノルサ・リーフ（Aganorsa Leaf）が、インタータバック2026に欧州市場向けの新シガー「アガノルサ・スプリーム・リーフ・ワールドワイド（Supreme Leaf World Wide）」を投入した。",
+      "title_en": "Supreme Leaf, Now World Wide",
+      "summary_en": "Nicaragua's Aganorsa Leaf returned to InterTabac 2026 with a new Supreme Leaf cigar, this time designed specifically for the European market: the Aganorsa Supreme Leaf World Wide.",
+      "source": "Cigar Journal",
+      "source_title": "Supreme Leaf, Now World Wide",
+      "source_en": "Cigar Journal",
+      "source_title_en": "Supreme Leaf, Now World Wide",
+      "url": "https://www.cigarjournal.com/supreme-leaf-now-world-wide/"
+    },
+    {
+      "date": "2026-09-18",
+      "category": "新製品",
+      "title_ja": "ロッキー・パテル、新作「サファイア」を国際展開",
+      "summary_ja": "ロッキー・パテル（Rocky Patel）が、新シガー「サファイア（Sapphire）」を国際市場に投入する。ハーフ・コロナのサイズも展開する。",
+      "title_en": "Sapphire and Half Coronas from Rocky",
+      "summary_en": "Rocky Patel is introducing its new Sapphire cigar to international markets, with the line including a Half Corona vitola.",
+      "source": "Cigar Journal",
+      "source_title": "Sapphire and Half Coronas from Rocky",
+      "source_en": "Cigar Journal",
+      "source_title_en": "Sapphire and Half Coronas from Rocky",
+      "url": "https://www.cigarjournal.com/sapphire-and-half-coronas-from-rocky/"
+    },
     {
       "date": "2026-09-17",
       "category": "新製品",
@@ -2010,84 +2088,6 @@ var NEWS_DATA = {
       "source_en": "Cigar Journal",
       "source_title_en": "More CSWC Winners",
       "url": "https://www.cigarjournal.com/more-cswc-winners-2/?utm_source=rss&utm_medium=rss&utm_campaign=more-cswc-winners-2"
-    },
-    {
-      "date": "2026-08-20",
-      "category": "業界・企業",
-      "title_ja": "カバリエ・ジュネーブ、ヒューストンに配送拠点",
-      "summary_ja": "カバリエ・ジュネーブ（Cavalier Genève）が、ヒューストン近郊に新たな倉庫・配送センターを開設した。建設は昨年末に着工されていた。新倉庫は同社の米国内顧客向けに専用で運用される。",
-      "title_en": "Cavalier Genève Opens Houston Area Warehouse & Distribution Center",
-      "summary_en": "Cavalier Genève has opened a new warehouse and distribution centre in the Houston area. Work on the facility began late last year. The new warehouse will serve the company's US-based customers exclusively.",
-      "source": "halfwheel",
-      "source_title": "Cavalier Genève Opens Houston Area Warehouse & Distribution Center",
-      "source_en": "halfwheel",
-      "source_title_en": "Cavalier Genève Opens Houston Area Warehouse & Distribution Center",
-      "url": "https://halfwheel.com/cavalier-geneve-opens-houston-area-warehouse-distribution-center/477060/"
-    },
-    {
-      "date": "2026-08-20",
-      "category": "規制・市場",
-      "title_ja": "フィリップモリスUSA、葉巻会社を提訴",
-      "summary_ja": "フィリップモリスUSA（Philip Morris USA）が、「マールボロマン」葉巻を販売するドン・エイブラム・ハリス・シガーズ（Don Abram Harris Cigars）を提訴した。同社は先月、フィリップモリスに80億ドルを求めてメリーランド州連邦裁判所に提訴しており、これに対抗する形での訴訟となる。",
-      "title_en": "Philip Morris USA Sues Don Abram Harris Cigars Over “Marlboro Man” Cigar",
-      "summary_en": "Philip Morris USA has filed a lawsuit against Don Abram Harris Cigars over its Marlboro Man cigar. Last month, Don Abram Harris Cigars sued Philip Morris in federal court in Maryland, seeking $8 billion. The cigarette company has now filed a lawsuit of its own in response.",
-      "source": "halfwheel",
-      "source_title": "Philip Morris USA Sues Don Abram Harris Cigars Over “Marlboro Man” Cigar",
-      "source_en": "halfwheel",
-      "source_title_en": "Philip Morris USA Sues Don Abram Harris Cigars Over “Marlboro Man” Cigar",
-      "url": "https://halfwheel.com/philip-morris-usa-sues-don-abram-harris-cigars-over-marlboro-man-cigar/477058/"
-    },
-    {
-      "date": "2026-08-20",
-      "category": "新製品",
-      "title_ja": "「ソニー」限定品がレギュラー生産へ",
-      "summary_ja": "チャズ・パルミンテリ（Chazz Palminteri）による「ア・ブロンクス・テイル・ソニー」（A Bronx Tale Sonny）が、2025年の限定品からレギュラー生産ラインとして復活した。新サイズを追加し、ブレンドをわずかに変更。価格は限定版の約半額となる。",
-      "title_en": "Chazz Palminteri's A Bronx Tale Sonny Becomes Regular Production Line",
-      "summary_en": "Chazz Palminteri's A Bronx Tale Sonny, a 2025 limited edition, has returned as a regular production line. The line gains new sizes and a slightly modified blend, and is priced at about half as much as the original limited edition.",
-      "source": "halfwheel",
-      "source_title": "Chazz Palminteri’s A Bronx Tale Sonny Becomes Regular Production Line",
-      "source_en": "halfwheel",
-      "source_title_en": "Chazz Palminteri's A Bronx Tale Sonny Becomes Regular Production Line",
-      "url": "https://halfwheel.com/chazz-palminteris-a-bronx-tale-sonny-goes-from-limited-edition-to-full-time-line/477025/"
-    },
-    {
-      "date": "2026-08-20",
-      "category": "新製品",
-      "title_ja": "エルマノス・デ・アルマス、新作センチネル出荷",
-      "summary_ja": "エルマノス・デ・アルマス（Hermanos de Armas）が新ライン「センチネル」（Sentinel）を出荷した。共同創業者ザック・ヴァン・ギンケルの軍歴・監視航空機の職歴にちなんで命名。同社の他ラインとは全く異なる、極めて甘くチョコレート風味でスパイスの効いたプロファイルに仕上げた。",
-      "title_en": "Hermanos de Armas Ships Sentinel",
-      "summary_en": "Hermanos de Armas has shipped Sentinel, named for co-founder Zack Van Ginkel's military and professional background with surveillance aircraft. It is designed to be a completely different profile from the company's other lines, described as extremely sweet and chocolatey with hints of spice.",
-      "source": "halfwheel",
-      "source_title": "Hermanos de Armas Ships Sentinel",
-      "source_en": "halfwheel",
-      "source_title_en": "Hermanos de Armas Ships Sentinel",
-      "url": "https://halfwheel.com/hermanos-de-armas-ships-sentinel/476998/"
-    },
-    {
-      "date": "2026-08-20",
-      "category": "新製品",
-      "title_ja": "グルカ、限定「トレス・デカダス」出荷",
-      "summary_ja": "グルカ（Gurkha）が限定品「トレス・デカダス」（Tres Decadas）を店頭に出荷した。同社営業担当副社長フアン・ロペスのプレミアム葉巻業界30年を記念したもの。3サイズ展開で、各サイズ1,000箱ずつ製造される。",
-      "title_en": "Gurkha Sends Tres Decadas to Stores",
-      "summary_en": "Gurkha has shipped its Tres Decadas limited edition to stores. The line celebrates Juan Lopez, the company's vice-president of sales, and his three decades in the premium cigar industry. It is offered in three sizes, with 1,000 boxes made for each.",
-      "source": "halfwheel",
-      "source_title": "Gurkha Sends Tres Decadas to Stores",
-      "source_en": "halfwheel",
-      "source_title_en": "Gurkha Sends Tres Decadas to Stores",
-      "url": "https://halfwheel.com/gurkha-sends-tres-decadas-to-stores/477001/"
-    },
-    {
-      "date": "2026-08-20",
-      "category": "規制・市場",
-      "title_ja": "英国、葉巻のプレーン包装導入を検討",
-      "summary_ja": "英国政府が、葉巻のプレーン（無地）包装導入に関する新提案について10月2日まで意見を募集している。英国の葉巻業界は、提案が法制化された場合の事業への脅威を訴えるべく関係者を動員している。",
-      "title_en": "U.K. Threatens Plain Packaging for Cigars",
-      "summary_en": "The UK government is seeking feedback until 2 October on a new proposal for plain packaging for cigars. The UK's cigar industry is mobilising people to warn of the threats to their businesses should the proposal become law.",
-      "source": "halfwheel",
-      "source_title": "U.K. Threatens Plain Packaging for Cigars",
-      "source_en": "halfwheel",
-      "source_title_en": "U.K. Threatens Plain Packaging for Cigars",
-      "url": "https://halfwheel.com/u-k-threatens-plain-packaging-for-cigars/476988/"
     }
   ]
 };
