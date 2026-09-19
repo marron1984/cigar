@@ -7,8 +7,86 @@
    手で足すこともできますが、items の並び・キーは崩さないでください。
    ============================================================ */
 var NEWS_DATA = {
-  "updated": "2026-09-19",
+  "updated": "2026-09-20",
   "items": [
+    {
+      "date": "2026-09-20",
+      "category": "業界・企業",
+      "title_ja": "エル・アルティスタ、中国煙草と国際協業合意",
+      "summary_ja": "タバカレラ・エル・アルティスタ（Tabacalera El Artista）が、ドイツ・ドルトムントで開催中のインタータバック2026で、中国煙草（China Tobacco）と国際的な葉巻協業合意を締結したと発表した。葉巻の開発・製造・国際流通を軸とした提携で、両社は新ブランド「泰山（Taishan）」も披露した。",
+      "title_en": "El Artista Signs International Cigar Cooperation Agreement with China Tobacco",
+      "summary_en": "Tabacalera El Artista has announced an international cigar cooperation agreement with China Tobacco, one of the biggest stories to emerge from InterTabac 2026 in Dortmund, Germany. The partnership focuses on cigar development, manufacturing and international distribution. The agreement was formally signed during the trade show, where the partners also unveiled a new brand, Taishan. The deal marks a significant step in linking established cigar-making expertise with China Tobacco's reach and resources.",
+      "source": "StogiePress",
+      "source_title": "Cigar News: Tabacalera El Artista Signs International Cigar Cooperation Agreement with China Tobacco",
+      "source_en": "StogiePress",
+      "source_title_en": "Cigar News: Tabacalera El Artista Signs International Cigar Cooperation Agreement with China Tobacco",
+      "url": "https://stogiepress.com/cigar-news-tabacalera-el-artista-signs-international-cigar-cooperation-agreement-with-china-tobacco/"
+    },
+    {
+      "date": "2026-09-20",
+      "category": "新製品",
+      "title_ja": "モンテクリスト・エスパダに新作コンキスタドール",
+      "summary_ja": "モンテクリスト・エスパダ（Montecristo Espada）シリーズの5番目のラインとして「コンキスタドール・リカッソ（Conquistador Ricasso）」が登場した。既存の4ラインと同様、ニカラグアのプラセンシア（Plasencia Cigars）が製造し、オールニカラグア産のブレンドを採用する。",
+      "title_en": "Montecristo Espada Conquistador Ricasso",
+      "summary_en": "The Conquistador is the fifth line in the Montecristo Espada collection. Like the other four lines, it is made in Nicaragua by Plasencia Cigars and features an all-Nicaraguan blend. The Ricasso vitola marks the latest addition to the growing Espada range.",
+      "source": "halfwheel",
+      "source_title": "Montecristo Espada Conquistador Ricasso",
+      "source_en": "halfwheel",
+      "source_title_en": "Montecristo Espada Conquistador Ricasso",
+      "url": "https://halfwheel.com/montecristo-espada-conquistador-ricasso/479395/"
+    },
+    {
+      "date": "2026-09-19",
+      "category": "新製品",
+      "title_ja": "カスダグリ、3か国産の新作3種を披露",
+      "summary_ja": "ジェレミー・カスダグリ（Jeremy Casdagli）が、コスタリカからナバレテまで3か国で製造した新作3種をドルトムントのインタータバックに持ち込んだ。",
+      "title_en": "Three Casdagli Releases, From Costa Rica to Navarrete",
+      "summary_en": "Jeremy Casdagli brought three new releases to Dortmund, each made in a different country, spanning Costa Rica to Navarrete. The trio was presented at InterTabac 2026.",
+      "source": "Cigar Journal",
+      "source_title": "Three Casdagli Releases, From Costa Rica to Navarrete",
+      "source_en": "Cigar Journal",
+      "source_title_en": "Three Casdagli Releases, From Costa Rica to Navarrete",
+      "url": "https://www.cigarjournal.com/three-casdagli-releases-from-costa-rica-to-navarrete/"
+    },
+    {
+      "date": "2026-09-19",
+      "category": "業界・企業",
+      "title_ja": "エステバン・カレラス、チェコに倉庫開設",
+      "summary_ja": "クレイグ・カニンガムとクリストファー・メイが、欧州発売を前に「ラス・カニャス（Las Cañas）」をドルトムントで披露した。あわせてエステバン・カレラス（Esteban Carreras）が欧州市場向けにチェコ共和国で倉庫を開設することを確認した。",
+      "title_en": "Las Cañas Reaches Europe as Esteban Carreras Expands",
+      "summary_en": "Craig Cunningham and Christopher Mey brought Las Cañas to Dortmund ahead of its European release. They also confirmed that Esteban Carreras is opening a warehouse in the Czech Republic to serve the region, marking a step in the company's European expansion.",
+      "source": "Cigar Journal",
+      "source_title": "Las Cañas Reaches Europe as Esteban Carreras Expands",
+      "source_en": "Cigar Journal",
+      "source_title_en": "Las Cañas Reaches Europe as Esteban Carreras Expands",
+      "url": "https://www.cigarjournal.com/las-canas-reaches-europe-as-esteban-carreras-expands/"
+    },
+    {
+      "date": "2026-09-19",
+      "category": "新製品",
+      "title_ja": "オリバ、限定「イヤー・オブ・ザ・ゴート」発表",
+      "summary_ja": "オリバ（Oliva）が、ドルトムントで開催中のインタータバック2026で、限定版「イヤー・オブ・ザ・ゴート（Year of the Goat）」を発表した。",
+      "title_en": "Oliva Unveils Limited Edition \"Year of the Goat\" at InterTabac 2026",
+      "summary_en": "Oliva unveiled a limited edition, the Year of the Goat, at InterTabac 2026 in Dortmund, Germany.",
+      "source": "Cigar Journal",
+      "source_title": "Oliva Unveils Limited Edition \"Year of the Goat\" at InterTabac 2026",
+      "source_en": "Cigar Journal",
+      "source_title_en": "Oliva Unveils Limited Edition \"Year of the Goat\" at InterTabac 2026",
+      "url": "https://www.cigarjournal.com/oliva-unveils-limited-edition-year-of-the-goat-at-intertabac-2026/"
+    },
+    {
+      "date": "2026-09-19",
+      "category": "イベント・アワード",
+      "title_ja": "ボヴェダが最優秀ヒュミドール受賞、100本用も",
+      "summary_ja": "ボヴェダ（Boveda）の50本用木製ヒュミドールが、シガー・トロフィー2026で最優秀ヒュミドール賞を受賞した。ベニー・パトックは100本用モデルも準備中と確認し、米国では2026年末、欧州では2027年初めに投入される予定という。",
+      "title_en": "Boveda Takes Best Humidor as 100-Count Model Nears",
+      "summary_en": "Boveda's 50-count wooden humidor won the Cigar Trophy 2026 for Best Humidor. Benny Patock displayed it on the Boveda stand the morning after the win and confirmed a 100-count version is next, due in the United States at the end of 2026 and in Europe at the beginning of 2027.",
+      "source": "Cigar Journal",
+      "source_title": "Boveda Takes Best Humidor as 100-Count Model Nears",
+      "source_en": "Cigar Journal",
+      "source_title_en": "Boveda Takes Best Humidor as 100-Count Model Nears",
+      "url": "https://www.cigarjournal.com/boveda-takes-best-humidor-as-100-count-model-nears/"
+    },
     {
       "date": "2026-09-19",
       "category": "新製品",
@@ -2010,84 +2088,6 @@ var NEWS_DATA = {
       "source_en": "halfwheel",
       "source_title_en": "AG Cigars Legendary Moment Jamie Foxx",
       "url": "https://halfwheel.com/ag-cigars-legendary-moment-jamie-foxx/476898/"
-    },
-    {
-      "date": "2026-08-21",
-      "category": "新製品",
-      "title_ja": "アンダークラウン10ゴルドが店頭へ",
-      "summary_ja": "今年はアンダークラウン（Undercrown）発売15周年にあたる。まもなく新たな限定版の6×60サイズ「アンダークラウン10ゴルド」が店頭に登場する。",
-      "title_en": "Undercrown 10 Gordo Heads to Stores",
-      "summary_en": "This year marks the 15th anniversary of the launch of Undercrown. Soon, a new limited edition 6 x 60 version, the Undercrown 10 Gordo, will arrive at stores.",
-      "source": "halfwheel",
-      "source_title": "Undercrown 10 Gordo Heads to Stores",
-      "source_en": "halfwheel",
-      "source_title_en": "Undercrown 10 Gordo Heads to Stores",
-      "url": "https://halfwheel.com/undercrown-10-gordo-heads-to-stores/477433/"
-    },
-    {
-      "date": "2026-08-21",
-      "category": "新製品",
-      "title_ja": "タトゥアージュ「クリーチャー」を正式発売",
-      "summary_ja": "タトゥアージュ（Tatuaje）が、サンプラーに2度収録されてきたブレンド「クリーチャー（Creature）」をフルサイズで正式発売した。2007年に始まった「モンスター・シリーズ（Monster Series）」の101作目にあたる。",
-      "title_en": "Creature from Tatuaje",
-      "summary_en": "After two appearances in samplers, Tatuaje has given its Creature blend a full-size release. It is the 101st installment of the Monster Series, which launched in 2007.",
-      "source": "halfwheel",
-      "source_title": "Creature from Tatuaje",
-      "source_en": "halfwheel",
-      "source_title_en": "Creature from Tatuaje",
-      "url": "https://halfwheel.com/creature-from-tatuaje/477077/"
-    },
-    {
-      "date": "2026-08-21",
-      "category": "新製品",
-      "title_ja": "カマチョ限定版2026、9月初旬に登場",
-      "summary_ja": "カマチョ（Camacho）のリミテッド・エディション・シリーズが2作目として復活する。今回はブランドを象徴する11/18ペルフェクト形状に回帰した。9月初旬の発売を予定している。",
-      "title_en": "Camacho Limited Edition 2026 Coming in Early September",
-      "summary_en": "The Camacho Limited Edition series returns for its second release, this time reverting to the brand's signature 11/18 perfecto shape. It is due to arrive in early September.",
-      "source": "halfwheel",
-      "source_title": "Camacho Limited Edition 2026 Coming in Early September",
-      "source_en": "halfwheel",
-      "source_title_en": "Camacho Limited Edition 2026 Coming in Early September",
-      "url": "https://halfwheel.com/camacho-limited-edition-2026-coming-in-early-september/477115/"
-    },
-    {
-      "date": "2026-08-20",
-      "category": "規制・市場",
-      "title_ja": "トランプ氏、FDA長官にオーバートン氏指名へ",
-      "summary_ja": "トランプ大統領が、ハイジ・オーバートン（Heidi Overton）氏をFDA長官に指名する。同氏は5月にマカリー氏が退任して以来の有力候補とされてきた。葉巻規制に関する見解は明らかになっていない。",
-      "title_en": "Trump to Nominate Heidi Overton as FDA Commissioner",
-      "summary_en": "President Trump is to nominate Heidi Overton as FDA Commissioner. Called the White House \"traffic cop\" on health policy, she has been a frontrunner since Martin Makary was forced out in May. Her views on cigar regulation are unknown.",
-      "source": "halfwheel",
-      "source_title": "Trump to Nominate Heidi Overton as FDA Commissioner",
-      "source_en": "halfwheel",
-      "source_title_en": "Trump to Nominate Heidi Overton as FDA Commissioner",
-      "url": "https://halfwheel.com/trump-to-nominate-heidi-overton-as-fda-commissioner/477019/"
-    },
-    {
-      "date": "2026-08-20",
-      "category": "新製品",
-      "title_ja": "CRAFTマケット「スカットルバット」出荷",
-      "summary_ja": "CRAFTのマケット（Maquette）「スカットルバット（Scuttlebutt）」が出荷された。インテンパランス（Intemperance）のウイスキー・レベリオン1794ラインをベースとする。当初は1,000バンドル限定だったが、スキップ・マーティン氏がブレンドを気に入り、生産量をほぼ倍増させた。",
-      "title_en": "CRAFT Maquette Scuttlebutt Ships",
-      "summary_en": "CRAFT's Maquette Scuttlebutt has shipped. Based on the Intemperance Whiskey Rebellion 1794 line, production was originally limited to 1,000 bundles, but Skip Martin liked the blend enough to nearly double the planned run.",
-      "source": "halfwheel",
-      "source_title": "CRAFT Maquette Scuttlebutt Ships",
-      "source_en": "halfwheel",
-      "source_title_en": "CRAFT Maquette Scuttlebutt Ships",
-      "url": "https://halfwheel.com/craft-maquette-scuttlebutt-ships/476962/"
-    },
-    {
-      "date": "2026-08-20",
-      "category": "イベント・アワード",
-      "title_ja": "CSWC各国王者、ドブロブニク決勝へ続々確定",
-      "summary_ja": "シガー・スモーキング・ワールド・チャンピオンシップ（CSWC）で、ドブロブニクの決勝進出者が続々と確定している。米国はドリュー・エムチが再び優勝、ベラルーシのセルゲイ・ガレフスキーは今季初めて3時間の壁を突破。日本はハヤト・ムカイガワが1時間56分30秒で王者となった。",
-      "title_en": "More CSWC Winners",
-      "summary_en": "With about a week to go, the line-up for the CSWC grand finale in Dubrovnik is filling out. Drew Emch claimed another US title, Belarus's Sergey Galevskii became the first this year to break the three-hour barrier, and in Japan Hayato Mukaigawa won with 1:56:30. Fresh national champions were also crowned in Finland, Ireland, Hungary, Italy, Chile and elsewhere.",
-      "source": "Cigar Journal",
-      "source_title": "More CSWC Winners",
-      "source_en": "Cigar Journal",
-      "source_title_en": "More CSWC Winners",
-      "url": "https://www.cigarjournal.com/more-cswc-winners-2/?utm_source=rss&utm_medium=rss&utm_campaign=more-cswc-winners-2"
     }
   ]
 };
