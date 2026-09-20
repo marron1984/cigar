@@ -7,8 +7,60 @@
    手で足すこともできますが、items の並び・キーは崩さないでください。
    ============================================================ */
 var NEWS_DATA = {
-  "updated": "2026-09-20",
+  "updated": "2026-09-21",
   "items": [
+    {
+      "date": "2026-09-21",
+      "category": "新製品",
+      "title_ja": "ペレス・カリージョ、新定番「アセンド・リッジ」発表",
+      "summary_ja": "ペレス・カリージョ（Perez-Carrillo）が新しいレギュラー生産ライン「アセンド・リッジ（Ascend Ridge）」を発表した。同社は「進化・前進」という発想から着想を得たとしている。ブレンドはエクアドル産ハバノ・ラッパー、ニカラグア・エステリ産のバインダー、ニカラグア産フィラーで構成される。",
+      "title_en": "Perez-Carrillo Unveils New Ascend Ridge Line",
+      "summary_en": "Perez-Carrillo has introduced Ascend Ridge, a new regular production line. The company says the cigars were inspired by the idea of progression. The blend features an Ecuadorian habano wrapper, a binder grown in Estelí, Nicaragua, and Nicaraguan filler tobaccos.",
+      "source": "halfwheel",
+      "source_title": "Perez-Carrillo Ascend Ridge",
+      "source_en": "halfwheel",
+      "source_title_en": "Perez-Carrillo Ascend Ridge",
+      "url": "https://halfwheel.com/perez-carrillo-ascend-ridge/479905/"
+    },
+    {
+      "date": "2026-09-21",
+      "category": "業界・企業",
+      "title_ja": "エル・アルティスタ、中国煙草と国際提携で新葉巻",
+      "summary_ja": "タバカレラ・エル・アルティスタ（Tabacalera el Artista）が中国煙草（China Tobacco）と国際シガー協力協定を締結した。ドミニカのタバコと葉巻製造ノウハウに、中国の生産力と市場アクセスを組み合わせ、新プロジェクト「泰山（Taishan）・アルティスタ」を展開する。1本はドミニカ、もう1本は中国・山東省の工場で製造され、年内にアジアで先行発売後、他市場へ広げる。",
+      "title_en": "El Artista Signs Cigar Cooperation Agreement with China Tobacco",
+      "summary_en": "Tabacalera el Artista has signed an international cigar cooperation agreement with China Tobacco. The partnership combines Dominican tobacco and cigar-making expertise with Chinese production and market reach for the new Taishan · Artista project. One vitola will be made by Artista in the Dominican Republic, the other at a factory in Shandong, China. The cigars debut in Asia later this year before reaching other markets.",
+      "source": "Cigar Journal",
+      "source_title": "Tabacalera el Artista Signs International Cigar Cooperation Agreement with China Tobacco",
+      "source_en": "Cigar Journal",
+      "source_title_en": "Tabacalera el Artista Signs International Cigar Cooperation Agreement with China Tobacco",
+      "url": "https://www.cigarjournal.com/tabacalera-el-artista-signs-international-cigar-cooperation-agreement-with-china-tobacco/"
+    },
+    {
+      "date": "2026-09-20",
+      "category": "新製品",
+      "title_ja": "C.L.E.、インタータバック2026で新製品3種",
+      "summary_ja": "C.L.E.シガー・カンパニー（C.L.E. Cigar Company）が、ドイツ・ドルトムントで開催されたインタータバック2026（InterTabac 2026）で新製品3種を披露した。",
+      "title_en": "C.L.E. Brings Three New Products to InterTabac 2026",
+      "summary_en": "C.L.E. Cigar Company presented three new products at InterTabac 2026 in Dortmund, Germany.",
+      "source": "Cigar Journal",
+      "source_title": "C.L.E. Brings Three New Products to InterTabac 2026",
+      "source_en": "Cigar Journal",
+      "source_title_en": "C.L.E. Brings Three New Products to InterTabac 2026",
+      "url": "https://www.cigarjournal.com/c-l-e-brings-three-new-products-to-intertabac-2026/"
+    },
+    {
+      "date": "2026-09-20",
+      "category": "新製品",
+      "title_ja": "マイ・ファーザー、ホンジュラス第2工場から「ラ・レアルタ」",
+      "summary_ja": "マイ・ファーザー・シガーズ（My Father Cigars）が、インタータバック2026で新製品「ラ・レアルタ（La Lealtad）」を発表した。同社のホンジュラス第2工場からのリリースとなる。",
+      "title_en": "My Father Presents Second Honduran Factory Release",
+      "summary_en": "My Father Cigars presented La Lealtad at InterTabac 2026, the second release from the company's Honduran factory.",
+      "source": "Cigar Journal",
+      "source_title": "My Father Presents Their Second Honduran Factory Release",
+      "source_en": "Cigar Journal",
+      "source_title_en": "My Father Presents Their Second Honduran Factory Release",
+      "url": "https://www.cigarjournal.com/my-father-presents-their-second-honduran-factory-release/"
+    },
     {
       "date": "2026-09-20",
       "category": "業界・企業",
@@ -34,6 +86,19 @@ var NEWS_DATA = {
       "source_en": "halfwheel",
       "source_title_en": "Montecristo Espada Conquistador Ricasso",
       "url": "https://halfwheel.com/montecristo-espada-conquistador-ricasso/479395/"
+    },
+    {
+      "date": "2026-09-19",
+      "category": "新製品",
+      "title_ja": "マンティス、マリン灰皿とカーボン製ケース発表",
+      "summary_ja": "マンティス（Mantis）創業者兼CEOのデイビッド・ケラティが、インタータバックで新製品3種を発表した。トラベルヒュミドール、「フレックス・マリン（Flex Marine）」灰皿コレクション、鍛造カーボンファイバー製シガーケースの3点。",
+      "title_en": "Mantis Adds Marine Ashtrays and Carbon Fibre Cases",
+      "summary_en": "David Kelaty, founder and chief executive of Mantis, used InterTabac to introduce three products: a travel humidor, the Flex Marine ashtray collection and a forged carbon fibre cigar case.",
+      "source": "Cigar Journal",
+      "source_title": "Mantis Adds Marine Ashtrays and Carbon Fibre Cases",
+      "source_en": "Cigar Journal",
+      "source_title_en": "Mantis Adds Marine Ashtrays and Carbon Fibre Cases",
+      "url": "https://www.cigarjournal.com/mantis-adds-marine-ashtrays-and-carbon-fibre-cases/"
     },
     {
       "date": "2026-09-19",
@@ -138,6 +203,19 @@ var NEWS_DATA = {
       "source_en": "Cigar Journal",
       "source_title_en": "Raices Cubanas Presents 1941 Nuevo Comienzo at InterTabac 2026",
       "url": "https://www.cigarjournal.com/raices-cubanas-presents-1941-nuevo-comienzo-at-intertabac-2026/"
+    },
+    {
+      "date": "2026-09-18",
+      "category": "新製品",
+      "title_ja": "シュタウフェンベルク、新作葉巻2種を発表",
+      "summary_ja": "シュタウフェンベルク・シガーズ（Stauffenberg Cigars）が最新作となる葉巻2種を披露した。",
+      "title_en": "Two New Cigars from Stauffenberg",
+      "summary_en": "Stauffenberg Cigars presented two of its latest releases.",
+      "source": "Cigar Journal",
+      "source_title": "Two New Cigars from Stauffenberg",
+      "source_en": "Cigar Journal",
+      "source_title_en": "Two New Cigars from Stauffenberg",
+      "url": "https://www.cigarjournal.com/two-new-cigars-from-stauffenberg/"
     },
     {
       "date": "2026-09-18",
@@ -2010,84 +2088,6 @@ var NEWS_DATA = {
       "source_en": "Cigar Journal",
       "source_title_en": "Camacho Cigars Launches the Limited Edition 2026",
       "url": "https://www.cigarjournal.com/camacho-cigars-launches-the-limited-edition-2026/?utm_source=rss&utm_medium=rss&utm_campaign=camacho-cigars-launches-the-limited-edition-2026"
-    },
-    {
-      "date": "2026-08-23",
-      "category": "業界・企業",
-      "title_ja": "リーフ・シガー、NJに2号店を開業",
-      "summary_ja": "ニュージャージー州の小売業者リーフ・シガー・エンポリアム（Leaf Cigar Emporium）が8月24日、オールドブリッジに2号店を開業した。創業者ジョン・ガロファロは、オンライン販売への対抗として対面のもてなしを重視すると語った。新店舗は約900平方フィートの全面加湿ショールームを中心とした体験型の店づくりを採用した。",
-      "title_en": "Leaf Cigar Emporium Opens Second New Jersey Location",
-      "summary_en": "New Jersey retailer Leaf Cigar Emporium opened its second location in Old Bridge on Monday 24th August. Founder John Garofalo said the biggest competition today is online shopping, and that his shops offer genuine hospitality and advice that cannot be ordered online. Rather than replicating its Shrewsbury store, the Old Bridge outlet centres on an expansive, nearly 900-square-foot fully humidified showroom combining premium cigars, accessories and customer service in one environment.",
-      "source": "Cigar Journal",
-      "source_title": "Leaf Cigar Emporium Opens Second New Jersey Location",
-      "source_en": "Cigar Journal",
-      "source_title_en": "Leaf Cigar Emporium Opens Second New Jersey Location",
-      "url": "https://www.cigarjournal.com/leaf-cigar-emporium-opens-second-new-jersey-location/?utm_source=rss&utm_medium=rss&utm_campaign=leaf-cigar-emporium-opens-second-new-jersey-location"
-    },
-    {
-      "date": "2026-08-23",
-      "category": "業界・企業",
-      "title_ja": "コイーバ・アトモスフィア、テルアビブに開業",
-      "summary_ja": "イスラエル初となるプレミアム・キューバ葉巻ラウンジ「コイーバ・アトモスフィアTLV」が、ザ・デビッド・ケンピンスキー・テルアビブ内に開業した。コイーバ・ブランドの公式代理店であり、コルポラシオン・アビノス社の認定パートナーとして、コイーバをはじめとするアビノス各銘柄の正規キューバ葉巻を専用ヒュミドールで管理・提供する。所在地はハヤルコン通り51番地、営業は日〜木の13:00〜23:00。",
-      "title_en": "Cohiba Atmosphere Tel Aviv Opens",
-      "summary_en": "Cohiba Atmosphere TLV, located at The David Kempinski Tel Aviv, is Israel's first destination dedicated to premium Cuban cigar culture. As the official representative of the COHIBA brand and a licensed partner of Corporación Habanos S.A., the lounge offers an extensive selection of authentic Cuban cigars, including COHIBA vitolas and other Habanos marques, kept in dedicated humidors. It also features premium spirits and a curated culinary menu. Situated at 51 Hayarkon Street, it currently opens Sunday to Thursday from 13:00 to 23:00, with underground parking available.",
-      "source": "Cigar Journal",
-      "source_title": "Cohiba Atmosphere Tel Aviv",
-      "source_en": "Cigar Journal",
-      "source_title_en": "Cohiba Atmosphere Tel Aviv",
-      "url": "https://www.cigarjournal.com/cohiba-atmosphere-tel-aviv/?utm_source=rss&utm_medium=rss&utm_campaign=cohiba-atmosphere-tel-aviv"
-    },
-    {
-      "date": "2026-08-23",
-      "category": "新製品",
-      "title_ja": "クラックス、マーブルヘッド・マデューロ・トロを発売",
-      "summary_ja": "クラックス・シガーズ（Crux Cigars）が、マーブルヘッド・シリーズの第2弾となる「マーブルヘッド・マデューロ・トロ」を発表した。オリジナルブレンドが昨年発売されて以来の新作。クラックスは109スタイルのキャップを「マーブルヘッド」と呼んでいる。",
-      "title_en": "Crux Marblehead Maduro Toro",
-      "summary_en": "Crux Cigars has released the Marblehead Maduro Toro, the second Marblehead cigar from the company after the original blend debuted last year. Crux uses the name Marblehead to describe its 109-style caps. The launch expands the Marblehead line with a maduro-wrapped toro offering.",
-      "source": "halfwheel",
-      "source_title": "Crux Marblehead Maduro Toro",
-      "source_en": "halfwheel",
-      "source_title_en": "Crux Marblehead Maduro Toro",
-      "url": "https://halfwheel.com/crux-marblehead-maduro-toro/477485/"
-    },
-    {
-      "date": "2026-08-22",
-      "category": "イベント・アワード",
-      "title_ja": "ホンジュラス、27年1月に葉巻祭り開催へ",
-      "summary_ja": "ホンジュラスのナスリ・アスフラ大統領が木曜、国内葉巻業界の関係者と会談した。主要議題の一つが2027年新設のホンジュラス葉巻フェスティバルで、2027年1月の開催が予定されていると発表された。",
-      "title_en": "Honduran President Asfura Announces Cigar Festival for January 2027",
-      "summary_en": "On Thursday, Honduran President Nasry Asfura met with members of the country's cigar industry. One of the main topics was a new-for-2027 Honduran cigar festival, scheduled to take place in January 2027. The announcement signals growing official support for Honduras's cigar sector.",
-      "source": "halfwheel",
-      "source_title": "Honduran President Asfura Announces Cigar Festival, Scheduled for January 2027",
-      "source_en": "halfwheel",
-      "source_title_en": "Honduran President Asfura Announces Cigar Festival, Scheduled for January 2027",
-      "url": "https://halfwheel.com/honduran-president-asfura-announces-cigar-festival-scheduled-for-january-2027/477483/"
-    },
-    {
-      "date": "2026-08-22",
-      "category": "新製品",
-      "title_ja": "ラベガ、主力ラインにボックスプレス版を追加",
-      "summary_ja": "ラベガ・シガー（LaVega Cigar Co.）のオーナー、アーロン・パオレッタが、ファンに新しさを提供しつつ単なる限定品にはしたくないとの考えから、主力ラインのボックスプレス版をリリースすると発表した。",
-      "title_en": "LaVega Adding Box-Pressed Versions of Core Lines",
-      "summary_en": "Aaron Paoletta, owner of LaVega Cigar Co., wanted to offer his fans something new but did not want to simply release a limited edition. Instead, he is releasing box-pressed versions of his core line cigars, giving existing blends a fresh presentation.",
-      "source": "halfwheel",
-      "source_title": "LaVega Adding Box-Pressed Versions of Core Lines",
-      "source_en": "halfwheel",
-      "source_title_en": "LaVega Adding Box-Pressed Versions of Core Lines",
-      "url": "https://halfwheel.com/lavega-adding-box-pressed-versions-of-core-lines/477441/"
-    },
-    {
-      "date": "2026-08-22",
-      "category": "新製品",
-      "title_ja": "AGシガーズ、ジェイミー・フォックス向け新銘柄",
-      "summary_ja": "かつてキューバのホテル・コモドロで専属ローラーを務めたアレハンドロ（アレックス）・ゴンサレスは、ニカラグアに移り自身の葉巻ブランドを立ち上げた。この夏、同社はレイ・ルイスとジェイミー・フォックス向けの葉巻を追加した。",
-      "title_en": "AG Cigars Legendary Moment Jamie Foxx",
-      "summary_en": "Alejandro \"Alex\" González, who once served as the custom roller at the Hotel Comodoro in Cuba, left for Nicaragua and launched his own cigar brand. This summer, the company added cigars honouring Ray Lewis and Jamie Foxx to its Legendary Moment line.",
-      "source": "halfwheel",
-      "source_title": "AG Cigars Legendary Moment Jamie Foxx",
-      "source_en": "halfwheel",
-      "source_title_en": "AG Cigars Legendary Moment Jamie Foxx",
-      "url": "https://halfwheel.com/ag-cigars-legendary-moment-jamie-foxx/476898/"
     }
   ]
 };
