@@ -7,8 +7,86 @@
    手で足すこともできますが、items の並び・キーは崩さないでください。
    ============================================================ */
 var NEWS_DATA = {
-  "updated": "2026-09-21",
+  "updated": "2026-09-22",
   "items": [
+    {
+      "date": "2026-09-22",
+      "category": "新製品",
+      "title_ja": "JFR 20周年記念にゴルディート追加",
+      "summary_ja": "JFRブランド20周年を記念し昨年登場したラインに、新サイズ「ゴルディート（Gordito）」が加わった。ブレンドはメキシカン・サンアンドレス（San Andrés）ラッパーに、ニカラグア産バインダーとニカラグア産タバコのフィラーを組み合わせた構成。",
+      "title_en": "JFR 20th Anniversary Gordito",
+      "summary_en": "A new Gordito size joins the JFR 20th Anniversary line, which debuted last year to mark the JFR brand's two decades. The blend features a Mexican San Andrés wrapper over a Nicaraguan binder and Nicaraguan filler tobaccos.",
+      "source": "halfwheel",
+      "source_title": "JFR 20th Anniversary Gordito",
+      "source_en": "halfwheel",
+      "source_title_en": "JFR 20th Anniversary Gordito",
+      "url": "https://halfwheel.com/jfr-20th-anniversary-gordito-2/479978/"
+    },
+    {
+      "date": "2026-09-21",
+      "category": "業界・企業",
+      "title_ja": "アルティスタと中国煙草が新ライン共同開発",
+      "summary_ja": "アルティスタ・シガー（Artista Cigars）と中国煙草（China National）が新ラインで協業する。一方のビトラはドミニカ共和国のアルティスタが製造し、もう一方は中国・山東省の工場で生産する。年内にまずアジアで発売し、その後ほかの市場へ展開する予定。",
+      "title_en": "Artista Cigars, China National to Collaborate on New Line",
+      "summary_en": "Artista Cigars and China National are partnering on a new line. One vitola will be made by Artista in the Dominican Republic, while the other will be produced at a factory in Shandong, China. The cigars are set to debut in Asia later this year before eventually reaching other markets.",
+      "source": "halfwheel",
+      "source_title": "Artista Cigars, China National to Collaborate on New Line",
+      "source_en": "halfwheel",
+      "source_title_en": "Artista Cigars, China National to Collaborate on New Line",
+      "url": "https://halfwheel.com/artista-cigars-china-national-to-collaborate-on-new-line/479951/"
+    },
+    {
+      "date": "2026-09-21",
+      "category": "新製品",
+      "title_ja": "AJフェルナンデス、干支の限定「山羊年」",
+      "summary_ja": "AJフェルナンデス（AJ Fernández）がインタータバックで、中国の干支をテーマにした初の限定エディション「The Year of the Goat（山羊年）」を披露した。",
+      "title_en": "The Year of the Goat, by AJ Fernández",
+      "summary_en": "At InterTabac, AJ Fernández unveiled The Year of the Goat, its first limited edition dedicated to the Chinese zodiac.",
+      "source": "Cigar Journal",
+      "source_title": "The Year of the Goat, by AJ Fernández",
+      "source_en": "Cigar Journal",
+      "source_title_en": "The Year of the Goat, by AJ Fernández",
+      "url": "https://www.cigarjournal.com/the-year-of-the-goat-by-aj-fernandez/"
+    },
+    {
+      "date": "2026-09-21",
+      "category": "新製品",
+      "title_ja": "新ブランド「アレハンドロ・マタ」登場",
+      "summary_ja": "アルファンブラ・ブティック・シガー（Alfambra Boutique Cigars）がインタータバック2026で、プレミアム帯に位置づける新レギュラー生産ブランド「アレハンドロ・マタ（Alejandro Mata）」を発表した。同社創業者の名を冠している。",
+      "title_en": "New Alejandro Mata",
+      "summary_en": "Alfambra Boutique Cigars presented a new regular-production brand at InterTabac 2026, positioned in the premium segment and named after the company's founder, Alejandro Mata.",
+      "source": "Cigar Journal",
+      "source_title": "New Alejandro Mata",
+      "source_en": "Cigar Journal",
+      "source_title_en": "New Alejandro Mata",
+      "url": "https://www.cigarjournal.com/new-alejandro-mata/"
+    },
+    {
+      "date": "2026-09-21",
+      "category": "新製品",
+      "title_ja": "ペルドモが「レガシー 父と息子」披露",
+      "summary_ja": "ペルドモ・シガー（Perdomo Cigars）のアーサー・ケンパーが、インタータバック2026で新作「ペルドモ・レガシー ファーザー＆サン（Perdomo Legacy Father & Son）」を紹介した。",
+      "title_en": "A Perdomo Legacy",
+      "summary_en": "At InterTabac 2026, Arthur Kemper of Perdomo Cigars introduced the Perdomo Legacy Father & Son.",
+      "source": "Cigar Journal",
+      "source_title": "A Perdomo LEGACY",
+      "source_en": "Cigar Journal",
+      "source_title_en": "A Perdomo Legacy",
+      "url": "https://www.cigarjournal.com/a-perdomo-legacy/"
+    },
+    {
+      "date": "2026-09-21",
+      "category": "新製品",
+      "title_ja": "グルカ、セラーリザーブに新製品",
+      "summary_ja": "グルカ（Gurkha）がインタータバックで複数の新製品を発売した。第一弾は「グルカ・セラーリザーブ 15イヤーズ・ニカラグア（Cellar Reserve 15 Years Nicaragua）」。",
+      "title_en": "Gurkha Extends the Cellar Reserve Line",
+      "summary_en": "Gurkha launched several new products at InterTabac, starting with the Gurkha Cellar Reserve 15 Years Nicaragua.",
+      "source": "Cigar Journal",
+      "source_title": "Gurkha Extends the Cellar Reserve Line",
+      "source_en": "Cigar Journal",
+      "source_title_en": "Gurkha Extends the Cellar Reserve Line",
+      "url": "https://www.cigarjournal.com/gurkha-extends-the-cellar-reserve-line/"
+    },
     {
       "date": "2026-09-21",
       "category": "新製品",
@@ -2010,84 +2088,6 @@ var NEWS_DATA = {
       "source_en": "halfwheel",
       "source_title_en": "Revamped StillWell Star Line On the Way to Retailers",
       "url": "https://halfwheel.com/revamped-stillwell-star-line-on-the-way-to-retailers/477748/"
-    },
-    {
-      "date": "2026-08-25",
-      "category": "新製品",
-      "title_ja": "クラウンド・ヘッズ、限定デシモ復活",
-      "summary_ja": "クラウンド・ヘッズ（Crowned Heads）が、人気の限定品「デシモ・アニベルサリオ（Décimo Aniversario）」の復活を発表した。ラス・カラベラス（Las Calaveras）シリーズ10周年を記念して2024年に発売されたもので、今回は新たな3つのビトラで登場する。",
-      "title_en": "Crowned Heads Announces Return of Highly Sought-After Décimo Aniversario Limited Edition",
-      "summary_en": "Crowned Heads has announced the return of its highly sought-after Décimo Aniversario limited edition. Originally released in 2024 to commemorate the 10th anniversary of the Las Calaveras series, Décimo makes its comeback in three new vitolas to meet demand.",
-      "source": "StogiePress",
-      "source_title": "Cigar News: Crowned Heads Announces Return of Highly Sought-After Décimo Aniversario Limited Edition",
-      "source_en": "StogiePress",
-      "source_title_en": "Cigar News: Crowned Heads Announces Return of Highly Sought-After Décimo Aniversario Limited Edition",
-      "url": "https://stogiepress.com/cigar-news-crowned-heads-announces-return-of-highly-sought-after-decimo-aniversario-limited-edition/"
-    },
-    {
-      "date": "2026-08-25",
-      "category": "新製品",
-      "title_ja": "タチアナのカプチーノとアマレットに新サイズ",
-      "summary_ja": "タチアナ（Tatiana）のカプチーノとアマレットに新サイズが加わり、店頭へ。長めの葉巻を好む向けに6×44のコロナ「クラシック」を追加。手早く一服したい時向けには3 1/2×26のビトラ「ミニ・ティンズ」を用意した。",
-      "title_en": "New Sizes for Tatiana Cappuccino and Amaretto Head to Stores",
-      "summary_en": "New sizes for the Tatiana Cappuccino and Amaretto lines are heading to stores. Fans of longer cigars are getting a 6 x 44 corona called Classic, while the Mini Tins offer a 3 1/2 x 26 vitola for a quick smoke when time is tight.",
-      "source": "halfwheel",
-      "source_title": "New Sizes for Tatiana Cappuccino and Amaretto Head to Stores",
-      "source_en": "halfwheel",
-      "source_title_en": "New Sizes for Tatiana Cappuccino and Amaretto Head to Stores",
-      "url": "https://halfwheel.com/new-sizes-for-tatiana-cappuccino-and-amaretto-head-to-stores/476675/"
-    },
-    {
-      "date": "2026-08-24",
-      "category": "新製品",
-      "title_ja": "アンダークラウン10に6×60ゴルド追加",
-      "summary_ja": "ドリュー・エステート（Drew Estate）が「アンダークラウン10 ゴルド（Undercrown 10 Gordo）」を発表した。6×60のビトラで同ファミリー5本目。10本入り限定箱で168.00ドル。メキシカン・サンアンドレス・マドゥーロのラッパー、コネチカット・ブロードリーフのバインダー、ホンジュラスとニカラグアのロングフィラーを使用する。",
-      "title_en": "New Undercrown Gordo Size Introduced",
-      "summary_en": "Drew Estate has announced the Undercrown 10 Gordo, a 6 x 60 vitola and the fifth in the Undercrown 10 family. Offered in limited boxes of 10 for $168.00, it uses the same recipe as the existing UC10 line, featuring a Mexican San Andrés maduro wrapper over a Connecticut Broadleaf binder with hand-selected long-filler leaves from Honduras and Nicaragua.",
-      "source": "Cigar Journal",
-      "source_title": "New Undercrown Gordo Size Introduced",
-      "source_en": "Cigar Journal",
-      "source_title_en": "New Undercrown Gordo Size Introduced",
-      "url": "https://www.cigarjournal.com/new-undercrown-gordo-size-introduced/?utm_source=rss&utm_medium=rss&utm_campaign=new-undercrown-gordo-size-introduced"
-    },
-    {
-      "date": "2026-08-24",
-      "category": "新製品",
-      "title_ja": "ブラック・ワークス・スタジオのタイガーサウルス",
-      "summary_ja": "ブラック・ワークス・スタジオ（Black Works Studio）の限定品「タイガーサウルス」。昨年発売分は5 1/2×48のパレホで、コネチカットとペンシルベニアのブロードリーフ、キャンデラの3種のラッパーを使用。生産は15本入り850箱、計1万2750本のみだった。",
-      "title_en": "Black Works Studio Tigersaurus",
-      "summary_en": "Black Works Studio's limited edition Tigersaurus. Last year's release was a 5 1/2 x 48 parejo made with three different wrappers: broadleaf from both Connecticut and Pennsylvania, plus candela. Production was limited to 850 boxes of 15, for a total of 12,750 cigars.",
-      "source": "halfwheel",
-      "source_title": "Black Works Studio Tigersaurus",
-      "source_en": "halfwheel",
-      "source_title_en": "Black Works Studio Tigersaurus",
-      "url": "https://halfwheel.com/black-works-studio-tigersaurus-2/477711/"
-    },
-    {
-      "date": "2026-08-24",
-      "category": "新製品",
-      "title_ja": "エイロア・ダーク30周年版が再登場",
-      "summary_ja": "クリスチャン・エイロアが、過去に求めた味を追求した「エイロア・ダーク（Eiroa Dark）」を再ブレンドして市場に投入した。1年以上の調整を経て、ブレンドを刷新しバンドを追加した「エイロア・ダーク30th 50×5」として復活した。",
-      "title_en": "Eiroa Dark 30th 50×5 Returns",
-      "summary_en": "Christian Eiroa has returned the Eiroa Dark to the market after more than a year of reblending. He describes the line as an exercise in chasing a taste from his past. The revived cigar, released as the Eiroa Dark 30th 50×5, features an updated blend and an added band.",
-      "source": "halfwheel",
-      "source_title": "Eiroa Dark 30th 50×5",
-      "source_en": "halfwheel",
-      "source_title_en": "Eiroa Dark 30th 50×5",
-      "url": "https://halfwheel.com/eiroa-dark-30th-50x5/477605/"
-    },
-    {
-      "date": "2026-08-23",
-      "category": "新製品",
-      "title_ja": "カマチョ、限定版2026を発表",
-      "summary_ja": "カマチョ・シガー（Camacho Cigars）が「Boldly Built by Masters」シリーズ第2弾となる「カマチョ・リミテッド・エディション2026」を発表した。ホンジュラス製で、難度の高いペルフェクト形状（56×6インチ）を採用。エクアドル産ラッパー、ホンジュラス産バインダーに、ホンジュラス・ニカラグア・ドミニカ共和国産のフィラーを使用し、喫煙時間は60〜80分。強度は5段階中3.5。",
-      "title_en": "Camacho Cigars Launches the Limited Edition 2026",
-      "summary_en": "Camacho Cigars has introduced the Camacho Limited Edition 2026, the second release in its Boldly Built by Masters series, honouring its Master Blending Competence Center. Handcrafted in Honduras in a demanding perfecto format (56 x 6″), it uses an Ecuadorian wrapper over a Honduran binder with filler from Honduras, Nicaragua and the Dominican Republic. The multi-origin cigar evolves across a 60 to 80 minute smoke and carries an intensity rating of 3.5 out of 5.",
-      "source": "Cigar Journal",
-      "source_title": "Camacho Cigars Launches the Limited Edition 2026",
-      "source_en": "Cigar Journal",
-      "source_title_en": "Camacho Cigars Launches the Limited Edition 2026",
-      "url": "https://www.cigarjournal.com/camacho-cigars-launches-the-limited-edition-2026/?utm_source=rss&utm_medium=rss&utm_campaign=camacho-cigars-launches-the-limited-edition-2026"
     }
   ]
 };
