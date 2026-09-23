@@ -7,8 +7,86 @@
    手で足すこともできますが、items の並び・キーは崩さないでください。
    ============================================================ */
 var NEWS_DATA = {
-  "updated": "2026-09-22",
+  "updated": "2026-09-23",
   "items": [
+    {
+      "date": "2026-09-23",
+      "category": "新製品",
+      "title_ja": "ダンバートン、オーバーシーズNo.2を予告",
+      "summary_ja": "ダンバートン・タバコ&トラスト（Dunbarton Tobacco & Trust）が新作「オーバーシーズNo.2（Overseas No. 2）」を予告した。スティーブ・サカ（Steve Saka）によれば、No.1とNo.2は紙面上は同じ葉巻に見えるが、ブレンドは大きく異なり、一方を好んでももう一方は好まない可能性があるという。サイズも異なる。",
+      "title_en": "Dunbarton Tobacco & Trust Previews Overseas No. 2",
+      "summary_en": "Dunbarton Tobacco & Trust has previewed a new cigar, the Overseas No. 2. On paper, the Overseas No. 1 and No. 2 look like the same cigar, however, founder Steve Saka says the blends are so different that someone who liked one may not like the other. The two are also not the same size. Further details on release timing and pricing were not disclosed.",
+      "source": "halfwheel",
+      "source_title": "Dunbarton Tobacco & Trust Previews Overseas No. 2",
+      "source_en": "halfwheel",
+      "source_title_en": "Dunbarton Tobacco & Trust Previews Overseas No. 2",
+      "url": "https://halfwheel.com/dunbarton-tobacco-trust-previews-overseas-no-2/480115/"
+    },
+    {
+      "date": "2026-09-23",
+      "category": "新製品",
+      "title_ja": "ベクター、クリスタルベースの新ライター4種",
+      "summary_ja": "ベクター（Vector）がクリスタルベースの新ライター4モデルを発売した。一般的な卓上ライターとは異なる独特な外観を持ち、インサートの色を交換できる。1モデルでは炎のサイズも変更可能。",
+      "title_en": "Vector Releases Four New Crystal Base Lighters",
+      "summary_en": "Vector has released four new crystal base lighters that offer a distinctive look compared to most tabletop lighters. They allow consumers to swap out the insert's colour, and in the case of one model, the flame size as well.",
+      "source": "halfwheel",
+      "source_title": "Vector Releases Four New Crystal Base Lighters",
+      "source_en": "halfwheel",
+      "source_title_en": "Vector Releases Four New Crystal Base Lighters",
+      "url": "https://halfwheel.com/vector-releases-four-new-crystal-base-lighters/480104/"
+    },
+    {
+      "date": "2026-09-23",
+      "category": "新製品",
+      "title_ja": "プラセンシア、干支「山羊年」葉巻を披露",
+      "summary_ja": "インタータバック2026（InterTabac 2026）では干支の「山羊年（Year of the Goat）」をテーマとした葉巻が多数登場した。中でも入手困難とされたのが、プラセンシア（Plasencia）ブースで披露された新作「エル・アニョ・デ・ラ・カブラ（El Año de la Cabra）」の八角形の新箱だった。",
+      "title_en": "Plasencia El Año de la Cabra Shown off at InterTabac 2026",
+      "summary_en": "InterTabac 2026 featured plenty of Year of the Goat-themed cigars. The most difficult to find was a new octagon-shaped box shown off in the Plasencia booth, the El Año de la Cabra. It was among the standout Chinese zodiac releases at this year's trade fair.",
+      "source": "halfwheel",
+      "source_title": "Plasencia El Año de la Cabra Shown off at InterTabac 2026",
+      "source_en": "halfwheel",
+      "source_title_en": "Plasencia El Año de la Cabra Shown off at InterTabac 2026",
+      "url": "https://halfwheel.com/plasencia-el-ano-de-la-cabra-shown-off-at-intertabac-2026/480092/"
+    },
+    {
+      "date": "2026-09-22",
+      "category": "新製品",
+      "title_ja": "トリニダLよVigíaレセルバ2022をスイスで披露",
+      "summary_ja": "新作「ビヒア・レセルバ・コセチャ2022（Vigía Reserva Cosecha 2022）」がスイスで披露された。レセルバまたはグラン・レセルバの扱いを受ける初のトリニダ（Trinidad）葉巻となる。近年のキューバ新作の例に漏れず、想定より1本多いバンドが付く。",
+      "title_en": "Trinidad Vigía Reserva Cosecha 2022 Shown Off in Switzerland",
+      "summary_en": "The new Vigía Reserva Cosecha 2022 has been shown off in Switzerland. It is the first Trinidad cigar to receive the Reserva or Gran Reserva treatment. As with seemingly every other recent Cuban cigar release, it carries one more band than expected.",
+      "source": "halfwheel",
+      "source_title": "Trinidad Vigía Reserva Cosecha 2022 Shown Off in Switzerland",
+      "source_en": "halfwheel",
+      "source_title_en": "Trinidad Vigía Reserva Cosecha 2022 Shown Off in Switzerland",
+      "url": "https://halfwheel.com/trinidad-vigia-reserva-cosecha-2022-shown-off-in-switzerland/480070/"
+    },
+    {
+      "date": "2026-09-22",
+      "category": "新製品",
+      "title_ja": "ビアヘ「ゾンビ」が別デザインで復活",
+      "summary_ja": "ビアヘ（Viaje）の「オルタネート・アート（Alternate Art）」プロジェクトが、既存ラインに新サイズを加えつつ、制作されたが使われなかったアートワークを葉巻に採用する。第1弾はおなじみのバンドの下にゾンビのような人物像を描いたデザインとなっている。",
+      "title_en": "Viaje Zombies Return with Alternate Art",
+      "summary_en": "Viaje's Alternate Art project brings new sizes for the company's lines together with artwork that was created but never used. Fittingly, the first release features the image of a zombie-like figure under the familiar band, reviving the brand's Zombies theme.",
+      "source": "halfwheel",
+      "source_title": "Viaje Zombies Return with Alternate Art",
+      "source_en": "halfwheel",
+      "source_title_en": "Viaje Zombies Return with Alternate Art",
+      "url": "https://halfwheel.com/viaje-zombies-return-with-alternate-art/480017/"
+    },
+    {
+      "date": "2026-09-22",
+      "category": "業界・企業",
+      "title_ja": "アルティスタ、中国煙草国際と提携締結",
+      "summary_ja": "アルティスタ・シガーズ（Artista Cigars）がインタータバック2026で中国煙草国際（China Tobacco International）との協業に調印した。",
+      "title_en": "Artista Cigars Signs Cooperation with China Tobacco International",
+      "summary_en": "Artista Cigars signed a cooperation agreement with China Tobacco International at InterTabac 2026.",
+      "source": "Cigar Journal",
+      "source_title": "Artista Cigars Signs its cooperation with China Tobacco International",
+      "source_en": "Cigar Journal",
+      "source_title_en": "Artista Cigars Signs its Cooperation with China Tobacco International",
+      "url": "https://www.cigarjournal.com/artista-cigars-signs-its-cooperation-with-china-tobacco-international/"
+    },
     {
       "date": "2026-09-22",
       "category": "新製品",
@@ -2010,84 +2088,6 @@ var NEWS_DATA = {
       "source_en": "StogiePress",
       "source_title_en": "Cigar News: Tatiana Cappuccino and Amaretto in Classic and Tin Formats Now Shipping Nationwide via Miami Cigar & Co.",
       "url": "https://stogiepress.com/cigar-news-tatiana-cappuccino-and-amaretto-in-classic-and-tin-formats-are-now-shipping-to-retailers-nationwide-through-miami-cigar-co/"
-    },
-    {
-      "date": "2026-08-25",
-      "category": "日本国内",
-      "title_ja": "横浜みなとみらいでシガー×ウイスキー限定イベント",
-      "summary_ja": "横浜みなとみらいで、海外のシガーブランドオーナーが来日し、プレミアムシガーとシングルモルトウイスキーのマリアージュを楽しむ限定イベントが初開催される。",
-      "title_en": "Cigar × Whisky Limited Event to Debut in Yokohama Minato Mirai",
-      "summary_en": "A limited event pairing premium cigars with single malt whisky will be held for the first time in Yokohama's Minato Mirai district. An overseas cigar brand owner will visit Japan for the occasion, offering guests a chance to explore the marriage of premium cigars and single malt whisky.",
-      "source": "Excite エキサイト",
-      "source_title": "みなとみらいで知るシガーとウイスキーの奥深き世界。海外よりシガーブランドオーナー来日、プレミアムシガーとシングルモルトのマリアージュを嗜む限定イベントを初開催！ - Excite エキサイト",
-      "source_en": "Excite",
-      "source_title_en": "Discover the Deep World of Cigars and Whisky in Minato Mirai: First Limited Event Pairing Premium Cigars and Single Malt with a Visiting Overseas Brand Owner",
-      "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE5sbWk4djN5Tm1taVA2ZDBqNG53eWV5aE1EbG5Wb19SbVhpOHhxb2J0RHRlWk5iT3ZhN2JaX3Y4UlRUTzI5WU9QTTNLLW9ZOWk2ekhVRlhqQXRSQTc2ZnU3NnpOTUo1d2ZtNElXRmIzd0pnRXhN?oc=5"
-    },
-    {
-      "date": "2026-08-25",
-      "category": "新製品",
-      "title_ja": "オーパスX、9/11追悼の限定品を出荷",
-      "summary_ja": "アルトゥーロ・フエンテが9/11追悼記念の「オーパスX リゼリエント（OpusX ReXilient）」を今週出荷する。各箱にはツインタワーを表す4本のボックスプレス・フラットキャップ葉巻が入る。同社は1箱につき11ドルを、退役軍人や消防・救急隊員の住宅支援を行うTunnels for Towersに寄付する。",
-      "title_en": "OpusX ReXilient, A 9/11 Commemorative Release, Shipping This Week",
-      "summary_en": "Arturo Fuente's OpusX ReXilient, a 9/11 commemorative release, is shipping this week. Each box holds four box-pressed, flat-capped cigars representing the Twin Towers. Fuente is donating $11 per box to Tunnels for Towers, a charity providing housing assistance to disabled and fallen veterans and first responders.",
-      "source": "halfwheel",
-      "source_title": "OpusX ReXilient, A 9/11 Commemorative Release, Shipping This Week",
-      "source_en": "halfwheel",
-      "source_title_en": "OpusX ReXilient, A 9/11 Commemorative Release, Shipping This Week",
-      "url": "https://halfwheel.com/opusx-rexilient-a-9-11-commemorative-release-shipping-this-week/477777/"
-    },
-    {
-      "date": "2026-08-25",
-      "category": "新製品",
-      "title_ja": "S.T.デュポン、コイーバ60周年記念モデル",
-      "summary_ja": "エス・テー・デュポン（S.T. Dupont）が、プレミアムシガー「コイーバ（Cohiba）」の誕生60周年を記念した新製品を発表した。",
-      "title_en": "S.T. Dupont Unveils Cohiba 60th Anniversary Products",
-      "summary_en": "S.T. Dupont has unveiled a new product line commemorating the 60th anniversary of the premium cigar brand Cohiba, marking the milestone with a dedicated release.",
-      "source": "octane.jp",
-      "source_title": "エス・テー・デュポンのニュープロダクト｜プレミアムシガー「コイーバ」の誕生60周年記念 - octane.jp",
-      "source_en": "octane.jp",
-      "source_title_en": "S.T. Dupont New Products: Commemorating the 60th Anniversary of Premium Cigar Cohiba",
-      "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE1ncHhGaXhHSVlFcjFrLXhaZWw4a05fNzdqend0dHZieXh2UXQ3RURwUEVrV2lVaUZDRjdmRklhREpLa2txNkF4SDBNLWM4WmxCTUY1cQ?oc=5"
-    },
-    {
-      "date": "2026-08-25",
-      "category": "日本国内",
-      "title_ja": "横浜みなとみらいでシガー×ウイスキー限定イベント",
-      "summary_ja": "横浜・みなとみらいで、海外のシガーブランドオーナーが来日し、プレミアムシガーとシングルモルトのマリアージュを楽しむ限定イベントが初開催される。",
-      "title_en": "Limited Cigar and Whisky Event Debuts in Yokohama Minatomirai",
-      "summary_en": "A limited-edition event pairing premium cigars with single malt whisky is being held for the first time in Yokohama's Minatomirai district. An overseas cigar brand owner is visiting Japan for the occasion, offering guests a chance to explore the depths of cigars and whisky through the marriage of the two.",
-      "source": "PR TIMES",
-      "source_title": "みなとみらいで知るシガーとウイスキーの奥深き世界。海外よりシガーブランドオーナー来⽇、プレミアムシガーとシングルモルトのマリアージュを嗜む限定イベントを初開催！ - PR TIMES",
-      "source_en": "PR TIMES",
-      "source_title_en": "Discover the Deep World of Cigars and Whisky in Minatomirai: First Limited Event Pairing Premium Cigars and Single Malt with a Visiting Overseas Cigar Brand Owner",
-      "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTFAzdlRVY2N4R1A5aThkb193Y0lqWHBHSmZoSmdncHhIQWZBenBtZjRCM2E4MjlHSmhfbDl2VjJzQ1JBZXNkSkVNLWNjdHRibDBIOEFaN1FEZ3ZyZkNDTnBsZFdwZ3BRLTN2V2c?oc=5"
-    },
-    {
-      "date": "2026-08-25",
-      "category": "規制・市場",
-      "title_ja": "FDA意見募集にたばこ業界の反対大量投稿と研究",
-      "summary_ja": "2022年に米食品医薬品局（FDA）がメンソールたばことフレーバー葉巻の販売禁止案について実施した意見募集をめぐり、研究者が寄せられた24万6080件のコメントを分析した。その大半が禁止に反対する内容だったが、コメントの中身に多様性はほとんど見られなかったと報告した。",
-      "title_en": "Study: Tobacco Companies Flooded FDA’s Flavored Cigar, Menthol Cigarette Ban Comment Periods",
-      "summary_en": "Researchers analysed the 246,080 comments submitted during the US Food & Drug Administration's 2022 public comment periods on proposed bans of menthol cigarettes and flavoured cigars. They found that almost all of the comments opposed the bans, but there was little diversity within the content of the submissions, suggesting a coordinated flood of responses from tobacco interests.",
-      "source": "halfwheel",
-      "source_title": "Study: Tobacco Companies Flooded FDA’s Flavored Cigar, Menthol Cigarette Ban Comment Periods",
-      "source_en": "halfwheel",
-      "source_title_en": "Study: Tobacco Companies Flooded FDA’s Flavored Cigar, Menthol Cigarette Ban Comment Periods",
-      "url": "https://halfwheel.com/study-tobacco-companies-flooded-fdas-flavored-cigar-menthol-cigarette-ban-comment-periods/477763/"
-    },
-    {
-      "date": "2026-08-25",
-      "category": "新製品",
-      "title_ja": "スティルウェル・スター、刷新し小売へ",
-      "summary_ja": "スティルウェル・スター（StillWell Star）ラインが刷新され、小売店へ出荷される。現在は3種のブレンドがあり、それぞれ同じ2つのビトラを含む。すべての葉巻に甘みを付けたキャップが採用されている。",
-      "title_en": "Revamped StillWell Star Line On the Way to Retailers",
-      "summary_en": "The revamped StillWell Star line is heading to retailers. There are now three different blends, each offered in the same two vitolas. All of the cigars feature a sweetened cap.",
-      "source": "halfwheel",
-      "source_title": "Revamped StillWell Star Line On the Way to Retailers",
-      "source_en": "halfwheel",
-      "source_title_en": "Revamped StillWell Star Line On the Way to Retailers",
-      "url": "https://halfwheel.com/revamped-stillwell-star-line-on-the-way-to-retailers/477748/"
     }
   ]
 };
