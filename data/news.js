@@ -7,8 +7,73 @@
    手で足すこともできますが、items の並び・キーは崩さないでください。
    ============================================================ */
 var NEWS_DATA = {
-  "updated": "2026-09-23",
+  "updated": "2026-09-24",
   "items": [
+    {
+      "date": "2026-09-24",
+      "category": "新製品",
+      "title_ja": "カサ・カリーヨ、限定フィギュラード2種を来週発売",
+      "summary_ja": "カサ・カリーヨ（Casa Carrillo）は6月のトロに続き、「プレッジ・オブ・アリージャンス（Pledge of Allegiance）」のフィギュラード2種を来週店頭に投入すると発表した。限定エディションのヒュミドール入りで、1本50ドル、20本入りヒュミドールは1,000ドルと高価格帯となる。",
+      "title_en": "Casa Carrillo's Pledge of Allegiance Rockets Take Flight Next Week",
+      "summary_en": "Following a toro released in June, Casa Carrillo is sending a pair of figurados from its Pledge of Allegiance line to stores next week. The cigars arrive in a limited-edition humidor and command premium prices, at $50 per cigar or $1,000 for the 20-count humidor.",
+      "source": "halfwheel",
+      "source_title": "Casa Carrillo’s Pledge of Allegiance Rockets Take Flight Next Week",
+      "source_en": "halfwheel",
+      "source_title_en": "Casa Carrillo's Pledge of Allegiance Rockets Take Flight Next Week",
+      "url": "https://halfwheel.com/casa-carrillos-pledge-of-allegiance-rockets-take-flight-next-week/480185/"
+    },
+    {
+      "date": "2026-09-24",
+      "category": "業界・企業",
+      "title_ja": "エリー・ブルー、革製品分野へ進出",
+      "summary_ja": "仏ヒュミドールメーカーのエリー・ブルー（Elie Bleu）が革製品分野へ進出した。素材はスペインの製革所によるもので、シガーケース、財布、パスポートホルダーなどをブルーとブラウンの革で展開する。",
+      "title_en": "Elie Bleu Expands Into Leather Goods",
+      "summary_en": "French humidor maker Elie Bleu has expanded into leather goods, with the new items sourced from a tannery in Spain. The range includes cigar cases, wallets and passport holders, offered in blue and brown leather.",
+      "source": "halfwheel",
+      "source_title": "Elie Bleu Expands Into Leather Goods",
+      "source_en": "halfwheel",
+      "source_title_en": "Elie Bleu Expands Into Leather Goods",
+      "url": "https://halfwheel.com/elie-bleu-expands-into-leather-goods/480128/"
+    },
+    {
+      "date": "2026-09-24",
+      "category": "新製品",
+      "title_ja": "ビバ・ラ・ビダ・コネチカットに新サイズ",
+      "summary_ja": "アルテサノ・デル・タバコ（Artesano del Tobacco）は、ビバ・ラ・ビダ・コネチカット（Viva la Vida Connecticut）に新サイズを追加した。消費者の要望を募った結果、ランセロと、通常より太めのチャーチルの長尺2種が選ばれた。",
+      "title_en": "Viva La Vida Connecticut Churchill",
+      "summary_en": "When Artesano del Tobacco set out to add sizes to its Viva la Vida Connecticut line, it asked its consumers what they wanted. Two long cigars won: a lancero and this thicker-than-normal Churchill.",
+      "source": "halfwheel",
+      "source_title": "Viva La Vida Connecticut Churchill",
+      "source_en": "halfwheel",
+      "source_title_en": "Viva La Vida Connecticut Churchill",
+      "url": "https://halfwheel.com/viva-la-vida-connecticut-churchill/480052/"
+    },
+    {
+      "date": "2026-09-23",
+      "category": "新製品",
+      "title_ja": "シガーキングス、オクトーバーフェスト葉巻を発売",
+      "summary_ja": "シガーキングス（CigarKings）が、ミュンヘン市のライセンスに基づく新製品「オクトーバーフェスト・シガー（Oktoberfest Zigarre）」を発売した。購入するには10月4日までにバイエルンへ足を運ぶ必要がある。",
+      "title_en": "CigarKings Makes Oktoberfest Zigarre",
+      "summary_en": "CigarKings has released the Oktoberfest Zigarre, made under licence from the city of Munich. To purchase it, buyers will need to head to Bavaria by 4 October.",
+      "source": "halfwheel",
+      "source_title": "CigarKings Makes Oktoberfest Zigarre",
+      "source_en": "halfwheel",
+      "source_title_en": "CigarKings Makes Oktoberfest Zigarre",
+      "url": "https://halfwheel.com/cigarkings-makes-oktoberfest-zigarre/480147/"
+    },
+    {
+      "date": "2026-09-23",
+      "category": "新製品",
+      "title_ja": "カサ・カリーヨ、新作パープル＆アセンド披露",
+      "summary_ja": "カサ・カリーヨ（Casa Carrillo）が、インタータバック2026（InterTabac 2026）で新作「プレッジ・パープル（Pledge Purple）」と「アセンド（Ascend）」を披露した。",
+      "title_en": "Pledge Purple & Ascend",
+      "summary_en": "Casa Carrillo presented its new Pledge Purple and Ascend cigars at InterTabac 2026.",
+      "source": "Cigar Journal",
+      "source_title": "Pledge Purple & Ascend",
+      "source_en": "Cigar Journal",
+      "source_title_en": "Pledge Purple & Ascend",
+      "url": "https://www.cigarjournal.com/pledge-purple-ascend/"
+    },
     {
       "date": "2026-09-23",
       "category": "新製品",
@@ -47,6 +112,19 @@ var NEWS_DATA = {
       "source_en": "halfwheel",
       "source_title_en": "Plasencia El Año de la Cabra Shown off at InterTabac 2026",
       "url": "https://halfwheel.com/plasencia-el-ano-de-la-cabra-shown-off-at-intertabac-2026/480092/"
+    },
+    {
+      "date": "2026-09-22",
+      "category": "新製品",
+      "title_ja": "ラ・グロリア・クバーナ35周年記念、来月スイスへ",
+      "summary_ja": "ラ・グロリア・クバーナ（La Gloria Cubana）の限定ヒュミドール「35 Aniversario」が来月スイスに登場する。キューバ葉巻の世界的店舗網ラ・カサ・デル・アバノ（La Casa del Habano）の35周年を記念したもの。あわせてロメオ・イ・フリエタ・アマンテス（Romeo y Julieta Amantes）の20本入りボックスも店頭に並ぶ。",
+      "title_en": "La Gloria Cubana 35 Aniversario Coming to Switzerland Next Month",
+      "summary_en": "The limited-edition La Gloria Cubana 35 Aniversario humidor arrives in Switzerland next month, marking the 35th anniversary of La Casa del Habano, the worldwide network of Cuban cigar stores. Also reaching shelves are 20-count boxes of the Romeo y Julieta Amantes.",
+      "source": "halfwheel",
+      "source_title": "La Gloria Cubana 35 Aniversario Coming to Swizerland Next Month",
+      "source_en": "halfwheel",
+      "source_title_en": "La Gloria Cubana 35 Aniversario Coming to Switzerland Next Month",
+      "url": "https://halfwheel.com/la-gloria-cubana-35-aniversario-coming-to-swizerland-next-month/480027/"
     },
     {
       "date": "2026-09-22",
@@ -2010,84 +2088,6 @@ var NEWS_DATA = {
       "source_en": "Oricon News",
       "source_title_en": "Learn the Deep World of Cigars and Whisky in Minato Mirai: First Limited Event Pairing Premium Cigars and Single Malt",
       "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE1GQmFRb0J3YWRrbGYxemgzazF6cW1WSTFxaTRfU1JpMTBDOUF2VURIZGFYa3luS2gyd01rMi1zTURfemI2LWE0TWFnaXZqZHpNWnVIOUxBZ2NTdw?oc=5"
-    },
-    {
-      "date": "2026-08-25",
-      "category": "日本国内",
-      "title_ja": "横浜でシガー＆ウイスキー体験の限定イベント",
-      "summary_ja": "横浜みなとみらいで、シガーとウイスキーを楽しむ限定イベントが開催される。海外オーナーの来日にあわせた催し。",
-      "title_en": "Limited cigar & whisky experience event in Yokohama Minato Mirai",
-      "summary_en": "A limited event offering a cigar and whisky experience will be held in Yokohama's Minato Mirai district, timed to coincide with a visit to Japan by an overseas owner.",
-      "source": "Koubo",
-      "source_title": "横浜みなとみらいでシガー＆ウイスキー体験、海外オーナー来日の限定イベント - Koubo",
-      "source_en": "Koubo",
-      "source_title_en": "Cigar & whisky experience in Yokohama Minato Mirai, a limited event with a visiting overseas owner",
-      "url": "https://news.google.com/rss/articles/CBMiRkFVX3lxTE15dURPWHU2MmFlT0hBYnItOVRmWGt6VXlwX3A3S01OWlZSREp0YThGU1NaLThSSDVBNXJ6QmpyR3pDRndHa3c?oc=5"
-    },
-    {
-      "date": "2026-08-25",
-      "category": "日本国内",
-      "title_ja": "横浜でシガー＆ウイスキー限定イベント初開催",
-      "summary_ja": "横浜みなとみらいで、プレミアムシガーとシングルモルトのマリアージュを愉しむ限定イベントが初開催される。海外からシガーブランドのオーナーが来日し、シガーとウイスキーの奥深い世界を体験できる内容となっている。",
-      "title_en": "Cigar & Whisky Pairing Event Debuts in Yokohama",
-      "summary_en": "A limited-run event pairing premium cigars with single malt whisky is being held for the first time in the Minato Mirai district of Yokohama. An overseas cigar brand owner is visiting Japan for the occasion, giving attendees the chance to explore the worlds of cigars and whisky through a curated marriage of the two.",
-      "source": "Excite エキサイト",
-      "source_title": "みなとみらいで知るシガーとウイスキーの奥深き世界。海外よりシガーブランドオーナー来日、プレミアムシガーとシングルモルトのマリアージュを嗜む限定イベントを初開催！ - Excite エキサイト",
-      "source_en": "Excite",
-      "source_title_en": "Explore the Deep World of Cigars and Whisky in Minato Mirai: First Limited Event with a Visiting Overseas Cigar Brand Owner",
-      "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxOWFhhRno4X2dkanJGWXBOOTdmNFpzNzZGaWNDZ3ZKYnVGd2VGVFVwOG0wOVNwSmJSRDhXQ2twX242YWl1dnpPTHB3RTltUFlmN0MxWDVMS0t1OWpwbmNzbTFKVGx1eEJ0NktLMEZqblM1OTlNdWpBYjhyc0NuTFZOdQ?oc=5"
-    },
-    {
-      "date": "2026-08-25",
-      "category": "新製品",
-      "title_ja": "キャメルのスーパースリム・リトルシガー2銘柄発売",
-      "summary_ja": "見た目も価格も“スーパースリム”なキャメルのリトルシガー2銘柄が新発売された。",
-      "title_en": "Two New Camel Super-Slim Little Cigars Launched",
-      "summary_en": "Two new Camel little cigars have gone on sale, described as \"super-slim\" in both appearance and price.",
-      "source": "ウォーカープラス",
-      "source_title": "＜画像2 / 2＞見た目も価格も“スーパースリム”なキャメルのリトルシガー2銘柄が新発売 - ウォーカープラス",
-      "source_en": "Walkerplus",
-      "source_title_en": "Two 'Super-Slim' Camel Little Cigars Newly Released",
-      "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE1ZbUJ5b1prYW1laWlSb1NCbnA5R2c0Q05QeVZxUmpucmxMbzJsdk5xd2EwdEFpaEZrTVE5bFVaTjAzTms0cFZ0c0hsS25GbDlmT0ZwT2k1dU95WWNCeUZSTkNabkpmVEJYR3Zr?oc=5"
-    },
-    {
-      "date": "2026-08-25",
-      "category": "日本国内",
-      "title_ja": "横浜みなとみらいでシガー＆ウイスキー限定イベント",
-      "summary_ja": "横浜みなとみらいで、海外のシガーブランドオーナーが来日し、プレミアムシガーとシングルモルトのマリアージュを楽しむ限定イベントが初開催される。",
-      "title_en": "Cigar & Whisky Pairing Event Debuts in Yokohama Minato Mirai",
-      "summary_en": "A limited-run event is being held for the first time in Yokohama's Minato Mirai district, where an overseas cigar brand owner visits Japan to present pairings of premium cigars and single malt whisky.",
-      "source": "Excite エキサイト",
-      "source_title": "みなとみらいで知るシガーとウイスキーの奥深き世界。海外よりシガーブランドオーナー来日、プレミアムシガーとシングルモルトのマリアージュを嗜む限定イベントを初開催！ - Excite エキサイト",
-      "source_en": "Excite",
-      "source_title_en": "Discover the Deep World of Cigars and Whisky in Minato Mirai: First-Ever Limited Event with Visiting Overseas Cigar Brand Owner",
-      "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE5GR01FVDdQdlhWQ3JMWXlabzBULW93Yk9aOUlUN0dTZGM1QWZoLU10VnRTTnVDZ3hOQnc3NGZIblZhMkFtaHBvYTFJc3pwaThRdndTVExNbkRPVjYyX2VDSEhZbEN1Z2g5Y2ZodXcyZFV6Z3otWTZJZTJLaTdoSk0?oc=5"
-    },
-    {
-      "date": "2026-08-25",
-      "category": "新製品",
-      "title_ja": "アンダークラウン、6×60の新ゴルド追加",
-      "summary_ja": "ドリュー・エステート（Drew Estate）のアンダークラウン（Undercrown）は、新サイズ「アンダークラウン10 ゴルド」を発表した。6×60のビトラで、大きなリングゲージを好む愛好家の要望に応える。アンダークラウン10の体験に一層の豊かさと奥行きを加えるという。",
-      "title_en": "Undercrown by Drew Estate Introduces a New 6 x 60 Gordo",
-      "summary_en": "Undercrown by Drew Estate has announced the Undercrown 10 Gordo, a new 6 x 60 vitola. The size adds a further layer of richness and depth to the Undercrown 10 experience and answers demand from cigar lovers who prefer big ring-gauge cigars. Undercrown was born of the unknown heroes on the brand's factory floor.",
-      "source": "StogiePress",
-      "source_title": "Cigar News: Undercrown by Drew Estate introduces a new 6 x 60 Gordo",
-      "source_en": "StogiePress",
-      "source_title_en": "Cigar News: Undercrown by Drew Estate Introduces a New 6 x 60 Gordo",
-      "url": "https://stogiepress.com/cigar-news-undercrown-by-drew-estate-introduces-a-new-6-x-60-gordo/"
-    },
-    {
-      "date": "2026-08-25",
-      "category": "新製品",
-      "title_ja": "タチアナ、カプチーノとアマレットに新形態",
-      "summary_ja": "タチアナ・シガーズ（Tatiana Cigars）は、人気のアロマティック銘柄「カプチーノ」「アマレット」の新サイズ6×44クラシックと10本入り缶を、マイアミ・シガー社（Miami Cigar & Co.）を通じて全米の小売店へ出荷開始した。2026年のPCAトレードショー（ニューオーリンズ）で初披露された。",
-      "title_en": "Tatiana Cappuccino and Amaretto Now Shipping in Classic and Tin Formats",
-      "summary_en": "Tatiana Cigars has announced that a new 6 x 44 Classic size and 10-count tins of two of its most recognisable aromatic profiles, Cappuccino and Amaretto, are now shipping to retailers nationwide through Miami Cigar & Co. First showcased at the 2026 Premium Cigar Association (PCA) Trade Show in New Orleans, the new formats expand the Tatiana portfolio and give consumers additional ways to enjoy the two blends.",
-      "source": "StogiePress",
-      "source_title": "Cigar News: Tatiana Cappuccino and Amaretto in Classic and Tin formats are now shipping to retailers nationwide through Miami Cigar & Co.",
-      "source_en": "StogiePress",
-      "source_title_en": "Cigar News: Tatiana Cappuccino and Amaretto in Classic and Tin Formats Now Shipping Nationwide via Miami Cigar & Co.",
-      "url": "https://stogiepress.com/cigar-news-tatiana-cappuccino-and-amaretto-in-classic-and-tin-formats-are-now-shipping-to-retailers-nationwide-through-miami-cigar-co/"
     }
   ]
 };
