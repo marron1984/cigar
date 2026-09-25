@@ -7,8 +7,73 @@
    手で足すこともできますが、items の並び・キーは崩さないでください。
    ============================================================ */
 var NEWS_DATA = {
-  "updated": "2026-09-24",
+  "updated": "2026-09-25",
   "items": [
+    {
+      "date": "2026-09-25",
+      "category": "新製品",
+      "title_ja": "エリー・ブルー、未年コレクション発売",
+      "summary_ja": "エリー・ブルー（Elie Bleu）が「Year of the Goat（未年）」コレクションを発売した。まず3アイテムが販売開始され、追加のリリースが10月と12月に予定されている。",
+      "title_en": "Elie Bleu's Year of the Goat Collection Goes on Sale",
+      "summary_en": "Elie Bleu is among the first companies to release its Year of the Goat collection. The first three items are now on sale, with further releases scheduled for October and December.",
+      "source": "halfwheel",
+      "source_title": "Elie Bleu’s Year of the Goat Collection Goes on Sale",
+      "source_en": "halfwheel",
+      "source_title_en": "Elie Bleu's Year of the Goat Collection Goes on Sale",
+      "url": "https://halfwheel.com/elie-bleus-year-of-the-goat-collection-goes-on-sale/480328/"
+    },
+    {
+      "date": "2026-09-25",
+      "category": "新製品",
+      "title_ja": "ダビドフ、ジノZコレクション・ブルーを10月投入",
+      "summary_ja": "ダビドフ（Davidoff）がジノ（Zino）Zコレクションのブルー仕様を10月に発売する。昨年はグリーンで同じ10アイテムを展開しており、価格は据え置いた。",
+      "title_en": "Zino Z-Collection Blue Arriving in October",
+      "summary_en": "Davidoff is releasing a blue colourway of the Zino Z-Collection in October. Last year the company offered the same 10 items in green, and notably it has kept prices unchanged.",
+      "source": "halfwheel",
+      "source_title": "Zino Z-Collection Blue Arriving in October",
+      "source_en": "halfwheel",
+      "source_title_en": "Zino Z-Collection Blue Arriving in October",
+      "url": "https://halfwheel.com/zino-z-collection-blue-arriving-in-october/480289/"
+    },
+    {
+      "date": "2026-09-25",
+      "category": "新製品",
+      "title_ja": "HVC、初のランセロ「Only Legends」出荷",
+      "summary_ja": "HVCが「500 Years」ランセロ「Only Legends」を出荷した。同社15年の歴史で初のランセロで、生産はわずか5,000本の限定品となる。",
+      "title_en": "HVC 500 Years Lancero Only Legends Ships",
+      "summary_en": "HVC has shipped Only Legends, the first lancero in the company's 15-year history. The 500 Years release is highly limited, with just 5,000 cigars produced.",
+      "source": "halfwheel",
+      "source_title": "HVC 500 Years Lancero Only Legends Ships",
+      "source_en": "halfwheel",
+      "source_title_en": "HVC 500 Years Lancero Only Legends Ships",
+      "url": "https://halfwheel.com/hvc-500-years-lancero-only-legends-ships/480278/"
+    },
+    {
+      "date": "2026-09-24",
+      "category": "イベント・アワード",
+      "title_ja": "インタータバック2026の新製品まとめ",
+      "summary_ja": "halfwheelが、インタータバック（InterTabac）2026の会場で確認した新製品のリストを公開した。未年（Year of the Goat）にちなんだ製品が多数登場している。",
+      "title_en": "InterTabac 2026: The New Products",
+      "summary_en": "halfwheel has published a list of most of the new items seen at InterTabac 2026, with numerous releases tied to the upcoming Year of the Goat.",
+      "source": "halfwheel",
+      "source_title": "InterTabac 2026: The New Products",
+      "source_en": "halfwheel",
+      "source_title_en": "InterTabac 2026: The New Products",
+      "url": "https://halfwheel.com/intertabac-2026-new-products/480180/"
+    },
+    {
+      "date": "2026-09-24",
+      "category": "新製品",
+      "title_ja": "プラセンシア、レゼルバ・オリジナルを14本箱へ",
+      "summary_ja": "プラセンシア（Plasencia Cigars）が、レゼルバ・オリジナル（Reserva Original）コレクションの箱を10本入りから14本入りへ移行する。",
+      "title_en": "Plasencia Reserva Original Now Available in a 14-Count Box",
+      "summary_en": "Plasencia Cigars is transitioning its Reserva Original collection from 10-count to 14-count boxes.",
+      "source": "Cigar Journal",
+      "source_title": "Plasencia Reserva Original Now Available in a 14-Count Box",
+      "source_en": "Cigar Journal",
+      "source_title_en": "Plasencia Reserva Original Now Available in a 14-Count Box",
+      "url": "https://www.cigarjournal.com/plasencia-reserva-original-now-available-in-a-14-count-box/"
+    },
     {
       "date": "2026-09-24",
       "category": "新製品",
@@ -177,6 +242,19 @@ var NEWS_DATA = {
       "source_en": "halfwheel",
       "source_title_en": "JFR 20th Anniversary Gordito",
       "url": "https://halfwheel.com/jfr-20th-anniversary-gordito-2/479978/"
+    },
+    {
+      "date": "2026-09-21",
+      "category": "業界・企業",
+      "title_ja": "カサ1910、欧州ブランドアンバサダーを任命",
+      "summary_ja": "カサ1910（Casa 1910）が、ジョアン・マイアーホーファー（Joao Maierhofer）を欧州ブランドアンバサダーに昇格させた。担当地域をイベリア半島から欧州全域に拡大し、国際展開を進める。",
+      "title_en": "Casa 1910 Promotes Joao Maierhofer to European Brand Ambassador",
+      "summary_en": "Casa 1910 has promoted Joao Maierhofer to European Brand Ambassador, expanding his remit from the Iberian Peninsula to markets across Europe as the company continues its international expansion.",
+      "source": "Cigar Journal",
+      "source_title": "Casa 1910 Promotes Joao Maierhofer to European Brand Ambassador",
+      "source_en": "Cigar Journal",
+      "source_title_en": "Casa 1910 Promotes Joao Maierhofer to European Brand Ambassador",
+      "url": "https://www.cigarjournal.com/casa-1910-promotes-joao-maierhofer-to-european-brand-ambassador/"
     },
     {
       "date": "2026-09-21",
@@ -2010,84 +2088,6 @@ var NEWS_DATA = {
       "source_en": "Koubo",
       "source_title_en": "Cigar and Whisky Marriage: Limited Event with Visiting Overseas Brand Owner",
       "url": "https://news.google.com/rss/articles/CBMiRkFVX3lxTE1vbXdMRGgzMk9OYWREa0UwV1VEWXkyTGZXbm91MTFnckZGNkk4SEFWMlJmM2w1U216SkhzX0w4WGRZY2FuZ2c?oc=5"
-    },
-    {
-      "date": "2026-08-26",
-      "category": "新製品",
-      "title_ja": "タトゥアジェ新作、来週出荷開始",
-      "summary_ja": "タトゥアジェ（Tatuaje）が新作「オールド・マン・アンド・ザ・Cモンスター（Old Man and the C Monster）」を来週出荷すると発表した。フルサイズの「クリーチャー（Creature）」発売から数カ月後の投入で、各コフィンにはクレブラとロンズデールが1本ずつ収められる。",
-      "title_en": "Tatuaje's Old Man And The C Monster Shipping Next Week",
-      "summary_en": "Tatuaje will ship its new Old Man and the C Monster next week, just months after releasing the full-size Creature. Each coffin includes a culebra and a lonsdale, offering another variation on the company's Creature line.",
-      "source": "halfwheel",
-      "source_title": "Tatuaje’s Old Man And The C Monster Shipping Next Week",
-      "source_en": "halfwheel",
-      "source_title_en": "Tatuaje's Old Man And The C Monster Shipping Next Week",
-      "url": "https://halfwheel.com/tatuajes-old-man-and-the-c-monster-shipping-next-week/477893/"
-    },
-    {
-      "date": "2026-08-26",
-      "category": "規制・市場",
-      "title_ja": "FDA、一部シガーのPMTA施行延期へ",
-      "summary_ja": "FDAが一部の葉巻に対するPMTA（市販前タバコ製品申請）の施行を延期する計画であると報じられた。ベイプ製品には適用されない。",
-      "title_en": "FDA Plans to Delay PMTA Enforcement for Some Cigars",
-      "summary_en": "The FDA reportedly plans to delay enforcement of the Premarket Tobacco Product Application (PMTA) requirement for some cigars. The delay does not apply to vaping products.",
-      "source": "Vaping360",
-      "source_title": "FDAは一部のシガーに対するPMTAの施行を延期する計画; ベイプには適用されず - Vaping360",
-      "source_en": "Vaping360",
-      "source_title_en": "FDA Plans to Delay PMTA Enforcement for Some Cigars; Not Applied to Vapes",
-      "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPLTV5enZBbVVIQ3BXQnlrdVdQVC11cHBudmMzS1hpQVFWTGxMTlNFSGVXWmhvRi1Ja0xZNFZ5RlVfTFZHb3htaXplMGxOYVdTVURZTklxdFB0NG1FQjQ0aDRnbFFWX0gxM2kxeFpQNXBfTGExZlAzUGhKRWVYVVV6bi1jTlh4bnc3X05IeFFMMlloWXBrTTdIcHZ4aEREcGdnXzlBT1VvNjI5WmYy?oc=5"
-    },
-    {
-      "date": "2026-08-26",
-      "category": "新製品",
-      "title_ja": "アサイラム13、トム・ラズカ署名モデル発売",
-      "summary_ja": "アサイラム（Asylum）が、トム・ラズカが自身向けに手掛けてきた葉巻を製品化した「アサイラム13 シグネチャーシリーズ・バイ・トム・ラズカ」を発表した。サイズは46×6。",
-      "title_en": "Asylum 13 Signature Series by Tom Lazuka 46×6",
-      "summary_en": "Asylum has decided to release the Asylum 13 Signature Series by Tom Lazuka, a cigar Lazuka had originally made for himself beyond the company's consumer offerings. The new release comes in a 46 × 6 size. Like many cigar makers, Lazuka produces cigars for personal use, and in this case has chosen to bring one to market.",
-      "source": "halfwheel",
-      "source_title": "Asylum 13 Signature Series by Tom Lazuka 46×6",
-      "source_en": "halfwheel",
-      "source_title_en": "Asylum 13 Signature Series by Tom Lazuka 46×6",
-      "url": "https://halfwheel.com/asylum-13-signature-series-by-tom-lazuka-46x6/477650/"
-    },
-    {
-      "date": "2026-08-26",
-      "category": "新製品",
-      "title_ja": "エミリオ・スアベ・スマトラが店頭へ",
-      "summary_ja": "2026年4月のPCA 2026で披露された限定品「エミリオ・スアベ・スマトラ（Emilio Suave Sumatra）」が店頭に登場する。2ビトラ構成で、多くのスマトラ系葉巻と異なり、ラッパーはインドネシア産を使用する。",
-      "title_en": "Emilio Suave Sumatra Heads to Stores",
-      "summary_en": "The new, two-vitola limited edition Emilio Suave Sumatra, first shown at PCA 2026 in April, is heading to stores. Unlike most Sumatra-branded cigars, its wrapper is sourced from Indonesia. The release expands Emilio's line-up with a limited offering that had been previewed earlier in the year at the New Orleans trade show.",
-      "source": "halfwheel",
-      "source_title": "Emilio Suave Sumatra Heads to Stores",
-      "source_en": "halfwheel",
-      "source_title_en": "Emilio Suave Sumatra Heads to Stores",
-      "url": "https://halfwheel.com/emilio-suave-sumatra-heads-to-stores/477849/"
-    },
-    {
-      "date": "2026-08-26",
-      "category": "業界・企業",
-      "title_ja": "ダビドフ米国トップが10月に退任",
-      "summary_ja": "ダビドフ・オブ・ジュネーブUSAのトップ、エマヌエーレ・ウチェッリーニ（Emanuele Uccellini）が10月に退任する。同氏の入社は昨年3月で、葉巻とは別の業界へ移るという。",
-      "title_en": "Davidoff of Geneva USA Head Emanuele Uccellini Leaving in October",
-      "summary_en": "Emanuele Uccellini, head of Davidoff of Geneva USA, is leaving the company in October. He joined only last March and is departing for a different industry, marking a short tenure at the helm of Davidoff's US operation.",
-      "source": "halfwheel",
-      "source_title": "Emanuele Uccellini, Head of Davidoff of Geneva USA, Leaving in October",
-      "source_en": "halfwheel",
-      "source_title_en": "Emanuele Uccellini, Head of Davidoff of Geneva USA, Leaving in October",
-      "url": "https://halfwheel.com/emanuele-uccellini-head-of-davidoff-of-geneva-usa-leaving-in-october/477839/"
-    },
-    {
-      "date": "2026-08-25",
-      "category": "日本国内",
-      "title_ja": "みなとみらいでシガーとウイスキーの限定イベント初開催",
-      "summary_ja": "横浜・みなとみらいで、海外のシガーブランドオーナーを招き、プレミアムシガーとシングルモルトのマリアージュを楽しむ限定イベントが初めて開催される。",
-      "title_en": "First Cigar and Whisky Pairing Event Held in Minato Mirai",
-      "summary_en": "A limited event pairing premium cigars with single malt whisky is being held for the first time in Minato Mirai, Yokohama, welcoming an overseas cigar brand owner to Japan.",
-      "source": "オリコンニュース",
-      "source_title": "みなとみらいで知るシガーとウイスキーの奥深き世界。海外よりシガーブランドオーナー来日、プレミアムシガーとシングルモルトのマリアージュを嗜む限定イベントを初開催！ - オリコンニュース",
-      "source_en": "Oricon News",
-      "source_title_en": "Learn the Deep World of Cigars and Whisky in Minato Mirai: First Limited Event Pairing Premium Cigars and Single Malt",
-      "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE1GQmFRb0J3YWRrbGYxemgzazF6cW1WSTFxaTRfU1JpMTBDOUF2VURIZGFYa3luS2gyd01rMi1zTURfemI2LWE0TWFnaXZqZHpNWnVIOUxBZ2NTdw?oc=5"
     }
   ]
 };
