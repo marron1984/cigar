@@ -7,8 +7,86 @@
    手で足すこともできますが、items の並び・キーは崩さないでください。
    ============================================================ */
 var NEWS_DATA = {
-  "updated": "2026-09-25",
+  "updated": "2026-09-26",
   "items": [
+    {
+      "date": "2026-09-26",
+      "category": "新製品",
+      "title_ja": "アレック・ブラッドリー、チャンク・スマトラを10月1日発売",
+      "summary_ja": "アレック・ブラッドリー（Alec Bradley）が「チャンク（Chunk）」ラインの第3弾となるスマトラを10月1日に発売する。既存のチャンク・マデューロとチャンク・シェードに加わる。名の通り、太く短いビトラ展開で、4×60のXLから4×88の4XLまでをそろえる。",
+      "title_en": "Alec Bradley Chunk Sumatra Coming Oct. 1",
+      "summary_en": "Alec Bradley will release the Chunk Sumatra on 1 October, the third installment of its Chunk line, joining the Chunk Maduro and Chunk Shade. As the name implies, the cigars come in short, thick vitolas, ranging from a 4 x 60 XL up to a 4 x 88 4XL.",
+      "source": "halfwheel",
+      "source_title": "Alec Bradley Chunk Sumatra Coming Oct. 1",
+      "source_en": "halfwheel",
+      "source_title_en": "Alec Bradley Chunk Sumatra Coming Oct. 1",
+      "url": "https://halfwheel.com/alec-bradley-chunk-sumatra-coming-oct-1/480379/"
+    },
+    {
+      "date": "2026-09-26",
+      "category": "新製品",
+      "title_ja": "CAO、アマゾン・ベイスン・エキストラ・アニェホを2026年に再登場",
+      "summary_ja": "CAOが「アマゾン・ベイスン・エキストラ・アニェホ（Amazon Basin Extra Añejo）」を2026年に再発売する。アマゾン・ベイスンのブレンドを2年間熟成させ、タバコを十分に成熟させた限定リリース。追加熟成版としては2作目となる。",
+      "title_en": "CAO Amazon Basin Extra Añejo Returns for 2026",
+      "summary_en": "CAO is bringing back the Amazon Basin Extra Añejo for 2026, a limited release of the Amazon Basin blend aged for two years to allow its tobaccos to fully mature. It marks only the second release of the extra-aged version of the cigar.",
+      "source": "Cigar Journal",
+      "source_title": "CAO Amazon Basin Extra Añejo Returns for 2026",
+      "source_en": "Cigar Journal",
+      "source_title_en": "CAO Amazon Basin Extra Añejo Returns for 2026",
+      "url": "https://www.cigarjournal.com/cao-amazon-basin-extra-anejo-returns-for-2026/"
+    },
+    {
+      "date": "2026-09-26",
+      "category": "イベント・アワード",
+      "title_ja": "クオリティ・インポーターズ、QIスポットライト展示会を復活",
+      "summary_ja": "クオリティ・インポーーターズ・トレーディング（Quality Importers Trading Company）が「QIスポットライト・トレードショー」を復活させる。開催は10月17日（土）午前11時から午後4時まで、フロリダ州ウェストンの本社で行う。",
+      "title_en": "Quality Importers Brings Back QI Spotlight Trade Show in South Florida",
+      "summary_en": "Quality Importers Trading Company has announced the return of its QI Spotlight Trade Show, to be held on Saturday, 17 October from 11:00 AM to 4:00 PM at its headquarters in Weston, Florida.",
+      "source": "Cigar Journal",
+      "source_title": "Quality Importers Brings Back Qi Spotlight Trade Show In South Florida",
+      "source_en": "Cigar Journal",
+      "source_title_en": "Quality Importers Brings Back Qi Spotlight Trade Show In South Florida",
+      "url": "https://www.cigarjournal.com/quality-importers-brings-back-qi-spotlight-trade-show-in-south-florida/"
+    },
+    {
+      "date": "2026-09-26",
+      "category": "新製品",
+      "title_ja": "サン・パレイユ・ブルー・ベリコソ、クラブ・ヒュミドールで発売",
+      "summary_ja": "2020年に巻かれ、以来熟成されてきた「サン・パレイユ・ブルー・ベリコソ（Sans Pareil Blue Belicoso）」が、日曜日にテキサス州サンアントニオのクラブ・ヒュミドール（Club Humidor）で発売される。",
+      "title_en": "Sans Pareil Blue Belicoso Lands at Club Humidor",
+      "summary_en": "The Sans Pareil Blue Belicoso, rolled back in 2020 and aged ever since, will go on sale on Sunday at Club Humidor in San Antonio, Texas.",
+      "source": "halfwheel",
+      "source_title": "Sans Pareil Blue Belicoso Lands at Club Humidor",
+      "source_en": "halfwheel",
+      "source_title_en": "Sans Pareil Blue Belicoso Lands at Club Humidor",
+      "url": "https://halfwheel.com/sans-pareil-blue-belicoso-lands-at-club-humidor/480391/"
+    },
+    {
+      "date": "2026-09-25",
+      "category": "新製品",
+      "title_ja": "ダンバートン、オーバーシーズNo.2を発表",
+      "summary_ja": "ダンバートン（Dunbarton）がインタータバック2026で新製品「オーバーシーズNo.2（Overseas No. 2）」を発表した。",
+      "title_en": "Dunbarton Introduces Overseas No. 2",
+      "summary_en": "Dunbarton introduced its new Overseas No. 2 at InterTabac 2026.",
+      "source": "Cigar Journal",
+      "source_title": "Dunbarton Introduces Overseas No. 2",
+      "source_en": "Cigar Journal",
+      "source_title_en": "Dunbarton Introduces Overseas No. 2",
+      "url": "https://www.cigarjournal.com/dunbarton-introduces-overseas-no-2/"
+    },
+    {
+      "date": "2026-09-25",
+      "category": "新製品",
+      "title_ja": "シグロの金継ぎ灰皿、来週発売",
+      "summary_ja": "シグロ（SIGLO）の新作灰皿「キンツギ（Kintsugi）」灰皿が来週発売される。名称にある金継ぎの技法で実際に作られているわけではない。",
+      "title_en": "SIGLO Kintsugi Ashtray Goes on Sale Next Week",
+      "summary_en": "SIGLO's new Kintsugi ashtray will go on sale next week. Despite the name, the ashtray is not actually made using the kintsugi technique.",
+      "source": "halfwheel",
+      "source_title": "SIGLO Kintsugi Ashtray Goes on Sale Next Week",
+      "source_en": "halfwheel",
+      "source_title_en": "SIGLO Kintsugi Ashtray Goes on Sale Next Week",
+      "url": "https://halfwheel.com/siglo-kintsugi-ashtray-goes-on-sale-next-week/480354/"
+    },
     {
       "date": "2026-09-25",
       "category": "新製品",
@@ -2010,84 +2088,6 @@ var NEWS_DATA = {
       "source_en": "StogiePress",
       "source_title_en": "Cigar News: Casa Carrillo Brings Dark Rituals Back as an Exclusive",
       "url": "https://stogiepress.com/cigar-news-casa-carrillo-brings-dark-rituals-back-as-an-exclusive/"
-    },
-    {
-      "date": "2026-08-28",
-      "category": "新製品",
-      "title_ja": "アポステイト、「デス・マスク」を10月1日出荷開始",
-      "summary_ja": "アポステイト・シガーズ（Apostate Cigars）は、ニカラグア・エステリのタバカレラ・オベハ・ネグラのマスターブレンダー、ジェームズ・ブラウンとの限定コラボ「デス・マスク（Death Mask）」が、出荷前に全生産分250箱を完売したと発表した。PCA2026で確保した小売店などに10月1日から出荷を開始する。",
-      "title_en": "Apostate Cigars Teams Up With Tabacalera Oveja Negra for Death Mask",
-      "summary_en": "Apostate Cigars has confirmed that Death Mask, its strictly limited collaboration with master blender James Brown at Tabacalera Oveja Negra in Estelí, Nicaragua, has sold through its full run of 250 boxes ahead of shipping. Retailers who secured allocation at PCA 2026 in New Orleans, along with existing Apostate core-line accounts, will begin receiving the cigars from 1 October.",
-      "source": "StogiePress",
-      "source_title": "Cigar News: Apostate Cigars Teams Up With Tabacalera Oveja Negra For Death Mask – Cigars Begin Shipping to Retailers October 1st",
-      "source_en": "StogiePress",
-      "source_title_en": "Cigar News: Apostate Cigars Teams Up With Tabacalera Oveja Negra For Death Mask – Cigars Begin Shipping to Retailers October 1st",
-      "url": "https://stogiepress.com/cigar-news-apostate-cigars-teams-up-with-tabacalera-oveja-negra-for-death-mask-cigars-begin-shipping-to-retailers-october-1st/"
-    },
-    {
-      "date": "2026-08-27",
-      "category": "新製品",
-      "title_ja": "CAOブラジリア新作「マラカナ・ロブスト・エクストラ」",
-      "summary_ja": "ティム・オズゲナー（Tim Ozgener）への要望に応え誕生した新しいCAOブラジリア。マイ・ファーザー（My Father）製の葉巻でブラジル産タバコを使った初の一本となる「マラカナ・ロブスト・エクストラ（Maracana Robusto Extra）」。",
-      "title_en": "Maracana Robusto Extra",
-      "summary_en": "Responding to calls for a new CAO Brazilia, Tim Ozgener has delivered the Maracana Robusto Extra. It also marks the first time a My Father-made cigar has featured Brazilian tobacco.",
-      "source": "halfwheel",
-      "source_title": "Maracana Robusto Extra",
-      "source_en": "halfwheel",
-      "source_title_en": "Maracana Robusto Extra",
-      "url": "https://halfwheel.com/maracana-robusto-extra/477883/"
-    },
-    {
-      "date": "2026-08-27",
-      "category": "業界・企業",
-      "title_ja": "ロス・アミーゴス、米国初上陸へ",
-      "summary_ja": "ロス・アミーゴス・シガーズ（Los Amigos Cigars）が、新設のドメイン・ディストリビューション（Domain Distribution）との流通契約を通じて米国市場に初上陸する。ドメイン・ディストリビューションは、ドメイン製品を製造する工場タバカレラ・ファミリア・ディスラ（Tabacalera Familia Disla S.A.）の顧客専用の流通事業。ロス・アミーゴスは2024年に発足したブランド。",
-      "title_en": "Los Amigos Cigars to Make U.S. Debut via New Domain Distribution",
-      "summary_en": "Los Amigos Cigars will make its U.S. debut through a distribution agreement with the newly launched Domain Distribution. The distributor operates exclusively for clients of Tabacalera Familia Disla S.A., the factory that produces Domain's cigars. Los Amigos, which launched in 2024, will now reach American retailers through the arrangement.",
-      "source": "halfwheel",
-      "source_title": "Los Amigos Cigars Making U.S. Debut Through Newly Launched Domain Distribution",
-      "source_en": "halfwheel",
-      "source_title_en": "Los Amigos Cigars Making U.S. Debut Through Newly Launched Domain Distribution",
-      "url": "https://halfwheel.com/los-amigos-cigars-making-u-s-debut-through-newly-launched-domain-distribution/477951/"
-    },
-    {
-      "date": "2026-08-27",
-      "category": "新製品",
-      "title_ja": "ハイラム＆ソロモン、10周年記念限定品",
-      "summary_ja": "ハイラム＆ソロモン（Hiram & Solomon）が創業10周年を記念する限定ブレンド「アシュラー（Ashlar）」を発表した。当初は昨年発売予定だったが、痛ましい事故により発売が延期されていた。",
-      "title_en": "Hiram & Solomon Ashlar",
-      "summary_en": "Hiram & Solomon has released Ashlar, a limited edition blend created to commemorate the company's 10th anniversary. The cigar had originally been scheduled to launch last year, but its release was delayed following a tragic accident.",
-      "source": "halfwheel",
-      "source_title": "Hiram & Solomon Ashlar",
-      "source_en": "halfwheel",
-      "source_title_en": "Hiram & Solomon Ashlar",
-      "url": "https://halfwheel.com/hiram-solomon-ashlar/477873/"
-    },
-    {
-      "date": "2026-08-27",
-      "category": "規制・市場",
-      "title_ja": "STG、2026年第2四半期は微減",
-      "summary_ja": "スカンジナビアン・タバコ・グループ（STG）の2026年第2四半期業績は全体で微減となった一方、手巻き葉巻の売上はわずかに増加した。同社は2025年上半期の6カ月間で約2億4000万ドル相当の葉巻を販売したとしている。",
-      "title_en": "STG Slightly Down in Q2 2026",
-      "summary_en": "Scandinavian Tobacco Group (STG) reported that its overall results were slightly down in the second quarter of 2026, while handmade cigar sales edged up. The company says it sold around $240 million worth of cigars during the first six months of 2025.",
-      "source": "halfwheel",
-      "source_title": "STG Slightly Down in Q2 2026",
-      "source_en": "halfwheel",
-      "source_title_en": "STG Slightly Down in Q2 2026",
-      "url": "https://halfwheel.com/stg-slightly-down-in-q2-2026/477956/"
-    },
-    {
-      "date": "2026-08-26",
-      "category": "日本国内",
-      "title_ja": "みなとみらいでシガー×ウイスキーの限定イベント",
-      "summary_ja": "横浜みなとみらいで、海外シガーブランドのオーナーが来日し、プレミアムシガーとシングルモルトウイスキーのマリアージュを楽しむ限定イベントが初開催される。",
-      "title_en": "Limited Cigar-and-Whisky Event in Yokohama Minato Mirai",
-      "summary_en": "A limited-edition event pairing premium cigars with single malt whisky will be held for the first time in Yokohama's Minato Mirai district. An overseas cigar brand owner will visit Japan for the occasion, offering guests the chance to explore the marriage of premium cigars and single malt whisky.",
-      "source": "Koubo",
-      "source_title": "シガーとウイスキーのマリアージュ、海外ブランドオーナーが来日する限定イベント - Koubo",
-      "source_en": "Koubo",
-      "source_title_en": "Cigar and Whisky Marriage: Limited Event with Visiting Overseas Brand Owner",
-      "url": "https://news.google.com/rss/articles/CBMiRkFVX3lxTE1vbXdMRGgzMk9OYWREa0UwV1VEWXkyTGZXbm91MTFnckZGNkk4SEFWMlJmM2w1U216SkhzX0w4WGRZY2FuZ2c?oc=5"
     }
   ]
 };
