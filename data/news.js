@@ -7,8 +7,21 @@
    手で足すこともできますが、items の並び・キーは崩さないでください。
    ============================================================ */
 var NEWS_DATA = {
-  "updated": "2026-09-26",
+  "updated": "2026-09-27",
   "items": [
+    {
+      "date": "2026-09-27",
+      "category": "新製品",
+      "title_ja": "アレック・ブラッドリー、30周年記念パーフェクト発表",
+      "summary_ja": "アレック・ブラッドリー（Alec Bradley）が創業30周年記念ブレンド「Thirty Years」を発表した。創業者アラン・ルービンが息子のアレック、ブラッドリーとともにブレンドを選定。レギュラー生産は3ビトラだが、今回のパーフェクトは限定版となる。",
+      "title_en": "Alec Bradley Thirty Years Perfecto",
+      "summary_en": "Alec Bradley has unveiled the Thirty Years Perfecto, a limited edition marking the company's 30th anniversary. Founder Alan Rubin selected the blend alongside his two sons, Alec and Bradley. While the Thirty Years line features three regular production vitolas, the Perfecto is a limited edition release.",
+      "source": "halfwheel",
+      "source_title": "Alec Bradley Thirty Years Perfecto",
+      "source_en": "halfwheel",
+      "source_title_en": "Alec Bradley Thirty Years Perfecto",
+      "url": "https://halfwheel.com/alec-bradley-thirty-years-perfecto/479600/"
+    },
     {
       "date": "2026-09-26",
       "category": "新製品",
@@ -60,6 +73,19 @@ var NEWS_DATA = {
       "source_en": "halfwheel",
       "source_title_en": "Sans Pareil Blue Belicoso Lands at Club Humidor",
       "url": "https://halfwheel.com/sans-pareil-blue-belicoso-lands-at-club-humidor/480391/"
+    },
+    {
+      "date": "2026-09-25",
+      "category": "新製品",
+      "title_ja": "CAO、アマゾン・ベイシン・エキストラ・アニェホ再登場",
+      "summary_ja": "CAOが「アマゾン・ベイシン・エキストラ・アニェホ（Amazon Basin Extra Añejo）」を2026年に再発売する。通常のアマゾン・ベイシンを2年間熟成させたもので、エキストラ熟成版のリリースは今回で2回目となる。",
+      "title_en": "CAO Amazon Basin Extra Añejo Returning for 2026",
+      "summary_en": "CAO is bringing back the Amazon Basin Extra Añejo for 2026. The cigar is the regular Amazon Basin, but aged for an additional two years. This marks only the second release of the extra-aged version of the blend.",
+      "source": "halfwheel",
+      "source_title": "CAO Amazon Basin Extra Añejo Returning for 2026",
+      "source_en": "halfwheel",
+      "source_title_en": "CAO Amazon Basin Extra Añejo Returning for 2026",
+      "url": "https://halfwheel.com/cao-amazon-basin-extra-anejo-returning-for-2026/480368/"
     },
     {
       "date": "2026-09-25",
@@ -125,6 +151,45 @@ var NEWS_DATA = {
       "source_en": "halfwheel",
       "source_title_en": "HVC 500 Years Lancero Only Legends Ships",
       "url": "https://halfwheel.com/hvc-500-years-lancero-only-legends-ships/480278/"
+    },
+    {
+      "date": "2026-09-24",
+      "category": "新製品",
+      "title_ja": "モントサ・マドゥーロ、ミニ・シガリロ形態を追加",
+      "summary_ja": "モントサ（MONTOSA）が「マドゥーロ・ミニ・シガリロ」を新発売した。既存の「クラーロ・ミニ・シガリロ」に加わる形で、モントサ・ファミリーに新たなラインナップが加わった。",
+      "title_en": "Montosa Maduro Now Also Available in Mini Cigarillo Format",
+      "summary_en": "MONTOSA has launched the new Maduro Mini Cigarillo. Joining the existing MONTOSA Claro Mini Cigarillo, the new Maduro variant expands the MONTOSA family with an additional offering in the mini cigarillo format.",
+      "source": "Cigar Journal",
+      "source_title": "Montosa Maduro Now Also Available in Mini Cigarillo Format",
+      "source_en": "Cigar Journal",
+      "source_title_en": "Montosa Maduro Now Also Available in Mini Cigarillo Format",
+      "url": "https://www.cigarjournal.com/montosa-maduro-now-also-available-in-mini-cigarillo-format/"
+    },
+    {
+      "date": "2026-09-24",
+      "category": "規制・市場",
+      "title_ja": "オンライン葉巻店で最大約30％の価格差",
+      "summary_ja": "シガーファインダー（CigarFinder）の価格指数によると、同一銘柄・同サイズ・同本数の葉巻でも、最安のオンライン店で買う場合と最高値の店で買う場合とで約29％の価格差が生じることが判明した。指数では最安の店舗も明示している。",
+      "title_en": "CigarFinder's Price Index Finds Nearly 30% Gap Between Online Stores",
+      "summary_en": "According to CigarFinder's Cigar Price Index, buying the same cigar, in the same size and box count, from the most expensive online store rather than the cheapest can cost about 29% more. The index also names the cheapest retailer, highlighting significant price disparities across online cigar shops.",
+      "source": "Developing Palates",
+      "source_title": "Cigar News: CigarFinder’s Price Index Finds a Nearly 30% Price Gap Between Online Cigar Stores, and Names the Cheapest",
+      "source_en": "Developing Palates",
+      "source_title_en": "Cigar News: CigarFinder's Price Index Finds a Nearly 30% Price Gap Between Online Cigar Stores, and Names the Cheapest",
+      "url": "https://developingpalates.com/news/cigar-news/cigar-news-cigarfinders-price-index-finds-a-nearly-30-price-gap-between-online-cigar-stores-and-names-the-cheapest/"
+    },
+    {
+      "date": "2026-09-24",
+      "category": "日本国内",
+      "title_ja": "キャメルのリトルシガー2銘柄が新発売",
+      "summary_ja": "見た目も価格も“スーパースリム”なキャメル（Camel）のリトルシガー2銘柄が新発売された。",
+      "title_en": "Two New Camel Little Cigars Launched",
+      "summary_en": "Two new Camel little cigar varieties have gone on sale in Japan, described as being 'super slim' in both appearance and price.",
+      "source": "ウォーカープラス",
+      "source_title": "＜画像1 / 2＞見た目も価格も“スーパースリム”なキャメルのリトルシガー2銘柄が新発売 - ウォーカープラス",
+      "source_en": "Walkerplus",
+      "source_title_en": "Two 'Super Slim' Camel Little Cigars Launched",
+      "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE81bVBUek9TOU94UlpHcVNHN2NrTlE4dzdoRlNuZFJWZFVycGU2dy1SNG9vZTd5UlMtZnpud0w1MEJRajBzSFpMSmVsdFlVUkxwdHFIOHhhRjhERERHaUhpWTR6NnpIOVNVbzRV?oc=5"
     },
     {
       "date": "2026-09-24",
@@ -255,6 +320,19 @@ var NEWS_DATA = {
       "source_en": "halfwheel",
       "source_title_en": "Plasencia El Año de la Cabra Shown off at InterTabac 2026",
       "url": "https://halfwheel.com/plasencia-el-ano-de-la-cabra-shown-off-at-intertabac-2026/480092/"
+    },
+    {
+      "date": "2026-09-22",
+      "category": "新製品",
+      "title_ja": "オスカー・バラダレス、限定「コラボラシオネス」発表",
+      "summary_ja": "インタータバック2026で、オスカー・バラダレス（Oscar Valladares）のウド・フェッツァーが2026年限定版「コラボラシオネス（COLABORACIONES）」を発表した。",
+      "title_en": "Oscar Valladares Unveils 2026 Limited Edition at Intertabac",
+      "summary_en": "At Intertabac 2026, Udo Fetzer of Oscar Valladares unveiled the brand's 2026 Limited Edition, the Oscar Valladares 'COLABORACIONES'.",
+      "source": "Cigar Journal",
+      "source_title": "Oscar Valladares at Intertabac 2026",
+      "source_en": "Cigar Journal",
+      "source_title_en": "Oscar Valladares at Intertabac 2026",
+      "url": "https://www.cigarjournal.com/oscar-valladares-at-intertabac-2026/"
     },
     {
       "date": "2026-09-22",
@@ -2010,84 +2088,6 @@ var NEWS_DATA = {
       "source_en": "StogiePress",
       "source_title_en": "Cigar News: Powstanie Cigars Begins Shipping the Limited-Edition SBC 26",
       "url": "https://stogiepress.com/cigar-news-powstanie-cigars-begins-shipping-the-limited-edition-sbc-26/"
-    },
-    {
-      "date": "2026-08-29",
-      "category": "新製品",
-      "title_ja": "ボコック・ブラザーズ、テキサス工科大の第2弾葉巻",
-      "summary_ja": "ボコック・ブラザーズ（Bocock Brothers）は、大学提携シリーズのテキサス工科大学（Texas Tech）向け第2弾となる葉巻を発売した。第1弾はハバノ・ラッパーを使用していたが、第2弾はホンジュラス産マデュロ・ラッパーを採用する。",
-      "title_en": "Texas Tech Gets Second Bocock Brothers Cigar",
-      "summary_en": "Bocock Brothers has released its second cigar for Texas Tech, part of its collegiate cigar partnership programme announced earlier this year. While the first Texas Tech cigar used a habano wrapper, the second edition features a Honduran maduro wrapper. The release continues Bocock Brothers' expansion of its line-up of university-branded cigars.",
-      "source": "halfwheel",
-      "source_title": "Texas Tech Gets Second Bocock Brothers Cigar",
-      "source_en": "halfwheel",
-      "source_title_en": "Texas Tech Gets Second Bocock Brothers Cigar",
-      "url": "https://halfwheel.com/texas-tech-gets-second-bocock-brothers-cigar/478078/"
-    },
-    {
-      "date": "2026-08-28",
-      "category": "日本国内",
-      "title_ja": "キャメルのスーパースリム・リトルシガー2銘柄が新発売",
-      "summary_ja": "見た目も価格も「スーパースリム」なキャメル（CAMEL）のリトルシガー2銘柄が新発売された。",
-      "title_en": "Two 'super slim' Camel little cigars go on sale",
-      "summary_en": "Two new Camel little cigars, described as 'super slim' in both appearance and price, have gone on sale in Japan.",
-      "source": "walkerplus.com",
-      "source_title": "見た目も価格も“スーパースリム”なキャメルのリトルシガー2銘柄が新発売 - walkerplus.com",
-      "source_en": "walkerplus.com",
-      "source_title_en": "Two 'Super Slim' Camel Little Cigars Newly Released",
-      "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE8xdUJzZlE2blpqMHZYRVFwUXdoRUZEMWIwVjRtZ3hzd3lEWkxXXzBaQ2RTYXVGNUMycDlBNnZoRkdDci1TSXlHNmZlT0RYeVNSZUlvdNIBWkFVX3lxTFA4MUJPSjY0b20yY2hJX1h5RWhkYWVJY0ZMYWtqTTFZTFk2SExIa002ZzRhRWo1OW1zeGRrMGpXX0tFSHptYnAxd0ZfOFI1V1ZNcE8zMnZaS25jQQ?oc=5"
-    },
-    {
-      "date": "2026-08-28",
-      "category": "新製品",
-      "title_ja": "エスコバー、「ナスティ・エスコ」を出荷開始",
-      "summary_ja": "エスコバー・シガーズ（Escobar Cigars）は今夏にソフトローンチした新ライン「ナスティ・エスコ（Nasty Esco）」を、全米の小売店向けに出荷を開始したと発表した。",
-      "title_en": "Escobar Cigars Ships Nasty Esco",
-      "summary_en": "Escobar Cigars has begun shipping its new Nasty Esco line to retailers across the United States, following a soft launch earlier this summer. The line is now available nationwide through the company's retail accounts.",
-      "source": "halfwheel",
-      "source_title": "Escobar Cigars Ships Nasty Esco",
-      "source_en": "halfwheel",
-      "source_title_en": "Escobar Cigars Ships Nasty Esco",
-      "url": "https://halfwheel.com/escobar-cigars-ships-nasty-esco/478048/"
-    },
-    {
-      "date": "2026-08-28",
-      "category": "新製品",
-      "title_ja": "インディペンデンスから新2銘柄、9月1日出荷",
-      "summary_ja": "ユナイテッド（United）は、インディペンデンス（Independence）のロブストとトロを9月1日に出荷すると発表した。同社は今夏、既にインディペンデンス・ファイアクラッカーをリリースしている。",
-      "title_en": "Two New Independence Cigars Shipping Next Week",
-      "summary_en": "The Independence Robusto and Toro are slated to ship to stores on Tuesday, 1 September, United has announced. The releases follow the Independence Firecracker, which the company released earlier this summer.",
-      "source": "halfwheel",
-      "source_title": "Two New Independence Cigars Shipping Next Week",
-      "source_en": "halfwheel",
-      "source_title_en": "Two New Independence Cigars Shipping Next Week",
-      "url": "https://halfwheel.com/two-new-independence-cigars-shipping-next-week/478035/"
-    },
-    {
-      "date": "2026-08-28",
-      "category": "新製品",
-      "title_ja": "オハナ、米建国250年記念でトースト・マシュマロ再登場",
-      "summary_ja": "オハナ・シガーズ（Ohana Cigars）は、アメリカ建国250周年を記念し、人気ブレンド「トースト・マシュマロ（Toasted Marshmallows）」の次回分を発売すると発表した。今回のリリースには新たな2026年スーパー・エクスクルーシブが含まれる。",
-      "title_en": "Ohana Cigars Celebrates America's 250th With New Toasted Marshmallow Cigars",
-      "summary_en": "Ohana Cigars has announced a new batch of its well-received Toasted Marshmallows blend to mark America's 250th anniversary. This year's release includes a new 2026 Super Exclusive, with the brand expecting the same strong reception as previous editions.",
-      "source": "StogiePress",
-      "source_title": "Cigar News: Ohana Cigars Celebrates America’s 250th With New Toasted Marshmallow Cigars",
-      "source_en": "StogiePress",
-      "source_title_en": "Cigar News: Ohana Cigars Celebrates America's 250th With New Toasted Marshmallow Cigars",
-      "url": "https://stogiepress.com/cigar-news-ohana-cigars-celebrates-americas-250th-with-new-toasted-marshmallow-cigars/"
-    },
-    {
-      "date": "2026-08-28",
-      "category": "新製品",
-      "title_ja": "カサ・カリージョ、「ダーク・リチュアルズ」を新ブレンドで再登場",
-      "summary_ja": "カサ・カリージョ（Casa Carrillo）は、限定品として「ダーク・リチュアルズ（Dark Rituals）」を2026年向けに全く新しいブレンドで復活させると発表した。ダークなペンシルベニア・ブロードリーフ・マドゥーロのラッパーに、コネチカット・バインダーとドミニカ産ロングフィラーを組み合わせたミディアムボディの一本。",
-      "title_en": "Casa Carrillo Brings Dark Rituals Back as an Exclusive",
-      "summary_en": "Casa Carrillo has announced the return of Dark Rituals, reimagined for 2026 with an entirely new blend. It features a dark Pennsylvania Broadleaf Maduro wrapper chosen for its depth and richness, paired with a Connecticut binder and premium Dominican long fillers to create a medium-bodied cigar offered as an exclusive.",
-      "source": "StogiePress",
-      "source_title": "Cigar News: Casa Carrillo Brings Dark Rituals Back as an Exclusive",
-      "source_en": "StogiePress",
-      "source_title_en": "Cigar News: Casa Carrillo Brings Dark Rituals Back as an Exclusive",
-      "url": "https://stogiepress.com/cigar-news-casa-carrillo-brings-dark-rituals-back-as-an-exclusive/"
     }
   ]
 };
