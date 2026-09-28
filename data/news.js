@@ -7,8 +7,47 @@
    手で足すこともできますが、items の並び・キーは崩さないでください。
    ============================================================ */
 var NEWS_DATA = {
-  "updated": "2026-09-27",
+  "updated": "2026-09-28",
   "items": [
+    {
+      "date": "2026-09-28",
+      "category": "業界・企業",
+      "title_ja": "フェルミン・ペレス、製造・流通を移管",
+      "summary_ja": "フェルミン・ペレス・シガーズ（Fermin Perez Cigars）が、これまで自社のエステリ工場で行っていた製造を、ドメイン・シガーズを手掛ける企業タバカレラ・ファミリア・ディスラ（Tabacalera Familia Disla）に移管した。流通もドメインが担う。",
+      "title_en": "Fermin Perez Cigars Moves Production to Tabacalera Familia Disla, Distribution to Domain",
+      "summary_en": "Fermin Perez Cigars, which had been making its cigars in its own factory in Estelí, has moved production to Tabacalera Familia Disla, the company behind Domain Cigars. Distribution will now also be handled by Domain, as the brand leverages the production and distribution services of its new partner.",
+      "source": "halfwheel",
+      "source_title": "Fermin Perez Cigars Moves Production to Tabacalera Familia Disla, Distribution to Domain",
+      "source_en": "halfwheel",
+      "source_title_en": "Fermin Perez Cigars Moves Production to Tabacalera Familia Disla, Distribution to Domain",
+      "url": "https://halfwheel.com/fermin-perez-cigars-moves-production-to-tabacalera-familia-disla-distribution-to-domain-distribution/480471/"
+    },
+    {
+      "date": "2026-09-28",
+      "category": "新製品",
+      "title_ja": "ディフィニション、新作「One13」発表",
+      "summary_ja": "2019年に創業し、シガーだけでなく特徴的なバンドで知られるディフィニション・シガーズ（Definition Cigars）が新作「One13」を発表した。名称は創業者ジャモンド・ハックリー（Jamond Hackley）の幼少期の住所にちなむ。",
+      "title_en": "Definition One13",
+      "summary_en": "Definition Cigars, which launched in 2019 and has built a reputation not only for its cigars but for its distinctive bands, has released a new cigar called the One13. The name references the childhood address of founder Jamond Hackley.",
+      "source": "halfwheel",
+      "source_title": "Definition One13",
+      "source_en": "halfwheel",
+      "source_title_en": "Definition One13",
+      "url": "https://halfwheel.com/definition-one13/480415/"
+    },
+    {
+      "date": "2026-09-27",
+      "category": "新製品",
+      "title_ja": "モンテクリスト新作、TFWA 2026で披露",
+      "summary_ja": "通常TFWAで発表される新作は旅行者限定品だが、今年はモンテクリスト（Montecristo）の新作「フラガータ（Fragata）」がTFWA 2026でデビューする。",
+      "title_en": "Montecristo Fragata Debuting at TFWA 2026",
+      "summary_en": "While a new cigar shown at the TFWA conference is typically a travel exclusive, this year it is a new Montecristo. The Montecristo Fragata will make its debut at TFWA 2026.",
+      "source": "halfwheel",
+      "source_title": "Montecristo Fragata Debuting at TFWA 2026",
+      "source_en": "halfwheel",
+      "source_title_en": "Montecristo Fragata Debuting at TFWA 2026",
+      "url": "https://halfwheel.com/montecristo-fragata-debuting-at-tfwa-2026/480446/"
+    },
     {
       "date": "2026-09-27",
       "category": "新製品",
@@ -73,6 +112,19 @@ var NEWS_DATA = {
       "source_en": "halfwheel",
       "source_title_en": "Sans Pareil Blue Belicoso Lands at Club Humidor",
       "url": "https://halfwheel.com/sans-pareil-blue-belicoso-lands-at-club-humidor/480391/"
+    },
+    {
+      "date": "2026-09-25",
+      "category": "新製品",
+      "title_ja": "オラシオ、新作「パンテラス」を披露",
+      "summary_ja": "オラシオ（Horacio）がInterTabac 2026で新作「パンテラス（Panteras）」を披露した。",
+      "title_en": "The \"Panteras\" de Horacio",
+      "summary_en": "Horacio presented its \"Panteras\" cigar at InterTabac 2026.",
+      "source": "Cigar Journal",
+      "source_title": "The “Panteras” de Horacio",
+      "source_en": "Cigar Journal",
+      "source_title_en": "The \"Panteras\" de Horacio",
+      "url": "https://www.cigarjournal.com/the-panteras-de-horacio/"
     },
     {
       "date": "2026-09-25",
@@ -151,6 +203,32 @@ var NEWS_DATA = {
       "source_en": "halfwheel",
       "source_title_en": "HVC 500 Years Lancero Only Legends Ships",
       "url": "https://halfwheel.com/hvc-500-years-lancero-only-legends-ships/480278/"
+    },
+    {
+      "date": "2026-09-24",
+      "category": "イベント・アワード",
+      "title_ja": "ファウンデーション、10周年で「セント・ジョージ」",
+      "summary_ja": "ファウンデーション・シガー・カンパニー（Foundation Cigar Company）が、InterTabac 2026で創業10周年を記念する「セント・ジョージ（Saint George）」を披露した。",
+      "title_en": "Saint George in the 10th Anniversary",
+      "summary_en": "Foundation Cigar Company marked its 10th anniversary at InterTabac 2026, where it presented its Saint George line.",
+      "source": "Cigar Journal",
+      "source_title": "Saint George in the 10th Anniversary",
+      "source_en": "Cigar Journal",
+      "source_title_en": "Saint George in the 10th Anniversary",
+      "url": "https://www.cigarjournal.com/saint-george-in-the-10th-anniversary/"
+    },
+    {
+      "date": "2026-09-24",
+      "category": "業界・企業",
+      "title_ja": "スモーカーズ・アビー、北フロリダに進出",
+      "summary_ja": "スモーカーズ・アビー（Smokers Abbey）が北フロリダのジャクソンビルに進出した。ロイヤル・ターマンとモリー・ターマン夫妻が運営を率い、人気ラウンジ業態を同地に展開する。",
+      "title_en": "Smokers Abbey Jacksonville",
+      "summary_en": "Smokers Abbey has moved into Jacksonville, bringing its beloved lounge concept to Northern Florida. Loyal and Mollie Thurman are at the helm of the new location.",
+      "source": "Cigar Journal",
+      "source_title": "Smokers Abbey Jacksonville",
+      "source_en": "Cigar Journal",
+      "source_title_en": "Smokers Abbey Jacksonville",
+      "url": "https://www.cigarjournal.com/smokers-abbey-jacksonville/"
     },
     {
       "date": "2026-09-24",
@@ -2010,84 +2088,6 @@ var NEWS_DATA = {
       "source_en": "halfwheel",
       "source_title_en": "Don Emmanuel Lands in Oman",
       "url": "https://halfwheel.com/don-emmanuel-lands-in-oman/478196/"
-    },
-    {
-      "date": "2026-08-30",
-      "category": "新製品",
-      "title_ja": "イースタン・スタンダード限定版、通販専売で復活",
-      "summary_ja": "ラウディシ傘下のコールドウェル（Caldwell）が「イースタン・スタンダード」のランセロを限定生産で再発売した。今回はsmokingpipes.comのみの専売品として展開される。",
-      "title_en": "Eastern Standard Silk Road Returns as Smokingpipes Exclusive",
-      "summary_en": "Laudisi is keeping it in the family. Caldwell's Eastern Standard Lancero returns for a limited run, offered exclusively at smokingpipes.com. The limited release marks the comeback of the line under the Laudisi umbrella.",
-      "source": "halfwheel",
-      "source_title": "Eastern Standard Silk Road Returns as Smokingpipes Exclusive",
-      "source_en": "halfwheel",
-      "source_title_en": "Eastern Standard Silk Road Returns as Smokingpipes Exclusive",
-      "url": "https://halfwheel.com/eastern-standard-silk-road-returns-as-smokingpipes-exclusive/478135/"
-    },
-    {
-      "date": "2026-08-30",
-      "category": "新製品",
-      "title_ja": "ヴィアヘ、新ライン「ハニー・ベイル」6月登場",
-      "summary_ja": "ヴィアヘ（Viaje）が新ライン「ハニー・ベイル（Honey Bale）」を6月に発表した。高品質な特徴を持つタバコの梱（ベイル）にちなんで命名された。",
-      "title_en": "Viaje Honey Bale",
-      "summary_en": "Honey Bale is a new line from Viaje, debuting in June. It is named for bales of tobacco that produce high-quality characteristics that set them apart from the others.",
-      "source": "halfwheel",
-      "source_title": "Viaje Honey Bale",
-      "source_en": "halfwheel",
-      "source_title_en": "Viaje Honey Bale",
-      "url": "https://halfwheel.com/viaje-honey-bale/478042/"
-    },
-    {
-      "date": "2026-08-29",
-      "category": "新製品",
-      "title_ja": "ポフスタニエ「SBC 26」が出荷開始",
-      "summary_ja": "ポフスタニエ（Powstanie）の「SBC 26」が出荷された。SBCは2016年に初リリースされ、シチェパンキェヴィチ兄弟の葉巻業界での歩みを支えてきた人々に捧げられるシリーズ。",
-      "title_en": "Powstanie SBC 26 Ships",
-      "summary_en": "Powstanie's SBC 26 has shipped. First released in 2016, each SBC edition is dedicated to those who have helped the Szczepankewicz brothers on their journey in the cigar industry.",
-      "source": "halfwheel",
-      "source_title": "Powstanie SBC 26 Ships",
-      "source_en": "halfwheel",
-      "source_title_en": "Powstanie SBC 26 Ships",
-      "url": "https://halfwheel.com/powstanie-sbc-26-ships/478138/"
-    },
-    {
-      "date": "2026-08-29",
-      "category": "イベント・アワード",
-      "title_ja": "シガー喫煙世界選手権、ドゥブロヴニクで決勝へ",
-      "summary_ja": "シガー喫煙世界選手権（CSWC）の予選シーズンが終了し、ドゥブロヴニクでの決勝が迫った。3度王者のハウケ・ヴァルター、米国のドリュー・エムチ、英国のエタン・パテルらが有力候補に挙げられている。",
-      "title_en": "Galevskii Favorite To Win the CSWC",
-      "summary_en": "The CSWC qualifying season has ended and the grand finale in Dubrovnik is near. Front-runners include three-time champion Hauke Walter, who finished third last year and won the German qualifier, along with Drew Emch of the US, Etan Patel of the UK and a strong Polish contingent. Numerous other competitors are also tipped to challenge for the title.",
-      "source": "Cigar Journal",
-      "source_title": "Galevskii Favorite To Win the CSWC",
-      "source_en": "Cigar Journal",
-      "source_title_en": "Galevskii Favorite To Win the CSWC",
-      "url": "https://www.cigarjournal.com/galevskii-favorite-to-win-the-cswc/?utm_source=rss&utm_medium=rss&utm_campaign=galevskii-favorite-to-win-the-cswc"
-    },
-    {
-      "date": "2026-08-29",
-      "category": "規制・市場",
-      "title_ja": "第9巡回区、加州UTL訴訟で葉巻業界の控訴棄却",
-      "summary_ja": "米連邦第9巡回区控訴裁判所は、カリフォルニア州の未燃焼タバコ（UTL）規制をめぐる訴訟で、葉巻業界側の控訴を退けた。4月に業界とカリフォルニア州司法長官事務所が3人の裁判官による審理で主張を交わし、審理後には楽観論もあったものの、業界側は仮差止命令の獲得に至らなかった。",
-      "title_en": "Ninth Circuit Denies Cigar Companies' Appeal in California UTL Lawsuit",
-      "summary_en": "The US Court of Appeals for the Ninth Circuit has denied the cigar industry's appeal in litigation over California's unburned-tobacco-listing (UTL) rules. In April, the industry and the California attorney general's office presented arguments before a three-judge federal appeals panel. Despite some optimism following the hearing, the industry failed in its bid to secure a preliminary injunction. The decision marks a setback for cigar companies challenging the state's regulatory approach.",
-      "source": "halfwheel",
-      "source_title": "Ninth Circuit Denies Cigar Companies Appeal in California UTL Lawsuit",
-      "source_en": "halfwheel",
-      "source_title_en": "Ninth Circuit Denies Cigar Companies' Appeal in California UTL Lawsuit",
-      "url": "https://halfwheel.com/ninth-circuit-denies-cigar-companies-appeal-in-california-utl-lawsuit/478107/"
-    },
-    {
-      "date": "2026-08-29",
-      "category": "新製品",
-      "title_ja": "ポウスタニエ、限定「SBC 26」出荷開始",
-      "summary_ja": "ポウスタニエ（Powstanie Cigars）は、限定品「SBC 26」の正規小売店向け出荷を開始したと発表した。同社スモール・バッチ・コレクションの最新作で、ブラザー・グレッグの情熱作と位置づけられる。エクアドル、メキシコ、ブラジル、ドミニカ共和国、ニカラグア産のタバコを組み合わせた複雑なブレンドが特徴。",
-      "title_en": "Powstanie Cigars Begins Shipping the Limited-Edition SBC 26",
-      "summary_en": "Powstanie Cigars has announced that the limited-edition SBC 26 is now shipping to authorised retailers. The latest release in Powstanie's Small Batch Collection, it is described as Brother Gregg's passion project—a carefully developed cigar featuring an intricate blend of tobaccos sourced from Ecuador, Mexico, Brazil, the Dominican Republic and Nicaragua. The first SBC was released in 2016, with each edition dedicated to those who have supported the Szczepankewicz brothers in their cigar-industry journey.",
-      "source": "StogiePress",
-      "source_title": "Cigar News: Powstanie Cigars Begins Shipping the Limited-Edition SBC 26",
-      "source_en": "StogiePress",
-      "source_title_en": "Cigar News: Powstanie Cigars Begins Shipping the Limited-Edition SBC 26",
-      "url": "https://stogiepress.com/cigar-news-powstanie-cigars-begins-shipping-the-limited-edition-sbc-26/"
     }
   ]
 };
