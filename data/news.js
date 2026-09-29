@@ -7,8 +7,86 @@
    手で足すこともできますが、items の並び・キーは崩さないでください。
    ============================================================ */
 var NEWS_DATA = {
-  "updated": "2026-09-28",
+  "updated": "2026-09-29",
   "items": [
+    {
+      "date": "2026-09-29",
+      "category": "業界・企業",
+      "title_ja": "ボンド・ロバーツ、非キューバ葉巻の入札を開始",
+      "summary_ja": "キューバ産葉巻のオークションを数万件手がけてきたボンド・ロバーツ（Bond Roberts）が、非キューバ産葉巻の取り扱いを新たに開始した。",
+      "title_en": "Bond Roberts Adds Non-Cuban Cigar Auctions",
+      "summary_en": "Bond Roberts, which has hosted tens of thousands of Cuban cigar auctions, is expanding its platform to include non-Cuban cigars for the first time.",
+      "source": "halfwheel",
+      "source_title": "Bond Roberts Adds Non-Cuban Cigar Auctions",
+      "source_en": "halfwheel",
+      "source_title_en": "Bond Roberts Adds Non-Cuban Cigar Auctions",
+      "url": "https://halfwheel.com/bond-roberts-adds-non-cuban-cigar-auctions/480593/"
+    },
+    {
+      "date": "2026-09-29",
+      "category": "新製品",
+      "title_ja": "ドリュー・エステート、新作6種を出荷",
+      "summary_ja": "ドリュー・エステート（Drew Estate）が新作葉巻6種を出荷した。2種類の3本入りサンプラーに収められ、創業30周年記念と、新設した消費者向けの「DE30 Rewards」プログラムの一環となる。同プログラムは登録受付を開始している。",
+      "title_en": "Drew Estate Ships Six New Cigars",
+      "summary_en": "Drew Estate has shipped six new cigars, found inside two different three-pack samplers. They are part of the company's 30th anniversary celebration and its new DE30 Rewards programme for consumers, which is now open for registration.",
+      "source": "halfwheel",
+      "source_title": "Drew Estate Ships Six New Cigars",
+      "source_en": "halfwheel",
+      "source_title_en": "Drew Estate Ships Six New Cigars",
+      "url": "https://halfwheel.com/drew-estate-ships-six-new-cigars/480582/"
+    },
+    {
+      "date": "2026-09-29",
+      "category": "新製品",
+      "title_ja": "ゲリス・ファミリー、新定番「エッセンシャルズ」出荷",
+      "summary_ja": "ゲリス・ファミリー・シガーズ（Gellis Family Cigars）が新たなレギュラー生産ライン「エッセンシャルズ」を小売店向けに出荷開始。4 1/2×32のプチコロナ1種のみで、価格は1本6.99ドル。エクアドル産コネチカット種のラッパーとバインダーに、ニカラグア産タバコをフィラーに用いる。",
+      "title_en": "Gellis Family Cigars Essentials on the Way to Retailers",
+      "summary_en": "Gellis Family Cigars is debuting a new regular production line, Essentials, heading to retailers. It comes in a single vitola, a 4 1/2 x 32 petit corona priced at $6.99 each. The blend uses an Ecuadorian Connecticut-seed wrapper and binder, with Nicaraguan tobacco in the filler.",
+      "source": "halfwheel",
+      "source_title": "Gellis Family Cigars Essentials on the Way to Retailers",
+      "source_en": "halfwheel",
+      "source_title_en": "Gellis Family Cigars Essentials on the Way to Retailers",
+      "url": "https://halfwheel.com/gellis-family-cigars-essentials-on-the-way-to-retailers/480569/"
+    },
+    {
+      "date": "2026-09-28",
+      "category": "新製品",
+      "title_ja": "ハバノス、トリニダ初のレセルバを発表",
+      "summary_ja": "ハバノス（Habanos, S.A.）が「トリニダ・ビヒア・レセルバ・コセチャ2022（Trinidad Vigía Reserva Cosecha 2022）」を発表した。同ブランド初のレセルバとなる。",
+      "title_en": "Habanos, S.A. Unveils the Trinidad Vigía Reserva Cosecha 2022",
+      "summary_en": "Habanos, S.A. has unveiled the Trinidad Vigía Reserva Cosecha 2022, the brand's first-ever Reserva.",
+      "source": "Cigar Journal",
+      "source_title": "Habanos, S.A. Unveils the Trinidad Vigía Reserva Cosecha 2022",
+      "source_en": "Cigar Journal",
+      "source_title_en": "Habanos, S.A. Unveils the Trinidad Vigía Reserva Cosecha 2022",
+      "url": "https://www.cigarjournal.com/habanos-s-a-unveils-the-trinidad-vigia-reserva-cosecha-2022/"
+    },
+    {
+      "date": "2026-09-28",
+      "category": "新製品",
+      "title_ja": "アレック・ブラッドリー、「チャンク・スマトラ」発売",
+      "summary_ja": "アレック・ブラッドリー（Alec Bradley）が「チャンク」シリーズに新作「チャンク・スマトラ（Chunk Sumatra）」を追加。シリーズ3作目の常時展開品で、10月から小売店向けに出荷を開始する。",
+      "title_en": "Alec Bradley Launches Chunk Sumatra",
+      "summary_en": "Alec Bradley is adding to its Chunk series with Chunk Sumatra, the third dedicated Chunk cigar. It is a full-time release that will ship to retailers starting in October.",
+      "source": "Cigar Journal",
+      "source_title": "Alec Bradley Launches Chunk Sumatra",
+      "source_en": "Cigar Journal",
+      "source_title_en": "Alec Bradley Launches Chunk Sumatra",
+      "url": "https://www.cigarjournal.com/alec-bradley-launches-chunk-sumatra/"
+    },
+    {
+      "date": "2026-09-28",
+      "category": "新製品",
+      "title_ja": "トスカーノT、愛好会と共同開発",
+      "summary_ja": "マニファトゥーレ・シガロ・トスカーノ（Manifatture Sigaro Toscano）が「トスカーノT（Toscano T）」を発表。2024年半ばに始動した「クラブ・アミーチ・デル・トスカーノ」の2,500人超の愛好家との2年間にわたる共同開発プロジェクトの成果となる。",
+      "title_en": "Toscano T: The Cigar Co-Created With the Club Amici del Toscano",
+      "summary_en": "Manifatture Sigaro Toscano has presented the Toscano T, the result of a two-year co-creation project launched in mid-2024 with more than 2,500 enthusiasts from the Club Amici del Toscano.",
+      "source": "Cigar Journal",
+      "source_title": "Toscano T: The Cigar Co-Created With the Club Amici del Toscano",
+      "source_en": "Cigar Journal",
+      "source_title_en": "Toscano T: The Cigar Co-Created With the Club Amici del Toscano",
+      "url": "https://www.cigarjournal.com/toscano-t-the-cigar-co-created-with-the-club-amici-del-toscano/"
+    },
     {
       "date": "2026-09-28",
       "category": "業界・企業",
@@ -2010,84 +2088,6 @@ var NEWS_DATA = {
       "source_en": "halfwheel",
       "source_title_en": "Por Larrañaga 35 Aniversario Celebrates 5th Avenue Anniversary",
       "url": "https://halfwheel.com/por-larranaga-35-aniversario-celebrates-5th-avenue-anniversary/478261/"
-    },
-    {
-      "date": "2026-08-31",
-      "category": "規制・市場",
-      "title_ja": "ベトナム、葉巻・タバコ製造業者に基準開示義務",
-      "summary_ja": "ベトナムで、葉巻およびタバコの製造業者が自社の基準を開示しなければならないと報じられた。",
-      "title_en": "Cigar and Tobacco Manufacturers Must Disclose Their Standards",
-      "summary_en": "In Vietnam, cigar and tobacco manufacturers are required to disclose their own product standards, according to a report.",
-      "source": "Vietnam.vn",
-      "source_title": "葉巻およびタバコ製造業者は、自社の基準を開示しなければならない。 - Vietnam.vn",
-      "source_en": "Vietnam.vn",
-      "source_title_en": "Cigar and Tobacco Manufacturers Must Disclose Their Standards",
-      "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE9mOGVSeDVHZFBsNG00ZDlUemNGamhTVU95MFpOR1JvNklvMUxuLTE3eHpkWUR4Q1JqbEJibjh1bllkWDh4RzN5YTAxTmVjVm9Za0hwLVZGSndfVUQwMGl1ZlFHdVJhdHJSNklyVTBIT2Fqc0VyRExHZ0s2b0xfejQ?oc=5"
-    },
-    {
-      "date": "2026-08-31",
-      "category": "業界・企業",
-      "title_ja": "カヴァリエ・ジュネーブ、ヒューストンに新倉庫",
-      "summary_ja": "カヴァリエ・ジュネーブ・シガーズ（Cavalier Genève Cigars）が、米ヒューストン近郊に新倉庫を開設し今週から稼働すると発表した。米国市場・顧客向け専用で、新たな倉庫責任者と業務プロセスを導入。所在地はテキサス州スタッフォード。創業者セバスチャン・ドコペ氏はサービス向上を狙った投資だと述べた。",
-      "title_en": "Cavalier Genève Cigars Announces New Houston-Based Warehouse",
-      "summary_en": "Cavalier Genève Cigars has announced that its new warehouse near Houston, Texas is operational this week, exclusively servicing the US market and its clients. The company has added a new warehouse manager and new processes aimed at improving service standards. Founder Sebastien Decoppet said the move followed months of preparation begun late last year. The facility is located in Stafford, Texas.",
-      "source": "Cigar Journal",
-      "source_title": "Cavalier Genève Cigars Announces New Houston Based Warehouse",
-      "source_en": "Cigar Journal",
-      "source_title_en": "Cavalier Genève Cigars Announces New Houston-Based Warehouse",
-      "url": "https://www.cigarjournal.com/cavalier-geneve-cigars-announces-new-houston-based-warehouse/?utm_source=rss&utm_medium=rss&utm_campaign=cavalier-geneve-cigars-announces-new-houston-based-warehouse"
-    },
-    {
-      "date": "2026-08-31",
-      "category": "イベント・アワード",
-      "title_ja": "CSWC、英国の新人が初優勝",
-      "summary_ja": "クロアチア・ドゥブロヴニクで開かれたシガー・スモーキング・ワールド・チャンピオンシップ（CSWC）の決勝で、英国のジョージ・スタンスフィールドが史上初の英国人世界王者に輝いた。彼が初めて葉巻を吸ったのは1年前。ワイルドカードで決勝に進み優勝した。日本の向川隼人らも出場した。",
-      "title_en": "British Newcomer Crowned CSWC World Champion",
-      "summary_en": "At the Cigar Smoking World Championship's grand finale in Dubrovnik, Britain's George Stansfield became the first British world champion, a major surprise. Having smoked his first cigar only a year ago, he earned a wild card to the final after finishing second nationally. Founder Marko Bilic hailed it as proof the event is not just for veterans. Hayato Mukaigawa of Japan was among the other finalists.",
-      "source": "Cigar Journal",
-      "source_title": "British Newcomer CSWC World Champion",
-      "source_en": "Cigar Journal",
-      "source_title_en": "British Newcomer CSWC World Champion",
-      "url": "https://www.cigarjournal.com/british-newcomer-cswc-world-champion/?utm_source=rss&utm_medium=rss&utm_campaign=british-newcomer-cswc-world-champion"
-    },
-    {
-      "date": "2026-08-31",
-      "category": "業界・企業",
-      "title_ja": "ドン・エマニュエル、オマーンへ進出",
-      "summary_ja": "ドン・エマニュエル・シガーズ（Don Emmanuel Cigars）がオマーンへの展開を発表した。現地代理はAshish Chaturvediが担い、Puro Cigar Loungeで取り扱う。主力の「アヌンナキ（Anunnaki）」はCigar Trophy Awardsで2026年最優秀ドミニカ産葉巻のファイナリストに選ばれている。",
-      "title_en": "Don Emmanuel Continues Global Expansion with Entry into Oman",
-      "summary_en": "Don Emmanuel Cigars has announced its expansion into Oman, where it will be represented by Ashish Chaturvedi with the brand available at Puro Cigar Lounge. The move follows Anunnaki's selection as a finalist for Best Dominican Cigar of 2026 at the Cigar Journal Cigar Trophy Awards. Its portfolio, co-blended with Master Blender Eladio Díaz, now reaches the Middle East market.",
-      "source": "Cigar Journal",
-      "source_title": "Don Emmanuel Continues Global Expansion with Entry into Oman",
-      "source_en": "Cigar Journal",
-      "source_title_en": "Don Emmanuel Continues Global Expansion with Entry into Oman",
-      "url": "https://www.cigarjournal.com/don-emmanuel-continues-global-expansion-with-entry-into-oman/?utm_source=rss&utm_medium=rss&utm_campaign=don-emmanuel-continues-global-expansion-with-entry-into-oman"
-    },
-    {
-      "date": "2026-08-31",
-      "category": "新製品",
-      "title_ja": "ダビドフ、新ライン「ジノ・ホンジュラス」発表",
-      "summary_ja": "ダビドフ（Davidoff）が新ライン「ジノ・ホンジュラス・ロブスト（Zino Honduras Robusto）」を発表した。2021年に登場した「ジノ・ニカラグア」の後継的位置づけ。エクアドル産ラッパーに、コパン産とハマストラン渓谷産のホンジュラス葉をブレンドして使用している。",
-      "title_en": "Davidoff Unveils New Zino Honduras Robusto",
-      "summary_en": "Davidoff has introduced a new line, the Zino Honduras Robusto, positioned as a follow-up to the Zino Nicaragua that debuted in 2021. The cigar features an Ecuadorian wrapper covering a blend of Honduran tobaccos sourced from Copán and the Jamastrán Valley. It marks another addition to Davidoff's Zino range, expanding the origins used in the series with a Honduran-focused blend.",
-      "source": "halfwheel",
-      "source_title": "Zino Honduras Robusto",
-      "source_en": "halfwheel",
-      "source_title_en": "Zino Honduras Robusto",
-      "url": "https://halfwheel.com/zino-honduras-robusto/478174/"
-    },
-    {
-      "date": "2026-08-31",
-      "category": "業界・企業",
-      "title_ja": "ドン・エマヌエル、オマーンで販売開始",
-      "summary_ja": "ドミニカ共和国製の葉巻ブランド「ドン・エマヌエル（Don Emmanuel）」が国際展開を拡大している。今月、オマーンでの販売を開始した。",
-      "title_en": "Don Emmanuel Lands in Oman",
-      "summary_en": "Don Emmanuel, a cigar brand made in the Dominican Republic, is expanding its international distribution footprint. Earlier this month, the cigars went on sale in Oman, adding a new market to the brand's growing global presence.",
-      "source": "halfwheel",
-      "source_title": "Don Emmanuel Lands in Oman",
-      "source_en": "halfwheel",
-      "source_title_en": "Don Emmanuel Lands in Oman",
-      "url": "https://halfwheel.com/don-emmanuel-lands-in-oman/478196/"
     }
   ]
 };
