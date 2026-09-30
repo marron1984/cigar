@@ -7,8 +7,73 @@
    手で足すこともできますが、items の並び・キーは崩さないでください。
    ============================================================ */
 var NEWS_DATA = {
-  "updated": "2026-09-29",
+  "updated": "2026-09-30",
   "items": [
+    {
+      "date": "2026-09-30",
+      "category": "新製品",
+      "title_ja": "タトゥアージュ「ジェイソン・リダックス6」10月上旬発売",
+      "summary_ja": "タトゥアージュ（Tatuaje）は、モンスターシリーズ6作目「JV13」（2013年発売）を再現した「ザ・ジェイソン・リダックス6（The Jason Redux 6）」を10月上旬に発売すると発表した。オリジナルと同じ7 1/2×52サイズで復活する。",
+      "title_en": "Tatuaje The Jason Redux 6 Coming in Early October",
+      "summary_en": "Tatuaje has announced The Jason Redux 6, a revisit of the sixth cigar in its Monster Series, the JV13, which was originally released in 2013. After several follow-up releases in various sizes, the cigar returns in its original 7 1/2 x 52 format. It is due to arrive in early October.",
+      "source": "halfwheel",
+      "source_title": "Tatuaje The Jason Redux 6 Coming in Early October",
+      "source_en": "halfwheel",
+      "source_title_en": "Tatuaje The Jason Redux 6 Coming in Early October",
+      "url": "https://halfwheel.com/tatuaje-the-jason-redux-6-coming-in-early-october/480669/"
+    },
+    {
+      "date": "2026-09-30",
+      "category": "新製品",
+      "title_ja": "シカー「Xi2 死者の日シリーズ」来月登場",
+      "summary_ja": "シカー（XIKAR）は、死者の日（Dia de Muertos）をモチーフにした4種の新カラーの「Xi2」カッターを発表した。10月17日にフロリダ州ウェストンの本社で開催する小売業者向けイベント「QI Spotlight Trade Show」でデビューする。",
+      "title_en": "XIKAR Xi2 Dia de Muertos Series Debuting Next Month",
+      "summary_en": "XIKAR has unveiled four new Day of the Dead-inspired colourways for its Xi2 cutter. The new models will debut at the QI Spotlight Trade Show on 17 October, a retailers-only event the company is hosting at its Weston, Florida headquarters.",
+      "source": "halfwheel",
+      "source_title": "XIKAR Xi2 Dia de Muertos Series Debuting Next Month",
+      "source_en": "halfwheel",
+      "source_title_en": "XIKAR Xi2 Dia de Muertos Series Debuting Next Month",
+      "url": "https://halfwheel.com/xikar-xi2-dia-de-muertos-series-debuting-next-month/480644/"
+    },
+    {
+      "date": "2026-09-30",
+      "category": "新製品",
+      "title_ja": "フーテン・ヤング、ルガーと葉巻・バーボンで提携",
+      "summary_ja": "フーテン・ヤング（Hooten Young）は、銃器ブランドのルガー（Ruger）と提携し、新製品を発表した。ルガーのブランディングを施したニカラグア産葉巻2種と、同社ロゴをあしらった限定バーボンをそろえる。",
+      "title_en": "Hooten Young Collaborating With Ruger For New Cigars, Bourbon",
+      "summary_en": "Hooten Young has partnered with popular firearms brand Ruger on a new range. It includes two different Nicaraguan cigars, both featuring Ruger branding, alongside a limited run of bourbon that also carries the Ruger logo.",
+      "source": "halfwheel",
+      "source_title": "Hooten Young Collaborating With Ruger For New Cigars, Bourbon",
+      "source_en": "halfwheel",
+      "source_title_en": "Hooten Young Collaborating With Ruger For New Cigars, Bourbon",
+      "url": "https://halfwheel.com/hooten-young-collaborating-with-ruger-for-new-cigars-bourbon/480455/"
+    },
+    {
+      "date": "2026-09-30",
+      "category": "新製品",
+      "title_ja": "エリー・ブルー、黒曜石製の灰皿を来月発売",
+      "summary_ja": "エリー・ブルー（Elie Bleu）は、アルメニアのアルテニ山産の黒曜石を用いた葉巻5本用の新灰皿「アンヘル・デ・ラ・レボルシオン（Angel de la Revolución）」を発表した。10月下旬から11月上旬の発売を予定する。",
+      "title_en": "Elie Bleu Angel de la Revolución Ashtray Debuting Next Month",
+      "summary_en": "Elie Bleu has unveiled the Angel de la Revolución ashtray, a new five-cigar piece made from obsidian sourced from Mount Arteni in Armenia. It is expected to go on sale in late October or early November.",
+      "source": "halfwheel",
+      "source_title": "Elie Bleu Angel de la Revolución Ashtray Debuting Next Month",
+      "source_en": "halfwheel",
+      "source_title_en": "Elie Bleu Angel de la Revolución Ashtray Debuting Next Month",
+      "url": "https://halfwheel.com/elie-bleu-angel-de-la-revolucion-ashtray-debuting-next-month/480626/"
+    },
+    {
+      "date": "2026-09-30",
+      "category": "日本国内",
+      "title_ja": "26年度第1四半期の紙巻たばこ販売、5.5％減",
+      "summary_ja": "2026年度第1四半期の紙巻たばこ販売本数が前年同期比マイナス5.5％だったと報じられた。",
+      "title_en": "Cigarette Sales Down 5.5% in Q1 of FY2026",
+      "summary_en": "Cigarette sales volumes in Japan fell 5.5% year on year in the first quarter of fiscal 2026, according to a report by Raizo Fuwa.",
+      "source": "Yahoo!ニュース",
+      "source_title": "2026年度第1四半期の紙巻たばこ販売本数はマイナス5.5％（不破雷蔵） - エキスパート - Yahoo!ニュース",
+      "source_en": "Yahoo! News",
+      "source_title_en": "Cigarette Sales Volume Down 5.5% in Q1 of FY2026 (Raizo Fuwa)",
+      "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPN1FFMVJvTTczQ0JyMnRRNkZ1ajhzVHdWZUdVTXdqMU9qa0ZfX0xtWTFSM0I0WnRSdHZPXzd3VE1TRmVvZGZvZDFPSzM4ZlRjd0xwT2hwZnI0d0ZidkZYVWZvbEJfQVlTbjhvUFVBMjJGLWNuNjA0WF9PVm1mN05Ga3ZvTzQ5V3d3?oc=5"
+    },
     {
       "date": "2026-09-29",
       "category": "業界・企業",
@@ -47,6 +112,19 @@ var NEWS_DATA = {
       "source_en": "halfwheel",
       "source_title_en": "Gellis Family Cigars Essentials on the Way to Retailers",
       "url": "https://halfwheel.com/gellis-family-cigars-essentials-on-the-way-to-retailers/480569/"
+    },
+    {
+      "date": "2026-09-28",
+      "category": "新製品",
+      "title_ja": "ジノ、限定「Z-コレクション・ブルー」発売",
+      "summary_ja": "ジノ・シガー（Zino Cigars）は、刷新したアクセサリーラインの限定第2弾「ジノ・Z-コレクション・ブルー（Zino Z-Collection Blue）」を発売した。第1弾「Z-コレクション・グリーン」に続くリリースとなる。",
+      "title_en": "Zino Cigars Launches a New Limited Release: The Zino Z-Collection Blue",
+      "summary_en": "Following the launch of the Z-Collection Green, Zino Cigars has returned with the second limited release of its refreshed accessories line: the Zino Z-Collection Blue.",
+      "source": "Cigar Journal",
+      "source_title": "Zino Cigars Launches a New Limited Release: The Zino Z-Collection Blue",
+      "source_en": "Cigar Journal",
+      "source_title_en": "Zino Cigars Launches a New Limited Release: The Zino Z-Collection Blue",
+      "url": "https://www.cigarjournal.com/zino-cigars-launches-a-new-limited-release-the-zino-z-collection-blue/"
     },
     {
       "date": "2026-09-28",
@@ -2010,84 +2088,6 @@ var NEWS_DATA = {
       "source_en": "halfwheel",
       "source_title_en": "Espinosa Begins Shipping Laranja Hybrid",
       "url": "https://halfwheel.com/espinosa-begins-shipping-laranja-hybrid/478408/"
-    },
-    {
-      "date": "2026-09-01",
-      "category": "業界・企業",
-      "title_ja": "衣類の葉巻臭を分解「サヴィル・ノワール」発売",
-      "summary_ja": "マレーシア生まれの豪州人シェーン・ウィー氏が、衣類に染みつく葉巻の煙の臭いを分解する製品「サヴィル・ノワール（Savile Noir）」を開発した。香りで覆い隠す香水ではなく、酵素が煙の分子に働きかけて分散させるという。6か月の試験を経て、西オーストラリアの初開催イベント「フェスティバル・オブ・ザ・リーフ」で発売した。",
-      "title_en": "Savile Noir: Eliminating Lingering Cigar Smoke From Garments",
-      "summary_en": "Malaysian-born Australian Shane Wee has developed Savile Noir, a product designed to eliminate rather than mask the smell of cigar smoke on clothing. Named in reference to Savile Row, the formulation uses specialised enzymes that break down the organic compounds and odour molecules left behind by dense cigar smoke, dispersing them rather than covering them with fragrance. After six months of trials, the product was launched at Western Australia's inaugural Festival of the Leaf, aimed at cigar lovers heading to family, business or social events.",
-      "source": "Cigar Journal",
-      "source_title": "Savile Noir: Eliminating Lingering Cigar Smoke From Garments",
-      "source_en": "Cigar Journal",
-      "source_title_en": "Savile Noir: Eliminating Lingering Cigar Smoke From Garments",
-      "url": "https://www.cigarjournal.com/savile-noir-eliminating-lingering-cigar-smoke-from-garments/?utm_source=rss&utm_medium=rss&utm_campaign=savile-noir-eliminating-lingering-cigar-smoke-from-garments"
-    },
-    {
-      "date": "2026-09-01",
-      "category": "業界・企業",
-      "title_ja": "ミッチェル・オーチャント、ドミニク・ロンドン経営から退任",
-      "summary_ja": "自身のC.Gars Ltdをドミニク・ロンドン（Dominique London）に統合してから5年、ミッチェル・オーチャントが同社を事実上引退した。今後は小売グループのアンバサダーを務める。",
-      "title_en": "Mitchell Orchant Exits Dominique London Management",
-      "summary_en": "Five years after his C.Gars Ltd business was merged into Dominique London, Mitchell Orchant has effectively retired from the company. Going forward, he will serve as an ambassador for the retail group.",
-      "source": "halfwheel",
-      "source_title": "Mitchell Orchant Exits Dominique London Management",
-      "source_en": "halfwheel",
-      "source_title_en": "Mitchell Orchant Exits Dominique London Management",
-      "url": "https://halfwheel.com/mitchell-orchant-exits-dominique-london-management/478364/"
-    },
-    {
-      "date": "2026-09-01",
-      "category": "新製品",
-      "title_ja": "HVC限定「ホットケーキ」ブロードリーフ登場",
-      "summary_ja": "アトランティック・シガー（Atlantic Cigar）が創業30周年を記念し、HVCとの限定コラボ「ホットケーキ フレッシュ・アウト・オブ・ジ・オーブン ブロードリーフ（Hot Cake Fresh Out of the Oven Broadleaf）」をリリースした。数週間前に全国出荷されたホットケーキ10周年記念シガーに続く、今月2本目の新作となる。",
-      "title_en": "Atlantic Marks 30th Anniversary with Exclusive HVC Hot Cake Broadleaf",
-      "summary_en": "Atlantic Cigar has released an exclusive collaboration with HVC to mark its 30th anniversary: the Hot Cake Fresh Out of the Oven Broadleaf. It arrives just weeks after the HVC Hot Cake 10th anniversary cigar shipped nationwide, making it the second new Hot Cake release this month. The retailer-exclusive edition celebrates three decades in business.",
-      "source": "halfwheel",
-      "source_title": "Atlantic Celebrates 30th Anniversary With Exclusive HVC Hot Cake Fresh Out of the Oven Broadleaf",
-      "source_en": "halfwheel",
-      "source_title_en": "Atlantic Celebrates 30th Anniversary With Exclusive HVC Hot Cake Fresh Out of the Oven Broadleaf",
-      "url": "https://halfwheel.com/atlantic-celebrates-30th-anniversary-with-exclusive-hvc-hot-cake-fresh-out-of-the-oven-broadleaf/478325/"
-    },
-    {
-      "date": "2026-09-01",
-      "category": "新製品",
-      "title_ja": "アレック・ブラッドリー「フィルシー・グーリガン」再登場",
-      "summary_ja": "アレック・ブラッドリー（Alec Bradley）の「フィルシー・グーリガン（Filthy Ghooligan）」が9月に店頭へ再登場する。STGは2025年版をほぼそのまま踏襲し、生産本数のみ小幅に調整した。",
-      "title_en": "Alec Bradley Filthy Ghooligan Returns for 2026",
-      "summary_en": "Alec Bradley's Filthy Ghooligan returns to stores in September. On paper, STG appears to be repeating the 2025 release, with only a small adjustment to production numbers. The seasonal cigar makes its comeback for 2026 largely unchanged from the prior year.",
-      "source": "halfwheel",
-      "source_title": "Alec Bradley Filthy Ghooligan Returns for 2026",
-      "source_en": "halfwheel",
-      "source_title_en": "Alec Bradley Filthy Ghooligan Returns for 2026",
-      "url": "https://halfwheel.com/alec-bradley-filthy-ghooligan-returns-for-2026/478305/"
-    },
-    {
-      "date": "2026-09-01",
-      "category": "新製品",
-      "title_ja": "アルタディス、限定「ゴールデン・フォー」サンプラー",
-      "summary_ja": "アルタディスU.S.A.（Altadis U.S.A.）が、イベント限定の4本入りサンプラー「ゴールデン・フォー（Golden Four）」を発表した。未発売のブレンドを収録するとされ、9月から一部イベントで提供される。",
-      "title_en": "Altadis U.S.A. Unveils Event-Only Golden Four Assortment",
-      "summary_en": "Altadis U.S.A. has announced the Golden Four, a four-cigar, event-only sampler said to contain previously unreleased blends. It will be available at select events beginning in September, with the company drawing from its vault of experimental blends for the limited assortment.",
-      "source": "halfwheel",
-      "source_title": "Altadis U.S.A. Goes to the Vault for Golden Four Event-Only Cigar Assortment",
-      "source_en": "halfwheel",
-      "source_title_en": "Altadis U.S.A. Goes to the Vault for Golden Four Event-Only Cigar Assortment",
-      "url": "https://halfwheel.com/altadis-u-s-a-goes-to-the-vault-for-golden-four-event-only-cigar-assortment/478284/"
-    },
-    {
-      "date": "2026-09-01",
-      "category": "新製品",
-      "title_ja": "ポル・ラーニャガ「35周年」独限定エディション",
-      "summary_ja": "ハバノス製品のドイツ流通元、5th Avenue Products Trading GmbHの創業35周年を記念した「ポル・ラーニャガ 35 アニベルサリオ（Por Larrañaga 35 Aniversario）」が発表された。ドイツのエディシオン・レヒオナルとして初めて、7 5/8×49のプロミネンテス（Prominentes）ビトラを採用した。",
-      "title_en": "Por Larrañaga 35 Aniversario Celebrates 5th Avenue Anniversary",
-      "summary_en": "The Por Larrañaga 35 Aniversario marks the 35th anniversary of 5th Avenue Products Trading GmbH, the German distributor of Habanos S.A. products. It is the first time a German Edición Regional has been produced in the 7 5/8 x 49 Prominentes vitola.",
-      "source": "halfwheel",
-      "source_title": "Por Larrañaga 35 Aniversario Celebrates 5th Avenue Anniversary",
-      "source_en": "halfwheel",
-      "source_title_en": "Por Larrañaga 35 Aniversario Celebrates 5th Avenue Anniversary",
-      "url": "https://halfwheel.com/por-larranaga-35-aniversario-celebrates-5th-avenue-anniversary/478261/"
     }
   ]
 };
