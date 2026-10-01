@@ -7,8 +7,86 @@
    手で足すこともできますが、items の並び・キーは崩さないでください。
    ============================================================ */
 var NEWS_DATA = {
-  "updated": "2026-09-30",
+  "updated": "2026-10-01",
   "items": [
+    {
+      "date": "2026-10-01",
+      "category": "新製品",
+      "title_ja": "マヤ・セルバ、低価格ホンジュラス葉巻「ティモン」発売",
+      "summary_ja": "マヤ・セルバ（Maya Selva）が、手頃な価格でホンジュラス葉巻を紹介することを狙った新ライン「ティモン（Timón）」を発売した。ホンジュラス産ピュロで、価格は4ユーロ未満。当面は一部の国に限定して販売し、2027年に世界展開を予定している。",
+      "title_en": "Maya Selva Launches Timón, A Value-Priced Honduran Puro",
+      "summary_en": "Maya Selva has launched Timón, a new line designed to introduce smokers to Honduran cigars at a reasonable price. The Honduran puro is priced at under €4. Availability is initially limited to a handful of countries, with a worldwide release planned for 2027.",
+      "source": "halfwheel",
+      "source_title": "Maya Selva Launches Timón, A Value-Priced Honduran Puro",
+      "source_en": "halfwheel",
+      "source_title_en": "Maya Selva Launches Timón, A Value-Priced Honduran Puro",
+      "url": "https://halfwheel.com/maya-selva-launches-timon-a-value-priced-honduran-puro/480763/"
+    },
+    {
+      "date": "2026-10-01",
+      "category": "新製品",
+      "title_ja": "カヴァリエ・ジュネーブ、小ロットのランセロとサロモンを出荷",
+      "summary_ja": "カヴァリエ・ジュネーブ（Cavalier Genève）が小ロットの新作ランセロとサロモンを出荷した。両者とも同じブレンドで、ホンジュラス産ラッパー、ニカラグア・ハラパ産バインダー、ニカラグアとパラグアイ産のフィラーを使用。ランセロは20本箱、サロモンは10本箱で販売される。",
+      "title_en": "Cavalier Genève Ships New Small Batch Lancero & Salomónes",
+      "summary_en": "Cavalier Genève has shipped new small batch Lancero and Salomónes cigars. Both use the same blend: a Honduran wrapper over a binder from Jalapa, Nicaragua, with filler tobaccos grown in Nicaragua and Paraguay. The Lancero is packaged in 20-count boxes, while the Salomónes is sold in 10-count boxes.",
+      "source": "halfwheel",
+      "source_title": "Cavalier Genève Ships New Small Batch Lancero & Salomónes",
+      "source_en": "halfwheel",
+      "source_title_en": "Cavalier Genève Ships New Small Batch Lancero & Salomónes",
+      "url": "https://halfwheel.com/cavalier-geneve-ships-new-small-batch-lancero-salomones/480739/"
+    },
+    {
+      "date": "2026-10-01",
+      "category": "新製品",
+      "title_ja": "フェルミン・ペレス、エステリ産葉を軸に新ライン",
+      "summary_ja": "フェルミン・ペレス（Fermin Perez）が、ニカラグア・エステリ産タバコの特徴を表現する新ラインを発表した。同地域の個性を探り、焦点を絞った表現を目指してブレンドされた。生産を同じくエステリにあるタバカレラ・ファミリア・ディスラ（Tabacalera Familia Disla S.A.）へ移管して以降、初の新ラインとなる。",
+      "title_en": "Fermin Perez's Newest Line Showcases Tobacco from Estelí, Nicaragua",
+      "summary_en": "Fermin Perez has introduced a new line blended to explore the character of Estelí, Nicaragua, and provide a focused expression of the tobacco grown there. It is the brand's first new line since moving production to Tabacalera Familia Disla S.A., which is also located in Estelí.",
+      "source": "halfwheel",
+      "source_title": "Fermin Perez’s Newest Line Showcases Tobacco from Estelí, Nicaragua",
+      "source_en": "halfwheel",
+      "source_title_en": "Fermin Perez's Newest Line Showcases Tobacco from Estelí, Nicaragua",
+      "url": "https://halfwheel.com/fermin-perezs-newest-line-showcases-tobacco-from-esteli-nicaragua/480729/"
+    },
+    {
+      "date": "2026-10-01",
+      "category": "新製品",
+      "title_ja": "ジェイク・ワイアット、新作「エンバー＆アース」発売",
+      "summary_ja": "ジェイク・ワイアット・シガー（Jake Wyatt Cigar Co.）が、手頃な価格の日常用葉巻を目指した新ライン「エンバー＆アース（Ember & Earth）」を発売した。ブレンドにはホンジュラス、ニカラグア、米国産のタバコを使用している。",
+      "title_en": "Jake Wyatt Cigar Co. Releases Ember & Earth",
+      "summary_en": "Jake Wyatt Cigar Co. has released Ember & Earth, a new line created to be a great everyday cigar at an approachable price point. The blend uses Honduran, Nicaraguan, and U.S.-grown tobacco.",
+      "source": "halfwheel",
+      "source_title": "Jake Wyatt Cigar Co. Releases Ember & Earth",
+      "source_en": "halfwheel",
+      "source_title_en": "Jake Wyatt Cigar Co. Releases Ember & Earth",
+      "url": "https://halfwheel.com/jake-wyatt-cigar-co-releases-ember-earth/480720/"
+    },
+    {
+      "date": "2026-10-01",
+      "category": "新製品",
+      "title_ja": "カヴァリエ・ジュネーブ、2026年限定版を発売",
+      "summary_ja": "カヴァリエ・ジュネーブ（Cavalier Genève）が2026年の限定版を発売した。サイズは6 1/2×47のパレホで、これまでの限定シリーズ中で最も長く、最も細いリングゲージとなる。生産数は1,948箱で、この数字は金が溶ける温度（華氏1,948度）にちなんでいる。",
+      "title_en": "Cavalier Genève Limited Edition 2026",
+      "summary_en": "Cavalier Genève has released its 2026 Limited Edition, a 6 1/2 x 47 parejo that is both the longest size and thinnest ring gauge of all releases in the limited series so far. A total of 1,948 boxes are being released, a number that also refers to the temperature at which gold melts, 1,948 degrees Fahrenheit.",
+      "source": "halfwheel",
+      "source_title": "Cavalier Genève Limited Edition 2026",
+      "source_en": "halfwheel",
+      "source_title_en": "Cavalier Genève Limited Edition 2026",
+      "url": "https://halfwheel.com/cavalier-geneve-limited-edition-2026/480578/"
+    },
+    {
+      "date": "2026-10-01",
+      "category": "業界・企業",
+      "title_ja": "カサ1910、国際チームの体制を刷新",
+      "summary_ja": "カサ1910（Casa 1910）が国際チームの体制を更新した。新たに2名を採用し、1名を昇進させた。",
+      "title_en": "Casa 1910 Updates International Team",
+      "summary_en": "Casa 1910 has updated its international team, with two new hires and one promotion.",
+      "source": "halfwheel",
+      "source_title": "Casa 1910 Updates International Team",
+      "source_en": "halfwheel",
+      "source_title_en": "Casa 1910 Updates International Team",
+      "url": "https://halfwheel.com/casa-1910-updates-international-team/480700/"
+    },
     {
       "date": "2026-09-30",
       "category": "新製品",
@@ -2010,84 +2088,6 @@ var NEWS_DATA = {
       "source_en": "Cigar Journal",
       "source_title_en": "Quality Importers Announces Price Reductions on Xikar Accessories",
       "url": "https://www.cigarjournal.com/quality-importers-announces-price-reductions-on-xikar-accessories/?utm_source=rss&utm_medium=rss&utm_campaign=quality-importers-announces-price-reductions-on-xikar-accessories"
-    },
-    {
-      "date": "2026-09-02",
-      "category": "業界・企業",
-      "title_ja": "クオリティ・インポーターズ、XIKAR40製品を値下げ",
-      "summary_ja": "クオリティ・インポーターズ・トレーディング（Quality Importers Trading Co.）が、XIKAR製品40点を値下げした。値下げ幅は平均17％で、ライター、カッター、収納、加湿、アクセサリーなど幅広い製品群が対象。ただし人気のブタンガス系ラインは対象外。",
-      "title_en": "Quality Importers Lowering Prices on 40 XIKAR Products",
-      "summary_en": "Quality Importers Trading Co. has reduced prices on 40 XIKAR products, with cuts averaging 17 per cent across its portfolio of lighters, cutters, storage, humidification and accessories. The company cited stabilising global shipping rates and recent tariff reductions. Unfortunately for consumers, the firm's popular butane lines are not included in the reductions.",
-      "source": "halfwheel",
-      "source_title": "Quality Importers Trading Co. Lowering Prices on 40 XIKAR Products",
-      "source_en": "halfwheel",
-      "source_title_en": "Quality Importers Trading Co. Lowering Prices on 40 XIKAR Products",
-      "url": "https://halfwheel.com/quality-importers-trading-co-lowering-price-on-40-xikar-products/478450/"
-    },
-    {
-      "date": "2026-09-02",
-      "category": "新製品",
-      "title_ja": "オヨ・デ・モントレー、新「ル・オヨ」をサンプラーで先行",
-      "summary_ja": "STGが新ライン「ル・オヨ（Le Hoyo）」をサンプラーで初お披露目した。これでル・オヨ系のラインは2つ目となる。フルローンチは今後数カ月内に予定されている。",
-      "title_en": "Hoyo de Monterrey Le Hoyo Debuts in New Sampler",
-      "summary_en": "STG has introduced its new Le Hoyo line via a sampler, marking the debut of a second Le Hoyo line. The company says a full launch of the line will follow in the coming months.",
-      "source": "halfwheel",
-      "source_title": "Hoyo de Monterrey Le Hoyo Debuts in New Sampler",
-      "source_en": "halfwheel",
-      "source_title_en": "Hoyo de Monterrey Le Hoyo Debuts in New Sampler",
-      "url": "https://halfwheel.com/hoyo-de-monterrey-le-hoyo-debuts-in-new-sampler/478442/"
-    },
-    {
-      "date": "2026-09-02",
-      "category": "新製品",
-      "title_ja": "ヴィアヘのミステリーボックス、今週店頭へ",
-      "summary_ja": "ヴィアヘ（Viaje）が10本入りのミステリーボックスを今週発売する。一部は未発表銘柄、一部は既存ラインの新サイズ・新形状。希少度も「コモン」から同社が「ゴッドボックス」と呼ぶものまで複数段階が設定されている。",
-      "title_en": "Viaje Mystery Boxes Coming to Stores This Week",
-      "summary_en": "Viaje is releasing mystery boxes containing ten cigars this week. Some have never been released before, while others are new sizes and shapes for existing lines. The boxes also come in several rarity levels, ranging from Common up to what the company calls the God Box.",
-      "source": "halfwheel",
-      "source_title": "Viaje Mystery Boxes Coming to Stores This Week",
-      "source_en": "halfwheel",
-      "source_title_en": "Viaje Mystery Boxes Coming to Stores This Week",
-      "url": "https://halfwheel.com/viaje-mystery-boxes-coming-to-stores-this-week/478437/"
-    },
-    {
-      "date": "2026-09-02",
-      "category": "新製品",
-      "title_ja": "ラ・アウロラ、カサドレスにフレーバー3種追加",
-      "summary_ja": "ラ・アウロラ（La Aurora）が新たに3本のシガーを発表した。既存のカサドレス（Cazadores）ラインと同じブレンドを用いつつ、それぞれにプロファイルを引き立てるフレーバーを加えた。今月中に小売店への出荷を開始する予定。",
-      "title_en": "La Aurora Announces Cazadores Flavors",
-      "summary_en": "La Aurora has announced three new cigars using the same blends as its current Cazadores line, but each with an added flavour designed to accent its profile. The cigars are scheduled to begin shipping to retailers this month.",
-      "source": "halfwheel",
-      "source_title": "La Aurora Announces Cazadores Flavors",
-      "source_en": "halfwheel",
-      "source_title_en": "La Aurora Announces Cazadores Flavors",
-      "url": "https://halfwheel.com/la-aurora-announces-cazadores-flavors/478373/"
-    },
-    {
-      "date": "2026-09-02",
-      "category": "新製品",
-      "title_ja": "オスカル・バジャダレス、コラボ限定品を出荷開始",
-      "summary_ja": "オスカル・バジャダレス・タバコ（Oscar Valladares Tobacco & Co.）が、カサ・カリージョ（Casa Carrillo）およびオリバ（Oliva Cigar Co.）と組んだ新たな限定品「Colaboraciones」の出荷を開始した。各工場の個性を、同社お気に入りのホンジュラス産タバコと合わせて表現することを狙った。",
-      "title_en": "Oscar Valladares Begins Shipping Colaboraciones",
-      "summary_en": "Oscar Valladares Tobacco & Co. has begun shipping Colaboraciones, a new limited edition created in partnership with Casa Carrillo and Oliva Cigar Co. The goal was to showcase the distinctive style of each factory when paired with Oscar Valladares' favourite tobacco from Honduras.",
-      "source": "halfwheel",
-      "source_title": "Oscar Valladares Begins Shipping Colaboraciones",
-      "source_en": "halfwheel",
-      "source_title_en": "Oscar Valladares Begins Shipping Colaboraciones",
-      "url": "https://halfwheel.com/oscar-valladares-begins-shipping-colaboraciones/478342/"
-    },
-    {
-      "date": "2026-09-02",
-      "category": "新製品",
-      "title_ja": "エスピノサ、ラランハ・ハイブリッドを出荷開始",
-      "summary_ja": "エスピノサ・プレミアム・シガーズ（Espinosa Premium Cigars）が新ライン「ラランハ・ハイブリッド（Laranja Hybrid）」の出荷を開始した。エクアドル産ハバノ・オスクーロのラッパー、ニカラグア産バインダー、ブラジル産タバコを用いたブレンド。",
-      "title_en": "Espinosa Begins Shipping Laranja Hybrid",
-      "summary_en": "Espinosa Premium Cigars has begun shipping its new Laranja Hybrid line. The blend uses an Ecuadorian habano oscuro wrapper, a Nicaraguan binder and Brazilian tobacco.",
-      "source": "halfwheel",
-      "source_title": "Espinosa Begins Shipping Laranja Hybrid",
-      "source_en": "halfwheel",
-      "source_title_en": "Espinosa Begins Shipping Laranja Hybrid",
-      "url": "https://halfwheel.com/espinosa-begins-shipping-laranja-hybrid/478408/"
     }
   ]
 };
