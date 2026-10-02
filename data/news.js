@@ -7,8 +7,86 @@
    手で足すこともできますが、items の並び・キーは崩さないでください。
    ============================================================ */
 var NEWS_DATA = {
-  "updated": "2026-10-01",
+  "updated": "2026-10-02",
   "items": [
+    {
+      "date": "2026-10-02",
+      "category": "規制・市場",
+      "title_ja": "STG、小売店に関税分の払い戻しを実施",
+      "summary_ja": "STGが今月後半、2025年5月から今年2月までに支払った関税分を小売店にクレジットとして還元すると発表した。クレジットは数週間以内に届く見込み。",
+      "title_en": "STG Announces Tariff Refund for Retailers",
+      "summary_en": "STG has announced it will give retailers a credit to cover the tariff fees it paid between May 2025 and February this year. The credits are expected to arrive within a few weeks, the company said.",
+      "source": "halfwheel",
+      "source_title": "STG Announces Tariff Refund for Retailers",
+      "source_en": "halfwheel",
+      "source_title_en": "STG Announces Tariff Refund for Retailers",
+      "url": "https://halfwheel.com/stg-announces-tariff-refund-for-retailers/480898/"
+    },
+    {
+      "date": "2026-10-02",
+      "category": "新製品",
+      "title_ja": "J.C.ニューマン、ヤグアにロブストを追加",
+      "summary_ja": "J.C.ニューマン・シガー社が、2019年に発表した型を使わずに巻きロイヤルパームの葉で包むラインナップ「ヤグア（Yagua）」に、今年ロブストのヴィトラを追加した。",
+      "title_en": "Yagua Robusto",
+      "summary_en": "J.C. Newman Cigar Co. has added a robusto vitola to its Yagua line. First unveiled in 2019, Yagua is notable for being rolled without moulds and packed in royal palm leaf, producing uniquely shaped cigars.",
+      "source": "halfwheel",
+      "source_title": "Yagua Robusto",
+      "source_en": "halfwheel",
+      "source_title_en": "Yagua Robusto",
+      "url": "https://halfwheel.com/yagua-robusto/480824/"
+    },
+    {
+      "date": "2026-10-02",
+      "category": "新製品",
+      "title_ja": "ワープド、イスラ・デル・ココドリロにロブスト",
+      "summary_ja": "ワープド（Warped）が「イスラ・デル・ココドリロ（Isla del Cocodrilo）」ラインの5番目となるロブストを発売した。ライン名はキューバの形を指す言葉に由来する。",
+      "title_en": "Warped Releases Isla del Cocodrilo Robusto",
+      "summary_en": "Warped has released a robusto, the fifth vitola in its Isla del Cocodrilo line. The line takes its name from a term used to describe the shape of Cuba.",
+      "source": "halfwheel",
+      "source_title": "Warped Releases Isla del Cocodrilo Robusto",
+      "source_en": "halfwheel",
+      "source_title_en": "Warped Releases Isla del Cocodrilo Robusto",
+      "url": "https://halfwheel.com/warped-releases-isla-del-cocodrilo-robusto/480861/"
+    },
+    {
+      "date": "2026-10-02",
+      "category": "新製品",
+      "title_ja": "ラ・アウロラ、2026年版オル・ダージュを拡充",
+      "summary_ja": "ラ・アウロラ（La Aurora）が今月、高級ヴィンテージライン「オル・ダージュ（Hors d'Age）」の最新版を発売する。最低12年熟成のタバコを使用し、新たにランセロが加わる。",
+      "title_en": "La Aurora Expanding Hors d’Age Line for 2026",
+      "summary_en": "La Aurora will release the latest editions of its high-end vintage Hors d'Age line this month. Made from tobacco at least a dozen years old, the line will now be offered in a lancero.",
+      "source": "halfwheel",
+      "source_title": "La Aurora Expanding Hors d’Age Line for 2026",
+      "source_en": "halfwheel",
+      "source_title_en": "La Aurora Expanding Hors d’Age Line for 2026",
+      "url": "https://halfwheel.com/la-aurora-expanding-hors-dage-line-for-2026/480860/"
+    },
+    {
+      "date": "2026-10-02",
+      "category": "新製品",
+      "title_ja": "シカー、レザー製トラベルケース「センチネル」発売",
+      "summary_ja": "シカー（XIKAR）が、ジッパー式のレザー製トラベルヒュミドール「センチネル（Sentinel）」を店頭投入した。リングゲージ60の葉巻を最大5本と各種アクセサリーを収納できる。",
+      "title_en": "XIKAR Sentinel Leather Cases Head to Stores",
+      "summary_en": "XIKAR has sent its Sentinel zippered leather travel humidor to stores. It can hold up to five 60-ring gauge cigars along with an assortment of cigar accessories.",
+      "source": "halfwheel",
+      "source_title": "XIKAR Sentinel Leather Cases Head to Stores",
+      "source_en": "halfwheel",
+      "source_title_en": "XIKAR Sentinel Leather Cases Head to Stores",
+      "url": "https://halfwheel.com/xikar-sentinel-leather-cases-head-to-stores/480832/"
+    },
+    {
+      "date": "2026-10-02",
+      "category": "新製品",
+      "title_ja": "リトライト、ヒュミドールに黒大理石仕上げ追加",
+      "summary_ja": "イタリアのリトライト（Litolite）が、ダイヤモンド・ラージ・モデルに4番目の仕上げとして金装飾を施した黒大理石「ネロ・ポルトロ（Nero Portoro）」を追加した。",
+      "title_en": "Litolite Adds Nero Portoro Finish to Diamond Humidor",
+      "summary_en": "Italian company Litolite has added a Nero Portoro finish to its Diamond Large humidor model. The fourth finish for the model, it uses black marble with gold detailing.",
+      "source": "halfwheel",
+      "source_title": "Litolite Adds Nero Portoro Finish to Diamond Humidor",
+      "source_en": "halfwheel",
+      "source_title_en": "Litolite Adds Nero Portoro Finish to Diamond Humidor",
+      "url": "https://halfwheel.com/litolite-adds-nero-portoro-finish-to-diamond-humidor/480707/"
+    },
     {
       "date": "2026-10-01",
       "category": "新製品",
@@ -2010,84 +2088,6 @@ var NEWS_DATA = {
       "source_en": "halfwheel",
       "source_title_en": "Drew Estate Announces Box-Pressed Feral Flying Pig and Supremas Samplers; Launching Customer Rewards Program",
       "url": "https://halfwheel.com/drew-estate-announces-box-pressed-feral-flying-pig-and-supremas-samplers-launching-customer-rewards-program/478474/"
-    },
-    {
-      "date": "2026-09-03",
-      "category": "新製品",
-      "title_ja": "ケサダ「オクトーバーフェスト2026」出荷開始",
-      "summary_ja": "ケサダ（Quesada）が限定葉巻「オクトーバーフェスト2026」を出荷した。同社が15年連続でリリースする限定品で、2026年版は2025年版とほぼ同じ5種のビトラ構成となる。なお2027年版ではパッケージが一新される予定。",
-      "title_en": "Quesada Oktoberfest 2026 Ships",
-      "summary_en": "Quesada has shipped its limited-edition Oktoberfest 2026, marking the 15th consecutive year the company has released the cigar. The 2026 edition largely repeats the 2025 release, offering the same five vitolas. However, the company says the 2027 release will bring all-new Oktoberfest packaging.",
-      "source": "halfwheel",
-      "source_title": "Quesada Oktoberfest 2026 Ships",
-      "source_en": "halfwheel",
-      "source_title_en": "Quesada Oktoberfest 2026 Ships",
-      "url": "https://halfwheel.com/quesada-oktoberfest-2026-ships/478579/"
-    },
-    {
-      "date": "2026-09-03",
-      "category": "新製品",
-      "title_ja": "JRE、米建国250周年記念「アラディーノ250th」",
-      "summary_ja": "JREタバコ（JRE Tobacco Co.）が、2026年の米国建国250周年に合わせた記念葉巻「アラディーノ（Aladino）250th」を発売した。ブレンドは非公開で、発表時から発売時にかけて名称が変更された。",
-      "title_en": "Aladino 250th",
-      "summary_en": "JRE Tobacco Co. has released the Aladino 250th, a cigar created to mark the United States' 250th anniversary in 2026. Numerous companies joined the celebration this year. The blend remains undisclosed, and the cigar's name changed between the time it was announced and when it was released.",
-      "source": "halfwheel",
-      "source_title": "Aladino 250th",
-      "source_en": "halfwheel",
-      "source_title_en": "Aladino 250th",
-      "url": "https://halfwheel.com/aladino-250th/478243/"
-    },
-    {
-      "date": "2026-09-03",
-      "category": "新製品",
-      "title_ja": "シニストロ、ハロウィン限定「GHOUL」再登場",
-      "summary_ja": "シニストロ（Sinistro）の人気ライン「ザ・ラスト・カウボーイ（The Last Cowboy）」のハロウィン仕様「GHOUL」が、第2弾として再登場した。バンドを刷新したほか、2本のキャンデラ・ストライプが特徴的な外観を与えている。",
-      "title_en": "Sinistro's The Last Cowboy GHOUL Returns",
-      "summary_en": "The Halloween-themed GHOUL version of one of Sinistro's most popular lines, The Last Cowboy, returns for a second instalment. Alongside an updated band, a pair of candela stripes gives the cigar its distinctive look.",
-      "source": "halfwheel",
-      "source_title": "Sinistro’s The Last Cowboy GHOUL Returns",
-      "source_en": "halfwheel",
-      "source_title_en": "Sinistro's The Last Cowboy GHOUL Returns",
-      "url": "https://halfwheel.com/sinistros-the-last-cowboy-ghoul-returns/478548/"
-    },
-    {
-      "date": "2026-09-03",
-      "category": "規制・市場",
-      "title_ja": "米コルテ・マデラ、たばこ全面販売禁止へ前進",
-      "summary_ja": "米カリフォルニア州コルテ・マデラ（Corte Madera）が、たばことニコチン製品の全面的な販売禁止に向けて動き出した。紙巻きたばこ、葉巻、ベイプのいずれも販売が禁止される見通し。",
-      "title_en": "Corte Madera, Calif. Moving Forward With Total Tobacco & Nicotine Sales Ban",
-      "summary_en": "Corte Madera, California is moving forward with a total ban on the sale of tobacco and nicotine products. No cigarette sales, no cigar sales and no vape sales would be permitted under the proposed measure.",
-      "source": "halfwheel",
-      "source_title": "Corte Madera, Calif. Moving Forward With Total Tobacco & Nicotine Sales Ban",
-      "source_en": "halfwheel",
-      "source_title_en": "Corte Madera, Calif. Moving Forward With Total Tobacco & Nicotine Sales Ban",
-      "url": "https://halfwheel.com/corte-madera-calif-moving-forward-with-total-tobacco-nicotine-sales-ban/478593/"
-    },
-    {
-      "date": "2026-09-02",
-      "category": "日本国内",
-      "title_ja": "葉巻向けアイラモルト、日本限定240本発売",
-      "summary_ja": "シガーと愉しむために生まれたアイラモルト「スカラバス シガーモルト（Scarabus Cigar Malt）」が日本限定240本で発売された。葉巻との相性を意図して仕立てられた製品。",
-      "title_en": "Scarabus Cigar Malt released in Japan, limited to 240 bottles",
-      "summary_en": "An Islay single malt created to be enjoyed with cigars, \"Scarabus Cigar Malt\", has gone on sale in Japan as a limited release of 240 bottles. The whisky was crafted specifically to pair with cigars.",
-      "source": "PR TIMES",
-      "source_title": "日本限定240本。シガーと愉しむために生まれたアイラモルト「スカラバス シガーモルト」発売 - PR TIMES",
-      "source_en": "PR TIMES",
-      "source_title_en": "Scarabus Cigar Malt, an Islay malt born to be enjoyed with cigars, released limited to 240 bottles in Japan",
-      "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTFBkWTdwRzZUS1YtNlJFYlVMeng3N1FNbWszNFZuamJlZWFQbFBFZVBYTlVYQ0FBS3J5WmVzQmJZMEdWRGtsdllHVm9fLVVteGdmLXVqN0p3QTA1MXhFSHJ5ZE45YUs1RzhOaEE?oc=5"
-    },
-    {
-      "date": "2026-09-02",
-      "category": "規制・市場",
-      "title_ja": "クオリティ・インポーターズ、シカーを値下げ",
-      "summary_ja": "クオリティ・インポーターズ・トレーディング（Quality Importers Trading Company）が、人気のシカー（XIKAR）アクセサリーの卸・小売価格を本日発注分から引き下げた。対象はライター・カッター24機種、全トラベルケース、加湿関連16製品で、値下げ幅は3〜28%、平均17%減。世界的な輸送費の安定と関税引き下げが後押ししたという。",
-      "title_en": "Quality Importers Announces Price Reductions on Xikar Accessories",
-      "summary_en": "Quality Importers Trading Company has reduced wholesale and retail pricing on most of its best-selling XIKAR accessories, effective today on new orders. The changes affect 24 lighter and cutter models, all travel cases and 16 humidification products, with reductions ranging from 3% to 28% and averaging 17%. President and COO Marilyn Florez-Giordano cited stabilising global shipping rates and recent tariff reductions as helping offset earlier cost pressures.",
-      "source": "Cigar Journal",
-      "source_title": "Quality Importers Announces Price Reductions On Xikar Accessories",
-      "source_en": "Cigar Journal",
-      "source_title_en": "Quality Importers Announces Price Reductions on Xikar Accessories",
-      "url": "https://www.cigarjournal.com/quality-importers-announces-price-reductions-on-xikar-accessories/?utm_source=rss&utm_medium=rss&utm_campaign=quality-importers-announces-price-reductions-on-xikar-accessories"
     }
   ]
 };
