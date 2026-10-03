@@ -7,8 +7,34 @@
    手で足すこともできますが、items の並び・キーは崩さないでください。
    ============================================================ */
 var NEWS_DATA = {
-  "updated": "2026-10-02",
+  "updated": "2026-10-03",
   "items": [
+    {
+      "date": "2026-10-03",
+      "category": "新製品",
+      "title_ja": "キングメーカーズ、M・リンチと新葉巻",
+      "summary_ja": "キングメーカーズ（Kingmakers）が、NFLシアトル・シーホークスで活躍したマーショーン・リンチ（Marshawn Lynch）と提携し、彼の代名詞「ビースト・モード（Beast Mode）」を冠した新葉巻を発表した。5度のプロボウル選出を誇るリンチが葉巻市場に進出する。",
+      "title_en": "Kingmakers and Marshawn Lynch Partner for New Beast Mode Cigar",
+      "summary_en": "Kingmakers has partnered with former Seattle Seahawks running back Marshawn Lynch to launch a new cigar carrying his trademark \"Beast Mode\" name. Lynch, a five-time Pro Bowler who coined the phrase for his powerful, defence-flattening runs, is now bringing the brand to humidors through the collaboration.",
+      "source": "halfwheel",
+      "source_title": "Kingmakers and Marshawn Lynch Partner for New Beast Mode Cigar",
+      "source_en": "halfwheel",
+      "source_title_en": "Kingmakers and Marshawn Lynch Partner for New Beast Mode Cigar",
+      "url": "https://halfwheel.com/kingmakers-and-marshawn-lynch-partner-for-new-beast-mode-cigar/480973/"
+    },
+    {
+      "date": "2026-10-03",
+      "category": "新製品",
+      "title_ja": "アポステイト「デス・マスク」が入荷へ",
+      "summary_ja": "アポステイト（Apostate）の限定版「デス・マスク（Death Mask）」が店頭に向かう。同社がニカラグア・エステリのファブリカ・オベハ・ネグラ工場で製造する初の葉巻となる。サイズは5 1/2×48のロブスト、メキシコ産サンアンドレス・ラッパーを使用する。",
+      "title_en": "Apostate Death Mask on the Way to Stores",
+      "summary_en": "Apostate's limited-edition Death Mask is heading to stores. It marks the first time the brand has had a cigar produced at the Fábrica Oveja Negra factory in Estelí, Nicaragua. The release is a 5 1/2 x 48 robusto made with a Mexican San Andrés wrapper.",
+      "source": "halfwheel",
+      "source_title": "Apostate Death Mask on the Way to Stores",
+      "source_en": "halfwheel",
+      "source_title_en": "Apostate Death Mask on the Way to Stores",
+      "url": "https://halfwheel.com/apostate-death-mask-on-the-way-to-stores/480935/"
+    },
     {
       "date": "2026-10-02",
       "category": "規制・市場",
@@ -90,6 +116,19 @@ var NEWS_DATA = {
     {
       "date": "2026-10-01",
       "category": "新製品",
+      "title_ja": "クロマニヨン新作、2027年に延期",
+      "summary_ja": "ロマ・クラフト・タバコ（RoMa Craft Tobac）は、クロマニヨン（CroMagnon）ブランドの最終作「ヴィジゴス（Visigoth）」の発売を延期すると発表した。2026年後半を目標としていたが、PCA 2027（2027年3月）まで待つ必要がある。",
+      "title_en": "CroMagnon Visigoth Delayed Until PCA 2027",
+      "summary_en": "RoMa Craft Tobac has delayed Visigoth, the final CroMagnon brand. The company had been targeting a late 2026 release, but it will now arrive at PCA 2027 in March instead.",
+      "source": "halfwheel",
+      "source_title": "CroMagnon Visigoth Delayed Until PCA 2027",
+      "source_en": "halfwheel",
+      "source_title_en": "CroMagnon Visigoth Delayed Until PCA 2027",
+      "url": "https://halfwheel.com/cromagnon-visigoth-delayed-until-pca-2027/480781/"
+    },
+    {
+      "date": "2026-10-01",
+      "category": "新製品",
       "title_ja": "マヤ・セルバ、低価格ホンジュラス葉巻「ティモン」発売",
       "summary_ja": "マヤ・セルバ（Maya Selva）が、手頃な価格でホンジュラス葉巻を紹介することを狙った新ライン「ティモン（Timón）」を発売した。ホンジュラス産ピュロで、価格は4ユーロ未満。当面は一部の国に限定して販売し、2027年に世界展開を予定している。",
       "title_en": "Maya Selva Launches Timón, A Value-Priced Honduran Puro",
@@ -164,6 +203,45 @@ var NEWS_DATA = {
       "source_en": "halfwheel",
       "source_title_en": "Casa 1910 Updates International Team",
       "url": "https://halfwheel.com/casa-1910-updates-international-team/480700/"
+    },
+    {
+      "date": "2026-09-30",
+      "category": "業界・企業",
+      "title_ja": "ローデンフライ、D・マーシャル加湿器を拡充",
+      "summary_ja": "ローデンフライ（LODENFREY）が、手作りのダニエル・マーシャル（Daniel Marshall）製ヒュミドールを品揃えに加え、取扱いを拡大した。オクトーバーフェスト向けに一点物も用意する。",
+      "title_en": "LODENFREY Expands Assortment with Exclusive Daniel Marshall Humidors",
+      "summary_en": "LODENFREY has expanded its assortment with handcrafted Daniel Marshall humidors, including a one-of-a-kind piece offered for the Oktoberfest season.",
+      "source": "Cigar Journal",
+      "source_title": "LODENFREY Expands Assortment with Exclusive Daniel Marshall Humidors",
+      "source_en": "Cigar Journal",
+      "source_title_en": "LODENFREY Expands Assortment with Exclusive Daniel Marshall Humidors",
+      "url": "https://www.cigarjournal.com/lodenfrey-expands-assortment-with-exclusive-daniel-marshall-humidors/"
+    },
+    {
+      "date": "2026-09-30",
+      "category": "新製品",
+      "title_ja": "ブリックハウス恒例「ブリックトーバーフェスト」",
+      "summary_ja": "ブリックハウス（Brick House）の年次限定版「ブリックトーバーフェスト（Bricktoberfest）」チャーチルが登場する。季節感を加えた恒例のリリース。",
+      "title_en": "Celebrate the Season with Bricktoberfest",
+      "summary_en": "The annual limited-edition Brick House Bricktoberfest Churchill returns, putting a seasonal twist on a time-honoured tradition.",
+      "source": "Cigar Journal",
+      "source_title": "Celebrate the Season with Bricktoberfest",
+      "source_en": "Cigar Journal",
+      "source_title_en": "Celebrate the Season with Bricktoberfest",
+      "url": "https://www.cigarjournal.com/celebrate-the-season-with-bricktoberfest/"
+    },
+    {
+      "date": "2026-09-30",
+      "category": "日本国内",
+      "title_ja": "「JACK'S Cigar Salon」10/18初開催",
+      "summary_ja": "シガーとウイスキーの奥深い世界を体験するイベント「JACK'S Cigar Salon」が、10月18日（日）に初開催される。",
+      "title_en": "\"JACK'S Cigar Salon\" to Debut on 18 October",
+      "summary_en": "A new event, \"JACK'S Cigar Salon,\" offering an immersive experience into the worlds of cigars and whisky, will be held for the first time on Sunday 18 October in Japan.",
+      "source": "valuepress",
+      "source_title": "シガーとウイスキーの奥深き世界を体験。「JACK’S Cigar Salon」10/18(日)初開催 - valuepress",
+      "source_en": "valuepress",
+      "source_title_en": "Experience the Deep World of Cigars and Whisky: \"JACK'S Cigar Salon\" to Debut on Sunday 18 October",
+      "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE4wVkkzeVRXZXMyODdaeWdSY2Y2RTVibENXWUc1a2p3UlhCNXYzd2x3dzZCYllyZ2UtLUpfVW54Q1hxSDhMYUV6ZnRrQkh0WHdFX19iYTVaRDZBM3M?oc=5"
     },
     {
       "date": "2026-09-30",
@@ -2010,84 +2088,6 @@ var NEWS_DATA = {
       "source_en": "halfwheel",
       "source_title_en": "Sobremesa Tapa Negra Corona Gorda",
       "url": "https://halfwheel.com/sobremesa-tapa-negra-corona-gorda/478643/"
-    },
-    {
-      "date": "2026-09-04",
-      "category": "新製品",
-      "title_ja": "エイロア「エクスペディション」限定店で発売",
-      "summary_ja": "エイロア（Eiroa）が「エクスペディション・コレクション（Expedition Collection）」を一部の販売店で発売した。昨年の「エイロア・アビエイター・シリーズ」の輸出版とみられるが、クリスチャン・エイロアは同一の葉巻かどうかを明言していない。",
-      "title_en": "Eiroa Expedition Collection Arrives at Select Stores",
-      "summary_en": "Eiroa has begun shipping its Expedition Collection to select retailers. The line appears to be the export version of last year's Eiroa Aviator Series, though Christian Eiroa has declined to confirm whether the cigars are identical. The release is limited to select stores.",
-      "source": "halfwheel",
-      "source_title": "Eiroa Expedition Collection Arrives at Select Stores",
-      "source_en": "halfwheel",
-      "source_title_en": "Eiroa Expedition Collection Arrives at Select Stores",
-      "url": "https://halfwheel.com/eiroa-expedition-collection-arrives-at-select-stores/478687/"
-    },
-    {
-      "date": "2026-09-04",
-      "category": "業界・企業",
-      "title_ja": "ペルドモ30周年、20本入り箱に変更",
-      "summary_ja": "ペルドモ（Perdomo）が「30th Anniversary」の梱包を30本入りから20本入りの箱に変更した。消費者が箱買いしやすくする狙いで、新形式では箱の価格が135ドルから155ドルへと下がる。",
-      "title_en": "Perdomo Shifts 30th Anniversary to 20-Count Boxes",
-      "summary_en": "Perdomo has changed the packaging of its 30th Anniversary line from 30-count boxes to 20-count boxes. The move is intended to make box purchases more affordable for consumers, with the new format dropping the box price to between $135 and $155.",
-      "source": "halfwheel",
-      "source_title": "Perdomo Shifts 30th Anniversary to 20-Count Boxes",
-      "source_en": "halfwheel",
-      "source_title_en": "Perdomo Shifts 30th Anniversary to 20-Count Boxes",
-      "url": "https://halfwheel.com/perdomo-shifts-30th-anniversary-to-20-count-boxes/478674/"
-    },
-    {
-      "date": "2026-09-03",
-      "category": "業界・企業",
-      "title_ja": "ドリュー・エステート創業30周年、還元策を開始",
-      "summary_ja": "ドリュー・エステート（Drew Estate）が創業30周年を迎え、会社を支えてきた消費者や小売店、コミュニティに焦点を当てた特典プログラム「DE30 REWARDS」を開始した。「シガーのリバース（The Rebirth of Cigars）」の次章を見据えた取り組みとしている。",
-      "title_en": "Drew Estate Turns 30 and Gives Back With DE30 REWARDS",
-      "summary_en": "Drew Estate is celebrating its 30th anniversary by turning the spotlight on the consumers, retailers and community that helped build The Rebirth of Cigars, with the launch of its DE30 REWARDS programme. The company says the initiative gives back to those who supported it while looking ahead to the next chapter of the brand.",
-      "source": "StogiePress",
-      "source_title": "Cigar News: Drew Estate Turns 30 and Gives Back With DE30 REWARDS",
-      "source_en": "StogiePress",
-      "source_title_en": "Cigar News: Drew Estate Turns 30 and Gives Back With DE30 REWARDS",
-      "url": "https://stogiepress.com/cigar-news-drew-estate-turns-30-and-gives-back-with-de30-rewards/"
-    },
-    {
-      "date": "2026-09-03",
-      "category": "業界・企業",
-      "title_ja": "ダビドフ、プロシガーを脱退",
-      "summary_ja": "ダビドフ（Davidoff）のタバドム・ホールディングス（Tabadom Holdings）が、ドミニカの業界団体プロシガー（ProCigar）を脱退した。1992年の設立以来の活動会員だったが、スイスの同社は脱退が「グローバルなビジョンと優先事項」に関連したものだと説明した。",
-      "title_en": "Davidoff Quits ProCigar",
-      "summary_en": "Davidoff's Tabadom Holdings has left ProCigar, the Dominican cigar makers' association. The Swiss company had been an active member since the organisation was founded in 1992. Davidoff said its exit was related to its \"global vision and priorities.\"",
-      "source": "halfwheel",
-      "source_title": "Davidoff Quits ProCigar",
-      "source_en": "halfwheel",
-      "source_title_en": "Davidoff Quits ProCigar",
-      "url": "https://halfwheel.com/davidoff-quits-procigar/478621/"
-    },
-    {
-      "date": "2026-09-03",
-      "category": "業界・企業",
-      "title_ja": "ラース・テテンス氏が死去",
-      "summary_ja": "プレミアム葉巻業界の異色の人物、ラース・テテンス（Lars Tetens）氏が死去した。同氏は1980年代初頭から独自の加香葉巻を作り始め、2019年にはアレック・ブラッドリーのアラン・ルービンとの契約を通じて業界に復帰していた。",
-      "title_en": "Lars Tetens Passes Away",
-      "summary_en": "Lars Tetens, one of the more unique personalities in the premium cigar industry, has died. He began creating his conditioned cigars in the early 1980s and returned to the business in 2019 through an agreement with Alan Rubin of Alec Bradley.",
-      "source": "halfwheel",
-      "source_title": "Lars Tetens Passes Away",
-      "source_en": "halfwheel",
-      "source_title_en": "Lars Tetens Passes Away",
-      "url": "https://halfwheel.com/lars-tetens-passes-away/478605/"
-    },
-    {
-      "date": "2026-09-03",
-      "category": "新製品",
-      "title_ja": "ドリューエステート、30周年で新製品と会員特典",
-      "summary_ja": "ドリューエステート（Drew Estate）は創業30周年を記念し、顧客が衣料・アクセサリー・アートを獲得できる新たなリワードプログラムを立ち上げた。あわせて、ボックスプレスの「フェラル・フライング・ピッグ」やスプレマス・サンプラー、リガ・プリバダ（Liga Privada）初のクレブラなど複数の新製品を発表した。",
-      "title_en": "Drew Estate Marks 30th With New Cigars and Rewards Programme",
-      "summary_en": "Drew Estate is celebrating its 30th anniversary with a new customer rewards programme through which buyers can earn apparel, accessories and art. The company also announced several new cigars, including box-pressed Feral Flying Pig and Supremas samplers, alongside the first-ever Liga Privada culebra. The launch spotlights the consumers, retailers and community that helped build the brand as it looks ahead to its next chapter.",
-      "source": "halfwheel",
-      "source_title": "Drew Estate Announces Box-Pressed Feral Flying Pig and Supremas Samplers; Launching Customer Rewards Program",
-      "source_en": "halfwheel",
-      "source_title_en": "Drew Estate Announces Box-Pressed Feral Flying Pig and Supremas Samplers; Launching Customer Rewards Program",
-      "url": "https://halfwheel.com/drew-estate-announces-box-pressed-feral-flying-pig-and-supremas-samplers-launching-customer-rewards-program/478474/"
     }
   ]
 };
