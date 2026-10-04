@@ -7,8 +7,21 @@
    手で足すこともできますが、items の並び・キーは崩さないでください。
    ============================================================ */
 var NEWS_DATA = {
-  "updated": "2026-10-03",
+  "updated": "2026-10-04",
   "items": [
+    {
+      "date": "2026-10-04",
+      "category": "新製品",
+      "title_ja": "レッドミートラバーズ新サイズ「スパイシービーフスティック」",
+      "summary_ja": "halfwheelが、レッドミートラバーズの新作「スパイシービーフスティック」を伝えた。中身は既存のフリタンガ（Fritanga）ブレンドをビーフスティックのサイズに仕立てたもので、6×48のトロ。フラットキャップとフラットな閉じたフットを備え、円筒の両端を塞いだ形状となっている。",
+      "title_en": "Red Meat Lovers Spicy Beef Stick",
+      "summary_en": "Halfwheel reports on the Red Meat Lovers Spicy Beef Stick, a new addition to the line. It is essentially the Red Meat Lovers Fritanga blend presented in the Beef Stick size: a 6 x 48 toro vitola. The cigar features a flat cap and a flat closed foot, sealing off both ends of the cylinder.",
+      "source": "halfwheel",
+      "source_title": "Red Meat Lovers Spicy Beef Stick",
+      "source_en": "halfwheel",
+      "source_title_en": "Red Meat Lovers Spicy Beef Stick",
+      "url": "https://halfwheel.com/red-meat-lovers-spicy-beef-stick/480997/"
+    },
     {
       "date": "2026-10-03",
       "category": "新製品",
@@ -34,6 +47,19 @@ var NEWS_DATA = {
       "source_en": "halfwheel",
       "source_title_en": "Apostate Death Mask on the Way to Stores",
       "url": "https://halfwheel.com/apostate-death-mask-on-the-way-to-stores/480935/"
+    },
+    {
+      "date": "2026-10-02",
+      "category": "イベント・アワード",
+      "title_ja": "アルテサノ「エル・プルポ」、ハンガリーで夕べの催し",
+      "summary_ja": "アルテサノ・デル・タバコ（Artesano del Tobacco）の創業者ビリー・ファキーとガス・ファキーが、ハンガリーの葉巻愛好家と集い、葉巻と対話、そして受賞ブランド「エル・プルポ（El Pulpo）」の背景を語る一夜を過ごしたと、Cigar Journalが伝えた。",
+      "title_en": "El Pulpo Takes Centre Stage in Hungary",
+      "summary_en": "Cigar Journal reports that Artesano del Tobacco founders Billy and Gus Fakih joined Hungarian cigar enthusiasts for an evening of cigars and conversation. The gathering spotlighted the story behind the award-winning El Pulpo brand, bringing the makers together with local aficionados.",
+      "source": "Cigar Journal",
+      "source_title": "El Pulpo Takes Center Stage in Hungary",
+      "source_en": "Cigar Journal",
+      "source_title_en": "El Pulpo Takes Centre Stage in Hungary",
+      "url": "https://www.cigarjournal.com/el-pulpo-takes-center-stage-in-hungary/"
     },
     {
       "date": "2026-10-02",
@@ -346,6 +372,58 @@ var NEWS_DATA = {
       "source_en": "halfwheel",
       "source_title_en": "Gellis Family Cigars Essentials on the Way to Retailers",
       "url": "https://halfwheel.com/gellis-family-cigars-essentials-on-the-way-to-retailers/480569/"
+    },
+    {
+      "date": "2026-09-28",
+      "category": "イベント・アワード",
+      "title_ja": "プロシガー2027、チケット販売を開始",
+      "summary_ja": "Cigar Journalが、ドミニカ共和国の葉巻製造者団体によるイベント「プロシガー（Procigar）2027」のチケット販売開始を伝えた。発表はInterTabac 2026の場で行われた。",
+      "title_en": "Procigar 2027: Tickets for Sale!",
+      "summary_en": "Cigar Journal reports that tickets for Procigar 2027, the festival organised by the Dominican cigar manufacturers' association, are now on sale. The announcement was made at InterTabac 2026.",
+      "source": "Cigar Journal",
+      "source_title": "Procigar 2027: Tickets for Sale!",
+      "source_en": "Cigar Journal",
+      "source_title_en": "Procigar 2027: Tickets for Sale!",
+      "url": "https://www.cigarjournal.com/procigar-2027-tickets-for-sale/"
+    },
+    {
+      "date": "2026-09-28",
+      "category": "新製品",
+      "title_ja": "ラ・レヘンタ、創業105周年記念シガー",
+      "summary_ja": "Cigar Journalが、ラ・レヘンタ（La Regenta）の創業105周年を記念する製品をInterTabac 2026で紹介した。",
+      "title_en": "La Regenta 105th Anniversary",
+      "summary_en": "Cigar Journal presented La Regenta's 105th anniversary release at InterTabac 2026, marking the brand's long history.",
+      "source": "Cigar Journal",
+      "source_title": "La Regenta 105th Anniversary",
+      "source_en": "Cigar Journal",
+      "source_title_en": "La Regenta 105th Anniversary",
+      "url": "https://www.cigarjournal.com/la-regenta-105th-anniversary/"
+    },
+    {
+      "date": "2026-09-28",
+      "category": "業界・企業",
+      "title_ja": "カサ・マグナ、新時代へ向け新イメージ",
+      "summary_ja": "Cigar Journalが、ケサダ・シガーズ（Quesada Cigars）のブランド「カサ・マグナ（Casa Magna）」の新たなイメージをInterTabac 2026で紹介した。",
+      "title_en": "Casa Magna, New Times, New Image",
+      "summary_en": "Cigar Journal showcased a new image for Quesada Cigars' Casa Magna brand at InterTabac 2026, signalling a fresh direction for the line.",
+      "source": "Cigar Journal",
+      "source_title": "Casa Magna, New Times, New Image",
+      "source_en": "Cigar Journal",
+      "source_title_en": "Casa Magna, New Times, New Image",
+      "url": "https://www.cigarjournal.com/casa-magna-new-times-new-image/"
+    },
+    {
+      "date": "2026-09-28",
+      "category": "新製品",
+      "title_ja": "ディアス・カブレラ、新作「ミ・ビエハ」",
+      "summary_ja": "Cigar Journalが、タバカレラ・ディアス・カブレラ（Tabacalera Díaz Cabrera）の新作「ミ・ビエハ（Mi Vieja／My Mom）」をInterTabac 2026で紹介した。",
+      "title_en": "Mi Vieja (My Mom)",
+      "summary_en": "Cigar Journal presented Tabacalera Díaz Cabrera's new cigar, Mi Vieja (My Mom), at InterTabac 2026.",
+      "source": "Cigar Journal",
+      "source_title": "Mi Vieja (My Mom)",
+      "source_en": "Cigar Journal",
+      "source_title_en": "Mi Vieja (My Mom)",
+      "url": "https://www.cigarjournal.com/mi-vieja-my-mom/"
     },
     {
       "date": "2026-09-28",
@@ -2010,84 +2088,6 @@ var NEWS_DATA = {
       "source_en": "halfwheel",
       "source_title_en": "Cavalier Genève Project 10th Anniversary Claro",
       "url": "https://halfwheel.com/cavalier-geneve-project-10th-anniversary-claro/478793/"
-    },
-    {
-      "date": "2026-09-05",
-      "category": "イベント・アワード",
-      "title_ja": "プロシガー・フェスティバル2027、登録開始",
-      "summary_ja": "ドミニカ葉巻製造業者協会（PROCIGAR）が、第19回プロシガー・フェスティバルの参加登録を開始したと発表した。開催は2027年2月16〜19日、ドミニカ共和国サンティアゴ。工場・タバコ畑の見学、テイスティング、文化イベントに加え、チャリティーオークションを伴うガラディナーで締めくくられる。",
-      "title_en": "PROCIGAR Festival 2027: Registration Now Open",
-      "summary_en": "The Association of Dominican Cigar Manufacturers (PROCIGAR) has announced that registration is open for the 19th edition of its festival, taking place 16–19 February 2027 in Santiago de los Caballeros, Dominican Republic. Guests can enjoy exclusive factory and tobacco field tours, educational sessions, tastings and cultural celebrations hosted by member companies. The event culminates in the Auction Gala Dinner, featuring PROCIGAR's renowned charity auction of exclusive humidors, collectible lots and limited-edition releases.",
-      "source": "Cigar Journal",
-      "source_title": "PROCIGAR FESTIVAL 2027: Registration Now Open",
-      "source_en": "Cigar Journal",
-      "source_title_en": "PROCIGAR Festival 2027: Registration Now Open",
-      "url": "https://www.cigarjournal.com/procigar-festival-2027-registration-now-open/?utm_source=rss&utm_medium=rss&utm_campaign=procigar-festival-2027-registration-now-open"
-    },
-    {
-      "date": "2026-09-05",
-      "category": "新製品",
-      "title_ja": "ゲリス、新作ヘリテージNo.50を披露",
-      "summary_ja": "ゲリス・ファミリー・シガーズ（Gellis Family Cigars）が2026年PCA展示会で新ブレンド2種を披露した。うち「ヘリテージNo.50」は、メキシカン・サンアンドレス（San Andrés）ラッパーにニカラグア産タバコを組み合わせたNACSA製のロブストである。",
-      "title_en": "Gellis Family Cigars Heritage No. 50",
-      "summary_en": "Gellis Family Cigars showed off two new blends at the 2026 PCA Convention & Trade Show. Among them is the Heritage No. 50, a NACSA-made robusto featuring a Mexican San Andrés wrapper over Nicaraguan tobaccos. The company used the industry's main trade show to unveil the additions to its portfolio.",
-      "source": "halfwheel",
-      "source_title": "Gellis Family Cigars Heritage No. 50",
-      "source_en": "halfwheel",
-      "source_title_en": "Gellis Family Cigars Heritage No. 50",
-      "url": "https://halfwheel.com/gellis-family-cigars-heritage-no-50/478332/"
-    },
-    {
-      "date": "2026-09-05",
-      "category": "新製品",
-      "title_ja": "プロメテウス、オーパスX等のディアデマを出荷",
-      "summary_ja": "プロメテウス（Prometheus）が、オーパスX（OpusX）レア・ブラック、レア・パープル、ゴッド・オブ・ファイア（God of Fire）ネバー・バック・ダウン、スペシャル・リザーブの4ラインでディアデマを出荷開始した。4ラインとも同じ3ビトラで提供されるが、今週出荷されるのは2ビトラのみ。新たにレア・ブラックのサンプラーも登場する。",
-      "title_en": "Prometheus Ships Diademas for OpusX Rare Black, Rare Purple & God of Fire Never Back Down, Special Reserve",
-      "summary_en": "Prometheus has begun shipping diademas for four lines: OpusX Rare Black, Rare Purple, God of Fire Never Back Down and Special Reserve. All four are offered in the same three vitolas, though only two of the vitolas are shipping this week. In addition, a new Rare Black sampler is being released.",
-      "source": "halfwheel",
-      "source_title": "Prometheus Ships Diademas for OpusX Rare Black, Rare Purple & God of Fire Never Back Down, Special Reserve",
-      "source_en": "halfwheel",
-      "source_title_en": "Prometheus Ships Diademas for OpusX Rare Black, Rare Purple & God of Fire Never Back Down, Special Reserve",
-      "url": "https://halfwheel.com/prometheus-ships-diademas-for-opusx-rare-black-rare-purple-god-of-fire-never-back-down-special-reserve/478561/"
-    },
-    {
-      "date": "2026-09-05",
-      "category": "新製品",
-      "title_ja": "ミカレフ・オレンジ、全米出荷を開始",
-      "summary_ja": "ミカレフ（Micallef）の新作「オレンジ（Orange）」が先週発売され、月曜に全米の店舗へ出荷された。翌日には店頭に並ぶ見込み。カラー・シリーズ（Color Series）の他6ブレンドと同じ2ビトラ・同一希望小売価格で提供される。",
-      "title_en": "Micallef Orange Ships Nationwide",
-      "summary_en": "The Micallef Orange launched last week, shipped to stores nationwide on Monday and should be on shelves by the following day. It is offered in the same two vitolas, and at the same MSRPs, as the other six blends in the Color Series.",
-      "source": "halfwheel",
-      "source_title": "Micallef Orange Ships Nationwide",
-      "source_en": "halfwheel",
-      "source_title_en": "Micallef Orange Ships Nationwide",
-      "url": "https://halfwheel.com/micallef-orange-ships-nationwide/478765/"
-    },
-    {
-      "date": "2026-09-04",
-      "category": "新製品",
-      "title_ja": "ラモン・アロネス地域限定、アンドラで発売",
-      "summary_ja": "ラモン・アロネス（Ramón Allones）の新作「カルレマニー（Carlemany）」がアンドラで発売された。ローマ皇帝カール大帝にちなむ一本で、近年のエディシオン・レヒオナル（Edición Regional）としては珍しく、バンドを2本のみ備える。",
-      "title_en": "Ramón Allones Carlemany Goes on Sale in Andorra",
-      "summary_en": "A new Ramón Allones cigar, the Carlemany, has gone on sale in Andorra. It honours Charlemagne, the Roman emperor. Unlike seemingly every other Edición Regional release of late, it carries only two bands.",
-      "source": "halfwheel",
-      "source_title": "Ramón Allones Carlemany Gones on Sale in Andorra",
-      "source_en": "halfwheel",
-      "source_title_en": "Ramón Allones Carlemany Goes on Sale in Andorra",
-      "url": "https://halfwheel.com/ramon-allones-carlemany-gones-on-sale-in-andorra/478741/"
-    },
-    {
-      "date": "2026-09-04",
-      "category": "新製品",
-      "title_ja": "ソブレメサ・タパ・ネグラ新作を発表",
-      "summary_ja": "ダンバートン（Dunbarton）のソブレメサ（Sobremesa）派生ラインとして「タパ・ネグラ（Tapa Negra）コロナ・ゴルダ」が登場した。スペイン語で「黒い蓋」を意味する名の通り、ホヤ・デ・ニカラグア（Joya de Nicaragua）のカビネッタ（Cabinetta）と共通の独特なデザインを採用する。",
-      "title_en": "Sobremesa Tapa Negra Corona Gorda",
-      "summary_en": "This offshoot of Dunbarton's Sobremesa brand, the Tapa Negra Corona Gorda, features a very distinctive design that is also used by Joya de Nicaragua's Cabinetta line. Appropriately, the name Tapa Negra means \"black lid\" in Spanish.",
-      "source": "halfwheel",
-      "source_title": "Sobremesa Tapa Negra Corona Gorda",
-      "source_en": "halfwheel",
-      "source_title_en": "Sobremesa Tapa Negra Corona Gorda",
-      "url": "https://halfwheel.com/sobremesa-tapa-negra-corona-gorda/478643/"
     }
   ]
 };
