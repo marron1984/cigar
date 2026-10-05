@@ -7,8 +7,21 @@
    手で足すこともできますが、items の並び・キーは崩さないでください。
    ============================================================ */
 var NEWS_DATA = {
-  "updated": "2026-10-04",
+  "updated": "2026-10-05",
   "items": [
+    {
+      "date": "2026-10-04",
+      "category": "新製品",
+      "title_ja": "タトゥアーヘ、ブラックレーベル・トーペドを定番化",
+      "summary_ja": "タトゥアーヘ（Tatuaje）は、2009年に限定チューブ入りで発売した6 1/8×52のトーペド版「ブラックレーベル」を、今年ボックスプレス仕様のレギュラー生産品として追加した。",
+      "title_en": "Tatuaje Black Label Torpedo",
+      "summary_en": "In 2009, Tatuaje released a 6 1/8 x 52 torpedo version of its Black Label, sold in limited edition tubes. This year, the company has added a regular production, box-pressed version of the same size.",
+      "source": "halfwheel",
+      "source_title": "Tatuaje Black Label Torpedo",
+      "source_en": "halfwheel",
+      "source_title_en": "Tatuaje Black Label Torpedo",
+      "url": "https://halfwheel.com/tatuaje-black-label-torpedo/480666/"
+    },
     {
       "date": "2026-10-04",
       "category": "新製品",
@@ -375,6 +388,32 @@ var NEWS_DATA = {
     },
     {
       "date": "2026-09-28",
+      "category": "新製品",
+      "title_ja": "PDR、新作「スモールバッチ・キャビネット」披露",
+      "summary_ja": "PDRシガーズ（PDR Cigars）が、インタータバック2026（InterTabac 2026）で新作「スモールバッチ・キャビネット（Small Batch Cabinet）」を披露した。",
+      "title_en": "PDR's Small Batch Cabinet",
+      "summary_en": "PDR Cigars presented its Small Batch Cabinet at InterTabac 2026.",
+      "source": "Cigar Journal",
+      "source_title": "PDR’s Small Batch Cabinet",
+      "source_en": "Cigar Journal",
+      "source_title_en": "PDR's Small Batch Cabinet",
+      "url": "https://www.cigarjournal.com/pdr-s-small-batch-cabinet/"
+    },
+    {
+      "date": "2026-09-28",
+      "category": "新製品",
+      "title_ja": "アラディノ、新作「ゴルブストス」を出展",
+      "summary_ja": "アラディノ・シガーズ（Aladino Cigars）が、インタータバック2026（InterTabac 2026）で新作「ゴルブストス（Gorbustos）」を出展した。",
+      "title_en": "Aladino's Gorbustos",
+      "summary_en": "Aladino Cigars presented its Gorbustos at InterTabac 2026.",
+      "source": "Cigar Journal",
+      "source_title": "Aladino’s Gorbustos",
+      "source_en": "Cigar Journal",
+      "source_title_en": "Aladino's Gorbustos",
+      "url": "https://www.cigarjournal.com/aladino-s-gorbustos/"
+    },
+    {
+      "date": "2026-09-28",
       "category": "イベント・アワード",
       "title_ja": "プロシガー2027、チケット販売を開始",
       "summary_ja": "Cigar Journalが、ドミニカ共和国の葉巻製造者団体によるイベント「プロシガー（Procigar）2027」のチケット販売開始を伝えた。発表はInterTabac 2026の場で行われた。",
@@ -674,6 +713,32 @@ var NEWS_DATA = {
     },
     {
       "date": "2026-09-24",
+      "category": "新製品",
+      "title_ja": "マヤ・セルバ、「イヤー・オブ・ザ・ゴート」披露",
+      "summary_ja": "マヤ・セルバ・シガーズ（Maya Selva Cigars）が、インタータバック2026（InterTabac 2026）で新作「イヤー・オブ・ザ・ゴート（Year of the Goat）」を披露した。",
+      "title_en": "Year of the Goat",
+      "summary_en": "Maya Selva Cigars presented the Year of the Goat at InterTabac 2026.",
+      "source": "Cigar Journal",
+      "source_title": "Year of the Goat",
+      "source_en": "Cigar Journal",
+      "source_title_en": "Year of the Goat",
+      "url": "https://www.cigarjournal.com/year-of-the-goat/"
+    },
+    {
+      "date": "2026-09-24",
+      "category": "新製品",
+      "title_ja": "デ・ロス・レイエスの「サガ」、インタータバック出展",
+      "summary_ja": "デ・ロス・レイエス・シガーズ（De los Reyes Cigars）のブランド「サガ（Saga）」が、ニルカ・レイエス（Nirka Reyes）の案内でインタータバック2026（InterTabac 2026）に出展した。",
+      "title_en": "Dominican Gems",
+      "summary_en": "Saga, the brand from De los Reyes Cigars, was represented at InterTabac 2026 by Nirka Reyes.",
+      "source": "Cigar Journal",
+      "source_title": "Dominican Gems",
+      "source_en": "Cigar Journal",
+      "source_title_en": "Dominican Gems",
+      "url": "https://www.cigarjournal.com/dominican-gems/"
+    },
+    {
+      "date": "2026-09-24",
       "category": "イベント・アワード",
       "title_ja": "ファウンデーション、10周年で「セント・ジョージ」",
       "summary_ja": "ファウンデーション・シガー・カンパニー（Foundation Cigar Company）が、InterTabac 2026で創業10周年を記念する「セント・ジョージ（Saint George）」を披露した。",
@@ -801,6 +866,19 @@ var NEWS_DATA = {
       "source_en": "halfwheel",
       "source_title_en": "Viva La Vida Connecticut Churchill",
       "url": "https://halfwheel.com/viva-la-vida-connecticut-churchill/480052/"
+    },
+    {
+      "date": "2026-09-23",
+      "category": "規制・市場",
+      "title_ja": "ベトナム、たばこ免許要件を緩和へ",
+      "summary_ja": "ベトナムで、たばこ関連の免許要件を緩和し、行政手続きを簡素化する動きが報じられた。",
+      "title_en": "Vietnam to ease tobacco licensing requirements",
+      "summary_en": "Vietnam is set to relax tobacco-related licensing requirements and simplify administrative procedures.",
+      "source": "Vietnam.vn",
+      "source_title": "タバコ関連の免許要件を緩和し、行政手続きを簡素化する。 - Vietnam.vn",
+      "source_en": "Vietnam.vn",
+      "source_title_en": "Easing tobacco licensing requirements and simplifying administrative procedures",
+      "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPemdxbUdjRVBKdmV2bnI1UFU3aVhUYWZqTkI5WERmeWJHWXRPb1lILW9GUXNyQlVhcF9Gd0hBeEpTalBHVXFzbkc3bVRONE00NmREb1JmYjZDMkVXLXRGcDE1UHdKR1MxVlpTQ2N3MFhDQ1hMenJieXVLeWhCOEFMTXBmLWFkZWZFWEduR0ZJcnZqUkI1VHoyNF8xbl9tY3Nf?oc=5"
     },
     {
       "date": "2026-09-23",
@@ -2010,84 +2088,6 @@ var NEWS_DATA = {
       "source_en": "halfwheel",
       "source_title_en": "Moonflower Robusto",
       "url": "https://halfwheel.com/moonflower-robusto/478923/"
-    },
-    {
-      "date": "2026-09-08",
-      "category": "業界・企業",
-      "title_ja": "独キューバ葉巻卸5th Avenue、銀行問題で出荷停止",
-      "summary_ja": "キューバ葉巻のドイツ人ディストリビューター、フィフス・アベニュー（5th Avenue）が、一時的な銀行取引の制限により新規注文の受付・出荷ができなくなったと小売店に通知した。オーストリア、ドイツ、ポーランドに供給する同社は、出荷再開の時期については明らかにしていない。",
-      "title_en": "5th Avenue, German Distributor of Cuban Cigars, Pauses Deliveries Due to Banking Issues",
-      "summary_en": "Fifth Avenue (5th Avenue), the German distributor of Cuban cigars, has told retailers that temporary banking restrictions mean it cannot accept or deliver new orders. The company, which supplies Austria, Germany and Poland, has given no timeline for when shipments might resume.",
-      "source": "halfwheel",
-      "source_title": "5th Avenue, German Distributor of Cuban Cigars, Pauses Deliveries Due to Banking Issues",
-      "source_en": "halfwheel",
-      "source_title_en": "5th Avenue, German Distributor of Cuban Cigars, Pauses Deliveries Due to Banking Issues",
-      "url": "https://halfwheel.com/5th-avenue-german-austrian-distributor-of-cuban-cigars-pauses-deliveries-due-to-banking-issues/478900/"
-    },
-    {
-      "date": "2026-09-07",
-      "category": "イベント・アワード",
-      "title_ja": "プロシガー2027、参加登録を開始",
-      "summary_ja": "ドミニカ共和国の葉巻祭典「プロシガー（ProCigar）2027」の参加登録が始まり、一部のツアーはすでに完売した。来年のフェスティバルでは、サンティアゴのサプライヤー企業を訪問するオプションも設けられる。",
-      "title_en": "ProCigar 2027 Registration Opens",
-      "summary_en": "Registration for ProCigar 2027 has opened, with some tours already sold out. Next year's festival in the Dominican Republic will include the option to visit some of the supplier businesses in Santiago.",
-      "source": "halfwheel",
-      "source_title": "ProCigar 2027 Registration Opens",
-      "source_en": "halfwheel",
-      "source_title_en": "ProCigar 2027 Registration Opens",
-      "url": "https://halfwheel.com/procigar-2027-registration-opens/478839/"
-    },
-    {
-      "date": "2026-09-07",
-      "category": "新製品",
-      "title_ja": "エミリオ、限定「スアベ・スマトラ」を出荷",
-      "summary_ja": "エミリオ・シガー（Emilio Cigars）が限定版「スアベ・スマトラ（SUAVE SUMATRA）」を発売した。ニカラグア・エステリのファブリカ・オベハ・ネグラで製造され、マスターブレンダーのジェームズ・ブラウンが監修。スマトラ・ラッパー、エクアドル・ハバノのバインダー、ニカラグア産フィラーを使用。ロブスト（5×50、20本入、10.00ドル）とトロ（6×50、20本入、10.50ドル）の2サイズ。",
-      "title_en": "Emilio Cigars Ships the New Limited-Edition SUAVE SUMATRA",
-      "summary_en": "Emilio Cigars has released the Limited-Edition SUAVE SUMATRA, crafted at Fábrica Oveja Negra in Estelí, Nicaragua. Master blender James Brown lent his expertise to the blend and artwork. It features a Sumatra wrapper, Ecuador Habano binder and Nicaraguan filler, offered in Robusto (5×50, 20 count, MSRP $10.00) and Toro (6×50, 20 count, MSRP $10.50).",
-      "source": "Cigar Journal",
-      "source_title": "Emilio Cigars Ships the New Limited-Edition SUAVE SUMATRA",
-      "source_en": "Cigar Journal",
-      "source_title_en": "Emilio Cigars Ships the New Limited-Edition SUAVE SUMATRA",
-      "url": "https://www.cigarjournal.com/emilio-cigars-ships-the-new-limited-edition-suave-sumatra/?utm_source=rss&utm_medium=rss&utm_campaign=emilio-cigars-ships-the-new-limited-edition-suave-sumatra"
-    },
-    {
-      "date": "2026-09-07",
-      "category": "業界・企業",
-      "title_ja": "プラセンシア、創業160年でブランド刷新",
-      "summary_ja": "プラセンシア・シガー（Plasencia Cigars）が、タバコ栽培160年を記念する新キャンペーン「Born of This Land」を発表した。刷新したブランドアイデンティティ、新ロゴ、再デザインされたパッケージを土台に、五世代続く一族の哲学と農業遺産を表現する。1865年以来続く同社の歩みを、五世代目のネストール・アンドレス・プラセンシアが語った。",
-      "title_en": "Plasencia Cigars Unveils The Next Chapter Of Its Brand Evolution",
-      "summary_en": "Plasencia Cigars has unveiled Born of This Land, a new campaign marking 160 years of growing tobacco. Building on its recently evolved brand identity, new logo and redesigned packaging, it aims to express the philosophy and agricultural heritage of five generations of the family. Fifth-generation member Néstor Andrés Plasencia reflected on the milestone dating back to 1865.",
-      "source": "Cigar Journal",
-      "source_title": "Plasencia Cigars Unveils The Next Chapter Of Its Brand Evolution",
-      "source_en": "Cigar Journal",
-      "source_title_en": "Plasencia Cigars Unveils The Next Chapter Of Its Brand Evolution",
-      "url": "https://www.cigarjournal.com/plasencia-cigars-unveils-the-next-chapter-of-its-brand-evolution/?utm_source=rss&utm_medium=rss&utm_campaign=plasencia-cigars-unveils-the-next-chapter-of-its-brand-evolution"
-    },
-    {
-      "date": "2026-09-07",
-      "category": "新製品",
-      "title_ja": "ロッキー・パテル、サファイア新サイズ発売",
-      "summary_ja": "ロッキー・パテル（Rocky Patel）は「サファイア（Sapphire）」のコロナ・ゴルダを発表した。100を超えるブレンドを試し、2014年まで遡る葉を使用したという。クラシックなキューバ葉巻、特にその余韻に残る甘さに着想を得たプロファイルを目指してブレンドされた。",
-      "title_en": "Rocky Patel Sapphire Corona Gorda",
-      "summary_en": "Rocky Patel has released a Corona Gorda addition to its Sapphire line. According to the company, it evaluated more than 100 blends and used tobacco dating back to 2014 to craft the cigar. The blend was designed to create a profile inspired by classic Cuban cigars, specifically the lingering sweetness for which they were known.",
-      "source": "halfwheel",
-      "source_title": "Rocky Patel Sapphire Corona Gorda",
-      "source_en": "halfwheel",
-      "source_title_en": "Rocky Patel Sapphire Corona Gorda",
-      "url": "https://halfwheel.com/rocky-patel-sapphire-corona-gorda/478165/"
-    },
-    {
-      "date": "2026-09-06",
-      "category": "新製品",
-      "title_ja": "キャバリエ・ジュネーブ10周年記念クラロ登場",
-      "summary_ja": "キャバリエ・ジュネーブ・プロジェクト（Cavalier Genève）が10周年記念シガー4種のうちの1本「Claro」を発表した。このモデルは10種類のタバコをブレンドしており、かつての一般的な標準の倍にあたる構成となっている。",
-      "title_en": "Cavalier Genève Project 10th Anniversary Claro Released",
-      "summary_en": "Cavalier Genève has unveiled the Claro, one of four cigars marking the brand's 10th anniversary under its Project line. The blend is notable for containing ten different types of tobacco, double what was once considered a common standard for a cigar's composition. The release forms part of a broader anniversary collection celebrating a decade of the Geneva-based cigar maker.",
-      "source": "halfwheel",
-      "source_title": "Cavalier Genève Project 10th Anniversary Claro",
-      "source_en": "halfwheel",
-      "source_title_en": "Cavalier Genève Project 10th Anniversary Claro",
-      "url": "https://halfwheel.com/cavalier-geneve-project-10th-anniversary-claro/478793/"
     }
   ]
 };
