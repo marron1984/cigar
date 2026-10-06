@@ -7,8 +7,60 @@
    手で足すこともできますが、items の並び・キーは崩さないでください。
    ============================================================ */
 var NEWS_DATA = {
-  "updated": "2026-10-05",
+  "updated": "2026-10-06",
   "items": [
+    {
+      "date": "2026-10-06",
+      "category": "業界・企業",
+      "title_ja": "ローラ・バーラウがエスピノーザに入社",
+      "summary_ja": "ローラ・バーラウ（Laura Barlau）がエスピノーザ・プレミアム・シガー（Espinosa Premium Cigars）に入社した。バーラウは2007年から葉巻業界に携わり、仕入れ、ベンダー関係、小売提携などの職務を担当してきた。直近はBest Cigar Pricesに在籍していた。",
+      "title_en": "Laura Barlau Joins Espinosa Premium Cigars",
+      "summary_en": "Laura Barlau has joined Espinosa Premium Cigars. Barlau has worked in the cigar industry since 2007, holding roles in cigar purchasing, vendor relations and retail partnerships. Most recently she was with Best Cigar Prices.",
+      "source": "halfwheel",
+      "source_title": "Laura Barlau Joins Espinosa Premium Cigars",
+      "source_en": "halfwheel",
+      "source_title_en": "Laura Barlau Joins Espinosa Premium Cigars",
+      "url": "https://halfwheel.com/laura-barlau-joins-espinosa-premium-cigars/481062/"
+    },
+    {
+      "date": "2026-10-06",
+      "category": "新製品",
+      "title_ja": "トレードクラフト、第4のコア「シノビ」発表",
+      "summary_ja": "トレードクラフト・シガー（Tradecraft Cigars）が、4番目のコアライン「シノビ（Shinobi）」を発表した。古代日本文化に着想を得たフルボディのブレンドで、12月の一般発売に先立ち、Luxury Cigar Clubを通じて先行デビューする。",
+      "title_en": "Tradecraft Cigars Announces Shinobi as Fourth Core Line",
+      "summary_en": "Tradecraft Cigars has announced Shinobi as its fourth core line. Inspired by ancient Japanese culture, the company describes it as a full-bodied blend. The line debuts via Luxury Cigar Club ahead of its widespread release in December.",
+      "source": "halfwheel",
+      "source_title": "Tradecraft Cigars Announces Shinobi as Fourth Core Line",
+      "source_en": "halfwheel",
+      "source_title_en": "Tradecraft Cigars Announces Shinobi as Fourth Core Line",
+      "url": "https://halfwheel.com/tradecraft-cigars-announces-shinobi-as-fourth-core-line/481053/"
+    },
+    {
+      "date": "2026-10-05",
+      "category": "イベント・アワード",
+      "title_ja": "アルトゥーロ・フエンテ、インタータバックに復帰",
+      "summary_ja": "アルトゥーロ・フエンテ（Arturo Fuente）が、InterTabac 2026に出展した。",
+      "title_en": "Arturo Fuente Returns to Intertabac",
+      "summary_en": "Arturo Fuente returned to the trade fair with a presence at InterTabac 2026.",
+      "source": "Cigar Journal",
+      "source_title": "Arturo Fuente Returns to Intertabac",
+      "source_en": "Cigar Journal",
+      "source_title_en": "Arturo Fuente Returns to Intertabac",
+      "url": "https://www.cigarjournal.com/arturo-fuente-returns-to-intertabac/"
+    },
+    {
+      "date": "2026-10-05",
+      "category": "新製品",
+      "title_ja": "XIKAR、Xi2「死者の日」シリーズを発表",
+      "summary_ja": "クオリティ・インポーターズ・トレーディング（Quality Importers Trading Company）が、XIKAR Xi2「死者の日（Dia de Muertos）」シリーズを発表した。",
+      "title_en": "Quality Importers Announces the XIKAR Xi2 Dia de Muertos Series",
+      "summary_en": "Quality Importers Trading Company has announced the XIKAR Xi2 Dia de Muertos series.",
+      "source": "Cigar Journal",
+      "source_title": "Quality Importers Announces the XIKAR Xi2 Dia de Muertos Series",
+      "source_en": "Cigar Journal",
+      "source_title_en": "Quality Importers Announces the XIKAR Xi2 Dia de Muertos Series",
+      "url": "https://www.cigarjournal.com/quality-importers-announces-the-xikar-xi2-dia-de-muertos-series/"
+    },
     {
       "date": "2026-10-04",
       "category": "新製品",
@@ -60,6 +112,19 @@ var NEWS_DATA = {
       "source_en": "halfwheel",
       "source_title_en": "Apostate Death Mask on the Way to Stores",
       "url": "https://halfwheel.com/apostate-death-mask-on-the-way-to-stores/480935/"
+    },
+    {
+      "date": "2026-10-02",
+      "category": "日本国内",
+      "title_ja": "キャメルのスーパースリムなリトルシガー2銘柄発売",
+      "summary_ja": "見た目も価格も「スーパースリム」なキャメル（Camel）のリトルシガー2銘柄が新発売された。",
+      "title_en": "Two 'super slim' Camel little cigars launched in Japan",
+      "summary_en": "Two new Camel little cigars, described as 'super slim' in both appearance and price, have gone on sale in Japan.",
+      "source": "ウォーカープラス",
+      "source_title": "見た目も価格も“スーパースリム”なキャメルのリトルシガー2銘柄が新発売 - ウォーカープラス",
+      "source_en": "Walkerplus",
+      "source_title_en": "Two 'super slim' Camel little cigars newly released",
+      "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE8xdUJzZlE2blpqMHZYRVFwUXdoRUZEMWIwVjRtZ3hzd3lEWkxXXzBaQ2RTYXVGNUMycDlBNnZoRkdDci1TSXlHNmZlT0RYeVNSZUlvdNIBWkFVX3lxTFA4MUJPSjY0b20yY2hJX1h5RWhkYWVJY0ZMYWtqTTFZTFk2SExIa002ZzRhRWo1OW1zeGRrMGpXX0tFSHptYnAxd0ZfOFI1V1ZNcE8zMnZaS25jQQ?oc=5"
     },
     {
       "date": "2026-10-02",
@@ -2023,71 +2088,6 @@ var NEWS_DATA = {
       "source_en": "Cigar Journal",
       "source_title_en": "And The Winner Is…? – Cigar Trophy Awards 2026",
       "url": "https://www.cigarjournal.com/and-the-winner-is-cigar-trophy-awards-2026/?utm_source=rss&utm_medium=rss&utm_campaign=and-the-winner-is-cigar-trophy-awards-2026"
-    },
-    {
-      "date": "2026-09-09",
-      "category": "業界・企業",
-      "title_ja": "ホンジュラス、2027年から国際タバコ祭を開催へ",
-      "summary_ja": "CLEシガー・カンパニーCEOのクリスチャン・エイロア（Christian Eiroa）が、ホンジュラスが2027年1月から旗艦となる国際タバコ祭を立ち上げると明らかにした。当局の認可も得ており、ニカラグアのプロ・サボール、ドミニカ共和国のプロシガー、キューバのハバノ祭と並ぶ業界イベントを目指す。",
-      "title_en": "Honduras Will Have an International Tobacco Festival: Eiroa",
-      "summary_en": "Christian Eiroa, CEO of CLE Cigar Company, has confirmed that Honduras will launch a flagship international tobacco festival from January 2027, with commitment and authorisation from competent authorities already in place. The event would position the country alongside major industry gatherings such as Puro Sabor in Nicaragua, Procigar in the Dominican Republic and the Habano Festival in Cuba, building on the strength of Honduran tobacco and its growing US market presence.",
-      "source": "Cigar Journal",
-      "source_title": "Honduras Will Have an International Tobacco Festival: Eiroa",
-      "source_en": "Cigar Journal",
-      "source_title_en": "Honduras Will Have an International Tobacco Festival: Eiroa",
-      "url": "https://www.cigarjournal.com/honduras-will-have-an-international-tobacco-festival-eiroa/?utm_source=rss&utm_medium=rss&utm_campaign=honduras-will-have-an-international-tobacco-festival-eiroa"
-    },
-    {
-      "date": "2026-09-09",
-      "category": "業界・企業",
-      "title_ja": "レオ・ウェインベルト氏がCLEシガーに入社",
-      "summary_ja": "CLEシガー（CLE Cigar Co.）にレオ・ウェインベルト（Leo Wijnbelt）氏が入社した。ウェインベルト氏はゼネラル・シガー、スウィッシャー、ユニバーサル・リーフでの勤務歴を持ち、今後はCLEのタバコ事業全体を統括する。",
-      "title_en": "Leo Wijnbelt Joins CLE Cigar Co.",
-      "summary_en": "Leo Wijnbelt has joined CLE Cigar Co., where he will oversee the company's entire tobacco operation. Wijnbelt previously held positions at General Cigar Co., Swisher and Universal Leaf, bringing extensive industry experience to his new role.",
-      "source": "halfwheel",
-      "source_title": "Leo Wijnbelt Joins CLE Cigar Co.",
-      "source_en": "halfwheel",
-      "source_title_en": "Leo Wijnbelt Joins CLE Cigar Co.",
-      "url": "https://halfwheel.com/leo-wijnbelt-joins-cle-cigar-co/478970/"
-    },
-    {
-      "date": "2026-09-09",
-      "category": "新製品",
-      "title_ja": "マヤ・セルバ、干支限定「アニョ・デ・ラ・カブラ2027」",
-      "summary_ja": "マヤ・セルバ・シガーズ（Maya Selva Cigars）が、旧正月を祝う恒例の限定品「フロール・デ・セルバ アニョ・デ・ラ・カブラ2027（Flor de Selva Año de la Cabra 2027）」をインタータバック2026で発表する。太めのホンジュラス・プロで、11月に発売予定。同社は2018年から旧正月に合わせた限定品を毎年展開している。",
-      "title_en": "Flor de Selva Año de la Cabra 2027 Debuting at InterTabac 2026",
-      "summary_en": "Maya Selva Cigars will unveil its Flor de Selva Año de la Cabra 2027 at InterTabac 2026, continuing a Lunar New Year limited-edition tradition begun in 2018. The beefy Honduran puro is slated to arrive in November.",
-      "source": "halfwheel",
-      "source_title": "Flor de Selva Año de la Cabra 2027 Debuting at InterTabac 2026",
-      "source_en": "halfwheel",
-      "source_title_en": "Flor de Selva Año de la Cabra 2027 Debuting at InterTabac 2026",
-      "url": "https://halfwheel.com/flor-de-selva-ano-de-la-cabra-2027-debuting-at-intertabac-2026/478957/"
-    },
-    {
-      "date": "2026-09-09",
-      "category": "規制・市場",
-      "title_ja": "キューバ葉巻の逆説、収益最高でも供給は縮小",
-      "summary_ja": "シガー・ジャーナルが、キューバ葉巻産業の現状を分析した。ハバノス（Habanos S.A.）が主力銘柄を世界的な高級品として再定義し過去最高の収益を上げる一方、電力・燃料・農業資材の不足や老朽化した設備により物理的な供給は縮小していると指摘。中国の影響力や、同社の半分を誰が支配するのかという未解決の問題にも言及した。",
-      "title_en": "Cuba's Cigar Paradox",
-      "summary_en": "Cigar Journal examines the state of Cuba's cigar industry, noting that while Habanos S.A. has repositioned its most prestigious cigars as global luxury goods and posted record revenues, physical supply is shrinking amid shortages of electricity, fuel and agricultural inputs and ageing infrastructure. The piece also addresses China's growing influence and the unresolved question of who controls half of the famous cigar company.",
-      "source": "Cigar Journal",
-      "source_title": "Cuba’s Cigar Paradox",
-      "source_en": "Cigar Journal",
-      "source_title_en": "Cuba's Cigar Paradox",
-      "url": "https://www.cigarjournal.com/cubas-cigar-paradox/?utm_source=rss&utm_medium=rss&utm_campaign=cubas-cigar-paradox"
-    },
-    {
-      "date": "2026-09-08",
-      "category": "新製品",
-      "title_ja": "クラウンド・ヘッズ「ムーンフラワー・ロブスト」発表",
-      "summary_ja": "クラウンド・ヘッズ（Crowned Heads）が新レギュラー製品「ムーンフラワー・ロブスト（Moonflower Robusto）」を発表した。ニカラグア・エステリのマイ・ファーザー工場で製造される定番ラインは10年ぶり。ブレンドに使われるタバコはすべて、マイ・ファーザーが所有するニカラグアの農園で栽培されている。",
-      "title_en": "Moonflower Robusto",
-      "summary_en": "Crowned Heads has introduced the Moonflower Robusto, marking the first time in a decade the company has a new regular production line made at the My Father factory in Estelí, Nicaragua. All of the tobacco in the blend is grown on farms in Nicaragua owned by My Father.",
-      "source": "halfwheel",
-      "source_title": "Moonflower Robusto",
-      "source_en": "halfwheel",
-      "source_title_en": "Moonflower Robusto",
-      "url": "https://halfwheel.com/moonflower-robusto/478923/"
     }
   ]
 };
