@@ -7,8 +7,60 @@
    手で足すこともできますが、items の並び・キーは崩さないでください。
    ============================================================ */
 var NEWS_DATA = {
-  "updated": "2026-10-06",
+  "updated": "2026-10-07",
   "items": [
+    {
+      "date": "2026-10-07",
+      "category": "新製品",
+      "title_ja": "フェリオ・テゴ、限定「マイルストーンズ」発売",
+      "summary_ja": "フェリオ・テゴ（Ferio Tego）が、今年生誕100年を迎えるジャズトランペット奏者マイルス・デイヴィスを記念した限定葉巻を発売した。名称は、デイヴィスが1958年に発表した代表作アルバム「Milestones」に由来する。",
+      "title_en": "Ferio Tego Releases Limited Edition Milestones",
+      "summary_en": "Ferio Tego has created a limited edition cigar to honour legendary jazz trumpeter Miles Davis, who would have turned 100 this year. The cigar shares its name with Davis' seminal 1958 album \"Milestones\".",
+      "source": "halfwheel",
+      "source_title": "Ferio Tego Milestones",
+      "source_en": "halfwheel",
+      "source_title_en": "Ferio Tego Milestones",
+      "url": "https://halfwheel.com/ferio-tego-milestones/481035/"
+    },
+    {
+      "date": "2026-10-07",
+      "category": "新製品",
+      "title_ja": "ワイルドファイア、限定「オフグリッド」を発表",
+      "summary_ja": "ワイルドファイア・シガー（Wildfire Cigar Co.）が、PCA 2026のブースで新たな限定品「オフグリッド（Off-Grid）」を披露した。製造はタバカレラ・ウィリアム・ベンチュラ（Tabacalera William Ventura）が手掛ける。",
+      "title_en": "Wildfire Cigar Co. Introduces Off-Grid",
+      "summary_en": "Wildfire Cigar Co. has unveiled a new limited edition, Off-Grid, at its PCA 2026 booth. The cigar is produced by Tabacalera William Ventura.",
+      "source": "halfwheel",
+      "source_title": "Wildfire Cigar Co. Introduces Off-Grid",
+      "source_en": "halfwheel",
+      "source_title_en": "Wildfire Cigar Co. Introduces Off-Grid",
+      "url": "https://halfwheel.com/wildfire-cigar-co-introduces-off-grid/481145/"
+    },
+    {
+      "date": "2026-10-07",
+      "category": "新製品",
+      "title_ja": "LFD、アンダルシアン・ブル10周年マデューロ出荷",
+      "summary_ja": "ラ・フロール・ドミニカーナ（La Flor Dominicana）が、人気銘柄アンダルシアン・ブル（Andalusian Bull）の発売10周年を記念し、ブロードリーフ・ラッパーを用いた新限定版を今週出荷する。あわせて同葉巻に関するドキュメンタリーも公開された。",
+      "title_en": "La Flor Dominicana Andalusian Bull 10th Anniversary Maduro Shipping This Week",
+      "summary_en": "A decade after the release of the hugely popular Andalusian Bull, La Flor Dominicana is shipping a new limited edition version with a broadleaf wrapper this week. A new documentary about the cigar has also been released.",
+      "source": "halfwheel",
+      "source_title": "La Flor Dominicana Andalusian Bull 10th Anniversary Maduro Shipping This Week",
+      "source_en": "halfwheel",
+      "source_title_en": "La Flor Dominicana Andalusian Bull 10th Anniversary Maduro Shipping This Week",
+      "url": "https://halfwheel.com/la-flor-dominicana-andalusian-bull-10th-anniversary-maduro-shipping-this-week/481113/"
+    },
+    {
+      "date": "2026-10-06",
+      "category": "新製品",
+      "title_ja": "ベクター・KGM、新カッター4種を発売",
+      "summary_ja": "ベクター・KGM（Vector-KGM）が、いずれも希望小売価格12ドル未満の新カッター4種を発売した。ストレートブレード2種、鋸刃1種、Vカッター1種の構成。",
+      "title_en": "Vector-KGM Releases Four New Cutters",
+      "summary_en": "Vector-KGM has released four new cutters, each with a suggested retail price under $12. Two feature straight blade designs, one has a serrated blade, and the other is a v-cutter.",
+      "source": "halfwheel",
+      "source_title": "Vector-KGM Releases Four New Cutters",
+      "source_en": "halfwheel",
+      "source_title_en": "Vector-KGM Releases Four New Cutters",
+      "url": "https://halfwheel.com/vector-kgm-releases-four-new-cutters/481095/"
+    },
     {
       "date": "2026-10-06",
       "category": "業界・企業",
@@ -775,6 +827,19 @@ var NEWS_DATA = {
       "source_en": "halfwheel",
       "source_title_en": "HVC 500 Years Lancero Only Legends Ships",
       "url": "https://halfwheel.com/hvc-500-years-lancero-only-legends-ships/480278/"
+    },
+    {
+      "date": "2026-09-24",
+      "category": "イベント・アワード",
+      "title_ja": "インタータバック2026でサーカス演出",
+      "summary_ja": "シガー・ジャーナルが、インタータバック2026（InterTabac 2026）で披露された「サーカス」をテーマにした演出を伝えた。",
+      "title_en": "Two Faces: The Circus at InterTabac 2026",
+      "summary_en": "Cigar Journal reports on \"The Circus\", a themed presentation showcased at InterTabac 2026.",
+      "source": "Cigar Journal",
+      "source_title": "Two Faces",
+      "source_en": "Cigar Journal",
+      "source_title_en": "Two Faces",
+      "url": "https://www.cigarjournal.com/two-faces/"
     },
     {
       "date": "2026-09-24",
@@ -2023,71 +2088,6 @@ var NEWS_DATA = {
       "source_en": "halfwheel",
       "source_title_en": "Don Emmanuel Cigars Adding 6 x 54 Enki Vitola to Annunaki Line at InterTabac 2026",
       "url": "https://halfwheel.com/don-emmanuel-cigars-adding-6-x-54-enki-vitola-to-annunaki-line-at-intertabac-2026/479047/"
-    },
-    {
-      "date": "2026-09-10",
-      "category": "新製品",
-      "title_ja": "ビアッヘ、プラティノ・レゼルバを新形状で復活",
-      "summary_ja": "ビアッヘ（Viaje）が、2010年代前半に毎年登場していた「オロ・レゼルバ」「プラティノ・レゼルバ」のブレンドを復活させた。今年は5 1/2×52のボックスプレス・ペルフェクトという新形状で発売する。",
-      "title_en": "Viaje Platino Reserva Perfecto",
-      "summary_en": "Viaje has revived its Oro Reserva and Platino Reserva blends, which made annual appearances in the early 2010s. This year the blends return in a new 5 1/2 x 52 box-pressed perfecto format.",
-      "source": "halfwheel",
-      "source_title": "Viaje Platino Reserva Perfecto",
-      "source_en": "halfwheel",
-      "source_title_en": "Viaje Platino Reserva Perfecto",
-      "url": "https://halfwheel.com/viaje-platino-reserva-perfecto/478991/"
-    },
-    {
-      "date": "2026-09-09",
-      "category": "新製品",
-      "title_ja": "シガーキングス、COY26エアロ・ランセロ",
-      "summary_ja": "シガーキングス（CigarKings）が「COY26 エアロ・ランセロ（COY 26 Aero Lancero）」を発表した。同社の「カラー・オブ・ザ・イヤー（Color of the Year）」シリーズを継続する製品となる。",
-      "title_en": "CigarKings Presents the COY 26 Aero Lancero",
-      "summary_en": "CigarKings has presented the COY 26 Aero Lancero, continuing its Color of the Year series.",
-      "source": "Cigar Journal",
-      "source_title": "CigarKings Presents the COY 26 Aero Lancero",
-      "source_en": "Cigar Journal",
-      "source_title_en": "CigarKings Presents the COY 26 Aero Lancero",
-      "url": "https://www.cigarjournal.com/cigarkings-presents-the-coy-26-aero-lancero/"
-    },
-    {
-      "date": "2026-09-09",
-      "category": "新製品",
-      "title_ja": "マヤ・セルバ、新ブランド「ティモン」発表",
-      "summary_ja": "マヤ・セルバ・シガーズ（Maya Selva Cigars）が新ブランド「ティモン（Timón）」を発表した。ホンジュラス産のハンドメイドシガーを手頃な価格で提供する。",
-      "title_en": "Maya Selva Cigars Introduces “Timón”",
-      "summary_en": "Maya Selva Cigars has introduced Timón, a new cigar brand offering handcrafted cigars from Honduras at an attractive price point.",
-      "source": "Cigar Journal",
-      "source_title": "Maya Selva Cigars Introduces “Timón”",
-      "source_en": "Cigar Journal",
-      "source_title_en": "Maya Selva Cigars Introduces “Timón”",
-      "url": "https://www.cigarjournal.com/maya-selva-cigars-introduces-timon/"
-    },
-    {
-      "date": "2026-09-09",
-      "category": "日本国内",
-      "title_ja": "プレミアムシガーとウイスキーのマリアージュイベント開催",
-      "summary_ja": "プレミアムシガーとウイスキーのマリアージュを愉しむイベントが開催されると報じられた。",
-      "title_en": "Event to Pair Premium Cigars and Whisky Announced in Japan",
-      "summary_en": "An event offering guests the chance to enjoy the marriage of premium cigars and whisky is to be held, according to a Japanese report.",
-      "source": "The Rake Japan",
-      "source_title": "プレミアムシガーとウイスキーのマリアージュを愉しむイベントを開催へ - therakejapan.com",
-      "source_en": "The Rake Japan",
-      "source_title_en": "An Event to Enjoy the Marriage of Premium Cigars and Whisky to Be Held",
-      "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE9mVnJjZGtscGNTQldfY3BxWnNKMUQ0VURKWkJzMU0tWUpja0wyWXhZV0k1bXhrR1FWVDRsUWw2Ung3WlNfYkpJOHBuX3N1LTlK?oc=5"
-    },
-    {
-      "date": "2026-09-09",
-      "category": "イベント・アワード",
-      "title_ja": "シガー・トロフィー・アワード2026、9月15日に発表",
-      "summary_ja": "シガー・ジャーナル主催の「シガー・トロフィー・アワード（Cigar Trophy Awards）2026」の授賞式が、2026年9月15日（火）に開催される。マイアミ時間12時45分、パリ時間18時45分から、FacebookおよびYouTubeでライブ配信される。",
-      "title_en": "And The Winner Is…? – Cigar Trophy Awards 2026",
-      "summary_en": "On Tuesday, 15 September 2026, Cigar Journal will present the Cigar Trophy Awards, among the most anticipated consumer awards in the industry. The ceremony begins at 12:45pm Miami time and 6:45pm Paris time, and can be followed live via Facebook and YouTube.",
-      "source": "Cigar Journal",
-      "source_title": "And The Winner Is…? – Cigar Trophy Awards 2026",
-      "source_en": "Cigar Journal",
-      "source_title_en": "And The Winner Is…? – Cigar Trophy Awards 2026",
-      "url": "https://www.cigarjournal.com/and-the-winner-is-cigar-trophy-awards-2026/?utm_source=rss&utm_medium=rss&utm_campaign=and-the-winner-is-cigar-trophy-awards-2026"
     }
   ]
 };
