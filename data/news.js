@@ -7,8 +7,86 @@
    手で足すこともできますが、items の並び・キーは崩さないでください。
    ============================================================ */
 var NEWS_DATA = {
-  "updated": "2026-10-07",
+  "updated": "2026-10-08",
   "items": [
+    {
+      "date": "2026-10-08",
+      "category": "新製品",
+      "title_ja": "フラテロ、米国建国250周年記念「USA 250」発売",
+      "summary_ja": "フラテロ（Fratello）が、アメリカ建国250周年を記念した限定品「USA 250」を発表した。サイズは6×54のトロで、ニカラグア産ラッパーにペンシルベニア産バインダー、ドミニカ共和国とペンシルベニアで栽培されたフィラーを組み合わせている。",
+      "title_en": "Fratello USA 250",
+      "summary_en": "Fratello has unveiled the USA 250, a limited edition created to mark the 250th anniversary of the founding of America. It is a 6 x 54 toro built with a Nicaraguan wrapper over a Pennsylvania binder, with filler tobaccos grown in the Dominican Republic and Pennsylvania.",
+      "source": "halfwheel",
+      "source_title": "Fratello USA 250",
+      "source_en": "halfwheel",
+      "source_title_en": "Fratello USA 250",
+      "url": "https://halfwheel.com/fratello-usa-250/481152/"
+    },
+    {
+      "date": "2026-10-08",
+      "category": "業界・企業",
+      "title_ja": "アルテサノ、新作の製造工場をファンに意見募集",
+      "summary_ja": "アルテサノ・デル・タバコ（Artesano Del Tobacco）が、新ライン「Viva La Vida」をどの工場で製造すべきか、忠実なファンに意見を求めていると発表した。同社が製品づくりでファンの意見を募るのは今回が初めてではない。",
+      "title_en": "Artesano Del Tobacco Asks Fans Where Its Next Cigar Should Be Made",
+      "summary_en": "Artesano Del Tobacco is again seeking input from its most loyal fans on future products. This time it is asking which factory it should partner with to produce a new Viva La Vida line.",
+      "source": "halfwheel",
+      "source_title": "Artesano Del Tobacco Asks Fans Where Its Next Cigar Should Be Made",
+      "source_en": "halfwheel",
+      "source_title_en": "Artesano Del Tobacco Asks Fans Where Its Next Cigar Should Be Made",
+      "url": "https://halfwheel.com/artesano-del-tobacco-asks-fans-where-its-next-cigar-should-be-made/481239/"
+    },
+    {
+      "date": "2026-10-08",
+      "category": "新製品",
+      "title_ja": "ペレス・カリージョ、プレッジ・パープルにロブストを追加",
+      "summary_ja": "ペレス・カリージョ（Perez-Carrillo）が、プレッジ・パープル（Pledge Purple）ラインに5 1/4×52のボックスプレス・ロブストを来週追加すると発表した。3月に発売された6×54トロに続くサイズで、2020年登場のオリジナル「プレッジ」と同じ収穫年のタバコを使用している。",
+      "title_en": "Perez-Carrillo Pledge Purple Robusto Coming Next Week",
+      "summary_en": "Perez-Carrillo will add a 5 1/4 x 52 box-pressed robusto to its Pledge Purple line next week. It joins the 6 x 54 toro released in March and uses tobacco from the same crop as the original Pledge line that debuted in 2020.",
+      "source": "halfwheel",
+      "source_title": "Perez-Carrillo Pledge Purple Robusto Coming Next Week",
+      "source_en": "halfwheel",
+      "source_title_en": "Perez-Carrillo Pledge Purple Robusto Coming Next Week",
+      "url": "https://halfwheel.com/perez-carrillo-pledge-purple-robusto-coming-next-week/481219/"
+    },
+    {
+      "date": "2026-10-08",
+      "category": "新製品",
+      "title_ja": "オリーバの「NUbメキシコ」が店頭に登場",
+      "summary_ja": "オリーバ・シガー（Oliva Cigar Co.）傘下の、約20年前に登場した太く短い葉巻で知られるNUbの新版が店頭に並び始めた。メキシコ産ラッパーにニカラグア産のバインダーとフィラーを使い、2サイズのうち1つは米国限定。",
+      "title_en": "NUb Mexico Arriving at Stores",
+      "summary_en": "NUb, the brand owned by Oliva Cigar Co. and known for its short, thick cigars that debuted nearly 20 years ago, is reaching store shelves in a new version. It pairs a Mexican wrapper with a Nicaraguan binder and filler, and one of its two sizes is exclusive to the U.S.",
+      "source": "halfwheel",
+      "source_title": "NUb Mexico Arriving at Stores",
+      "source_en": "halfwheel",
+      "source_title_en": "NUb Mexico Arriving at Stores",
+      "url": "https://halfwheel.com/nub-mexico-arriving-at-stores/481210/"
+    },
+    {
+      "date": "2026-10-07",
+      "category": "業界・企業",
+      "title_ja": "GRE Trade、クリバリ「ブエナベンチュラ」独で独占販売",
+      "summary_ja": "GRE Trade GmbHが、2026年10月よりクリバリ（Curivari）の「ブエナベンチュラ（Buenaventura by Curivari）」をドイツ市場で独占的に展開すると発表した。",
+      "title_en": "GRE Trade Takes Over Exclusive Distribution of Buenaventura by Curivari in Germany",
+      "summary_en": "Starting in October 2026, GRE Trade GmbH will exclusively introduce Buenaventura by Curivari to the German market.",
+      "source": "Cigar Journal",
+      "source_title": "GRE Trade Takes Over Exclusive Distribution of Buenaventura by Curivari in Germany",
+      "source_en": "Cigar Journal",
+      "source_title_en": "GRE Trade Takes Over Exclusive Distribution of Buenaventura by Curivari in Germany",
+      "url": "https://www.cigarjournal.com/gre-trade-takes-over-exclusive-distribution-of-buenaventura-by-curivari-in-germany/"
+    },
+    {
+      "date": "2026-10-07",
+      "category": "イベント・アワード",
+      "title_ja": "シガー・カルチャー・サミット・アフリカ、登壇者を発表",
+      "summary_ja": "ヨハネスブルグで開催される「シガー・カルチャー・サミット・アフリカ（Cigar Culture Summit Africa）」の初回登壇者とテーマが発表された。市場開拓、ブランド構築、葉巻文化が中心テーマとなる。",
+      "title_en": "Cigar Culture Summit Africa: First Speakers and Topics Announced",
+      "summary_en": "The first speakers and topics for the Cigar Culture Summit Africa in Johannesburg have been announced, with market development, brand building and cigar culture taking centre stage.",
+      "source": "Cigar Journal",
+      "source_title": "Cigar Culture Summit Africa: First Speakers and Topics Announced",
+      "source_en": "Cigar Journal",
+      "source_title_en": "Cigar Culture Summit Africa: First Speakers and Topics Announced",
+      "url": "https://www.cigarjournal.com/cigar-culture-summit-africa-first-speakers-and-topics-announced/"
+    },
     {
       "date": "2026-10-07",
       "category": "新製品",
@@ -2010,84 +2088,6 @@ var NEWS_DATA = {
       "source_en": "halfwheel",
       "source_title_en": "Casdagli Daughters of the Wind Rosado, Dominita Corojo 2012 Debuting at InterTabac 2026",
       "url": "https://halfwheel.com/casdagli-daughters-of-the-wind-rosado-dominita-corojo-2012-debuting-at-intertabac-2026/479110/"
-    },
-    {
-      "date": "2026-09-10",
-      "category": "新製品",
-      "title_ja": "ドン・エマニュエル、新作をインタータバック出展",
-      "summary_ja": "ドン・エマニュエル・シガーズ（Don Emmanuel Cigars）が、アヌンナキ（Anunnaki）ラインの4番目のビトラとなる新作フィガラード「エンキ（Enki）」（6×54）を発表した。9月15〜17日にドイツ・ドルトムントのメッセで開催されるインタータバック2026（InterTabac 2026）で披露される。アヌンナキ・アヌ（Anunnaki Anu）はRobbReportの2026年ベスト・オブ・ザ・ベストに選出された。",
-      "title_en": "Don Emmanuel Cigars To Showcase Anunnaki Enki Figurado At InterTabac 2026",
-      "summary_en": "Don Emmanuel Cigars has announced Enki, a new 6 x 54 figurado and the fourth vitola in its Anunnaki line. The cigar will be showcased at InterTabac 2026, held 15–17 September at Messe Dortmund in Germany. The launch comes amid growing recognition for the Anunnaki line, with Anunnaki Anu recently named to Robb Report's 2026 Best of the Best.",
-      "source": "StogiePress",
-      "source_title": "Cigar News: Don Emmanuel Cigars To Showcase Anunnake Enki Figurado At Intertabac 2026",
-      "source_en": "StogiePress",
-      "source_title_en": "Don Emmanuel Cigars To Showcase Anunnaki Enki Figurado At InterTabac 2026",
-      "url": "https://stogiepress.com/cigar-news-don-emmanuel-cigars-to-showcase-anunnake-enki-figurado-at-intertabac-2026/"
-    },
-    {
-      "date": "2026-09-10",
-      "category": "業界・企業",
-      "title_ja": "Cigar.comがCigora.comへ移行",
-      "summary_ja": "スカンジナビアン・タバコ・グループ（STG）傘下の小売事業として、Cigar.comがCigora.comへ移行する。Cigoraは「次世代のオンライン葉巻販売」として立ち上げられ、小売と教育を組み合わせ、葉巻との新たな接し方を提供するとしている。",
-      "title_en": "Cigar.com Transitioning to Cigora.com",
-      "summary_en": "Cigar.com is transitioning to Cigora.com, with both entities part of Scandinavian Tobacco Group's retail group. Cigora was launched as \"the next generation of cigars online,\" combining retail with education as a new way for consumers to interact with cigars.",
-      "source": "halfwheel",
-      "source_title": "Cigar.com Transitioning to Cigora.com",
-      "source_en": "halfwheel",
-      "source_title_en": "Cigar.com Transitioning to Cigora.com",
-      "url": "https://halfwheel.com/cigar-com-transitioning-to-cigora-com/479138/"
-    },
-    {
-      "date": "2026-09-10",
-      "category": "規制・市場",
-      "title_ja": "FDAたばこ製品センター長にコプロー氏就任",
-      "summary_ja": "米食品医薬品局（FDA）のたばこ製品センター（CTP）のトップに、ブレット・コプロー（Bret Koplow）氏が正式就任した。同氏は2025年5月から所長代行を務めており、CTPを常勤で率いる3人目の人物となる。",
-      "title_en": "Bret Koplow Gets Top Job at FDA's Center for Tobacco Products",
-      "summary_en": "Bret Koplow has been named the permanent head of the FDA's Center for Tobacco Products (CTP). He had served as acting director since May 2025 and becomes just the third person to lead the CTP on a full-time basis.",
-      "source": "halfwheel",
-      "source_title": "Bret Koplow Gets Top Job at FDA’s Center for Tobacco Products",
-      "source_en": "halfwheel",
-      "source_title_en": "Bret Koplow Gets Top Job at FDA's Center for Tobacco Products",
-      "url": "https://halfwheel.com/bret-koplow-named-director-of-fdas-center-for-tobacco-products/479036/"
-    },
-    {
-      "date": "2026-09-10",
-      "category": "新製品",
-      "title_ja": "カスダーリ、新2銘柄をInterTabacで発表",
-      "summary_ja": "カスダーリ（Casdagli）が、ナポレオン時代の将軍にちなむ「ブラザーズ・オブ・ザ・サーブル」シリーズの5、6番目となる新ブレンド「Custodian」「Flamboyant」をInterTabac 2026で発表した。シリーズ最後の2銘柄は2028年に発売予定。",
-      "title_en": "Casdagli Adding Custodian & Flamboyant to Brothers of the Sabre Series at InterTabac 2026",
-      "summary_en": "Casdagli has unveiled Custodian and Flamboyant, the fifth and sixth blends in its Brothers of the Sabre Series, at InterTabac 2026. The series honours generals from the Napoleonic era, with the final two blends scheduled for release in 2028.",
-      "source": "halfwheel",
-      "source_title": "Casdagli Adding Custodian & Flamboyant to Brothers of the Sabre Series at InterTabac 2026",
-      "source_en": "halfwheel",
-      "source_title_en": "Casdagli Adding Custodian & Flamboyant to Brothers of the Sabre Series at InterTabac 2026",
-      "url": "https://halfwheel.com/casdagli-adding-custodian-flamboyant-to-brothers-of-the-sabre-series-at-intertabac-2026/479052/"
-    },
-    {
-      "date": "2026-09-10",
-      "category": "新製品",
-      "title_ja": "JFRクララなど2ラインInterTabacで初披露",
-      "summary_ja": "JFRクララ（JFR Clara）とスプリーム・リーフ・ワールドワイド（Supreme Leaf Worldwide）の新2ラインが、InterTabac 2026で初披露された。両ラインは11月に米国外の店舗で発売され、うち1銘柄は来年、米国の店舗にも出荷される。",
-      "title_en": "JFR Clara, Supreme Leaf Worldwide Debuting at InterTabac 2026",
-      "summary_en": "Two new lines, JFR Clara and Supreme Leaf Worldwide, are debuting at InterTabac 2026. Both will go on sale at non-U.S. stores in November, with one of the new releases shipping to American stores next year.",
-      "source": "halfwheel",
-      "source_title": "JFR Clara, Supreme Leaf Worldwide Debuting at InterTabac 2026",
-      "source_en": "halfwheel",
-      "source_title_en": "JFR Clara, Supreme Leaf Worldwide Debuting at InterTabac 2026",
-      "url": "https://halfwheel.com/jfr-clara-supreme-leaf-worldwide-debuting-at-intertabac-2026/479069/"
-    },
-    {
-      "date": "2026-09-10",
-      "category": "新製品",
-      "title_ja": "ドン・エマヌエル、アヌナキに新サイズ追加",
-      "summary_ja": "ドン・エマヌエル・シガー（Don Emmanuel Cigars）が、アヌナキ（Annunaki）ラインに6×54の新ビトラ「Enki」を追加した。ライン4番目のサイズで初のフィガラード。「カベサス・トゥンバダ」と呼ぶヘッド形状を採用し、9月中旬のInterTabac直後に出荷を開始する。",
-      "title_en": "Don Emmanuel Cigars Adding 6 x 54 Enki Vitola to Annunaki Line at InterTabac 2026",
-      "summary_en": "Don Emmanuel Cigars is adding a 6 x 54 Enki vitola to its Annunaki line. It is the fourth size in the line and its first figurado, using what the company calls a \"cabezas tumbada\" style head. The cigars will begin shipping immediately after InterTabac in mid-September.",
-      "source": "halfwheel",
-      "source_title": "Don Emmanuel Cigars Adding 6 x 54 Enki Vitola to Annunaki Line at InterTabac 2026",
-      "source_en": "halfwheel",
-      "source_title_en": "Don Emmanuel Cigars Adding 6 x 54 Enki Vitola to Annunaki Line at InterTabac 2026",
-      "url": "https://halfwheel.com/don-emmanuel-cigars-adding-6-x-54-enki-vitola-to-annunaki-line-at-intertabac-2026/479047/"
     }
   ]
 };
