@@ -7,8 +7,60 @@
    手で足すこともできますが、items の並び・キーは崩さないでください。
    ============================================================ */
 var NEWS_DATA = {
-  "updated": "2026-10-08",
+  "updated": "2026-10-09",
   "items": [
+    {
+      "date": "2026-10-09",
+      "category": "新製品",
+      "title_ja": "コイーバ・タリスマンが定番ライン入り",
+      "summary_ja": "ハバノス（Habanos S.A.）はロンドンで、新デザインのレギュラー生産版コイーバ・タリスマン（Cohiba Talismán）を披露した。リネア・クラシカ（Línea Clásica）に加わる。英国での推奨価格は1本200ポンド。",
+      "title_en": "Cohiba Talismán Added to Línea Clásica Line",
+      "summary_en": "Habanos S.A. unveiled the new-look regular production Cohiba Talismán at an event in London, adding it to the Línea Clásica range. In the UK, the suggested price is set at £200 per cigar. The move brings the previously limited Talismán into Cohiba's permanent portfolio.",
+      "source": "halfwheel",
+      "source_title": "Cohiba Talismán Added to Línea Clásica Line",
+      "source_en": "halfwheel",
+      "source_title_en": "Cohiba Talismán Added to Línea Clásica Line",
+      "url": "https://halfwheel.com/cohiba-talisman-added-to-linea-clasica-line/481281/"
+    },
+    {
+      "date": "2026-10-09",
+      "category": "規制・市場",
+      "title_ja": "ドイツ、葉巻・パイプ増税を大幅緩和",
+      "summary_ja": "この夏、ドイツ政府は葉巻税を14倍に引き上げる案を検討していた。報道によると、来年から施行されるのははるかに穏やかな増税にとどまる見通しで、葉巻とパイプは大幅な増税を免れることになった。",
+      "title_en": "Germany Gives Cigars & Pipes a Reprieve from Massive Tobacco Tax Increase",
+      "summary_en": "Over the summer, the German government had been working on a proposal calling for a 14-fold increase in cigar taxes. According to reports, a far more modest increase will instead take effect next year, sparing cigars and pipes from the massive hike originally floated. The reprieve offers relief to the sector.",
+      "source": "halfwheel",
+      "source_title": "Report: Germany Gives Cigars & Pipes a Reprieve from Massive Tobacco Tax Increase",
+      "source_en": "halfwheel",
+      "source_title_en": "Report: Germany Gives Cigars & Pipes a Reprieve from Massive Tobacco Tax Increase",
+      "url": "https://halfwheel.com/report-germany-gives-cigars-pipes-a-reprieve-from-massive-tobacco-tax-increase/481310/"
+    },
+    {
+      "date": "2026-10-09",
+      "category": "業界・企業",
+      "title_ja": "CLEとFIU、タバコ研究所で提携",
+      "summary_ja": "クリスチャン・エイロア（Christian Eiroa）は、タバコ栽培への参入障壁を下げたいと語った。CLEとFIU（フロリダ国際大学）の新たな提携では、マイアミ郊外の農場でタバコを栽培し、栽培プロセスの解明を目指す。",
+      "title_en": "CLE, FIU Collaborating for New Tobacco Research Lab",
+      "summary_en": "Christian Eiroa says he wants to reduce the barriers to entry for growing tobacco. A new partnership between CLE and FIU (Florida International University) will include growing tobacco at a farm outside of Miami, in hopes of learning more about the cultivation process. The collaboration aims to support future tobacco growers.",
+      "source": "halfwheel",
+      "source_title": "CLE, FIU Collaborating for New Tobacco Research Lab",
+      "source_en": "halfwheel",
+      "source_title_en": "CLE, FIU Collaborating for New Tobacco Research Lab",
+      "url": "https://halfwheel.com/cle-fiu-collaborating-for-new-tobacco-research-lab/481337/"
+    },
+    {
+      "date": "2026-10-08",
+      "category": "新製品",
+      "title_ja": "ハバノス、モンテクリスト・フラガータ発売",
+      "summary_ja": "ハバノス（Habanos S.A.）は、免税・トラベルリテール（Duty Free & Travel Retail）向けに専用設計した新しいトラベルヒュミドール、モンテクリスト・フラガータ（Montecristo Fragata）を発表した。",
+      "title_en": "Habanos S.A. Launches Montecristo Fragata",
+      "summary_en": "Habanos S.A. has presented Montecristo Fragata, a new travel humidor created exclusively for the Duty Free and Travel Retail channels. The release targets the travelling consumer market with a dedicated Montecristo offering.",
+      "source": "Cigar Journal",
+      "source_title": "Habanos S.A. Launches Montecristo Fragata",
+      "source_en": "Cigar Journal",
+      "source_title_en": "Habanos S.A. Launches Montecristo Fragata",
+      "url": "https://www.cigarjournal.com/habanos-s-a-launches-montecristo-fragata/"
+    },
     {
       "date": "2026-10-08",
       "category": "新製品",
@@ -60,6 +112,32 @@ var NEWS_DATA = {
       "source_en": "halfwheel",
       "source_title_en": "NUb Mexico Arriving at Stores",
       "url": "https://halfwheel.com/nub-mexico-arriving-at-stores/481210/"
+    },
+    {
+      "date": "2026-10-07",
+      "category": "新製品",
+      "title_ja": "シグロの関カッター新色、来月発売",
+      "summary_ja": "シグロ（SIGLO）のカッターは、刃物で知られる日本の岐阜県関市で製造される。新色「ゴールデン・ハナ（Golden Hana）」は11月中旬の発売を予定している。",
+      "title_en": "SIGLO Seki Cutter Golden Hana Coming Next Month",
+      "summary_en": "The cutter is made in Seki, Japan, a city famous for its knives. SIGLO's new Golden Hana colourway of the Seki cutter is expected to arrive in mid-November.",
+      "source": "halfwheel",
+      "source_title": "SIGLO Seki Cutter Golden Hana Coming Next Month",
+      "source_en": "halfwheel",
+      "source_title_en": "SIGLO Seki Cutter Golden Hana Coming Next Month",
+      "url": "https://halfwheel.com/siglo-seki-cutter-golden-hana-coming-next-month/481190/"
+    },
+    {
+      "date": "2026-10-07",
+      "category": "新製品",
+      "title_ja": "S.T.デュポン、オペラ座コレクション発表",
+      "summary_ja": "S.T.デュポン（S.T. Dupont）とパリ国立オペラ座（Opéra National de Paris）は、ガストン・ルルーの伝説とパレ・ガルニエの雰囲気に着想した限定コレクション「ファントム・オブ・ジ・オペラ・オブ・パリ」を発表した。",
+      "title_en": "S.T. Dupont and the Opéra National de Paris Launch Phantom of the Opéra of Paris",
+      "summary_en": "S.T. Dupont and the Opéra National de Paris have presented Phantom of the Opéra of Paris, an exclusive collection inspired by Gaston Leroux's legend and the atmosphere of the Palais Garnier.",
+      "source": "Cigar Journal",
+      "source_title": "S.T. Dupont and the Opéra National de Paris Launch Phantom of the Opéra of Paris",
+      "source_en": "Cigar Journal",
+      "source_title_en": "S.T. Dupont and the Opéra National de Paris Launch Phantom of the Opéra of Paris",
+      "url": "https://www.cigarjournal.com/phantom-of-the-opera-of-paris-where-the-lights-go-out-the-magic-begins/"
     },
     {
       "date": "2026-10-07",
@@ -2010,84 +2088,6 @@ var NEWS_DATA = {
       "source_en": "halfwheel",
       "source_title_en": "J.C. Newman Ships the 2026 Release of Brick House Bricktoberfest",
       "url": "https://www.cigarjournal.com/j-c-newman-ships-the-2026-release-of-brick-house-bricktoberfest/"
-    },
-    {
-      "date": "2026-09-11",
-      "category": "新製品",
-      "title_ja": "アレック・ブラッドリー、ヘヴンヒルとの新ペアリング",
-      "summary_ja": "アレック・ブラッドリー（Alec Bradley）は、ヘヴンヒル蒸溜所（Heaven Hill Distillery）と組んだアンカット・シリーズ第10弾を発売する。限定ペアリングは「Alec Bradley Thirty Years Perfecto」（6¾×54）2本と、7年熟成のヘヴンヒル・ボトルド・イン・ボンド・シングルバレル750mlを1本セット。価格は70ドル。",
-      "title_en": "Alec Bradley Releases New Uncut Pairing With Heaven Hill Distillery",
-      "summary_en": "Alec Bradley is partnering with Heaven Hill Distillery for the tenth instalment of its Uncut Series. The limited-edition retail pairing features two Alec Bradley Thirty Years Perfectos (6¾ x 54) and one 750ml bottle of Heaven Hill Bottled in Bond Single Barrel, aged seven years. The pairing retails for $70.",
-      "source": "StogiePress",
-      "source_title": "Cigar News: Alec Bradley Releases New Uncut Pairing With Heaven Hill Distillery",
-      "source_en": "StogiePress",
-      "source_title_en": "Alec Bradley Releases New Uncut Pairing With Heaven Hill Distillery",
-      "url": "https://stogiepress.com/cigar-news-alec-bradley-releases-new-uncut-pairing-with-heaven-hill-distillery/"
-    },
-    {
-      "date": "2026-09-11",
-      "category": "新製品",
-      "title_ja": "クラウンド・ヘッズ、イベント限定「スターウッド」発表",
-      "summary_ja": "ナッシュビル拠点のクラウンド・ヘッズ（Crowned Heads）は、イベント限定シガー「Starwood」（5×50ロブスト）を発表した。1986〜2006年にミドルテネシーのライブ音楽を象徴した野外会場スターウッド・アンフィシアターへのオマージュ。",
-      "title_en": "Crowned Heads Announces \"STARWOOD,\" an Event-Only Cigar",
-      "summary_en": "Crowned Heads, the premium cigar company based in Nashville, has announced Starwood, an event-only cigar crafted as a 5 x 50 robusto. The release pays tribute to the iconic Starwood Amphitheater, the beloved outdoor venue that defined live music in Middle Tennessee from 1986 to 2006.",
-      "source": "StogiePress",
-      "source_title": "Cigar News: Crowned Heads Announces “STARWOOD,” Event-Only Cigar – Paying Homage To Nashville’s Legendary Starwood Amphitheater",
-      "source_en": "StogiePress",
-      "source_title_en": "Crowned Heads Announces \"STARWOOD,\" Event-Only Cigar Paying Homage To Nashville's Legendary Starwood Amphitheater",
-      "url": "https://stogiepress.com/cigar-news-crowned-heads-announces-starwood-event-only-cigar-paying-homage-to-nashvilles-legendary-starwood-amphitheater/"
-    },
-    {
-      "date": "2026-09-11",
-      "category": "新製品",
-      "title_ja": "ラ・フロール・ドミニカーナ「カーボン・フラワー」",
-      "summary_ja": "ラ・フロール・ドミニカーナ（La Flor Dominicana）が、カーボンファイバー製アクセサリーを手がけるプロジェクトカーボン（ProjectCarbon）と提携し、今年の新限定品「カーボン・フラワー」を発表した。フルボディの葉巻で、5本入りのカーボンファイバー製ケースに収められる。",
-      "title_en": "La Flor Dominicana Carbon Flower",
-      "summary_en": "La Flor Dominicana has teamed up with ProjectCarbon, an accessory maker specialising in carbon fibre, for a new limited edition this year called the Carbon Flower. The full-bodied cigars come packaged in five-count carbon fibre cases.",
-      "source": "halfwheel",
-      "source_title": "La Flor Dominicana Carbon Flower",
-      "source_en": "halfwheel",
-      "source_title_en": "La Flor Dominicana Carbon Flower",
-      "url": "https://halfwheel.com/la-flor-dominicana-carbon-flower/478845/"
-    },
-    {
-      "date": "2026-09-11",
-      "category": "新製品",
-      "title_ja": "レ・フィヌ・ラム、4製品ラインを拡充",
-      "summary_ja": "レ・フィヌ・ラム（Les Fines Lames）が、既存製品の拡充を発表した。既存3製品に新しい仕上げオプションを追加するほか、4つ目としてカッター用の新しいケースを投入する。",
-      "title_en": "Les Fines Lames Expands Four Product Lines",
-      "summary_en": "Les Fines Lames has announced expansions to its range. Three existing products are receiving new finish options, while the fourth addition is a new case for one of its cutters.",
-      "source": "halfwheel",
-      "source_title": "Les Fines Lames Expands Four Product Lines",
-      "source_en": "halfwheel",
-      "source_title_en": "Les Fines Lames Expands Four Product Lines",
-      "url": "https://halfwheel.com/les-fines-lames-expands-four-product-lines/479217/"
-    },
-    {
-      "date": "2026-09-11",
-      "category": "新製品",
-      "title_ja": "カサ・デ・スエーニョス「インセプション」出荷開始",
-      "summary_ja": "カサ・デ・スエーニョス（Casa de Sueños）が新ライン「インセプション（Inception）」を店舗向けに出荷開始した。ブレンドの詳細は多く語られていないが、ミディアムボディとされる。同社の他製品と同様、ドミニカ共和国のデ・ロス・レイエス（De Los Reyes）が製造する。",
-      "title_en": "Casa de Sueños Inception Ships to Stores",
-      "summary_en": "Casa de Sueños has begun shipping its new Inception line to stores. While the company has said little about the blend, it describes the new line as medium-bodied. Like the rest of the company's cigars, it is made by De Los Reyes in the Dominican Republic.",
-      "source": "halfwheel",
-      "source_title": "Casa de Sueños Inception Ships to Stores",
-      "source_en": "halfwheel",
-      "source_title_en": "Casa de Sueños Inception Ships to Stores",
-      "url": "https://halfwheel.com/casa-de-suenos-inception-ships-to-stores/479206/"
-    },
-    {
-      "date": "2026-09-11",
-      "category": "新製品",
-      "title_ja": "カスダーリ、新作2種をインタータバック2026で披露",
-      "summary_ja": "カスダーリ（Casdagli）が「ドーターズ・オブ・ザ・ウインド・ロサード」と「ドミニータ・コロホ2012」をインタータバック2026（InterTabac 2026）で発表する。前者には未発表だった5番目のビトラが含まれ、後者は同社の新ライン「ドミニータ」の2作目のブレンドとなる。",
-      "title_en": "Casdagli Daughters of the Wind Rosado, Dominita Corojo 2012 Debuting at InterTabac 2026",
-      "summary_en": "Casdagli will debut its Daughters of the Wind Rosado and Dominita Corojo 2012 at InterTabac 2026. The Daughters of the Wind Rosado line includes a surprise fifth vitola that was not previously announced, while the Corojo 2012 is the second blend in the company's upcoming Dominita line.",
-      "source": "halfwheel",
-      "source_title": "Casdagli Daughters of the Wind Rosado, Dominita Corojo 2012 Debuting at InterTabac 2026",
-      "source_en": "halfwheel",
-      "source_title_en": "Casdagli Daughters of the Wind Rosado, Dominita Corojo 2012 Debuting at InterTabac 2026",
-      "url": "https://halfwheel.com/casdagli-daughters-of-the-wind-rosado-dominita-corojo-2012-debuting-at-intertabac-2026/479110/"
     }
   ]
 };
