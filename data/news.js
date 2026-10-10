@@ -7,8 +7,21 @@
    手で足すこともできますが、items の並び・キーは崩さないでください。
    ============================================================ */
 var NEWS_DATA = {
-  "updated": "2026-10-09",
+  "updated": "2026-10-10",
   "items": [
+    {
+      "date": "2026-10-10",
+      "category": "新製品",
+      "title_ja": "ベクター、金属フレームの新ライター「シャドウ」",
+      "summary_ja": "ベクター（Vector-KGM）が、低価格ライターでおなじみの大型プラスチック製燃料タンクをオールメタルのフレームで仕立てた新製品「シャドウ（Shadow）」を発表した。折り畳み式のシガーパンチとドローポーカーを備え、デザイン・価格・機能のバランスをとった一本に仕上げている。",
+      "title_en": "Vector Shadow",
+      "summary_en": "Vector-KGM has taken the familiar large plastic fuel tank found in wallet-friendly lighters and built on it with an all-metal frame to create the new Shadow. The lighter also includes a fold-out cigar punch and draw poker, placing it in an interesting spot in terms of form, price and function.",
+      "source": "halfwheel",
+      "source_title": "Vector Shadow",
+      "source_en": "halfwheel",
+      "source_title_en": "Vector Shadow",
+      "url": "https://halfwheel.com/vector-shadow/481300/"
+    },
     {
       "date": "2026-10-09",
       "category": "新製品",
@@ -112,6 +125,45 @@ var NEWS_DATA = {
       "source_en": "halfwheel",
       "source_title_en": "NUb Mexico Arriving at Stores",
       "url": "https://halfwheel.com/nub-mexico-arriving-at-stores/481210/"
+    },
+    {
+      "date": "2026-10-07",
+      "category": "新製品",
+      "title_ja": "アタベイ、磁器灰皿付き「リトス」第2弾ギフトセット",
+      "summary_ja": "アタベイ（Atabey）が「リトス（Ritos）」ギフトセットの第2弾を発表した。コスメティックグレードのチューブ入りアタベイ・リトス（6 1/8×55）5本に、磁器製のアタベイ灰皿を組み合わせた内容となっている。",
+      "title_en": "2nd Edition Atabey Ritos Gift Set with Porcelain Ashtray",
+      "summary_en": "Atabey has unveiled a second edition of its Ritos Gift Set. The set features five Atabey Ritos cigars (6 1/8 x 55) in cosmetic-grade tubes, paired with an elegant porcelain Atabey ashtray.",
+      "source": "Cigar Journal",
+      "source_title": "2nd Edition Atabey Ritos Gift Set with Porcelain Ashtray",
+      "source_en": "Cigar Journal",
+      "source_title_en": "2nd Edition Atabey Ritos Gift Set with Porcelain Ashtray",
+      "url": "https://www.cigarjournal.com/2nd-edition-atabey-ritos-gift-set-with-porcelain-ashtray/"
+    },
+    {
+      "date": "2026-10-07",
+      "category": "新製品",
+      "title_ja": "エスペリトゥ、新ライン「イコニカ」発表",
+      "summary_ja": "エスペリトゥ・シガー（Esperitu Cigar）が、インドネシア産タバコの新たな表現と位置づける新ライン「イコニカ・シリーズ（Iconica Series）」を発表した。",
+      "title_en": "Esperitu Cigar Introduces Iconica Series",
+      "summary_en": "Esperitu Cigar has introduced the Iconica Series, which it describes as a new expression of Indonesian tobacco.",
+      "source": "Cigar Journal",
+      "source_title": "Esperitu Cigar Introduces Iconica Series",
+      "source_en": "Cigar Journal",
+      "source_title_en": "Esperitu Cigar Introduces Iconica Series",
+      "url": "https://www.cigarjournal.com/esperitu-cigar-introduces-iconica-series/"
+    },
+    {
+      "date": "2026-10-07",
+      "category": "規制・市場",
+      "title_ja": "ゲスト、低価格オーバーランの需要拡大",
+      "summary_ja": "ゲスト（Gestocigars）が、消費者の価格志向が強まる中で、より手頃な葉巻への関心が高まっていると明らかにした。同スイス企業によると、現在は従来より多くの本数を販売しているものの、平均単価は過去数年より低下しているという。",
+      "title_en": "Gestocigars Sees Growing Demand for Affordable Overruns",
+      "summary_en": "Gestocigars is seeing increasing interest in more affordable cigars as consumers become more price-conscious. According to the Swiss company, it is currently selling more cigars but at a lower average price than in previous years.",
+      "source": "Cigar Journal",
+      "source_title": "Gestocigars Sees Growing Demand for Affordable Overruns",
+      "source_en": "Cigar Journal",
+      "source_title_en": "Gestocigars Sees Growing Demand for Affordable Overruns",
+      "url": "https://www.cigarjournal.com/gestocigars-sees-growing-demand-for-affordable-overruns/"
     },
     {
       "date": "2026-10-07",
@@ -2036,58 +2088,6 @@ var NEWS_DATA = {
       "source_en": "halfwheel",
       "source_title_en": "It’s Time To Talk About the Other Habanos S.A. Shareholder",
       "url": "https://halfwheel.com/its-time-to-talk-about-habanos-sa-other-owner/479295/"
-    },
-    {
-      "date": "2026-09-12",
-      "category": "業界・企業",
-      "title_ja": "独GRE、ラウラ・シャヴィン販売を継承",
-      "summary_ja": "GREトレード（GRE Trade）が2026年10月より、プレミアムシガーブランド「ラウラ・シャヴィン（Laura Chavin）」のドイツにおける独占販売を引き継ぐ。",
-      "title_en": "GRE Trade Takes Over Distribution of Laura Chavin in Germany",
-      "summary_en": "Starting in October 2026, GRE Trade will take over the exclusive distribution of the premium cigar brand Laura Chavin in Germany.",
-      "source": "Cigar Journal",
-      "source_title": "GRE Trade Takes Over Distribution of Laura Chavin in Germany",
-      "source_en": "Cigar Journal",
-      "source_title_en": "GRE Trade Takes Over Distribution of Laura Chavin in Germany",
-      "url": "https://www.cigarjournal.com/gre-trade-takes-over-distribution-of-laura-chavin-in-germany/"
-    },
-    {
-      "date": "2026-09-11",
-      "category": "新製品",
-      "title_ja": "シガーキングス、COY 26エアロ・ランセロ出荷へ",
-      "summary_ja": "シガーキングス（CigarKings）は、カラー・オブ・ザ・イヤー・シリーズの新作「COY 26 Aero Lancero」を来週出荷すると発表した。パントンが選ぶ今年の色「クラウド・ダンサー（Cloud Dancer）」に着想を得た一本。",
-      "title_en": "CigarKings COY 26 Aero Lancero Ships Next Week",
-      "summary_en": "CigarKings has announced that its COY 26 Aero Lancero will ship to retailers next week. The cigar continues the brand's Color of the Year series and is inspired by Pantone's colour of the year, which for this year is Cloud Dancer.",
-      "source": "halfwheel",
-      "source_title": "CigarKings COY 26 Aero Lancero Ships Next Week",
-      "source_en": "halfwheel",
-      "source_title_en": "CigarKings COY 26 Aero Lancero Ships Next Week",
-      "url": "https://halfwheel.com/cigarkings-coy-26-aero-lancero-ships-next-week/479159/"
-    },
-    {
-      "date": "2026-09-11",
-      "category": "新製品",
-      "title_ja": "ドン・エマニュエル、新作エンキをインタータバコで公開",
-      "summary_ja": "ドン・エマニュエル・シガーズ（Don Emmanuel Cigars）は、アヌンナキ（Anunnaki）ラインの4番目のヴィトラとなる新フィガード「Enki」（6×54）を発表した。9月15〜17日にドイツ・ドルトムントのメッセ・ドルトムントで開催されるインタータバコ2026で披露する。",
-      "title_en": "Don Emmanuel to Showcase Anunnaki Enki Figurado at Intertabac",
-      "summary_en": "Don Emmanuel Cigars has announced Enki, a new 6 x 54 figurado and the fourth vitola in its Anunnaki line. The cigar will be showcased at InterTabac 2026, held from 15 to 17 September at Messe Dortmund in Dortmund, Germany.",
-      "source": "Cigar Journal",
-      "source_title": "Don Emmanuel to Showcase Anunnaki Enki Figurado at Intertabac",
-      "source_en": "Cigar Journal",
-      "source_title_en": "Don Emmanuel to Showcase Anunnaki Enki Figurado at Intertabac",
-      "url": "https://www.cigarjournal.com/don-emmanuel-to-showcase-anunnaki-enki-figurado-at-intertabac/"
-    },
-    {
-      "date": "2026-09-11",
-      "category": "新製品",
-      "title_ja": "J.C.ニューマン、ブリックトーバーフェスト26年版出荷",
-      "summary_ja": "J.C.ニューマン・シガー（J.C. Newman Cigar Co.）は今週、「ブリックハウス・ブリックトーバーフェスト（Brick House Bricktoberfest）」の2026年版を、米国とドイツの小売店向けに出荷を開始した。",
-      "title_en": "J.C. Newman Ships the 2026 Release of Brick House Bricktoberfest",
-      "summary_en": "J.C. Newman Cigar Co. has begun shipping the 2026 release of its Brick House Bricktoberfest cigars this week, sending them to retailers across the United States and Germany.",
-      "source": "halfwheel",
-      "source_title": "J.C. Newman Ships the 2026 Release of Brick House Bricktoberfest",
-      "source_en": "halfwheel",
-      "source_title_en": "J.C. Newman Ships the 2026 Release of Brick House Bricktoberfest",
-      "url": "https://www.cigarjournal.com/j-c-newman-ships-the-2026-release-of-brick-house-bricktoberfest/"
     }
   ]
 };
