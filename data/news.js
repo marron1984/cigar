@@ -7,8 +7,34 @@
    手で足すこともできますが、items の並び・キーは崩さないでください。
    ============================================================ */
 var NEWS_DATA = {
-  "updated": "2026-10-10",
+  "updated": "2026-10-11",
   "items": [
+    {
+      "date": "2026-10-11",
+      "category": "新製品",
+      "title_ja": "アドベントゥラ、ブラックフィン・パーレイを正式発売",
+      "summary_ja": "アドベントゥラ（ADVentura）は、2025年にサンプラーの一部として登場した「ブラックフィン・パーレイ（Blackfin's Parlay）」を今年、正式リリースした。新たに3つのサイズを加え、ブレンドも刷新した。",
+      "title_en": "ADVentura Gives Blackfin's Parlay a Full Release",
+      "summary_en": "ADVentura has given its Blackfin's Parlay a full release this year. The line first debuted in 2025 as part of a sampler of the brand's core lines. For 2026, it arrives with three new sizes and an updated blend.",
+      "source": "halfwheel",
+      "source_title": "ADVentura Blackfin’s Parlay Robusto",
+      "source_en": "halfwheel",
+      "source_title_en": "ADVentura Blackfin's Parlay Robusto",
+      "url": "https://halfwheel.com/adventura-blackfins-parlay-robusto/481413/"
+    },
+    {
+      "date": "2026-10-10",
+      "category": "業界・企業",
+      "title_ja": "元シガー広告塔マイク・ディトカ氏、86歳で死去",
+      "summary_ja": "シカゴ・ベアーズの名選手・名コーチとして知られるマイク・ディトカ（Mike Ditka）氏が86歳で死去した。同氏は初期の著名なシガー広告塔の一人でもあり、グレイクリフ（Graycliff）とダビドフ（Davidoff）がディトカ氏ブランドのシガーを展開していた。",
+      "title_en": "Mike Ditka, Chicago Bears Legend, Dies at 86",
+      "summary_en": "Mike Ditka, the legendary Chicago Bears player and coach, has died at 86. He was also one of the early celebrity cigar endorsers, with both Graycliff and Davidoff having offered Mike Ditka-branded cigars.",
+      "source": "halfwheel",
+      "source_title": "Mike Ditka, Chicago Bears Legend, Dies at 86",
+      "source_en": "halfwheel",
+      "source_title_en": "Mike Ditka, Chicago Bears Legend, Dies at 86",
+      "url": "https://halfwheel.com/mike-ditka-chicago-bears-legend-dies-at-86/481405/"
+    },
     {
       "date": "2026-10-10",
       "category": "新製品",
@@ -2062,32 +2088,6 @@ var NEWS_DATA = {
       "source_en": "halfwheel",
       "source_title_en": "Room101 17th Anniversary",
       "url": "https://halfwheel.com/room101-17th-anniversary/479401/"
-    },
-    {
-      "date": "2026-09-13",
-      "category": "新製品",
-      "title_ja": "ブラックレーベル、ビショップスブレンド新作",
-      "summary_ja": "ブラックレーベル・トレーディング（Black Label Trading Co.）が「ビショップスブレンド2026 ランセロ（Bishops Blend 2026 Lancero）」を発表した。ビショップスブレンドの初リリースから10年目にあたる節目の製品だが、公式には10周年記念とは銘打っていない。",
-      "title_en": "Black Label Trading Co. Bishops Blend 2026 Lancero",
-      "summary_en": "Black Label Trading Co. has announced the Bishops Blend 2026 Lancero. The release marks 10 years since the company first put out Bishops Blend, making it effectively a 10th anniversary edition, though it is not officially being labelled as such. The new lancero continues the long-running Bishops Blend line.",
-      "source": "halfwheel",
-      "source_title": "Black Label Trading Co. Bishops Blend 2026 Lancero",
-      "source_en": "halfwheel",
-      "source_title_en": "Black Label Trading Co. Bishops Blend 2026 Lancero",
-      "url": "https://halfwheel.com/black-label-trading-co-bishops-blend-2026-lancero/479356/"
-    },
-    {
-      "date": "2026-09-12",
-      "category": "業界・企業",
-      "title_ja": "ハバノス、もう一人の株主に注目",
-      "summary_ja": "ハバノス（Habanos S.A.）の株式構成をめぐる分析。キューバ政府が50％、チェン・ジー（Chen Zhi）が28.55％、残る21.45％を別の株主が保有する。チェン氏に関する新たな問題が続くなか、この少数株主がチェン氏の持ち分を取得した場合に何が起きるか、その株主が誰なのかが焦点になる。",
-      "title_en": "It’s Time To Talk About the Other Habanos S.A. Shareholder",
-      "summary_en": "An analysis of Habanos S.A.'s ownership structure. The Cuban government holds 50 per cent, Chen Zhi owns 28.55 per cent, and an unidentified party holds the remaining 21.45 per cent. As the Cuban cigar world grapples with fresh Chen-related problems, attention turns to what might happen if this minority shareholder were to acquire Chen's stake, and to establishing who that shareholder actually is.",
-      "source": "halfwheel",
-      "source_title": "It’s Time To Talk About the Other Habanos S.A. Shareholder",
-      "source_en": "halfwheel",
-      "source_title_en": "It’s Time To Talk About the Other Habanos S.A. Shareholder",
-      "url": "https://halfwheel.com/its-time-to-talk-about-habanos-sa-other-owner/479295/"
     }
   ]
 };
