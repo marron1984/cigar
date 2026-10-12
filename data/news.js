@@ -7,8 +7,34 @@
    手で足すこともできますが、items の並び・キーは崩さないでください。
    ============================================================ */
 var NEWS_DATA = {
-  "updated": "2026-10-11",
+  "updated": "2026-10-12",
   "items": [
+    {
+      "date": "2026-10-12",
+      "category": "新製品",
+      "title_ja": "ガーカから「トレス・デカダス」トロ登場",
+      "summary_ja": "ガーカ（Gurkha）が「トレス・デカダス（Tres Decadas）」トロを発表した。フアン・ロペス（Juan Lopez）の名を冠するが、キューバの同名ブランドとは別のシガーだという。",
+      "title_en": "Tres Decadas by Gurkha Toro",
+      "summary_en": "Gurkha has released the Tres Decadas Toro. It is a Juan Lopez cigar, but not the well-known Cuban Juan Lopez of the same name, according to halfwheel.",
+      "source": "halfwheel",
+      "source_title": "Tres Decadas by Gurkha Toro",
+      "source_en": "halfwheel",
+      "source_title_en": "Tres Decadas by Gurkha Toro",
+      "url": "https://halfwheel.com/tres-decadas-by-gurkha-toro/481231/"
+    },
+    {
+      "date": "2026-10-11",
+      "category": "新製品",
+      "title_ja": "ボリバー「サファリ」11月21日コートジボワールで発売",
+      "summary_ja": "ボリバー（Bolívar）ブランド125周年を記念した「サファリ（Safari）」が、11月21日にコートジボワールで発売される。ボリバー初のピッグテールキャップ採用銘柄であり、アフリカ大陸向けとして初のエディション・レヒオナルとなる。",
+      "title_en": "Bolívar Safari Debuting in Côte d'Ivoire on Nov. 21",
+      "summary_en": "The Bolívar Safari, commemorating the 125th anniversary of the Bolívar brand, will be released in Côte d'Ivoire on 21 November. It is the first Bolívar to feature a pigtail cap and the first Edición Regional for the continent of Africa.",
+      "source": "halfwheel",
+      "source_title": "Bolívar Safari Debuting in Côte d’Ivoire on Nov. 21",
+      "source_en": "halfwheel",
+      "source_title_en": "Bolívar Safari Debuting in Côte d'Ivoire on Nov. 21",
+      "url": "https://halfwheel.com/bolivar-safari-debuting-in-cote-divoire-on-nov-21/481486/"
+    },
     {
       "date": "2026-10-11",
       "category": "新製品",
@@ -2062,32 +2088,6 @@ var NEWS_DATA = {
       "source_en": "Cigar Journal",
       "source_title_en": "New England Cigar Expo Releases 2026 Limited Edition Pizza Cigar",
       "url": "https://www.cigarjournal.com/new-england-cigar-expo-releases-2026-limited-edition-pizza-cigar/"
-    },
-    {
-      "date": "2026-09-14",
-      "category": "新製品",
-      "title_ja": "レ・フィヌ・ラム、年末に新作多数",
-      "summary_ja": "「ル・プティ（Le PETIT）」「ラ・ギロチン（La GUILLOTINE）」「ル・タグ（Le TAG）」「パンチ・ブレスレット（PUNCH BRACELET）」を手がける仏ブランド、レ・フィヌ・ラム（Les Fines Lames）が、これまでの1シーズンより多い新製品を年末に投入する。",
-      "title_en": "Les Fines Lames Closes the Year with a Bang",
-      "summary_en": "The French brand behind Le PETIT, La GUILLOTINE, Le TAG and the PUNCH BRACELET is closing out the year with a bang, offering more new pieces than in any single season before.",
-      "source": "Cigar Journal",
-      "source_title": "Les Fines Lames Closes the Year with a Bang",
-      "source_en": "Cigar Journal",
-      "source_title_en": "Les Fines Lames Closes the Year with a Bang",
-      "url": "https://www.cigarjournal.com/les-fines-lames-closes-the-year-with-a-bang/"
-    },
-    {
-      "date": "2026-09-13",
-      "category": "新製品",
-      "title_ja": "ルーム101、17周年ブレンド発表",
-      "summary_ja": "ルーム101（Room101）が、16周年を飛ばした後、17周年を記念するアニバーサリーシリーズの7作目を発表した。ブレンドは再びAJ・フェルナンデス（AJ Fernandez）が手がける。",
-      "title_en": "Room101 17th Anniversary",
-      "summary_en": "After skipping the 16th anniversary, Room101's Anniversary series gets its seventh blend for the brand's 17th anniversary. Once again, the brand has turned to AJ Fernandez for the blend.",
-      "source": "halfwheel",
-      "source_title": "Room101 17th Anniversary",
-      "source_en": "halfwheel",
-      "source_title_en": "Room101 17th Anniversary",
-      "url": "https://halfwheel.com/room101-17th-anniversary/479401/"
     }
   ]
 };
