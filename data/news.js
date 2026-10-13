@@ -7,8 +7,86 @@
    手で足すこともできますが、items の並び・キーは崩さないでください。
    ============================================================ */
 var NEWS_DATA = {
-  "updated": "2026-10-12",
+  "updated": "2026-10-13",
   "items": [
+    {
+      "date": "2026-10-13",
+      "category": "新製品",
+      "title_ja": "フーテン・ヤング、ミッドナイト・ハンマー2026出荷",
+      "summary_ja": "フーテン・ヤング（Hooten Young）が、シャギーフット仕様の6×60トルピード「ミッドナイト・ハンマー（Midnight Hammer）2026」を出荷した。本作は同サイズの第2弾で、トラベルケース「ボンバー・バディ（Bomber Buddy）」など複数の新パッケージ仕様が用意される。",
+      "title_en": "Hooten Young Ships Midnight Hammer 2026",
+      "summary_en": "Hooten Young has shipped the Midnight Hammer 2026, a 6 x 60 torpedo with a shaggy foot. It is the second release of this size. The line comes with several new packaging options, including a travel case called the Bomber Buddy.",
+      "source": "halfwheel",
+      "source_title": "Hooten Young Ships Midnight Hammer 2026",
+      "source_en": "halfwheel",
+      "source_title_en": "Hooten Young Ships Midnight Hammer 2026",
+      "url": "https://halfwheel.com/hooten-young-ships-midnight-hammer-2026/481624/"
+    },
+    {
+      "date": "2026-10-13",
+      "category": "新製品",
+      "title_ja": "ロハス、KSG限定版2026を11月初旬発売",
+      "summary_ja": "ノエル・ロハス（Noel Rojas）が、限定版「KSG Limited Edition 2026」を11月に発売する。長年「キング・オブ・スモールゲージ」を自称する同氏が、その主張をさらに確固たるものにすると期待する一本。",
+      "title_en": "Rojas KSG Limited Edition 2026 Coming in Early November",
+      "summary_en": "Noel Rojas will release the KSG Limited Edition 2026 next month. Rojas, who has for years proclaimed himself King of the Small Gauges, says he expects the limited edition to further cement that claim.",
+      "source": "halfwheel",
+      "source_title": "Rojas KSG Limited Edition 2026 Coming in Early November",
+      "source_en": "halfwheel",
+      "source_title_en": "Rojas KSG Limited Edition 2026 Coming in Early November",
+      "url": "https://halfwheel.com/rojas-ksg-limited-edition-2026-coming-in-early-november/481593/"
+    },
+    {
+      "date": "2026-10-13",
+      "category": "新製品",
+      "title_ja": "サンジ・パテルの新作「Moe」本日発売",
+      "summary_ja": "サンジ・パテル（Sanj Patel）が、親友「Moe」に捧げる最新ライン「Moe by Sanj Patel」を本日発売した。ニカラグアの新工場で生産される年次限定品。",
+      "title_en": "Moe by Sanj Patel Debuts Today",
+      "summary_en": "Sanj Patel has launched his newest line, Moe by Sanj Patel, dedicated to a dear friend named Moe. It is an annual limited production made at his new factory in Nicaragua.",
+      "source": "halfwheel",
+      "source_title": "Moe by Sanj Patel Debuts Today",
+      "source_en": "halfwheel",
+      "source_title_en": "Moe by Sanj Patel Debuts Today",
+      "url": "https://halfwheel.com/moe-by-sanj-patel-debuts-today/481591/"
+    },
+    {
+      "date": "2026-10-13",
+      "category": "新製品",
+      "title_ja": "S.T.デュポン、自由の女神モデル出荷",
+      "summary_ja": "S.T.デュポン（S.T. Dupont）の米国総代理店コールズ・オブ・ロンドン（Coles of London）が、アメリカ建国250周年に合わせた限定アイテムを出荷した。一部は自由の女神をモチーフにデザインされている。",
+      "title_en": "S.T. Dupont's Statue of Liberty Models Ship",
+      "summary_en": "Coles of London, the American distributor of S.T. Dupont, has shipped a handful of exclusive items made in conjunction with the 250th anniversary of the founding of America. Some of them are designed to match Lady Liberty.",
+      "source": "halfwheel",
+      "source_title": "S.T. Dupont’s Statue of Liberty Models Ship",
+      "source_en": "halfwheel",
+      "source_title_en": "S.T. Dupont's Statue of Liberty Models Ship",
+      "url": "https://halfwheel.com/s-t-duponts-statue-of-liberty-models-ship/481580/"
+    },
+    {
+      "date": "2026-10-12",
+      "category": "業界・企業",
+      "title_ja": "プラセンシア、新パッケージを店頭展開",
+      "summary_ja": "プラセンシア（Plasencia）の刷新された「レゼルバ・オリジナル（Reserva Original）」ラインが店頭に到着した。年末までに全ポートフォリオが新パッケージに更新される予定。",
+      "title_en": "Plasencia's New Packaging Rolls Out to Stores",
+      "summary_en": "Plasencia's new-look Reserva Original line is arriving at stores. By the end of the year, the company's entire portfolio will be updated to the new packaging.",
+      "source": "halfwheel",
+      "source_title": "Plasencia’s New Packaging Rolls Out to Stores",
+      "source_en": "halfwheel",
+      "source_title_en": "Plasencia's New Packaging Rolls Out to Stores",
+      "url": "https://halfwheel.com/plasencias-new-packaging-rolls-out-to-stores/481561/"
+    },
+    {
+      "date": "2026-10-12",
+      "category": "新製品",
+      "title_ja": "カサ・カリーリョ、Pledge Purpleにロブストを追加",
+      "summary_ja": "カサ・カリーリョ（Casa Carrillo）が、「Pledge Purple Premier Collection」に新サイズのロブストを追加すると発表した。よりコンパクトな形状でPledge Purpleの特徴を楽しめるよう設計された新フォーマット。",
+      "title_en": "Casa Carrillo Expands Pledge Purple with New Robusto Size",
+      "summary_en": "Casa Carrillo has announced the addition of a new Robusto size to the Pledge Purple Premier Collection, expanding the release with a new format designed to deliver the signature Pledge Purple experience in a more compact presentation.",
+      "source": "Cigar Journal",
+      "source_title": "Casa Carrillo Expands Pledge Purple with New Robusto Size",
+      "source_en": "Cigar Journal",
+      "source_title_en": "Casa Carrillo Expands Pledge Purple with New Robusto Size",
+      "url": "https://www.cigarjournal.com/casa-carrillo-expands-pledge-purple-with-new-robusto-size/"
+    },
     {
       "date": "2026-10-12",
       "category": "新製品",
@@ -2010,84 +2088,6 @@ var NEWS_DATA = {
       "source_en": "halfwheel",
       "source_title_en": "EGM Cigars Adding Limited Edition Ninfa Jars",
       "url": "https://halfwheel.com/egm-cigars-adding-limited-edition-ninfa-jars/479542/"
-    },
-    {
-      "date": "2026-09-14",
-      "category": "業界・企業",
-      "title_ja": "5th Avenueが破産手続きを申請",
-      "summary_ja": "5th Avenue Products Trading-GmbHが破産手続きを申請した。数日前から申請が知られていたもので、シガー・ジャーナルは同社を巡る背景を記事「Cuba's Cigar Paradox」などで報じてきた。",
-      "title_en": "5th Avenue Has Filed for Insolvency Proceeding",
-      "summary_en": "5th Avenue Products Trading-GmbH has filed for insolvency proceedings. The move had been known for several days. Cigar Journal noted it had recently reported on the background to the situation, including in its article \"Cuba's Cigar Paradox,\" which examined the pressures facing the distributor.",
-      "source": "Cigar Journal",
-      "source_title": "5th Avenue has filed for insolvency proceeding",
-      "source_en": "Cigar Journal",
-      "source_title_en": "5th Avenue has filed for insolvency proceeding",
-      "url": "https://www.cigarjournal.com/5th-avenue-has-filed-for-insolvency-proceeding/"
-    },
-    {
-      "date": "2026-09-14",
-      "category": "新製品",
-      "title_ja": "ベクター、複数ラインに新色 VToroは11月発売",
-      "summary_ja": "ベクター（Vector）が複数のラインに新色を追加し、VToroの発売日を11月1日に設定した。新オプションはインタータバック2027見本市で披露され、11月1日に出荷を開始する予定。",
-      "title_en": "Vector Adding New Colors to Several Lines, Sets Nov. 1 as VToro Launch Date",
-      "summary_en": "Vector is adding new colours to several of its lines and has set 1 November as the launch date for the VToro. The new options will be featured at the InterTabac 2027 trade fair and are scheduled to begin shipping on 1 November.",
-      "source": "halfwheel",
-      "source_title": "Vector Adding New Colors to Several Lines, Sets Nov. 1 as VToro Launch Date",
-      "source_en": "halfwheel",
-      "source_title_en": "Vector Adding New Colors to Several Lines, Sets Nov. 1 as VToro Launch Date",
-      "url": "https://halfwheel.com/vector-adding-new-colors-to-several-lines-sets-nov-1-as-vtoro-launch-date/479443/"
-    },
-    {
-      "date": "2026-09-14",
-      "category": "新製品",
-      "title_ja": "ペルドモ・レガシー、独市場へ投入",
-      "summary_ja": "コップ・タバコ（Kopp Tobaccos GmbH & Co. KG）が、シガーシリーズ「ペルドモ・レガシー（Perdomo Legacy）」をドイツ市場に導入すると発表した。",
-      "title_en": "Kopp Tobaccos Introduces Perdomo Legacy in Germany",
-      "summary_en": "Kopp Tobaccos GmbH & Co. KG is introducing the Perdomo Legacy cigar series to the German market.",
-      "source": "Cigar Journal",
-      "source_title": "Kopp Tobaccos Introduces Perdomo Legacy in Germany",
-      "source_en": "Cigar Journal",
-      "source_title_en": "Kopp Tobaccos Introduces Perdomo Legacy in Germany",
-      "url": "https://www.cigarjournal.com/kopp-tobaccos-introduces-perdomo-legacy-in-germany/"
-    },
-    {
-      "date": "2026-09-14",
-      "category": "新製品",
-      "title_ja": "ヴィリガー、ニカラグア限定版2026",
-      "summary_ja": "「ヴィリガー・デ・ニカラグア エディシオン・リミターダ（VILLIGER de Nicaragua Edición Limitada）」の2026年版が、今年で最後の発売となる。",
-      "title_en": "VILLIGER de Nicaragua Edición Limitada 2026",
-      "summary_en": "The VILLIGER de Nicaragua Edición Limitada is being released for the last time this year.",
-      "source": "Cigar Journal",
-      "source_title": "VILLIGER de Nicaragua Edición Limitada 2026",
-      "source_en": "Cigar Journal",
-      "source_title_en": "VILLIGER de Nicaragua Edición Limitada 2026",
-      "url": "https://www.cigarjournal.com/villiger-de-nicaragua-edicion-limitada-2026/"
-    },
-    {
-      "date": "2026-09-14",
-      "category": "イベント・アワード",
-      "title_ja": "マヤ・セルバ、インタータバック出展",
-      "summary_ja": "マヤ・セルバ・シガーズ（Maya Selva Cigars）が、インタータバック（InterTabac）2026で、看板シリーズへの新製品を披露する。",
-      "title_en": "Maya Selva Cigars at Intertabac 2026",
-      "summary_en": "Maya Selva Cigars presents new additions to its iconic cigar portfolio at InterTabac 2026.",
-      "source": "Cigar Journal",
-      "source_title": "Coming up – Maya Selva Cigars at Intertabac 2026",
-      "source_en": "Cigar Journal",
-      "source_title_en": "Coming up – Maya Selva Cigars at Intertabac 2026",
-      "url": "https://www.cigarjournal.com/coming-up-maya-selva-cigars-at-intertabac-2026/"
-    },
-    {
-      "date": "2026-09-14",
-      "category": "新製品",
-      "title_ja": "ニューイングランド展、限定ピザ葉巻",
-      "summary_ja": "2026年9月25〜26日に開催されるニューイングランド・シガー・エキスポ（New England Cigar Expo）が、今年も記念の限定葉巻を用意する。",
-      "title_en": "New England Cigar Expo Releases 2026 Limited Edition Pizza Cigar",
-      "summary_en": "The New England Cigar Expo, taking place on Friday and Saturday, 25–26 September 2026, will once again commemorate the event with its own limited-edition cigar.",
-      "source": "Cigar Journal",
-      "source_title": "New England Cigar Expo Releases 2026 Limited Edition Pizza Cigar",
-      "source_en": "Cigar Journal",
-      "source_title_en": "New England Cigar Expo Releases 2026 Limited Edition Pizza Cigar",
-      "url": "https://www.cigarjournal.com/new-england-cigar-expo-releases-2026-limited-edition-pizza-cigar/"
     }
   ]
 };
