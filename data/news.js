@@ -7,8 +7,86 @@
    手で足すこともできますが、items の並び・キーは崩さないでください。
    ============================================================ */
 var NEWS_DATA = {
-  "updated": "2026-10-13",
+  "updated": "2026-10-14",
   "items": [
+    {
+      "date": "2026-10-14",
+      "category": "新製品",
+      "title_ja": "コンシールドキャリー第2弾、今月登場",
+      "summary_ja": "今月、コンシールドキャリー（Concealed Carry）第2弾がフィデルから登場する。第1弾と同じく全6種で構成され、今回はキューバ禁輸（Cuban Embargo）をテーマとする。シガーの詳細は第1弾同様に非公開のまま。",
+      "title_en": "Concealed Carry Second Edition Debuting This Month with Fidel",
+      "summary_en": "The Concealed Carry second edition is debuting this month from Fidel. Like the first edition, the line again features six installments, this time themed around the Cuban Embargo. Details about the cigars themselves remain undisclosed, mirroring the approach taken with the original release.",
+      "source": "halfwheel",
+      "source_title": "Concealed Carry Second Edition Debuting This Month with Fidel",
+      "source_en": "halfwheel",
+      "source_title_en": "Concealed Carry Second Edition Debuting This Month with Fidel",
+      "url": "https://halfwheel.com/concealed-carry-second-edition-debuting-this-month-with-fidel/481693/"
+    },
+    {
+      "date": "2026-10-14",
+      "category": "新製品",
+      "title_ja": "ワープド6102R 2026が発売",
+      "summary_ja": "ワープド（Warped）のマエストロ・デル・ティエンポ6102R 2026が発売された。6102Rとしては3回目のリリースで、2020年以来となる出荷。これが最後の出荷となる可能性もあるという。",
+      "title_en": "Warped Maestro del Tiempo 6102R 2026 Goes on Sale",
+      "summary_en": "Warped's Maestro del Tiempo 6102R 2026 has gone on sale. This marks the third release for the 6102R and the first shipment since 2020. According to the maker, it could also be the last one to ship.",
+      "source": "halfwheel",
+      "source_title": "Warped Maestro del Tiempo 6102R 2026 Goes on Sale",
+      "source_en": "halfwheel",
+      "source_title_en": "Warped Maestro del Tiempo 6102R 2026 Goes on Sale",
+      "url": "https://halfwheel.com/warped-maestro-del-tiempo-6102r-2026-goes-on-sale/481134/"
+    },
+    {
+      "date": "2026-10-14",
+      "category": "業界・企業",
+      "title_ja": "ジョン・グリービー氏がベストシガープライスへ",
+      "summary_ja": "ジョン・グリービー（John Greeby）氏がベストシガープライス（Best Cigar Prices）に加わった。約1カ月前までシガーズインターナショナル（Cigars International）で同様の役職に就いており、同社出身者が同社に移る最新の例となった。",
+      "title_en": "John Greeby Joins Best Cigar Prices",
+      "summary_en": "John Greeby has joined Best Cigar Prices. Until about a month ago, he held a similar role at Cigars International. He is the latest Cigars International alumnus to move over to Best Cigar Prices.",
+      "source": "halfwheel",
+      "source_title": "John Greeby Joins Best Cigar Prices",
+      "source_en": "halfwheel",
+      "source_title_en": "John Greeby Joins Best Cigar Prices",
+      "url": "https://halfwheel.com/john-greeby-joins-best-cigar-prices/481681/"
+    },
+    {
+      "date": "2026-10-14",
+      "category": "新製品",
+      "title_ja": "HVCパン・カリエンテ10周年限定版2026",
+      "summary_ja": "HVCがパン・カリエンテ（Pan Caliente）10周年記念の限定版2026を発表した。当初は単一サイズの限定品だったが、10年を経て複数の定番ブレンドを擁するシリーズに成長。今回の限定版は、同社が初めてペルー産タバコを使用したシガーとなる。",
+      "title_en": "Pan Caliente de HVC 10th Anniversary Limited Edition 2026",
+      "summary_en": "HVC has unveiled the Pan Caliente de HVC 10th Anniversary Limited Edition 2026. Once a single-size limited edition, Pan Caliente has grown over ten years into a full series with multiple regular production blends. This particular variation marks the first time the company has released a cigar featuring Peruvian tobacco.",
+      "source": "halfwheel",
+      "source_title": "Pan Caliente de HVC 10th Anniversary Limited Edition 2026",
+      "source_en": "halfwheel",
+      "source_title_en": "Pan Caliente de HVC 10th Anniversary Limited Edition 2026",
+      "url": "https://halfwheel.com/pan-caliente-de-hvc-10th-anniversary-limited-edition-2026/481604/"
+    },
+    {
+      "date": "2026-10-14",
+      "category": "新製品",
+      "title_ja": "エスピノサ×オーク・グレンのハロウィン限定",
+      "summary_ja": "オーク・グレン・トバコニスト（Oak Glen Tobacconist）が、エスピノサ・シガーズ（Espinosa Cigars）製のハロウィン限定シガー「ノスフェラトゥ（Nosferatwo）」を発表した。オーク・グレンがエスピノサと組んだ初の専売品で、同店のハロウィン限定としては5作目。計画は2025年初頭に始動した。",
+      "title_en": "Oak Glen Tobacconist and Espinosa Cigars Team Up on Halloween Exclusive Nosferatwo",
+      "summary_en": "Oak Glen Tobacconist has announced Nosferatwo, a Halloween exclusive cigar made by Espinosa Cigars. The release is notable as the first exclusive cigar Oak Glen Tobacconist has produced with Espinosa, and as the retailer's fifth Halloween exclusive. The project began back in early 2025.",
+      "source": "StogiePress",
+      "source_title": "Cigar News: Oak Glen Tobacconist and Espinosa Cigars Team Up On Halloween Exclusive Nosferatwo.",
+      "source_en": "StogiePress",
+      "source_title_en": "Cigar News: Oak Glen Tobacconist and Espinosa Cigars Team Up On Halloween Exclusive Nosferatwo",
+      "url": "https://stogiepress.com/cigar-news-oak-glen-tobacconist-and-espinosa-cigars-team-up-on-halloween-exclusive-nosferatwo/"
+    },
+    {
+      "date": "2026-10-13",
+      "category": "新製品",
+      "title_ja": "ルアーがザ・コッドファーザーを復刻",
+      "summary_ja": "ルアー（Lure）が新作「ザ・コッドファーザー（The Codfather）」を発表した。ブランドは釣りを愛した故ルー・クロス・ジュニア（Lou Cross Jr.）に由来し、同作は彼の葬儀で吸われたシガーをもとにしている。家族や友情への敬意を込めた個人的なリリースとされる。",
+      "title_en": "Lure Recreates The Codfather",
+      "summary_en": "Lure has announced The Codfather, recreating a cigar tied to the brand's origins. As a brand, Lure is based on the late Lou Cross Jr. and his love of fishing, and The Codfather is based on the cigars that were smoked at Cross Jr.'s funeral. It is described as a deeply personal release paying tribute to family and friendship.",
+      "source": "halfwheel",
+      "source_title": "Lure Recreates The Codfather",
+      "source_en": "halfwheel",
+      "source_title_en": "Lure Recreates The Codfather",
+      "url": "https://halfwheel.com/lure-recreates-the-codfather/481651/"
+    },
     {
       "date": "2026-10-13",
       "category": "新製品",
@@ -2010,84 +2088,6 @@ var NEWS_DATA = {
       "source_en": "StogiePress",
       "source_title_en": "Cigar News: Black Works Studio (BLK WKS) Announces release of CULTURE VULTURE",
       "url": "https://stogiepress.com/cigar-news-black-works-studio-blk-wks-announces-release-of-culture-vulture/"
-    },
-    {
-      "date": "2026-09-15",
-      "category": "新製品",
-      "title_ja": "メーラプフェル、Project 18をインタータバックで披露",
-      "summary_ja": "メーラプフェル（Meerapfel）が独インタータバック2026で新ライン「Project 18」を発表した。「単一の特別なブレンド」と銘打たれ、99本入りチェスト180箱に限定。2026年終盤に店頭に並ぶ予定。",
-      "title_en": "Meerapfel Debuts Project 18 at InterTabac 2026",
-      "summary_en": "Meerapfel has unveiled a new line, Project 18, at InterTabac 2026 in Germany. Billed as a single extraordinary blend, it is limited to 180 chests of 99 cigars each. The company said the release is slated to arrive in stores during the final months of 2026.",
-      "source": "halfwheel",
-      "source_title": "Meerapfel Debuts Project 18 at InterTabac 2026",
-      "source_en": "halfwheel",
-      "source_title_en": "Meerapfel Debuts Project 18 at InterTabac 2026",
-      "url": "https://halfwheel.com/meerapfel-debuts-project-18-at-intertabac/479635/"
-    },
-    {
-      "date": "2026-09-15",
-      "category": "新製品",
-      "title_ja": "ナブ・メキシコ、インタータバックで発表",
-      "summary_ja": "ショートで太いサイズで知られるナブ（NUb）の最新版「ナブ・メキシコ」が、インタータバック2026で発表された。メキシコ産ラッパーにニカラグア産のバインダーとフィラーを組み合わせる。2サイズで登場し、うち1サイズは米国限定となる予定。米国では10月に発売される。",
-      "title_en": "NUb Mexico Debuts at InterTabac 2026, Coming to U.S. in October",
-      "summary_en": "The latest version of NUb, known for its short and thick sizes, was unveiled at InterTabac 2026. NUb Mexico features a Mexican-grown wrapper over a Nicaraguan binder and filler. It will debut in two sizes, one of which is slated to be a US exclusive. The line is scheduled to reach American retailers in October.",
-      "source": "halfwheel",
-      "source_title": "NUb Mexico Debuts at InterTabac 2026, Coming to U.S. in October",
-      "source_en": "halfwheel",
-      "source_title_en": "NUb Mexico Debuts at InterTabac 2026, Coming to U.S. in October",
-      "url": "https://halfwheel.com/nub-mexico-debuts-at-intertabac-2027-coming-to-u-s-in-october/479574/"
-    },
-    {
-      "date": "2026-09-15",
-      "category": "規制・市場",
-      "title_ja": "アルタディスUSA、価格改定を発表",
-      "summary_ja": "アルタディスUSA（Altadis U.S.A.）が価格改定を発表した。小売業者に対し輸入課徴金分のクレジットを発行し、現行の輸入課徴金を半減する。一方で数週間以内に値上げを予定している。",
-      "title_en": "Altadis U.S.A. Announces Price Changes",
-      "summary_en": "Altadis U.S.A. has announced price changes. The company will issue credits on import surcharges to retailers while cutting its current import surcharge in half. However, a price increase is set to take effect within just a few weeks.",
-      "source": "halfwheel",
-      "source_title": "Altadis U.S.A. Announces Price Changes",
-      "source_en": "halfwheel",
-      "source_title_en": "Altadis U.S.A. Announces Price Changes",
-      "url": "https://halfwheel.com/altadis-u-s-a-announces-price-changes/479553/"
-    },
-    {
-      "date": "2026-09-15",
-      "category": "新製品",
-      "title_ja": "シカー、新カッター「Xi1アメリカ250」出荷",
-      "summary_ja": "シカー（XIKAR）のカッター「パーフェクト Xi1 アメリカ 250」が店舗向けに出荷される。ブラック、ブルー、レッドの3色展開で、各モデルの希望小売価格は79.99ドル。",
-      "title_en": "XIKAR Perfect Xi1 America 250 on the Way to Stores",
-      "summary_en": "XIKAR's Perfect Xi1 America 250 cutter is heading to stores. It is available in three colour choices: black, blue and red. Each cutter carries an MSRP of $79.99.",
-      "source": "halfwheel",
-      "source_title": "XIKAR Perfect Xi1 America 250 on the Way to Stores",
-      "source_en": "halfwheel",
-      "source_title_en": "XIKAR Perfect Xi1 America 250 on the Way to Stores",
-      "url": "https://halfwheel.com/xikar-perfect-xi1-america-250-on-the-way-to-stores/479557/"
-    },
-    {
-      "date": "2026-09-15",
-      "category": "新製品",
-      "title_ja": "ヴィリガー限定版、欧州で明日発売",
-      "summary_ja": "ヴィリガー・デ・ニカラグア（Villiger de Nicaragua）エディション・リミターダ2026が、欧州で明日発売される。2022年に始まったシリーズの4作目にして最終作。6×60のゴルドで、エクアドル産スマトラ種ラッパー、メキシコ産サンアンドレスのバインダー、ニカラグア産と米国産たばこのフィラーを使用する。",
-      "title_en": "Villiger de Nicaragua Edición Limitada 2026 Releasing Tomorrow in Europe",
-      "summary_en": "Villiger de Nicaragua Edición Limitada 2026 releases tomorrow in Europe. It is the fourth and final release in the series that debuted in 2022. The 6 x 60 gordo is made with an Ecuadorian Sumatra-seed wrapper, a Mexican San Andrés binder and a filler blend of Nicaraguan and US tobacco.",
-      "source": "halfwheel",
-      "source_title": "Villiger de Nicaragua Edición Limitada 2026 Releasing Tomorrow in Europe",
-      "source_en": "halfwheel",
-      "source_title_en": "Villiger de Nicaragua Edición Limitada 2026 Releasing Tomorrow in Europe",
-      "url": "https://halfwheel.com/villiger-de-nicaragua-edicion-limitada-2026-releasing-tomorrow-in-europe/479520/"
-    },
-    {
-      "date": "2026-09-15",
-      "category": "新製品",
-      "title_ja": "EGM、限定ニンファのセラミックジャー追加",
-      "summary_ja": "EGMシガーズ（EGM Cigars）が、細身の葉巻「ニンファ（Ninfa）」の限定セラミックジャーを追加する。同銘柄は2月に登場し、通常は10本または25本入りの箱で販売される。新たに50本入りジャーが近く発売され、生産数はわずか500個。",
-      "title_en": "EGM Cigars Adding Limited Edition Ninfa Jars",
-      "summary_en": "EGM Cigars is adding a limited edition ceramic jar for its slender Ninfa cigars, which debuted in February and normally come in boxes of 10 or 25. A new 50-count ceramic jar option will be available soon, with just 500 units produced.",
-      "source": "halfwheel",
-      "source_title": "EGM Cigars Adding Limited Edition Ninfa Jars",
-      "source_en": "halfwheel",
-      "source_title_en": "EGM Cigars Adding Limited Edition Ninfa Jars",
-      "url": "https://halfwheel.com/egm-cigars-adding-limited-edition-ninfa-jars/479542/"
     }
   ]
 };
