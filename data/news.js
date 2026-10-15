@@ -7,8 +7,86 @@
    手で足すこともできますが、items の並び・キーは崩さないでください。
    ============================================================ */
 var NEWS_DATA = {
-  "updated": "2026-10-14",
+  "updated": "2026-10-15",
   "items": [
+    {
+      "date": "2026-10-15",
+      "category": "新製品",
+      "title_ja": "グルカ「TAA 2026」11月発売へ",
+      "summary_ja": "グルカ（Gurkha）が「TAA 2026」を11月に発売する。ダークハバノ・ラッパーを用いたトロ・エクストラで、箱は加湿器を備え、ヒュミドールとしても使える仕様となっている。",
+      "title_en": "Gurkha TAA 2026 Coming in November",
+      "summary_en": "Gurkha will release the TAA 2026 in November. The cigar is a toro extra that uses a dark habano wrapper. The boxes come with their own humidifiers and are designed to double as humidors, making them reusable once the cigars have been smoked. It is part of the annual Tobacconists' Association of America exclusive programme.",
+      "source": "halfwheel",
+      "source_title": "Gurkha TAA 2026 Coming in November",
+      "source_en": "halfwheel",
+      "source_title_en": "Gurkha TAA 2026 Coming in November",
+      "url": "https://halfwheel.com/gurkha-taa-2026-coming-in-november/481759/"
+    },
+    {
+      "date": "2026-10-15",
+      "category": "新製品",
+      "title_ja": "ビリガー「TAAエクスクルーシブ2026」11月発売",
+      "summary_ja": "ビリガー（Villiger）が「TAA Exclusive 2026」を11月に発売する。従来は各地の工場と組んで製造してきたが、2026年版はスイス社自身のニカラグア工場の巻き技術を披露する一本となる。",
+      "title_en": "Villiger TAA Exclusive 2026 Slated for November",
+      "summary_en": "Villiger will release its TAA Exclusive 2026 in November. Previously the Swiss company's TAA Exclusive releases were a way to collaborate with different cigar factories. For 2026, however, Villiger is showcasing the rolling prowess of its own Nicaraguan factory, marking a shift in how the exclusive line is produced.",
+      "source": "halfwheel",
+      "source_title": "Villiger TAA Exclusive 2026 Slated for November",
+      "source_en": "halfwheel",
+      "source_title_en": "Villiger TAA Exclusive 2026 Slated for November",
+      "url": "https://halfwheel.com/villiger-taa-exclusive-2026-slated-for-november/481737/"
+    },
+    {
+      "date": "2026-10-15",
+      "category": "新製品",
+      "title_ja": "ビソ「ホーニー・リガドール・ファンタスマ」登場",
+      "summary_ja": "ビソ（Viso）が「Horny Ligador Fantasma」を発売する。シーツをかぶった幽霊のような人物が描かれるが、ハロウィン向けではなく、葉巻の陰に隠れた「ゴースト・ブレンダー」たちへのオマージュだという。",
+      "title_en": "Viso Horny Ligador Fantasma",
+      "summary_en": "Viso is releasing the Horny Ligador Fantasma. Although the cigars feature an image of a figure wearing a sheet and looking like a ghost, they are not Halloween-themed. Instead, the release pays tribute to the ghost blenders who work behind the scenes on cigars, acknowledging those whose contributions often go uncredited.",
+      "source": "halfwheel",
+      "source_title": "Viso Horny Ligador Fantasma",
+      "source_en": "halfwheel",
+      "source_title_en": "Viso Horny Ligador Fantasma",
+      "url": "https://halfwheel.com/viso-horny-ligador-fantasma/481701/"
+    },
+    {
+      "date": "2026-10-14",
+      "category": "イベント・アワード",
+      "title_ja": "インドネシア・シガー・フェス2026開催",
+      "summary_ja": "「インドネシア・シガー・フェスティバル2026（ICF）」が10月1〜3日、バリ島ヌサドゥアのバリ・コレクションで開催された。文化・ライフスタイル・エンターテインメントの要素とともに、インドネシアの国内葉巻産業を集めた3日間のイベントとなった。",
+      "title_en": "Indonesian Cigar Festival 2026: Bringing Indonesia's Cigar Industry to the Global Stage",
+      "summary_en": "The Indonesian Cigar Festival 2026 (ICF) brought together Indonesia's local cigar industry with elements of culture, lifestyle and entertainment in a three-day event. It was held at Bali Collection, The Nusa Dua, in Bali, from 1 to 3 October 2026, aiming to showcase the country's cigar sector on the global stage.",
+      "source": "Cigar Journal",
+      "source_title": "Indonesian Cigar Festival 2026: Bringing Indonesia’s Cigar Industry to the Global Stage",
+      "source_en": "Cigar Journal",
+      "source_title_en": "Indonesian Cigar Festival 2026: Bringing Indonesia's Cigar Industry to the Global Stage",
+      "url": "https://www.cigarjournal.com/indonesian-cigar-festival-2026-bringing-indonesia-s-cigar-industry-to-the-global-stage/"
+    },
+    {
+      "date": "2026-10-14",
+      "category": "新製品",
+      "title_ja": "ルアー・シガーズ「コッドファーザー」発表",
+      "summary_ja": "ルアー・シガーズ（Lure Cigars）が「The Codfather」を発表した。同社の礎を築いた葉巻に着想を得た個人的な一本で、家族や友情、大切な人と過ごす時間の思い出に捧げられている。元々は特注された葉巻にルーツを持つブレンドだという。",
+      "title_en": "Lure Cigars Announces the Codfather",
+      "summary_en": "Lure Cigars has announced The Codfather. Inspired by a cigar that helped lay the foundation for the brand, it is described as a deeply personal release paying tribute to family, friendship and the memories created when enjoying life with those who matter most. The blend traces its roots to a cigar originally commissioned for a private project.",
+      "source": "StogiePress",
+      "source_title": "Cigar News: Lure Cigars Announces the Codfather",
+      "source_en": "StogiePress",
+      "source_title_en": "Cigar News: Lure Cigars Announces the Codfather",
+      "url": "https://stogiepress.com/cigar-news-lure-cigars-announces-the-codfather/"
+    },
+    {
+      "date": "2026-10-14",
+      "category": "日本国内",
+      "title_ja": "池田武志、東京で「TIME WORN」個展",
+      "summary_ja": "葉巻のリボンから作品を制作することで知られる日本の現代美術家・池田武志が、東京・伊勢丹新宿店アートギャラリーで個展「TIME WORN」を開催した。",
+      "title_en": "From Cigar Culture to Contemporary Art: Takeshi Ikeda Presents \"TIME WORN\" in Tokyo",
+      "summary_en": "Japanese contemporary artist Takeshi Ikeda, known for creating artworks from cigar ribbons, recently presented his solo exhibition TIME WORN at the Isetan Shinjuku Art Gallery in Tokyo. The show links cigar culture with contemporary art through his distinctive use of cigar bands as a creative material.",
+      "source": "Cigar Journal",
+      "source_title": "From Cigar Culture to Contemporary Art: Takeshi Ikeda Presents “TIME WORN” in Tokyo",
+      "source_en": "Cigar Journal",
+      "source_title_en": "From Cigar Culture to Contemporary Art: Takeshi Ikeda Presents \"TIME WORN\" in Tokyo",
+      "url": "https://www.cigarjournal.com/from-cigar-culture-to-contemporary-art-takeshi-ikeda-presents-time-worn-in-tokyo/"
+    },
     {
       "date": "2026-10-14",
       "category": "新製品",
@@ -2010,84 +2088,6 @@ var NEWS_DATA = {
       "source_en": "Cigar Journal",
       "source_title_en": "Matilde Cigars Opens the Pineapple Cigar Factory",
       "url": "https://www.cigarjournal.com/matilde-cigars-opens-the-pineapple-cigar-factory/"
-    },
-    {
-      "date": "2026-09-16",
-      "category": "新製品",
-      "title_ja": "ホヤ・デ・ニカラグア、限定2種を発表",
-      "summary_ja": "ホヤ・デ・ニカラグア（Joya de Nicaragua）のクリスチャン・ランサスが、インタータバックのブースで限定品2種を発表した。いずれも同社が寝かせてきたタバコを使って作られている。",
-      "title_en": "Joya de Nicaragua Unveils Two Limited Editions at InterTabac",
-      "summary_en": "Christian Lanzas presented two limited editions at the Joya de Nicaragua stand at InterTabac. Both are built on tobacco the Nicaraguan house has been holding back for the releases.",
-      "source": "Cigar Journal",
-      "source_title": "Joya de Nicaragua Unveils Two Limited Editions at InterTabac",
-      "source_en": "Cigar Journal",
-      "source_title_en": "Joya de Nicaragua Unveils Two Limited Editions at InterTabac",
-      "url": "https://www.cigarjournal.com/joya-de-nicaragua-unveils-two-limited-editions-at-intertabac/"
-    },
-    {
-      "date": "2026-09-16",
-      "category": "イベント・アワード",
-      "title_ja": "アルテサノ、2025年葉巻オブザイヤー受賞",
-      "summary_ja": "アルテサノ・デル・タバコ（Artesano del Tobacco）の「エル・プルポ・ランセロ（El Pulpo Lancero）」が、シガー・ジャーナルによる2025年「シガー・オブ・ザ・イヤー」に選ばれた。同社は快挙を祝っている。",
-      "title_en": "Artesano del Tobacco Celebrates Cigar of the Year 2025",
-      "summary_en": "Artesano del Tobacco is celebrating a major achievement after its El Pulpo Lancero was named Cigar of the Year 2025 by Cigar Journal.",
-      "source": "Cigar Journal",
-      "source_title": "Artesano del Tobacco Celebrates Cigar of the Year 2025",
-      "source_en": "Cigar Journal",
-      "source_title_en": "Artesano del Tobacco Celebrates Cigar of the Year 2025",
-      "url": "https://www.cigarjournal.com/artesano-del-tobacco-celebrates-cigar-of-the-year-2025/"
-    },
-    {
-      "date": "2026-09-16",
-      "category": "イベント・アワード",
-      "title_ja": "2026年シガー・トロフィー受賞発表",
-      "summary_ja": "シガー・ジャーナル（Cigar Journal）が「2026 Cigar Trophy Awards」の受賞結果を発表した。同賞は消費者の投票によって授与される数少ないアワードの一つ。",
-      "title_en": "Winners of the 2026 Cigar Trophy Awards Announced",
-      "summary_en": "Cigar Journal has announced the winners of the 2026 Cigar Trophy Awards. Unlike many industry accolades, the Cigar Trophy is one of the few honours conferred directly by consumers rather than expert panels, reflecting the choices of readers and enthusiasts.",
-      "source": "Cigar Journal",
-      "source_title": "Winners of the 2026 Cigar Trophy Awards Announced",
-      "source_en": "Cigar Journal",
-      "source_title_en": "Winners of the 2026 Cigar Trophy Awards Announced",
-      "url": "https://www.cigarjournal.com/winners-of-the-2026-cigar-trophy-awards-announced/"
-    },
-    {
-      "date": "2026-09-16",
-      "category": "新製品",
-      "title_ja": "ナブ、新ライン「NUB México」を発表",
-      "summary_ja": "ナブ・シガーズ（NUB Cigars）が、メソアメリカの古代文化に着想を得た新ライン「NUB México」を発表した。メキシコの伝統に敬意を表した銘柄で、同社の次章となる。",
-      "title_en": "NUB Cigars Celebrates Mexican Heritage With NUB México Launch",
-      "summary_en": "NUB Cigars has introduced NUB México, a new line inspired by the ancient cultures of Mesoamerica. Paying homage to one of the region's most powerful, versatile and sacred plants, the release marks the next chapter in the brand's ongoing mission, drawing on Mexican heritage and traditions.",
-      "source": "StogiePress",
-      "source_title": "Cigar News: NUB Cigars Celebrates Mexican Heritage With NUB México Launch",
-      "source_en": "StogiePress",
-      "source_title_en": "Cigar News: NUB Cigars Celebrates Mexican Heritage With NUB México Launch",
-      "url": "https://stogiepress.com/cigar-news-nub-cigars-celebrates-mexican-heritage-with-nub-mexico-launch/"
-    },
-    {
-      "date": "2026-09-16",
-      "category": "新製品",
-      "title_ja": "オリバ「干支ヤギ」国際市場向けに発売",
-      "summary_ja": "オリバ（Oliva）が干支シリーズ「Year of the Goat」を国際市場向けに発売する。6×60のダブルトロで、カメルーン産ラッパーにニカラグア産バインダー・フィラーを使用。生産数は2万本で、米国向けの割り当てはない。",
-      "title_en": "Oliva Year of the Goat Coming to International Markets",
-      "summary_en": "Oliva is releasing its Year of the Goat to international markets. The 6 x 60 double toro uses a Cameroon wrapper over a Nicaraguan binder and filler. A total of 20,000 cigars are being produced, though none of them are slated to reach the United States, with the line reserved for markets outside America.",
-      "source": "halfwheel",
-      "source_title": "Oliva Year of the Goat Coming to International Markets",
-      "source_en": "halfwheel",
-      "source_title_en": "Oliva Year of the Goat Coming to International Markets",
-      "url": "https://halfwheel.com/oliva-year-of-the-goat-coming-to-international-markets/479698/"
-    },
-    {
-      "date": "2026-09-16",
-      "category": "新製品",
-      "title_ja": "ブラックワークス「カルチャー・ヴァルチャー」発売",
-      "summary_ja": "ブラックワークス・スタジオ（Black Works Studio／BLK WKS）が限定品「Culture Vulture」を発表した。ニカラグア・エステリのFabrica Oveja Negraで製造され、来週から一部小売店に出荷を開始する。コネチカットとキャンデラのストリップでグリーンからイエローへのオンブレ調のグラデーションを施している。",
-      "title_en": "Black Works Studio (BLK WKS) Announces Release of Culture Vulture",
-      "summary_en": "Black Works Studio (BLK WKS) has announced the Culture Vulture, a new limited edition handcrafted at Fabrica Oveja Negra in Estelí, Nicaragua. Shipping to select retailers begins next week. Connecticut and candela strips give the cigars an Ombre-style fade that moves from green to yellow and back. Creator James Brown calls it a whole new level for the brand.",
-      "source": "StogiePress",
-      "source_title": "Cigar News: Black Works Studio (BLK WKS) Announces release of CULTURE VULTURE",
-      "source_en": "StogiePress",
-      "source_title_en": "Cigar News: Black Works Studio (BLK WKS) Announces release of CULTURE VULTURE",
-      "url": "https://stogiepress.com/cigar-news-black-works-studio-blk-wks-announces-release-of-culture-vulture/"
     }
   ]
 };
