@@ -7,8 +7,47 @@
    手で足すこともできますが、items の並び・キーは崩さないでください。
    ============================================================ */
 var NEWS_DATA = {
-  "updated": "2026-10-15",
+  "updated": "2026-10-16",
   "items": [
+    {
+      "date": "2026-10-16",
+      "category": "業界・企業",
+      "title_ja": "カサ・モリナ、ニューオーリンズに新旗艦店、2027年に工場計画",
+      "summary_ja": "カサ・モリナ（Casa Molina）が金曜にニューオーリンズで新店舗を開業する。同店は来年、同社がルイジアナ州に構える2つの葉巻工場のうちの一つも併設する予定。",
+      "title_en": "Casa Molina Opens New Flagship New Orleans Location, Plans Cigar Factories for 2027",
+      "summary_en": "Casa Molina will open a new store in New Orleans on Friday. By next year, the location will also become home to one of the company's two Louisiana-based cigar factories, part of its planned 2027 expansion into domestic cigar production.",
+      "source": "halfwheel",
+      "source_title": "Casa Molina Opens New Flagship New Orleans Location, Plans Cigar Factories for 2027",
+      "source_en": "halfwheel",
+      "source_title_en": "Casa Molina Opens New Flagship New Orleans Location, Plans Cigar Factories for 2027",
+      "url": "https://halfwheel.com/casa-molina-opens-new-flagship-new-orleans-location-plans-cigar-factories-for-2027/481828/"
+    },
+    {
+      "date": "2026-10-16",
+      "category": "新製品",
+      "title_ja": "フーテン・ヤング、クレブラ「ゴシック・サーペント」を追加",
+      "summary_ja": "フーテン・ヤング（Hooten Young）がクレブラ（culebra、スペイン語で「蛇」の意）の新製品「ゴシック・サーペント（Gothic Serpent）」を追加した。同社と関わりの深い映画『ブラックホーク・ダウン』の発端となった軍事作戦名にちなんで命名された。",
+      "title_en": "Hooten Young Adds Gothic Serpent Culebra",
+      "summary_en": "Hooten Young has added a new culebra called Gothic Serpent. Culebra is the Spanish word for \"snake\". The release is named after the military operation that led to the events portrayed in \"Black Hawk Down\", which has direct ties to the Hooten Young brand.",
+      "source": "halfwheel",
+      "source_title": "Hooten Young Adds Gothic Serpent Culebra",
+      "source_en": "halfwheel",
+      "source_title_en": "Hooten Young Adds Gothic Serpent Culebra",
+      "url": "https://halfwheel.com/hooten-young-adds-gothic-serpent-culebra/481816/"
+    },
+    {
+      "date": "2026-10-15",
+      "category": "日本国内",
+      "title_ja": "新宿BARで初心者向け「葉巻の会」10月25日開催",
+      "summary_ja": "新宿のBAR LAST WORDで、初心者向けの「葉巻の会」が2026年10月25日（日）に開催される。葉巻の吸い方から学べ、葉巻とお酒のペアリングを楽しめる内容。",
+      "title_en": "Beginner Cigar Gathering at Shinjuku's BAR LAST WORD on 25 October",
+      "summary_en": "A beginner-friendly cigar gathering will be held at BAR LAST WORD in Shinjuku on Sunday, 25 October 2026. Aimed at those curious about cigars but unsure how to enjoy them, the event teaches smoking basics and offers a cigar-and-drink pairing experience.",
+      "source": "PR TIMES",
+      "source_title": "「葉巻に興味はあるけれど、楽しみ方がわからない」“初めての一本”を新宿 BAR LAST WORDで。吸い方から学べる「葉巻の会」 葉巻 × お酒 のペアリングを2026年10月25日(日)に開催 - PR TIMES",
+      "source_en": "PR TIMES",
+      "source_title_en": "Beginner Cigar Gathering Teaching How to Smoke, with Cigar x Drink Pairing, Held at Shinjuku BAR LAST WORD on 25 October 2026",
+      "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTFBVZTF2bllWU2ViemhMZHFMN1RRWnNNRm80b2NBZFpxUnY2cFA0QnBpUHMtRjg4SDJKNTdsMUt2cTdkOHBMSk0zcU11SUE2ZW1CTC1wQlhiVEM2YjBzcTJyY2xIWlRLT0l1NVE?oc=5"
+    },
     {
       "date": "2026-10-15",
       "category": "新製品",
@@ -216,6 +255,45 @@ var NEWS_DATA = {
       "source_en": "halfwheel",
       "source_title_en": "S.T. Dupont's Statue of Liberty Models Ship",
       "url": "https://halfwheel.com/s-t-duponts-statue-of-liberty-models-ship/481580/"
+    },
+    {
+      "date": "2026-10-12",
+      "category": "イベント・アワード",
+      "title_ja": "PCA、12月にソウル訪問、シガー・アカデミー開設へ",
+      "summary_ja": "プレミアム・シガー協会（PCA）が「PCA in Korea 2026」を発表した。2026年12月7〜10日にソウルを公式訪問し、韓国の公式ローンチパートナーであるPierre Ltd.と提携してシガー・アカデミー（TCA）の初のソウル開設を行う。",
+      "title_en": "PCA in Korea 2026: The Cigar Academy Seoul Launch with Pierre Ltd.",
+      "summary_en": "The Premium Cigar Association (PCA) has announced PCA in Korea 2026, an official visit to Seoul from 7-10 December 2026. The trip will culminate in the first Seoul launch of The Cigar Academy (TCA), in partnership with Pierre Ltd., PCA and TCA's official launch partner in Korea.",
+      "source": "Cigar Journal",
+      "source_title": "PCA in Korea 2026: The Cigar Academy Seoul Launch with Pierre Ltd.",
+      "source_en": "Cigar Journal",
+      "source_title_en": "PCA in Korea 2026: The Cigar Academy Seoul Launch with Pierre Ltd.",
+      "url": "https://www.cigarjournal.com/pca-in-korea-2026-the-cigar-academy-seoul-launch-with-pierre-ltd/"
+    },
+    {
+      "date": "2026-10-12",
+      "category": "業界・企業",
+      "title_ja": "バルセロナのカバ・パリ、移転し葉巻品揃えを拡充",
+      "summary_ja": "タバコ専門店カバ・パリ（Cava París）がバルセロナのカジェ・パリに移転し、22平方メートルのウォークイン・ヒュミドールを備えた改装店舗を開業した。オンライン販売サイトHumibestはプレミアム葉巻アクセサリーに注力する。",
+      "title_en": "Cava París Relocates to Calle París in Barcelona and Expands Its Cigar Offering",
+      "summary_en": "The tobacconist Cava París has relocated to Calle París in Barcelona, opening a redesigned store featuring a 22 m² walk-in humidor. Its online platform Humibest focuses on premium cigar accessories, as the shop expands its overall cigar offering.",
+      "source": "Cigar Journal",
+      "source_title": "Cava París Relocates to Calle París in Barcelona and Expands Its Cigar Offering",
+      "source_en": "Cigar Journal",
+      "source_title_en": "Cava París Relocates to Calle París in Barcelona and Expands Its Cigar Offering",
+      "url": "https://www.cigarjournal.com/c/"
+    },
+    {
+      "date": "2026-10-12",
+      "category": "業界・企業",
+      "title_ja": "プレミアム葉巻の評価プラットフォーム「Cigar Worth」始動",
+      "summary_ja": "デビッド・ガロファロ（David Garofalo）が、プレミアム葉巻向けに作られた世界初の評価（バリュエーション）プラットフォーム「Cigar Worth」を10月12日に始動すると発表した。",
+      "title_en": "Cigar Worth Launches October 12th",
+      "summary_en": "David Garofalo has announced the 12 October launch of Cigar Worth, described as the world's first valuation platform created specifically for premium cigars.",
+      "source": "Cigar Journal",
+      "source_title": "Cigar Worth Launches October 12th",
+      "source_en": "Cigar Journal",
+      "source_title_en": "Cigar Worth Launches October 12th",
+      "url": "https://www.cigarjournal.com/cigar-worth-launches-october-12th/"
     },
     {
       "date": "2026-10-12",
@@ -2010,84 +2088,6 @@ var NEWS_DATA = {
       "source_en": "Cigar Journal",
       "source_title_en": "Black Label Presents a New Bishop (Blend)",
       "url": "https://www.cigarjournal.com/black-label-presents-a-new-bishop-blend/"
-    },
-    {
-      "date": "2026-09-17",
-      "category": "新製品",
-      "title_ja": "オリバ、新ナブ・ラインなどを発表",
-      "summary_ja": "オリバ（Oliva）がインタータバックに複数の新製品を持ち込んだ。ヒュミドール・コレクションへの追加を皮切りに、新たなナブ（Nub）ラインなどを発表した。",
-      "title_en": "Oliva Introduces New Nub Line and More",
-      "summary_en": "Oliva came to InterTabac with several new offerings, beginning with an addition to its humidor collection and a new Nub line, among other releases. The announcements formed part of the brand's presence at the Dortmund trade show.",
-      "source": "Cigar Journal",
-      "source_title": "Oliva Introduces New Nub Line and More",
-      "source_en": "Cigar Journal",
-      "source_title_en": "Oliva Introduces New Nub Line and More",
-      "url": "https://www.cigarjournal.com/oliva-introduces-new-nub-line-and-more/"
-    },
-    {
-      "date": "2026-09-17",
-      "category": "新製品",
-      "title_ja": "ストールン・スローン新作、店頭に登場",
-      "summary_ja": "ストールン・スローン（Stolen Throne）が新作「ハイウェイ・ドリフター（Highway Drifter）」を出荷し、店頭に並び始めた。同社初となるシャギーフット仕様。6×52のトロで、エクアドル産ハバノ種のラッパーに、ニカラグア産のバインダーとフィラーを組み合わせている。",
-      "title_en": "Stolen Throne Highway Drifter Showing Up at Stores",
-      "summary_en": "Stolen Throne has begun shipping its new Highway Drifter, which is now appearing at stores. It is the first release from the company to feature a shaggy foot. The 6 x 52 toro uses an Ecuadorian habano-seed wrapper over a binder and filler blend grown in Nicaragua.",
-      "source": "halfwheel",
-      "source_title": "Stolen Throne Highway Drifter Showing Up at Stores",
-      "source_en": "halfwheel",
-      "source_title_en": "Stolen Throne Highway Drifter Showing Up at Stores",
-      "url": "https://halfwheel.com/stolen-throne-highway-drifter-showing-up-at-stores/479775/"
-    },
-    {
-      "date": "2026-09-17",
-      "category": "新製品",
-      "title_ja": "J.C.ニューマン、インタータバック新製品を披露",
-      "summary_ja": "J.C.ニューマン（J.C. Newman）が、インタータバック2026で複数の新製品やアップデートを発表した。「マキシマス（Maximus）」のデザイン刷新、「ブリックハウス（Brick House）」の新ヴィトラ、香り付きの新銘柄「サルゼダス（Sarzedas）」などが含まれる。",
-      "title_en": "J.C. Newman Presents its Lineup for InterTabac 2026",
-      "summary_en": "J.C. Newman presented several additions and updates to its portfolio at this year's InterTabac. The highlights included a refreshed look for Maximus, a new Brick House vitola and the new aromatic Sarzedas cigar.",
-      "source": "Cigar Journal",
-      "source_title": "J.C. Newman Presents its Lineup for InterTabac 2026",
-      "source_en": "Cigar Journal",
-      "source_title_en": "J.C. Newman Presents its Lineup for InterTabac 2026",
-      "url": "https://www.cigarjournal.com/j-c-newman-presents-its-lineup-for-intertabac-2026/"
-    },
-    {
-      "date": "2026-09-16",
-      "category": "新製品",
-      "title_ja": "ラ・ガレラ、創業90周年記念葉巻を発表",
-      "summary_ja": "ラ・ガレラ・シガーズ（La Galera Cigars）とタバカレラ・パルマ（Tabacalera Palma）が、タバコ2026で創業90周年を記念する特別エディションを発表した。",
-      "title_en": "La Galera Celebrates 90 Years with Special Anniversary Cigar",
-      "summary_en": "La Galera Cigars and Tabacalera Palma are marking a major milestone at Tobacco 2026 with the introduction of a special 90th Anniversary edition, celebrating nine decades in the tobacco business.",
-      "source": "Cigar Journal",
-      "source_title": "La Galera Celebrates 90 Years with Special Anniversary Cigar",
-      "source_en": "Cigar Journal",
-      "source_title_en": "La Galera Celebrates 90 Years with Special Anniversary Cigar",
-      "url": "https://www.cigarjournal.com/la-galera-celebrates-90-years-with-special-anniversary-cigar/"
-    },
-    {
-      "date": "2026-09-16",
-      "category": "新製品",
-      "title_ja": "パトロ、25周年記念の限定品を発売",
-      "summary_ja": "パトロ（Patoro）が、2001年のブランド創設を記念した限定品「キュヴェ・ロワイヤル XXV（Cuvée Royale XXV）」を発売した。20本入りで600箱のみの限定生産で、うち米国の小売店へ出荷されるのは300箱に限られる。",
-      "title_en": "Patoro Cuvée Royale XXV",
-      "summary_en": "Patoro has released the Cuvée Royale XXV, a limited edition created to commemorate the founding of the Patoro brand in 2001. Only 600 boxes of 20 were produced, and of those, just 300 boxes were shipped to retailers in the United States.",
-      "source": "halfwheel",
-      "source_title": "Patoro Cuvée Royale XXV",
-      "source_en": "halfwheel",
-      "source_title_en": "Patoro Cuvée Royale XXV",
-      "url": "https://halfwheel.com/patoro-cuvee-royale-xxv/479712/"
-    },
-    {
-      "date": "2026-09-16",
-      "category": "業界・企業",
-      "title_ja": "マチルデ、パイナップル葉巻工場を開設",
-      "summary_ja": "マチルデ・シガー（Matilde Cigars）のエンリケ・セイハスとリカルド・セイハスが、ドルトムントで既存の全ラインを披露した。ブースでの最大のニュースは、新たに開設した「パイナップル・シガー・ファクトリー（Pineapple Cigar Factory）」だった。",
-      "title_en": "Matilde Cigars Opens the Pineapple Cigar Factory",
-      "summary_en": "Enrique and Ricardo Seijas brought Matilde Cigars' full existing range to Dortmund, but the news on the stand was a factory. The company has opened the Pineapple Cigar Factory, which was the main announcement made at the InterTabac booth.",
-      "source": "Cigar Journal",
-      "source_title": "Matilde Cigars Opens the Pineapple Cigar Factory",
-      "source_en": "Cigar Journal",
-      "source_title_en": "Matilde Cigars Opens the Pineapple Cigar Factory",
-      "url": "https://www.cigarjournal.com/matilde-cigars-opens-the-pineapple-cigar-factory/"
     }
   ]
 };
