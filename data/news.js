@@ -7,8 +7,86 @@
    手で足すこともできますが、items の並び・キーは崩さないでください。
    ============================================================ */
 var NEWS_DATA = {
-  "updated": "2026-10-16",
+  "updated": "2026-10-17",
   "items": [
+    {
+      "date": "2026-10-17",
+      "category": "新製品",
+      "title_ja": "コールドウェル新作「ザ・クイーン・イズ・デッド」予告",
+      "summary_ja": "コールドウェル（Caldwell）が新銘柄「ザ・クイーン・イズ・デッド（The Queen is Dead）」を予告した。これは「ロング・リブ・ザ・クイーン」の続編的位置づけで、ロバート・コールドウェル氏は同社の「アナスタシア」や「ロング・リブ・ザ・クイーン」ブレンドに近いと説明している。",
+      "title_en": "Caldwell The Queen is Dead Teased",
+      "summary_en": "Caldwell has teased a new blend called The Queen is Dead, positioned as a logical follow-up to Long Live the Queen. Robert Caldwell has compared the forthcoming cigar to the company's Anastasia and Long Live the Queen blends. No further release details have yet been confirmed.",
+      "source": "halfwheel",
+      "source_title": "Caldwell The Queen is Dead Teased",
+      "source_en": "halfwheel",
+      "source_title_en": "Caldwell The Queen is Dead Teased",
+      "url": "https://halfwheel.com/caldwell-the-queen-is-dead-teased/481858/"
+    },
+    {
+      "date": "2026-10-16",
+      "category": "規制・市場",
+      "title_ja": "ドイツ、2027年に葉巻税を倍増へ 最悪回避",
+      "summary_ja": "ドイツは2027年に葉巻・シガリロの税率を2倍強へ引き上げる。夏に提案された14倍の増税案に比べれば小幅で、同国の葉巻製造業者協会は「最悪の事態は回避された」とした。",
+      "title_en": "Germany Will Double Cigar Taxes in 2027, Avoiding Catastrophic Outcome",
+      "summary_en": "Germany will raise the tax rate on cigars and cigarillos by slightly more than double in 2027. While still an increase, it is modest compared with the 14-fold rise proposed over the summer. The country's cigar manufacturers' association said \"the worst has been averted.\"",
+      "source": "halfwheel",
+      "source_title": "Germany Will Double Cigar Taxes in 2027, Avoiding Catastrophic Outcome",
+      "source_en": "halfwheel",
+      "source_title_en": "Germany Will Double Cigar Taxes in 2027, Avoiding Catastrophic Outcome",
+      "url": "https://halfwheel.com/germany-will-double-cigar-taxes-in-2027-avoiding-catastrophic-outcome/481823/"
+    },
+    {
+      "date": "2026-10-16",
+      "category": "新製品",
+      "title_ja": "シュスター、2004年産カメルーン葉の限定XO",
+      "summary_ja": "シガレンファブリーク・アウグスト・シュスター（Cigarrenfabrik August Schuster）が限定シガリロ「SCHUSTER XO – 2004 Cameroon Wrapper」を発表した。2004年収穫で20年以上熟成させたカメルーン・ラッパー葉を使用する。",
+      "title_en": "SCHUSTER XO: Limited Edition with 2004 Cameroon Wrapper",
+      "summary_en": "Cigarrenfabrik August Schuster has introduced the SCHUSTER XO – 2004 Cameroon Wrapper, a limited-edition cigarillo line. It features Cameroon wrapper tobacco harvested in 2004 and aged for more than two decades.",
+      "source": "Cigar Journal",
+      "source_title": "SCHUSTER XO: Limited Edition with 2004 Cameroon Wrapper",
+      "source_en": "Cigar Journal",
+      "source_title_en": "SCHUSTER XO: Limited Edition with 2004 Cameroon Wrapper",
+      "url": "https://www.cigarjournal.com/schuster-xo-limited-edition-with-2004-cameroon-wrapper/"
+    },
+    {
+      "date": "2026-10-16",
+      "category": "業界・企業",
+      "title_ja": "パウル・ブッゲ、ダニエル・ヘルトケ氏が継承",
+      "summary_ja": "ダニエル・ヘルトケ氏がパウル・ブッゲ（Paul Bugge GmbH）を引き継いだ。ノルベルト・ヘルトケ氏はブランドアンバサダーとして残る。今後は自社ブランドの拡大、専門小売の強化、国際的なブランド展開に注力する。",
+      "title_en": "Daniel Höldke Takes Over Paul Bugge GmbH",
+      "summary_en": "Daniel Höldke has taken over Paul Bugge GmbH, while Norbert Höldke will remain active as a brand ambassador. The next phase of development will focus on expanding the company's own brands, strengthening the specialty retail sector, and advancing international brand development.",
+      "source": "Cigar Journal",
+      "source_title": "Daniel Höldke Takes Over Paul Bugge GmbH",
+      "source_en": "Cigar Journal",
+      "source_title_en": "Daniel Höldke Takes Over Paul Bugge GmbH",
+      "url": "https://www.cigarjournal.com/daniel-holdke-takes-over-paul-bugge-gmbh/"
+    },
+    {
+      "date": "2026-10-16",
+      "category": "新製品",
+      "title_ja": "ファブリカ5、新ライン「2シスターズ」始動",
+      "summary_ja": "ファブリカ5（Fabrica 5）が新マルカ「2シスターズ（2 Sisters）」を立ち上げた。第1弾となるのが「ソレッラ・ディ・ノッテ：シスター・オブ・ザ・ナイト（Sorella di Notte: Sister of the Night）」である。",
+      "title_en": "Fabrica 5 Launches 2 Sisters Line with Sorella di Notte: Sister of the Night",
+      "summary_en": "Fabrica 5 has launched a new marca called 2 Sisters. Sister of the Night (Sorella di Notte) is the first release in the new line.",
+      "source": "Cigar Journal",
+      "source_title": "Fabrica 5 Launches 2 Sisters Line with Sorella di Notte: Sister of the Night",
+      "source_en": "Cigar Journal",
+      "source_title_en": "Fabrica 5 Launches 2 Sisters Line with Sorella di Notte: Sister of the Night",
+      "url": "https://www.cigarjournal.com/fabrica-5-launches-2-sisters-line-with-sorella-di-notte-sister-of-the-night/"
+    },
+    {
+      "date": "2026-10-16",
+      "category": "新製品",
+      "title_ja": "コイーバ「タリスマン」新ビトラ登場",
+      "summary_ja": "コイーバ（Cohiba）が、リネア・クラシカ（Linea Clásica）に加わる最新ビトラ「タリスマン（Talisman）」の新たな特徴を公開した。",
+      "title_en": "Cohiba Talisman has its Day View Presenting New Features",
+      "summary_en": "Cohiba has presented new features of the Talisman, the newest vitola within the brand's Linea Clásica line.",
+      "source": "Cigar Journal",
+      "source_title": "Cohiba Talisman has its Day View Presenting New Features",
+      "source_en": "Cigar Journal",
+      "source_title_en": "Cohiba Talisman has its Day View Presenting New Features",
+      "url": "https://www.cigarjournal.com/cohiba-talisman-has-its-day-view-presenting-new-features/"
+    },
     {
       "date": "2026-10-16",
       "category": "業界・企業",
@@ -2010,84 +2088,6 @@ var NEWS_DATA = {
       "source_en": "Cigar Journal",
       "source_title_en": "Two New Cigars from Stauffenberg",
       "url": "https://www.cigarjournal.com/two-new-cigars-from-stauffenberg/"
-    },
-    {
-      "date": "2026-09-18",
-      "category": "新製品",
-      "title_ja": "アガノルサ、欧州向け「スプリーム・リーフ・ワールドワイド」",
-      "summary_ja": "ニカラグアのアガノルサ・リーフ（Aganorsa Leaf）が、インタータバック2026に欧州市場向けの新シガー「アガノルサ・スプリーム・リーフ・ワールドワイド（Supreme Leaf World Wide）」を投入した。",
-      "title_en": "Supreme Leaf, Now World Wide",
-      "summary_en": "Nicaragua's Aganorsa Leaf returned to InterTabac 2026 with a new Supreme Leaf cigar, this time designed specifically for the European market: the Aganorsa Supreme Leaf World Wide.",
-      "source": "Cigar Journal",
-      "source_title": "Supreme Leaf, Now World Wide",
-      "source_en": "Cigar Journal",
-      "source_title_en": "Supreme Leaf, Now World Wide",
-      "url": "https://www.cigarjournal.com/supreme-leaf-now-world-wide/"
-    },
-    {
-      "date": "2026-09-18",
-      "category": "新製品",
-      "title_ja": "ロッキー・パテル、新作「サファイア」を国際展開",
-      "summary_ja": "ロッキー・パテル（Rocky Patel）が、新シガー「サファイア（Sapphire）」を国際市場に投入する。ハーフ・コロナのサイズも展開する。",
-      "title_en": "Sapphire and Half Coronas from Rocky",
-      "summary_en": "Rocky Patel is introducing its new Sapphire cigar to international markets, with the line including a Half Corona vitola.",
-      "source": "Cigar Journal",
-      "source_title": "Sapphire and Half Coronas from Rocky",
-      "source_en": "Cigar Journal",
-      "source_title_en": "Sapphire and Half Coronas from Rocky",
-      "url": "https://www.cigarjournal.com/sapphire-and-half-coronas-from-rocky/"
-    },
-    {
-      "date": "2026-09-17",
-      "category": "新製品",
-      "title_ja": "ジャム、新葉巻3種を欧州・ブラジルへ投入",
-      "summary_ja": "ジャム・シガーズ（Jamm Cigars）が欧州とブラジル市場向けに3つの新製品を追加した。ラインナップは「JP 50 マドゥーロ」、新ブランド「マジェスティ（Majesty）」、そして「ミニ JP 50」。",
-      "title_en": "Jamm Introduces Three New Cigars",
-      "summary_en": "Jamm Cigars is expanding its portfolio with three new releases for the European and Brazilian markets. The line-up comprises the JP 50 Maduro, an entirely new brand called Majesty, and the Mini JP 50. The additions broaden the company's offering across the two markets.",
-      "source": "Cigar Journal",
-      "source_title": "Jamm Introduces Three New Cigars",
-      "source_en": "Cigar Journal",
-      "source_title_en": "Jamm Introduces Three New Cigars",
-      "url": "https://www.cigarjournal.com/jamm-introduces-three-new-cigars/"
-    },
-    {
-      "date": "2026-09-17",
-      "category": "業界・企業",
-      "title_ja": "PCA、アジアで新イベント開き国際展開を強化",
-      "summary_ja": "プレミアム・シガー協会（PCA）がアジアでの新イベント開催を通じて国際活動を拡大する。世界のプレミアム葉巻業界における教育と協力への注力も強めるとしている。",
-      "title_en": "PCA Expands International Outreach with New Asia Event",
-      "summary_en": "The Premium Cigar Association (PCA) is expanding its international activities with a new event in Asia, while strengthening its focus on education and cooperation across the global premium cigar industry. The move signals a broader international push for the trade body.",
-      "source": "Cigar Journal",
-      "source_title": "PCA Expands International Outreach with New Asia Event",
-      "source_en": "Cigar Journal",
-      "source_title_en": "PCA Expands International Outreach with New Asia Event",
-      "url": "https://www.cigarjournal.com/pca-expands-international-outreach-with-new-asia-event/"
-    },
-    {
-      "date": "2026-09-17",
-      "category": "新製品",
-      "title_ja": "ノトーリアス、新ブレンド2種を欧州へ出荷",
-      "summary_ja": "ノトーリアス・シガーズ（Notorious Cigars）がインタータバックで複数の新製品を発表した。中心は7月に発売され欧州へ出荷が始まった2種のブレンド「クレーム・ド・ラ・クレーム」と「アナポロジェティック」。主力ラインには新たな缶入り形態も導入した。",
-      "title_en": "Notorious Cigars Brings New Blends to InterTabac 2026",
-      "summary_en": "Notorious Cigars presented several new products at InterTabac, led by two blends launched in July and now shipping to Europe: Crème de la Crème and Unapologetic. The company also introduced a new tin format for its core lines, expanding its packaging options for the European market.",
-      "source": "Cigar Journal",
-      "source_title": "Notorious Cigars Brings New Blends to InterTabac 2026",
-      "source_en": "Cigar Journal",
-      "source_title_en": "Notorious Cigars Brings New Blends to InterTabac 2026",
-      "url": "https://www.cigarjournal.com/notorious-cigars-brings-new-blends-to-intertabac-2026/"
-    },
-    {
-      "date": "2026-09-17",
-      "category": "新製品",
-      "title_ja": "ブラックレーベル、ビショップス・ブレンド10周年版",
-      "summary_ja": "ブラックレーベル・トレーディング（Black Label Trading Company）とブラックワークス・スタジオ（Black Works Studio）が2026年向けに新製品と復活製品を披露した。目玉は「ビショップス・ブレンド（Bishops Blend）」の10周年記念エディション。",
-      "title_en": "Black Label Presents a New Bishop (Blend)",
-      "summary_en": "Black Label Trading Company and Black Works Studio are showcasing several new and returning cigars for 2026, led by the 10th anniversary edition of Bishops Blend. The releases highlight the companies' line-up at InterTabac 2026.",
-      "source": "Cigar Journal",
-      "source_title": "Black Label Presents a New Bishop (Blend)",
-      "source_en": "Cigar Journal",
-      "source_title_en": "Black Label Presents a New Bishop (Blend)",
-      "url": "https://www.cigarjournal.com/black-label-presents-a-new-bishop-blend/"
     }
   ]
 };
