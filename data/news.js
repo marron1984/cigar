@@ -7,7 +7,7 @@
    手で足すこともできますが、items の並び・キーは崩さないでください。
    ============================================================ */
 var NEWS_DATA = {
-  "updated": "2026-10-17",
+  "updated": "2026-10-18",
   "items": [
     {
       "date": "2026-10-17",
@@ -21,6 +21,32 @@ var NEWS_DATA = {
       "source_en": "halfwheel",
       "source_title_en": "Caldwell The Queen is Dead Teased",
       "url": "https://halfwheel.com/caldwell-the-queen-is-dead-teased/481858/"
+    },
+    {
+      "date": "2026-10-16",
+      "category": "新製品",
+      "title_ja": "ランパート・リミターダ2026を発売",
+      "summary_ja": "タバコス・デ・コスタリカ（Tabacos de Costa Rica）が、ボックスプレスのトロ「ランパート・リミターダ2026（Lampert Limitada 2026）」を発表した。甘みの強い味わいが特徴とされる。",
+      "title_en": "Lampert Limitada 2026 Released",
+      "summary_en": "Tabacos de Costa Rica has released the Lampert Limitada 2026, a box-pressed toro. The cigar is described as quite sweet in flavour.",
+      "source": "halfwheel",
+      "source_title": "Lampert Limitada 2026",
+      "source_en": "halfwheel",
+      "source_title_en": "Lampert Limitada 2026",
+      "url": "https://halfwheel.com/lampert-limitada-2026/481244/"
+    },
+    {
+      "date": "2026-10-16",
+      "category": "日本国内",
+      "title_ja": "新宿のバーで初心者向け葉巻の会",
+      "summary_ja": "新宿のBAR LAST WORDで、初めての一本から楽しめる「葉巻の会」が2026年10月25日（日）に開催される。吸い方から学べる内容で、葉巻とお酒のペアリングを体験できる。",
+      "title_en": "Beginner Cigar Event at Shinjuku Bar",
+      "summary_en": "BAR LAST WORD in Shinjuku will host a cigar gathering for newcomers on Sunday 25 October 2026. The event teaches participants how to smoke their first cigar and offers a cigar-and-drink pairing experience.",
+      "source": "フーズチャネル",
+      "source_title": "「葉巻に興味はあるけれど、楽しみ方がわからない」“初めての一本”を新宿 BAR LAST WORDで。吸い方から学べる「葉巻の会」 葉巻 × お酒 のペアリングを2026年10月25日(日)に開催… - フーズチャネル",
+      "source_en": "Foods Channel",
+      "source_title_en": "Learn to Enjoy Your First Cigar at Shinjuku's BAR LAST WORD: Cigar Gathering with Drink Pairing on 25 October 2026",
+      "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE43UHBoMzlVcHlfYTU3aTltaUliSE5GUFQwcmdsczNlUEVoek1wNThSTFpKUlp3UjhyT1cxQk1tVnUtNng2NHZ2R0dtVWdyZnZYd2hVUURR?oc=5"
     },
     {
       "date": "2026-10-16",
@@ -333,6 +359,32 @@ var NEWS_DATA = {
       "source_en": "halfwheel",
       "source_title_en": "S.T. Dupont's Statue of Liberty Models Ship",
       "url": "https://halfwheel.com/s-t-duponts-statue-of-liberty-models-ship/481580/"
+    },
+    {
+      "date": "2026-10-12",
+      "category": "イベント・アワード",
+      "title_ja": "ニューイングランド・シガー・エキスポ2026開催",
+      "summary_ja": "2026年のニューイングランド・シガー・エキスポが開催され、プレミアムタバコ、コメディ、競技、2万5000ドルのゲームショーなどが集結した週末となった。",
+      "title_en": "The New England Cigar Expo 2026",
+      "summary_en": "At the 2026 New England Cigar Expo, premium tobacco, big personalities, comedy, competition and a $25,000 game show came together for a weekend unlike anything else, organisers said.",
+      "source": "Cigar Journal",
+      "source_title": "The New England Cigar Expo 2026",
+      "source_en": "Cigar Journal",
+      "source_title_en": "The New England Cigar Expo 2026",
+      "url": "https://www.cigarjournal.com/the-new-england-cigar-expo-2026/"
+    },
+    {
+      "date": "2026-10-12",
+      "category": "規制・市場",
+      "title_ja": "駐キューバ北朝鮮外交官が葉巻密売と報道",
+      "summary_ja": "駐キューバの北朝鮮外交官が、毎日外交行嚢20個を使って葉巻を密売していたと報じられた。",
+      "title_en": "North Korean Diplomat in Cuba Reported Smuggling Cigars",
+      "summary_en": "A North Korean diplomat stationed in Cuba is reported to have smuggled cigars daily using 20 diplomatic pouches, according to the report.",
+      "source": "朝鮮日報",
+      "source_title": "「駐キューバ北朝鮮外交官 毎日外交行嚢20個で葉巻密売」 - 朝鮮日報",
+      "source_en": "The Chosun Ilbo",
+      "source_title_en": "North Korean Diplomat in Cuba Smuggled Cigars Daily via 20 Diplomatic Pouches",
+      "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxPNDNLbFJ2d2V6RFpVR2t2QjZiTlZKcDJzb1hveUJ1ZEdJMXB3Mm5PNkJfci03QUpPdGpSOHFhY1lTNUpWeXdFZ1Y0aWd6Nl9jQjloY1lkU19XRVpob0xZekJ3MENPTG1SZ0sxUUxiNEtqWEF3WV9sQzhGR185SU9oNzZVNNIBfEFVX3lxTE5DVWdlUGVYcDdHUnhvcGJ1ZU9WVXVTY0l5N243a24wRnozX1hQQXotbUxUaHNoSFd4Nlpmd3o4Q3F4OWE3UVJEMExZSXpWQklfNkxMOFFfX0JXZkltS04zR3JRWDRBZVlUb2QxdXA4ejRCeUlfVmhIQW5JaUE?oc=5"
     },
     {
       "date": "2026-10-12",
@@ -2036,58 +2088,6 @@ var NEWS_DATA = {
       "source_en": "halfwheel",
       "source_title_en": "Drew Estate Ships Four-Pack Petacas for Six Liga Privada Cigars",
       "url": "https://halfwheel.com/drew-estate-ships-four-pack-petacas-for-six-liga-privada-cigars/479854/"
-    },
-    {
-      "date": "2026-09-19",
-      "category": "新製品",
-      "title_ja": "コスタリカに地域限定エル・レイ・デル・ムンド",
-      "summary_ja": "ハバノス製品のコスタリカ・ニカラグア向け販売元クルス・カネラ&トラストG.B.の15周年を記念し、地域限定（Edición Regional）「エル・レイ・デル・ムンド・ティコ（El Rey del Mundo Tico）」が今月コスタリカで発売される。パッケージはHumidifGroupが手がけ、卓上ヒュミドールとしても使える仕様。",
-      "title_en": "Costa Rica Getting New Edición Regional This Month with El Rey del Mundo Tico",
-      "summary_en": "Costa Rica will receive a new Edición Regional this month, El Rey del Mundo Tico, marking the 15th anniversary of Cruz Canela & Trust G.B., the distributor of Habanos S.A. products in Costa Rica and Nicaragua. The company worked with HumidifGroup on the packaging, which is designed to double as a desktop humidor.",
-      "source": "halfwheel",
-      "source_title": "Costa Rica Getting New Edición Regional This Month with El Rey del Mundo Tico",
-      "source_en": "halfwheel",
-      "source_title_en": "Costa Rica Getting New Edición Regional This Month with El Rey del Mundo Tico",
-      "url": "https://halfwheel.com/costa-rica-getting-new-edicion-regional-this-month-with-el-rey-del-mundo-tico/479852/"
-    },
-    {
-      "date": "2026-09-19",
-      "category": "新製品",
-      "title_ja": "ナブ、新ライン「NUB México」を発表",
-      "summary_ja": "ナブ・シガー（NUB Cigars）が新ライン「NUB México」を発表した。メソアメリカで最も神聖とされる植物への敬意を込め、古代文化に着想を得た製品ラインとしている。",
-      "title_en": "NUB Cigars Launches NUB México",
-      "summary_en": "NUB Cigars has unveiled a new product line, \"NUB México.\" The brand describes it as a tribute to one of Mesoamerica's most sacred plants, with the line inspired by the region's ancient culture.",
-      "source": "Cigar Journal",
-      "source_title": "NUB Cigars Launches NUB México",
-      "source_en": "Cigar Journal",
-      "source_title_en": "NUB Cigars Launches NUB México",
-      "url": "https://www.cigarjournal.com/nub-cigars-launches-nub-mexico/"
-    },
-    {
-      "date": "2026-09-19",
-      "category": "イベント・アワード",
-      "title_ja": "ライセス・クバナス、独市場に1941を投入",
-      "summary_ja": "ライセス・クバナス（Raices Cubanas）が、インタータバック2026（InterTabac 2026）で「1941 ヌエボ・コミエンソ（Nuevo Comienzo）」をドイツ市場に紹介した。新興ブランドの国際展開を継続する動きの一環。",
-      "title_en": "Raices Cubanas Presents 1941 Nuevo Comienzo at InterTabac 2026",
-      "summary_en": "Raices Cubanas used InterTabac 2026 to present its 1941 Nuevo Comienzo to the German market, continuing the young brand's ongoing international expansion at the Dortmund trade show.",
-      "source": "Cigar Journal",
-      "source_title": "Raices Cubanas Presents 1941 Nuevo Comienzo at InterTabac 2026",
-      "source_en": "Cigar Journal",
-      "source_title_en": "Raices Cubanas Presents 1941 Nuevo Comienzo at InterTabac 2026",
-      "url": "https://www.cigarjournal.com/raices-cubanas-presents-1941-nuevo-comienzo-at-intertabac-2026/"
-    },
-    {
-      "date": "2026-09-18",
-      "category": "新製品",
-      "title_ja": "シュタウフェンベルク、新作葉巻2種を発表",
-      "summary_ja": "シュタウフェンベルク・シガーズ（Stauffenberg Cigars）が最新作となる葉巻2種を披露した。",
-      "title_en": "Two New Cigars from Stauffenberg",
-      "summary_en": "Stauffenberg Cigars presented two of its latest releases.",
-      "source": "Cigar Journal",
-      "source_title": "Two New Cigars from Stauffenberg",
-      "source_en": "Cigar Journal",
-      "source_title_en": "Two New Cigars from Stauffenberg",
-      "url": "https://www.cigarjournal.com/two-new-cigars-from-stauffenberg/"
     }
   ]
 };
