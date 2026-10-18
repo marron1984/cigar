@@ -7,8 +7,34 @@
    手で足すこともできますが、items の並び・キーは崩さないでください。
    ============================================================ */
 var NEWS_DATA = {
-  "updated": "2026-10-18",
+  "updated": "2026-10-19",
   "items": [
+    {
+      "date": "2026-10-19",
+      "category": "新製品",
+      "title_ja": "クリークサイド、処女作「クイーン・オブ・ザ・ウェスト」発売",
+      "summary_ja": "オハイオ州シンシナティ近郊に拠点を置くクリークサイド・シガー（Creekside Cigar Co.）が、同社初の製品となる「クイーン・オブ・ザ・ウェスト」を発売した。ラインの愛称は同市の別称に由来し、「ベル・ドーロ（Bel D'Oro）」はラッパーの色を指す。",
+      "title_en": "Queen of the West Bel D'oro",
+      "summary_en": "Queen of the West is the debut release from Creekside Cigar Co., based just outside of Cincinnati, Ohio. The line takes its nickname from one of the city's own nicknames, while Bel D'Oro refers to the colour of the wrapper. It marks the company's first product offering.",
+      "source": "halfwheel",
+      "source_title": "Queen of the West Bel D’oro",
+      "source_en": "halfwheel",
+      "source_title_en": "Queen of the West Bel D'oro",
+      "url": "https://halfwheel.com/queen-of-the-west-bel-doro/481792/"
+    },
+    {
+      "date": "2026-10-18",
+      "category": "新製品",
+      "title_ja": "ラ・ガレラ、創業90周年記念ブレンドを発表",
+      "summary_ja": "今年で創業90周年を迎えるドミニカの工場タバカレラ・パルマ（Tabacalera Palma）が、記念として同社初の全ドミニカ産ブレンド「ラ・ガレラ（La Galera）90周年記念ナナン（Nanán）」を発表した。新しいビトラも採用している。",
+      "title_en": "La Galera 90th Anniversary Nanán",
+      "summary_en": "This year marks the 90th anniversary of Tabacalera Palma. The Dominican factory is celebrating with its first all-Dominican blend, the La Galera 90th Anniversary Nanán, which also introduces an all-new vitola.",
+      "source": "halfwheel",
+      "source_title": "La Galera 90th Anniversary Nanán",
+      "source_en": "halfwheel",
+      "source_title_en": "La Galera 90th Anniversary Nanán",
+      "url": "https://halfwheel.com/la-galera-90th-anniversary-nanan/481766/"
+    },
     {
       "date": "2026-10-17",
       "category": "新製品",
@@ -359,6 +385,19 @@ var NEWS_DATA = {
       "source_en": "halfwheel",
       "source_title_en": "S.T. Dupont's Statue of Liberty Models Ship",
       "url": "https://halfwheel.com/s-t-duponts-statue-of-liberty-models-ship/481580/"
+    },
+    {
+      "date": "2026-10-12",
+      "category": "規制・市場",
+      "title_ja": "駐キューバ北朝鮮外交官、外交行嚢で葉巻密売の疑い",
+      "summary_ja": "朝鮮日報日本語版の報道によると、駐キューバの北朝鮮外交官が毎日20個の外交行嚢を使い、葉巻を密売していたとされる。",
+      "title_en": "North Korean diplomat in Cuba allegedly smuggling cigars via diplomatic pouches",
+      "summary_en": "According to the Japanese edition of the Chosun Ilbo, a North Korean diplomat stationed in Cuba is alleged to have smuggled and sold cigars using 20 diplomatic pouches each day.",
+      "source": "Yahoo!ニュース",
+      "source_title": "「駐キューバ北朝鮮外交官 毎日外交行嚢20個で葉巻密売」（朝鮮日報日本語版） - Yahoo!ニュース",
+      "source_en": "Yahoo! News",
+      "source_title_en": "North Korean diplomat in Cuba 'smuggling cigars daily via 20 diplomatic pouches' (Chosun Ilbo Japanese edition)",
+      "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE1PeFh4SE8tQzhoZlZzQXJnaVFraFZ5ZmcyMWZkbTJFWXUybEFDTW9COHhGZWhoWV9jbkJWbWk3MmV4ZUdMT3NSQm5QclItc1RJYWM0bnplUGdQcmw0ekROY1pmcEFnU2lnTkRFWmpaSnpoU0FCVzNHc3RUNS1qaFU?oc=5"
     },
     {
       "date": "2026-10-12",
@@ -2049,45 +2088,6 @@ var NEWS_DATA = {
       "source_en": "Cigar Journal",
       "source_title_en": "Las Cañas Reaches Europe as Esteban Carreras Expands",
       "url": "https://www.cigarjournal.com/las-canas-reaches-europe-as-esteban-carreras-expands/"
-    },
-    {
-      "date": "2026-09-19",
-      "category": "新製品",
-      "title_ja": "オリバ、限定「イヤー・オブ・ザ・ゴート」発表",
-      "summary_ja": "オリバ（Oliva）が、ドルトムントで開催中のインタータバック2026で、限定版「イヤー・オブ・ザ・ゴート（Year of the Goat）」を発表した。",
-      "title_en": "Oliva Unveils Limited Edition \"Year of the Goat\" at InterTabac 2026",
-      "summary_en": "Oliva unveiled a limited edition, the Year of the Goat, at InterTabac 2026 in Dortmund, Germany.",
-      "source": "Cigar Journal",
-      "source_title": "Oliva Unveils Limited Edition \"Year of the Goat\" at InterTabac 2026",
-      "source_en": "Cigar Journal",
-      "source_title_en": "Oliva Unveils Limited Edition \"Year of the Goat\" at InterTabac 2026",
-      "url": "https://www.cigarjournal.com/oliva-unveils-limited-edition-year-of-the-goat-at-intertabac-2026/"
-    },
-    {
-      "date": "2026-09-19",
-      "category": "イベント・アワード",
-      "title_ja": "ボヴェダが最優秀ヒュミドール受賞、100本用も",
-      "summary_ja": "ボヴェダ（Boveda）の50本用木製ヒュミドールが、シガー・トロフィー2026で最優秀ヒュミドール賞を受賞した。ベニー・パトックは100本用モデルも準備中と確認し、米国では2026年末、欧州では2027年初めに投入される予定という。",
-      "title_en": "Boveda Takes Best Humidor as 100-Count Model Nears",
-      "summary_en": "Boveda's 50-count wooden humidor won the Cigar Trophy 2026 for Best Humidor. Benny Patock displayed it on the Boveda stand the morning after the win and confirmed a 100-count version is next, due in the United States at the end of 2026 and in Europe at the beginning of 2027.",
-      "source": "Cigar Journal",
-      "source_title": "Boveda Takes Best Humidor as 100-Count Model Nears",
-      "source_en": "Cigar Journal",
-      "source_title_en": "Boveda Takes Best Humidor as 100-Count Model Nears",
-      "url": "https://www.cigarjournal.com/boveda-takes-best-humidor-as-100-count-model-nears/"
-    },
-    {
-      "date": "2026-09-19",
-      "category": "新製品",
-      "title_ja": "ドリューエステート、リガ・プリバダ4本パック発売",
-      "summary_ja": "ドリューエステート（Drew Estate）が、リガ・プリバダ（Liga Privada）H99コネチカット・コロホ、No.9、T52の3ラインについて、各2ビトラの4本パック「ペタカス」を出荷した。新パッケージは実店舗パートナーを支援する狙いから、ドリュー・ディプロマット加盟の小売店限定で提供する。",
-      "title_en": "Drew Estate Ships Four-Pack Petacas for Six Liga Privada Cigars",
-      "summary_en": "Drew Estate has shipped four-pack \"petacas\" covering two vitolas each in the Liga Privada H99 Connecticut Corojo, No. 9 and T52 lines. The new packaging is being limited to Drew Diplomat retailers, a move the company says is intended to support its brick-and-mortar partners rather than broadening availability across all outlets.",
-      "source": "halfwheel",
-      "source_title": "Drew Estate Ships Four-Pack Petacas for Six Liga Privada Cigars",
-      "source_en": "halfwheel",
-      "source_title_en": "Drew Estate Ships Four-Pack Petacas for Six Liga Privada Cigars",
-      "url": "https://halfwheel.com/drew-estate-ships-four-pack-petacas-for-six-liga-privada-cigars/479854/"
     }
   ]
 };
