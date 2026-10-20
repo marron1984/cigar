@@ -7,8 +7,86 @@
    手で足すこともできますが、items の並び・キーは崩さないでください。
    ============================================================ */
 var NEWS_DATA = {
-  "updated": "2026-10-19",
+  "updated": "2026-10-20",
   "items": [
+    {
+      "date": "2026-10-20",
+      "category": "新製品",
+      "title_ja": "タトゥアージュ、スキニー・クルーガーとマイケル発売",
+      "summary_ja": "タトゥアージュ（Tatuaje）が「スキニー・クルーガー」と「マイケル」を発売した。両銘柄は2016年4月のスキニー・モンスターズ発売後に登場したもの。あわせて同社の新作「コフィン・アッシュトレイ（Coffin Ashtray）」も店頭に並ぶ。",
+      "title_en": "Tatuaje Releases Skinny Krueger, Michael",
+      "summary_en": "Tatuaje has released the Skinny Krueger and the Michael, both of which followed the April 2016 release of the Skinny Monsters. In addition, the company's new Coffin Ashtray is also heading to retailers. The pair expand Tatuaje's established Monsters-related line of releases.",
+      "source": "halfwheel",
+      "source_title": "Tatuaje Releases Skinny Krueger, Michael",
+      "source_en": "halfwheel",
+      "source_title_en": "Tatuaje Releases Skinny Krueger, Michael",
+      "url": "https://halfwheel.com/tatuaje-releases-skinny-krueger-michael/482042/"
+    },
+    {
+      "date": "2026-10-20",
+      "category": "新製品",
+      "title_ja": "クラウンドヘッズ、ムースキック限定2026を今週出荷",
+      "summary_ja": "クラウンドヘッズ（Crowned Heads）がカナダ限定「ムースキック（Moose Kick）」リミテッド・エディション2026を今週出荷する。第3弾となる本作は4 7/8×56のロブストエクストラで、ピッグテール付き、前年版よりやや太い。今年はコンテストも実施し、当選者に特製5本サンプラーを贈る。",
+      "title_en": "Crowned Heads Shipping Moose Kick Limited Edition 2026 This Week",
+      "summary_en": "Crowned Heads is shipping the Canadian-exclusive Moose Kick Limited Edition 2026 this week. The third release in the series is a 4 7/8 x 56 robusto extra with a pigtail, slightly thicker than last year's version. This year the company is also running a contest, with winners receiving a special five-pack sampler of Moose Kick cigars.",
+      "source": "halfwheel",
+      "source_title": "Crowned Heads Shipping Moose Kick Limited Edition 2026 This Week",
+      "source_en": "halfwheel",
+      "source_title_en": "Crowned Heads Shipping Moose Kick Limited Edition 2026 This Week",
+      "url": "https://halfwheel.com/crowned-heads-shipping-moose-kick-limited-edition-2026-this-week/482010/"
+    },
+    {
+      "date": "2026-10-20",
+      "category": "新製品",
+      "title_ja": "ケサダ、ドン・マノロ79を出荷",
+      "summary_ja": "ケサダ（Quesada）がマヌエル・“マノロ”・ケサダ・ジュニアの79歳の誕生日を祝う限定版「ドン・マノロ79（Don Manolo 79）」を出荷した。同社によれば、このブレンドにはマノロ・ケサダが1990年代後半に取り置いた特定のタバコが使われている。誕生日を記念した限定版の発売は今回で3度目。",
+      "title_en": "Quesada Ships Don Manolo 79",
+      "summary_en": "Quesada has shipped Don Manolo 79, a limited edition celebrating the 79th birthday of Manuel \"Manolo\" Quesada Jr. According to the company, the blend incorporates a specific tobacco that Manolo Quesada set aside in the late 1990s. It marks the third time Quesada has released a limited edition to mark his birthday.",
+      "source": "halfwheel",
+      "source_title": "Quesada Ships Don Manolo 79",
+      "source_en": "halfwheel",
+      "source_title_en": "Quesada Ships Don Manolo 79",
+      "url": "https://halfwheel.com/quesada-ships-don-manolo-79/481982/"
+    },
+    {
+      "date": "2026-10-20",
+      "category": "業界・企業",
+      "title_ja": "タバカレラUSA、新たな役職体制を発表",
+      "summary_ja": "タバカレラUSA（Tabacalera USA）が、ニコラ・マスロウスキー、ダビデ・モロ、ブラッド・ウィンステッドの3氏に新たな役職を付与すると発表した。いずれもタバカレラUSAに関連する肩書きで、従来の経営陣の分担体制からの変更となる。",
+      "title_en": "Tabacalera USA Announces New Executive Roles",
+      "summary_en": "Tabacalera USA has announced new titles for Nicolas Maslowski, Davide Moro and Brad Winstead. Notably, all of their new titles are Tabacalera USA-related, a change from how the company's c-suite responsibilities used to be divided.",
+      "source": "halfwheel",
+      "source_title": "Tabacalera USA Announces New Executive Roles",
+      "source_en": "halfwheel",
+      "source_title_en": "Tabacalera USA Announces New Executive Roles",
+      "url": "https://halfwheel.com/tabacalera-usa-announces-new-executive-roles/481998/"
+    },
+    {
+      "date": "2026-10-20",
+      "category": "新製品",
+      "title_ja": "プラセンシア限定ビトラ、コロナ・シガー社へ",
+      "summary_ja": "プラセンシア（Plasencia）の「アルマ・フエルテ・コロラド・クラロ・トルペード・セミボックスプレス」がコロナ・シガー社（Corona Cigar Co.）向けに登場する。同店向けプラセンシア専用ビトラとしては2本目で、更新後の新パッケージで販売される初のアルマ・フエルテ・コロラド・クラロとなる可能性がある。",
+      "title_en": "Plasencia Alma Fuerte Colorado Claro Torpedo Semi-Boxpress Heads to Corona Cigar Co.",
+      "summary_en": "The Plasencia Alma Fuerte Colorado Claro Torpedo Semi-Boxpress is heading to Corona Cigar Co. It is the second exclusive Plasencia vitola for the retailer, and it may also be the first Alma Fuerte Colorado Claro to go on sale with the brand's updated packaging.",
+      "source": "halfwheel",
+      "source_title": "Plasencia Alma Fuerte Colorado Claro Torpedo Semi-Boxpress Heads to Corona Cigar Co.",
+      "source_en": "halfwheel",
+      "source_title_en": "Plasencia Alma Fuerte Colorado Claro Torpedo Semi-Boxpress Heads to Corona Cigar Co.",
+      "url": "https://halfwheel.com/plasencia-alma-fuerte-colorado-claro-torpedo-semi-boxpress-heads-to-corona-cigar-co/481981/"
+    },
+    {
+      "date": "2026-10-19",
+      "category": "日本国内",
+      "title_ja": "JP THE WAVY、JAPAN CIGAR AWARD 2026受賞",
+      "summary_ja": "日本葉巻協会主催の「JAPAN CIGAR AWARD 2026」で、ラッパーのJP THE WAVYが受賞した。音楽・アート・ファッションの垣根を越えた活躍と、シガーカルチャーへの親しみが高く評価された。",
+      "title_en": "JP THE WAVY Wins JAPAN CIGAR AWARD 2026",
+      "summary_en": "Rapper JP THE WAVY, who represents Japan on the world stage, has received an award at the JAPAN CIGAR AWARD 2026, organised by the Japan Cigar Association. He was recognised for his activity transcending the boundaries of music, art and fashion, as well as for his affinity with cigar culture.",
+      "source": "アットプレス",
+      "source_title": "日本を代表し、世界を舞台に活躍するラッパー・JP THE WAVY、 「JAPAN CIGAR AWARD 2026」受賞 - アットプレス",
+      "source_en": "At Press",
+      "source_title_en": "JP THE WAVY, Japan-Representing Rapper Active on the World Stage, Wins JAPAN CIGAR AWARD 2026",
+      "url": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE91Sk5ZLWlQQUVYUFo5SGNaa0pUbWwzZlB3RlplOGExSmJ4MEE2X1BZUTFnRm95UXlfQ1Y3NWVnaFR4MEh5ZmRKRVh5ZkRFZw?oc=5"
+    },
     {
       "date": "2026-10-19",
       "category": "新製品",
@@ -2010,84 +2088,6 @@ var NEWS_DATA = {
       "source_en": "Cigar Journal",
       "source_title_en": "C.L.E. Brings Three New Products to InterTabac 2026",
       "url": "https://www.cigarjournal.com/c-l-e-brings-three-new-products-to-intertabac-2026/"
-    },
-    {
-      "date": "2026-09-20",
-      "category": "新製品",
-      "title_ja": "マイ・ファーザー、ホンジュラス第2工場から「ラ・レアルタ」",
-      "summary_ja": "マイ・ファーザー・シガーズ（My Father Cigars）が、インタータバック2026で新製品「ラ・レアルタ（La Lealtad）」を発表した。同社のホンジュラス第2工場からのリリースとなる。",
-      "title_en": "My Father Presents Second Honduran Factory Release",
-      "summary_en": "My Father Cigars presented La Lealtad at InterTabac 2026, the second release from the company's Honduran factory.",
-      "source": "Cigar Journal",
-      "source_title": "My Father Presents Their Second Honduran Factory Release",
-      "source_en": "Cigar Journal",
-      "source_title_en": "My Father Presents Their Second Honduran Factory Release",
-      "url": "https://www.cigarjournal.com/my-father-presents-their-second-honduran-factory-release/"
-    },
-    {
-      "date": "2026-09-20",
-      "category": "業界・企業",
-      "title_ja": "エル・アルティスタ、中国煙草と国際協業合意",
-      "summary_ja": "タバカレラ・エル・アルティスタ（Tabacalera El Artista）が、ドイツ・ドルトムントで開催中のインタータバック2026で、中国煙草（China Tobacco）と国際的な葉巻協業合意を締結したと発表した。葉巻の開発・製造・国際流通を軸とした提携で、両社は新ブランド「泰山（Taishan）」も披露した。",
-      "title_en": "El Artista Signs International Cigar Cooperation Agreement with China Tobacco",
-      "summary_en": "Tabacalera El Artista has announced an international cigar cooperation agreement with China Tobacco, one of the biggest stories to emerge from InterTabac 2026 in Dortmund, Germany. The partnership focuses on cigar development, manufacturing and international distribution. The agreement was formally signed during the trade show, where the partners also unveiled a new brand, Taishan. The deal marks a significant step in linking established cigar-making expertise with China Tobacco's reach and resources.",
-      "source": "StogiePress",
-      "source_title": "Cigar News: Tabacalera El Artista Signs International Cigar Cooperation Agreement with China Tobacco",
-      "source_en": "StogiePress",
-      "source_title_en": "Cigar News: Tabacalera El Artista Signs International Cigar Cooperation Agreement with China Tobacco",
-      "url": "https://stogiepress.com/cigar-news-tabacalera-el-artista-signs-international-cigar-cooperation-agreement-with-china-tobacco/"
-    },
-    {
-      "date": "2026-09-20",
-      "category": "新製品",
-      "title_ja": "モンテクリスト・エスパダに新作コンキスタドール",
-      "summary_ja": "モンテクリスト・エスパダ（Montecristo Espada）シリーズの5番目のラインとして「コンキスタドール・リカッソ（Conquistador Ricasso）」が登場した。既存の4ラインと同様、ニカラグアのプラセンシア（Plasencia Cigars）が製造し、オールニカラグア産のブレンドを採用する。",
-      "title_en": "Montecristo Espada Conquistador Ricasso",
-      "summary_en": "The Conquistador is the fifth line in the Montecristo Espada collection. Like the other four lines, it is made in Nicaragua by Plasencia Cigars and features an all-Nicaraguan blend. The Ricasso vitola marks the latest addition to the growing Espada range.",
-      "source": "halfwheel",
-      "source_title": "Montecristo Espada Conquistador Ricasso",
-      "source_en": "halfwheel",
-      "source_title_en": "Montecristo Espada Conquistador Ricasso",
-      "url": "https://halfwheel.com/montecristo-espada-conquistador-ricasso/479395/"
-    },
-    {
-      "date": "2026-09-19",
-      "category": "新製品",
-      "title_ja": "マンティス、マリン灰皿とカーボン製ケース発表",
-      "summary_ja": "マンティス（Mantis）創業者兼CEOのデイビッド・ケラティが、インタータバックで新製品3種を発表した。トラベルヒュミドール、「フレックス・マリン（Flex Marine）」灰皿コレクション、鍛造カーボンファイバー製シガーケースの3点。",
-      "title_en": "Mantis Adds Marine Ashtrays and Carbon Fibre Cases",
-      "summary_en": "David Kelaty, founder and chief executive of Mantis, used InterTabac to introduce three products: a travel humidor, the Flex Marine ashtray collection and a forged carbon fibre cigar case.",
-      "source": "Cigar Journal",
-      "source_title": "Mantis Adds Marine Ashtrays and Carbon Fibre Cases",
-      "source_en": "Cigar Journal",
-      "source_title_en": "Mantis Adds Marine Ashtrays and Carbon Fibre Cases",
-      "url": "https://www.cigarjournal.com/mantis-adds-marine-ashtrays-and-carbon-fibre-cases/"
-    },
-    {
-      "date": "2026-09-19",
-      "category": "新製品",
-      "title_ja": "カスダグリ、3か国産の新作3種を披露",
-      "summary_ja": "ジェレミー・カスダグリ（Jeremy Casdagli）が、コスタリカからナバレテまで3か国で製造した新作3種をドルトムントのインタータバックに持ち込んだ。",
-      "title_en": "Three Casdagli Releases, From Costa Rica to Navarrete",
-      "summary_en": "Jeremy Casdagli brought three new releases to Dortmund, each made in a different country, spanning Costa Rica to Navarrete. The trio was presented at InterTabac 2026.",
-      "source": "Cigar Journal",
-      "source_title": "Three Casdagli Releases, From Costa Rica to Navarrete",
-      "source_en": "Cigar Journal",
-      "source_title_en": "Three Casdagli Releases, From Costa Rica to Navarrete",
-      "url": "https://www.cigarjournal.com/three-casdagli-releases-from-costa-rica-to-navarrete/"
-    },
-    {
-      "date": "2026-09-19",
-      "category": "業界・企業",
-      "title_ja": "エステバン・カレラス、チェコに倉庫開設",
-      "summary_ja": "クレイグ・カニンガムとクリストファー・メイが、欧州発売を前に「ラス・カニャス（Las Cañas）」をドルトムントで披露した。あわせてエステバン・カレラス（Esteban Carreras）が欧州市場向けにチェコ共和国で倉庫を開設することを確認した。",
-      "title_en": "Las Cañas Reaches Europe as Esteban Carreras Expands",
-      "summary_en": "Craig Cunningham and Christopher Mey brought Las Cañas to Dortmund ahead of its European release. They also confirmed that Esteban Carreras is opening a warehouse in the Czech Republic to serve the region, marking a step in the company's European expansion.",
-      "source": "Cigar Journal",
-      "source_title": "Las Cañas Reaches Europe as Esteban Carreras Expands",
-      "source_en": "Cigar Journal",
-      "source_title_en": "Las Cañas Reaches Europe as Esteban Carreras Expands",
-      "url": "https://www.cigarjournal.com/las-canas-reaches-europe-as-esteban-carreras-expands/"
     }
   ]
 };
