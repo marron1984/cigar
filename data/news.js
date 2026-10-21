@@ -7,8 +7,73 @@
    手で足すこともできますが、items の並び・キーは崩さないでください。
    ============================================================ */
 var NEWS_DATA = {
-  "updated": "2026-10-20",
+  "updated": "2026-10-21",
   "items": [
+    {
+      "date": "2026-10-21",
+      "category": "業界・企業",
+      "title_ja": "アダム・レヴィーン、葉巻ブランドを売却へ",
+      "summary_ja": "アダム・レヴィーンが、自身の葉巻ブランド「リーグ・オブ・ファット・バスタード（League of Fat Bastards）」を売却に出した。今年前半の資金調達が不調に終わり、先月には従業員の離脱もあったという。2024年に立ち上げた同ブランドは、利益の40％を男性のメンタルヘルス支援に充てる会社をうたっていた。",
+      "title_en": "Adam Levine Puts League of Fat Bastards Up for Sale",
+      "summary_en": "Adam Levine has put his cigar brand League of Fat Bastards up for sale, following a failed fundraising round earlier this year and the departure of employees last month. Launched in 2024, the brand had marketed itself as a company pledging to give 40 per cent of its profits to support men's mental health causes.",
+      "source": "halfwheel",
+      "source_title": "Adam Levine Puts League of Fat Bastards Up for Sale",
+      "source_en": "halfwheel",
+      "source_title_en": "Adam Levine Puts League of Fat Bastards Up for Sale",
+      "url": "https://halfwheel.com/adam-levine-puts-league-of-fat-bastards-up-for-sale/482005/"
+    },
+    {
+      "date": "2026-10-21",
+      "category": "新製品",
+      "title_ja": "ヴィアヘ、フルムーン13周年記念を発売",
+      "summary_ja": "ヴィアヘ（Viaje）が、フルムーン（Full Moon）の13周年を記念した6×60の4種を発売する。一部はボックスプレス、一部はそうではないラインアップとなる。",
+      "title_en": "Viaje Full Moon 13th Anniversary Heads to Stores",
+      "summary_en": "For 2026, Viaje is marking the 13th anniversary of its Full Moon line with a quartet of 6 x 60 cigars. Some of the vitolas are box-pressed, while others are not. The release is now heading to stores.",
+      "source": "halfwheel",
+      "source_title": "Viaje Full Moon 13th Anniversary Heads to Stores",
+      "source_en": "halfwheel",
+      "source_title_en": "Viaje Full Moon 13th Anniversary Heads to Stores",
+      "url": "https://halfwheel.com/viaje-full-moon-13th-anniversary-heads-to-stores/482108/"
+    },
+    {
+      "date": "2026-10-21",
+      "category": "新製品",
+      "title_ja": "ペルドモ、レガシーに新ビトラ3種を追加",
+      "summary_ja": "ペルドモ（Perdomo）が、レガシー（Legacy）ブランドに新ビトラ3種を追加する。これらはレガシーの全8ビトラとファーザー＆サンのペルフェクトを収めた11本入りサンプラーで提供される。",
+      "title_en": "Perdomo Legacy Getting Three New Vitolas",
+      "summary_en": "Perdomo is adding three new vitolas to its Legacy brand. They will be offered in 11-count samplers that contain all eight of the Legacy vitolas as well as the Father & Son perfecto.",
+      "source": "halfwheel",
+      "source_title": "Perdomo Legacy Getting Three New Vitolas",
+      "source_en": "halfwheel",
+      "source_title_en": "Perdomo Legacy Getting Three New Vitolas",
+      "url": "https://halfwheel.com/perdomo-legacy-getting-three-new-vitolas/482118/"
+    },
+    {
+      "date": "2026-10-21",
+      "category": "新製品",
+      "title_ja": "カスダグリ、新作3銘柄を出荷",
+      "summary_ja": "カスダグリ（Casdagli）が新作を出荷した。ドーターズ・オブ・ザ・ウィンド・ロサード（Daughters of the Wind Rosado）は既存ラインの5ビトラ拡張版。カスタディアン（Custodian）とフランボヤント（Flamboyant）は、ナポレオン時代の将軍を称えるブラザーズ・オブ・ザ・セイバー・シリーズの最新作となる。",
+      "title_en": "Casdagli Ships Brothers of the Sabre Custodian & Flamboyant, Daughters of the Wind Rosado",
+      "summary_en": "Casdagli has shipped three new releases. The Daughters of the Wind Rosado is a five-vitola extension to the company's original Daughters of the Wind line. Custodian and Flamboyant are the latest additions to the Brothers of the Sabre Series, which honours various generals from the Napoleonic era.",
+      "source": "halfwheel",
+      "source_title": "Casdagli Ships Brothers of the Sabre Custodian & Flamboyant, Daughters of the Wind Rosado",
+      "source_en": "halfwheel",
+      "source_title_en": "Casdagli Ships Brothers of the Sabre Custodian & Flamboyant, Daughters of the Wind Rosado",
+      "url": "https://halfwheel.com/casdagli-ships-brothers-of-the-sabre-custodian-flamboyant-daughters-of-the-wind-rosado/482085/"
+    },
+    {
+      "date": "2026-10-21",
+      "category": "業界・企業",
+      "title_ja": "プラセンシア、米国営業VPにカランサ氏",
+      "summary_ja": "プラセンシア・シガーズ（Plasencia Cigars）が、ハビエル・カランサ（Javier Carranza）氏を米国営業担当の新バイスプレジデントに任命した。同氏は2016年に米国ナショナル・セールス・ディレクターとして入社し、10年以上在籍。米国での成長の次の段階でより大きな責任を担う。",
+      "title_en": "Plasencia Cigars Names Javier Carranza New U.S. VP of Sales",
+      "summary_en": "Plasencia Cigars has named Javier Carranza its new U.S. vice-president of sales. Carranza has been with the company for over a decade, joining in 2016 as U.S. national sales director as the Plasencia family launched its own cigar brand. He will now take on greater responsibility in the next phase of the company's growth in the United States.",
+      "source": "halfwheel",
+      "source_title": "Plasencia Cigars Names Javier Carranza New U.S. VP of Sales",
+      "source_en": "halfwheel",
+      "source_title_en": "Plasencia Cigars Names Javier Carranza New U.S. VP of Sales",
+      "url": "https://halfwheel.com/plasencia-cigars-names-javier-carranza-new-us-vp-of-sales/482062/"
+    },
     {
       "date": "2026-10-20",
       "category": "新製品",
@@ -73,6 +138,19 @@ var NEWS_DATA = {
       "source_en": "halfwheel",
       "source_title_en": "Plasencia Alma Fuerte Colorado Claro Torpedo Semi-Boxpress Heads to Corona Cigar Co.",
       "url": "https://halfwheel.com/plasencia-alma-fuerte-colorado-claro-torpedo-semi-boxpress-heads-to-corona-cigar-co/481981/"
+    },
+    {
+      "date": "2026-10-19",
+      "category": "日本国内",
+      "title_ja": "JP THE WAVY、ジャパン・シガー・アワード受賞",
+      "summary_ja": "日本を代表し世界で活躍するラッパー、JP THE WAVYが「JAPAN CIGAR AWARD 2026」を受賞した。音楽・アート・ファッションの垣根を越えた活躍と、シガーカルチャーへの親しみが高く評価された。",
+      "title_en": "JP THE WAVY Wins JAPAN CIGAR AWARD 2026",
+      "summary_en": "JP THE WAVY, a leading Japanese rapper active on the world stage, has won the JAPAN CIGAR AWARD 2026. He was recognised for his activities transcending the boundaries of music, art and fashion, and for his affinity with cigar culture.",
+      "source": "千葉テレビ放送株式会社",
+      "source_title": "日本を代表し、世界を舞台に活躍するラッパー・JP THE WAVY、「JAPAN CIGAR AWARD 2026」受賞 音楽・アート・ファッションの垣根を越えた活躍と、シガーカルチャーへの親しみを高く評価 - 千葉テレビ放送株式会社",
+      "source_en": "Chiba Television Broadcasting",
+      "source_title_en": "Rapper JP THE WAVY Wins Japan Cigar Association's JAPAN CIGAR AWARD 2026",
+      "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE5pNm9ENlhxU1hGWk8zTGVzRWNnRlhFeDI3cGptZmJsUEExSjl1VGFfbW95Nk9GUG1ESm5TblJVZGVOV2lvSk9rNG8xMlhPSzZGY2hTSGRTeXhMcC1STm9qOFE3TmI?oc=5"
     },
     {
       "date": "2026-10-19",
@@ -2010,84 +2088,6 @@ var NEWS_DATA = {
       "source_en": "Cigar Journal",
       "source_title_en": "The Year of the Goat, by AJ Fernández",
       "url": "https://www.cigarjournal.com/the-year-of-the-goat-by-aj-fernandez/"
-    },
-    {
-      "date": "2026-09-21",
-      "category": "新製品",
-      "title_ja": "新ブランド「アレハンドロ・マタ」登場",
-      "summary_ja": "アルファンブラ・ブティック・シガー（Alfambra Boutique Cigars）がインタータバック2026で、プレミアム帯に位置づける新レギュラー生産ブランド「アレハンドロ・マタ（Alejandro Mata）」を発表した。同社創業者の名を冠している。",
-      "title_en": "New Alejandro Mata",
-      "summary_en": "Alfambra Boutique Cigars presented a new regular-production brand at InterTabac 2026, positioned in the premium segment and named after the company's founder, Alejandro Mata.",
-      "source": "Cigar Journal",
-      "source_title": "New Alejandro Mata",
-      "source_en": "Cigar Journal",
-      "source_title_en": "New Alejandro Mata",
-      "url": "https://www.cigarjournal.com/new-alejandro-mata/"
-    },
-    {
-      "date": "2026-09-21",
-      "category": "新製品",
-      "title_ja": "ペルドモが「レガシー 父と息子」披露",
-      "summary_ja": "ペルドモ・シガー（Perdomo Cigars）のアーサー・ケンパーが、インタータバック2026で新作「ペルドモ・レガシー ファーザー＆サン（Perdomo Legacy Father & Son）」を紹介した。",
-      "title_en": "A Perdomo Legacy",
-      "summary_en": "At InterTabac 2026, Arthur Kemper of Perdomo Cigars introduced the Perdomo Legacy Father & Son.",
-      "source": "Cigar Journal",
-      "source_title": "A Perdomo LEGACY",
-      "source_en": "Cigar Journal",
-      "source_title_en": "A Perdomo Legacy",
-      "url": "https://www.cigarjournal.com/a-perdomo-legacy/"
-    },
-    {
-      "date": "2026-09-21",
-      "category": "新製品",
-      "title_ja": "グルカ、セラーリザーブに新製品",
-      "summary_ja": "グルカ（Gurkha）がインタータバックで複数の新製品を発売した。第一弾は「グルカ・セラーリザーブ 15イヤーズ・ニカラグア（Cellar Reserve 15 Years Nicaragua）」。",
-      "title_en": "Gurkha Extends the Cellar Reserve Line",
-      "summary_en": "Gurkha launched several new products at InterTabac, starting with the Gurkha Cellar Reserve 15 Years Nicaragua.",
-      "source": "Cigar Journal",
-      "source_title": "Gurkha Extends the Cellar Reserve Line",
-      "source_en": "Cigar Journal",
-      "source_title_en": "Gurkha Extends the Cellar Reserve Line",
-      "url": "https://www.cigarjournal.com/gurkha-extends-the-cellar-reserve-line/"
-    },
-    {
-      "date": "2026-09-21",
-      "category": "新製品",
-      "title_ja": "ペレス・カリージョ、新定番「アセンド・リッジ」発表",
-      "summary_ja": "ペレス・カリージョ（Perez-Carrillo）が新しいレギュラー生産ライン「アセンド・リッジ（Ascend Ridge）」を発表した。同社は「進化・前進」という発想から着想を得たとしている。ブレンドはエクアドル産ハバノ・ラッパー、ニカラグア・エステリ産のバインダー、ニカラグア産フィラーで構成される。",
-      "title_en": "Perez-Carrillo Unveils New Ascend Ridge Line",
-      "summary_en": "Perez-Carrillo has introduced Ascend Ridge, a new regular production line. The company says the cigars were inspired by the idea of progression. The blend features an Ecuadorian habano wrapper, a binder grown in Estelí, Nicaragua, and Nicaraguan filler tobaccos.",
-      "source": "halfwheel",
-      "source_title": "Perez-Carrillo Ascend Ridge",
-      "source_en": "halfwheel",
-      "source_title_en": "Perez-Carrillo Ascend Ridge",
-      "url": "https://halfwheel.com/perez-carrillo-ascend-ridge/479905/"
-    },
-    {
-      "date": "2026-09-21",
-      "category": "業界・企業",
-      "title_ja": "エル・アルティスタ、中国煙草と国際提携で新葉巻",
-      "summary_ja": "タバカレラ・エル・アルティスタ（Tabacalera el Artista）が中国煙草（China Tobacco）と国際シガー協力協定を締結した。ドミニカのタバコと葉巻製造ノウハウに、中国の生産力と市場アクセスを組み合わせ、新プロジェクト「泰山（Taishan）・アルティスタ」を展開する。1本はドミニカ、もう1本は中国・山東省の工場で製造され、年内にアジアで先行発売後、他市場へ広げる。",
-      "title_en": "El Artista Signs Cigar Cooperation Agreement with China Tobacco",
-      "summary_en": "Tabacalera el Artista has signed an international cigar cooperation agreement with China Tobacco. The partnership combines Dominican tobacco and cigar-making expertise with Chinese production and market reach for the new Taishan · Artista project. One vitola will be made by Artista in the Dominican Republic, the other at a factory in Shandong, China. The cigars debut in Asia later this year before reaching other markets.",
-      "source": "Cigar Journal",
-      "source_title": "Tabacalera el Artista Signs International Cigar Cooperation Agreement with China Tobacco",
-      "source_en": "Cigar Journal",
-      "source_title_en": "Tabacalera el Artista Signs International Cigar Cooperation Agreement with China Tobacco",
-      "url": "https://www.cigarjournal.com/tabacalera-el-artista-signs-international-cigar-cooperation-agreement-with-china-tobacco/"
-    },
-    {
-      "date": "2026-09-20",
-      "category": "新製品",
-      "title_ja": "C.L.E.、インタータバック2026で新製品3種",
-      "summary_ja": "C.L.E.シガー・カンパニー（C.L.E. Cigar Company）が、ドイツ・ドルトムントで開催されたインタータバック2026（InterTabac 2026）で新製品3種を披露した。",
-      "title_en": "C.L.E. Brings Three New Products to InterTabac 2026",
-      "summary_en": "C.L.E. Cigar Company presented three new products at InterTabac 2026 in Dortmund, Germany.",
-      "source": "Cigar Journal",
-      "source_title": "C.L.E. Brings Three New Products to InterTabac 2026",
-      "source_en": "Cigar Journal",
-      "source_title_en": "C.L.E. Brings Three New Products to InterTabac 2026",
-      "url": "https://www.cigarjournal.com/c-l-e-brings-three-new-products-to-intertabac-2026/"
     }
   ]
 };
