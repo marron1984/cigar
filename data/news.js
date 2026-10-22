@@ -7,8 +7,73 @@
    手で足すこともできますが、items の並び・キーは崩さないでください。
    ============================================================ */
 var NEWS_DATA = {
-  "updated": "2026-10-21",
+  "updated": "2026-10-22",
   "items": [
+    {
+      "date": "2026-10-22",
+      "category": "新製品",
+      "title_ja": "ワープド、クラウドホッパー・ブラック追加",
+      "summary_ja": "ワープド（Warped）が「クラウドホッパー（Cloud Hopper）」ラインに2種類目のブレンドとなる「クラウドホッパー・ブラック」を追加した。同ラインは2017年に登場。新ブレンドはメキシカン・サンアンドレス（San Andrés）ラッパーに、ニカラグア産のバインダーとフィラーを組み合わせている。",
+      "title_en": "Warped Adds Cloud Hopper Black",
+      "summary_en": "Warped has added Cloud Hopper Black, the second blend in its Cloud Hopper line, which first debuted in 2017. The new release features a Mexican San Andrés wrapper over a Nicaraguan binder and filler.",
+      "source": "halfwheel",
+      "source_title": "Warped Adds Cloud Hopper Black",
+      "source_en": "halfwheel",
+      "source_title_en": "Warped Adds Cloud Hopper Black",
+      "url": "https://halfwheel.com/warped-adds-cloud-hopper-black/482229/"
+    },
+    {
+      "date": "2026-10-22",
+      "category": "新製品",
+      "title_ja": "エスピノーサ、ワーヘッドTAA限定を来月発売",
+      "summary_ja": "エスピノーサ（Espinosa）が「ラ・ボンバ・ワーヘッド（La Bomba Warhead）」のTAA限定版を来月発売する。6×55のボックスプレス・トロで、メキシカン・サンアンドレス・ラッパーにニカラグア産のバインダーとフィラーを使用。同社は「既に成功を収めたワーヘッド・ブレンドに独自の風味を加えた一本」と説明している。",
+      "title_en": "Espinosa La Bomba Warhead TAA Exclusive Coming Next Month",
+      "summary_en": "Espinosa will release a TAA Exclusive version of La Bomba Warhead next month. It is a 6 x 55 box-pressed toro using a Mexican San Andrés wrapper over a Nicaraguan binder and filler. The company says it delivers a unique, flavourful take on the already successful Warhead blend.",
+      "source": "halfwheel",
+      "source_title": "Espinosa La Bomba Warhead TAA Exclusive Coming Next Month",
+      "source_en": "halfwheel",
+      "source_title_en": "Espinosa La Bomba Warhead TAA Exclusive Coming Next Month",
+      "url": "https://halfwheel.com/espinosa-la-bomba-warhead-taa-exclusive-coming-next-month/482238/"
+    },
+    {
+      "date": "2026-10-22",
+      "category": "新製品",
+      "title_ja": "ペレス・カリーリョ、バトルボーンを刷新",
+      "summary_ja": "ペレス・カリーリョ（Perez-Carrillo）が「バトルボーン（Battleborn）」の第2弾として、新ブレンド・新サイズ・新カラースキーム、さらに箱入り本数も変更した「バトルボーン・ヒーローズ（Battleborn Heroes）」を発表した。明日のイベントでお披露目される。",
+      "title_en": "Perez-Carrillo Battleborn Gets New Blend for 2026",
+      "summary_en": "For its sophomore release, Perez-Carrillo's Battleborn receives a new blend, a different size, a new colour scheme and even a different box-count. Battleborn Heroes will debut at an event tomorrow.",
+      "source": "halfwheel",
+      "source_title": "Perez-Carrillo Battleborn Gets New Blend for 2026",
+      "source_en": "halfwheel",
+      "source_title_en": "Perez-Carrillo Battleborn Gets New Blend for 2026",
+      "url": "https://halfwheel.com/perez-carrillo-battleborn-gets-new-blend-for-2026/482184/"
+    },
+    {
+      "date": "2026-10-21",
+      "category": "新製品",
+      "title_ja": "クラウンド・ヘッズ、ベルジャン・ブルー26年版来週出荷",
+      "summary_ja": "クラウンド・ヘッズ（Crowned Heads）の「ベルジャン・ブルー（Belgian Blue）」LE 2026が来週出荷される。3年目となる今回は過去最小のビトラで登場。ブレンドの75％をリゲロが占め、力強い味わいに仕上げたという。",
+      "title_en": "Crowned Heads Belgian Blue LE 2026 Shipping Next Week",
+      "summary_en": "Crowned Heads' Belgian Blue LE 2026 ships next week. Returning for its third year, it comes in its smallest vitola to date. The company says the blend packs a punch, as it is 75 per cent ligero.",
+      "source": "halfwheel",
+      "source_title": "Crowned Heads Belgian Blue LE 2026 Shipping Next Week",
+      "source_en": "halfwheel",
+      "source_title_en": "Crowned Heads Belgian Blue LE 2026 Shipping Next Week",
+      "url": "https://halfwheel.com/crowned-heads-belgian-blue-le-2026-shipping-next-week/482136/"
+    },
+    {
+      "date": "2026-10-21",
+      "category": "新製品",
+      "title_ja": "ブロンクス発「How Ya Doin!」をラスベガスで展開",
+      "summary_ja": "ラ・カサ・グランデ・シガーズ（La Casa Grande Cigars）とジョヴァンニ・パオロ（Giovanni Paolo）が、ブロンクスのリトル・イタリー出身の幼なじみ2人によるコラボ葉巻「How Ya Doin!」を発表した。友情とイタリア系アメリカ文化、ニューヨークの伝統を称える一本で、ブロンクスのアーサー・アベニューからラスベガスへと展開する。",
+      "title_en": "La Casa Grande Cigars and Giovanni Paolo Bring The Bronx to Las Vegas with \"How Ya Doin!\" Cigar",
+      "summary_en": "La Casa Grande Cigars and Giovanni Paolo have unveiled \"How Ya Doin!\", a collaboration cigar by two lifelong friends from the Little Italy of the Bronx. Celebrating friendship, Italian-American culture and authentic New York tradition, the project brings their shared roots from Arthur Avenue in the Bronx to the bright lights of Las Vegas.",
+      "source": "StogiePress",
+      "source_title": "Cigar News: La Casa Grande Cigars and Giovanni Paolo Bring The Bronx to Las Vegas with “How Ya Doin!” Cigar",
+      "source_en": "StogiePress",
+      "source_title_en": "La Casa Grande Cigars and Giovanni Paolo Bring The Bronx to Las Vegas with \"How Ya Doin!\" Cigar",
+      "url": "https://stogiepress.com/cigar-news-la-casa-grande-cigars-and-giovanni-paolo-bring-the-bronx-to-las-vegas-with-how-ya-doin-cigar/"
+    },
     {
       "date": "2026-10-21",
       "category": "業界・企業",
@@ -73,6 +138,19 @@ var NEWS_DATA = {
       "source_en": "halfwheel",
       "source_title_en": "Plasencia Cigars Names Javier Carranza New U.S. VP of Sales",
       "url": "https://halfwheel.com/plasencia-cigars-names-javier-carranza-new-us-vp-of-sales/482062/"
+    },
+    {
+      "date": "2026-10-20",
+      "category": "業界・企業",
+      "title_ja": "タバカレラUSA、幹部3名の新役職を発表",
+      "summary_ja": "タバカレラUSA（Tabacalera USA）が、ブラッド・ウィンステッド（Brad Winstead）、ダヴィデ・モロ（Davide Moro）、ニコラス・マスロウスキ（Nicolas Maslowski）の3名について新たなリーダーシップ役職を発表した。",
+      "title_en": "Tabacalera USA Announces New Roles for Key Leadership",
+      "summary_en": "Tabacalera USA has announced new leadership positions for three executives: Brad Winstead, Davide Moro and Nicolas Maslowski.",
+      "source": "Cigar Journal",
+      "source_title": "Tabacalera USA Announces New Roles for Key Leadership",
+      "source_en": "Cigar Journal",
+      "source_title_en": "Tabacalera USA Announces New Roles for Key Leadership",
+      "url": "https://www.cigarjournal.com/tabacalera-usa-announces-new-roles-for-key-leadership/"
     },
     {
       "date": "2026-10-20",
@@ -2010,84 +2088,6 @@ var NEWS_DATA = {
       "source_en": "halfwheel",
       "source_title_en": "Trinidad Vigía Reserva Cosecha 2022 Shown Off in Switzerland",
       "url": "https://halfwheel.com/trinidad-vigia-reserva-cosecha-2022-shown-off-in-switzerland/480070/"
-    },
-    {
-      "date": "2026-09-22",
-      "category": "新製品",
-      "title_ja": "ビアヘ「ゾンビ」が別デザインで復活",
-      "summary_ja": "ビアヘ（Viaje）の「オルタネート・アート（Alternate Art）」プロジェクトが、既存ラインに新サイズを加えつつ、制作されたが使われなかったアートワークを葉巻に採用する。第1弾はおなじみのバンドの下にゾンビのような人物像を描いたデザインとなっている。",
-      "title_en": "Viaje Zombies Return with Alternate Art",
-      "summary_en": "Viaje's Alternate Art project brings new sizes for the company's lines together with artwork that was created but never used. Fittingly, the first release features the image of a zombie-like figure under the familiar band, reviving the brand's Zombies theme.",
-      "source": "halfwheel",
-      "source_title": "Viaje Zombies Return with Alternate Art",
-      "source_en": "halfwheel",
-      "source_title_en": "Viaje Zombies Return with Alternate Art",
-      "url": "https://halfwheel.com/viaje-zombies-return-with-alternate-art/480017/"
-    },
-    {
-      "date": "2026-09-22",
-      "category": "業界・企業",
-      "title_ja": "アルティスタ、中国煙草国際と提携締結",
-      "summary_ja": "アルティスタ・シガーズ（Artista Cigars）がインタータバック2026で中国煙草国際（China Tobacco International）との協業に調印した。",
-      "title_en": "Artista Cigars Signs Cooperation with China Tobacco International",
-      "summary_en": "Artista Cigars signed a cooperation agreement with China Tobacco International at InterTabac 2026.",
-      "source": "Cigar Journal",
-      "source_title": "Artista Cigars Signs its cooperation with China Tobacco International",
-      "source_en": "Cigar Journal",
-      "source_title_en": "Artista Cigars Signs its Cooperation with China Tobacco International",
-      "url": "https://www.cigarjournal.com/artista-cigars-signs-its-cooperation-with-china-tobacco-international/"
-    },
-    {
-      "date": "2026-09-22",
-      "category": "新製品",
-      "title_ja": "JFR 20周年記念にゴルディート追加",
-      "summary_ja": "JFRブランド20周年を記念し昨年登場したラインに、新サイズ「ゴルディート（Gordito）」が加わった。ブレンドはメキシカン・サンアンドレス（San Andrés）ラッパーに、ニカラグア産バインダーとニカラグア産タバコのフィラーを組み合わせた構成。",
-      "title_en": "JFR 20th Anniversary Gordito",
-      "summary_en": "A new Gordito size joins the JFR 20th Anniversary line, which debuted last year to mark the JFR brand's two decades. The blend features a Mexican San Andrés wrapper over a Nicaraguan binder and Nicaraguan filler tobaccos.",
-      "source": "halfwheel",
-      "source_title": "JFR 20th Anniversary Gordito",
-      "source_en": "halfwheel",
-      "source_title_en": "JFR 20th Anniversary Gordito",
-      "url": "https://halfwheel.com/jfr-20th-anniversary-gordito-2/479978/"
-    },
-    {
-      "date": "2026-09-21",
-      "category": "業界・企業",
-      "title_ja": "カサ1910、欧州ブランドアンバサダーを任命",
-      "summary_ja": "カサ1910（Casa 1910）が、ジョアン・マイアーホーファー（Joao Maierhofer）を欧州ブランドアンバサダーに昇格させた。担当地域をイベリア半島から欧州全域に拡大し、国際展開を進める。",
-      "title_en": "Casa 1910 Promotes Joao Maierhofer to European Brand Ambassador",
-      "summary_en": "Casa 1910 has promoted Joao Maierhofer to European Brand Ambassador, expanding his remit from the Iberian Peninsula to markets across Europe as the company continues its international expansion.",
-      "source": "Cigar Journal",
-      "source_title": "Casa 1910 Promotes Joao Maierhofer to European Brand Ambassador",
-      "source_en": "Cigar Journal",
-      "source_title_en": "Casa 1910 Promotes Joao Maierhofer to European Brand Ambassador",
-      "url": "https://www.cigarjournal.com/casa-1910-promotes-joao-maierhofer-to-european-brand-ambassador/"
-    },
-    {
-      "date": "2026-09-21",
-      "category": "業界・企業",
-      "title_ja": "アルティスタと中国煙草が新ライン共同開発",
-      "summary_ja": "アルティスタ・シガー（Artista Cigars）と中国煙草（China National）が新ラインで協業する。一方のビトラはドミニカ共和国のアルティスタが製造し、もう一方は中国・山東省の工場で生産する。年内にまずアジアで発売し、その後ほかの市場へ展開する予定。",
-      "title_en": "Artista Cigars, China National to Collaborate on New Line",
-      "summary_en": "Artista Cigars and China National are partnering on a new line. One vitola will be made by Artista in the Dominican Republic, while the other will be produced at a factory in Shandong, China. The cigars are set to debut in Asia later this year before eventually reaching other markets.",
-      "source": "halfwheel",
-      "source_title": "Artista Cigars, China National to Collaborate on New Line",
-      "source_en": "halfwheel",
-      "source_title_en": "Artista Cigars, China National to Collaborate on New Line",
-      "url": "https://halfwheel.com/artista-cigars-china-national-to-collaborate-on-new-line/479951/"
-    },
-    {
-      "date": "2026-09-21",
-      "category": "新製品",
-      "title_ja": "AJフェルナンデス、干支の限定「山羊年」",
-      "summary_ja": "AJフェルナンデス（AJ Fernández）がインタータバックで、中国の干支をテーマにした初の限定エディション「The Year of the Goat（山羊年）」を披露した。",
-      "title_en": "The Year of the Goat, by AJ Fernández",
-      "summary_en": "At InterTabac, AJ Fernández unveiled The Year of the Goat, its first limited edition dedicated to the Chinese zodiac.",
-      "source": "Cigar Journal",
-      "source_title": "The Year of the Goat, by AJ Fernández",
-      "source_en": "Cigar Journal",
-      "source_title_en": "The Year of the Goat, by AJ Fernández",
-      "url": "https://www.cigarjournal.com/the-year-of-the-goat-by-aj-fernandez/"
     }
   ]
 };
