@@ -7,8 +7,86 @@
    手で足すこともできますが、items の並び・キーは崩さないでください。
    ============================================================ */
 var NEWS_DATA = {
-  "updated": "2026-10-22",
+  "updated": "2026-10-23",
   "items": [
+    {
+      "date": "2026-10-23",
+      "category": "新製品",
+      "title_ja": "フエンテ「ブラックピンク」全国発売へ",
+      "summary_ja": "アルトゥーロ・フエンテ（Arturo Fuente）は、3月にTAA加盟店向けに先行発売した「ブラックピンク（Black Pink）」を来週、全国の販売店へ出荷する。4種類すべてのビトラが出荷に含まれる見込み。",
+      "title_en": "Arturo Fuente's Black Pink Gets Full Release",
+      "summary_en": "Arturo Fuente will ship its Black Pink nationwide next week, following a soft launch for TAA stores in March. All four vitolas are expected to be part of the shipment, giving the line its full retail release across the United States.",
+      "source": "halfwheel",
+      "source_title": "Arturo Fuente’s Black Pink Gets Full Release",
+      "source_en": "halfwheel",
+      "source_title_en": "Arturo Fuente's Black Pink Gets Full Release",
+      "url": "https://halfwheel.com/arturo-fuentes-black-pink-gets-full-release/482336/"
+    },
+    {
+      "date": "2026-10-23",
+      "category": "新製品",
+      "title_ja": "ロッキー・パテル「マトリックス」TAA限定で登場",
+      "summary_ja": "ロッキー・パテル（Rocky Patel）は、TAA2026限定の新トロ「マトリックス（Matrix）」を発表した。コネチカット・ブロードリーフのラッパーを使用し、同社によれば土、ナッツ、チョコレートの風味があるという。",
+      "title_en": "Rocky Patel Matrix Announced as TAA 2026 Exclusive",
+      "summary_en": "Rocky Patel has announced the Matrix, a new toro offered as a TAA 2026 exclusive. The cigar uses a Connecticut broadleaf wrapper, and the company says it delivers notes of earth, nuts and chocolate.",
+      "source": "halfwheel",
+      "source_title": "Rocky Patel Matrix Announced as TAA 2026 Exclusive",
+      "source_en": "halfwheel",
+      "source_title_en": "Rocky Patel Matrix Announced as TAA 2026 Exclusive",
+      "url": "https://halfwheel.com/rocky-patel-matrix-announced-as-taa-2026-exclusive/482324/"
+    },
+    {
+      "date": "2026-10-23",
+      "category": "新製品",
+      "title_ja": "ビソ・ホーニー新作、来月発売",
+      "summary_ja": "「ビソ・ホーニー・ポストナット・クラリティ（Viso Horny Post Nut Clarity）」が来月発売される。アンクル・ルーク、555に続く第3弾で、今回もブレンドは100％ビソ葉を使用する。",
+      "title_en": "Viso Horny Post Nut Clarity Coming Next Month",
+      "summary_en": "The Viso Horny Post Nut Clarity will arrive next month as the follow-up to the Viso Horny Uncle Luke and 555. Once again, the blend is made from 100 percent viso tobacco.",
+      "source": "halfwheel",
+      "source_title": "Viso Horny Post Nut Clarity Coming Next Month",
+      "source_en": "halfwheel",
+      "source_title_en": "Viso Horny Post Nut Clarity Coming Next Month",
+      "url": "https://halfwheel.com/viso-horny-post-nut-clarity-coming-next-month/482311/"
+    },
+    {
+      "date": "2026-10-23",
+      "category": "新製品",
+      "title_ja": "ダビドフ、ラスベガスとNYの限定版発表",
+      "summary_ja": "ダビドフ（Davidoff）は、ラスベガス店とニューヨーク市の3つの旗艦店向けに、5 1/2×55の新たな限定版「シティ・エディション」を発表した。11月2日（月）に発売される。",
+      "title_en": "Davidoff Announces City Edition for Las Vegas, New York",
+      "summary_en": "Davidoff has announced new City Edition exclusives measuring 5 1/2 x 55 for its Las Vegas store and three New York City flagships. The cigars will go on sale on Monday, Nov. 2.",
+      "source": "halfwheel",
+      "source_title": "Davidoff Announces City Edition for Las Vegas, New York",
+      "source_en": "halfwheel",
+      "source_title_en": "Davidoff Announces City Edition for Las Vegas, New York",
+      "url": "https://halfwheel.com/davidoff-announces-city-edition-for-las-vegas-new-york/482294/"
+    },
+    {
+      "date": "2026-10-23",
+      "category": "新製品",
+      "title_ja": "スティルウェル・スター新ブレンド登場",
+      "summary_ja": "ダンバートン・タバコ＆トラスト（Dunbarton Tobacco & Trust）は、パイプ煙草を取り入れた「スティルウェル・スター（StillWell Star）」ラインを2026年に刷新。本作「アロマティック・ダルセ・クラロ・プチロブスト」は、過去のホリデー版を融合させた全く新しいブレンド。",
+      "title_en": "StillWell Star Aromatic Dulce Claro Petit Robusto",
+      "summary_en": "Five years after Dunbarton Tobacco & Trust unveiled its StillWell Star line, which incorporates Cornell & Diehl pipe tobacco into a premium cigar, the line received an overhaul in 2026. This cigar is a brand-new blend made from a hybrid of previous StillWell Star Holiday releases.",
+      "source": "halfwheel",
+      "source_title": "StillWell Star Aromatic Dulce Claro Petit Robusto",
+      "source_en": "halfwheel",
+      "source_title_en": "StillWell Star Aromatic Dulce Claro Petit Robusto",
+      "url": "https://halfwheel.com/stillwell-star-aromatic-dulce-claro-petit-robusto/482265/"
+    },
+    {
+      "date": "2026-10-22",
+      "category": "業界・企業",
+      "title_ja": "プラセンシア、カランサ氏を米国営業副社長に昇格",
+      "summary_ja": "プラセンシア・シガーズ（Plasencia Cigars）は、ハビエル・カランサ（Javier Carranza）氏を米国営業担当副社長に昇格させたと発表した。同社の米国事業の発展に果たした役割と、成長への継続的な貢献を評価したもの。",
+      "title_en": "Plasencia Cigars Promotes Javier Carranza to Vice President of Sales, United States",
+      "summary_en": "Plasencia Cigars has announced the promotion of Javier Carranza to Vice President of Sales, United States. The company cited his instrumental role in developing its U.S. business and his continued contributions to the firm's growth.",
+      "source": "Cigar Journal",
+      "source_title": "Plasencia Cigars Promotes Javier Carranza to Vice President of Sales, United States",
+      "source_en": "Cigar Journal",
+      "source_title_en": "Plasencia Cigars Promotes Javier Carranza to Vice President of Sales, United States",
+      "url": "https://www.cigarjournal.com/plasencia-cigars-promotes-javier-carranza-to-vice-president-of-sales-united-states/"
+    },
     {
       "date": "2026-10-22",
       "category": "新製品",
@@ -2010,84 +2088,6 @@ var NEWS_DATA = {
       "source_en": "Cigar Journal",
       "source_title_en": "Pledge Purple & Ascend",
       "url": "https://www.cigarjournal.com/pledge-purple-ascend/"
-    },
-    {
-      "date": "2026-09-23",
-      "category": "新製品",
-      "title_ja": "ダンバートン、オーバーシーズNo.2を予告",
-      "summary_ja": "ダンバートン・タバコ&トラスト（Dunbarton Tobacco & Trust）が新作「オーバーシーズNo.2（Overseas No. 2）」を予告した。スティーブ・サカ（Steve Saka）によれば、No.1とNo.2は紙面上は同じ葉巻に見えるが、ブレンドは大きく異なり、一方を好んでももう一方は好まない可能性があるという。サイズも異なる。",
-      "title_en": "Dunbarton Tobacco & Trust Previews Overseas No. 2",
-      "summary_en": "Dunbarton Tobacco & Trust has previewed a new cigar, the Overseas No. 2. On paper, the Overseas No. 1 and No. 2 look like the same cigar, however, founder Steve Saka says the blends are so different that someone who liked one may not like the other. The two are also not the same size. Further details on release timing and pricing were not disclosed.",
-      "source": "halfwheel",
-      "source_title": "Dunbarton Tobacco & Trust Previews Overseas No. 2",
-      "source_en": "halfwheel",
-      "source_title_en": "Dunbarton Tobacco & Trust Previews Overseas No. 2",
-      "url": "https://halfwheel.com/dunbarton-tobacco-trust-previews-overseas-no-2/480115/"
-    },
-    {
-      "date": "2026-09-23",
-      "category": "新製品",
-      "title_ja": "ベクター、クリスタルベースの新ライター4種",
-      "summary_ja": "ベクター（Vector）がクリスタルベースの新ライター4モデルを発売した。一般的な卓上ライターとは異なる独特な外観を持ち、インサートの色を交換できる。1モデルでは炎のサイズも変更可能。",
-      "title_en": "Vector Releases Four New Crystal Base Lighters",
-      "summary_en": "Vector has released four new crystal base lighters that offer a distinctive look compared to most tabletop lighters. They allow consumers to swap out the insert's colour, and in the case of one model, the flame size as well.",
-      "source": "halfwheel",
-      "source_title": "Vector Releases Four New Crystal Base Lighters",
-      "source_en": "halfwheel",
-      "source_title_en": "Vector Releases Four New Crystal Base Lighters",
-      "url": "https://halfwheel.com/vector-releases-four-new-crystal-base-lighters/480104/"
-    },
-    {
-      "date": "2026-09-23",
-      "category": "新製品",
-      "title_ja": "プラセンシア、干支「山羊年」葉巻を披露",
-      "summary_ja": "インタータバック2026（InterTabac 2026）では干支の「山羊年（Year of the Goat）」をテーマとした葉巻が多数登場した。中でも入手困難とされたのが、プラセンシア（Plasencia）ブースで披露された新作「エル・アニョ・デ・ラ・カブラ（El Año de la Cabra）」の八角形の新箱だった。",
-      "title_en": "Plasencia El Año de la Cabra Shown off at InterTabac 2026",
-      "summary_en": "InterTabac 2026 featured plenty of Year of the Goat-themed cigars. The most difficult to find was a new octagon-shaped box shown off in the Plasencia booth, the El Año de la Cabra. It was among the standout Chinese zodiac releases at this year's trade fair.",
-      "source": "halfwheel",
-      "source_title": "Plasencia El Año de la Cabra Shown off at InterTabac 2026",
-      "source_en": "halfwheel",
-      "source_title_en": "Plasencia El Año de la Cabra Shown off at InterTabac 2026",
-      "url": "https://halfwheel.com/plasencia-el-ano-de-la-cabra-shown-off-at-intertabac-2026/480092/"
-    },
-    {
-      "date": "2026-09-22",
-      "category": "新製品",
-      "title_ja": "オスカー・バラダレス、限定「コラボラシオネス」発表",
-      "summary_ja": "インタータバック2026で、オスカー・バラダレス（Oscar Valladares）のウド・フェッツァーが2026年限定版「コラボラシオネス（COLABORACIONES）」を発表した。",
-      "title_en": "Oscar Valladares Unveils 2026 Limited Edition at Intertabac",
-      "summary_en": "At Intertabac 2026, Udo Fetzer of Oscar Valladares unveiled the brand's 2026 Limited Edition, the Oscar Valladares 'COLABORACIONES'.",
-      "source": "Cigar Journal",
-      "source_title": "Oscar Valladares at Intertabac 2026",
-      "source_en": "Cigar Journal",
-      "source_title_en": "Oscar Valladares at Intertabac 2026",
-      "url": "https://www.cigarjournal.com/oscar-valladares-at-intertabac-2026/"
-    },
-    {
-      "date": "2026-09-22",
-      "category": "新製品",
-      "title_ja": "ラ・グロリア・クバーナ35周年記念、来月スイスへ",
-      "summary_ja": "ラ・グロリア・クバーナ（La Gloria Cubana）の限定ヒュミドール「35 Aniversario」が来月スイスに登場する。キューバ葉巻の世界的店舗網ラ・カサ・デル・アバノ（La Casa del Habano）の35周年を記念したもの。あわせてロメオ・イ・フリエタ・アマンテス（Romeo y Julieta Amantes）の20本入りボックスも店頭に並ぶ。",
-      "title_en": "La Gloria Cubana 35 Aniversario Coming to Switzerland Next Month",
-      "summary_en": "The limited-edition La Gloria Cubana 35 Aniversario humidor arrives in Switzerland next month, marking the 35th anniversary of La Casa del Habano, the worldwide network of Cuban cigar stores. Also reaching shelves are 20-count boxes of the Romeo y Julieta Amantes.",
-      "source": "halfwheel",
-      "source_title": "La Gloria Cubana 35 Aniversario Coming to Swizerland Next Month",
-      "source_en": "halfwheel",
-      "source_title_en": "La Gloria Cubana 35 Aniversario Coming to Switzerland Next Month",
-      "url": "https://halfwheel.com/la-gloria-cubana-35-aniversario-coming-to-swizerland-next-month/480027/"
-    },
-    {
-      "date": "2026-09-22",
-      "category": "新製品",
-      "title_ja": "トリニダLよVigíaレセルバ2022をスイスで披露",
-      "summary_ja": "新作「ビヒア・レセルバ・コセチャ2022（Vigía Reserva Cosecha 2022）」がスイスで披露された。レセルバまたはグラン・レセルバの扱いを受ける初のトリニダ（Trinidad）葉巻となる。近年のキューバ新作の例に漏れず、想定より1本多いバンドが付く。",
-      "title_en": "Trinidad Vigía Reserva Cosecha 2022 Shown Off in Switzerland",
-      "summary_en": "The new Vigía Reserva Cosecha 2022 has been shown off in Switzerland. It is the first Trinidad cigar to receive the Reserva or Gran Reserva treatment. As with seemingly every other recent Cuban cigar release, it carries one more band than expected.",
-      "source": "halfwheel",
-      "source_title": "Trinidad Vigía Reserva Cosecha 2022 Shown Off in Switzerland",
-      "source_en": "halfwheel",
-      "source_title_en": "Trinidad Vigía Reserva Cosecha 2022 Shown Off in Switzerland",
-      "url": "https://halfwheel.com/trinidad-vigia-reserva-cosecha-2022-shown-off-in-switzerland/480070/"
     }
   ]
 };
