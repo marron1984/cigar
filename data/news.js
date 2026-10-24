@@ -7,8 +7,60 @@
    手で足すこともできますが、items の並び・キーは崩さないでください。
    ============================================================ */
 var NEWS_DATA = {
-  "updated": "2026-10-23",
+  "updated": "2026-10-24",
   "items": [
+    {
+      "date": "2026-10-24",
+      "category": "新製品",
+      "title_ja": "ブリックハウス熟成版、TAA2026向けに選定",
+      "summary_ja": "J.C.ニューマンは、ブリックハウス「シエント・ポル・シエント（Ciento Por Ciento）」の第3弾をTAA2026向けに選定した。2019年版・2023年版と異なり、今回は5年熟成を経ており、TAA加盟店への出荷準備が整ったという。",
+      "title_en": "Aged Brick House Ciento Por Ciento Selected for TAA 2026 Release",
+      "summary_en": "J.C. Newman has selected the third release of Brick House Ciento Por Ciento as a TAA 2026 exclusive. Unlike the 2019 and 2023 versions, these cigars were aged for five years. The company says they are now ready to ship to TAA member stores.",
+      "source": "halfwheel",
+      "source_title": "Aged Brick House Ciento Por Ciento Selected for TAA 2026 Release",
+      "source_en": "halfwheel",
+      "source_title_en": "Aged Brick House Ciento Por Ciento Selected for TAA 2026 Release",
+      "url": "https://halfwheel.com/aged-brick-house-ciento-por-ciento-selected-for-taa-2026-release/482413/"
+    },
+    {
+      "date": "2026-10-24",
+      "category": "新製品",
+      "title_ja": "カサ・カリージョのTAA2026限定が来週発売",
+      "summary_ja": "EPカリージョの「カサ・カリージョ（Casa Carrillo）」2026年TAA限定が来週登場する。5カ国のタバコをブレンドし、その特徴を引き出すため58リングゲージを採用。生産数は1万本のみで、再生産しない一度限りのリリースとされる。",
+      "title_en": "Casa Carrillo 2026 TAA Exclusive Coming Next Week",
+      "summary_en": "The Casa Carrillo 2026 TAA Exclusive arrives next week. It comes in a 58 ring gauge to showcase its five-country blend. Only 10,000 cigars are being produced, with the company describing it as a one-and-done release that will not be made again.",
+      "source": "halfwheel",
+      "source_title": "Casa Carrillo 2026 TAA Exclusive Coming Next Week",
+      "source_en": "halfwheel",
+      "source_title_en": "Casa Carrillo 2026 TAA Exclusive Coming Next Week",
+      "url": "https://halfwheel.com/casa-carrillo-2026-taa-exclusive-coming-next-week/482366/"
+    },
+    {
+      "date": "2026-10-24",
+      "category": "新製品",
+      "title_ja": "バンドレロとネルソンの新ロブスト、サンプラーで登場",
+      "summary_ja": "セレクテッド・タバコ（Selected Tobacco）の「ロブスト・エディション・セット」は、マドリード本社でのパーティー参加者に配布された。今後は一般販売されるが、取り扱いはごく少数の小売店に限られるという。",
+      "title_en": "New Bandolero, Nelson Robustos Debut in Sampler",
+      "summary_en": "Selected Tobacco's Robusto Edition Set was handed to attendees of a party at the company's Madrid headquarters. The sampler, featuring new Bandolero and Nelson robustos, will now go on sale, but only through a very small number of retailers.",
+      "source": "halfwheel",
+      "source_title": "New Bandolero, Nelson Robustos Debut in Sampler",
+      "source_en": "halfwheel",
+      "source_title_en": "New Bandolero, Nelson Robustos Debut in Sampler",
+      "url": "https://halfwheel.com/new-bandolero-nelson-robustos-debut-in-sampler/482382/"
+    },
+    {
+      "date": "2026-10-23",
+      "category": "新製品",
+      "title_ja": "ホヤ・デ・ニカラグアのクアトロ・シンコ米国版が復活",
+      "summary_ja": "2年の休止を経て、ホヤ・デ・ニカラグア（Joya de Nicaragua）「クアトロ・シンコ エディシオン・アメリカーナ」が2026年に復活する。再び6×54のボックスプレス・ベリコソ形状で提供される。",
+      "title_en": "Joya de Nicaragua Cuatro Cinco Edición Americana Returns for 2026",
+      "summary_en": "After a two-year hiatus, Joya de Nicaragua's Cuatro Cinco Edición Americana returns for 2026. Once again it is offered in a 6 x 54 box-pressed belicoso format.",
+      "source": "halfwheel",
+      "source_title": "Joya de Nicaragua Cuatro Cinco Edición Americana Returns for 2026",
+      "source_en": "halfwheel",
+      "source_title_en": "Joya de Nicaragua Cuatro Cinco Edición Americana Returns for 2026",
+      "url": "https://halfwheel.com/joya-de-nicaragua-cuatro-cinco-edicion-americana-returns-for-2026/482352/"
+    },
     {
       "date": "2026-10-23",
       "category": "新製品",
@@ -219,6 +271,19 @@ var NEWS_DATA = {
     },
     {
       "date": "2026-10-20",
+      "category": "イベント・アワード",
+      "title_ja": "ファンダーマリエール一族、創業100周年を祝う",
+      "summary_ja": "ファンダーマリエール・シガー・ファミリー（Vandermarliere Cigar Family）が、ベルギーで2日間のプログラムを開催し、創業100周年を祝った。",
+      "title_en": "Vandermarliere Cigar Family Celebrates its 100th Company Anniversary",
+      "summary_en": "The Vandermarliere Cigar Family marked its 100th anniversary with a two-day programme held in Belgium.",
+      "source": "Cigar Journal",
+      "source_title": "Vandermarliere Cigar Family Celebrates its 100th Company Anniversary",
+      "source_en": "Cigar Journal",
+      "source_title_en": "Vandermarliere Cigar Family Celebrates its 100th Company Anniversary",
+      "url": "https://www.cigarjournal.com/still-rolling-after-100-years/"
+    },
+    {
+      "date": "2026-10-20",
       "category": "業界・企業",
       "title_ja": "タバカレラUSA、幹部3名の新役職を発表",
       "summary_ja": "タバカレラUSA（Tabacalera USA）が、ブラッド・ウィンステッド（Brad Winstead）、ダヴィデ・モロ（Davide Moro）、ニコラス・マスロウスキ（Nicolas Maslowski）の3名について新たなリーダーシップ役職を発表した。",
@@ -294,6 +359,19 @@ var NEWS_DATA = {
       "source_en": "halfwheel",
       "source_title_en": "Plasencia Alma Fuerte Colorado Claro Torpedo Semi-Boxpress Heads to Corona Cigar Co.",
       "url": "https://halfwheel.com/plasencia-alma-fuerte-colorado-claro-torpedo-semi-boxpress-heads-to-corona-cigar-co/481981/"
+    },
+    {
+      "date": "2026-10-19",
+      "category": "日本国内",
+      "title_ja": "日本葉巻協会、JP THE WAVY氏を表彰",
+      "summary_ja": "日本葉巻協会の「JAPAN CIGAR AWARD 2026」で、ラッパーのJP THE WAVY氏が受賞した。",
+      "title_en": "Rapper JP THE WAVY Honoured at Japan Cigar Award 2026",
+      "summary_en": "Rapper JP THE WAVY was among the recipients at the Japan Cigar Association's JAPAN CIGAR AWARD 2026.",
+      "source": "ライブドアニュース",
+      "source_title": "ラッパー・JP THE WAVY氏が受賞！日本葉巻協会 JAPAN CIGAR AWARD 2026 - ライブドアニュース",
+      "source_en": "Livedoor News",
+      "source_title_en": "Rapper JP THE WAVY Wins at Japan Cigar Association's JAPAN CIGAR AWARD 2026",
+      "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE5xb0JIT0dGZlpjMmJ3NWpiYnN2TnZwX2NYMWRXemdWV00yNERMeWNYb3NOSEgzS2J1LThFNXdDbVFGZldnaTZmeFNKa0phanJSYjVnaUFKakdhNS1fLVNz?oc=5"
     },
     {
       "date": "2026-10-19",
@@ -2010,84 +2088,6 @@ var NEWS_DATA = {
       "source_en": "Cigar Journal",
       "source_title_en": "Plasencia Reserva Original Now Available in a 14-Count Box",
       "url": "https://www.cigarjournal.com/plasencia-reserva-original-now-available-in-a-14-count-box/"
-    },
-    {
-      "date": "2026-09-24",
-      "category": "新製品",
-      "title_ja": "カサ・カリーヨ、限定フィギュラード2種を来週発売",
-      "summary_ja": "カサ・カリーヨ（Casa Carrillo）は6月のトロに続き、「プレッジ・オブ・アリージャンス（Pledge of Allegiance）」のフィギュラード2種を来週店頭に投入すると発表した。限定エディションのヒュミドール入りで、1本50ドル、20本入りヒュミドールは1,000ドルと高価格帯となる。",
-      "title_en": "Casa Carrillo's Pledge of Allegiance Rockets Take Flight Next Week",
-      "summary_en": "Following a toro released in June, Casa Carrillo is sending a pair of figurados from its Pledge of Allegiance line to stores next week. The cigars arrive in a limited-edition humidor and command premium prices, at $50 per cigar or $1,000 for the 20-count humidor.",
-      "source": "halfwheel",
-      "source_title": "Casa Carrillo’s Pledge of Allegiance Rockets Take Flight Next Week",
-      "source_en": "halfwheel",
-      "source_title_en": "Casa Carrillo's Pledge of Allegiance Rockets Take Flight Next Week",
-      "url": "https://halfwheel.com/casa-carrillos-pledge-of-allegiance-rockets-take-flight-next-week/480185/"
-    },
-    {
-      "date": "2026-09-24",
-      "category": "業界・企業",
-      "title_ja": "エリー・ブルー、革製品分野へ進出",
-      "summary_ja": "仏ヒュミドールメーカーのエリー・ブルー（Elie Bleu）が革製品分野へ進出した。素材はスペインの製革所によるもので、シガーケース、財布、パスポートホルダーなどをブルーとブラウンの革で展開する。",
-      "title_en": "Elie Bleu Expands Into Leather Goods",
-      "summary_en": "French humidor maker Elie Bleu has expanded into leather goods, with the new items sourced from a tannery in Spain. The range includes cigar cases, wallets and passport holders, offered in blue and brown leather.",
-      "source": "halfwheel",
-      "source_title": "Elie Bleu Expands Into Leather Goods",
-      "source_en": "halfwheel",
-      "source_title_en": "Elie Bleu Expands Into Leather Goods",
-      "url": "https://halfwheel.com/elie-bleu-expands-into-leather-goods/480128/"
-    },
-    {
-      "date": "2026-09-24",
-      "category": "新製品",
-      "title_ja": "ビバ・ラ・ビダ・コネチカットに新サイズ",
-      "summary_ja": "アルテサノ・デル・タバコ（Artesano del Tobacco）は、ビバ・ラ・ビダ・コネチカット（Viva la Vida Connecticut）に新サイズを追加した。消費者の要望を募った結果、ランセロと、通常より太めのチャーチルの長尺2種が選ばれた。",
-      "title_en": "Viva La Vida Connecticut Churchill",
-      "summary_en": "When Artesano del Tobacco set out to add sizes to its Viva la Vida Connecticut line, it asked its consumers what they wanted. Two long cigars won: a lancero and this thicker-than-normal Churchill.",
-      "source": "halfwheel",
-      "source_title": "Viva La Vida Connecticut Churchill",
-      "source_en": "halfwheel",
-      "source_title_en": "Viva La Vida Connecticut Churchill",
-      "url": "https://halfwheel.com/viva-la-vida-connecticut-churchill/480052/"
-    },
-    {
-      "date": "2026-09-23",
-      "category": "規制・市場",
-      "title_ja": "ベトナム、たばこ免許要件を緩和へ",
-      "summary_ja": "ベトナムで、たばこ関連の免許要件を緩和し、行政手続きを簡素化する動きが報じられた。",
-      "title_en": "Vietnam to ease tobacco licensing requirements",
-      "summary_en": "Vietnam is set to relax tobacco-related licensing requirements and simplify administrative procedures.",
-      "source": "Vietnam.vn",
-      "source_title": "タバコ関連の免許要件を緩和し、行政手続きを簡素化する。 - Vietnam.vn",
-      "source_en": "Vietnam.vn",
-      "source_title_en": "Easing tobacco licensing requirements and simplifying administrative procedures",
-      "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPemdxbUdjRVBKdmV2bnI1UFU3aVhUYWZqTkI5WERmeWJHWXRPb1lILW9GUXNyQlVhcF9Gd0hBeEpTalBHVXFzbkc3bVRONE00NmREb1JmYjZDMkVXLXRGcDE1UHdKR1MxVlpTQ2N3MFhDQ1hMenJieXVLeWhCOEFMTXBmLWFkZWZFWEduR0ZJcnZqUkI1VHoyNF8xbl9tY3Nf?oc=5"
-    },
-    {
-      "date": "2026-09-23",
-      "category": "新製品",
-      "title_ja": "シガーキングス、オクトーバーフェスト葉巻を発売",
-      "summary_ja": "シガーキングス（CigarKings）が、ミュンヘン市のライセンスに基づく新製品「オクトーバーフェスト・シガー（Oktoberfest Zigarre）」を発売した。購入するには10月4日までにバイエルンへ足を運ぶ必要がある。",
-      "title_en": "CigarKings Makes Oktoberfest Zigarre",
-      "summary_en": "CigarKings has released the Oktoberfest Zigarre, made under licence from the city of Munich. To purchase it, buyers will need to head to Bavaria by 4 October.",
-      "source": "halfwheel",
-      "source_title": "CigarKings Makes Oktoberfest Zigarre",
-      "source_en": "halfwheel",
-      "source_title_en": "CigarKings Makes Oktoberfest Zigarre",
-      "url": "https://halfwheel.com/cigarkings-makes-oktoberfest-zigarre/480147/"
-    },
-    {
-      "date": "2026-09-23",
-      "category": "新製品",
-      "title_ja": "カサ・カリーヨ、新作パープル＆アセンド披露",
-      "summary_ja": "カサ・カリーヨ（Casa Carrillo）が、インタータバック2026（InterTabac 2026）で新作「プレッジ・パープル（Pledge Purple）」と「アセンド（Ascend）」を披露した。",
-      "title_en": "Pledge Purple & Ascend",
-      "summary_en": "Casa Carrillo presented its new Pledge Purple and Ascend cigars at InterTabac 2026.",
-      "source": "Cigar Journal",
-      "source_title": "Pledge Purple & Ascend",
-      "source_en": "Cigar Journal",
-      "source_title_en": "Pledge Purple & Ascend",
-      "url": "https://www.cigarjournal.com/pledge-purple-ascend/"
     }
   ]
 };
