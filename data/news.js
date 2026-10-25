@@ -7,8 +7,34 @@
    手で足すこともできますが、items の並び・キーは崩さないでください。
    ============================================================ */
 var NEWS_DATA = {
-  "updated": "2026-10-25",
+  "updated": "2026-10-26",
   "items": [
+    {
+      "date": "2026-10-26",
+      "category": "新製品",
+      "title_ja": "グラン・ハバノ、ペルシャン・キング新作",
+      "summary_ja": "グラン・ハバノ（Gran Habano）が「ペルシャン・キング オメガ オメガ（Persian King Omega Omega）」を発表した。同社初となる全葉ホンジュラス産タバコを使用した葉巻で、ペルシャン・キングとして初めてバンドを付けた製品でもある。バンドは2本あしらわれている。",
+      "title_en": "Gran Habano Persian King Omega Omega",
+      "summary_en": "Gran Habano has unveiled the Persian King Omega Omega, which marks several firsts for the company. It is the first cigar made entirely of Honduran tobacco, and the first Persian King cigar to feature a band, with two bands in fact. The release adds a new chapter to the Persian King line.",
+      "source": "halfwheel",
+      "source_title": "Gran Habano Persian King Omega Omega",
+      "source_en": "halfwheel",
+      "source_title_en": "Gran Habano Persian King Omega Omega",
+      "url": "https://halfwheel.com/gran-habano-persian-king-omega-omega/482516/"
+    },
+    {
+      "date": "2026-10-25",
+      "category": "新製品",
+      "title_ja": "ダビドフ、シティ・エディション発売",
+      "summary_ja": "ダビドフ・シガー（Davidoff Cigars）が限定シリーズ「シティ・エディション（City Edition）」を発表した。旗艦店「ダビドフ・オブ・ジュネーブ since 1911」専売の新たな限定リリースとなる。",
+      "title_en": "Davidoff Launches the City Edition",
+      "summary_en": "Davidoff Cigars has unveiled the City Edition, a new limited-release series dedicated exclusively to the Davidoff of Geneva since 1911 flagship stores. The line will be available only through these dedicated retail locations.",
+      "source": "Cigar Journal",
+      "source_title": "Davidoff Launches the City Edition",
+      "source_en": "Cigar Journal",
+      "source_title_en": "Davidoff Launches the City Edition",
+      "url": "https://www.cigarjournal.com/davidoff-launches-the-city-edition/"
+    },
     {
       "date": "2026-10-25",
       "category": "新製品",
@@ -349,6 +375,32 @@ var NEWS_DATA = {
     },
     {
       "date": "2026-10-20",
+      "category": "新製品",
+      "title_ja": "プラセンシアとコロナ、提携拡大",
+      "summary_ja": "プラセンシア・シガー（Plasencia Cigars）とコロナ・シガー・カンパニー（Corona Cigar Company）が、アルマ・フエルテ（Alma Fuerte）で製品提携を拡大した。新たに「アルマ・フエルテ トルペード セミボックスプレス」が加わり、コロラド・クラロのラッパーを用いた「アルマ・デル・シエロ ロブスト・ゴルド」とともに、プラセンシアの新パッケージで提供される。",
+      "title_en": "Plasencia Cigars and Corona Cigar Company Expand Partnership with Alma Fuerte",
+      "summary_en": "Plasencia Cigars and Corona Cigar Company have expanded their product partnership with Alma Fuerte. The new Alma Fuerte Torpedo Semi-Boxpressed joins the exclusive Colorado Claro-wrapped Alma del Cielo Robusto Gordo, both now presented in Plasencia's new packaging.",
+      "source": "Cigar Journal",
+      "source_title": "Plasencia Cigars and Corona Cigar Company Expand Product Partnership with Alma Fuerte",
+      "source_en": "Cigar Journal",
+      "source_title_en": "Plasencia Cigars and Corona Cigar Company Expand Product Partnership with Alma Fuerte",
+      "url": "https://www.cigarjournal.com/plasencia-cigars-and-corona-cigar-company-expand-product-partnership-with-alma-fuerte/"
+    },
+    {
+      "date": "2026-10-20",
+      "category": "日本国内",
+      "title_ja": "JP THE WAVY、ジャパンシガーアワード受賞",
+      "summary_ja": "ラッパーのJP THE WAVYが「JAPAN CIGAR AWARD 2026」を受賞した。音楽・アート・ファッションの垣根を越えた活躍と、シガーカルチャーへの親しみが高く評価された。",
+      "title_en": "Rapper JP THE WAVY Wins JAPAN CIGAR AWARD 2026",
+      "summary_en": "Japanese rapper JP THE WAVY, active on the global stage, has won the JAPAN CIGAR AWARD 2026. He was recognised for his work transcending the boundaries of music, art and fashion, as well as his affinity for cigar culture.",
+      "source": "千葉テレビ放送",
+      "source_title": "日本を代表し、世界を舞台に活躍するラッパー・JP THE WAVY、「JAPAN CIGAR AWARD 2026」受賞 音楽・アート・ファッションの垣根を越えた活躍と、シガーカルチャーへの親しみを高く評価 - 千葉テレビ放送株式会社",
+      "source_en": "Chiba Television Broadcasting",
+      "source_title_en": "Rapper JP THE WAVY, Active Worldwide Representing Japan, Wins JAPAN CIGAR AWARD 2026",
+      "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE9ZTnd6RlcxWVZ5cTlaT0hGSkhndXc1cUl5M3pHWmI1V1pNY2E4cUJVOEwxdTlvYVU3eDFqSXNwWnpDYXo0Y293UV9QOXdNa2UxbmFfRnJKMHJpNWFlU0RZ?oc=5"
+    },
+    {
+      "date": "2026-10-20",
       "category": "イベント・アワード",
       "title_ja": "ファンダーマリエール一族、創業100周年を祝う",
       "summary_ja": "ファンダーマリエール・シガー・ファミリー（Vandermarliere Cigar Family）が、ベルギーで2日間のプログラムを開催し、創業100周年を祝った。",
@@ -437,6 +489,32 @@ var NEWS_DATA = {
       "source_en": "halfwheel",
       "source_title_en": "Plasencia Alma Fuerte Colorado Claro Torpedo Semi-Boxpress Heads to Corona Cigar Co.",
       "url": "https://halfwheel.com/plasencia-alma-fuerte-colorado-claro-torpedo-semi-boxpress-heads-to-corona-cigar-co/481981/"
+    },
+    {
+      "date": "2026-10-19",
+      "category": "新製品",
+      "title_ja": "独エンジニアード、新ブレンド2種発売",
+      "summary_ja": "ジャーマン・エンジニアード・シガー（German Engineered Cigars）が、ニカラグア産ブレンドの「ラウムツァイト（Raumzeit）」と「ヴェルトシュメルツ（Weltschmerz）」を発売した。同社の販売代理店で注文可能となり、クラフトヴェルク（Kraftwerk）、RVGN、RVGN Extremと並ぶラインナップが完成した。",
+      "title_en": "German Engineered Blends \"Weltschmerz\" and \"Raumzeit\" Now Available",
+      "summary_en": "German Engineered Cigars' Nicaraguan blends Raumzeit and Weltschmerz are now available to order from the company's distributors. The two new releases complete the line-up alongside Kraftwerk, RVGN and RVGN Extrem.",
+      "source": "Cigar Journal",
+      "source_title": "German Engineered Blends \"Weltschmerz\" and \"Raumzeit\" are now Available",
+      "source_en": "Cigar Journal",
+      "source_title_en": "German Engineered Blends \"Weltschmerz\" and \"Raumzeit\" are now Available",
+      "url": "https://www.cigarjournal.com/german-engineered-blends-weltschmerz-and-raumzeit-are-now-available/"
+    },
+    {
+      "date": "2026-10-19",
+      "category": "規制・市場",
+      "title_ja": "欧州の葉巻規制動向、独ノル西",
+      "summary_ja": "欧州葉巻製造者協会（ECMA）事務局長ポール・ヴァラカス氏が、欧州の葉巻の消費者・小売業者に影響する最新動向を毎月まとめている。今回はドイツ、ノルウェー、スペインの規制動向を取り上げた。",
+      "title_en": "Cigar Regulations Update: Germany, Norway and Spain",
+      "summary_en": "Each month Paul Varakas, Director General of the European Cigar Manufacturers Association (ECMA), highlights the latest regulatory developments affecting cigar consumers and retailers across Europe. This edition covers updates in Germany, Norway and Spain.",
+      "source": "Cigar Journal",
+      "source_title": "Cigar Regulations Update: Germany, Norway and Spain",
+      "source_en": "Cigar Journal",
+      "source_title_en": "Cigar Regulations Update: Germany, Norway and Spain",
+      "url": "https://www.cigarjournal.com/cigar-regulations-update-germany-norway-and-spain/"
     },
     {
       "date": "2026-10-19",
@@ -2010,84 +2088,6 @@ var NEWS_DATA = {
       "source_en": "halfwheel",
       "source_title_en": "Elie Bleu's Year of the Goat Collection Goes on Sale",
       "url": "https://halfwheel.com/elie-bleus-year-of-the-goat-collection-goes-on-sale/480328/"
-    },
-    {
-      "date": "2026-09-25",
-      "category": "新製品",
-      "title_ja": "ダビドフ、ジノZコレクション・ブルーを10月投入",
-      "summary_ja": "ダビドフ（Davidoff）がジノ（Zino）Zコレクションのブルー仕様を10月に発売する。昨年はグリーンで同じ10アイテムを展開しており、価格は据え置いた。",
-      "title_en": "Zino Z-Collection Blue Arriving in October",
-      "summary_en": "Davidoff is releasing a blue colourway of the Zino Z-Collection in October. Last year the company offered the same 10 items in green, and notably it has kept prices unchanged.",
-      "source": "halfwheel",
-      "source_title": "Zino Z-Collection Blue Arriving in October",
-      "source_en": "halfwheel",
-      "source_title_en": "Zino Z-Collection Blue Arriving in October",
-      "url": "https://halfwheel.com/zino-z-collection-blue-arriving-in-october/480289/"
-    },
-    {
-      "date": "2026-09-25",
-      "category": "新製品",
-      "title_ja": "HVC、初のランセロ「Only Legends」出荷",
-      "summary_ja": "HVCが「500 Years」ランセロ「Only Legends」を出荷した。同社15年の歴史で初のランセロで、生産はわずか5,000本の限定品となる。",
-      "title_en": "HVC 500 Years Lancero Only Legends Ships",
-      "summary_en": "HVC has shipped Only Legends, the first lancero in the company's 15-year history. The 500 Years release is highly limited, with just 5,000 cigars produced.",
-      "source": "halfwheel",
-      "source_title": "HVC 500 Years Lancero Only Legends Ships",
-      "source_en": "halfwheel",
-      "source_title_en": "HVC 500 Years Lancero Only Legends Ships",
-      "url": "https://halfwheel.com/hvc-500-years-lancero-only-legends-ships/480278/"
-    },
-    {
-      "date": "2026-09-24",
-      "category": "イベント・アワード",
-      "title_ja": "インタータバック2026でサーカス演出",
-      "summary_ja": "シガー・ジャーナルが、インタータバック2026（InterTabac 2026）で披露された「サーカス」をテーマにした演出を伝えた。",
-      "title_en": "Two Faces: The Circus at InterTabac 2026",
-      "summary_en": "Cigar Journal reports on \"The Circus\", a themed presentation showcased at InterTabac 2026.",
-      "source": "Cigar Journal",
-      "source_title": "Two Faces",
-      "source_en": "Cigar Journal",
-      "source_title_en": "Two Faces",
-      "url": "https://www.cigarjournal.com/two-faces/"
-    },
-    {
-      "date": "2026-09-24",
-      "category": "新製品",
-      "title_ja": "マヤ・セルバ、「イヤー・オブ・ザ・ゴート」披露",
-      "summary_ja": "マヤ・セルバ・シガーズ（Maya Selva Cigars）が、インタータバック2026（InterTabac 2026）で新作「イヤー・オブ・ザ・ゴート（Year of the Goat）」を披露した。",
-      "title_en": "Year of the Goat",
-      "summary_en": "Maya Selva Cigars presented the Year of the Goat at InterTabac 2026.",
-      "source": "Cigar Journal",
-      "source_title": "Year of the Goat",
-      "source_en": "Cigar Journal",
-      "source_title_en": "Year of the Goat",
-      "url": "https://www.cigarjournal.com/year-of-the-goat/"
-    },
-    {
-      "date": "2026-09-24",
-      "category": "新製品",
-      "title_ja": "デ・ロス・レイエスの「サガ」、インタータバック出展",
-      "summary_ja": "デ・ロス・レイエス・シガーズ（De los Reyes Cigars）のブランド「サガ（Saga）」が、ニルカ・レイエス（Nirka Reyes）の案内でインタータバック2026（InterTabac 2026）に出展した。",
-      "title_en": "Dominican Gems",
-      "summary_en": "Saga, the brand from De los Reyes Cigars, was represented at InterTabac 2026 by Nirka Reyes.",
-      "source": "Cigar Journal",
-      "source_title": "Dominican Gems",
-      "source_en": "Cigar Journal",
-      "source_title_en": "Dominican Gems",
-      "url": "https://www.cigarjournal.com/dominican-gems/"
-    },
-    {
-      "date": "2026-09-24",
-      "category": "イベント・アワード",
-      "title_ja": "ファウンデーション、10周年で「セント・ジョージ」",
-      "summary_ja": "ファウンデーション・シガー・カンパニー（Foundation Cigar Company）が、InterTabac 2026で創業10周年を記念する「セント・ジョージ（Saint George）」を披露した。",
-      "title_en": "Saint George in the 10th Anniversary",
-      "summary_en": "Foundation Cigar Company marked its 10th anniversary at InterTabac 2026, where it presented its Saint George line.",
-      "source": "Cigar Journal",
-      "source_title": "Saint George in the 10th Anniversary",
-      "source_en": "Cigar Journal",
-      "source_title_en": "Saint George in the 10th Anniversary",
-      "url": "https://www.cigarjournal.com/saint-george-in-the-10th-anniversary/"
     }
   ]
 };
