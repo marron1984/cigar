@@ -7,8 +7,73 @@
    手で足すこともできますが、items の並び・キーは崩さないでください。
    ============================================================ */
 var NEWS_DATA = {
-  "updated": "2026-10-24",
+  "updated": "2026-10-25",
   "items": [
+    {
+      "date": "2026-10-25",
+      "category": "新製品",
+      "title_ja": "ラ・アウロラ、新作「ペルセベランシア・トロ」",
+      "summary_ja": "ラ・アウロラ（La Aurora）の「ファミリー・クリード・シリーズ」第2弾として「ペルセベランシア・トロ」が登場。ペンシルベニア・ブロードリーフのラッパーに、メキシカン・サンアンドレスのバインダー、ドミニカ共和国・ニカラグア・ペンシルベニア産のフィラーを組み合わせた。",
+      "title_en": "La Aurora Family Creed Series Perseverancia Toro",
+      "summary_en": "La Aurora has unveiled the Perseverancia Toro, the second release in its Family Creed Series. The cigar features a Pennsylvania broadleaf wrapper over a Mexican San Andrés binder, with filler tobaccos grown in the Dominican Republic, Nicaragua and Pennsylvania.",
+      "source": "halfwheel",
+      "source_title": "La Aurora Family Creed Series Perseverancia Toro",
+      "source_en": "halfwheel",
+      "source_title_en": "La Aurora Family Creed Series Perseverancia Toro",
+      "url": "https://halfwheel.com/la-aurora-family-creed-series-perseverancia-toro/482496/"
+    },
+    {
+      "date": "2026-10-25",
+      "category": "新製品",
+      "title_ja": "ロアイシガ、11月に「エル・カデホ」発売",
+      "summary_ja": "ロアイシガ・シガーズ（Loaisiga Cigars）が新ライン「エル・カデホ（El Cadejo）」を11月に発売する。中米の民間伝承に登場する2匹の精霊犬にちなんで命名。光の守護者「白いカデホ」と、影から生まれた力「黒いカデホ」を題材としている。",
+      "title_en": "Loaisiga Cigars Releasing El Cadejo in November",
+      "summary_en": "Loaisiga Cigars will release a new line called El Cadejo in November. The line takes its name from one of Central America's folk legends about two spirit dogs: the White Cadejo, a guardian of light that walks beside travellers, and the Black Cadejo, a powerful force born of the shadows.",
+      "source": "halfwheel",
+      "source_title": "Loaisiga Cigars Releasing El Cadejo in November",
+      "source_en": "halfwheel",
+      "source_title_en": "Loaisiga Cigars Releasing El Cadejo in November",
+      "url": "https://halfwheel.com/loaisiga-cigars-releasing-el-cadejo-in-november/482470/"
+    },
+    {
+      "date": "2026-10-24",
+      "category": "新製品",
+      "title_ja": "パティナ×ビソ、「リバーディグリス」再販",
+      "summary_ja": "パティナ・シガーズ（Patina Cigars）とビソ・ホーニー（Viso Horny）のコラボ「リバーディグリス（ReVerdigris）」が年内に店頭へ。ベルディグリス（Verdigris）の第2弾にあたり、前回逃した愛好家に再チャンスとなる。",
+      "title_en": "Patina y Viso ReVerdigris Heading to Stores",
+      "summary_en": "The collaboration between Patina Cigars and Viso Horny, ReVerdigris, is heading to stores later this year. The cigar is the second release of Verdigris, giving those who missed the first a second chance to try it.",
+      "source": "halfwheel",
+      "source_title": "Patina y Viso ReVerdigris Heading to Stores",
+      "source_en": "halfwheel",
+      "source_title_en": "Patina y Viso ReVerdigris Heading to Stores",
+      "url": "https://halfwheel.com/patina-y-viso-reverdigris-heading-to-stores/482455/"
+    },
+    {
+      "date": "2026-10-24",
+      "category": "新製品",
+      "title_ja": "シガー・オアシス、新湿度計「キャリバーV」",
+      "summary_ja": "シガー・オアシス（Cigar Oasis）が湿度計「キャリバー（Caliber）」シリーズの新モデル「キャリバーV」を2025年末に投入。新開発の電子ペーパー（e-ink）ディスプレイと刷新したセンサーを搭載する。",
+      "title_en": "Oasis Caliber V",
+      "summary_en": "Cigar Oasis, known for its humidification devices, has introduced the Caliber V hygrometer in late 2025. The updated model features a new e-ink display and an upgraded sensor for measuring humidity.",
+      "source": "halfwheel",
+      "source_title": "Oasis Caliber V",
+      "source_en": "halfwheel",
+      "source_title_en": "Oasis Caliber V",
+      "url": "https://halfwheel.com/oasis-caliber-v/482343/"
+    },
+    {
+      "date": "2026-10-24",
+      "category": "新製品",
+      "title_ja": "クオリティ・インポーターズ、未年コレクション",
+      "summary_ja": "クオリティ・インポーターズ（Quality Importers）が旧正月を記念し、各種シガーアクセサリーの新カラーバリエーションを展開。異例の措置として、多くの品目が前年の午年コレクションより低価格に設定された。",
+      "title_en": "Quality Importers Celebrating Year of the Goat",
+      "summary_en": "Quality Importers is again marking Chinese New Year with new colourways across its cigar accessory portfolio. In a rare move, most of the items carry lower prices than last year's Year of the Horse Collection.",
+      "source": "halfwheel",
+      "source_title": "Quality Importers Celebrating Year of the Goat",
+      "source_en": "halfwheel",
+      "source_title_en": "Quality Importers Celebrating Year of the Goat",
+      "url": "https://halfwheel.com/quality-importers-celebrating-year-of-the-goat/482384/"
+    },
     {
       "date": "2026-10-24",
       "category": "新製品",
@@ -125,6 +190,19 @@ var NEWS_DATA = {
       "source_en": "halfwheel",
       "source_title_en": "StillWell Star Aromatic Dulce Claro Petit Robusto",
       "url": "https://halfwheel.com/stillwell-star-aromatic-dulce-claro-petit-robusto/482265/"
+    },
+    {
+      "date": "2026-10-22",
+      "category": "業界・企業",
+      "title_ja": "サウジで広がるシガー文化、ブティック展開",
+      "summary_ja": "サウジアラビアで葉巻文化が発展。スリー・リーフ・シガー・ブティック（Three Leaf Cigar Boutique）はリヤドとジッダに3店舗を構え、4店舗目も計画中。小売・ラウンジ・文化イベントを組み合わせた展開を進めている。",
+      "title_en": "Three Leaf: The Development of Cigar Culture in Saudi Arabia",
+      "summary_en": "Cigar culture is developing in Saudi Arabia. With three boutiques in Riyadh and Jeddah and a fourth location planned, Three Leaf Cigar Boutique is part of this growth, combining retail, lounges and cultural events.",
+      "source": "Cigar Journal",
+      "source_title": "Three Leaf: The Development of Cigar Culture in Saudi Arabia",
+      "source_en": "Cigar Journal",
+      "source_title_en": "Three Leaf: The Development of Cigar Culture in Saudi Arabia",
+      "url": "https://www.cigarjournal.com/three-leaf-where-saudi-cigar-culture-comes-alive/"
     },
     {
       "date": "2026-10-22",
@@ -2010,84 +2088,6 @@ var NEWS_DATA = {
       "source_en": "Cigar Journal",
       "source_title_en": "Saint George in the 10th Anniversary",
       "url": "https://www.cigarjournal.com/saint-george-in-the-10th-anniversary/"
-    },
-    {
-      "date": "2026-09-24",
-      "category": "業界・企業",
-      "title_ja": "スモーカーズ・アビー、北フロリダに進出",
-      "summary_ja": "スモーカーズ・アビー（Smokers Abbey）が北フロリダのジャクソンビルに進出した。ロイヤル・ターマンとモリー・ターマン夫妻が運営を率い、人気ラウンジ業態を同地に展開する。",
-      "title_en": "Smokers Abbey Jacksonville",
-      "summary_en": "Smokers Abbey has moved into Jacksonville, bringing its beloved lounge concept to Northern Florida. Loyal and Mollie Thurman are at the helm of the new location.",
-      "source": "Cigar Journal",
-      "source_title": "Smokers Abbey Jacksonville",
-      "source_en": "Cigar Journal",
-      "source_title_en": "Smokers Abbey Jacksonville",
-      "url": "https://www.cigarjournal.com/smokers-abbey-jacksonville/"
-    },
-    {
-      "date": "2026-09-24",
-      "category": "新製品",
-      "title_ja": "モントサ・マドゥーロ、ミニ・シガリロ形態を追加",
-      "summary_ja": "モントサ（MONTOSA）が「マドゥーロ・ミニ・シガリロ」を新発売した。既存の「クラーロ・ミニ・シガリロ」に加わる形で、モントサ・ファミリーに新たなラインナップが加わった。",
-      "title_en": "Montosa Maduro Now Also Available in Mini Cigarillo Format",
-      "summary_en": "MONTOSA has launched the new Maduro Mini Cigarillo. Joining the existing MONTOSA Claro Mini Cigarillo, the new Maduro variant expands the MONTOSA family with an additional offering in the mini cigarillo format.",
-      "source": "Cigar Journal",
-      "source_title": "Montosa Maduro Now Also Available in Mini Cigarillo Format",
-      "source_en": "Cigar Journal",
-      "source_title_en": "Montosa Maduro Now Also Available in Mini Cigarillo Format",
-      "url": "https://www.cigarjournal.com/montosa-maduro-now-also-available-in-mini-cigarillo-format/"
-    },
-    {
-      "date": "2026-09-24",
-      "category": "規制・市場",
-      "title_ja": "オンライン葉巻店で最大約30％の価格差",
-      "summary_ja": "シガーファインダー（CigarFinder）の価格指数によると、同一銘柄・同サイズ・同本数の葉巻でも、最安のオンライン店で買う場合と最高値の店で買う場合とで約29％の価格差が生じることが判明した。指数では最安の店舗も明示している。",
-      "title_en": "CigarFinder's Price Index Finds Nearly 30% Gap Between Online Stores",
-      "summary_en": "According to CigarFinder's Cigar Price Index, buying the same cigar, in the same size and box count, from the most expensive online store rather than the cheapest can cost about 29% more. The index also names the cheapest retailer, highlighting significant price disparities across online cigar shops.",
-      "source": "Developing Palates",
-      "source_title": "Cigar News: CigarFinder’s Price Index Finds a Nearly 30% Price Gap Between Online Cigar Stores, and Names the Cheapest",
-      "source_en": "Developing Palates",
-      "source_title_en": "Cigar News: CigarFinder's Price Index Finds a Nearly 30% Price Gap Between Online Cigar Stores, and Names the Cheapest",
-      "url": "https://developingpalates.com/news/cigar-news/cigar-news-cigarfinders-price-index-finds-a-nearly-30-price-gap-between-online-cigar-stores-and-names-the-cheapest/"
-    },
-    {
-      "date": "2026-09-24",
-      "category": "日本国内",
-      "title_ja": "キャメルのリトルシガー2銘柄が新発売",
-      "summary_ja": "見た目も価格も“スーパースリム”なキャメル（Camel）のリトルシガー2銘柄が新発売された。",
-      "title_en": "Two New Camel Little Cigars Launched",
-      "summary_en": "Two new Camel little cigar varieties have gone on sale in Japan, described as being 'super slim' in both appearance and price.",
-      "source": "ウォーカープラス",
-      "source_title": "＜画像1 / 2＞見た目も価格も“スーパースリム”なキャメルのリトルシガー2銘柄が新発売 - ウォーカープラス",
-      "source_en": "Walkerplus",
-      "source_title_en": "Two 'Super Slim' Camel Little Cigars Launched",
-      "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE81bVBUek9TOU94UlpHcVNHN2NrTlE4dzdoRlNuZFJWZFVycGU2dy1SNG9vZTd5UlMtZnpud0w1MEJRajBzSFpMSmVsdFlVUkxwdHFIOHhhRjhERERHaUhpWTR6NnpIOVNVbzRV?oc=5"
-    },
-    {
-      "date": "2026-09-24",
-      "category": "イベント・アワード",
-      "title_ja": "インタータバック2026の新製品まとめ",
-      "summary_ja": "halfwheelが、インタータバック（InterTabac）2026の会場で確認した新製品のリストを公開した。未年（Year of the Goat）にちなんだ製品が多数登場している。",
-      "title_en": "InterTabac 2026: The New Products",
-      "summary_en": "halfwheel has published a list of most of the new items seen at InterTabac 2026, with numerous releases tied to the upcoming Year of the Goat.",
-      "source": "halfwheel",
-      "source_title": "InterTabac 2026: The New Products",
-      "source_en": "halfwheel",
-      "source_title_en": "InterTabac 2026: The New Products",
-      "url": "https://halfwheel.com/intertabac-2026-new-products/480180/"
-    },
-    {
-      "date": "2026-09-24",
-      "category": "新製品",
-      "title_ja": "プラセンシア、レゼルバ・オリジナルを14本箱へ",
-      "summary_ja": "プラセンシア（Plasencia Cigars）が、レゼルバ・オリジナル（Reserva Original）コレクションの箱を10本入りから14本入りへ移行する。",
-      "title_en": "Plasencia Reserva Original Now Available in a 14-Count Box",
-      "summary_en": "Plasencia Cigars is transitioning its Reserva Original collection from 10-count to 14-count boxes.",
-      "source": "Cigar Journal",
-      "source_title": "Plasencia Reserva Original Now Available in a 14-Count Box",
-      "source_en": "Cigar Journal",
-      "source_title_en": "Plasencia Reserva Original Now Available in a 14-Count Box",
-      "url": "https://www.cigarjournal.com/plasencia-reserva-original-now-available-in-a-14-count-box/"
     }
   ]
 };
