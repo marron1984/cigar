@@ -7,8 +7,73 @@
    手で足すこともできますが、items の並び・キーは崩さないでください。
    ============================================================ */
 var NEWS_DATA = {
-  "updated": "2026-10-26",
+  "updated": "2026-10-27",
   "items": [
+    {
+      "date": "2026-10-27",
+      "category": "新製品",
+      "title_ja": "ドリュー・エステート、新フライング・ピッグ8種を追加",
+      "summary_ja": "ドリュー・エステート（Drew Estate）が10月のリリースを拡大し、新たに8種のフェラル・フライング・ピッグを追加した。T52フェラル・フライング・ピッグ、アンダークラウン10フェラル・フライング・ピッグ、ボックスプレス版フライング・ピッグに加え、アンダークラウン・エル・ティグレ・フライング・ピッグも登場する。",
+      "title_en": "Drew Estate Adds Eight New Feral Flying Pigs, Plus Undercrown El Tigre Flying Pig",
+      "summary_en": "Drew Estate has expanded its October releases by adding eight new Feral Flying Pig perfectos, along with an Undercrown El Tigre Flying Pig. The lineup includes the T52 Feral Flying Pig, Undercrown 10 Feral Flying Pig and a box-pressed Flying Pig. The move follows last month's release of a half-dozen new perfecto cigars.",
+      "source": "halfwheel",
+      "source_title": "Drew Estate Adds Eight New Feral Flying Pigs, Undercrown El Tigre Flying Pig",
+      "source_en": "halfwheel",
+      "source_title_en": "Drew Estate Adds Eight New Feral Flying Pigs, Undercrown El Tigre Flying Pig",
+      "url": "https://halfwheel.com/drew-estate-adds-eight-new-feral-flying-pig-undercrown-el-tigre-flying-pig/482664/"
+    },
+    {
+      "date": "2026-10-27",
+      "category": "新製品",
+      "title_ja": "CAO、TAA限定「フラットヘッド・アメリカン・マッスル」",
+      "summary_ja": "CAOが、TAA限定品として「CAOフラットヘッド・アメリカン・マッスル」を発表した。既存のCAOアメリカ・ランドマークのボックスプレス版で、今週出荷される予定。",
+      "title_en": "CAO America, Flathead Come Together for New TAA Exclusive",
+      "summary_en": "CAO has unveiled the CAO Flathead American Muscle, a new TAA exclusive. It is a box-pressed version of the CAO America Landmark and is scheduled to ship this week.",
+      "source": "halfwheel",
+      "source_title": "CAO America, Flathead Come Together for New TAA Exclusive",
+      "source_en": "halfwheel",
+      "source_title_en": "CAO America, Flathead Come Together for New TAA Exclusive",
+      "url": "https://halfwheel.com/cao-america-flathead-come-together-for-new-taa-exclusive/482629/"
+    },
+    {
+      "date": "2026-10-27",
+      "category": "イベント・アワード",
+      "title_ja": "ホンジュラス新シガー祭「ラ・グラン・カタ」受付開始",
+      "summary_ja": "ホンジュラスの新しいシガーフェスティバル「ラ・グラン・カタ（La Gran Cata）2027」が正式発表された。開催期間は2027年1月23日〜27日で、参加登録の受付が始まった。",
+      "title_en": "Registration Opens for La Gran Cata, Honduras' New Cigar Festival",
+      "summary_en": "The Honduran cigar festival La Gran Cata 2027 has been officially announced, taking place from 23 to 27 January 2027. Registration for the new event is now open.",
+      "source": "halfwheel",
+      "source_title": "Registration Opens for La Gran Cata, Honduras’ New Cigar Festival",
+      "source_en": "halfwheel",
+      "source_title_en": "Registration Opens for La Gran Cata, Honduras' New Cigar Festival",
+      "url": "https://halfwheel.com/registration-opens-for-la-gran-cata-honduras-new-cigar-festival/482642/"
+    },
+    {
+      "date": "2026-10-26",
+      "category": "新製品",
+      "title_ja": "コンフィデンシアール「ヒミツ」、日本で発売",
+      "summary_ja": "コンフィデンシアール（Confidenciaal）が最新作「ヒミツ（Himitsu）」を日本で発売した。日本語の「秘密」を名に冠した本作は、同社初のリージョナル・エディションとなる。",
+      "title_en": "Confidenciaal Himitsu Goes on Sale in Japan",
+      "summary_en": "Confidenciaal has released Himitsu, its latest cigar, in Japan. Named after the Japanese word for \"secret,\" it marks the company's first regional edition.",
+      "source": "halfwheel",
+      "source_title": "Confidenciaal Himitsu Goes on Sale in Japan",
+      "source_en": "halfwheel",
+      "source_title_en": "Confidenciaal Himitsu Goes on Sale in Japan",
+      "url": "https://halfwheel.com/confidenciaal-himitsu-goes-on-sale-in-japan/482597/"
+    },
+    {
+      "date": "2026-10-26",
+      "category": "日本国内",
+      "title_ja": "JP THE WAVY、JAPAN CIGAR AWARD 2026受賞",
+      "summary_ja": "日本葉巻協会が「JAPAN CIGAR AWARD 2026」を発表し、世界を舞台に活躍するラッパーのJP THE WAVY氏を表彰した。音楽・アート・ファッションを横断する活動が評価された。",
+      "title_en": "JP THE WAVY Wins JAPAN CIGAR AWARD 2026",
+      "summary_en": "The Japan Cigar Association has announced its JAPAN CIGAR AWARD 2026, honouring internationally active rapper JP THE WAVY. The award recognised his work spanning music, art and fashion.",
+      "source": "ライブドアニュース",
+      "source_title": "音楽・アート・ファッションを横断する活動を評価した受賞！日本葉巻協会 JAPAN CIGAR AWARD 2026 - ライブドアニュース",
+      "source_en": "Livedoor News",
+      "source_title_en": "JP THE WAVY Honoured for Work Across Music, Art and Fashion: Japan Cigar Association JAPAN CIGAR AWARD 2026",
+      "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTFBxSnd2WGdWdzNpSjlwdDd4cTkwM3VyUVc0N2t4cVEwQTJyb0hWS0JpSHRsZHRzWHFGNGV0N3JybVhhM3V4R0JCWlBUSW1fYks5OTRySGJWV1l6WU1RQzhn?oc=5"
+    },
     {
       "date": "2026-10-26",
       "category": "新製品",
@@ -21,6 +86,19 @@ var NEWS_DATA = {
       "source_en": "halfwheel",
       "source_title_en": "Gran Habano Persian King Omega Omega",
       "url": "https://halfwheel.com/gran-habano-persian-king-omega-omega/482516/"
+    },
+    {
+      "date": "2026-10-25",
+      "category": "日本国内",
+      "title_ja": "キャメル、スーパースリムのリトルシガー2銘柄発売",
+      "summary_ja": "見た目も価格も「スーパースリム」なキャメル（Camel）のリトルシガー2銘柄が新発売された。",
+      "title_en": "Camel Launches Two New \"Super Slim\" Little Cigars",
+      "summary_en": "Two new Camel little cigars described as \"super slim\" in both appearance and price have gone on sale in Japan.",
+      "source": "ウォーカープラス",
+      "source_title": "＜画像1 / 2＞見た目も価格も“スーパースリム”なキャメルのリトルシガー2銘柄が新発売 - ウォーカープラス",
+      "source_en": "Walkerplus",
+      "source_title_en": "Two New \"Super Slim\" Camel Little Cigars Go on Sale",
+      "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE81bVBUek9TOU94UlpHcVNHN2NrTlE4dzdoRlNuZFJWZFVycGU2dy1SNG9vZTd5UlMtZnpud0w1MEJRajBzSFpMSmVsdFlVUkxwdHFIOHhhRjhERERHaUhpWTR6NnpIOVNVbzRV?oc=5"
     },
     {
       "date": "2026-10-25",
@@ -2010,84 +2088,6 @@ var NEWS_DATA = {
       "source_en": "Cigar Journal",
       "source_title_en": "Quality Importers Brings Back Qi Spotlight Trade Show In South Florida",
       "url": "https://www.cigarjournal.com/quality-importers-brings-back-qi-spotlight-trade-show-in-south-florida/"
-    },
-    {
-      "date": "2026-09-26",
-      "category": "新製品",
-      "title_ja": "サン・パレイユ・ブルー・ベリコソ、クラブ・ヒュミドールで発売",
-      "summary_ja": "2020年に巻かれ、以来熟成されてきた「サン・パレイユ・ブルー・ベリコソ（Sans Pareil Blue Belicoso）」が、日曜日にテキサス州サンアントニオのクラブ・ヒュミドール（Club Humidor）で発売される。",
-      "title_en": "Sans Pareil Blue Belicoso Lands at Club Humidor",
-      "summary_en": "The Sans Pareil Blue Belicoso, rolled back in 2020 and aged ever since, will go on sale on Sunday at Club Humidor in San Antonio, Texas.",
-      "source": "halfwheel",
-      "source_title": "Sans Pareil Blue Belicoso Lands at Club Humidor",
-      "source_en": "halfwheel",
-      "source_title_en": "Sans Pareil Blue Belicoso Lands at Club Humidor",
-      "url": "https://halfwheel.com/sans-pareil-blue-belicoso-lands-at-club-humidor/480391/"
-    },
-    {
-      "date": "2026-09-25",
-      "category": "新製品",
-      "title_ja": "オラシオ、新作「パンテラス」を披露",
-      "summary_ja": "オラシオ（Horacio）がInterTabac 2026で新作「パンテラス（Panteras）」を披露した。",
-      "title_en": "The \"Panteras\" de Horacio",
-      "summary_en": "Horacio presented its \"Panteras\" cigar at InterTabac 2026.",
-      "source": "Cigar Journal",
-      "source_title": "The “Panteras” de Horacio",
-      "source_en": "Cigar Journal",
-      "source_title_en": "The \"Panteras\" de Horacio",
-      "url": "https://www.cigarjournal.com/the-panteras-de-horacio/"
-    },
-    {
-      "date": "2026-09-25",
-      "category": "新製品",
-      "title_ja": "CAO、アマゾン・ベイシン・エキストラ・アニェホ再登場",
-      "summary_ja": "CAOが「アマゾン・ベイシン・エキストラ・アニェホ（Amazon Basin Extra Añejo）」を2026年に再発売する。通常のアマゾン・ベイシンを2年間熟成させたもので、エキストラ熟成版のリリースは今回で2回目となる。",
-      "title_en": "CAO Amazon Basin Extra Añejo Returning for 2026",
-      "summary_en": "CAO is bringing back the Amazon Basin Extra Añejo for 2026. The cigar is the regular Amazon Basin, but aged for an additional two years. This marks only the second release of the extra-aged version of the blend.",
-      "source": "halfwheel",
-      "source_title": "CAO Amazon Basin Extra Añejo Returning for 2026",
-      "source_en": "halfwheel",
-      "source_title_en": "CAO Amazon Basin Extra Añejo Returning for 2026",
-      "url": "https://halfwheel.com/cao-amazon-basin-extra-anejo-returning-for-2026/480368/"
-    },
-    {
-      "date": "2026-09-25",
-      "category": "新製品",
-      "title_ja": "ダンバートン、オーバーシーズNo.2を発表",
-      "summary_ja": "ダンバートン（Dunbarton）がインタータバック2026で新製品「オーバーシーズNo.2（Overseas No. 2）」を発表した。",
-      "title_en": "Dunbarton Introduces Overseas No. 2",
-      "summary_en": "Dunbarton introduced its new Overseas No. 2 at InterTabac 2026.",
-      "source": "Cigar Journal",
-      "source_title": "Dunbarton Introduces Overseas No. 2",
-      "source_en": "Cigar Journal",
-      "source_title_en": "Dunbarton Introduces Overseas No. 2",
-      "url": "https://www.cigarjournal.com/dunbarton-introduces-overseas-no-2/"
-    },
-    {
-      "date": "2026-09-25",
-      "category": "新製品",
-      "title_ja": "シグロの金継ぎ灰皿、来週発売",
-      "summary_ja": "シグロ（SIGLO）の新作灰皿「キンツギ（Kintsugi）」灰皿が来週発売される。名称にある金継ぎの技法で実際に作られているわけではない。",
-      "title_en": "SIGLO Kintsugi Ashtray Goes on Sale Next Week",
-      "summary_en": "SIGLO's new Kintsugi ashtray will go on sale next week. Despite the name, the ashtray is not actually made using the kintsugi technique.",
-      "source": "halfwheel",
-      "source_title": "SIGLO Kintsugi Ashtray Goes on Sale Next Week",
-      "source_en": "halfwheel",
-      "source_title_en": "SIGLO Kintsugi Ashtray Goes on Sale Next Week",
-      "url": "https://halfwheel.com/siglo-kintsugi-ashtray-goes-on-sale-next-week/480354/"
-    },
-    {
-      "date": "2026-09-25",
-      "category": "新製品",
-      "title_ja": "エリー・ブルー、未年コレクション発売",
-      "summary_ja": "エリー・ブルー（Elie Bleu）が「Year of the Goat（未年）」コレクションを発売した。まず3アイテムが販売開始され、追加のリリースが10月と12月に予定されている。",
-      "title_en": "Elie Bleu's Year of the Goat Collection Goes on Sale",
-      "summary_en": "Elie Bleu is among the first companies to release its Year of the Goat collection. The first three items are now on sale, with further releases scheduled for October and December.",
-      "source": "halfwheel",
-      "source_title": "Elie Bleu’s Year of the Goat Collection Goes on Sale",
-      "source_en": "halfwheel",
-      "source_title_en": "Elie Bleu's Year of the Goat Collection Goes on Sale",
-      "url": "https://halfwheel.com/elie-bleus-year-of-the-goat-collection-goes-on-sale/480328/"
     }
   ]
 };
