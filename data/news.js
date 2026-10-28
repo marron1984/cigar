@@ -7,8 +7,86 @@
    手で足すこともできますが、items の並び・キーは崩さないでください。
    ============================================================ */
 var NEWS_DATA = {
-  "updated": "2026-10-27",
+  "updated": "2026-10-28",
   "items": [
+    {
+      "date": "2026-10-28",
+      "category": "新製品",
+      "title_ja": "ラ・フロール・ドミニカーナ、Chapter III発表",
+      "summary_ja": "ラ・フロール・ドミニカーナ（LFD）が新作「Chapter III」を発表した。過去2作と同様、同社の代名詞であるチゼル（Chisel）型を採用。年内の店頭投入を目指し、TAA加盟店に1年間の独占販売権を与える。",
+      "title_en": "La Flor Dominicana Chapter III Announced as TAA Exclusive",
+      "summary_en": "La Flor Dominicana (LFD) has announced Chapter III, the latest in its series. Like the previous two chapters, it uses the company's signature Chisel vitola. LFD hopes to have it on shelves by the end of the year, with TAA accounts receiving a one-year exclusivity period before wider release.",
+      "source": "halfwheel",
+      "source_title": "La Flor Dominicana Chapter III Announced as TAA Exclusive",
+      "source_en": "halfwheel",
+      "source_title_en": "La Flor Dominicana Chapter III Announced as TAA Exclusive",
+      "url": "https://halfwheel.com/la-flor-dominicana-chapter-iii-announced-as-taa-exclusive/482743/"
+    },
+    {
+      "date": "2026-10-28",
+      "category": "新製品",
+      "title_ja": "テッズ、コーヒーリキュール風味の葉巻を11月発売",
+      "summary_ja": "アルコール風味葉巻を幅広く手がけるテッズ（Ted's）が、新フレーバーとしてコーヒーリキュール（Dark Roast Coffee Liqueur）を使った葉巻を11月中旬に発売すると発表した。",
+      "title_en": "Ted's Dark Roast Coffee Liqueur Seasoned Cigar Slated for November",
+      "summary_en": "Coffee liqueur is the latest flavour in Ted's expansive portfolio of alcohol-infused cigars. The company says its newest release, the Dark Roast Coffee Liqueur seasoned cigar, will arrive in mid-November.",
+      "source": "halfwheel",
+      "source_title": "Ted’s Dark Roast Coffee Liqueur Seasoned Cigar Slated for November",
+      "source_en": "halfwheel",
+      "source_title_en": "Ted's Dark Roast Coffee Liqueur Seasoned Cigar Slated for November",
+      "url": "https://halfwheel.com/teds-dark-roast-coffee-liqueur-seasoned-cigar-slated-for-november/482710/"
+    },
+    {
+      "date": "2026-10-28",
+      "category": "新製品",
+      "title_ja": "エスピノーサ、ララーニャ・ハイブリッド新サイズ追加",
+      "summary_ja": "エスピノーサ（Espinosa）が、2014年に登場したブラジル産タバコ使用で知られる「ララーニャ（Laranja）」ラインに、新サイズ「ハイブリッド・ショートチャーチル」を追加した。引き続きブラジル産タバコを用い、バランスの取れた風味重視のプロファイルとしている。",
+      "title_en": "Laranja Hybrid Short Churchill",
+      "summary_en": "The Laranja Hybrid is the latest extension to Espinosa's line that debuted in 2014 and became known for its use of Brazilian tobacco. The company continues to use Brazilian tobacco, with the new Short Churchill described as having a balanced, flavour-forward profile.",
+      "source": "halfwheel",
+      "source_title": "Laranja Hybrid Short Churchill",
+      "source_en": "halfwheel",
+      "source_title_en": "Laranja Hybrid Short Churchill",
+      "url": "https://halfwheel.com/laranja-hybrid-short-churchill/482620/"
+    },
+    {
+      "date": "2026-10-27",
+      "category": "日本国内",
+      "title_ja": "JP THE WAVY氏、ジャパン・シガー・アワード大賞",
+      "summary_ja": "日本葉巻協会は、ラッパーのJP THE WAVY氏に「ジャパン・シガー・アワード2026」の大賞を授与した。音楽・アート・ファッションを横断する活動が評価された。受賞に際し、S.T.デュポンより「ライン2 Catwoman」が贈呈された。",
+      "title_en": "Rapper JP THE WAVY Wins Grand Prize at Japan Cigar Award 2026",
+      "summary_en": "The Japan Cigar Association presented its Grand Prize at the Japan Cigar Award 2026 to internationally active rapper JP THE WAVY, recognising his work spanning music, art and fashion. To mark the award, S.T. Dupont presented him with a Ligne 2 Catwoman lighter.",
+      "source": "PR TIMES",
+      "source_title": "世界で活躍するラッパー JP THE WAVY氏、「ジャパン・シガー・アワード2026」で大賞受賞S.T. Dupontより「ライン2 Catwoman」を贈呈 - PR TIMES",
+      "source_en": "PR TIMES",
+      "source_title_en": "Internationally Active Rapper JP THE WAVY Wins Grand Prize at Japan Cigar Award 2026; Presented with S.T. Dupont Ligne 2 Catwoman",
+      "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE1wb1pESnZlT1BFUjJoc3Jkd0pWQjgtNFlvMmNTX2VMMGdwZVJIWjhaSWVWWFpoY2Zfa2xsM1dPeS1UM3V1S09mdzFUd19rRlk4NWtWMV9tWXotQ29RWVJpcjViM05EM3lkd0E?oc=5"
+    },
+    {
+      "date": "2026-10-27",
+      "category": "新製品",
+      "title_ja": "キーデュオルセイ・コンコルディア、スペインで公開",
+      "summary_ja": "新作「キーデュオルセイ・コンコルディア（Quai d'Orsay Concordia）」がスペインで披露され、外観が明らかになった。ハバノス社（Habanos S.A.）は推奨小売価格を45.70ユーロと提示した。",
+      "title_en": "Quai d'Orsay Concordia Unveiled in Spain",
+      "summary_en": "The new Quai d'Orsay Concordia was shown off in Spain, revealing what the cigar looks like. In addition, Habanos S.A. has listed the recommended retail price at €45.70.",
+      "source": "halfwheel",
+      "source_title": "Quai d’Orsay Concordia Unveiled in Spain",
+      "source_en": "halfwheel",
+      "source_title_en": "Quai d'Orsay Concordia Unveiled in Spain",
+      "url": "https://halfwheel.com/quai-dorsay-concordia-unveiled-in-spain/482686/"
+    },
+    {
+      "date": "2026-10-27",
+      "category": "新製品",
+      "title_ja": "J.C.ニューマン、TAA限定ブリックハウス新作",
+      "summary_ja": "J.C.ニューマン（J.C. Newman）が、TAA限定の新作「ブリックハウス・ビギニングス・シエント・ポル・シエント（Brick House Beginnings Ciento Por Ciento）」をTAAで発表した。5年熟成で、わずか800箱限定となる。",
+      "title_en": "J.C. Newman Introduces Brick House Beginnings Ciento Por Ciento at TAA",
+      "summary_en": "J.C. Newman has introduced the Brick House Beginnings Ciento Por Ciento at TAA. This TAA exclusive has been aged for five years and is limited to only 800 boxes.",
+      "source": "Cigar Journal",
+      "source_title": "J.C. Newman Introduces Brick House Beginnings Ciento Por Ciento at TAA",
+      "source_en": "Cigar Journal",
+      "source_title_en": "J.C. Newman Introduces Brick House Beginnings Ciento Por Ciento at TAA",
+      "url": "https://www.cigarjournal.com/j-c-newman-introduces-brick-house-beginnings-ciento-por-ciento-at-taa/"
+    },
     {
       "date": "2026-10-27",
       "category": "新製品",
@@ -2010,84 +2088,6 @@ var NEWS_DATA = {
       "source_en": "halfwheel",
       "source_title_en": "Fermin Perez Cigars Moves Production to Tabacalera Familia Disla, Distribution to Domain",
       "url": "https://halfwheel.com/fermin-perez-cigars-moves-production-to-tabacalera-familia-disla-distribution-to-domain-distribution/480471/"
-    },
-    {
-      "date": "2026-09-28",
-      "category": "新製品",
-      "title_ja": "ディフィニション、新作「One13」発表",
-      "summary_ja": "2019年に創業し、シガーだけでなく特徴的なバンドで知られるディフィニション・シガーズ（Definition Cigars）が新作「One13」を発表した。名称は創業者ジャモンド・ハックリー（Jamond Hackley）の幼少期の住所にちなむ。",
-      "title_en": "Definition One13",
-      "summary_en": "Definition Cigars, which launched in 2019 and has built a reputation not only for its cigars but for its distinctive bands, has released a new cigar called the One13. The name references the childhood address of founder Jamond Hackley.",
-      "source": "halfwheel",
-      "source_title": "Definition One13",
-      "source_en": "halfwheel",
-      "source_title_en": "Definition One13",
-      "url": "https://halfwheel.com/definition-one13/480415/"
-    },
-    {
-      "date": "2026-09-27",
-      "category": "新製品",
-      "title_ja": "モンテクリスト新作、TFWA 2026で披露",
-      "summary_ja": "通常TFWAで発表される新作は旅行者限定品だが、今年はモンテクリスト（Montecristo）の新作「フラガータ（Fragata）」がTFWA 2026でデビューする。",
-      "title_en": "Montecristo Fragata Debuting at TFWA 2026",
-      "summary_en": "While a new cigar shown at the TFWA conference is typically a travel exclusive, this year it is a new Montecristo. The Montecristo Fragata will make its debut at TFWA 2026.",
-      "source": "halfwheel",
-      "source_title": "Montecristo Fragata Debuting at TFWA 2026",
-      "source_en": "halfwheel",
-      "source_title_en": "Montecristo Fragata Debuting at TFWA 2026",
-      "url": "https://halfwheel.com/montecristo-fragata-debuting-at-tfwa-2026/480446/"
-    },
-    {
-      "date": "2026-09-27",
-      "category": "新製品",
-      "title_ja": "アレック・ブラッドリー、30周年記念パーフェクト発表",
-      "summary_ja": "アレック・ブラッドリー（Alec Bradley）が創業30周年記念ブレンド「Thirty Years」を発表した。創業者アラン・ルービンが息子のアレック、ブラッドリーとともにブレンドを選定。レギュラー生産は3ビトラだが、今回のパーフェクトは限定版となる。",
-      "title_en": "Alec Bradley Thirty Years Perfecto",
-      "summary_en": "Alec Bradley has unveiled the Thirty Years Perfecto, a limited edition marking the company's 30th anniversary. Founder Alan Rubin selected the blend alongside his two sons, Alec and Bradley. While the Thirty Years line features three regular production vitolas, the Perfecto is a limited edition release.",
-      "source": "halfwheel",
-      "source_title": "Alec Bradley Thirty Years Perfecto",
-      "source_en": "halfwheel",
-      "source_title_en": "Alec Bradley Thirty Years Perfecto",
-      "url": "https://halfwheel.com/alec-bradley-thirty-years-perfecto/479600/"
-    },
-    {
-      "date": "2026-09-26",
-      "category": "新製品",
-      "title_ja": "アレック・ブラッドリー、チャンク・スマトラを10月1日発売",
-      "summary_ja": "アレック・ブラッドリー（Alec Bradley）が「チャンク（Chunk）」ラインの第3弾となるスマトラを10月1日に発売する。既存のチャンク・マデューロとチャンク・シェードに加わる。名の通り、太く短いビトラ展開で、4×60のXLから4×88の4XLまでをそろえる。",
-      "title_en": "Alec Bradley Chunk Sumatra Coming Oct. 1",
-      "summary_en": "Alec Bradley will release the Chunk Sumatra on 1 October, the third installment of its Chunk line, joining the Chunk Maduro and Chunk Shade. As the name implies, the cigars come in short, thick vitolas, ranging from a 4 x 60 XL up to a 4 x 88 4XL.",
-      "source": "halfwheel",
-      "source_title": "Alec Bradley Chunk Sumatra Coming Oct. 1",
-      "source_en": "halfwheel",
-      "source_title_en": "Alec Bradley Chunk Sumatra Coming Oct. 1",
-      "url": "https://halfwheel.com/alec-bradley-chunk-sumatra-coming-oct-1/480379/"
-    },
-    {
-      "date": "2026-09-26",
-      "category": "新製品",
-      "title_ja": "CAO、アマゾン・ベイスン・エキストラ・アニェホを2026年に再登場",
-      "summary_ja": "CAOが「アマゾン・ベイスン・エキストラ・アニェホ（Amazon Basin Extra Añejo）」を2026年に再発売する。アマゾン・ベイスンのブレンドを2年間熟成させ、タバコを十分に成熟させた限定リリース。追加熟成版としては2作目となる。",
-      "title_en": "CAO Amazon Basin Extra Añejo Returns for 2026",
-      "summary_en": "CAO is bringing back the Amazon Basin Extra Añejo for 2026, a limited release of the Amazon Basin blend aged for two years to allow its tobaccos to fully mature. It marks only the second release of the extra-aged version of the cigar.",
-      "source": "Cigar Journal",
-      "source_title": "CAO Amazon Basin Extra Añejo Returns for 2026",
-      "source_en": "Cigar Journal",
-      "source_title_en": "CAO Amazon Basin Extra Añejo Returns for 2026",
-      "url": "https://www.cigarjournal.com/cao-amazon-basin-extra-anejo-returns-for-2026/"
-    },
-    {
-      "date": "2026-09-26",
-      "category": "イベント・アワード",
-      "title_ja": "クオリティ・インポーターズ、QIスポットライト展示会を復活",
-      "summary_ja": "クオリティ・インポーーターズ・トレーディング（Quality Importers Trading Company）が「QIスポットライト・トレードショー」を復活させる。開催は10月17日（土）午前11時から午後4時まで、フロリダ州ウェストンの本社で行う。",
-      "title_en": "Quality Importers Brings Back QI Spotlight Trade Show in South Florida",
-      "summary_en": "Quality Importers Trading Company has announced the return of its QI Spotlight Trade Show, to be held on Saturday, 17 October from 11:00 AM to 4:00 PM at its headquarters in Weston, Florida.",
-      "source": "Cigar Journal",
-      "source_title": "Quality Importers Brings Back Qi Spotlight Trade Show In South Florida",
-      "source_en": "Cigar Journal",
-      "source_title_en": "Quality Importers Brings Back Qi Spotlight Trade Show In South Florida",
-      "url": "https://www.cigarjournal.com/quality-importers-brings-back-qi-spotlight-trade-show-in-south-florida/"
     }
   ]
 };
