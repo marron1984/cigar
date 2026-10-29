@@ -7,8 +7,60 @@
    手で足すこともできますが、items の並び・キーは崩さないでください。
    ============================================================ */
 var NEWS_DATA = {
-  "updated": "2026-10-28",
+  "updated": "2026-10-29",
   "items": [
+    {
+      "date": "2026-10-29",
+      "category": "新製品",
+      "title_ja": "プラセンシア、旧正月「山羊」を12月発売",
+      "summary_ja": "プラセンシア（Plasencia）が旧正月シリーズ最新作「エル・アニョ・デ・ラ・カブラ（El Año de la Cabra）」を12月に発売すると発表した。これまでの6作はニカラグア製だったが、今回の「山羊」はホンジュラス製となる。",
+      "title_en": "Plasencia El Año de la Cabra Slated for December",
+      "summary_en": "Plasencia has announced its latest Lunar New Year release, El Año de la Cabra, is slated for December. Unlike the previous six cigars in the Lunar New Year Series, which were all made in Nicaragua, the Goat is produced in Honduras.",
+      "source": "halfwheel",
+      "source_title": "Plasencia El Año de la Cabra Slated for December",
+      "source_en": "halfwheel",
+      "source_title_en": "Plasencia El Año de la Cabra Slated for December",
+      "url": "https://halfwheel.com/plasencia-el-ano-de-la-cabra-slated-for-december/482824/"
+    },
+    {
+      "date": "2026-10-29",
+      "category": "新製品",
+      "title_ja": "サンルイレイ、30周年マデューロを発表",
+      "summary_ja": "アルタディスU.S.A.（Altadis U.S.A.）が、マスターブレンダーのクリスチャン・エイロア（Christian Eiroa）との協業「サンルイレイ・エイロア30周年マデューロ（Saint Luis Rey Eiroa 30th Anniversary Maduro）」を発表した。全米たばこ商協会（TAA）の小売会員が先行して目にできるが、入手まで数か月かかる。エイロアは「より豊かで濃厚な表現」と述べた。",
+      "title_en": "Saint Luis Rey Eiroa 30th Anniversary Maduro Announced",
+      "summary_en": "Altadis U.S.A. has announced the Saint Luis Rey Eiroa 30th Anniversary Maduro, expanding its collaboration with master blender Christian Eiroa. Retail members of the Tobacconists' Association of America get the first look, but will have to wait a few months to receive them. Eiroa calls it \"a richer, more intense expression that remains true to the character of Saint Luis Rey.\"",
+      "source": "halfwheel",
+      "source_title": "Saint Luis Rey Eiroa 30th Anniversary Maduro Announced",
+      "source_en": "halfwheel",
+      "source_title_en": "Saint Luis Rey Eiroa 30th Anniversary Maduro Announced",
+      "url": "https://halfwheel.com/saint-luis-rey-eiroa-30th-anniversary-maduro-announced/482802/"
+    },
+    {
+      "date": "2026-10-29",
+      "category": "新製品",
+      "title_ja": "CRAFT、新作「マケット・スカットルバット」",
+      "summary_ja": "CRAFTが新作「マケット・スカットルバット（Maquette Scuttlebutt）」をリリースした。共同創業者のスキップ・マーティン（Skip Martin）がこのブレンドを気に入り、発売前に予定していた生産量をほぼ倍増させたという。",
+      "title_en": "CRAFT Maquette Scuttlebutt",
+      "summary_en": "CRAFT has released a new cigar, the Maquette Scuttlebutt. Co-founder Skip Martin liked the blend so much that he nearly doubled the planned production run before it was released.",
+      "source": "halfwheel",
+      "source_title": "CRAFT Maquette Scuttlebutt",
+      "source_en": "halfwheel",
+      "source_title_en": "CRAFT Maquette Scuttlebutt",
+      "url": "https://halfwheel.com/craft-maquette-scuttlebutt/482731/"
+    },
+    {
+      "date": "2026-10-28",
+      "category": "新製品",
+      "title_ja": "カサ・カリーリョ、2026年TAA限定品を発表",
+      "summary_ja": "カサ・カリーリョ（Casa Carrillo）が、全米たばこ商協会（TAA）会員向けに特別に制作された限定品「2026 Casa Carrillo TAA Exclusive」を発表した。",
+      "title_en": "Casa Carrillo Announces the 2026 TAA Exclusive Cigar",
+      "summary_en": "Casa Carrillo has announced the 2026 Casa Carrillo TAA Exclusive, a limited-edition release created exclusively for members of the Tobacconists' Association of America (TAA).",
+      "source": "Cigar Journal",
+      "source_title": "Casa Carrillo Announces the 2026 TAA Exclusive Cigar",
+      "source_en": "Cigar Journal",
+      "source_title_en": "Casa Carrillo Announces the 2026 TAA Exclusive Cigar",
+      "url": "https://www.cigarjournal.com/casa-carrillo-announces-the-2026-taa-exclusive-cigar/"
+    },
     {
       "date": "2026-10-28",
       "category": "新製品",
@@ -47,6 +99,32 @@ var NEWS_DATA = {
       "source_en": "halfwheel",
       "source_title_en": "Laranja Hybrid Short Churchill",
       "url": "https://halfwheel.com/laranja-hybrid-short-churchill/482620/"
+    },
+    {
+      "date": "2026-10-27",
+      "category": "イベント・アワード",
+      "title_ja": "ドバイの葉巻展にフエンテらが参加",
+      "summary_ja": "プレミアム・シガー協会（PCA）が、2026年11月10〜11日にドバイ・ワールド・トレード・センターで開催される「ワールド・シガー・ショー（World Cigar Show）」への参加を呼びかけた。アルトゥーロ・フエンテ、カサ・カリーリョ、パドロン、ロッキー・パテルが出展ラインナップに加わる。",
+      "title_en": "Arturo Fuente, Casa Carrillo, Padrón and Rocky Patel Join World Cigar Show Dubai Lineup",
+      "summary_en": "The Premium Cigar Association (PCA) is encouraging premium cigar retailers, manufacturers, distributors and hospitality professionals to make plans for World Cigar Show, returning to the Dubai World Trade Centre on 10–11 November 2026. Arturo Fuente, Casa Carrillo, Padrón and Rocky Patel have joined the lineup.",
+      "source": "Cigar Journal",
+      "source_title": "Arturo Fuente, Casa Carrillo, Padrón and Rocky Patel Join World Cigar Show Dubai Lineup",
+      "source_en": "Cigar Journal",
+      "source_title_en": "Arturo Fuente, Casa Carrillo, Padrón and Rocky Patel Join World Cigar Show Dubai Lineup",
+      "url": "https://www.cigarjournal.com/arturo-fuente-casa-carrillo-padron-and-rocky-patel-join-world-cigar-show-dubai-lineup/"
+    },
+    {
+      "date": "2026-10-27",
+      "category": "日本国内",
+      "title_ja": "JP THE WAVY、ジャパン・シガー・アワード大賞",
+      "summary_ja": "日本葉巻協会が「ジャパン・シガー・アワード2026（JAPAN CIGAR AWARD 2026）」で、ラッパーのJP THE WAVY氏に大賞を授与した。音楽・アート・ファッションを横断する活動が評価された。S.T.デュポン（S.T. Dupont）より「ライン2 Catwoman」が贈呈された。",
+      "title_en": "Rapper JP THE WAVY Wins Grand Prize at Japan Cigar Award 2026",
+      "summary_en": "The Japan Cigar Association awarded its grand prize at the Japan Cigar Award 2026 to internationally active rapper JP THE WAVY, recognising his work spanning music, art and fashion. He was presented with a Ligne 2 Catwoman lighter by S.T. Dupont.",
+      "source": "Infoseek",
+      "source_title": "世界で活躍するラッパー JP THE WAVY氏、「ジャパン・シガー・アワード2026」で大賞受賞S.T. Dupontより「ライン2 Catwoman」を贈呈 - Infoseek",
+      "source_en": "Infoseek",
+      "source_title_en": "Rapper JP THE WAVY Wins Grand Prize at Japan Cigar Award 2026; S.T. Dupont Presents Ligne 2 Catwoman",
+      "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE9wSF9lQXhMWllocm9VemtseDFBVTJjOGRBeGwxRjVlYkhMQnZmQTFxODQ5WXZyTHlHUHNNOXJyR3doZFlqZTBseTJSZGlfQTN2U0RrX0RlQTkxSVUtdzZzaHp5emV6T1E4S0d3Tk96WHlxQQ?oc=5"
     },
     {
       "date": "2026-10-27",
@@ -2010,84 +2088,6 @@ var NEWS_DATA = {
       "source_en": "Cigar Journal",
       "source_title_en": "Casa Magna, New Times, New Image",
       "url": "https://www.cigarjournal.com/casa-magna-new-times-new-image/"
-    },
-    {
-      "date": "2026-09-28",
-      "category": "新製品",
-      "title_ja": "ディアス・カブレラ、新作「ミ・ビエハ」",
-      "summary_ja": "Cigar Journalが、タバカレラ・ディアス・カブレラ（Tabacalera Díaz Cabrera）の新作「ミ・ビエハ（Mi Vieja／My Mom）」をInterTabac 2026で紹介した。",
-      "title_en": "Mi Vieja (My Mom)",
-      "summary_en": "Cigar Journal presented Tabacalera Díaz Cabrera's new cigar, Mi Vieja (My Mom), at InterTabac 2026.",
-      "source": "Cigar Journal",
-      "source_title": "Mi Vieja (My Mom)",
-      "source_en": "Cigar Journal",
-      "source_title_en": "Mi Vieja (My Mom)",
-      "url": "https://www.cigarjournal.com/mi-vieja-my-mom/"
-    },
-    {
-      "date": "2026-09-28",
-      "category": "新製品",
-      "title_ja": "ジノ、限定「Z-コレクション・ブルー」発売",
-      "summary_ja": "ジノ・シガー（Zino Cigars）は、刷新したアクセサリーラインの限定第2弾「ジノ・Z-コレクション・ブルー（Zino Z-Collection Blue）」を発売した。第1弾「Z-コレクション・グリーン」に続くリリースとなる。",
-      "title_en": "Zino Cigars Launches a New Limited Release: The Zino Z-Collection Blue",
-      "summary_en": "Following the launch of the Z-Collection Green, Zino Cigars has returned with the second limited release of its refreshed accessories line: the Zino Z-Collection Blue.",
-      "source": "Cigar Journal",
-      "source_title": "Zino Cigars Launches a New Limited Release: The Zino Z-Collection Blue",
-      "source_en": "Cigar Journal",
-      "source_title_en": "Zino Cigars Launches a New Limited Release: The Zino Z-Collection Blue",
-      "url": "https://www.cigarjournal.com/zino-cigars-launches-a-new-limited-release-the-zino-z-collection-blue/"
-    },
-    {
-      "date": "2026-09-28",
-      "category": "新製品",
-      "title_ja": "ハバノス、トリニダ初のレセルバを発表",
-      "summary_ja": "ハバノス（Habanos, S.A.）が「トリニダ・ビヒア・レセルバ・コセチャ2022（Trinidad Vigía Reserva Cosecha 2022）」を発表した。同ブランド初のレセルバとなる。",
-      "title_en": "Habanos, S.A. Unveils the Trinidad Vigía Reserva Cosecha 2022",
-      "summary_en": "Habanos, S.A. has unveiled the Trinidad Vigía Reserva Cosecha 2022, the brand's first-ever Reserva.",
-      "source": "Cigar Journal",
-      "source_title": "Habanos, S.A. Unveils the Trinidad Vigía Reserva Cosecha 2022",
-      "source_en": "Cigar Journal",
-      "source_title_en": "Habanos, S.A. Unveils the Trinidad Vigía Reserva Cosecha 2022",
-      "url": "https://www.cigarjournal.com/habanos-s-a-unveils-the-trinidad-vigia-reserva-cosecha-2022/"
-    },
-    {
-      "date": "2026-09-28",
-      "category": "新製品",
-      "title_ja": "アレック・ブラッドリー、「チャンク・スマトラ」発売",
-      "summary_ja": "アレック・ブラッドリー（Alec Bradley）が「チャンク」シリーズに新作「チャンク・スマトラ（Chunk Sumatra）」を追加。シリーズ3作目の常時展開品で、10月から小売店向けに出荷を開始する。",
-      "title_en": "Alec Bradley Launches Chunk Sumatra",
-      "summary_en": "Alec Bradley is adding to its Chunk series with Chunk Sumatra, the third dedicated Chunk cigar. It is a full-time release that will ship to retailers starting in October.",
-      "source": "Cigar Journal",
-      "source_title": "Alec Bradley Launches Chunk Sumatra",
-      "source_en": "Cigar Journal",
-      "source_title_en": "Alec Bradley Launches Chunk Sumatra",
-      "url": "https://www.cigarjournal.com/alec-bradley-launches-chunk-sumatra/"
-    },
-    {
-      "date": "2026-09-28",
-      "category": "新製品",
-      "title_ja": "トスカーノT、愛好会と共同開発",
-      "summary_ja": "マニファトゥーレ・シガロ・トスカーノ（Manifatture Sigaro Toscano）が「トスカーノT（Toscano T）」を発表。2024年半ばに始動した「クラブ・アミーチ・デル・トスカーノ」の2,500人超の愛好家との2年間にわたる共同開発プロジェクトの成果となる。",
-      "title_en": "Toscano T: The Cigar Co-Created With the Club Amici del Toscano",
-      "summary_en": "Manifatture Sigaro Toscano has presented the Toscano T, the result of a two-year co-creation project launched in mid-2024 with more than 2,500 enthusiasts from the Club Amici del Toscano.",
-      "source": "Cigar Journal",
-      "source_title": "Toscano T: The Cigar Co-Created With the Club Amici del Toscano",
-      "source_en": "Cigar Journal",
-      "source_title_en": "Toscano T: The Cigar Co-Created With the Club Amici del Toscano",
-      "url": "https://www.cigarjournal.com/toscano-t-the-cigar-co-created-with-the-club-amici-del-toscano/"
-    },
-    {
-      "date": "2026-09-28",
-      "category": "業界・企業",
-      "title_ja": "フェルミン・ペレス、製造・流通を移管",
-      "summary_ja": "フェルミン・ペレス・シガーズ（Fermin Perez Cigars）が、これまで自社のエステリ工場で行っていた製造を、ドメイン・シガーズを手掛ける企業タバカレラ・ファミリア・ディスラ（Tabacalera Familia Disla）に移管した。流通もドメインが担う。",
-      "title_en": "Fermin Perez Cigars Moves Production to Tabacalera Familia Disla, Distribution to Domain",
-      "summary_en": "Fermin Perez Cigars, which had been making its cigars in its own factory in Estelí, has moved production to Tabacalera Familia Disla, the company behind Domain Cigars. Distribution will now also be handled by Domain, as the brand leverages the production and distribution services of its new partner.",
-      "source": "halfwheel",
-      "source_title": "Fermin Perez Cigars Moves Production to Tabacalera Familia Disla, Distribution to Domain",
-      "source_en": "halfwheel",
-      "source_title_en": "Fermin Perez Cigars Moves Production to Tabacalera Familia Disla, Distribution to Domain",
-      "url": "https://halfwheel.com/fermin-perez-cigars-moves-production-to-tabacalera-familia-disla-distribution-to-domain-distribution/480471/"
     }
   ]
 };
